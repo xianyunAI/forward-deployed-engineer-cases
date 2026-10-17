@@ -1,6 +1,6 @@
 # 案例全文
 
-当前58例，其中8例已补充逐项研究。已查阅资料仍可能未披露部分信息，具体见各条缺口；不将推断当作真实实现。
+当前58例，其中58例已补充逐项研究。已查阅资料仍可能未披露部分信息，具体见各条缺口；不将推断当作真实实现。
 
 ## 1. Nubank：核心ETL代码库模块化迁移
 
@@ -676,21 +676,45 @@
 行业：AI开发工具与API集成基础设施
 国家口径：Composio官方DPA确认主体Sampark Inc.为美国特拉华公司并列旧金山办公室；Plank项目落地国家未披露。
 
-概述：Plank披露为Composio提供前线部署工程师（Forward Deployed Engineer）及QA服务，范围为AI代理集成基础设施。
+概述：连接器、边界场景和多客户需求造成设计、开发和验证吞吐瓶颈；Plank团队把Claude与真实UI测试纳入日常工作。
 
-流程：围绕代理连接工具的基础设施建设；客户官网确认提供工具连接能力，但Plank具体交付接口清单未知。
+流程：Claude辅助开发与方案讨论，Claude Design推进界面；并行处理多个范围，以Chrome MCP驱动真实UI做端到端验证。
 
-落地程度：供应商列为具名前线部署工程师（Forward Deployed Engineer）服务客户；该项目处于试点还是全面生产、上线日期与规模均未单独披露，阶段未知。
+落地程度：完整案例称该方式已成为嵌入团队的日常交付流程；具体生产模块、客户覆盖和上线日期未披露。
 
-人工职责：具体人审流程、人工接管及审批比例未公开。
+人工职责：工程师操作并验证真实产品UI、复现问题；代码合并审批和逐次人工检查规则未披露。
 
-证据说明：供应商具名个案页将服务明确标为前线部署工程师（Forward Deployed Engineer），并列客户业务范围；结合客户主体资料，按B级组合收录。个案工程分工、具体上线阶段和实际成效披露有限，不能从网站总体描述推定本项目已规模生产。
+证据说明：具名客户页明确FDE/QA；新增完整案例直接说明嵌入Plank团队的工作流、工具及前后周期。仍为供应商自报，未披露受控评测方法。
 
 可切入环节：分析：用最小权限工具集成建立回归评测。
 
-- 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+- 单项交付周期：3–4周 → 4–5天。口径：Plank完整案例自报；无样本、统计窗口、工作日定义和复杂度控制，不换算统一倍数。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】新连接器、边界情况及客户需求不断增加，设计、构建、验证吞吐成为瓶颈，单项交付原需3—4周。 [来源5](https://joinplank.com/cases/composio)
+
+### 工程师具体做了什么
+
+- 【公开披露】嵌入Composio的Plank团队把Claude纳入日常开发和方案讨论，用Claude Design推进界面概念，并行处理多个工作范围。客户页另明确FDE与QA服务身份。 [来源1](https://joinplank.com/customers/composio) [来源5](https://joinplank.com/cases/composio)
+
+### 技术方案与数据流程
+
+- 【公开披露】工程师将Claude与Chrome MCP结合，操作真实产品UI做端到端验证、复现问题；这是工程开发/质量流程，未披露Composio生产代理的基础模型或内部路由架构。 [来源5](https://joinplank.com/cases/composio)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：固定相同复杂度需求，分别记录设计、实现、测试、返工和人工审核时间；测试跨账号权限与工具版本变化，避免只比较最快任务。
+
+### 解决程度与业务提升
+
+- 【公开披露】供应商自报单项交付由3—4周缩至4—5天，并可并行多个范围；未给样本数、统计周期或任务复杂度控制。质量改善为定性描述，无缺陷率。 [来源5](https://joinplank.com/cases/composio)
+
+### 尚未公开的信息
+
+- 【未披露】Claude具体型号/版本、提示模板、并行机制、Chrome MCP配置、测试集、通过率与人工合并门禁未公开。
+
+- 【未披露】交付周期所含工作日口径、样本量、成本账单、工程团队人数和净收益未公开。
 
 ### 关键技能
 - 分析：工具接口契约测试
@@ -701,14 +725,15 @@
 - 分析：跨租户凭据泄露
 
 ### 限制
-- 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
-- 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
+- 工程交付提速不等于Composio生产代理任务成功率或客户ROI提升。
+- 周期为供应商自报，未给样本和可比性控制；融资与全平台规模不作为项目成果。
 
 ### 来源
 1. [Composio × Plank](https://joinplank.com/customers/composio)
 2. [Plank Customers](https://joinplank.com/customers)
 3. [Composio Data Processing Addendum](https://composio.dev/legal/dpa)
 4. [Composio product](https://composio.dev/)
+5. [Composio × Plank：以Claude压缩交付周期](https://joinplank.com/cases/composio)
 
 ## 10. Kernel：代理云浏览器基础设施
 
@@ -731,6 +756,30 @@
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【分析／复现建议】浏览器代理需要把网页动作、会话状态与故障定位连起来；这是产品需求分析，未披露Plank介入前的具体故障或基线。
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE · Core AI，工作主题为代理云浏览器基础设施；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/kernel)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：通过隔离的Chromium云浏览器让代理操作网站，并提供登录态管理、浏览器遥测、实时查看和MP4会话录制。该页未识别哪些组件由Plank实现。 [来源4](https://www.kernel.sh/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应分别回放导航、登录态过期、页面变化和超时场景，记录任务完成率、每步耗时和人工接管；登录凭据与录像应隔离。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】CDP/Playwright版本、浏览器隔离方案、Plank负责的模块、模型与并发配置、验收集和交付前后失败率未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
 
 ### 关键技能
 - 分析：浏览器会话与并发管理
@@ -772,6 +821,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【分析／复现建议】反欺诈需要在阻止损失与误伤正常交易之间权衡；原系统的误报、漏报、处理时长和具体改造起点未公开。
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE，工作主题为反欺诈与合规AI风险平台；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/sardineai)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：平台结合设备/行为信号、交易数据、规则和机器学习；Sardine Flow把数据、API、代理与人工审核串成工作流，案件管理供分析员调查和处置。不能据此认定Plank交付了Flow或任何指定模型。 [来源5](https://www.sardine.ai/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应按时间切分历史案件回放，分别测误报、漏报、调查时长及不同群体影响；高影响封禁或上报需明确人工权限与审计。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】Plank涉及反欺诈还是AML模块、模型/规则阈值、特征来源、案件标注、线上审批与回滚、误报漏报变化未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
+
 ### 关键技能
 - 分析：风险数据管道
 - 分析：模型漂移和审计
@@ -789,6 +862,7 @@
 2. [Plank Customers](https://joinplank.com/customers)
 3. [Sardine Shield Privacy Policy](https://www.sardine.ai/shield/privacy)
 4. [Sardine Notabene partnership](https://www.sardine.ai/press/pr/crypto-travel-rule-compliance)
+5. [Sardine平台](https://www.sardine.ai/)
 
 ## 12. Diagon AI：工业设备智能采购搜索
 
@@ -812,6 +886,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】客户官网将设备采购渠道分散、比较困难列为产品要解决的问题；未提供Plank介入前采购周期或人工工时。 [来源5](https://diagon.ai/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE，工作主题为工业设备智能采购搜索；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/diagon-ai)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：现官网使用Albus品牌，用户输入设备型号、规格和预算，平台跨来源搜索并对照规格、价格和库存，用户再联系卖方询价购买。这是产品流程，不是Plank已披露的数据管道。 [来源5](https://diagon.ai/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应保留规格原文、单位、来源及抓取时间，分别测型号匹配和规格抽取；报价、库存和最终采购由采购人员验证。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】模型、搜索/排序与去重方法、设备数据许可、ERP连接、验收样例和采购周期/价格的可归因改善未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
+
 ### 关键技能
 - 分析：产品规格结构化
 - 分析：供应商数据检索
@@ -829,6 +927,7 @@
 2. [Plank Customers](https://joinplank.com/customers)
 3. [Diagon Privacy Policy](https://diagon.ai/privacy-policy)
 4. [Diagon official LinkedIn](https://www.linkedin.com/company/diagon-tech/)
+5. [Diagon／Albus设备采购产品](https://diagon.ai/)
 
 ## 13. Artyc：温控运输物联网冷链系统
 
@@ -851,6 +950,30 @@
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】客户产品面向冷链包装、干冰采购、温度异常报告及运输可见性问题；Plank介入前损耗率、告警及时性和人工工时未公开。 [来源4](https://www.shipartyc.com/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE · QA，工作主题为温控运输物联网冷链系统；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/artyc)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：可充电复用运输箱配合云平台，自动上传GPS、温度、开盖和冲击事件，触发温度/低电量/开盖告警并保留运输日志。不能将设备、固件或云平台全部归为Plank成果。 [来源4](https://www.shipartyc.com/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应模拟断网、断电、传感器漂移及迟到事件，以校准温度仪比对；异常处置需由操作人员确认，不能让预测替代实测温控。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】Plank负责设备/固件/云端/应用的边界、是否实际使用AI、传感器协议、告警规则、温控验证、货损与成本前后数据未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
 
 ### 关键技能
 - 分析：传感器遥测校验
@@ -892,6 +1015,26 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【未披露】公开页没有Plank介入前选址方法、人工步骤、历史门店样本或预测误差基线。
+
+### 工程师具体做了什么
+
+- 【公开披露】客户页标注FDE与Core AI，主题为为McDonald’s、Sweetgreen、Chipotle等品牌定制扩张模型；未逐品牌披露项目范围。 [来源1](https://joinplank.com/customers/retail-development-partners)
+
+### 技术方案与数据流程
+
+- 【分析／复现建议】复现建议，非客户已公开实现：把历史门店、销售、商圈、竞争点和租金按时间和地理区域拆分训练/验证，防止相邻店和未来销量泄漏；交由地产团队审查候选地及假设。
+
+### 解决程度与业务提升
+
+- 【未披露】没有选址准确率、开店数、销售提升或资本回报的项目级量化数据。
+
+### 尚未公开的信息
+
+- 【未披露】数据供应商和许可、地理特征、模型类型、预测目标、回测方法、决策审批、上线范围及成本均未公开。
+
 ### 关键技能
 - 分析：地理空间特征工程
 - 分析：选址预测回测
@@ -931,6 +1074,30 @@
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】客户产品要解决未管理MCP连接、过度授权和凭据风险；未披露Plank项目开始时的连接数量、事故或人工维护负担。 [来源4](https://www.mintmcp.com/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE，工作主题为企业MCP工具网关；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/mintmcp)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：MintMCP现名Mintive；网关按角色提供已批准工具，工具级开关可禁用破坏性动作；每个代理独立凭据，调用关联身份并可导出审计日志。未证明这些控制均由Plank设计或在本项目启用。 [来源4](https://www.mintmcp.com/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应建立工具白名单，区分读写权限，测试撤销身份后访问是否立即失效；用越权和提示注入样例验证并保存审计证据。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】Plank具体连接器、网关部署位置、模型、鉴权实现、权限矩阵、提示注入测试结果、企业上线数量及费用未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
 
 ### 关键技能
 - 分析：MCP权限与租户隔离
@@ -972,6 +1139,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】创始人称杂货行业依赖过时系统和人工流程，商家缺少经营线上渠道的工具；这是行业/产品起点，不是Plank项目前后对照实验。 [来源3](https://www.ycombinator.com/companies/vendora)
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE · QA，工作主题为杂货零售数字商务平台；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/vendora)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户创始人说明产品接入零售商既有系统、摄取数据，经AI工作流增强后形成第三方数据feed，同时提供自有网站/应用门店。未披露Plank负责哪条feed、哪个POS接口或AI环节。 [来源3](https://www.ycombinator.com/companies/vendora)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应对商品SKU、单位、价格、税、库存建立统一映射，测试重复事件、缺货和价格冲突；先只读对账再开放订单写入。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】具体POS/支付商、模型与数据增强方法、同步频率、订单幂等、人工改价机制、验收数据和项目级营收或节省未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
+
 ### 关键技能
 - 分析：商品目录标准化
 - 分析：库存与订单一致性
@@ -1012,6 +1203,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】客户指出非正式搜索和截图可能误认身份、脱离上下文或无法事后认证；本次Plank项目原始召回率、证据保全缺口和处理时间未披露。 [来源4](https://smiaware.com/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE · QA，工作主题为社交媒体电子取证引擎；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/smi)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：公开网络活动经专业分析员审核，保留来源、上下文和方法，形成可审查报告；产品提供案件工作流API。人工审核是客户整体服务承诺，未证实Plank设计的审核界面或门禁。 [来源4](https://smiaware.com/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应先限定合法案件范围，建立身份消歧与来源保全链；模型发现须经分析员核实，避免同名误匹配和无关个人数据过采集。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】Plank交付的采集/检索/报告模块、AI模型、平台访问方式、证据哈希与保留策略、准确率、分析员复核工作量及成本未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
+
 ### 关键技能
 - 分析：证据来源与保全链
 - 分析：检索范围和身份消歧
@@ -1028,6 +1243,7 @@
 1. [SMI Aware × Plank](https://joinplank.com/customers/smi)
 2. [Plank Customers](https://joinplank.com/customers)
 3. [SMI Aware solutions](https://smiaware.com/solutions/)
+4. [SMI Aware产品与分析员流程](https://smiaware.com/)
 
 ## 18. Cheiron：生物制药研发AI工作层
 
@@ -1050,6 +1266,30 @@
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【分析／复现建议】药物项目需要整合可追溯科学与法规证据；具体客户团队原工作流、瓶颈和基线未公开。
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE · Core AI，工作主题为生物制药研发AI工作层；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/cheiron)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户官网可读取正文仅说明药物研发、临床研究、法规与医学事务工作流，以及带证据链接的可验证输出；没有足够材料重建检索架构，更不能归因给Plank。 [来源4](https://www.cheiron.bio/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应以有版本与日期的文献和法规构建评测，检查引用是否真正支持结论；研究员复核证据表，保留不确定性和相反结果。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】基础模型、文献/临床/法规数据源、检索/重排/知识图谱、权限、专家评测、引用正确率、研发周期及费用未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
 
 ### 关键技能
 - 分析：科学证据溯源
@@ -1091,6 +1331,32 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【分析／复现建议】从已披露交付可推知，客户EMR/HRIS及内部仪表盘模式各异，需要整合激励与推荐数据并支持日常对账；原先人工耗时与错误率未给出。 [来源1](https://joinplank.com/customers/jolly)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE对接30多个EMR，采用API、浏览器抓取、RPA和直接数据库接入；建设管理员排障/对账界面，对接内部管理仪表盘、积分账本与web3钱包，并映射认证流程。 [来源1](https://joinplank.com/customers/jolly)
+
+- 【公开披露】QA团队梳理需求与初始部署测试，制作数据转换工具，关联发布与客户故障并修复；制定HRIS集成路线，将客户模式映射到统一产品模式。 [来源1](https://joinplank.com/customers/jolly)
+
+### 技术方案与数据流程
+
+- 【公开披露】数据由客户系统进入统一模式，激励/推荐数据汇总为招聘、留任和资源配置指标；管理员可日常操作、排障和核对。公开的是集成与控制点，未给模型或实时流水线拓扑。 [来源1](https://joinplank.com/customers/jolly)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：为每个来源设置字段契约与对账，测试重复/迟到事件、失效登录和模式变化；积分及钱包写入应有幂等键、审批和可追溯撤销。
+
+### 解决程度与业务提升
+
+- 【公开披露】列出Team Select Home Care、Visiting Angels、Dunkin及Coinbase部署示例，并报告30+ EMR连接；管理员界面减少客服工单为定性描述，无降幅。员工规模不是实际使用人数。 [来源1](https://joinplank.com/customers/jolly)
+
+### 尚未公开的信息
+
+- 【未披露】AI是否参与积分/激励判断、基础模型、30+ EMR清单、数据刷新周期、测试通过率、权限与付款批准链未公开。
+
+- 【未披露】部署日期和国家、工单前后数量、留任/招聘的可归因变化、实施与运行成本、净收益未公开。
+
 ### 关键技能
 - 分析：HRIS/EMR模式映射
 - 分析：账本与数据对账
@@ -1129,6 +1395,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【分析／复现建议】代理基础设施及开源安全是Plank披露的工作主题；未说明介入前的安全缺陷、推理瓶颈或业务损失。
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为Core AI · FDE，工作主题为代理基础设施与开源安全；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/near-ai)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户当前产品背景：NEAR AI Cloud以Intel TDX和NVIDIA机密计算硬件运行开放权重模型，响应附证明，并提供OpenAI兼容接口。当前产品页不证明Plank交付TEE、证明验证器或其中某一模型。 [来源4](https://near.ai/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应把代码依赖、构建产物、运行镜像与证明验证分开检查，测试证明无效时拒绝响应；安全与隐私收益需要威胁模型验证。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】Plank负责仓库/安全组件、具体模型和版本、是否涉及TEE服务、威胁模型、审计范围、修复漏洞数量及性能/成本变化未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
+
 ### 关键技能
 - 分析：开源依赖审计
 - 分析：代理执行隔离
@@ -1145,6 +1435,7 @@
 1. [NEAR AI × Plank](https://joinplank.com/customers/near-ai)
 2. [Plank Customers](https://joinplank.com/customers)
 3. [NEAR AI Privacy Policy](https://near.ai/privacy-policy)
+4. [NEAR AI私有推理产品](https://near.ai/)
 
 ## 21. Rye Worldwide：代理电商统一结账API
 
@@ -1168,6 +1459,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】客户官网将代理能推荐商品但难完成结账描述为产品问题；Plank项目前结账成功率与具体商户故障未公开。 [来源5](https://rye.com/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Plank具名客户页标注服务为FDE · Core AI，工作主题为代理电商统一结账API；没有逐项工程交付、人员分工或可验证上线记录。 [来源1](https://joinplank.com/customers/rye-worldwide)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户产品背景：输入商品URL和支付令牌，获取含税运总价并完成订单；平台称结合AI浏览器自动化与成功路径的确定性流程缓存，支付只用令牌。未证实缓存或支付实现由Plank交付。 [来源5](https://rye.com/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应以沙盒订单验证报价变化、库存耗尽、重复提交和超时重试；最终购买需明确授权，订单号与付款结果逐笔对账。
+
+### 解决程度与业务提升
+
+- 【未披露】未披露可归因于Plank的前后量化成效；客户产品规模、产品性能宣传、融资与其其他客户业绩均不作为本项目结果。
+
+### 尚未公开的信息
+
+- 【未披露】Plank负责商户、浏览器模型、缓存和失败回退、支付授权与幂等、项目测试样本、成功率前后变化和合同费用未公开。
+
+- 【未披露】项目启动/上线日期、实施团队人数、部署国家、完整实施和运维费用及净ROI未公开。
+
 ### 关键技能
 - 分析：交易幂等与订单对账
 - 分析：支付权限边界
@@ -1185,6 +1500,7 @@
 2. [Plank Customers](https://joinplank.com/customers)
 3. [Rye Privacy Policy](https://rye.com/privacy-policy)
 4. [Jolly official company announcement](https://www.linkedin.com/company/jolly/)
+5. [Rye通用结账API产品](https://rye.com/)
 
 ## 22. Itaú Unibanco：COBOL企业税号字段改造
 
@@ -1209,6 +1525,34 @@
 - 生产错误：报告为0。口径：供应商报告；监测期与错误定义未知，不代表永不出错。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】监管要求企业税号支持字母数字，而COBOL字段有约20种表达。普通代理容易破坏72列限制和COMP类型，需银行主机专家先追踪运行时数据流。 [来源1](https://cognition.com/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies)
+
+### 工程师具体做了什么
+
+- 【公开披露】将专家发现的字段命名、列宽及类型约束编码为操作手册，再用并行代理执行数百程序的重复重构。 [来源1](https://cognition.com/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies)
+
+- 【公开披露】部署负责人演讲将该项目作为FDE（Forward Deployed Engineer，前线部署工程师）实践，报告减少一半以上工程时间；不把另一家银行或匿名客户数字移入本案。 [来源2](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
+
+### 技术方案与数据流程
+
+- 【公开披露】本案是字段扩展与跨程序一致性修改，不是把实时交易系统完整迁移到新架构。 [来源1](https://cognition.com/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies)
+
+- 【公开披露】同银行更广泛部署包括CI/CD安全扫描后生成补丁交人审核、Wiki/Search代码知识、人工给测试操作手册后审查测试。这些是组织背景，不证明税号项目使用相同流水线。 [来源4](https://devin.ai/customers/itau)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：测试应覆盖字段读写、格式校验、上下游接口、历史数据与回退；以生产语义正确性而非代码生成量验收。
+
+### 解决程度与业务提升
+
+- 【公开披露】供应商称提前监管期限3个月完成，生产错误为0；观察窗口和错误口径未公开。 [来源1](https://cognition.com/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies)
+
+- 【公开披露】银行全范围20—30%吞吐提升、10—15%周期下降，以及.NET迁移5倍成本改善属于其他范围，不能归因本税号改造。 [来源4](https://devin.ai/customers/itau)
+
+### 尚未公开的信息
+
+- 【未披露】税号项目模型版本、测试规模、审核门禁、部署批次、回滚流程、费用与净节省未披露。
 
 ### 关键技能
 - 分析：COBOL布局与跨程序数据流
@@ -1252,6 +1596,30 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】团队希望把重复开发、日志排障和前端原型工作交给代理；没有统一人工工时基线。2024年12月从少量工程师试点，2025年2月扩至组织。 [来源1](https://devin.ai/customers/bilt)
+
+### 工程师具体做了什么
+
+- 【公开披露】部署负责人以Bilt解释交付、接受率与工程容量的区别；10名工程师等效产出是估算，不是裁员或精确节省工资。 [来源2](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
+
+### 技术方案与数据流程
+
+- 【公开披露】用GCP排障操作手册规范读日志、找原因、提修复；连接Figma API取组件与变量，结合自有组件库做前端MVP，另用于Java升级和代码摘要。 [来源1](https://devin.ai/customers/bilt)
+
+- 【公开披露】需求清楚的任务由代理实施；复杂任务先生成初稿，再由工程师在IDE调整。逐项自动部署权限与生产审批未披露。 [来源1](https://devin.ai/customers/bilt)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按任务难度分层，分别记录PR接受率、合并耗时、返工、缺陷、审核时间和交付价值；避免把PR数量直接换算成本。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方称106名工程师中超过一半周活；自2月800+PR，报道时最近30天平均117 PR/周，接受率超过50%。数字是文章观察窗，不能当当前实时值。 [来源1](https://devin.ai/customers/bilt)
+
+### 尚未公开的信息
+
+- 【未披露】完整时间序列、接受率分母、PR难度、对照组、订阅/部署投入、生产缺陷和净ROI未公开。
+
 ### 关键技能
 - 分析：跨仓库上下文与任务验收
 - 分析：运维日志权限隔离
@@ -1293,6 +1661,36 @@
 
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
+### 介入前的问题与基线
+
+- 【公开披露】原先自建推理；增长后基础设施管理挤占医疗产品研发时间，流量尖峰、硬件故障和GPU长期合约均构成约束。 [来源1](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
+
+### 工程师具体做了什么
+
+- 【公开披露】前线部署及模型性能团队作为客户工程团队延伸，联合优化负载、引入BEI和Performance Client、配置多云容量，并协助接入训练基础设施。 [来源1](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
+
+### 技术方案与数据流程
+
+- 【公开披露】项目明确使用BEI优化嵌入推理，Performance Client处理客户端吞吐瓶颈；MCM跨云、跨区域调度并提供按需冗余。未公布医疗检索数据库、召回与答案生成之间的完整接口。 [来源1](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
+
+- 【公开披露】技术背景：BEI的数据流为Rust前端→多核分词→按token上限打包并保持请求顺序→TensorRT-LLM C++推理→数值输出；批量语料摄取与低延迟在线查询需分别测试。 [来源3](https://www.baseten.co/blog/how-we-built-bei-high-throughput-embedding-inference/)
+
+- 【公开披露】技术背景：BEI用启动时预分配内存、队列背压和扩容避免长请求引发OOM；FP8基准的余弦相似度不等于临床准确率，也不能据此断定本项目使用同一模型或量化。 [来源3](https://www.baseten.co/blog/how-we-built-bei-high-throughput-embedding-inference/)
+
+- 【分析／复现建议】复现建议，非已公开实施：用相同医学查询验证召回、引用和答案一致性，另测峰值并发下端到端延迟；医生保留医疗判断，不把服务加速解释成临床验证。
+
+### 解决程度与业务提升
+
+- 【公开披露】端到端延迟由超过700毫秒降至160毫秒（约78%）；部署流程快6倍，基础设施维护工时减少8倍以上。案例称每周承载数十亿请求；无合同价或完整净成本数据。 [来源1](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
+
+### 尚未公开的信息
+
+- 【未披露】模型名称、权重版本、向量库、切片和重排规则、各阶段时间占比未披露。
+
+- 【未披露】未公开医学评测集、错误率、医生复核流程、患者数据权限与保留配置。
+
+- 【未披露】部署6倍与维护8倍的样本、观察期及工程师工时原始记录未公开；没有可归因临床结局。
+
 ### 关键技能
 - 分析：嵌入模型推理优化
 - 分析：峰值容量与多云故障切换
@@ -1310,6 +1708,7 @@
 ### 来源
 1. [OpenEvidence delivers instant, accurate medical information with the Baseten Inference Stack](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
 2. [OpenEvidence一手法院诉状](https://assets.alm.com/bd/d8/7ef64dac44bc9651ba27df49284a/openevidence-v-doximity-et-al-d-mass-25-cv-11802-dckt-000001-000-filed-2025-06-20-1.pdf)
+3. [BEI技术深解](https://www.baseten.co/blog/how-we-built-bei-high-throughput-embedding-inference/)
 
 ## 25. Rime：Rime实时语音合成API上线与扩容
 
@@ -1335,6 +1734,34 @@
 
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
+### 介入前的问题与基线
+
+- 【公开披露】Rime已有自训语音合成模型，但需建立企业API；模型计算可达目标，跨地域网络与多MB音频响应却威胁p99小于300毫秒的SLA。 [来源1](https://www.baseten.co/resources/customers/rime/)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户CEO明确称FDE全程协助API上市，处理基础设施问题；团队共同优化区域部署、批处理、CPU/GPU分工及响应载荷。 [来源1](https://www.baseten.co/resources/customers/rime/)
+
+### 技术方案与数据流程
+
+- 【公开披露】数据流是企业文本请求→地理邻近数据中心→自训TTS模型→音频响应；从T4迁移A10G以改善延迟与规模吞吐，L4和分数H100仅为文中试验方向。 [来源1](https://www.baseten.co/resources/customers/rime/)
+
+- 【公开披露】Rime将推理指标接入Grafana，和其他关键服务统一监控。相关官方技术文说明可导出请求状态、端到端响应时间、副本及硬件使用率，通过OpenTelemetry/Prometheus抓取；通用60秒建议不是已披露Rime配置。 [来源3](https://www.baseten.co/blog/export-model-inference-metrics-to-observability-tools/)
+
+- 【分析／复现建议】复现建议，非客户已披露：按地区、音频长度和并发测p50/p99，并拆开网络传输、排队、模型生成耗时；以真实声音样例做听感/发音回归，不能以延迟代替音质。
+
+### 解决程度与业务提升
+
+- 【公开披露】达到企业p99 300毫秒SLA，p50低于150毫秒；客户引语明确称2024年100%在线率。支持企业客户及按需GPU，但未披露账单节省与合同金额。 [来源1](https://www.baseten.co/resources/customers/rime/)
+
+### 尚未公开的信息
+
+- 【未披露】自训TTS架构、参数量、训练语料、音频编码与流式协议未披露。
+
+- 【未披露】未披露音质评测集、人工审核和声音授权流程；200余声音是产品范围，不是本次FDE新增数。
+
+- 【未披露】区域名单、副本数、负载实验规模、SLA统计口径和总拥有成本未披露。
+
 ### 关键技能
 - 分析：流式音频与网络优化
 - 分析：多区域低延迟部署
@@ -1352,6 +1779,7 @@
 ### 来源
 1. [How Rime.ai achieved state-of-the-art p99 latencies on Baseten](https://www.baseten.co/resources/customers/rime/)
 2. [Baseten Rime官方客户故事](https://www.baseten.co/resources/customers/rime/)
+3. [推理指标导出与Rime Grafana集成](https://www.baseten.co/blog/export-model-inference-metrics-to-observability-tools/)
 
 ## 26. Notion：Notion AI Meeting Notes语音转写管道
 
@@ -1375,6 +1803,36 @@
 
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
+### 介入前的问题与基线
+
+- 【公开披露】工程师描述为从0到1构建AI Meeting Notes；既有产品的人工记笔记耗时、旧系统模型和延迟绝对值没有公开。 [来源1](https://www.linkedin.com/posts/mattelim_one-of-the-highlights-of-my-first-year-at-activity-7504236590869782529-9_p8)
+
+### 工程师具体做了什么
+
+- 【公开披露】Matte Lim原帖自述参与Notion转录、说话人分离和多传输编排，并与模型、运行时、可观测性、计算及网络团队协作；官方作者页确认其FDE身份。 [来源1](https://www.linkedin.com/posts/mattelim_one-of-the-highlights-of-my-first-year-at-activity-7504236590869782529-9_p8) [来源2](https://www.baseten.co/author/matte-lim/)
+
+### 技术方案与数据流程
+
+- 【公开披露】产品层数据流：设备音频→分包处理商实时转录→带说话人信息的文本→结合用户笔记生成摘要/行动项。Notion列Baseten等多家处理商，未逐阶段指定供应商或模型。 [来源6](https://www.notion.com/help/ai-meeting-notes)
+
+- 【公开披露】产品人工控制：用户取得参会者同意后启动/停止；摘要引用可跳回转录文本，用户控制分享，笔记继承页面权限。工作区管理员可关闭功能、配置转录删除。以上为Notion产品机制，非FDE交付清单。 [来源6](https://www.notion.com/help/ai-meeting-notes)
+
+- 【公开披露】相关技术背景：pyannote按声学做说话人分离；Baseten文章讲分段/嵌入批调度、减少CPU-GPU搬运、索引微聚类和分阶段混合精度，并用DER评测。9.6倍和3.2倍是该文基准，不是Notion结果。 [来源5](https://www.baseten.co/blog/how-baseten-makes-pyannotes-diarization-models-96x-faster/)
+
+- 【分析／复现建议】复现建议，非项目事实：分别验收转录WER、说话人DER、重叠说话、长音频和断网重试；跨设备音源能力不同，需要端到端测试而非只跑ASR模型。
+
+### 解决程度与业务提升
+
+- 【公开披露】Baseten案例页标题称延迟降低2—3倍；页面可读取内容未提供基准和绝对值。工程师的1→P99.99措辞仅指生产化努力，不能当99.99% uptime测量值。 [来源1](https://www.linkedin.com/posts/mattelim_one-of-the-highlights-of-my-first-year-at-activity-7504236590869782529-9_p8) [来源3](https://www.baseten.co/resources/customers/how-notion-acheived-2-3x-lower-latency-with-ai-meeting-notes/)
+
+### 尚未公开的信息
+
+- 【未披露】官方案例页正文为媒体形式，本次未取得可验证媒体转录；不能声称已审阅视频全部技术细节。
+
+- 【未披露】实际ASR/diarization模型版本、传输协议、GPU配置、基准负载、质量指标未披露。
+
+- 【未披露】项目费用、每分钟成本、绝对延迟及节省人力的数值未披露。
+
 ### 关键技能
 - 分析：语音转写和说话人分离
 - 分析：跨传输协议编排
@@ -1388,12 +1846,15 @@
 ### 限制
 - 角色和项目来自两份一手材料组合，故B而非直接同页A。
 - 本人提到的P99.99为生产化表达，未把它擅自解释为已验证可用性指标。
+- 本轮完整读取工程师原帖与Notion产品帮助；Baseten客户页仅标题及媒体，未取得媒体转录。通用pyannote优化不能视为Notion已部署配置。
 
 ### 来源
 1. [Building AI Meeting Notes with Notion at Baseten — Matte Lim](https://www.linkedin.com/posts/mattelim_one-of-the-highlights-of-my-first-year-at-activity-7504236590869782529-9_p8)
 2. [Matte Lim — Forward Deployed Engineer](https://www.baseten.co/author/matte-lim/)
 3. [How Notion achieved 2-3x lower latency with AI Meeting Notes](https://www.baseten.co/resources/customers/how-notion-acheived-2-3x-lower-latency-with-ai-meeting-notes/)
 4. [Notion官方：Making the Brand at Make with Notion](https://www.notion.com/ja/blog/making-the-brand)
+5. [说话人分离优化技术说明](https://www.baseten.co/blog/how-baseten-makes-pyannotes-diarization-models-96x-faster/)
+6. [Notion AI Meeting Notes产品与隐私说明](https://www.notion.com/help/ai-meeting-notes)
 
 ## 27. Scaled Cognition：Scaled Cognition APT代理模型混合云上线
 
@@ -1419,6 +1880,34 @@
 
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
+### 介入前的问题与基线
+
+- 【公开披露】自研APT代理模型需要在首发与正在进行的POC中同时证明质量、响应速度和可扩展性；还希望继续使用已有AWS投资，避免重复购买闲置容量。 [来源1](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE在紧迫发布周期内与客户联合基准测试既有负载，部署Custom Server、AWS与Baseten Cloud混合容量、区域化算力和请求路由。 [来源1](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
+
+### 技术方案与数据流程
+
+- 【公开披露】项目以自有APT运行环境接入Custom Server，保留客户优化；AWS容量外接Baseten Cloud溢出容量，横向扩容支撑发布与研究实验。不是Baseten替客户训练APT或定义业务策略。 [来源1](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
+
+- 【公开披露】技术背景：自定义Docker服务器通过镜像、启动命令、服务端口、预测/readiness/liveness路径接入；标准模式由反向代理转发，定制HTTP日志需显式写request ID。文档也提供no-build路径，不能假定客户采用它。 [来源3](https://docs.baseten.co/development/model/custom-server)
+
+- 【分析／复现建议】复现建议，非已公开实施：以同一任务集测端到端任务成功率、策略违例、工具调用与TTFT；给付款/账户变更等高影响动作设置人工审批，并验证跨云扩容失败回退。
+
+### 解决程度与业务提升
+
+- 【公开披露】案例报告整体延迟降低40%、TTFT低于120毫秒，并支持同时数百项研究实验。未披露每请求成本，且低TTFT不证明无幻觉或任务自动化率提高。 [来源1](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
+
+### 尚未公开的信息
+
+- 【未披露】APT参数量、模型权重、服务镜像、GPU及区域名单、AWS/外部容量比例未公开。
+
+- 【未披露】POC样本、基准对手、请求长度、并发和延迟分位未披露。
+
+- 【未披露】客户实际人工审批、工具权限、策略评测指标与总成本未披露；Genesys覆盖客户数不是本项目部署数。
+
 ### 关键技能
 - 分析：专用模型服务配置
 - 分析：混合云突发容量
@@ -1436,6 +1925,7 @@
 ### 来源
 1. [Scaled Cognition offers ultra-fast AI agents you can trust](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
 2. [美国专利商标局公开文件](https://tmng-al.uspto.gov/resting2/api/casedoc/cms/case/99284016/office-action/OfficeAction7810198.pdf)
+3. [Custom Docker containers](https://docs.baseten.co/development/model/custom-server)
 
 ## 28. Cognition：Devin长程编码代理模型集成
 
@@ -1460,6 +1950,30 @@
 - 嵌入团队结果：未单独量化。口径：业务指标与模型整体改善不能直接作为前线部署工程师（Forward Deployed Engineer）因果效果。
 
 - 成本：未公开。口径：无集成项目全成本。
+
+### 介入前的问题与基线
+
+- 【公开披露】长任务易丢失上下文，用户意图常不充分，成功率波动。换基础模型会改变整个代理行为，不能只替换一个API名称。 [来源2](https://claude.com/customers/cognition)
+
+### 工程师具体做了什么
+
+- 【公开披露】Anthropic工程师与Cognition紧密共同测试、复盘失败例，把结果反馈给未来模型。原文未逐人确认FDE（Forward Deployed Engineer，前线部署工程师）职称。 [来源1](https://claude.com/problem-solvers) [来源2](https://claude.com/customers/cognition)
+
+### 技术方案与数据流程
+
+- 【公开披露】代理在预备代码和依赖的VM中使用文件、提交记录及PR信息；集成需调整模型路由、提示词、工具定义、上下文管理、轨迹监控与护栏。 [来源2](https://claude.com/customers/cognition)
+
+- 【公开披露】评测覆盖原子文件修改、定位代码和端到端任务。新模型必须整体改善且无重要回归才上线；50—70人是Cognition参与工程师，不能写成供应商驻场人数。 [来源2](https://claude.com/customers/cognition)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：保存版本化评测、模型与提示词配置；对高风险命令限制权限，设差异审查、失败重试上限和旧模型回退。
+
+### 解决程度与业务提升
+
+- 【公开披露】供应商案例报告某次Claude采用后每周合并PR增至3.5倍；没有足够控制组证明全部由模型或嵌入工程师造成。 [来源2](https://claude.com/customers/cognition)
+
+### 尚未公开的信息
+
+- 【未披露】完整评测集、模型路由策略、各版本回归门槛、成本明细和用户业务收益未公开；原页模型版本表述存在疑点，不据此补写版本。
 
 ### 关键技能
 - 模型替换回归评测
@@ -1505,6 +2019,34 @@
 
 - 整体成本与净节省：未公开。口径：虽称更具成本效率，未披露服务合同、推理单价和全成本净收益。
 
+### 介入前的问题与基线
+
+- 【公开披露】2023年起初以闭源生图为主；部分模型生成一张高分辨率图就约10秒，而Gamma希望整份演示在10秒内完成。团队无ML团队，希望降低延迟与规模成本。 [来源1](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE对SDXL、Flux、Qwen等模型做质量和速度测试，新模型发布后数小时至数天优化，再提供API让Gamma用既有工作负载评估；Gamma保留产品与模型采用判断。 [来源1](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
+
+### 技术方案与数据流程
+
+- 【公开披露】已披露接入边界：模型经FDE部署为API端点→Gamma用已有工作负载测试→选中模型进一步优化并扩容。没有公开完整提示词、版式编排或图片入稿接口。 [来源1](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
+
+- 【公开披露】技术背景：FLUX.1 dev示例把文本prompt提交预测端点，返回编码图片供应用解码。该公开模型卡列12B和H100 MIG 40GB，但不能当作Gamma实际配置；许可也需独立核查。 [来源3](https://www.baseten.co/library/flux-dev/)
+
+- 【分析／复现建议】复现建议，非客户实现：固定提示词集、分辨率、种子和并发，人工盲评图像质量及品牌安全；比较等待时间和每张成本，并验证少副本情况下突发流量与失败重试。
+
+### 解决程度与业务提升
+
+- 【公开披露】案例正文给各模型生图快30%—80%、减少副本带来20%效率改善、每天超过300万图；未新增ML/基础设施岗位。7000万用户及1亿美元ARR是全公司背景，不能归因于本项目。 [来源1](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
+
+### 尚未公开的信息
+
+- 【未披露】各模型精确版本、推理步数、量化/编译方案、GPU、副本数、区域未公开。
+
+- 【未披露】质量评估样本、盲评标准、内容审核与版权审核实现未披露。
+
+- 【未披露】20%效率不是20%总成本降低；合同价、GPU账单、净节省和收入因果贡献未披露。
+
 ### 关键技能
 - 分析：图像模型质量评测与基准测试
 - 分析：推理运行时和副本容量优化
@@ -1521,6 +2063,7 @@
 ### 来源
 1. [Baseten官方Gamma案例](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
 2. [Gamma官方：团队所在地](https://gamma.app/about)
+3. [FLUX.1 dev模型API示例](https://www.baseten.co/library/flux-dev/)
 
 ## 30. Latent Health：药事临床检索的多模型生产编排
 
@@ -1548,6 +2091,36 @@
 
 - 成本与净节省：未公开。口径：没有项目全成本和净现金节省披露。
 
+### 介入前的问题与基线
+
+- 【公开披露】既有大型云商直部署难以管理多模型及步骤；百万级每日文档量放大独立扩缩容缺失、单点故障和实验周期问题。输入覆盖病历笔记、化验、药物及媒体。 [来源1](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE与Latent工程师重构复合AI工作流，借Chains拆除处理瓶颈，并在运行时层比较/优化TensorRT-LLM与vLLM。 [来源1](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
+
+### 技术方案与数据流程
+
+- 【公开披露】已披露流水线组件含OCR、微调问答LLM、自定义嵌入与重排。各步骤拆为可直接互调的Chainlet，OCR处理步骤置于CPU，AI模型运行GPU，各自选硬件并独立扩容。 [来源1](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
+
+- 【公开披露】运行可靠性依靠冷启动优化及跨集群扩容，迁移接口OpenAI兼容。公开说明并未给出医疗数据源连接器、向量库或完整检索提示模板。 [来源1](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
+
+- 【公开披露】技术背景：Chains使用Python定义组件和依赖，每个Chainlet声明硬件、软件和扩容参数，可本地mock测试。通用示例的Mistral/Phi模型不属于Latent已披露模型。 [来源4](https://www.baseten.co/products/chains/)
+
+- 【分析／复现建议】复现建议，非已证实措施：把文档摄取/OCR吞吐与在线检索问答延迟分开验收；检查患者权限、引用对应、过期用药信息及专家复核，保留低置信度回退。
+
+### 解决程度与业务提升
+
+- 【公开披露】案例报告合作期间99.999%在线率、问答P90端到端600毫秒及GPU利用率提高6倍；这是推理系统指标，不能直接等同治疗提前、医务工作时长或费用降低。 [来源1](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
+
+### 尚未公开的信息
+
+- 【未披露】模型与训练集、检索库、分块/重排规则、OCR错误处理、医疗质量指标未披露。
+
+- 【未披露】GPU利用率绝对基线、在线率统计窗口/排除项、每阶段耗时与硬件数量未公开。
+
+- 【未披露】实际患者数据隔离、审计日志保留、医疗专业人员复核和部署合同成本未披露。
+
 ### 关键技能
 - 分析：多模型流水线拆分与背压
 - 分析：弹性扩缩容、追踪与健康检查
@@ -1565,6 +2138,7 @@
 1. [Baseten官方Latent案例](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
 2. [Latent官方公司页：总部](https://www.linkedin.com/company/latent-health)
 3. [Latent官方信任中心：美国医疗系统](https://security.latenthealth.com/)
+4. [Baseten Chains架构及示例](https://www.baseten.co/products/chains/)
 
 ## 31. NHS England（英国国家医疗服务体系英格兰分部）：疫情数据底座与医疗物资、疫苗运营
 
@@ -1589,6 +2163,36 @@
 - 疫苗项目服务范围：英格兰超过4400万人。口径：证词第38段；这是疫苗项目覆盖人数，不是软件单独造成的新增接种人数。
 
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】疫情初期库存、床位、人员与需求信息分散，原记录引用证词描述电话和表格难以支撑每日调度。本轮证词原PDF返回403，未重新读取全文；以下保留已有记录的证据边界。 [来源1](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
+
+### 工程师具体做了什么
+
+- 【公开披露】原记录引用证词第12、19、25段，分别将数据底座、呼吸机及防护物资工作与具名前线部署工程师及团队相连；不是只凭供应商签约认定FDE参与。 [来源1](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
+
+### 技术方案与数据流程
+
+- 【公开披露】已有记录中的数据链路为医院及国家库存数据进入Foundry，形成病例、床位和库存视图，供每日分配会议使用；后续同一底座支持疫苗站点、订货配送和覆盖监测。原记录明确物资分配不等于参与PPE采购。 [来源1](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：为医院、物资品类、库存快照、需求及调拨单设置稳定标识；区分缺失、迟报和真实零库存，界面同时显示更新时间与责任机构。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将预测需求和现存库存分别呈现；记录调拨建议、人工决定与实际签收。审批日志需要同时保留当时数据版本，才能解释应急决策。
+
+### 解决程度与业务提升
+
+- 【公开披露】已有记录报告数百个数据源，以及疫苗项目服务英格兰超过4400万人；前者是集成规模，后者是公共项目覆盖，均不能解释为软件独立创造的健康收益。 [来源1](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
+
+### 尚未公开的信息
+
+- 【未披露】本轮无法重新核验原证词全文，不能称已完成全部一手材料复审。NHS官方数据存储说明页也返回机器人验证；未绕过限制。
+
+- 【未披露】现有可核材料未给出预测模型、优化函数、字段映射、刷新频率、质量阈值或准确率；不得据Foundry品牌推定使用大语言模型。
+
+- 【未披露】现有记录未给出各阶段合同费用、人员投入与净节省。这里的“未公开”仅指引用证据未能支持，不断言不存在公开采购合同。
+
+- 【未披露】患者级数据边界、实际权限配置及审计验证结果未由本轮材料复核，不能从一般平台能力推定全部控制已落实。
 
 ### 关键技能
 - 公共卫生数据集成
@@ -1632,6 +2236,36 @@
 
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】集团沿用旧ERP且资本受限，需要看清订单成本、工票位置、利润及排程。原记录明确是两个业务部的制造运营，不是替换所有ERP。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+
+### 工程师具体做了什么
+
+- 【公开披露】四名工程师赴缅因州与采购、生产和总经理共同确定优先事项；约3—4周交付首批，约两个月推出10个应用。应用数不等于十个独立案例。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+
+### 技术方案与数据流程
+
+- 【公开披露】数据关系覆盖展开后的材料清单、销售订单、工票、工序、设备及成本；经理据此检查生产位置和排程。客户另提在个人沙箱用历史CRM预测报价成交，不能将该探索并入已上线制造模型。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按订单—材料清单版本—工票—工序—设备建立关联，显式处理替代材料、报废和返工；先让工厂经理核对样本订单的实际成本，再推广成本视图。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：把排程可行性与模型评分分开验收：检查设备能力、维护窗口、工序前后依赖、批量及材料到货；建议发布前由生产负责人确认。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：如评估CRM成交模型，应按时间切分历史报价，避免把后续销售活动或已知成交结果泄漏到输入；这不是已披露的客户评测流程。
+
+### 解决程度与业务提升
+
+- 【公开披露】可量化披露主要是应用交付速度和范围；没有可比较的准时交付率、单位成本或产能改善数据，不能把“更快建应用”换算为制造净收益。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+
+### 尚未公开的信息
+
+- 【未披露】ERP产品、连接方式、数据同步延迟、主数据去重和历史成本回算规则未披露。
+
+- 【未披露】生产排程是否采用优化器、模型名称、报价预测训练集与准确率未披露；未披露生产写回权限和异常停机机制。
+
+- 【未披露】客户对安全框架的口述不是独立合规认证审计；合同金额、运维成本及各应用活跃使用率未披露。
+
 ### 关键技能
 - 制造业务访谈
 - 材料清单与工序建模
@@ -1674,6 +2308,36 @@
 
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】供应链团队每周重排关键物料分配；缺一类组件就可能阻塞组装，提前到货的其它物料继续占用库存。优化目标是Time of Ownership，即物料入厂到随产品离厂的时间。 [来源6](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户和工程师共同建模；Sid Singh说明把产品团队带到NVIDIA现场。FDE角色来自演讲转写，不是从技术文章作者身份推定。 [来源4](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+
+### 技术方案与数据流程
+
+- 【公开披露】Ontology关联物料、工厂、承诺、产能、分配及定性信号；cuOpt从中取数，求解最小化库存占用时间的混合整数线性规划并写回分配及约束。 [来源6](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
+
+- 【公开披露】专家决定、理由和结果成为训练记录；NeMo Anonymizer去敏，Data Designer扩充样例，AutoModel以LoRA微调Nemotron 3.5 Lightning，基础权重冻结。Autopilot保留数据—模型—建议溯源。 [来源6](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
+
+- 【公开披露】回测只给决策当日已知信息，隐藏结果；模型建议由规划者最终决定，接受、编辑、推翻及实际结果回写。强化学习仍是未来方向，生产模型不会自行训练。 [来源6](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：除与专家一致率外，分开量化提前备料、缺料停线和承诺违约的实际代价；不要把复制历史选择当作业务最优性的充分证明。
+
+### 解决程度与业务提升
+
+- 【公开披露】开发基准准确率86.7%，平衡准确率58.6%、Macro-F1为57.5%；这不等于真实交付改善86.7%。作者承认未来生产风险预测仍困难。 [来源6](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
+
+### 尚未公开的信息
+
+- 【未披露】未提供评测样本量、时间区间、独立测试集和逐类别混淆矩阵，不能据开发集指标认定广泛泛化。
+
+- 【未披露】未给出上线后库存占用时间、吞吐量、规划工时的可比较变化及总费用；训练快不能代替净成本计算。
+
+- 【未披露】具体接入系统、访问授权矩阵、部署地点、实际推理延迟、发布阈值及回滚程序未披露。
+
 ### 关键技能
 - 供应链本体建模
 - 约束优化与人工智能协作
@@ -1694,6 +2358,7 @@
 3. [Sippin’ Sovereignty技术访谈](https://www.youtube.com/watch?v=O65qIwMLAqI)
 4. [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
 5. [NVIDIA联系与总部地址](https://www.nvidia.com/en-us/contact/)
+6. [NVIDIA技术团队：供应链决策、cuOpt与Nemotron后训练](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
 
 ## 34. Acrisure：Auris AI保险经纪运营系统
 
@@ -1717,6 +2382,38 @@
 
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】保险工作跨客户、承保公司、合同与运营数据，系统及流程割裂；官方定位是把这些信息放入受权限控制的共同运营环境。 [来源5](https://markets.financialcontent.com/stocks/article/bizwire-2026-9-10-acrisure-unveils-auris-ai-a-new-ai-operating-system-in-the-insurance-industry)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户自己的技术团队与业务人员基于Ontology和AIP建设；演讲明确双方工程师及分析师到多个美国城市共同改进核心保险流程。 [来源3](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/) [来源5](https://markets.financialcontent.com/stocks/article/bizwire-2026-9-10-acrisure-unveils-auris-ai-a-new-ai-operating-system-in-the-insurance-industry)
+
+### 技术方案与数据流程
+
+- 【公开披露】发布稿将客户洞察、风险、安排保险、服务需求和承保公司关系纳入共享环境；它并未公布底层字段映射或具体模型。 [来源5](https://markets.financialcontent.com/stocks/article/bizwire-2026-9-10-acrisure-unveils-auris-ai-a-new-ai-operating-system-in-the-insurance-industry)
+
+- 【公开披露】演讲中的The Exchange连接承保门户、邮件、评级引擎、计算机操作与MCP；专业人员选择市场及报价并保存理由，服务阶段保留人工确认。属于演示工作流，不保证每条链路全面投产。 [来源3](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将客户事实、保险条款原文、模型推断与人工意见分开存储；比较报价时保留免赔额、除外责任及生效日期，避免只按保费排序。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：对跨承保公司操作使用最小权限，并把提交报价、绑定保障、生成文件各设独立授权与重试状态，避免重复提交或错误绑定。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：评测应覆盖缺失人员清单、过期条款、同名客户和不同格式报价，分别记录抽取错误及专业人员推翻建议的原因。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方确认发布及生产方向，但声明实际能力和效果依用例、数据与实施而异；没有可比较的转化率、周转时间或净收益，不把集团规模当采用人数。 [来源5](https://markets.financialcontent.com/stocks/article/bizwire-2026-9-10-acrisure-unveils-auris-ai-a-new-ai-operating-system-in-the-insurance-industry)
+
+### 尚未公开的信息
+
+- 【未披露】模型供应商及版本、微调与检索策略、标注数据、评测集规模和失败率未披露。
+
+- 【未披露】各演示环节上线批次、服务代理自主执行范围、细粒度租户隔离和第三方授权控制未披露。
+
+- 【未披露】合同金额、推理费用、错误保险决定的返工成本及净节省未披露。
+
 ### 关键技能
 - 保险对象与业务规则建模
 - 非结构化投保材料处理
@@ -1736,6 +2433,7 @@
 2. [Acrisure官方发布的演讲说明](https://www.linkedin.com/posts/acrisure_connecting-the-insurance-industry-with-auris-activity-7505249848829440001-lH_p)
 3. [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
 4. [Acrisure办公室与总部](https://www.acrisure.com/locations)
+5. [Acrisure官方发布：Auris AI保险运营平台](https://markets.financialcontent.com/stocks/article/bizwire-2026-9-10-acrisure-unveils-auris-ai-a-new-ai-operating-system-in-the-insurance-industry)
 
 ## 35. Joint Commission：Reforge认证检查员排班与标准知识平台
 
@@ -1761,6 +2459,36 @@
 
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】检查员资格、执照、位置与可用时间原散在系统、表格和团队经验中，排班需数周；不是一般日历排时间，还需匹配医疗机构的检查专业要求。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户点名约五位FDE；排班应用建设约八个月。客户本人另感谢内部Reforge技术团队及Palantir协作，强调工作仍处早期并持续推进。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/) [来源4](https://www.linkedin.com/posts/walders_aipcon-reforge-activity-7441149075061813248-foEz)
+
+### 技术方案与数据流程
+
+- 【公开披露】Ontology连接检查员资格、机构、许可及日程，Solver生成安排；标准知识进入Foundry并公开查询，天气事件可触发重排或取消。现场展示采用非真实机构数据。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+
+- 【公开披露】客户转发的供应商说明进一步提到双向写回、求解优化和代理流程，但没有披露每个目标系统的接口或事务处理。 [来源4](https://www.linkedin.com/posts/walders_aipcon-reforge-activity-7441149075061813248-foEz)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将执照有效期和专业资质作为硬约束，将差旅费用与偏好作为软目标；对无可行解给出冲突解释，禁止静默放松法定条件。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：每次排班应版本化保存输入、约束、审批人及取消通知状态，风暴下批量改动也需能恢复和逐项核对。
+
+### 解决程度与业务提升
+
+- 【公开披露】客户报告约600名检查员的计划生成从数周降到约三分钟；仅为排班计算/准备口径，不是现场认证检查耗时。实时认证与压缩3—5天到访仍是未来设想。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+
+### 尚未公开的信息
+
+- 【未披露】Solver产品、数学目标、硬软约束清单、求解质量及历史计划回测结果未披露。
+
+- 【未披露】标准查询的检索/模型架构、引用正确率、标准更新审核程序和实际写回权限未披露。
+
+- 【未披露】排班员实际工时、差旅节省、认证质量变化和总项目费用未披露，不能从三分钟推导全部业务成本下降。
+
 ### 关键技能
 - 人员资格和执照建模
 - 约束排班
@@ -1779,6 +2507,7 @@
 1. [Joint Commission与Palantir官方合作公告](https://www.jointcommission.org/en/knowledge-library/newsletters/joint-commission-online/14-may-25)
 2. [AIPCon 9参与者演讲转写](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
 3. [Joint Commission联系页](https://www.jointcommission.org/en-us/contact-us)
+4. [William Walders本人对Reforge建设团队及阶段的说明](https://www.linkedin.com/posts/walders_aipcon-reforge-activity-7441149075061813248-foEz)
 
 ## 36. GE Aerospace：航空发动机供应约束识别与生产协同
 
@@ -1803,6 +2532,36 @@
 - 发动机产出：2025年同比增加26%。口径：客户明确归于技术与FLIGHT DECK精益运营共同作用；不可单独归因于Palantir或工程师。
 
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】J85保障试点针对零件需求与短缺；内部团队原需每周一多人各花约八小时拼表找瓶颈。发动机少一件关键零件便可能延迟维修或装配。 [来源1](https://www.geaerospace.com/news/press-releases/ge-aerospace-and-palantir-expand-partnership-transform-military-aircraft-readiness) [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户称六名FDE次周到辛辛那提；团队将ERP、计划、PLM和供应商系统连接到同一运营对象模型。官方确认从2024年J85扩展到内部生产，而非两个独立案例。 [来源1](https://www.geaerospace.com/news/press-releases/ge-aerospace-and-palantir-expand-partnership-transform-military-aircraft-readiness) [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+
+### 技术方案与数据流程
+
+- 【公开披露】官方说明覆盖选定供应链功能：履约、采购、分配、维修及客户服务；以企业数据预测需求和提前识别约束，代理处理重复工作，人员解决业务问题。不能据此认定所有部门都已无人化。 [来源1](https://www.geaerospace.com/news/press-releases/ge-aerospace-and-palantir-expand-partnership-transform-military-aircraft-readiness)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：把每条短缺预警链接到零件版本、发动机配置、供应承诺及修理需求；记录为何某件缺料影响某一发动机，而不只输出排行榜。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将预警提前量与误报率按3、6、12个月分别评测，并按零件替代性和安全影响分层；不以找到更多风险代替实际修复瓶颈。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：处置建议应指向采购或供应商行动责任人，完成后回收实际交付结果；军民项目的数据及可见范围需单独验收。
+
+### 解决程度与业务提升
+
+- 【公开披露】领导者现在得到近实时约束信息。2025年发动机产出增长26%由客户归于技术与FLIGHT DECK精益运营共同作用；不能单独归因FDE或Palantir，也不是单位成本降幅。 [来源2](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+
+### 尚未公开的信息
+
+- 【未披露】未披露具体大模型、预测器、优化方法、知识检索方式、误报漏报或验收集。
+
+- 【未披露】接口刷新频率、推荐动作的自动批准边界、回写/回滚方式及军民数据隔离配置未披露。
+
+- 【未披露】J85就绪率和内部生产的可比较归因指标、实施费用、软件费及净收益未披露。
 
 ### 关键技能
 - 多系统供应链集成
@@ -1845,6 +2604,28 @@
 - MVP交付周期：12周。口径：AWS负责人的项目级一手帖子明确称从kickoff到deployed MVP。
 
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
+
+### 介入前的问题与基线
+
+- 【公开披露】需要把实时赛事事件识别从想法推进到可部署原型；人工识别耗时、历史错误率与原系统未披露。 [来源1](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
+
+### 工程师具体做了什么
+
+- 【公开披露】AWS负责人描述团队进入客户站会、代码库并共同交付；官方新增投资公告明确NBA属于已嵌入团队的客户。 [来源1](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ) [来源2](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers)
+
+### 技术方案与数据流程
+
+- 【公开披露】已公开的是实时事件检测MVP及交付周期，没有公布本项目视频输入、传感器、模型、事件标签或数据存储架构。 [来源1](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：先定义事件分类和金标准，分开评估事件级准确率、漏报、时延及人工确认；直播业务还需异常降级与人工回退。
+
+### 解决程度与业务提升
+
+- 【公开披露】负责人报告12周从启动到部署MVP；这是交付时间，不是已证明赛场全量生产覆盖或12周投资回收。 [来源1](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
+
+### 尚未公开的信息
+
+- 【未披露】数据流、具体AWS服务、模型、评测结果、上线规模、人工确认、成本和节省值未披露。
 
 ### 关键技能
 - 分析：实时事件标签和评测口径
@@ -1890,6 +2671,28 @@
 
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
+### 介入前的问题与基线
+
+- 【公开披露】全球制造信息散在系统与文档，员工需跨语言查找政策、制造规范和排障知识。现代化还涉及100家工厂与400个应用，但不是助手单独规模。 [来源1](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
+
+### 工程师具体做了什么
+
+- 【公开披露】AWS Generative AI Innovation Center顾问与Jabil用Amazon Q Business合作，首轮助手1周完成，后续数周补文档、工单和知识文章。正式个人FDE（Forward Deployed Engineer，前线部署工程师）头衔未公开。 [来源1](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
+
+### 技术方案与数据流程
+
+- 【公开披露】检索知识覆盖约1700份政策/制造/排障文档，支持全球员工多语言提问。正文没有给切块、向量库、模型版本及回答引用结构。 [来源1](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：接入时保留原文档访问权限；按语言、岗位和故障类型测试正确率与来源可追溯性，危险维修建议应交合格人员核验。
+
+### 解决程度与业务提升
+
+- 【公开披露】助手改善排障与信息获取是定性披露。67—83%部署提速和74%处理改善属于EBA及基础设施工作；23%成本下降属于Glue Flex Data Dispatcher，不是助手节省。 [来源1](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
+
+### 尚未公开的信息
+
+- 【未披露】助手回答准确率、节时基线、实际月活、订阅和实施费、生产质量与净收益未公开。
+
 ### 关键技能
 - 分析：多源制造知识接入
 - 分析：多语言检索评价
@@ -1933,6 +2736,30 @@
 
 - 项目节时与成本：未披露可单独归因值。口径：集团55+ AI项目、每年5,400万查询量和200个用例不能全归给Mistral本项目。
 
+### 介入前的问题与基线
+
+- 【公开披露】客户信息请求量大，货物放行、航运单证和业务知识跨系统；集团年5400万请求是总需求量，不是AI已经处理量。 [来源1](https://www.cmacgm-group.com/en/news-media/ai-now-summit-ai-deployment-across-cma-cgm-group-operations)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户称约20名Mistral工程师已加入马赛及媒体现场团队，五年合作从2025年4月开始；属于嵌入式交付职责，非已核实个人职称。 [来源1](https://www.cmacgm-group.com/en/news-media/ai-now-summit-ai-deployment-across-cma-cgm-group-operations)
+
+### 技术方案与数据流程
+
+- 【公开披露】共同工具涉及单证、货物放行辅助、客户信息答复和媒体事实核查；供应商只确认功能层，没有公开完整实现。 [来源2](https://mistral.ai/customers/cma-cgm/)
+
+- 【公开披露】MAIA连接内部应用和业务知识，6月1日起渐进推广、设计覆盖80000人是当时计划；复杂客服交人工。集团其他供应商项目不可并入同一交付。 [来源1](https://www.cmacgm-group.com/en/news-media/ai-now-summit-ai-deployment-across-cma-cgm-group-operations)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：单证抽取与校验、检索答复和实际放行权限应分离；对不可逆业务动作保留授权与复核，并记录每次取证来源。
+
+### 解决程度与业务提升
+
+- 【公开披露】客户强调响应质量与运营提升，但55个AI项目、200个用例是集团组合，不是Mistral单案效果。 [来源1](https://www.cmacgm-group.com/en/news-media/ai-now-summit-ai-deployment-across-cma-cgm-group-operations)
+
+### 尚未公开的信息
+
+- 【未披露】模型版本、文档解析和校验规则、系统接口、放行审批、准确率、事故率、单案成本及量化效率未披露。
+
 ### 关键技能
 - 航运单证处理
 - 业务系统连接
@@ -1975,6 +2802,32 @@
 
 - 效率与成本：未公开可审计量化结果。口径：官方定性称提升人员生产率；参数数和基准表现不等于运行节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】新加坡公共安全需要本地语言、法律语境和可控数据环境，通用模型与联网部署不能覆盖所有要求。 [来源1](https://mistral.ai/customers/htx/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Mistral研究工程师与HTX团队共建Phoenix；从2025年3月合作，支持本地权重及隔离环境。 [来源1](https://mistral.ai/customers/htx/)
+
+### 技术方案与数据流程
+
+- 【公开披露】官方介绍用Forge/Studio适配模型，在NGINE提供Phoenix Small/Medium用于摘要、分类与聊天。 [来源1](https://mistral.ai/customers/htx/)
+
+- 【公开披露】相关联合论文披露Phoenix-VL 1.5 Medium：123B语言模型加视觉模块，本地继续训练及上下文扩展，再做监督/偏好优化；数据去重、基准去污染并用人工本地标注。论文模型不能自动等同所有NGINE版本。 [来源4](https://arxiv.org/pdf/2605.10391)
+
+- 【公开披露】论文给出vLLM在B200 BF16的推理基准、并行与并发取舍；这是公开技术评测，不是所有生产集群的实际配置。 [来源4](https://arxiv.org/pdf/2605.10391)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将公共安全业务的人工决定权限与模型实验指标分开管理；只在批准的用途、数据和网络边界内上线。
+
+### 解决程度与业务提升
+
+- 【公开披露】联合论文新加坡政府知识分数0.8366→0.9265为零样本pass@1基准；不表示公共安全成效提高同一比例。安全测试仍有提示注入/泄露失败。 [来源4](https://arxiv.org/pdf/2605.10391)
+
+### 尚未公开的信息
+
+- 【未披露】实际执法使用规模、人工签批规则、生产差错、经济成本与业务效率未公开；实验安全分数不保证安全。
+
 ### 关键技能
 - 隔离网模型部署
 - 领域训练与评测
@@ -1993,6 +2846,7 @@
 1. [Mistral官方HTX案例](https://mistral.ai/customers/htx/)
 2. [HTX官方合作扩展](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/htx-expands-partnership-with-mistral-ai)
 3. [HTX官方：主权AI实际架构](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/why-sovereign-ai-is-key-to-scaling-public-safety-impact)
+4. [HTX与Mistral联合论文：Phoenix-VL 1.5 Medium Technical Report](https://arxiv.org/pdf/2605.10391)
 
 ## 41. Deliveroo：骑手入驻与餐厅状态语音运营
 
@@ -2017,6 +2871,32 @@
 - 餐厅核实触达：75%。口径：评估期电话联系并核实营业状态的比例。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】骑手申请流程中途流失，人工重新联系耗时且地区间不一致；餐厅团队每周人工拨打数千电话核实骑手报告的关门状态。 [来源1](https://elevenlabs.io/blog/deliveroo)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE署名案例记载双方共同开发RCI标签激活代理；客户确认ElevenLabs工程团队支持高效部署。运营团队从重复联络转向特殊个案。 [来源1](https://elevenlabs.io/blog/deliveroo)
+
+### 技术方案与数据流程
+
+- 【公开披露】三个触发点分开：申请静止超过两周→按偏好语言确认继续意愿并指引；餐厅被标记可能关门→外呼核验营业时间并实时更新业务系统；标签送达五个工作日仍未激活→联系经理指导安装。 [来源1](https://elevenlabs.io/blog/deliveroo)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：建立三条独立漏斗：接通、确认、系统写入、实际完成；重试前查最新状态，避免重复催办或把语音信箱算完成。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：营业状态写回应保留通话证据、时间及人工纠错入口；对无人接听和回答含糊的情形保持未知，不能自动改成关门。
+
+### 解决程度与业务提升
+
+- 【公开披露】初期骑手触达超过80%，30%在来电后七天继续申请；餐厅核实成功75%，RCI站点触达86%。后两项不是订单增长或标签实际激活率；数千骑手联络从数天/周缩至数小时。 [来源1](https://elevenlabs.io/blog/deliveroo)
+
+### 尚未公开的信息
+
+- 【未披露】模型、电话供应商、系统API、身份验证、写入权限和转人工阈值未披露。
+
+- 【未披露】各漏斗样本、对照组、激活净增量、误写率、部署周期与全口径成本未披露。
 
 ### 关键技能
 - 分析：多语言语音编排
@@ -2055,6 +2935,32 @@
 - AI会话满意度：超过82%。口径：客户自报CSAT；不是自动解决率，样本量和期间未知。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】旧支持由逐渐积累的固定流程构成，真正自助有限，客户无法直接修改保单；取消、续保及定价沟通涉及合规与情境判断。 [来源1](https://sierra.ai/customers/marshmallow)
+
+### 工程师具体做了什么
+
+- 【公开披露】Sierra承担大量实现；客户工程师和数据科学家共同塑造行为、学习Agent SDK并接入自有API。双方每日站会，每一两天发版；客服和运营映射旅程，QA参与准确性、语气与合规检查。这是嵌入式交付职责，未披露FDE职位名。 [来源1](https://sierra.ai/customers/marshmallow)
+
+### 技术方案与数据流程
+
+- 【公开披露】Marsha通过Agent SDK与客户API支持地址/车辆变更、取消、续保等旅程；人工保留适合人工介入的会话。IQS内部质量评分包含监管合规，是质量反馈依据。 [来源1](https://sierra.ai/customers/marshmallow)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将对话理解与最终保费计算、政策资格及保单写入分开；客户确认变更前显示后果，失败时保留原保单和可追溯记录。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：固定测试集覆盖跨语言歧义、地址变更影响价格、取消退款及续保；同时监测IQS、CSAT、重复联系和升级率。
+
+### 解决程度与业务提升
+
+- 【公开披露】AI会话CSAT超过82%；内部IQS常高于平均人工，但整体人工CSAT仍更高。未给自动解决率或财务收益。 [来源1](https://sierra.ai/customers/marshmallow)
+
+### 尚未公开的信息
+
+- 【未披露】基础模型、API名称、检索方式、权限检查、定价决策边界、人工升级条件与逐次审批方式未披露。
+
+- 【未披露】IQS权重、样本量、CSAT观察期、响应时延和成本未披露，不能推导AI优于全部人工。
 
 ### 关键技能
 - 分析：保单事务API
@@ -2096,6 +3002,34 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】原先用纸质记录和表格跟踪检查，易漏检；缺少实时站点信息，维修偏被动，承包商缺陷协作分散，难扩展到多站点。 [来源1](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
+
+### 工程师具体做了什么
+
+- 【公开披露】工程师梳理检查→缺陷→供应商工单，设计租户隔离与共享IoT管道，并在上线后持续调优维护模型和仪表盘。 [来源1](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
+
+- 【公开披露】FDE服务页逐项目说明Sutherland系统按客户真实流程构建，工程师次日参加站会处理反馈；通用合同条款不等于本项目合同。 [来源2](https://www.hashlogics.com/hire/forward-deployed-engineers)
+
+### 技术方案与数据流程
+
+- 【公开披露】AWS承载传感器管道、告警模型、检查引擎和支付门户；油罐液位数据支持异常提醒，缺陷进入升级/工单流程。独立子域分租户，五级角色控制；Vue.js、Laravel、React Native为披露技术栈，PayPal用于承包商付款。 [来源1](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
+
+- 【公开披露】AWS RDS静态加密、TLS 1.3传输、JWT/bcrypt、审计日志、限流及CSRF保护；站点文档有版本控制。没有公开LLM，不能把预测维护自动称为生成式智能体。 [来源1](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：现场异常需按漏报和误报分别验收；传感器断流、校准偏差和跨租户访问应进入测试，付款和高风险维护保留人工批准。
+
+### 解决程度与业务提升
+
+- 【公开披露】客户报告人工错误少40%、运营开销少30%、检查准确度高30%、维护周转快20%；计算定义和对照期未公开，运营开销并不等同已审计净现金节省。 [来源1](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
+
+### 尚未公开的信息
+
+- 【未披露】告警算法、训练数据、阈值、模型版本、预测提前量与验证集未披露。
+
+- 【未披露】传感器数量、实际活跃站点、付款批准流程、工单关闭验收、实施报价及净收益未披露。
+
 ### 关键技能
 - 分析：IoT异常与数据缺口
 - 分析：多租户隔离与工单闭环
@@ -2135,6 +3069,34 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】技师接电话会打断维修，造成漏接和漏预约；逐家供应商询价依赖人工，报价分散，多门店电话及WhatsApp处理不一致。 [来源1](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
+
+### 工程师具体做了什么
+
+- 【公开披露】团队先画出入呼预约和外呼询价两条流程，再交付FastAPI后台与React仪表盘，多门店上线后用真实转录调优并以Sentry监控。 [来源1](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
+
+- 【公开披露】官方FDE页具名说明工程师在客户系统内按门店流程构建，并参加站会接收生产问题。 [来源2](https://www.hashlogics.com/hire/forward-deployed-engineers)
+
+### 技术方案与数据流程
+
+- 【公开披露】已公开数据流：Twilio接入电话→Deepgram转写/轮次处理→OpenAI Chat Completions推理与函数调用→FastAPI查日历写预约→Deepgram语音确认→WebSocket向仪表盘推送预约及转录。外呼按请求收集供应商库存和价格，返回比较，不等于自动采购。 [来源1](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
+
+- 【公开披露】后台存通话记录、转录及AI摘要；PostgreSQL、Celery/Redis、AWS S3、FullCalendar、PyMuPDF报价文档解析列于栈中。JWT配HTTP-only刷新cookie、角色权限、受保护webhook、HTTPS和bcrypt；经理、前台、采购各有角色。 [来源1](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：验收以预约真实落库且无重复为准；模拟并发抢占、时区/改约、口音、噪声和供应商听错价格，设置人工修正及重试幂等。
+
+### 解决程度与业务提升
+
+- 【公开披露】已在多维修点上线，员工可统一查看通话、录音、转录、报价和预约；无公开接通率、预约转化、节省工时或财务结果。 [来源1](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
+
+### 尚未公开的信息
+
+- 【未披露】OpenAI具体模型、提示词、工具参数、录音保留期、授权同意、转人工策略及正式评测集未披露。
+
+- 【未披露】部署时间、门店数量、通话量、延迟分位数、重复预约率、实施费与每通成本未披露。
+
 ### 关键技能
 - 分析：语音与工具调用
 - 分析：日历并发控制和报价结构化
@@ -2173,6 +3135,32 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【未披露】官方角色文章只概述复杂金融服务咨询，未披露原客服系统、人工处理时长或旧解决率。
+
+### 工程师具体做了什么
+
+- 【公开披露】Decagon创始工程师Amy Jin在Agent Engineer文章中具名确认团队为Bilt构建金融咨询代理。该角色负责嵌入客户、设计、部署和生产迭代；不是已核验的FDE正式职称。 [来源1](https://decagon.ai/blog/introducing-agent-engineer)
+
+### 技术方案与数据流程
+
+- 【公开披露】本项目可确认的是金融咨询支持及合规、安全要求；未公布实际数据流、API、知识库、模型或可写操作。角色文章一般性的提示链、路由、回退能力不能逐项套入Bilt。 [来源1](https://decagon.ai/blog/introducing-agent-engineer)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：先把只读账户解释与真实资金/信用决策划开；用已脱敏历史咨询验证答案、权限过滤和人工转接，任何扩权需单独验收。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：定义解决为问题正确闭环且观察期内未重开，分别记录人工接管和用户放弃，避免将退出对话算解决。
+
+### 解决程度与业务提升
+
+- 【公开披露】角色文章报告70%解决率，但分母、问题范围、时间窗和成功标准均未给出。链接所指Bilt独立案例本次重定向到案例目录，不能补出更多项目技术细节。 [来源1](https://decagon.ai/blog/introducing-agent-engineer)
+
+### 尚未公开的信息
+
+- 【未披露】客户侧负责人、基线、渠道、部署范围、评测集、上线迭代周期、人工控制和底层模型未披露。
+
+- 【未披露】70%是否含人工帮助、合规失败率、客户满意度、合同价及净节省未披露。
+
 ### 关键技能
 - 分析：金融问答溯源
 - 分析：敏感操作权限隔离
@@ -2210,6 +3198,32 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】旧决策树难处理模糊问题与不同客户流程，常误路由；聊天自助约38%，邮件没有AI。HR、薪酬及IT等12余产品需要不同专家。 [来源1](https://decagon.ai/case-studies/rippling)
+
+### 工程师具体做了什么
+
+- 【公开披露】明确FDE工程支持：双方定制API和路由，识别75余标签及升级场景；一次旧产品紧急停用时，一天内以Agent Assist替换并适配品牌语气。 [来源1](https://decagon.ai/case-studies/rippling)
+
+### 技术方案与数据流程
+
+- 【公开披露】已有知识库及历史工单加内部API提供上下文，例如查员工医疗保险登记状态；代理追问澄清，再回答或执行动作。75余标签将会话送到合适专家，人工客服另用AI Assist维持回复质量。 [来源1](https://decagon.ai/case-studies/rippling)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按管理员/员工和产品权限建立接口授权矩阵；回答可见范围必须由后端校验，不能仅由对话模型判断。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：分别评估模糊问题澄清、跨产品标签、多意图路由、无权限查询及升级；API停用应有兼容测试与回退。
+
+### 解决程度与业务提升
+
+- 【公开披露】聊天分流从38%升至50%以上，页首32%是相对增幅口径；另报告路由即时改善7%，未说明百分点或相对值。上线AI邮件分流，覆盖40万用户是服务范围，非40万已实际使用AI。 [来源1](https://decagon.ai/case-studies/rippling)
+
+### 尚未公开的信息
+
+- 【未披露】模型、API清单、写入操作范围、身份校验、知识更新机制、完整路由规则与评测样本未披露。
+
+- 【未披露】邮件分流率、7%路由改善定义、CSAT对照、工程费用和全口径节省未披露。
+
 ### 关键技能
 - 分析：API权限隔离
 - 分析：多产品路由评测
@@ -2246,6 +3260,34 @@
 - 客服运营成本：下降65%。口径：供应商自报；绝对费用、期间及是否包含全部实施成本未知。
 
 - 聊天渠道占比：5%升至80%。口径：这是客服流量渠道占比，不是80%自动解决率。
+
+### 介入前的问题与基线
+
+- 【公开披露】原邮件、短信、表单和聊天均须人工逐条处理，即使使用模板也需人工；聊天仅占5%，实时排班难平衡，增长又不希望同步增加人数。 [来源1](https://decagon.ai/case-studies/curology)
+
+### 工程师具体做了什么
+
+- 【公开披露】Agent Engineer文章明确一名工程师将数十个重复流程改造成自主订阅管理与物流查询；属于嵌入式Agent Engineer职责证据。 [来源2](https://decagon.ai/blog/introducing-agent-engineer)
+
+- 【公开披露】项目将支持统一到代理系统，并为同集团Agency设独立帮助中心、升级协议和业务规则，保留品牌差异。 [来源1](https://decagon.ai/case-studies/curology)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户可更新地址、补发订单、取消/暂停/延迟发货、申请退款及查物流，覆盖聊天、短信与邮件。客户要求医疗相关问题只由AI处理适当范围，但具体医疗升级规则未公开。 [来源1](https://decagon.ai/case-studies/curology)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：订阅和物流操作应与临床建议分开；退款请求不等于退款自动批准，需在服务端限制金额、权限及重试重复操作。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按两个品牌分别测政策、帮助中心检索及升级，验证跨渠道身份关联不会泄露健康信息。
+
+### 解决程度与业务提升
+
+- 【公开披露】客服运营成本报告下降65%，未披露绝对成本及是否覆盖实施维护；聊天承担流量从5%升至80%，属于渠道迁移，不能写成80%问题由AI独立解决。 [来源1](https://decagon.ai/case-studies/curology)
+
+### 尚未公开的信息
+
+- 【未披露】模型、后台API、临床问题拒答/升级规则、患者认证及健康信息存储保留未披露。
+
+- 【未披露】成本基线期、净节省、处方相关操作权限、自动解决率和质量样本未披露。
 
 ### 关键技能
 - 分析：订阅事务编排
@@ -2286,6 +3328,32 @@
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】迁移前是第一代工作流驱动客服平台；年初咨询量显著上涨，旧分流率59%，需要更灵活的支持。 [来源1](https://decagon.ai/case-studies/noom)
+
+### 工程师具体做了什么
+
+- 【公开披露】官方角色文章逐项点名一名Agent Engineer改造Noom支持基础设施；直接客户页确认迁移及上线效果。正式FDE职称未披露。 [来源1](https://decagon.ai/case-studies/noom) [来源2](https://decagon.ai/blog/introducing-agent-engineer)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户页列使用Chat，确认从旧工作流平台迁往AI支持；未说明订阅、医疗、教练等具体用例及后台动作。通用Decagon功能不能填补该项目架构。 [来源1](https://decagon.ai/case-studies/noom)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：迁移时先从旧流程提取意图、升级点与政策，影子比较新旧回复；年初旺季应单独切片，避免把季节流量差异当模型提升。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：区分常规账户支持和健康建议，核验何时必须升级；同时记录重复来访、投诉与错误分流，防止只优化分流率。
+
+### 解决程度与业务提升
+
+- 【公开披露】30天内分流从59%升到68%，增加9个百分点；不是减少68%全部客服人员。案例宣称维持质量，但没有公开独立质量评分。 [来源1](https://decagon.ai/case-studies/noom)
+
+### 尚未公开的信息
+
+- 【未披露】模型、知识来源、工具/API、人工批准、健康问题边界、渠道间记忆和部署区域未披露。
+
+- 【未披露】咨询量、分流计算公式、复联率、抽样方法、CSAT数字和成本未披露。
+
 ### 关键技能
 - 分析：旧客服迁移
 - 分析：健康问题边界评测
@@ -2324,6 +3392,30 @@
 - 解决速度：最高10倍。口径：限由代理处理的问题；没有全体来电对照、样本或绝对基线。
 
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】信息型来电如产品指导、付款状态和后续步骤原本也须排队等人工，拉长等待并占用客服。 [来源1](https://elevenlabs.io/blog/klarna)
+
+### 工程师具体做了什么
+
+- 【公开披露】美国电话第一线已上线；FDE服务页有Klarna产品经理对共同构建、迭代的具名公司评价，但评价未逐字限定美国电话功能，因此为双源组合证据。 [来源1](https://elevenlabs.io/blog/klarna) [来源2](https://elevenlabs.io/agents/forward-deployed-engineers)
+
+### 技术方案与数据流程
+
+- 【公开披露】ElevenAgents处理信息查询、收集上下文，复杂/敏感问题或用户想要人工时转接。选型看低延迟、数据驻留选项、编排与分析，以及更换语言模型的灵活性；这些选型理由不证明启用了每个具体安全配置。 [来源1](https://elevenlabs.io/blog/klarna)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：把身份验证、付款状态查询和执行付款分开定义工具；验收必须覆盖用户主动要求人工、敏感投诉和转接队列不可用。
+
+### 解决程度与业务提升
+
+- 【公开披露】对代理处理的问题，解决最高快10倍；开放给3500万美国客户是可用范围，不是实际通话数。覆盖全球1.14亿客户是后续计划，不能计作已部署。 [来源1](https://elevenlabs.io/blog/klarna)
+
+### 尚未公开的信息
+
+- 【未披露】具体模型、电话/CRM接口、身份验证、知识源、数据驻留地点及评测流程未披露。
+
+- 【未披露】10倍基线、通话样本、自动解决占比、复杂度校正、完整成本和净收益未披露。
 
 ### 关键技能
 - 分析：语音低延迟编排
@@ -2367,6 +3459,28 @@
 
 - 成本：未公开。口径：无全成本和净收益。
 
+### 介入前的问题与基线
+
+- 【公开披露】银行希望减轻日常知识与文书任务，采用规模从2024年5月3300席增至11000席；不意味着所有任务已自动化。 [来源2](https://openai.com/index/bbva-collaboration-expansion/)
+
+### 工程师具体做了什么
+
+- 【公开披露】部署工程案例目录列BBVA；官方合作公告明确专门团队与OpenAI产品、研究和客户成功共同推进。目录的一般方法不作为该客户具体架构。 [来源1](https://deploy.co/) [来源2](https://openai.com/index/bbva-collaboration-expansion/)
+
+### 技术方案与数据流程
+
+- 【公开披露】ChatGPT Enterprise用于员工工作，形成数千自定义GPT；扩大合作包括接银行内部系统的代理和结构化培训。具体系统、权限传递与工具调用未公开。 [来源2](https://openai.com/index/bbva-collaboration-expansion/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：先按数据敏感级别开放只读任务，区分回答建议与交易执行，建立审批、审计及越权/泄露评测。
+
+### 解决程度与业务提升
+
+- 【公开披露】2025年12月公告称11000人群体超过80%每日使用、日常任务平均每周节省近3小时，属客户报告。120000人/25国是扩展范围，不能当实际活跃量。 [来源2](https://openai.com/index/bbva-collaboration-expansion/)
+
+### 尚未公开的信息
+
+- 【未披露】采样和节时测量方法、按岗位表现、质量/风险结果、合同费和净成本未披露；客户面向消费者的Blue助手不能并入员工节时指标。
+
 ### 关键技能
 - 银行流程发现
 - 权限隔离
@@ -2407,6 +3521,32 @@
 - 效率与解决程度：无可归因的已实现量化披露。口径：一手访谈称部分App功能已用OpenAI模型；未找到该项目独立的解决率、节时或吞吐指标。
 
 - 成本变化：未公开。口径：访谈称合作约一年；未找到能单独归因于该 FDE（Forward Deployed Engineer，前线部署工程师） 项目的已实现节时、成本或解决率数字；合同额、部署费用未公开。
+
+### 介入前的问题与基线
+
+- 【公开披露】2024年IntentCX公告描述传统规则式下一步建议受有限数据和固定动作库制约；这是合作背景与计划，不能当作已上线语音系统的量化基线。 [来源2](https://www.t-mobile.com/news/business/t-mobile-launches-intentcx-with-openai)
+
+### 工程师具体做了什么
+
+- 【公开披露】BG2参与者访谈可读转写描述FDE深嵌T-Mobile，搭建系统集成及音频评测；本次读取转写全文，未独立复听原视频。OpenAI另确认其试点Frontier方法。 [来源4](https://bidclub.ai/e/inside-openai-enterprise-forward-deployed-engine) [来源3](https://openai.com/index/introducing-openai-frontier/)
+
+### 技术方案与数据流程
+
+- 【公开披露】访谈T-Mobile段落确认App中已有部分文本/语音支持由OpenAI模型承接；工程工作包括模型编排、接CRM等工具、为无清晰接口的系统搭API网关，以及定义黄金评测。五分钟音频会话是否正确闭环难评分，需优化延迟与打断。 [来源4](https://bidclub.ai/e/inside-openai-enterprise-forward-deployed-engine)
+
+- 【公开披露】参与者称该客户反馈进入Realtime GA模型快照改进；并未披露客户模型版本、评分集或达到的绝对成功率。IntentCX公告中客户数据、网络数据与交易系统整合属于规划范围。 [来源4](https://bidclub.ai/e/inside-openai-enterprise-forward-deployed-engine) [来源2](https://www.t-mobile.com/news/business/t-mobile-launches-intentcx-with-openai)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按查询、诊断、变更套餐等权限拆分工具，评估全通话而非单轮文本；测插话恢复、长时间静音、噪声和人工转接，保留旧渠道降级。
+
+### 解决程度与业务提升
+
+- 【未披露】未找到可单独归因该FDE语音项目的已实现时间、解决率或成本数字；不能挪用Frontier文中匿名其他行业收益。
+
+### 尚未公开的信息
+
+- 【未披露】生产覆盖比例、全部上线功能、模型快照、后端网关清单、身份认证和审批门槛未公开。
+
+- 【未披露】语音黄金集、人工评分标准、延迟分位数、回退流程、项目投入与净收益未公开。
 
 ### 关键技能
 - 旧系统API封装
@@ -2451,6 +3591,32 @@
 
 - 成本变化：未披露每分钟、每工单总成本或项目净节省，仅称价格具有竞争力。。口径：未披露项目总投入和净节省
 
+### 介入前的问题与基线
+
+- 【公开披露】内部语音原型证明可行，但把STT、LLM和TTS投入生产，还需轮次处理、测试监控及PCI/零保留控制，形成平台级负担；目标是规模化语音支持而保留成本和业务控制。 [来源1](https://elevenlabs.io/blog/revolut)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户明确肯定FDE响应速度；多供应商对比后选择ElevenLabs，Revolut继续拥有编排与业务逻辑，保留内部模型及既有聊天/数字AI系统。 [来源1](https://elevenlabs.io/blog/revolut)
+
+### 技术方案与数据流程
+
+- 【公开披露】来电实时识别切换语言，经安全API连接自有系统，以实时账户上下文答疑，并在适用时处理争议与拒付。供应商提供语音质量、轮次处理和可靠性；页面提PCI合规及零保留选项，未公开逐项部署配置。 [来源1](https://elevenlabs.io/blog/revolut)
+
+- 【公开披露】工程方法文章介绍按成功标准建立测试、从生产转录生成回归用例、版本化及分支小流量验证。这是供应商方法背景，不证明Revolut逐项采用。 [来源2](https://elevenlabs.io/blog/building-voice-agents-that-last-some-lessons-learned-from-forward-deployed-engineering)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将接通成功、业务正确解决、资金动作授权分别监测；争议和拒付需服务端校验身份、状态与权限，避免重试产生重复操作。
+
+### 解决程度与业务提升
+
+- 【公开披露】英国及欧洲覆盖400多万客户，31余语言；工单少于5分钟，对比旧处理至少8倍时长，但包含排队且未控制复杂度。99.7%是通话成功进行率，非金融正确率。 [来源1](https://elevenlabs.io/blog/revolut)
+
+### 尚未公开的信息
+
+- 【未披露】客户模型版本、API、权限边界、人工审批/升级、选型测试集及回归阈值未披露。
+
+- 【未披露】零保留具体启用范围、独立审计、对照窗口、每分钟或每工单费用及净收益未披露。
+
 ### 关键技能
 - 语音/电话集成、身份验证、最小权限工具调用、多语言回归测试、轨迹观测、零保留配置与数据边界。
 
@@ -2488,6 +3654,38 @@
 - 人员容量：无需新增FTE可增加容量。口径：公司定性陈述；增幅、观察期和实际人均产出未公开。
 
 - 成本变化：未公开。口径：无总实施费、核保单件净成本或净节省披露。
+
+### 介入前的问题与基线
+
+- 【公开披露】核保前需要从非标准投保资料及内外部来源提取、整理风险信息；2025投资者资料确认Financial Lines的Private Not-for-Profit已生产，其它险种仍扩展中。不能把规划推广范围当已上线范围。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+
+### 工程师具体做了什么
+
+- 【公开披露】既有记录的FDE依据是CEO访谈中描述工程师与业务、技术团队共同迭代。本轮访谈转录返回403，因此角色证据保留既有结论，不宣称重新听过或核过视频；官方PDF独立证明生产流程。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf) [来源3](https://metacast.app/podcast/tbpn/D9fOtj1E/alex-karp-live-from-aipcon-10-alex-karp-peter-zaffino-chad-wahlquist-sam-berry/eylg2ePA)
+
+### 技术方案与数据流程
+
+- 【公开披露】第116页将链路拆成三段：识别文档并抽取地址、被保险人和经纪人；融合内外部资料；按风险、利润、客户价值及成交倾向排序。列出的技术包括Claude 3.5、AIP、AWS Titan/Textract、Bedrock，以及Foundry/MuleSoft集成。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+
+- 【公开披露】第123页给出层次架构：数据本体/管道与管理，模型园地/编排/治理，AI应用服务，再到消费层；这是组件级架构，不是可直接复现的接口规格。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+
+- 【公开披露】第117—118页把提取、分析、综合摘要及风险重新排序放在人工之前；核保师分析AI输出后才报价、绑定、记账、出单。不能将摘要准备少于一天扩写为自动承保少于一天。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+
+- 【公开披露】第124页RAG示例先检索文档，找到财报后把上下文与指令送给模型，答案带页码，核保师确认或修正数值；它说明设计方式，不等于披露真实评测集或生产准确率。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按险种建立关键字段及证据页码验收集；把事实抽取、推断风险和商业排序分开评测，对无法定位原文的结论要求人工回看。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方主张可在一天内完成送审资料准备，提升不增员情况下的容量；未给出人均产出变化或独立核保质量审计。投资者增长预测不能当成已经实现的项目收益。 [来源1](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+
+### 尚未公开的信息
+
+- 【未披露】未披露提示词、分块/检索/重排参数、各模型分工细节、训练/评测样本和逐险种失败率。
+
+- 【未披露】未披露模型输出如何校验为结构化字段、跨来源冲突如何解决、人工拒绝率及生产回滚策略。
+
+- 【未披露】未披露端到端核保周期、已实现净节省、整体实施维护费用及损失率变化；未将较新年度集团表现归因于此助手。
 
 ### 关键技能
 - 保险文档抽取
@@ -2533,6 +3731,36 @@
 - A350生产/交付节奏：加快33%（供应商口径）。口径：官网称A350生产增加33%；2022官方白皮书将指标标为A350交付加速33%。完整基准期、原始数量及计算方法未披露，不能自行换算为工时减少。
 
 - 项目费用与净节省：未公开。口径：供应商较广Skywise平台的节约估计不能归入此2015 A350项目。
+
+### 介入前的问题与基线
+
+- 【公开披露】A350增产需协调分散的工单、缺件与质量不合格记录；白皮书把保持质量安全下扩产作为目标。它同时讨论后来的Skywise平台，需按项目和年代拆开阅读。 [来源1](https://nabeelqu.co/reflections-on-palantir) [来源4](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
+
+### 工程师具体做了什么
+
+- 【公开披露】Nabeel Qureshi回忆2015年作为FDE加入后，在图卢兹工厂与制造人员每周共同工作四天，持续约一年；贡献是围绕现场流程构建运营软件，非部署现代生成式模型。 [来源1](https://nabeelqu.co/reflections-on-palantir)
+
+### 技术方案与数据流程
+
+- 【公开披露】把工单、缺件和不合格记录接入协作界面，工人可更新任务、查看其他团队进度、部件位置及排程；历史质量问题支持模糊/语义搜索，帮助查看过去如何处理。没有证据表明这里用了今天的大语言模型。 [来源1](https://nabeelqu.co/reflections-on-palantir)
+
+- 【公开披露】官方白皮书补充排程、班次、部件、交付与缺陷的统一视图。其维护情景模拟、海量传感器及航空公司生态属于混合的Airbus/Skywise说明，不能全部倒灌为2015驻厂项目技术。 [来源4](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：保留工单系统及质量系统各自的权威状态，以统一飞机、工位、零件和不合格单标识建立关系；不要用协作界面的“已完成”替代质量签署。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：搜索历史处置需显示适用机型、零件版本、批准日期和责任人；语义相似只是候选线索，不能授权沿用不适用的维修或制造步骤。
+
+### 解决程度与业务提升
+
+- 【公开披露】白皮书将33%标为A350交付加速；亲历者另述制造速度约四倍，但缺少共同基准，二者不互相验证。17亿美元是Skywise平台年度估计节省，不能作为该A350项目ROI。 [来源1](https://nabeelqu.co/reflections-on-palantir) [来源4](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
+
+### 尚未公开的信息
+
+- 【未披露】具体源系统名称、ETL/变更捕获方式、对象映射、搜索模型及准确率未披露。
+
+- 【未披露】实际角色权限、回写冲突处理、停机降级、验收测试及质量放行门禁未披露；不得用平台一般功能补成客户已实施事实。
+
+- 【未披露】33%的起止期、分母、原始交付数量及独立因果评估未给出；项目合同、驻场与长期维护总成本未公开。
 
 ### 关键技能
 - 工单/物料主数据统一
@@ -2588,6 +3816,32 @@
 
 - 项目净ROI：未知。口径：软件/服务存在股票支付；未提供扣除全部成本后的净节省。
 
+### 介入前的问题与基线
+
+- 【公开披露】区域航空/包机业务需要协调飞机、机组、维护、报价与订单。商业化材料把手工和传统调度作为目标痛点。 [来源1](https://s202.q4cdn.com/166167538/files/doc_presentations/2026/05/SurfOS-Go-To-Market.pdf)
+
+### 工程师具体做了什么
+
+- 【公开披露】客户投资者材料第4、12页明确Palantir FDE（Forward Deployed Engineer，前线部署工程师）和商业化/企业销售协作，基础为Foundry及AIP；不能把销售阶段意向客户说成已部署。 [来源1](https://s202.q4cdn.com/166167538/files/doc_presentations/2026/05/SurfOS-Go-To-Market.pdf)
+
+### 技术方案与数据流程
+
+- 【公开披露】材料第9页：自营航司机组值勤、飞行/乘客和维修记录，加包机报价成交及机源信息，经Foundry本体支持测试和部署代理。定价、机组、维护等为公开代理示例，未逐项证明已生产。 [来源1](https://s202.q4cdn.com/166167538/files/doc_presentations/2026/05/SurfOS-Go-To-Market.pdf)
+
+- 【公开披露】2026年10月7日公司更新确认自营航司用航班管理、机组储备及燃油优化模块；完整工资、派遣、维修数字化仍为第四季度目标。 [来源3](https://markets.financialcontent.com/stocks/article/bizwire-2026-10-7-surf-air-mobility-provides-airline-operations-business-update-highlighting-surfos-driven-efficiency-and-electric-aviation-priorities-in-hawaii?Language=english%2F1000)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：机组排班需以值勤和资质硬约束验收，优化器输出须可解释并支持人工覆盖；不能让语言模型独立作安全放行决定。
+
+### 解决程度与业务提升
+
+- 【公开披露】公司称2026年迄今每block hour直接成本下降6%、燃油成本下降9%、飞行员成本下降9%、劳动生产率提高15%。同期机队、航线和管理调整并行，不能全归因FDE。 [来源3](https://markets.financialcontent.com/stocks/article/bizwire-2026-10-7-surf-air-mobility-provides-airline-operations-business-update-highlighting-surfos-driven-efficiency-and-electric-aviation-priorities-in-hawaii?Language=english%2F1000)
+
+- 【公开披露】5月材料另报BrokerOS 2026Q1对2025Q1：头部经纪预订+32%、报价到成交更快57%、平台处理支付+40%，属管理层估计，与航空运营指标分开。 [来源1](https://s202.q4cdn.com/166167538/files/doc_presentations/2026/05/SurfOS-Go-To-Market.pdf)
+
+### 尚未公开的信息
+
+- 【未披露】具体模型、优化算法、API、评测、人工审批、故障回退、软件实施费与完整净ROI未披露；外部客户商业化目标不等于已签约收入。
+
 ### 关键技能
 - 运行数据与时序接入
 - 约束优化及调度
@@ -2631,6 +3885,30 @@
 
 - 成本变化：未公布合同费、云费用、每次会话成本或成本节省。。口径：未披露项目总投入和净节省
 
+### 介入前的问题与基线
+
+- 【公开披露】球迷原需在选秀榜单、球队需求、深度图等分散页面来回查找，难以随比赛/选秀状态追问。 [来源3](https://aws.amazon.com/blogs/media/how-nfl-next-gen-stats-built-the-nfl-iq-ai-assistant-with-amazon-quick/)
+
+### 工程师具体做了什么
+
+- 【公开披露】AWS嵌入团队与NFL共同构建NFL IQ；官方交付材料报告从概念到上线约6周。 [来源1](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers) [来源2](https://aws.amazon.com/blogs/business-intelligence/ai-powered-productivity-comes-to-the-west-coast/)
+
+### 技术方案与数据流程
+
+- 【公开披露】Amazon Quick提供共享分析层，结构化仪表板加聊天代理嵌入NFL.com；逐步接入精选NFL内容和指标定义，测试路由与回答相关性，按选秀状态选择问题。 [来源3](https://aws.amazon.com/blogs/media/how-nfl-next-gen-stats-built-the-nfl-iq-ai-assistant-with-amazon-quick/)
+
+- 【公开披露】团队迭代验证数据和上下文，不是每个用户回答均由人工实时批准；页面未给模型版本、检索参数和自动评测门槛。 [来源3](https://aws.amazon.com/blogs/media/how-nfl-next-gen-stats-built-the-nfl-iq-ai-assistant-with-amazon-quick/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：应保留统计时间和数据来源，测试不同队名/球员别名及过期信息，避免把历史预测当实时事实。
+
+### 解决程度与业务提升
+
+- 【公开披露】2026年7月8日AWS文章回顾3月上线后的744000+事件、168000+独立用户、82000+聊天。这是当时观察窗，不是2026年10月当前累计值，也不是收入或人工节省。 [来源2](https://aws.amazon.com/blogs/business-intelligence/ai-powered-productivity-comes-to-the-west-coast/)
+
+### 尚未公开的信息
+
+- 【未披露】用户满意度、回答准确率、延迟、每问费用、实施费及相对旧体验的受控提升未公开。
+
 ### 关键技能
 - 结构化数据语义层、检索与查询路由、时效刷新、嵌入式分析、消费级峰值容量与观测。
 
@@ -2668,6 +3946,32 @@
 
 - 成本变化：未公布部署费、运营费、每次成功解决成本或净现金节约；客户有“降低成本”的定性反馈。。口径：未披露项目总投入和净节省
 
+### 介入前的问题与基线
+
+- 【公开披露】电动车增长带来重复咨询，人工响应滞后，团队担忧支持量无法随充电需求扩张；要求可控制答案质量而非直接部署通用机器人。 [来源1](https://www.expertise.ai/live/case-studies/circuit-electric)
+
+### 工程师具体做了什么
+
+- 【公开披露】Expertise AI明确派FDE嵌入，工程师Ammar与客户体验负责人Félix共同迭代配置，每周调整；管理界面允许客户随产品服务更新重新训练助手。 [来源1](https://www.expertise.ai/live/case-studies/circuit-electric)
+
+### 技术方案与数据流程
+
+- 【公开披露】Voltère是网站问答助手，项目证据未证明语音部署；公开支持流程仍列帮助中心、虚拟助手及紧急充电站24小时人工电话。不能把供应商Voice AI菜单当本项目能力。 [来源1](https://www.expertise.ai/live/case-studies/circuit-electric) [来源2](https://www.lecircuitelectrique.com/nous-joindre)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：整理产品/收费/站点常见问题的版本化知识源；对紧急故障明确引导人工热线，评测旧政策、未知问题及无来源回答。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：用有互动会话为统一分母，并追踪其他渠道转移及重复联系；表单减少只有与成功解决和满意度合看才能说明用户获益。
+
+### 解决程度与业务提升
+
+- 【公开披露】上线60天后，互动会话表单联系率1.28%→0.99%，少0.29个百分点；原文称22.35%相对下降，但按展示值计算约22.66%，且标题另称30%。保留原始基数避免混用。2024年12月避免557次人工联系为供应商估计。 [来源1](https://www.expertise.ai/live/case-studies/circuit-electric)
+
+### 尚未公开的信息
+
+- 【未披露】模型、检索库、后台接口、训练含义、实际数据保留及自动转人工实现未披露。
+
+- 【未披露】百分比不一致原因、会话量、因果对照、557估算公式、正确解决率与净成本未披露。
+
 ### 关键技能
 - 知识库版本、法英双语评测、引用和拒答、人工转接、按会话/联系人去重埋点。
 
@@ -2704,6 +4008,30 @@
 - 效率与使用规模：平均接听等待30–40秒降到18秒，按端点算缩短40%–55%。供应商称事实错误率低于2%、约20%常规问题端到端处理；后者分母及抽样方法不清。。口径：客户或供应商自报；详见口径限制
 
 - 成本变化：未公布投入、通话运营成本、编制变化或净节省。。口径：未披露项目总投入和净节省
+
+### 介入前的问题与基线
+
+- 【公开披露】原热线有固定菜单和等待，非工作时段来电无人接；空袭警报时人工需入避难所。上线前平均接听等待30–40秒。 [来源1](https://elevenlabs.io/blog/ukraines-employment-services)
+
+### 工程师具体做了什么
+
+- 【公开披露】ElevenLabs FDE与乌克兰团队并肩部署；经济部将ElevenAgents接入国家就业服务联络中心，属于Obrii劳动力市场生态的一部分，文章作者亦为政府部署FDE。 [来源1](https://elevenlabs.io/blog/ukraines-employment-services)
+
+### 技术方案与数据流程
+
+- 【公开披露】代理以乌克兰语24小时回答一般问题；空袭期间承担全部流量，转人工前检查坐席是否可用，转接附AI摘要。无公民个案档案访问权，不读取付款状态或申请详情，个案审查由人工负责。 [来源1](https://elevenlabs.io/blog/ukraines-employment-services)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：用噪声、压缩电话音频和口音测试意图识别；模拟警报开始/结束、坐席瞬时离线及重复转接，确保可用性检查与实际交接一致。
+
+### 解决程度与业务提升
+
+- 【公开披露】前80天处理2698通，约总量25%；平均等候降至18秒，报告事实错误低于2%、约20%常规问题端到端完成，未公开抽样及分母。非工作时段来电超过总量20%，与20%常规解决是不同指标；月8万通为未来预测。 [来源1](https://elevenlabs.io/blog/ukraines-employment-services)
+
+### 尚未公开的信息
+
+- 【未披露】知识来源、模型版本、电话平台、坐席状态接口、摘要脱敏与保存期限未披露。
+
+- 【未披露】错误率判定/样本、转接成功计数、常规解决分母、成本、编制影响及净收益未披露。
 
 ### 关键技能
 - 方言与电话音频评测、可用性探测、摘要转接、服务中断降级、隐私分级与只读知识库。
