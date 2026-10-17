@@ -2,6 +2,555 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
+      "10月FAQ明确中国大陆用户不可用，实时行情不支持；7月文章中的Copilot即将推出已由10月入口说明更新。",
+      "AMR初期在Copilot不可用；不能概括为所有来源、所有入口都能生成摘要。",
+      "2025版Explainability Note仍列Beta旧模型，不用于推断2026生产模型。",
+      "本案例是信息辅助；不将活跃用户量解释成研究正确率、交易收益或工作时长改善。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "LSEG（伦敦证券交易所集团）",
+    "country": "英国",
+    "countryNote": "英国为集团注册所在地：Companies House列注册地址为伦敦。项目没有逐国披露用户分布或云区域；产品可用地区不能代替实际部署国家。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "原有工作需要在不同工具、数据和长文档之间人工串联信息；7月介绍将市场数据、公司披露、新闻与金融分析放在同一交互中。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "LSEG技术负责人明确披露共同工程采用RAG、MCP与前沿大模型。没有公开双方各自提交的代码、团队人数或驻场时长。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4,
+            5
+          ],
+          "text": "2026年6月23日首次正式发布；7月30日中期业绩更新报告17,000名活跃用户。未披露活跃周期、付费转化或任务节省时间。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "10月FAQ列GPT-5及以上、Claude Opus 4.6及以上，在LSEG的安全Azure基础设施中用于RAG与编排；精确模型快照和路由规则未知。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "按个人数据授权检索；AMR先语义召回，再选原文片段独立展示，不生成摘要，也不混入其他来源生成答案。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "内容与滥用检测组合确定性及LLM过滤；提示和回答不训练基础模型，可匿名用于产品评估。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "6月发布说明已列引用追溯、反馈、图表与导出，同时记录过缺失引用、显示及授权一致性问题；不能据旧版问题单断言10月仍未修复。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：把权限检查放在检索前后，分别测试结构化数值引用与文档引用；对无数据、过期数据和冲突口径允许拒答，不以语言流畅度代替准确率。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：为各授权内容类型建立独立输出规则，将AMR原文提取与可生成总结的材料分开；上线验收同时衡量引用支持率、数值一致性及越权召回。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "检索索引、分块/嵌入、MCP工具清单、调用权限实现、缓存与故障切换未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开可复现评测集、引用错误率、幻觉率、端到端延迟、每问成本和独立审计结果。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开FDE投入、项目整体工期、订阅增收、净收益及用户所在国家。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2026-06-23首次正式发布；10月FAQ列Workspace、Teams和Microsoft 365 Copilot入口。",
+    "entryPoint": "分析：从一种已授权资料的只读检索做起，保留逐项引用和人工核验，再接入结构化分析。",
+    "evidenceLevel": "A",
+    "evidenceNote": "微软官网由LSEG AI工程负责人明确确认：LSEG与Microsoft FDE共同开发Workspace AI Search；项目与角色直接绑定。",
+    "humanRole": "用户核验关键数据；具体机构是否要求逐条人工审批未披露。",
+    "id": "lseg-microsoft-workspace-ai-search",
+    "industry": "金融数据与分析",
+    "metrics": [
+      {
+        "context": "LSEG于2026-07-30自报；活跃周期和去重口径未披露，非付费机构数。",
+        "kind": "adoption",
+        "label": "活跃用户",
+        "unknown": false,
+        "value": "17,000"
+      },
+      {
+        "context": "发布说明和业绩更新未给出可比前后用时或生产率测量。",
+        "kind": "efficiency",
+        "label": "任务效率变化",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施、订阅、维护及人工复核的完整成本，不能据效率指标计算净收益。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Microsoft FDE",
+    "publishedAt": "2026-06-23（正式发布）；2026-07、2026-10（产品资料）",
+    "risks": [
+      "分析：授权内容泄露、过时行情和数值引用错配。",
+      "分析：把信息检索误用为投资建议或自动交易依据。"
+    ],
+    "skills": [
+      "分析：金融数据授权与检索",
+      "分析：MCP编排及逐项引用验证",
+      "分析：分内容类型评测"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "Executive Insights；Abhay Pradhan，Group Head, AI Engineering",
+        "title": "Microsoft Frontier Company：LSEG项目负责人证言",
+        "type": "客户或供应商官方",
+        "url": "https://www.microsoft.com/en-us/frontier-company"
+      },
+      {
+        "date": "2026-07",
+        "locator": "正文：检索痛点、数据与分析、产品入口",
+        "title": "Introducing LSEG Workspace AI Search",
+        "type": "客户或供应商官方",
+        "url": "https://www.lseg.com/en/data-analytics/products/workspace/updates/act-with-the-same-confidence-at-a-new-speed-introducing-lseg-workspace-ai-search"
+      },
+      {
+        "date": "2026-10",
+        "locator": "24页；p.4权限及入口；p.16–19数据、AMR、模型与安全",
+        "title": "LSEG Workspace AI Search FAQ，版本2610.01",
+        "type": "客户或供应商官方",
+        "url": "https://www.lseg.com/content/dam/data-analytics/en_us/documents/support/workspace/lseg-workspace-ai-search-faq.pdf"
+      },
+      {
+        "date": "2026-06",
+        "locator": "General release 23 June 2026；功能与Known issues",
+        "title": "AI Search Release Notes，版本2606.01",
+        "type": "客户或供应商官方",
+        "url": "https://www.lseg.com/content/dam/data-analytics/en_us/documents/support/workspace/ai-search-release-notes.pdf"
+      },
+      {
+        "date": "2026-07-30",
+        "locator": "Strategic progress：Workspace AI Search active users",
+        "title": "LSEG 2026 H1 Interim Results",
+        "type": "客户或供应商官方",
+        "url": "https://www.lseg.com/en/investor-relations/financial-results/2026-h1-interim-results"
+      },
+      {
+        "date": "2026-10-17核验",
+        "locator": "公司05369106；Registered office address",
+        "title": "Companies House：LONDON STOCK EXCHANGE GROUP PLC",
+        "type": "官方登记机关",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/05369106"
+      }
+    ],
+    "summary": "金融专业人员原先需跨工具查找信息并阅读大量材料；项目将检索和分析接回Workspace。",
+    "title": "Workspace AI Search：有引用的金融信息检索",
+    "workflow": "自然语言问题→检索获授权金融数据与文档→带来源的回答、表格或图表→用户核验并继续追问或导出。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "适用Open与Confidential/Sensitive级别；Secret和Top Secret被导向另一私有云产品，不混入本案例。",
+      "200+控制和30天趋势为功能说明；产品合规声明不作为独立认证或效果审计。",
+      "本记录主体为Core42共建产品；Aldar只作实际采用佐证，不另计一个FDE客户项目。",
+      "Insight介绍中的多云通用能力不等于本Azure主权公有云已逐项交付所有跨云实现。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Core42",
+    "country": "阿拉伯联合酋长国",
+    "countryNote": "Core42官方新闻明确总部在阿联酋；本项目另由产品页明确Azure阿联酋区域基础设施与数据驻留，因此部署国家有项目级依据。其他海外业务不计入。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "Core42将问题描述为从阶段性审计转向持续掌握主权、安全与加密控制状态；传统可见性不足的论述是供应商背景说明，未给本项目实施前基线。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户高管明确将Microsoft FDE协作绑定到Sovereign Public Cloud的IP定义。没有披露FDE是否独立实现Insight的每一个模块。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "Aldar官方客户故事确认已采用该产品并使用Insight掌握安全及加密控制，支持产品已被使用；没有证明微软FDE直接参与Aldar部署。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露本共建项目减少的违规事件、审计人时、迁移用时或运营成本。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "产品组合Azure区域基础设施与Insight SaaS；官方声明数据驻留阿联酋，配有主权landing zone、预设guardrail和部署模板。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "Insight映射200多项技术控制，显示资源区域、30天趋势及不合规标记，并提供上下文相关建议。数字是功能范围，非风险降低效果。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "Insight介绍进一步披露加权合规评分、严重度排序与Insight Assist整改指导；未给评分权重、准确率或自主执行整改的权限机制。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：从一组资源和一套控制开始，把政策要求映射到可机器检查的配置，保存证据时间戳与版本；地区驻留、密钥控制和操作权限分别验证。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：建议与执行分离；用误报、漏报、修复用时和审计取证人时验收，关键变更由授权运维确认并可回滚。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "具体策略规则、扫描频率、评分公式、密钥托管方式、隔离与访问控制实现未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "模型供应商与版本、建议生成链路、评测数据和人工审批制度未公开；不能补画为全自动整改代理。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE人数、投入工期、产品客户总数、资源覆盖量与项目完整成本未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "本次资料未给可核验的独立合规认证或审计结论；产品的合规主张不等于逐一法律要求均已被认证满足。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "阿拉伯联合酋长国"
+    ],
+    "deploymentLevel": "已提供产品且有Aldar采用故事；未公开FDE共建工期及全部客户部署规模。",
+    "entryPoint": "分析：先针对一类资源验证一组关键主权控制，以只读监测和人工整改建立可信基线。",
+    "evidenceLevel": "A",
+    "evidenceNote": "微软官网由Core42首席商务官直接确认FDE与团队协作并参与定义Sovereign Public Cloud背后的IP；客户产品资料说明具体能力。",
+    "humanRole": "安全与合规团队使用监测和建议；自动修复的授权边界、强制审批及人工处理比例未披露。",
+    "id": "core42-microsoft-sovereign-public-cloud",
+    "industry": "云基础设施与安全治理",
+    "metrics": [
+      {
+        "context": "产品映射的技术控制数量，属于功能覆盖；不是已避免的违规事件或风险降幅。",
+        "kind": "scale",
+        "label": "控制库规模",
+        "unknown": false,
+        "value": "200+项"
+      },
+      {
+        "context": "没有同口径前后审计人时、误报率、修复用时或迁移速度。",
+        "kind": "efficiency",
+        "label": "治理与运维效率",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施、订阅、维护及人工复核的完整成本，不能据效率指标计算净收益。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Microsoft FDE",
+    "publishedAt": "2026-06-18、2026-06-29；FDE证言与产品页未标日期",
+    "risks": [
+      "分析：控制映射或扫描遗漏可能造成错误安全感。",
+      "分析：跨区域操作、数据分类错误及过度自动修复。"
+    ],
+    "skills": [
+      "分析：云治理与政策即代码",
+      "分析：主权边界和密钥管理验证",
+      "分析：审计证据及整改闭环"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "Executive Insights；Sherif Tawfik，Chief Business Officer",
+        "title": "Microsoft Frontier Company：Core42项目证言",
+        "type": "客户或供应商官方",
+        "url": "https://www.microsoft.com/en-us/frontier-company"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "Data Sovereignty；Core42 Insight；FAQs",
+        "title": "Core42 Sovereign Public Cloud",
+        "type": "客户或供应商官方",
+        "url": "https://www.core42.ai/products/sovereign-public-cloud"
+      },
+      {
+        "date": "2026-06-18",
+        "locator": "连续监测、合规评分、优先级与Insight Assist",
+        "title": "Core42 Insight Makes Data Sovereignty Measurable",
+        "type": "客户或供应商官方",
+        "url": "https://www.core42.ai/resource/blogs/core42-insight-makes-data-sovereignty-measurable"
+      },
+      {
+        "date": "2026-06-29",
+        "locator": "Sovereign Public Cloud采用与Insight监测",
+        "title": "Aldar’s Blueprint for Secure Digital Transformation",
+        "type": "客户或供应商官方",
+        "url": "https://www.core42.ai/resource/blogs/aldars-blueprint-for-secure-digital-transformation"
+      },
+      {
+        "date": "2026-05-21",
+        "locator": "仅用于公司总部国家；不引用融资作为项目投入",
+        "title": "Core42 Raises USD 550 million from HSBC to Scale Global AI Infrastructure",
+        "type": "客户或供应商官方",
+        "url": "https://www.core42.ai/resources/news/core42-raises-usd-550-million-from-hsbc-to-scale-global-ai-infrastructure"
+      }
+    ],
+    "summary": "面向阿联酋公共部门及受监管机构，需要将云服务与数据主权、安全及持续监控要求结合。",
+    "title": "Sovereign Public Cloud：主权云控制与持续监测",
+    "workflow": "云资源纳入主权控制→Insight显示资产、策略状态及漂移→给出整改建议→运维与合规人员处理。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "技术细节不足：本条确认的是具名FDE工程交付、迁移范围和培训结果；字段齐全不代表已获得完整实现。",
+      "仅保留5+ PB、500+ notebooks、4个月、600+用户四项已报事实；不估算ROI或归因全行AI收益。",
+      "不能把邻近的Databricks通用产品说明、其他银行项目或招聘技术栈移植为CCB Risk实际架构。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "JPMorganChase（摩根大通）",
+    "country": "美国",
+    "countryNote": "美国为集团总部国家：JPMorganChase官方纽约页面明确全球总部在纽约。本CCB Risk迁移没有披露云区域或实际部署国家。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "公开材料将交付对象限定为CCB Risk数据和notebook；没有描述原平台、旧系统瓶颈或迁移前性能。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户CTO把工程迁移与用户培训直接归于Databricks FDE团队，并表示后续合作持续。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户证言报告：四个月内迁移5 PB以上数据及500多个notebook，并培训600多名用户；没有给出对照工期、误差率或财务回报。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "已知技术交付物只有数据迁移与notebook迁移，不能由这段证言还原数据格式、代码转换、调度或生产切换架构。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未找到项目专属技术论文、架构图或迁移运行手册；Databricks通用Lakehouse、Lakebridge和KARL资料不能作为本项目采用证据。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非本项目已披露做法：先盘点数据与notebook依赖，按业务重要性分批迁移；为记录数量、关键风险汇总及权限建立新旧对账，再由负责人决定切换。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：分别记录迁移完成、作业正确运行和用户独立操作三个验收状态，保留回滚方案；培训人数不能代替平台实际活跃度或风险模型正确性。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "源系统、目标云区域、存储格式、分区与增量同步方案均未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "notebook语言、自动转换工具、代码修改量及调度依赖处理未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "双跑或停机安排、数据对账规则、权限迁移、回滚条件及银行验收流程未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "迁移后查询性能、风险指标一致性、失败率、600多名受训者后续活跃度与生产覆盖量未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE团队人数、确切起止日期、资源投入、费用与净收益未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2026-06-11客户证言报告迁移已完成并继续合作；没有公开全行迁移完成或后续AI应用上线。",
+    "entryPoint": "分析：从一个可独立对账的风险数据域开始，先明确验收和回滚条件，再扩大迁移范围。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Databricks官方FDE发布文章刊载JPMC消费与社区银行CTO Bala Vadhiyar的具名证言，直接说明FDE完成CCB Risk迁移。角色与项目明确，但实施技术披露不足。",
+    "humanRole": "Databricks FDE承担工程交付与培训；银行用户参加培训。具体银行验收、风险审批和运维职责未公开。",
+    "id": "jpmc-databricks-ccb-risk-migration",
+    "industry": "银行与风险数据工程",
+    "metrics": [
+      {
+        "context": "客户CTO报告的CCB Risk迁移范围，非处理吞吐率。",
+        "kind": "scale",
+        "label": "迁移数据量",
+        "unknown": false,
+        "value": "5+ PB"
+      },
+      {
+        "context": "未披露语言、复杂度或作业覆盖率。",
+        "kind": "scale",
+        "label": "迁移notebook数",
+        "unknown": false,
+        "value": "500+"
+      },
+      {
+        "context": "完成上述迁移的报告工期；无原计划或对照，不能计算提速倍数。",
+        "kind": "delivery",
+        "label": "交付时长",
+        "unknown": false,
+        "value": "4个月"
+      },
+      {
+        "context": "培训覆盖，非平台活跃用户或已通过考核人数。",
+        "kind": "adoption",
+        "label": "培训用户",
+        "unknown": false,
+        "value": "600+"
+      },
+      {
+        "context": "没有可比查询时延、运行成本或迁移提速基线。",
+        "kind": "efficiency",
+        "label": "迁移后效率变化",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施、订阅、维护及人工复核的完整成本，不能据效率指标计算净收益。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Databricks FDE",
+    "publishedAt": "2026-06-11",
+    "risks": [
+      "分析：迁移可能影响数据一致性、作业依赖与访问权限；本项目错误率未知。",
+      "分析：把培训量当成熟度或将迁移完成当全行转型完成。"
+    ],
+    "skills": [
+      "分析：数据依赖盘点与对账",
+      "分析：notebook兼容性和调度验证",
+      "分析：银行验收及用户培训"
+    ],
+    "sources": [
+      {
+        "date": "2026-06-11",
+        "locator": "Bala Vadhiyar证言；CCB Risk数据、notebook迁移与培训",
+        "title": "Forward Deployed Engineering: Delivering Business Outcomes with AI",
+        "type": "客户或供应商官方",
+        "url": "https://www.databricks.com/blog/forward-deployed-engineering-delivering-business-outcomes-ai"
+      },
+      {
+        "date": "页面数据更新至2026-06；2026-10-17核验",
+        "locator": "The JPMorganChase Tower；Jamie Dimon关于全球总部的说明",
+        "title": "Our Impact in New York City",
+        "type": "客户或供应商官方",
+        "url": "https://www.jpmorganchase.com/communities/new-york"
+      }
+    ],
+    "summary": "CCB Risk需要完成大规模数据及notebook迁移，并让平台用户具备使用能力。",
+    "title": "CCB Risk数据与notebook迁移",
+    "workflow": "迁移风险数据与notebook，并开展平台培训；详细迁移顺序、切换及验收流程未披露。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
       "实时在投广告优化是后续待验证方向。"
     ],
     "checkedAt": "2026-10-17",
