@@ -1,5 +1,7 @@
 # 案例全文
 
+当前58例，其中3例已补充深度分析。没有深度分析的记录仍是基础资料，不代表已获得完整技术方案。
+
 ## 1. Composio：AI代理工具集成基础设施
 
 国家：美国；项目落地：未披露
@@ -19,25 +21,26 @@
 可切入环节：分析：用最小权限工具集成建立回归评测。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：工具接口契约测试
 - 分析：用户授权隔离
 
-风险：
+### 风险
 - 分析：工具权限扩散
 - 分析：跨租户凭据泄露
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Composio × Plank](https://joinplank.com/customers/composio)
-- [Plank Customers](https://joinplank.com/customers)
-- [Composio Data Processing Addendum](https://composio.dev/legal/dpa)
-- [Composio product](https://composio.dev/)
+### 来源
+1. [Composio × Plank](https://joinplank.com/customers/composio)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Composio Data Processing Addendum](https://composio.dev/legal/dpa)
+4. [Composio product](https://composio.dev/)
 
 ## 2. Kernel：代理云浏览器基础设施
 
@@ -58,25 +61,26 @@
 可切入环节：分析：从受控测试网页与会话回放切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：浏览器会话与并发管理
 - 分析：隔离和可观测性
 
-风险：
+### 风险
 - 分析：浏览器权限及登录态泄露
 - 分析：网页内容诱导代理越权
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Kernel × Plank](https://joinplank.com/customers/kernel)
-- [Plank Customers](https://joinplank.com/customers)
-- [Kernel company profile](https://www.ycombinator.com/companies/kernel)
-- [Kernel product](https://www.kernel.sh/)
+### 来源
+1. [Kernel × Plank](https://joinplank.com/customers/kernel)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Kernel company profile](https://www.ycombinator.com/companies/kernel)
+4. [Kernel product](https://www.kernel.sh/)
 
 ## 3. SardineAI：反欺诈与合规AI风险平台
 
@@ -97,25 +101,26 @@
 可切入环节：分析：先做分析员只读辅助及历史回放评估。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：风险数据管道
 - 分析：模型漂移和审计
 
-风险：
+### 风险
 - 分析：误拦截正常交易
 - 分析：敏感身份数据越权
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [SardineAI × Plank](https://joinplank.com/customers/sardineai)
-- [Plank Customers](https://joinplank.com/customers)
-- [Sardine Shield Privacy Policy](https://www.sardine.ai/shield/privacy)
-- [Sardine Notabene partnership](https://www.sardine.ai/press/pr/crypto-travel-rule-compliance)
+### 来源
+1. [SardineAI × Plank](https://joinplank.com/customers/sardineai)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Sardine Shield Privacy Policy](https://www.sardine.ai/shield/privacy)
+4. [Sardine Notabene partnership](https://www.sardine.ai/press/pr/crypto-travel-rule-compliance)
 
 ## 4. Diagon AI：工业设备智能采购搜索
 
@@ -136,25 +141,26 @@
 可切入环节：分析：以带来源的设备规格检索和比较切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：产品规格结构化
 - 分析：供应商数据检索
 
-风险：
+### 风险
 - 分析：规格或库存过时
 - 分析：高价值设备采购不应仅凭模型推荐
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Diagon AI × Plank](https://joinplank.com/customers/diagon-ai)
-- [Plank Customers](https://joinplank.com/customers)
-- [Diagon Privacy Policy](https://diagon.ai/privacy-policy)
-- [Diagon official LinkedIn](https://www.linkedin.com/company/diagon-tech/)
+### 来源
+1. [Diagon AI × Plank](https://joinplank.com/customers/diagon-ai)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Diagon Privacy Policy](https://diagon.ai/privacy-policy)
+4. [Diagon official LinkedIn](https://www.linkedin.com/company/diagon-tech/)
 
 ## 5. Artyc：温控运输物联网冷链系统
 
@@ -175,25 +181,26 @@
 可切入环节：分析：从温度记录一致性和异常告警验证切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：传感器遥测校验
 - 分析：离线与断电场景测试
 
-风险：
+### 风险
 - 分析：温控失效导致货物损毁
 - 分析：运输日志与实际温度不一致
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Artyc × Plank](https://joinplank.com/customers/artyc)
-- [Plank Customers](https://joinplank.com/customers)
-- [Artyc official company profile](https://www.linkedin.com/company/artycpbc/)
-- [Artyc products](https://www.shipartyc.com/)
+### 来源
+1. [Artyc × Plank](https://joinplank.com/customers/artyc)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Artyc official company profile](https://www.linkedin.com/company/artycpbc/)
+4. [Artyc products](https://www.shipartyc.com/)
 
 ## 6. Retail Development Partners：零售门店扩张分析模型
 
@@ -214,25 +221,26 @@
 可切入环节：分析：从历史门店回测与可解释商圈分析切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：地理空间特征工程
 - 分析：选址预测回测
 
-风险：
+### 风险
 - 分析：出行数据代表性偏差
 - 分析：预测误差可能放大地产资本损失
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Retail Development Partners × Plank](https://joinplank.com/customers/retail-development-partners)
-- [Plank Customers](https://joinplank.com/customers)
-- [Retail Development Partners official profile](https://www.linkedin.com/company/retail-development-partners)
-- [Retail Development Partners platform](https://www.retaildevelopmentpartners.com/)
+### 来源
+1. [Retail Development Partners × Plank](https://joinplank.com/customers/retail-development-partners)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Retail Development Partners official profile](https://www.linkedin.com/company/retail-development-partners)
+4. [Retail Development Partners platform](https://www.retaildevelopmentpartners.com/)
 
 ## 7. MintMCP：企业MCP工具网关
 
@@ -253,25 +261,26 @@
 可切入环节：分析：从只读工具网关和调用审计切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：MCP权限与租户隔离
 - 分析：工具调用审计
 
-风险：
+### 风险
 - 分析：工具权限滥用
 - 分析：提示注入诱发数据外泄
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [MintMCP × Plank](https://joinplank.com/customers/mintmcp)
-- [Plank Customers](https://joinplank.com/customers)
-- [MintMCP Terms of Service](https://www.mintmcp.com/terms)
-- [MintMCP product](https://www.mintmcp.com/)
+### 来源
+1. [MintMCP × Plank](https://joinplank.com/customers/mintmcp)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [MintMCP Terms of Service](https://www.mintmcp.com/terms)
+4. [MintMCP product](https://www.mintmcp.com/)
 
 ## 8. Vendora：杂货零售数字商务平台
 
@@ -292,25 +301,26 @@
 可切入环节：分析：从商品数据质量与只读库存校验切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：商品目录标准化
 - 分析：库存与订单一致性
 
-风险：
+### 风险
 - 分析：库存或价格同步错误
 - 分析：支付与订单重复写入
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Vendora × Plank](https://joinplank.com/customers/vendora)
-- [Plank Customers](https://joinplank.com/customers)
-- [Vendora YC company and founder launch](https://www.ycombinator.com/companies/vendora)
-- [Vendora products](https://www.vendora.io/)
+### 来源
+1. [Vendora × Plank](https://joinplank.com/customers/vendora)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Vendora YC company and founder launch](https://www.ycombinator.com/companies/vendora)
+4. [Vendora products](https://www.vendora.io/)
 
 ## 9. SMI Aware：社交媒体电子取证引擎
 
@@ -331,24 +341,25 @@
 可切入环节：分析：限定案件范围，先构建可追溯检索与人工复核。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：证据来源与保全链
 - 分析：检索范围和身份消歧
 
-风险：
+### 风险
 - 分析：误认同名人员
 - 分析：无关私人信息过度采集
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [SMI Aware × Plank](https://joinplank.com/customers/smi)
-- [Plank Customers](https://joinplank.com/customers)
-- [SMI Aware solutions](https://smiaware.com/solutions/)
+### 来源
+1. [SMI Aware × Plank](https://joinplank.com/customers/smi)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [SMI Aware solutions](https://smiaware.com/solutions/)
 
 ## 10. Cheiron：生物制药研发AI工作层
 
@@ -369,25 +380,26 @@
 可切入环节：分析：从有出处的文献筛选和证据表整理切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：科学证据溯源
 - 分析：领域知识评测
 
-风险：
+### 风险
 - 分析：过时或错误研究结论
 - 分析：不能把研发辅助输出当临床建议
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Cheiron × Plank](https://joinplank.com/customers/cheiron)
-- [Plank Customers](https://joinplank.com/customers)
-- [Cheiron official company profile](https://www.linkedin.com/company/cheiron-bio)
-- [Cheiron product](https://www.cheiron.bio/)
+### 来源
+1. [Cheiron × Plank](https://joinplank.com/customers/cheiron)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Cheiron official company profile](https://www.linkedin.com/company/cheiron-bio)
+4. [Cheiron product](https://www.cheiron.bio/)
 
 ## 11. Jolly：一线员工激励与企业系统集成
 
@@ -408,23 +420,24 @@
 可切入环节：分析：从只读对账和人工确认的积分计算切入。
 
 - EMR集成覆盖：30多个。口径：供应商自报接口系统数量；不是30家终端客户或模型性能。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：HRIS/EMR模式映射
 - 分析：账本与数据对账
 
-风险：
+### 风险
 - 分析：错误积分影响员工报酬
 - 分析：医疗与员工数据权限边界
 
-限制：
+### 限制
 - 未将每个终端客户拆为一例；客户员工规模不是实际系统使用人数。
 - 未披露AI在激励系统中具体模型与决策边界。
 
-来源：
-- [Jolly × Plank](https://joinplank.com/customers/jolly)
-- [Jolly official company profile](https://www.linkedin.com/company/jolly/)
+### 来源
+1. [Jolly × Plank](https://joinplank.com/customers/jolly)
+2. [Jolly official company profile](https://www.linkedin.com/company/jolly/)
 
 ## 12. NEAR AI：代理基础设施与开源安全
 
@@ -445,24 +458,25 @@
 可切入环节：分析：从可复现的隔离测试与依赖风险检查切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：开源依赖审计
 - 分析：代理执行隔离
 
-风险：
+### 风险
 - 分析：隐私承诺与实际数据流不一致
 - 分析：供应链漏洞
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [NEAR AI × Plank](https://joinplank.com/customers/near-ai)
-- [Plank Customers](https://joinplank.com/customers)
-- [NEAR AI Privacy Policy](https://near.ai/privacy-policy)
+### 来源
+1. [NEAR AI × Plank](https://joinplank.com/customers/near-ai)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [NEAR AI Privacy Policy](https://near.ai/privacy-policy)
 
 ## 13. Rye Worldwide：代理电商统一结账API
 
@@ -483,25 +497,26 @@
 可切入环节：分析：从沙盒商户、明确确认和可回滚订单测试切入。
 
 - 项目量化成效：未公开。口径：未披露Plank工程贡献对应的上线周期、使用规模或效果指标；不将客户融资额当项目结果。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：交易幂等与订单对账
 - 分析：支付权限边界
 
-风险：
+### 风险
 - 分析：重复下单或误购
 - 分析：支付资料泄露
 
-限制：
+### 限制
 - 证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。
 - 未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。
 
-来源：
-- [Rye Worldwide × Plank](https://joinplank.com/customers/rye-worldwide)
-- [Plank Customers](https://joinplank.com/customers)
-- [Rye Privacy Policy](https://rye.com/privacy-policy)
-- [Jolly official company announcement](https://www.linkedin.com/company/jolly/)
+### 来源
+1. [Rye Worldwide × Plank](https://joinplank.com/customers/rye-worldwide)
+2. [Plank Customers](https://joinplank.com/customers)
+3. [Rye Privacy Policy](https://rye.com/privacy-policy)
+4. [Jolly official company announcement](https://www.linkedin.com/company/jolly/)
 
 ## 14. Nubank：核心ETL代码库模块化迁移
 
@@ -522,25 +537,27 @@
 可切入环节：分析：先挑可自动验证的小模块，保留人工代码审核。
 
 - 工程工时效率：8–12倍。口径：同类数据类迁移任务的人工作业时间，对比提示与审核Devin所需工时；不是全公司生产率。
+
 - 委派范围成本差异：超过20倍。口径：仅比较Devin运行成本与人工时薪完成同任务；未含全部实施维护投入。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：迁移任务拆解与评测集
 - 分析：跨文件依赖验证
 
-风险：
+### 风险
 - 分析：数据语义或依赖遗漏
 - 分析：不能把PR合并当业务正确性证明
 
-限制：
+### 限制
 - 演讲为近似回忆，不使用其50名工程师/三分之一时间取代官方任务口径。
 - 前线部署工程师（Forward Deployed Engineer）贡献与Devin产品整体收益不可单独分离。
 
-来源：
-- [Nubank ETL migration with Devin](https://devin.ai/customers/nubank)
-- [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
-- [Nu investor FAQs](https://nu.com/en/investors/why-invest/faqs/)
+### 来源
+1. [Nubank ETL migration with Devin](https://devin.ai/customers/nubank)
+2. [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
+3. [Nu investor FAQs](https://nu.com/en/investors/why-invest/faqs/)
 
 ## 15. Itaú Unibanco：COBOL企业税号字段改造
 
@@ -561,26 +578,28 @@
 可切入环节：分析：从有明确输入输出的批处理或小范围重构切入。
 
 - 完成进度：提前3个月。口径：相对规定期限，不是比人工基线快3个月。
+
 - 生产错误：报告为0。口径：供应商报告；监测期与错误定义未知，不代表永不出错。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：COBOL布局与跨程序数据流
 - 分析：回归测试及领域约束编码
 
-风险：
+### 风险
 - 分析：字段偏移误判可影响交易
 - 分析：主机与代理测试环境差异
 
-限制：
+### 限制
 - 未将同一银行.NET、SQL迁移拆为多个前线部署工程师（Forward Deployed Engineer）案例。
 - 不把此项字段重构扩张为完全自主实时交易系统迁移。
 
-来源：
-- [How Devin Is Modernizing COBOL at Fortune 500 Companies](https://cognition.com/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies)
-- [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
-- [Itaú Unibanco Investor Relations](https://www.itau.com.br/relacoes-com-investidores/en/itau-unibanco/?selectedTab=3)
-- [Itaú customer case](https://devin.ai/customers/itau)
+### 来源
+1. [How Devin Is Modernizing COBOL at Fortune 500 Companies](https://cognition.com/blog/how-devin-is-modernizing-cobol-at-fortune-500-companies)
+2. [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
+3. [Itaú Unibanco Investor Relations](https://www.itau.com.br/relacoes-com-investidores/en/itau-unibanco/?selectedTab=3)
+4. [Itaú customer case](https://devin.ai/customers/itau)
 
 ## 16. Bilt：产品开发与运维编码代理
 
@@ -601,25 +620,27 @@
 可切入环节：分析：从低风险维护任务及修复建议入手，保留人工合并和发布。
 
 - PR接受率：超过50%。口径：案例观察期，具体分母定义与日期未知；不是代码正确率。
+
 - 每周PR：平均117个。口径：案例所述最近30天；非当前实时数值，不能推为全部前线部署工程师（Forward Deployed Engineer）净增贡献。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：跨仓库上下文与任务验收
 - 分析：运维日志权限隔离
 
-风险：
+### 风险
 - 分析：代码或日志暴露
 - 分析：PR数量掩盖维护成本
 
-限制：
+### 限制
 - 与Bilt/Decagon金融客服是不同业务项目和供应商，单独记录软件工程部署。
 - 不将估算10名工程师等效产出解释为裁减10人或前线部署工程师（Forward Deployed Engineer）独立因果收益。
 
-来源：
-- [Bilt engineering with Devin](https://devin.ai/customers/bilt)
-- [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
-- [Bilt New York headquarters](https://newsroom.biltrewards.com/bilt-announces-new-headquarters-in-new-york-citys-meatpacking-district)
+### 来源
+1. [Bilt engineering with Devin](https://devin.ai/customers/bilt)
+2. [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
+3. [Bilt New York headquarters](https://newsroom.biltrewards.com/bilt-announces-new-headquarters-in-new-york-citys-meatpacking-district)
 
 ## 17. OpenEvidence：OpenEvidence临床文献检索推理平台
 
@@ -640,26 +661,28 @@
 可切入环节：分析建议：先选非患者特定的文献检索任务，评测引用正确性并保留医生最终判断。
 
 - 端到端延迟：超过700毫秒降至160毫秒。口径：官方案例报告降低78%；未给测量样本和分位数。
+
 - 部署效率：6倍。口径：从多名工程师数小时改为一名工程师不到一小时；自报流程比较。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：嵌入模型推理优化
 - 分析：峰值容量与多云故障切换
 - 分析：临床知识时效验证
 
-风险：
+### 风险
 - 分析：低延迟不等于临床正确性
 - 分析：医疗数据隐私
 - 分析：高峰故障及引用错误
 
-限制：
+### 限制
 - 效益为供应商与客户自报，没有独立对照。
 - 本例是医学信息平台的推理基础设施，不是自动诊疗或临床效果验证。
 
-来源：
-- [OpenEvidence delivers instant, accurate medical information with the Baseten Inference Stack](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
-- [OpenEvidence一手法院诉状](https://assets.alm.com/bd/d8/7ef64dac44bc9651ba27df49284a/openevidence-v-doximity-et-al-d-mass-25-cv-11802-dckt-000001-000-filed-2025-06-20-1.pdf)
+### 来源
+1. [OpenEvidence delivers instant, accurate medical information with the Baseten Inference Stack](https://www.baseten.co/resources/customers/openevidence-delivers-instant-medical-information-with-baseten/)
+2. [OpenEvidence一手法院诉状](https://assets.alm.com/bd/d8/7ef64dac44bc9651ba27df49284a/openevidence-v-doximity-et-al-d-mass-25-cv-11802-dckt-000001-000-filed-2025-06-20-1.pdf)
 
 ## 18. Writer：Writer医疗与金融专用Palmyra模型部署
 
@@ -680,27 +703,30 @@
 可切入环节：分析建议：用固定领域问题和真实负载同时评测输出质量、首token延迟与每请求成本。
 
 - 吞吐量：提高60%。口径：FP16、4张NVIDIA A100的公开基准；不是所有生产负载。
+
 - 首token时间：降低23%。口径：与同组基准一致；未披露完整样本。
+
 - 每百万token成本：降低35%。口径：同组基准下的单位推理成本，非企业总成本。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：TensorRT-LLM引擎调优
 - 分析：批处理和序列形状分析
 - 分析：合规边界与性能回归测试
 
-风险：
+### 风险
 - 分析：量化或优化影响领域质量
 - 分析：基准与真实负载差异
 - 分析：敏感行业信息权限
 
-限制：
+### 限制
 - 两款模型归同一推理平台交付，不拆成两个案例。
 - 基准提速不能解释为医疗或金融业务准确率提升。
 
-来源：
-- [How Writer helps businesses transform with AI](https://www.baseten.co/resources/customers/writer/)
-- [Writer官方公司介绍](https://writer.com/company/about/)
+### 来源
+1. [How Writer helps businesses transform with AI](https://www.baseten.co/resources/customers/writer/)
+2. [Writer官方公司介绍](https://writer.com/company/about/)
 
 ## 19. Rime：Rime实时语音合成API上线与扩容
 
@@ -721,26 +747,28 @@
 可切入环节：分析建议：先在授权声音和有限语言上上线API，逐语言测尾延迟与发音错误。
 
 - p99响应延迟：不高于300毫秒。口径：Results称持续达到或优于客户SLA；不是整段语音生成完毕时间。
+
 - 可用性：2024年100%。口径：CEO回顾2024年观察值，非未来永不故障保证。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：流式音频与网络优化
 - 分析：多区域低延迟部署
 - 分析：GPU容量和SLA监控
 
-风险：
+### 风险
 - 分析：声音授权与冒用
 - 分析：跨地区音频数据保护
 - 分析：历史可用性过度外推
 
-限制：
+### 限制
 - 性能与可靠性为客户自报。
 - 来源未披露具体地区或国家；多区域不能推断为指定国家部署。
 
-来源：
-- [How Rime.ai achieved state-of-the-art p99 latencies on Baseten](https://www.baseten.co/resources/customers/rime/)
-- [Baseten Rime官方客户故事](https://www.baseten.co/resources/customers/rime/)
+### 来源
+1. [How Rime.ai achieved state-of-the-art p99 latencies on Baseten](https://www.baseten.co/resources/customers/rime/)
+2. [Baseten Rime官方客户故事](https://www.baseten.co/resources/customers/rime/)
 
 ## 20. Notion：Notion AI Meeting Notes语音转写管道
 
@@ -761,27 +789,28 @@
 可切入环节：分析建议：先在已获参与者同意的内部会议测试转写与说话人归属，允许用户纠正。
 
 - 延迟改善：2–3倍。口径：官方客户视频标题所称lower latency，未提供绝对基线、分位数或采样方法。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：语音转写和说话人分离
 - 分析：跨传输协议编排
 - 分析：生产可观测性与音频质量评估
 
-风险：
+### 风险
 - 分析：录音同意与会议隐私
 - 分析：说话人归属错误
 - 分析：摘要遗漏关键限定
 
-限制：
+### 限制
 - 角色和项目来自两份一手材料组合，故B而非直接同页A。
 - 本人提到的P99.99为生产化表达，未把它擅自解释为已验证可用性指标。
 
-来源：
-- [Building AI Meeting Notes with Notion at Baseten — Matte Lim](https://www.linkedin.com/posts/mattelim_one-of-the-highlights-of-my-first-year-at-activity-7504236590869782529-9_p8)
-- [Matte Lim — Forward Deployed Engineer](https://www.baseten.co/author/matte-lim/)
-- [How Notion achieved 2-3x lower latency with AI Meeting Notes](https://www.baseten.co/resources/customers/how-notion-acheived-2-3x-lower-latency-with-ai-meeting-notes/)
-- [Notion官方：Making the Brand at Make with Notion](https://www.notion.com/ja/blog/making-the-brand)
+### 来源
+1. [Building AI Meeting Notes with Notion at Baseten — Matte Lim](https://www.linkedin.com/posts/mattelim_one-of-the-highlights-of-my-first-year-at-activity-7504236590869782529-9_p8)
+2. [Matte Lim — Forward Deployed Engineer](https://www.baseten.co/author/matte-lim/)
+3. [How Notion achieved 2-3x lower latency with AI Meeting Notes](https://www.baseten.co/resources/customers/how-notion-acheived-2-3x-lower-latency-with-ai-meeting-notes/)
+4. [Notion官方：Making the Brand at Make with Notion](https://www.notion.com/ja/blog/making-the-brand)
 
 ## 21. Superhuman（邮件应用）：Superhuman邮件分类与检索模型生产迁移
 
@@ -802,26 +831,28 @@
 可切入环节：分析建议：先对一个邮件分类模型影子运行，保留旧服务回退后渐进切流。
 
 - 交付周期：1周。口径：Solutions报告该推理优化与迁移项目周期。
+
 - p95延迟：平均降低80%。口径：多种自定义嵌入模型平均值；非所有邮件功能总延迟。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：异构嵌入模型部署
 - 分析：客户端瓶颈诊断
 - 分析：低风险生产流量切换
 
-风险：
+### 风险
 - 分析：邮件内容隐私
 - 分析：模型迁移质量回退
 - 分析：尾延迟和平均值混用
 
-限制：
+### 限制
 - 4小时每周用户节省是Superhuman产品整体说法，不归因为本次模型迁移。
 - 客户故事未标发布日期；仅记录核验前已公开。
 
-来源：
-- [Superhuman achieves 80% faster embedding model inference with Baseten](https://www.baseten.co/resources/customers/superhuman/)
-- [Superhuman Labs美国商标程序文件](https://ttabvue.uspto.gov/ttabvue/ttabvue-98880288-EXT-3.pdf)
+### 来源
+1. [Superhuman achieves 80% faster embedding model inference with Baseten](https://www.baseten.co/resources/customers/superhuman/)
+2. [Superhuman Labs美国商标程序文件](https://ttabvue.uspto.gov/ttabvue/ttabvue-98880288-EXT-3.pdf)
 
 ## 22. Zed Industries：Zed代码编辑预测模型优化与生产迁移
 
@@ -842,27 +873,30 @@
 可切入环节：分析建议：对固定仓库测试集和真实影子请求评测，逐步切流并保持用户确认。
 
 - p90延迟：降低45%。口径：案例Results给定与原推理服务比较，测量窗口未公开。
+
 - 吞吐量：提高至3.6倍。口径：供应商报告；未公开标准化负载。
+
 - 生产流量切换：1天以内。口径：充分测试后的迁移时长，不是全部研发周期。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：推测解码和缓存优化
 - 分析：代码补全质量评估
 - 分析：多区域容量与迁移回退
 
-风险：
+### 风险
 - 分析：建议代码缺陷
 - 分析：私有代码处理边界
 - 分析：延迟改善与吞吐压力取舍
 
-限制：
+### 限制
 - 美国/欧盟为案例Highlighted features明确部署地区；欧盟未细分国家。
 - 100%可用性未给观察期，故未作为主要量化结果。
 
-来源：
-- [How Zed is reimagining the code editor from the ground up](https://www.baseten.co/resources/customers/zed-industries-serves-2x-faster-code-completions-with-baseten/)
-- [Zed官方服务条款](https://zed.dev/terms)
+### 来源
+1. [How Zed is reimagining the code editor from the ground up](https://www.baseten.co/resources/customers/zed-industries-serves-2x-faster-code-completions-with-baseten/)
+2. [Zed官方服务条款](https://zed.dev/terms)
 
 ## 23. Praktika.ai：Praktika语言学习实时语音转写
 
@@ -883,26 +917,28 @@
 可切入环节：分析建议：从成人已授权语音练习评测开始，分别测各口音准确率和p50/p99响应。
 
 - 转写p50延迟：低于300毫秒。口径：Results口径；旧服务正文给1000–1500毫秒，但未明示同分位数，故不算百分比。
+
 - 转写成本：节省50%。口径：Results针对优化Whisper负载；无绝对金额及完整总成本。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：实时语音转写
 - 分析：口音和语言质量评测
 - 分析：批处理与弹性扩容
 
-风险：
+### 风险
 - 分析：口音识别偏差
 - 分析：用户语音隐私
 - 分析：把技术延迟误当学习效果
 
-限制：
+### 限制
 - 九种教学语言不等于九个部署国家。
 - 成本降幅是转写工作负载，不能等同公司利润或所有AI成本。
 
-来源：
-- [Praktika delivers ultra-low-latency transcription for global language education with Baseten](https://www.baseten.co/resources/customers/praktika/)
-- [英国Companies House对Praktika.ai Company的主体登记](https://find-and-update.company-information.service.gov.uk/company/16332920/persons-with-significant-control)
+### 来源
+1. [Praktika delivers ultra-low-latency transcription for global language education with Baseten](https://www.baseten.co/resources/customers/praktika/)
+2. [英国Companies House对Praktika.ai Company的主体登记](https://find-and-update.company-information.service.gov.uk/company/16332920/persons-with-significant-control)
 
 ## 24. Scaled Cognition：Scaled Cognition APT代理模型混合云上线
 
@@ -923,26 +959,28 @@
 可切入环节：分析建议：选择一条低风险只读代理流程，分别测政策遵循、工具正确性和推理延迟。
 
 - 整体延迟：降低40%。口径：Results自报，未披露完整负载和基线。
+
 - 首token时间：低于120毫秒。口径：Results值，未标分位数，不视为完整代理任务耗时。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：专用模型服务配置
 - 分析：混合云突发容量
 - 分析：代理负载与首token基准
 
-风险：
+### 风险
 - 分析：模型行为与推理性能混淆
 - 分析：混合云数据边界
 - 分析：试点与正式客户范围混淆
 
-限制：
+### 限制
 - Genesys覆盖8000多客户是下游平台规模，不视为本项目部署量。
 - 本文不把供应商的确定性或无幻觉宣传当作独立验证事实。
 
-来源：
-- [Scaled Cognition offers ultra-fast AI agents you can trust](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
-- [美国专利商标局公开文件](https://tmng-al.uspto.gov/resting2/api/casedoc/cms/case/99284016/office-action/OfficeAction7810198.pdf)
+### 来源
+1. [Scaled Cognition offers ultra-fast AI agents you can trust](https://www.baseten.co/resources/customers/scaled-cognition-offers-ultra-fast-ai-agents-you-can-trust/)
+2. [美国专利商标局公开文件](https://tmng-al.uspto.gov/resting2/api/casedoc/cms/case/99284016/office-action/OfficeAction7810198.pdf)
 
 ## 25. Morgan Stanley：财富顾问知识检索助手及持续评测
 
@@ -963,28 +1001,81 @@
 可切入环节：先选受控研究库，设置专业人员评分和明确拒答条件。
 
 - 采用率：超过98%。口径：官方顾问团队口径，非所有员工或模型准确率。
+
 - 文档覆盖：100,000份。口径：官方称可回答该语料问题；不代表每份文档都被人工逐条验证。
+
 - 成本：未公开。口径：无完整投入和净收益。
 
-关键技能：
+### 介入前的问题与基线
+
+- 【公开披露】顾问需要查找和总结大量内部研究资料；项目优先解决检索耗时、重复摘要及回答可靠性。 [来源2](https://openai.com/index/morgan-stanley/)
+
+- 【未披露】原先每次搜索平均耗时、失败率和人员成本未披露，不能自行编造“从几小时降为几秒”。
+
+### 工程师具体做了什么
+
+- 【公开披露】OpenAI部署工程负责人Colin Jarvis访谈将此列为FDE（Forward Deployed Engineer，前线部署工程师）实践：技术链路约6—8周打通，随后约6个月试点、评测和迭代建立顾问信任。这是负责人回顾，非原团队每位成员职称证明。 [来源1](https://tailwinds.substack.com/p/metabolize-pain-excrete-product-the)
+
+- 【公开披露】双方根据顾问及提示工程师的准确性、连贯性评分优化提示和检索；每天用样本问题做回归测试。 [来源2](https://openai.com/index/morgan-stanley/)
+
+### 技术方案与数据流程
+
+- 【公开披露】已披露主链路：顾问提问→内部知识检索→GPT-4组织回答→顾问使用。语料覆盖100,000份文档。官方称零数据保留解决专有信息顾虑。 [来源2](https://openai.com/index/morgan-stanley/)
+
+- 【未披露】具体向量数据库、embedding型号、分块长度、重排器、top-k、权限过滤实现和基础设施未公开。不能因为这是检索增强应用，就补写Pinecone、LangChain或某云服务。
+
+- 【分析／复现建议】专家评测驱动迭代和日常回归，不意味着零错误。高采用率也是使用指标，不是准确率或投资表现。
+
+- 【公开披露】补充：2024-06-26推出的Debrief是另一条流程，客户同意后形成会议笔记与行动项，写入Salesforce，并由顾问编辑发送邮件。官方引述一名顾问每次会议约节省半小时，不能当全公司平均数，也不能归入Assistant的节省。 [来源4](https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch)
+
+- 【分析／复现建议】以下为可复现建议，非该公司架构：先选一套权限清楚的知识库，给每条来源保留版本和可见范围；做检索与回答两级评价，不只问答案“像不像对的”。
+
+- 【分析／复现建议】让领域专家标注可回答、应拒答和证据不足的真实问题；检索失败和生成错误分开定位。每次换模型、文档或提示都跑回归。
+
+- 【分析／复现建议】商业验收同时看任务完成率、人工核验时长和活跃使用；采用率不能替代质量。涉及投资行动时保留专业人员最终判断。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方披露顾问团队采用超过98%，文档访问由20%升至80%；后者未给完整分母定义和观察期，不等于检索准确率提高到80%。 [来源2](https://openai.com/index/morgan-stanley/)
+
+- 【公开披露】访谈摘要还报研究报告使用量约3倍，与20%→80%文档访问是不同口径，不应合并。 [来源1](https://tailwinds.substack.com/p/metabolize-pain-excrete-product-the)
+
+- 【公开披露】公司2024-06-26公告确认Assistant于2023年9月全面推出，当时顾问团队采用率98%。 [来源4](https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch)
+
+- 【分析／复现建议】改善可以描述为知识更容易被顾问使用；客户资产增长、投顾收益、营收增量及成本净节省没有该项目可归因数据。
+
+### 尚未公开的信息
+
+- 【未披露】检索的精确率、召回率、严重幻觉率和拒答阈值：未公开，不能据通用技术推定。
+
+- 【未披露】原项目工程师人数、驻场方式、合同费用：未公开，不能据通用技术推定。
+
+- 【未披露】内容权限与客户可见边界的具体实现：未公开，不能据通用技术推定。
+
+- 【未披露】更新频率、延迟SLA、部署地区及运维成本：未公开，不能据通用技术推定。
+
+- 【未披露】Assistant单独的工时节省、净收益、投资回报率：未公开，不能据通用技术推定。
+
+### 关键技能
 - 检索增强生成
 - 领域专家评测
 - 回归测试
 - 权限和数据留存设计
 
-风险：
+### 风险
 - 误导性金融回答
 - 知识更新和检索权限错误
 
-限制：
+### 限制
 - 前线部署工程师（Forward Deployed Engineer）证据是负责人回顾，不声称2023年原项目成员当时均持该职称。
 - 不把Debrief另拆为一个已证实前线部署工程师（Forward Deployed Engineer）项目。
 - 采用率为公司报告，非独立审计。
 
-来源：
-- [访谈主持人的原始发布：Colin Jarvis FDE实战](https://tailwinds.substack.com/p/metabolize-pain-excrete-product-the)
-- [OpenAI官方Morgan Stanley案例](https://openai.com/index/morgan-stanley/)
-- [Morgan Stanley官方全球总部](https://www.morganstanley.com/about-us/global-offices/americas/united-states)
+### 来源
+1. [访谈主持人的原始发布：Colin Jarvis FDE实战](https://tailwinds.substack.com/p/metabolize-pain-excrete-product-the)
+2. [OpenAI官方Morgan Stanley案例](https://openai.com/index/morgan-stanley/)
+3. [Morgan Stanley官方全球总部](https://www.morganstanley.com/about-us/global-offices/americas/united-states)
+4. [Morgan Stanley官方：Debrief上线及Assistant历史时间线](https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch)
 
 ## 26. Cognition：Devin长程编码代理模型集成
 
@@ -1005,28 +1096,30 @@
 可切入环节：先在隔离代码库验证明确工单，用测试和人工合并门槛控制风险。
 
 - 采用变化：Devin使用量至少7倍。口径：客户称自前一年末以来；具体截止日未标，不能归因于Anthropic驻场单一因素。
+
 - 嵌入团队结果：未单独量化。口径：业务指标与模型整体改善不能直接作为前线部署工程师（Forward Deployed Engineer）因果效果。
+
 - 成本：未公开。口径：无集成项目全成本。
 
-关键技能：
+### 关键技能
 - 模型替换回归评测
 - 工具接口适配
 - 长程轨迹监控
 - 用户反馈回流
 
-风险：
+### 风险
 - 长任务偏航
 - 错误代码和不安全工具调用
 
-限制：
+### 限制
 - 未披露驻场持续时长、地点及工程师人数。
 - 原文3.5倍PR指标搭配Sonnet 3.6名称存在疑点，本条不采用该指标。
 - 不把Cognition下游Goldman、Mercedes、US Army的使用各自当作Anthropic 前线部署工程师（Forward Deployed Engineer）案例。
 
-来源：
-- [Anthropic官方嵌入工程师系列](https://claude.com/problem-solvers)
-- [Cognition负责人官方客户访谈](https://claude.com/customers/cognition)
-- [Cognition官方总部](https://cognition.com/about)
+### 来源
+1. [Anthropic官方嵌入工程师系列](https://claude.com/problem-solvers)
+2. [Cognition负责人官方客户访谈](https://claude.com/customers/cognition)
+3. [Cognition官方总部](https://cognition.com/about)
 
 ## 27. Gamma：演示文稿图像生成的推理加速
 
@@ -1047,25 +1140,27 @@
 可切入环节：分析建议：从单一模板配图模型开始，固定质量评测集，比较延迟和每张图成本后灰度接入。
 
 - 单模型图像生成速度：快30%–80%。口径：供应商按模型报告的范围，不等于所有模型统一快80%；原始样本与测试窗未公开。
+
 - 副本资源效率：改善20%。口径：原文解释为减少副本数且未明显影响延迟，不是项目总成本减少20%。
+
 - 整体成本与净节省：未公开。口径：虽称更具成本效率，未披露服务合同、推理单价和全成本净收益。
 
-关键技能：
+### 关键技能
 - 分析：图像模型质量评测与基准测试
 - 分析：推理运行时和副本容量优化
 - 分析：新模型上线回归与降级
 
-风险：
+### 风险
 - 分析：低延迟不能代替图像内容质量及版权审查
 - 分析：用户总数并非受益于某项优化的因果样本
 
-限制：
+### 限制
 - 是图像生成基础设施工程案例，不代表全部文稿业务效率同比提升。
 - 70百万用户及收入是公司规模，不是工程模式独立造成的结果。
 
-来源：
-- [Baseten官方Gamma案例](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
-- [Gamma官方：团队所在地](https://gamma.app/about)
+### 来源
+1. [Baseten官方Gamma案例](https://www.baseten.co/resources/customers/how-gamma-makes-building-presentations-criminally-fun/)
+2. [Gamma官方：团队所在地](https://gamma.app/about)
 
 ## 28. Latent Health：药事临床检索的多模型生产编排
 
@@ -1086,27 +1181,30 @@
 可切入环节：分析建议：先优化只读药事文档检索并显示来源，保留专业人员的解释和决策责任。
 
 - 服务可用性：99.999%。口径：供应商称合作期间达到的可用性；故障统计边界和原始日志未公开。
+
 - 问答端到端延迟：P90为600毫秒。口径：P90（第90百分位）延迟，不是平均值或所有请求保证。
+
 - 图形处理器利用率：改善6倍。口径：原文为GPU（Graphics Processing Unit，图形处理器）利用率；不可换算成全成本六分之一。
+
 - 成本与净节省：未公开。口径：没有项目全成本和净现金节省披露。
 
-关键技能：
+### 关键技能
 - 分析：多模型流水线拆分与背压
 - 分析：弹性扩缩容、追踪与健康检查
 - 分析：医疗文档访问控制与证据追踪
 
-风险：
+### 风险
 - 分析：检索速度和可用性不是临床准确率
 - 分析：医疗数据敏感，平台合规资质不自动证明客户端每个流程合规
 
-限制：
+### 限制
 - 这是推理基础设施与检索编排案例，不是诊疗效果的独立研究。
 - 吞吐与可用性均为供应商自报，无独立审计。
 
-来源：
-- [Baseten官方Latent案例](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
-- [Latent官方公司页：总部](https://www.linkedin.com/company/latent-health)
-- [Latent官方信任中心：美国医疗系统](https://security.latenthealth.com/)
+### 来源
+1. [Baseten官方Latent案例](https://www.baseten.co/resources/customers/latent-delivers-pharmaceutical-search-with-baseten/)
+2. [Latent官方公司页：总部](https://www.linkedin.com/company/latent-health)
+3. [Latent官方信任中心：美国医疗系统](https://security.latenthealth.com/)
 
 ## 29. NHS England（英国国家医疗服务体系英格兰分部）：疫情数据底座与医疗物资、疫苗运营
 
@@ -1127,26 +1225,28 @@
 可切入环节：从单地区库存可视化和人工确认的调拨建议开始。
 
 - 数据接入范围：数百个数据源。口径：证词第14段指疫情数据底座，非全部系统独由Palantir提供。
+
 - 疫苗项目服务范围：英格兰超过4400万人。口径：证词第38段；这是疫苗项目覆盖人数，不是软件单独造成的新增接种人数。
+
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
-关键技能：
+### 关键技能
 - 公共卫生数据集成
 - 库存与需求建模
 - 权限及数据溯源
 - 与每日调度会议共同迭代
 
-风险：
+### 风险
 - 敏感健康数据与跨机构权限
 - 库存迟报及需求估计误差可能影响公平分配
 
-限制：
+### 限制
 - 供应商证词不是独立因果评估。
 - 证词明确Palantir没有参与个人防护装备采购；不将物资分配写成采购系统。
 - 不是生成式人工智能案例；未将不同疫情模块拆分计数。
 
-来源：
-- [Louis Mosley代表Palantir Technologies UK的英国新冠调查证词](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
+### 来源
+1. [Louis Mosley代表Palantir Technologies UK的英国新冠调查证词](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
 
 ## 30. The Elmet Group：钨钼及微波器件制造的经营、成本与排程系统
 
@@ -1167,28 +1267,30 @@
 可切入环节：先连接一个工厂的订单、工票及成本数据，由生产经理验证。
 
 - 交付范围：约2个月，2个业务部，10个应用。口径：Scott Knoll客户自报；应用数量不等于独立项目数。
+
 - 首批交付周期：约3—4周。口径：客户访谈描述首批数据和应用交付，不是整个集团改造完成。
+
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
-关键技能：
+### 关键技能
 - 制造业务访谈
 - 材料清单与工序建模
 - 多系统数据接入
 - 成本核算与排程交互设计
 
-风险：
+### 风险
 - 成本口径和材料主数据不一致
 - 排程建议需要考虑真实产线约束
 
-限制：
+### 限制
 - 交付速度为客户自报，缺少独立审计。
 - 不将客户探索中的个人报价预测原型视为全公司生产部署。
 
-来源：
-- [Sippin’ Sovereignty：The Elmet Group at AIPCon 11](https://www.youtube.com/watch?v=4j8qdjGd6cA)
-- [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
-- [The Elmet Group官方8-K申报](https://investors.theelmetgroup.com/sec-filings/content/0001213900-26-097862/ea0304152-8k_elmet.htm)
-- [Elmet Technologies制造基地](https://www.elmettechnologies.com/about-elmet/locations/)
+### 来源
+1. [Sippin’ Sovereignty：The Elmet Group at AIPCon 11](https://www.youtube.com/watch?v=4j8qdjGd6cA)
+2. [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+3. [The Elmet Group官方8-K申报](https://investors.theelmetgroup.com/sec-filings/content/0001213900-26-097862/ea0304152-8k_elmet.htm)
+4. [Elmet Technologies制造基地](https://www.elmettechnologies.com/about-elmet/locations/)
 
 ## 31. NVIDIA：芯片到计算交付的供应链控制塔
 
@@ -1209,28 +1311,29 @@
 可切入环节：先选择一个物料短缺处置流程，以只读建议和人工审批开始。
 
 - 可独立核实的运营提升：未公开。口径：未披露完整观察期、产出基线或独立审计的成本/交付改善比例。
+
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
-关键技能：
+### 关键技能
 - 供应链本体建模
 - 约束优化与人工智能协作
 - 本地部署与模型后训练
 - 规划者反馈回路
 
-风险：
+### 风险
 - 错误供应或约束数据会传导至生产计划
 - 商业机密、模型权限与人工覆盖决策记录
 
-限制：
+### 限制
 - 前线参与依据客户和工程师一手发言的第三方转写，未复听原视频。
 - 未把10倍规划者生产力愿景或模型基准表现当作已实现供应链成效。
 
-来源：
-- [Palantir Sovereign AI For NVIDIA’s Supply Chain](https://www.youtube.com/watch?v=PeaDoeI4n-8)
-- [Sovereign AI for the Compute Supply Chain](https://www.youtube.com/watch?v=xZBaOenSZ9I)
-- [Sippin’ Sovereignty技术访谈](https://www.youtube.com/watch?v=O65qIwMLAqI)
-- [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
-- [NVIDIA联系与总部地址](https://www.nvidia.com/en-us/contact/)
+### 来源
+1. [Palantir Sovereign AI For NVIDIA’s Supply Chain](https://www.youtube.com/watch?v=PeaDoeI4n-8)
+2. [Sovereign AI for the Compute Supply Chain](https://www.youtube.com/watch?v=xZBaOenSZ9I)
+3. [Sippin’ Sovereignty技术访谈](https://www.youtube.com/watch?v=O65qIwMLAqI)
+4. [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+5. [NVIDIA联系与总部地址](https://www.nvidia.com/en-us/contact/)
 
 ## 32. Acrisure：Auris AI保险经纪运营系统
 
@@ -1251,27 +1354,28 @@
 可切入环节：先做材料完整性检查和可追溯的报价对比，交保险专业人员确认。
 
 - 运营效果：未公开可比较数值。口径：发布材料主要描述能力和工作流，未给出可独立比较的生产率或损失率变化。
+
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
-关键技能：
+### 关键技能
 - 保险对象与业务规则建模
 - 非结构化投保材料处理
 - 跨公司数据权限
 - 业务现场共同设计
 
-风险：
+### 风险
 - 敏感客户资料泄露
 - 错误保障缺口或报价比较影响保险决策
 
-限制：
+### 限制
 - 一手演讲通过第三方转写核验；未独立复听。
 - 不把集团员工、国家或收购数量写为本项目采用人数。
 
-来源：
-- [Connecting the Insurance Industry with Auris AI](https://www.youtube.com/watch?v=HPUVkVmIitA)
-- [Acrisure官方发布的演讲说明](https://www.linkedin.com/posts/acrisure_connecting-the-insurance-industry-with-auris-activity-7505249848829440001-lH_p)
-- [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
-- [Acrisure办公室与总部](https://www.acrisure.com/locations)
+### 来源
+1. [Connecting the Insurance Industry with Auris AI](https://www.youtube.com/watch?v=HPUVkVmIitA)
+2. [Acrisure官方发布的演讲说明](https://www.linkedin.com/posts/acrisure_connecting-the-insurance-industry-with-auris-activity-7505249848829440001-lH_p)
+3. [AIPCon 11参与者演讲和访谈转写](https://stockanalysis.com/stocks/pltr/transcripts/750256-aipcon-11/)
+4. [Acrisure办公室与总部](https://www.acrisure.com/locations)
 
 ## 33. Joint Commission：Reforge认证检查员排班与标准知识平台
 
@@ -1292,27 +1396,29 @@
 可切入环节：先统一检查员资格与可用时间，生成由排班员审核的方案。
 
 - 排班计算：过去数周，现约3分钟。口径：客户口述；指生成计划时间，不等于整个认证周期。
+
 - 覆盖检查员：约600名。口径：同一演讲描述求解器的排班规模，非新增员工或全部自动完成检查。
+
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
-关键技能：
+### 关键技能
 - 人员资格和执照建模
 - 约束排班
 - 标准知识整理
 - 敏感机构数据隔离
 
-风险：
+### 风险
 - 排班约束遗漏导致资质不符
 - 认证标准版本和权限错误
 
-限制：
+### 限制
 - 参与角色和实际成效来自客户一手演讲转写，未独立复听。
 - 不将未来实时认证或缩短3—5天现场检查写成已实现结果。
 
-来源：
-- [Joint Commission与Palantir官方合作公告](https://www.jointcommission.org/en/knowledge-library/newsletters/joint-commission-online/14-may-25)
-- [AIPCon 9参与者演讲转写](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
-- [Joint Commission联系页](https://www.jointcommission.org/en-us/contact-us)
+### 来源
+1. [Joint Commission与Palantir官方合作公告](https://www.jointcommission.org/en/knowledge-library/newsletters/joint-commission-online/14-may-25)
+2. [AIPCon 9参与者演讲转写](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+3. [Joint Commission联系页](https://www.jointcommission.org/en-us/contact-us)
 
 ## 34. GE Aerospace：航空发动机供应约束识别与生产协同
 
@@ -1333,28 +1439,30 @@
 可切入环节：选取一类发动机关键短缺件，将预警与人工供应商处置流程连接。
 
 - 数据准备工作：此前多名人员每周一各耗约8小时拼表。口径：客户提供旧工作方式；新流程近实时推送约束，未披露实际节省工时总量。
+
 - 发动机产出：2025年同比增加26%。口径：客户明确归于技术与FLIGHT DECK精益运营共同作用；不可单独归因于Palantir或工程师。
+
 - 项目成本：未公开。口径：未披露合同费、实施人力成本、推理费用及净节省。
 
-关键技能：
+### 关键技能
 - 多系统供应链集成
 - 零件和维修需求建模
 - 约束预警
 - 生产团队反馈闭环
 
-风险：
+### 风险
 - 关键零件预测错误
 - 军民业务数据边界及权限
 
-限制：
+### 限制
 - 客户一手发言通过第三方转写读取，未独立复听。
 - 不将J85试点和内部扩展拆成两例。
 - 产出增长不是软件单独因果效果，也不是成本降幅。
 
-来源：
-- [GE Aerospace与Palantir扩展合作官方公告](https://www.geaerospace.com/news/press-releases/ge-aerospace-and-palantir-expand-partnership-transform-military-aircraft-readiness)
-- [AIPCon 9参与者演讲转写](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
-- [GE官方美国制造投资公告](https://www.geaerospace.com/news/press-releases/ge-aerospace-invest-another-1b-us-manufacturing)
+### 来源
+1. [GE Aerospace与Palantir扩展合作官方公告](https://www.geaerospace.com/news/press-releases/ge-aerospace-and-palantir-expand-partnership-transform-military-aircraft-readiness)
+2. [AIPCon 9参与者演讲转写](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
+3. [GE官方美国制造投资公告](https://www.geaerospace.com/news/press-releases/ge-aerospace-invest-another-1b-us-manufacturing)
 
 ## 35. NBA：实时比赛事件检测最小可用产品
 
@@ -1375,27 +1483,28 @@
 可切入环节：分析建议：围绕一种可验证比赛事件构建影子评测，再决定上线范围。
 
 - MVP交付周期：12周。口径：AWS负责人的项目级一手帖子明确称从kickoff到deployed MVP。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：实时事件标签和评测口径
 - 分析：流式数据延迟预算
 - 分析：与客户代码库及发布流程协作
 
-风险：
+### 风险
 - 分析：误检漏检
 - 分析：MVP与全量生产范围混淆
 - 分析：比赛数据授权
 
-限制：
+### 限制
 - 主要项目细节来自组织负责人的一手公开帖子，缺少客户独立复核。
 - 不推断该MVP与NBA Inside the Game全部功能为同一部署。
 
-来源：
-- [AWS Forward Deployed Engineering: A Dedicated Organization with $1B Investment](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
-- [AWS invests $1 billion to embed AI forward deployed engineers with customers](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers)
-- [AWS doubles investment in AWS Generative AI Innovation Center](https://aws.amazon.com/blogs/machine-learning/aws-doubles-investment-in-aws-generative-ai-innovation-center-marking-two-years-of-customer-success/)
-- [NBA官方总部说明](https://pr.nba.com/nba-2k-league-all-star-comes-to-new-york-city/)
+### 来源
+1. [AWS Forward Deployed Engineering: A Dedicated Organization with $1B Investment](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
+2. [AWS invests $1 billion to embed AI forward deployed engineers with customers](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers)
+3. [AWS doubles investment in AWS Generative AI Innovation Center](https://aws.amazon.com/blogs/machine-learning/aws-doubles-investment-in-aws-generative-ai-innovation-center-marking-two-years-of-customer-success/)
+4. [NBA官方总部说明](https://pr.nba.com/nba-2k-league-all-star-comes-to-new-york-city/)
 
 ## 36. Jabil（捷普）：Jabil制造车间故障排查知识助手
 
@@ -1416,29 +1525,31 @@
 可切入环节：分析建议：先选非安全关键设备的只读排障知识，保留原文链接并让操作员确认。
 
 - 首版构建周期：1周。口径：AWS客户故事Outcome及组织负责人帖子相互吻合；不是完整全球 rollout 周期。
+
 - 知识覆盖：超过1,700份资料。口径：上线后可查询政策、制造规范和排障文档。
+
 - 成本变化：未公开。口径：未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。
 
-关键技能：
+### 关键技能
 - 分析：多源制造知识接入
 - 分析：多语言检索评价
 - 分析：持续数据源集成与运维
 
-风险：
+### 风险
 - 分析：过期工艺信息
 - 分析：错误诊断影响生产安全
 - 分析：跨站点访问权限
 
-限制：
+### 限制
 - 67–83%部署提速、74%数据处理提速属于同一客户的基础设施/EBA改造，不能归因于车间AI助手，故未作为本例效益。
 - 100多个站点是公司运营规模，不代表助手已逐站部署。
 - 客户故事仍称GenAIIC顾问；前线部署工程师（Forward Deployed Engineer）关联来自后来的一手负责人说明。
 
-来源：
-- [Jabil Collaborates with AWS to Drive Manufacturing Efficiency and Process Optimization](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
-- [AWS Forward Deployed Engineering: A Dedicated Organization with $1B Investment](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
-- [AWS doubles investment in AWS Generative AI Innovation Center](https://aws.amazon.com/blogs/machine-learning/aws-doubles-investment-in-aws-generative-ai-innovation-center-marking-two-years-of-customer-success/)
-- [AWS Jabil官方客户故事](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
+### 来源
+1. [Jabil Collaborates with AWS to Drive Manufacturing Efficiency and Process Optimization](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
+2. [AWS Forward Deployed Engineering: A Dedicated Organization with $1B Investment](https://www.linkedin.com/posts/taimurrashid_aws-invests-1-billion-to-embed-ai-forward-activity-7477785579259150336-EXoQ)
+3. [AWS doubles investment in AWS Generative AI Innovation Center](https://aws.amazon.com/blogs/machine-learning/aws-doubles-investment-in-aws-generative-ai-innovation-center-marking-two-years-of-customer-success/)
+4. [AWS Jabil官方客户故事](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
 
 ## 37. CMA CGM：货运放行、单证与客服辅助
 
@@ -1459,27 +1570,28 @@
 可切入环节：先从单证完整性与客户状态只读查询开始，异常交运营人员。
 
 - 驻场团队：约20名工程师。口径：客户明确已经加入Marseille及CMA Media团队；这是交付投入，不是业务收益。
+
 - 项目节时与成本：未披露可单独归因值。口径：集团55+ AI项目、每年5,400万查询量和200个用例不能全归给Mistral本项目。
 
-关键技能：
+### 关键技能
 - 航运单证处理
 - 业务系统连接
 - 权限与放行审批
 - 客服升级
 
-风险：
+### 风险
 - 错误放行可能造成财产损失
 - 跨业务AI总量与本项目归因混淆
 
-限制：
+### 限制
 - 正式前线部署工程师（Forward Deployed Engineer）职称未披露，证据B表示项目特定的一线嵌入职责。
 - 不把媒体事实核查拆成第二个独立客户案例。
 - 客户公告描述集团多家AI供应商并存，整体效益不得全归因Mistral。
 
-来源：
-- [客户官方：工程师已加入现场团队及已部署方案](https://www.cmacgm-group.com/en/news-media/ai-now-summit-ai-deployment-across-cma-cgm-group-operations)
-- [Mistral逐项目案例](https://mistral.ai/customers/cma-cgm/)
-- [CMA CGM官方法定信息及总部](https://www.cmacgm-group.com/en/legal-terms)
+### 来源
+1. [客户官方：工程师已加入现场团队及已部署方案](https://www.cmacgm-group.com/en/news-media/ai-now-summit-ai-deployment-across-cma-cgm-group-operations)
+2. [Mistral逐项目案例](https://mistral.ai/customers/cma-cgm/)
+3. [CMA CGM官方法定信息及总部](https://www.cmacgm-group.com/en/legal-terms)
 
 ## 38. HTX（新加坡内政科技局）：公共安全本地模型与内部平台
 
@@ -1500,26 +1612,27 @@
 可切入环节：从非执法决定的内部文档检索和摘要切入，保留来源与人工判断。
 
 - 已部署形态：本地NGINE上的Phoenix模型与工程平台。口径：官方明确内部部署；未披露活跃人员数和处理量。
+
 - 效率与成本：未公开可审计量化结果。口径：官方定性称提升人员生产率；参数数和基准表现不等于运行节省。
 
-关键技能：
+### 关键技能
 - 隔离网模型部署
 - 领域训练与评测
 - 本地语言安全基准
 - 知识转移
 
-风险：
+### 风险
 - 公共安全误判具有高后果
 - 数据控制不等于所有用途自动合规
 
-限制：
+### 限制
 - 正式前线部署工程师（Forward Deployed Engineer）职称未披露；B依据逐项目嵌入工程能力与实际内网部署组合。
 - 边境和网络安全是用途示例，未提供各独立产品上线清单。
 
-来源：
-- [Mistral官方HTX案例](https://mistral.ai/customers/htx/)
-- [HTX官方合作扩展](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/htx-expands-partnership-with-mistral-ai)
-- [HTX官方：主权AI实际架构](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/why-sovereign-ai-is-key-to-scaling-public-safety-impact)
+### 来源
+1. [Mistral官方HTX案例](https://mistral.ai/customers/htx/)
+2. [HTX官方合作扩展](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2025/htx-expands-partnership-with-mistral-ai)
+3. [HTX官方：主权AI实际架构](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/why-sovereign-ai-is-key-to-scaling-public-safety-impact)
 
 ## 39. Deliveroo：骑手入驻与餐厅状态语音运营
 
@@ -1540,24 +1653,26 @@
 可切入环节：分析：从人工可复核的餐厅营业状态核实切入。
 
 - 骑手后续行动：30%。口径：电话后7天内继续申请；不等于全部完成入职。
+
 - 餐厅核实触达：75%。口径：评估期电话联系并核实营业状态的比例。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：多语言语音编排
 - 分析：运营系统状态写入
 
-风险：
+### 风险
 - 分析：误判停业影响商家订单
 - 分析：自动外呼应有明确身份与退出机制
 
-限制：
+### 限制
 - 多个工作流属于同一合作，不拆成多个案例。
 - 触达率、继续申请率与最终激活率是不同指标。
 
-来源：
-- [Deliveroo partners with ElevenLabs](https://elevenlabs.io/blog/deliveroo)
-- [Deliveroo Legal](https://deliveroo.co.uk/legal/)
+### 来源
+1. [Deliveroo partners with ElevenLabs](https://elevenlabs.io/blog/deliveroo)
+2. [Deliveroo Legal](https://deliveroo.co.uk/legal/)
 
 ## 40. Marshmallow：汽车保险自助保单服务
 
@@ -1578,23 +1693,24 @@
 可切入环节：分析：先做只读保单解释，再上线需明确确认的事务。
 
 - AI会话满意度：超过82%。口径：客户自报CSAT；不是自动解决率，样本量和期间未知。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：保单事务API
 - 分析：客服与合规联合评测
 
-风险：
+### 风险
 - 分析：取消或改价误操作有财务后果
 - 分析：不能从客服分数推出保险定价公平性
 
-限制：
+### 限制
 - 正式前线部署工程师（Forward Deployed Engineer）职称未披露；证据为具体工程嵌入与连续部署实践。
 - 20万是公司总客户数，不是AI使用量。
 
-来源：
-- [How Marshmallow uses AI](https://sierra.ai/customers/marshmallow)
-- [Marshmallow March competition terms](https://www.marshmallow.com/march-competition-terms)
+### 来源
+1. [How Marshmallow uses AI](https://sierra.ai/customers/marshmallow)
+2. [Marshmallow March competition terms](https://www.marshmallow.com/march-competition-terms)
 
 ## 41. Sutherland Excavating Ltd.：石油储罐检查与异常监测
 
@@ -1615,25 +1731,27 @@
 可切入环节：分析：先做只读异常提示并由现场人员复核。
 
 - 人工错误：减少40%。口径：客户自报；定义、样本和对照期未披露。
+
 - 维护周转：加快20%。口径：供应商报告；计算口径未披露。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：IoT异常与数据缺口
 - 分析：多租户隔离与工单闭环
 
-风险：
+### 风险
 - 分析：传感器故障误报或漏报
 - 分析：安全关键巡检不可仅靠模型
 
-限制：
+### 限制
 - 供应商发布的客户口径，未独立审计。
 - 不是大语言模型客服，属于前线部署工程师（Forward Deployed Engineer）物联网与机器学习生产部署。
 
-来源：
-- [TankAware AI + IoT Petroleum Site Management](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
-- [Hire forward deployed engineers who ship inside your operations](https://www.hashlogics.com/hire/forward-deployed-engineers)
-- [Sutherland Excavating Contact](https://www.sutherlandexcavating.com/contact-us/)
+### 来源
+1. [TankAware AI + IoT Petroleum Site Management](https://www.hashlogics.com/case-studies/tankaware-ai-iot-petroleum-site-management)
+2. [Hire forward deployed engineers who ship inside your operations](https://www.hashlogics.com/hire/forward-deployed-engineers)
+3. [Sutherland Excavating Contact](https://www.sutherlandexcavating.com/contact-us/)
 
 ## 42. ZhoopZhoop：汽修连锁语音接待与配件询价
 
@@ -1654,23 +1772,24 @@
 可切入环节：分析：先做预约查询和询价比较，采购保留人工决策。
 
 - 量化成效：未披露。口径：未公布接通量、预约转化或节省工时。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：语音与工具调用
 - 分析：日历并发控制和报价结构化
 
-风险：
+### 风险
 - 分析：重复预约或错误零件型号
 - 分析：通话记录与供应商报价保密
 
-限制：
+### 限制
 - 没有证据证明系统自主下采购订单；已确认的是外呼收集报价。
 
-来源：
-- [ZhoopZhoop AI Receptionist for Auto Shops](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
-- [Hire forward deployed engineers who ship inside your operations](https://www.hashlogics.com/hire/forward-deployed-engineers)
-- [ZhoopZhoop service locations](https://zhoopzhoopauto.com/locations/)
+### 来源
+1. [ZhoopZhoop AI Receptionist for Auto Shops](https://www.hashlogics.com/case-studies/zhoopzhoop-ai-collision-shop-platform)
+2. [Hire forward deployed engineers who ship inside your operations](https://www.hashlogics.com/hire/forward-deployed-engineers)
+3. [ZhoopZhoop service locations](https://zhoopzhoopauto.com/locations/)
 
 ## 43. Bilt：住房支付与奖励客服
 
@@ -1691,22 +1810,23 @@
 可切入环节：分析：从有出处的奖励与支付说明切入。
 
 - 查询解决率：70%。口径：供应商工程文章自报；分母、样本期和成功判定未披露。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：金融问答溯源
 - 分析：敏感操作权限隔离
 
-风险：
+### 风险
 - 分析：错误账务解释
 - 分析：不得把解决率当金融操作准确率
 
-限制：
+### 限制
 - 原详细客户页目前转向客户索引；采用仍公开的工程师官方文章，技术细节有限。
 
-来源：
-- [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
-- [Bilt announces New York headquarters](https://newsroom.biltrewards.com/bilt-announces-new-headquarters-in-new-york-citys-meatpacking-district)
+### 来源
+1. [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
+2. [Bilt announces New York headquarters](https://newsroom.biltrewards.com/bilt-announces-new-headquarters-in-new-york-citys-meatpacking-district)
 
 ## 44. Rippling：多产品客服分流与账户查询
 
@@ -1727,22 +1847,23 @@
 可切入环节：分析：从只读账户查询与人工转接摘要切入。
 
 - 聊天分流率：38%升至50%以上。口径：供应商自报；并非准确率。页面32%增幅为相对提升，不是增加32个百分点。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：API权限隔离
 - 分析：多产品路由评测
 
-风险：
+### 风险
 - 分析：员工福利和薪酬信息可能越权泄露
 - 分析：错误路由拖延敏感问题
 
-限制：
+### 限制
 - 指标未经独立审计；不将自助分流解释为业务问题已正确解决。
 
-来源：
-- [How Rippling supports many user types with Decagon](https://decagon.ai/case-studies/rippling)
-- [Rippling User Privacy Notice](https://static-assets.ripplingcdn.com/legal/en-US/user_privacy_notice.html)
+### 来源
+1. [How Rippling supports many user types with Decagon](https://decagon.ai/case-studies/rippling)
+2. [Rippling User Privacy Notice](https://static-assets.ripplingcdn.com/legal/en-US/user_privacy_notice.html)
 
 ## 45. Curology：皮肤护理订阅与物流客服
 
@@ -1763,24 +1884,25 @@
 可切入环节：分析：先做物流查询并将医学问题转专业人员。
 
 - 客服运营成本：下降65%。口径：供应商自报；绝对费用、期间及是否包含全部实施成本未知。
+
 - 聊天渠道占比：5%升至80%。口径：这是客服流量渠道占比，不是80%自动解决率。
 
-关键技能：
+### 关键技能
 - 分析：订阅事务编排
 - 分析：医疗与商业问题分流
 
-风险：
+### 风险
 - 分析：不能把账单客服当诊疗系统
 - 分析：退款与发货变更须保留审计
 
-限制：
+### 限制
 - 未证明改善任何医学结局；65%是客服运营成本口径，总投入未知。
 - B级基于官方同义岗位职责与具名项目的组合；不能说原文把该项目工程师职位写成Forward Deployed Engineer（前线部署工程师）。
 
-来源：
-- [Customer Success Story: Curology + Decagon](https://decagon.ai/case-studies/curology)
-- [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
-- [Contact Curology](https://curology.com/contact-us/)
+### 来源
+1. [Customer Success Story: Curology + Decagon](https://decagon.ai/case-studies/curology)
+2. [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
+3. [Contact Curology](https://curology.com/contact-us/)
 
 ## 46. Noom：健康管理订阅客服现代化
 
@@ -1801,24 +1923,25 @@
 可切入环节：分析：从非临床订阅与账户问答切入。
 
 - 客服分流率：59%升至68%。口径：30天内增加9个百分点；不是减少68%全部人员。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：旧客服迁移
 - 分析：健康问题边界评测
 
-风险：
+### 风险
 - 分析：健康敏感数据保护
 - 分析：分流率不能替代安全性或解决率
 
-限制：
+### 限制
 - 病例结局与客服准确率未披露；不能推断健康管理已自动化。
 - B级基于官方同义岗位职责与具名项目的组合；不能说原文把该项目工程师职位写成Forward Deployed Engineer（前线部署工程师）。
 
-来源：
-- [How Noom is scaling concierge experiences](https://decagon.ai/case-studies/noom)
-- [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
-- [Noom Appoints Jim Bugden Chief Financial Officer](https://www.noom.com/in-the-news/noom-appoints-jim-bugden-chief-financial-officer/)
+### 来源
+1. [How Noom is scaling concierge experiences](https://decagon.ai/case-studies/noom)
+2. [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
+3. [Noom Appoints Jim Bugden Chief Financial Officer](https://www.noom.com/in-the-news/noom-appoints-jim-bugden-chief-financial-officer/)
 
 ## 47. Klarna：美国第一线语音客服
 
@@ -1839,25 +1962,26 @@
 可切入环节：分析：先做支付状态说明与人工转接。
 
 - 解决速度：最高10倍。口径：限由代理处理的问题；没有全体来电对照、样本或绝对基线。
+
 - 总投入与净成本：未公开。口径：未披露实施费、订阅费、维护费及扣除全部投入后的净节省。
 
-关键技能：
+### 关键技能
 - 分析：语音低延迟编排
 - 分析：金融客服升级路径
 
-风险：
+### 风险
 - 分析：身份认证与付款信息保护
 - 分析：不得把可用人数等同实际使用
 
-限制：
+### 限制
 - 以Klarna Group plc法律主体国家标注英国；银行子公司瑞典。不要混为同一总部概念。
 - 不把11400万全球扩展计划写为已部署。
 - 客户的前线部署团队参与有明确评价，但评价页没有将美国电话流程逐项绑定；不把组合关联升级为单页项目级证据。
 
-来源：
-- [Klarna reduces Time to Resolution by 10X with ElevenAgents](https://elevenlabs.io/blog/klarna)
-- [ElevenLabs Forward Deployed Engineers](https://elevenlabs.io/agents/forward-deployed-engineers)
-- [Klarna Governance Oversight](https://investors.klarna.com/governance/Governance-Oversight/)
+### 来源
+1. [Klarna reduces Time to Resolution by 10X with ElevenAgents](https://elevenlabs.io/blog/klarna)
+2. [ElevenLabs Forward Deployed Engineers](https://elevenlabs.io/agents/forward-deployed-engineers)
+3. [Klarna Governance Oversight](https://investors.klarna.com/governance/Governance-Oversight/)
 
 ## 48. BBVA：银行员工知识与工作流共建
 
@@ -1878,27 +2002,29 @@
 可切入环节：先做有来源的内部制度检索，由员工确认后使用。
 
 - 节时：每周接近3小时。口径：员工常规任务自报；未披露独立对照、样本和净成本。
+
 - 日使用：超过80%。口径：对应早期11,000员工推广阶段，不是全集团120,000员工。
+
 - 成本：未公开。口径：无全成本和净收益。
 
-关键技能：
+### 关键技能
 - 银行流程发现
 - 权限隔离
 - 知识接入
 - 真实样本评测
 
-风险：
+### 风险
 - 银行数据泄露
 - 员工采用率不能等同财务ROI
 
-限制：
+### 限制
 - FDE页面对参与描述为整体合作；不能将所有自助GPT成果归为FDE单独效果。
 - 全球扩展国家名单未逐项披露。
 
-来源：
-- [DeployCo FDE案例区](https://deploy.co/)
-- [BBVA合作扩展](https://openai.com/index/bbva-collaboration-expansion/)
-- [BBVA法定实体和注册地址](https://shareholdersandinvestors.bbva.com/microsites/pilarIII2015/en/1/cd.html)
+### 来源
+1. [DeployCo FDE案例区](https://deploy.co/)
+2. [BBVA合作扩展](https://openai.com/index/bbva-collaboration-expansion/)
+3. [BBVA法定实体和注册地址](https://shareholdersandinvestors.bbva.com/microsites/pilarIII2015/en/1/cd.html)
 
 ## 49. John Deere：播种季设备推荐与经销商支持
 
@@ -1919,26 +2045,75 @@
 可切入环节：先做一型号设备的告警摘要与有来源的排查建议，由经销商确认后发给农户。
 
 - 客户互动：达到6倍。口径：官网自报；互动定义、原基线、样本数、观察期与对照组未公开。这不是农作物产量或人均生产率。
+
 - 成本变化：未公开。口径：合同费、模型成本、总拥有成本及净现金节省均未知。
 
-关键技能：
+### 介入前的问题与基线
+
+- 【公开披露】通用设备提醒可能与天气和农时冲突；农户买了设备未必充分使用功能，经销商排故要翻大量手册和维修记录。 [来源2](https://openai.com/index/john-deere-justin-rose/)
+
+- 【未披露】没有披露本推荐系统的原始互动量、服务成本及排故平均时长。高层谈及的支持比例愿景不作已实现基线或结果。
+
+### 工程师具体做了什么
+
+- 【公开披露】OpenAI Deployment Company明确将其作为部署案例：与领域专家审阅数百个真实样例，定制准确性评测，持续迭代后部署播种季推荐。职责有据，但团队人数、每个人负责的代码及驻场时长未公开。 [来源1](https://deploy.co/)
+
+### 技术方案与数据流程
+
+- 【公开披露】已披露数据链路：设备遥测、历史使用和天气情境→识别功能未开启或设备异常→给客户及经销商操作建议；季末形成价值报告。使用OpenAI API，具体模型未披露。 [来源2](https://openai.com/index/john-deere-justin-rose/)
+
+- 【公开披露】示例是See & Spray未启用或回到传统喷洒时，辅助查找喷杆高度、车速、摄像头清洁等原因。建议链路与设备自身视觉喷药算法需分开。 [来源2](https://openai.com/index/john-deere-justin-rose/)
+
+- 【公开披露】已知评测使用真实样例和领域专家；准确率分数、负样本比例、按季节区域分层、拒答标准以及线上回归频率未公开。 [来源1](https://deploy.co/)
+
+- 【未披露】客户成功人员和经销商在流程内，但是否每条建议必须先人工批准、能否自动改机器设置均未披露；不要画成自动控制农机。
+
+- 【分析／复现建议】以下为复现建议，非John Deere实际架构：从一类设备、一类故障开始，把可验证的传感器事实与生成的操作解释分开；先用规则筛选触发事件，再让模型组织有依据的建议。
+
+- 【分析／复现建议】把天气、设备型号和作业状态作为明确上下文；缺数据时不要补猜。测试集按季节、型号、异常状态分层，并保留经销商反馈。
+
+- 【分析／复现建议】验收看建议被采纳后解决了多少故障、平均恢复时间及单客户支持总成本；点击或互动增长不能直接当农户增收。
+
+### 解决程度与业务提升
+
+- 【公开披露】部署官网报告客户互动达到6倍，未给互动定义、基期、样本或对照。只能按供应商自报采用指标记录。 [来源1](https://deploy.co/)
+
+- 【公开披露】最多70%药剂减少来自See & Spray精准喷洒能力，不能把它全归因于本次推荐系统。高层提出1000:1支持比例属于愿景。 [来源2](https://openai.com/index/john-deere-justin-rose/)
+
+- 【分析／复现建议】业务逻辑：帮助用户真正使用购买的功能，可为续费和服务价值提供依据；实际新增续费、利润、减少停机时长尚无本项目数据。
+
+### 尚未公开的信息
+
+- 【未披露】设备数据接入协议、存储和处理系统：未公开，不能据通用技术推定。
+
+- 【未披露】模型版本、提示词、知识检索是否使用向量数据库：未公开，不能据通用技术推定。
+
+- 【未披露】天气数据提供商、时间粒度、缺失和延迟处理：未公开，不能据通用技术推定。
+
+- 【未披露】机器及农户权限映射、数据所有权和保留规则：未公开，不能据通用技术推定。
+
+- 【未披露】推荐触达渠道、人工审批、误报率与故障兜底：未公开，不能据通用技术推定。
+
+- 【未披露】API费、实施费、每农户成本和净收益：未公开，不能据通用技术推定。
+
+### 关键技能
 - 设备遥测与天气数据接入
 - 农艺/售后知识建模
 - 用真实工况建立评测集
 - 把建议接回经销商流程
 
-风险：
+### 风险
 - 错误操作建议可能造成设备或农时损失
 - 季节性和天气使效果迁移困难；生产逐条复核制度未公开
 
-限制：
+### 限制
 - 化学品用量减少最多 70% 是 2025 客户访谈中 See & Spray 机器视觉精准喷药设备的结果；即使 DeployCo 摘要合并提及，也不能直接归因为 OpenAI 推荐系统。1000:1 相较 10:1 客户支持比例在原文是 vision，不是已实现值。
 - 此客户是农业装备企业，案例应用于农业服务；不将其描述为农场运营商。
 
-来源：
-- [The OpenAI Deployment Company](https://deploy.co/)
-- [AI helps John Deere transform agriculture](https://openai.com/index/john-deere-justin-rose/)
-- [John Deere官方：全球总部地址](https://www.deere.com/en-us/our-company/contact-us)
+### 来源
+1. [The OpenAI Deployment Company](https://deploy.co/)
+2. [AI helps John Deere transform agriculture](https://openai.com/index/john-deere-justin-rose/)
+3. [John Deere官方：全球总部地址](https://www.deere.com/en-us/our-company/contact-us)
 
 ## 50. T-Mobile：App内文本与语音客户支持
 
@@ -1959,28 +2134,29 @@
 可切入环节：先切入账单解释、故障排查和转人工摘要，避免第一阶段直接修改账户。
 
 - 效率与解决程度：无可归因的已实现量化披露。口径：一手访谈称部分App功能已用OpenAI模型；未找到该项目独立的解决率、节时或吞吐指标。
+
 - 成本变化：未公开。口径：访谈称合作约一年；未找到能单独归因于该 FDE（Forward Deployed Engineer，前线部署工程师） 项目的已实现节时、成本或解决率数字；合同额、部署费用未公开。
 
-关键技能：
+### 关键技能
 - 旧系统API封装
 - 工具权限与事务一致性
 - 音频端到端评测
 - 用户授权、失败回滚与升级
 
-风险：
+### 风险
 - 客户许可不能由模型自行假定
 - 改套餐或账单等动作需要明确授权与可回滚记录
 
-限制：
+### 限制
 - 2024 资本市场日的减少 75% inbound contacts 是多项数字化及 AI 工作共同的未来目标，不是 IntentCX/FDE（Forward Deployed Engineer，前线部署工程师） 已实现结果。
 - B级为一手发言的组合证据；不与逐项目官方书面记录等同。
 
-来源：
-- [Inside OpenAI Enterprise: Forward Deployed Engineering, GPT-5, and More | BG2 Guest Interview](https://www.youtube.com/watch?v=yLTSqBzKG2s)
-- [T-Mobile and OpenAI Join Forces](https://www.t-mobile.com/news/business/t-mobile-launches-intentcx-with-openai)
-- [OpenAI官方：Frontier与T-Mobile试点](https://openai.com/index/introducing-openai-frontier/)
-- [原始访谈可读转写（非官方逐字稿）](https://bidclub.ai/e/inside-openai-enterprise-forward-deployed-engine)
-- [T-Mobile US官方：总部问答](https://investor.t-mobile.com/resources/investor-faqs/default.aspx?INTNAV=tNav%3AInvestors%3AResources)
+### 来源
+1. [Inside OpenAI Enterprise: Forward Deployed Engineering, GPT-5, and More | BG2 Guest Interview](https://www.youtube.com/watch?v=yLTSqBzKG2s)
+2. [T-Mobile and OpenAI Join Forces](https://www.t-mobile.com/news/business/t-mobile-launches-intentcx-with-openai)
+3. [OpenAI官方：Frontier与T-Mobile试点](https://openai.com/index/introducing-openai-frontier/)
+4. [原始访谈可读转写（非官方逐字稿）](https://bidclub.ai/e/inside-openai-enterprise-forward-deployed-engine)
+5. [T-Mobile US官方：总部问答](https://investor.t-mobile.com/resources/investor-faqs/default.aspx?INTNAV=tNav%3AInvestors%3AResources)
 
 ## 51. Revolut：多语种第一线语音客服
 
@@ -2001,21 +2177,22 @@
 可切入环节：先做已认证用户的只读状态查询和人工转接摘要；金额相关执行单独设权限与复核。
 
 - 效率与使用规模：供应商称工单少于5分钟解决，过去平均用时至少其8倍；比较含排队且未按问题复杂度校正。99.7%是通话成功进行率，不是财务问题解决准确率。。口径：客户或供应商自报；详见口径限制
+
 - 成本变化：未披露每分钟、每工单总成本或项目净节省，仅称价格具有竞争力。。口径：未披露项目总投入和净节省
 
-关键技能：
+### 关键技能
 - 语音/电话集成、身份验证、最小权限工具调用、多语言回归测试、轨迹观测、零保留配置与数据边界。
 
-风险：
+### 风险
 - 账户信息泄露、误操作和错误拒付处理；平台认证不自动等于整个部署合规。
 
-限制：
+### 限制
 - 非随机对照；样本量和测量窗口未公开。不可把8倍用时差直接写成87.5%成本下降。
 
-来源：
-- [ElevenLabs官方客户案例：工程师参与与完整指标口径](https://elevenlabs.io/blog/revolut)
-- [ElevenLabs工程师：生产部署与持续评测方法](https://elevenlabs.io/blog/building-voice-agents-that-last-some-lessons-learned-from-forward-deployed-engineering)
-- [Revolut官方：伦敦全球总部](https://www.revolut.com/blog/post/where-is-revolut-based/)
+### 来源
+1. [ElevenLabs官方客户案例：工程师参与与完整指标口径](https://elevenlabs.io/blog/revolut)
+2. [ElevenLabs工程师：生产部署与持续评测方法](https://elevenlabs.io/blog/building-voice-agents-that-last-some-lessons-learned-from-forward-deployed-engineering)
+3. [Revolut官方：伦敦全球总部](https://www.revolut.com/blog/post/where-is-revolut-based/)
 
 ## 52. AIG：投保资料整理与核保助手
 
@@ -2036,31 +2213,33 @@
 可切入环节：仅做固定险种的材料完整性检查与有引用摘要，报价、绑定及出单留给核保师。
 
 - 核保资料摘要准备：少于1天。口径：2025投资者材料第118页；只到准备好供核保师审核，不是全流程承保少于一天。
+
 - 人员容量：无需新增FTE可增加容量。口径：公司定性陈述；增幅、观察期和实际人均产出未公开。
+
 - 成本变化：未公开。口径：无总实施费、核保单件净成本或净节省披露。
 
-关键技能：
+### 关键技能
 - 保险文档抽取
 - 来源追踪及证据链
 - 结构化风险字段校验
 - 人审队列与权限隔离
 
-风险：
+### 风险
 - 摘要遗漏会影响承保；自动排序不得变成未经审核的最终决定
 - 客户发言不是损失率改善的独立审计
 
-限制：
+### 限制
 - 保险与银行按不同业务行业归类
 - 不要从<1天资料整理扩写成全流程核保自动化
 - 访谈是客户陈述；不是独立质量／损失率审计
 - 3-4周对比仅本次见于转录而未在官方PDF直接核读，建议只写官方<1天
 
-来源：
-- [已生产、AI链路、人审、<1天](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
-- [TBPN原始AIPCon10采访；本次直接打开失败](https://www.youtube.com/watch?v=72kQ7PYBaGk)
-- [客户原始访谈可读转录；时间与视频有约5分钟差](https://metacast.app/podcast/tbpn/D9fOtj1E/alex-karp-live-from-aipcon-10-alex-karp-peter-zaffino-chad-wahlquist-sam-berry/eylg2ePA)
-- [较新客户官方确认AI核心部署](https://www.aig.com/home/investor-relations/aig-2025-annual-report)
-- [AIG提交美国证券交易委员会的2025年报：总部](https://www.sec.gov/Archives/edgar/data/5272/000000527226000023/aig-20251231.htm)
+### 来源
+1. [已生产、AI链路、人审、<1天](https://www.aig.com/content/dam/aig/america-canada/us/documents/investor-relations/aig_investor_day_2025__presentation.pdf)
+2. [TBPN原始AIPCon10采访；本次直接打开失败](https://www.youtube.com/watch?v=72kQ7PYBaGk)
+3. [客户原始访谈可读转录；时间与视频有约5分钟差](https://metacast.app/podcast/tbpn/D9fOtj1E/alex-karp-live-from-aipcon-10-alex-karp-peter-zaffino-chad-wahlquist-sam-berry/eylg2ePA)
+4. [较新客户官方确认AI核心部署](https://www.aig.com/home/investor-relations/aig-2025-annual-report)
+5. [AIG提交美国证券交易委员会的2025年报：总部](https://www.sec.gov/Archives/edgar/data/5272/000000527226000023/aig-20251231.htm)
 
 ## 53. Tampa General Hospital：AI医疗利用审核的成本优化
 
@@ -2081,32 +2260,83 @@
 可切入环节：先对已有非诊疗文书辅助流程做离线成本优化，质量达标后灰度；不接管临床决策。
 
 - AI工作流成本：降低近70%。口径：医院专家在官方视频称规模部署后的相关AI审核工作流成本下降近70%；绝对金额、基期和样本量未公开。演示中单个criteria-matching agent换模型下降68%，是另一个局部口径，不能当同一分母。不是全院成本下降。
+
 - GPT调用：减少84%。口径：同一优化流程的调用量，不等于人力减少84%。
+
 - 专家偏好：90%情况下偏好优化版。口径：评测样本量、盲测方式未公开；不是临床准确率90%。
+
 - 总投入与净节省：未公开。口径：实施、订阅、维护和绝对美元金额未披露。
 
-关键技能：
+### 介入前的问题与基线
+
+- 【公开披露】原有AI利用审核已规模使用，模型费用随部署扩大成为负担。目标是降低这项工作流费用，同时保住临床叙述与证据质量；不是从零替代全院人工。 [来源1](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+
+- 【未披露】缺少优化前每份审核的美元成本、调用次数、耗时分布，以及人工审核时长，无法重建绝对基线。
+
+### 工程师具体做了什么
+
+- 【公开披露】官方明确Colton Rusch为FDE（Forward Deployed Engineer，前线部署工程师）；他与医院专家David Zihr共同展示成本优化。工程师展示系统依赖、寻找高成本节点及验证替换效果，医院提供质量约束。 [来源1](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+
+### 技术方案与数据流程
+
+- 【公开披露】患者病历与审核指南进入审核流程；Ontology承载人和AI动作及分支关系，混合确定性逻辑与agent。审核稿呈现在护士工作台，与病历对照，经护士修改、接受并发送。 [来源1](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+
+- 【公开披露】AIP Evolve分析数据流和模型调用位置。演示中的criteria-matching agent将两处Claude Sonnet替换为GPT-5 mini：该局部成本下降68%，延迟有所增加。不能说整套医院系统统一换成该模型。 [来源1](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+
+- 【公开披露】官方项目摘要还披露跨供应商模型筛选、提示修改，以及用确定性代码代替部分模型调用。 [来源2](https://www.palantir.com/devcon/)
+
+- 【公开披露】优化比较要守住临床叙述和证据选择；护士仍复核。公开演示是示意界面，并非公开真实患者资料。 [来源1](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+
+- 【公开披露】90%偏好不是90%临床准确率；专家人数、样本量、抽样方式、盲测和失败阈值未披露。 [来源2](https://www.palantir.com/devcon/)
+
+- 【分析／复现建议】以下是复现建议，不是医院已公开架构：先画审核状态机，把输入、输出、人工批准及下游副作用列清楚；记录每节点费用与延迟。
+
+- 【分析／复现建议】建立去标识化测试集，覆盖缺失证据、矛盾病历及边界条件；按医生认可的错误严重度评分。先验证低风险确定性规则，再比较模型替换。
+
+- 【分析／复现建议】以“单份合格审核总成本”验收，并同时监控人工修改量、严重遗漏和P95延迟；达不到质量阈值时回滚。
+
+### 解决程度与业务提升
+
+- 【公开披露】该AI审核工作流成本下降近70%；GPT调用减少84%；医院专家90%的比较中偏好优化输出。三项分别是费用、调用量、专家偏好，不能互相替代。 [来源2](https://www.palantir.com/devcon/)
+
+- 【分析／复现建议】可支持的商业结论是：已有生产流程的模型运行费用下降，同时保留专业人员审核。不能据此推出住院时间缩短、全院利润提升或减少了多少护士。
+
+- 【分析／复现建议】总订阅、实施、维护费用，优化前后绝对账单及净现金节省未公开。68%局部替换与近70%总体工作流不是可相加的两个收益。
+
+### 尚未公开的信息
+
+- 【未披露】EHR产品及具体接口、数据表、消息队列、提示全文：未公开，不能据通用技术推定。
+
+- 【未披露】每个节点模型版本、上下文大小、token账单和缓存策略：未公开，不能据通用技术推定。
+
+- 【未披露】访问控制、患者数据脱敏、保留期限、部署云及地区：未公开，不能据通用技术推定。
+
+- 【未披露】生产变更审批、灰度回滚、模型失效及应急恢复细节：未公开，不能据通用技术推定。
+
+- 【未披露】端到端临床安全评价和独立审计：未公开，不能据通用技术推定。
+
+### 关键技能
 - 工作流轨迹与成本拆解
 - 模型选择及提示优化
 - 以确定性代码替代不必要调用
 - 专家评测与上线回归
 
-风险：
+### 风险
 - 医疗审核具有高后果；专家偏好不能代替安全性或临床效果验证
 - 降低模型费用可能增加延迟；优化需同时守住证据完整性、质量和人工审核要求。
 
-限制：
+### 限制
 - 仅AI工作流成本，不是全院成本降低70%
 - 临床结果来自另一期合作，不应全部归因于GenAI或单个FDE
 - 没有独立审计或随机对照
 
-来源：
-- [官方视频：明确工程师身份、实际使用、护士复核及成本变化](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
-- [FDE身份、生产阶段、成本与专家偏好](https://www.palantir.com/devcon/)
-- [2026-10-17直接open读取全文；官方公司帖+视频转录，FDE身份/每天生产/护士保留步骤/成本近70%及局部68%演示](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
-- [官方公司2026-07-20成果帖；原站403，日期与正文通过2026-07-21 Palantir Bullets嵌入读取](https://x.com/palantirtech/status/2079263914139758785)
-- [官方Q2 2026报告第11页用过去时回顾DevCon6，证明截至2026-10-17前已发生；正文索引可读，直接open超大小限](https://investors.palantir.com/files/Palantir%20-%20Q2%202026%20Business%20Update.pdf)
-- [Tampa General官方：医院所在地与业务](https://www.tgh.org/about-tgh)
+### 来源
+1. [官方视频：明确工程师身份、实际使用、护士复核及成本变化](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+2. [FDE身份、生产阶段、成本与专家偏好](https://www.palantir.com/devcon/)
+3. [2026-10-17直接open读取全文；官方公司帖+视频转录，FDE身份/每天生产/护士保留步骤/成本近70%及局部68%演示](https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV)
+4. [官方公司2026-07-20成果帖；原站403，日期与正文通过2026-07-21 Palantir Bullets嵌入读取](https://x.com/palantirtech/status/2079263914139758785)
+5. [官方Q2 2026报告第11页用过去时回顾DevCon6，证明截至2026-10-17前已发生；正文索引可读，直接open超大小限](https://investors.palantir.com/files/Palantir%20-%20Q2%202026%20Business%20Update.pdf)
+6. [Tampa General官方：医院所在地与业务](https://www.tgh.org/about-tgh)
 
 ## 54. Airbus A350生产：A350生产数据与质量协同
 
@@ -2127,19 +2357,20 @@
 可切入环节：从一个工位的缺件和未关闭质量问题视图切入，保留原系统的质量放行权。
 
 - A350生产/交付节奏：加快33%（供应商口径）。口径：官网称A350生产增加33%；2022官方白皮书将指标标为A350交付加速33%。完整基准期、原始数量及计算方法未披露，不能自行换算为工时减少。
+
 - 项目费用与净节省：未公开。口径：供应商较广Skywise平台的节约估计不能归入此2015 A350项目。
 
-关键技能：
+### 关键技能
 - 工单/物料主数据统一
 - 数据质量与权限
 - 制造流程和排程约束
 - 让一线人员可操作的界面
 
-风险：
+### 风险
 - 此为前生成式AI的数据工程案例，不应宣称LLM自动造飞机
 - 作者披露持有Palantir股票；产量指标还有其他管理与产线因素
 
-限制：
+### 限制
 - 前生成式AI的数据集成／运营软件案例，不能称LLM自动造飞机
 - 亲历者披露持有PLTR股票；成效非独立审计
 - A350生产项目与2017 Skywise平台以及2026同名公司改组分开
@@ -2147,13 +2378,13 @@
 - 最后QA修正：17亿美元属于Skywise平台估计，不属于已确认2015 A350 FDE单项目节省。
 - 官方另有Skywise平台年节约估计，范围不同，不作为本A350项目的成本成效。
 
-来源：
-- [亲历FDE身份、驻场方式、具体流程](https://nabeelqu.co/reflections-on-palantir)
-- [官方A350生产33%口径](https://www.palantir.com/offerings/supply-chain/)
-- [官方Airbus/Skywise合作历史](https://www.palantir.com/impact/airbus/)
-- [直接读取PDF；33%是A350交付加速，$1.7B是Skywise平台年估计节省（独立第三方估计），不能等同A350 FDE项目ROI](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
-- [官方白皮书：区分A350交付与Skywise平台效益](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
-- [Airbus官方：欧洲地点图区分注册地与总部](https://mediaassets.airbus.com/pm_38_780_780729-ey5ygljerc.pdf)
+### 来源
+1. [亲历FDE身份、驻场方式、具体流程](https://nabeelqu.co/reflections-on-palantir)
+2. [官方A350生产33%口径](https://www.palantir.com/offerings/supply-chain/)
+3. [官方Airbus/Skywise合作历史](https://www.palantir.com/impact/airbus/)
+4. [直接读取PDF；33%是A350交付加速，$1.7B是Skywise平台年估计节省（独立第三方估计），不能等同A350 FDE项目ROI](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
+5. [官方白皮书：区分A350交付与Skywise平台效益](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
+6. [Airbus官方：欧洲地点图区分注册地与总部](https://mediaassets.airbus.com/pm_38_780_780729-ey5ygljerc.pdf)
 
 ## 55. Surf Air Mobility（Southern Airways／Mokulele自营航空运营）：SurfOS飞行、机组与燃油运营
 
@@ -2174,31 +2405,35 @@
 可切入环节：只读整合一支机队的航班与油耗异常，人工审核优化建议；先建立每飞行小时基线。
 
 - 直接运营成本/飞行区段小时：下降6%。口径：2026年至公告日YTD改善；对照窗口未清楚定义，不改称同比。
+
 - 燃油消耗/飞行区段小时：下降9%。口径：同一公司自报指标，非生成式模型单独效果。
+
 - 飞行员成本/飞行区段小时：下降9%。口径：单位产出成本，并非飞行员工资下降9%。
+
 - 劳动生产率/飞行区段小时：提高15%。口径：公司使用此口径；详细计算式与基期未披露。
+
 - 项目净ROI：未知。口径：软件/服务存在股票支付；未提供扣除全部成本后的净节省。
 
-关键技能：
+### 关键技能
 - 运行数据与时序接入
 - 约束优化及调度
 - 燃油/工时单位口径
 - 安全边界、审计和变更控制
 
-风险：
+### 风险
 - 不能让无约束生成模型直接决定飞行安全动作
 - 同时存在航线、机队及管理变化，归因须谨慎
 
-限制：
+### 限制
 - AI-enabled不证明每个优化步骤都是LLM
 - 内部航空生产改善不应冒充外部客户ROI
 - 优化伴随航线/机队/运营变革，不能把全部差值作FDE单一因果
 
-来源：
-- [客户官方FDE参与](https://s202.q4cdn.com/166167538/files/doc_presentations/2026/05/SurfOS-Go-To-Market.pdf)
-- [客户原始成效新闻稿；web直接打开失败，通过署名syndication核读](https://www.businesswire.com/news/home/20261007789149/en/)
-- [Surf Air Mobility Inc. via Business Wire完整发布稿](https://markets.financialcontent.com/stocks/article/bizwire-2026-10-7-surf-air-mobility-provides-airline-operations-business-update-highlighting-surfos-driven-efficiency-and-electric-aviation-priorities-in-hawaii?Language=english%2F1000)
-- [Surf Air官方：主体所在地与SurfOS运营航线](https://www.surfair.com/brands/)
+### 来源
+1. [客户官方FDE参与](https://s202.q4cdn.com/166167538/files/doc_presentations/2026/05/SurfOS-Go-To-Market.pdf)
+2. [客户原始成效新闻稿；web直接打开失败，通过署名syndication核读](https://www.businesswire.com/news/home/20261007789149/en/)
+3. [Surf Air Mobility Inc. via Business Wire完整发布稿](https://markets.financialcontent.com/stocks/article/bizwire-2026-10-7-surf-air-mobility-provides-airline-operations-business-update-highlighting-surfos-driven-efficiency-and-electric-aviation-priorities-in-hawaii?Language=english%2F1000)
+4. [Surf Air官方：主体所在地与SurfOS运营航线](https://www.surfair.com/brands/)
 
 ## 56. NFL：NFL IQ 球迷数据问答
 
@@ -2219,22 +2454,23 @@
 可切入环节：从一组公开数据的赛前/选秀问答做起，用固定问题集测事实准确性、延迟和每次有效回答成本。
 
 - 效率与使用规模：NFL负责人称概念到上线约6周。7月8日官方文章披露自3月上线以来16.8万+独立球迷、8.2万+聊天会话、74.4万+事件；指标精确截止日未给出。。口径：客户或供应商自报；详见口径限制
+
 - 成本变化：未公布合同费、云费用、每次会话成本或成本节省。。口径：未披露项目总投入和净节省
 
-关键技能：
+### 关键技能
 - 结构化数据语义层、检索与查询路由、时效刷新、嵌入式分析、消费级峰值容量与观测。
 
-风险：
+### 风险
 - 过期名单、薪资空间口径或模型分数被当作事实；须显示数据时间和不确定性。
 
-限制：
+### 限制
 - 使用量不是准确率、收入或节省；“6周”是本次交付时长，不能在缺少可比基线时算提速百分比。不可把其他NFL伤病模型效果归给此项目。
 
-来源：
-- [AWS官方：明确工程师共同投产NFL IQ](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers)
-- [AWS官方：6周上线与使用规模](https://aws.amazon.com/blogs/business-intelligence/ai-powered-productivity-comes-to-the-west-coast/)
-- [AWS官方：NFL IQ技术工作流](https://aws.amazon.com/blogs/media/how-nfl-next-gen-stats-built-the-nfl-iq-ai-assistant-with-amazon-quick/)
-- [National Football League官方：联盟地址](https://support.nfl.com/hc/en-us/articles/35869693160980-League-Address)
+### 来源
+1. [AWS官方：明确工程师共同投产NFL IQ](https://www.aboutamazon.com/news/aws/aws-1-billion-forward-deployed-ai-engineers)
+2. [AWS官方：6周上线与使用规模](https://aws.amazon.com/blogs/business-intelligence/ai-powered-productivity-comes-to-the-west-coast/)
+3. [AWS官方：NFL IQ技术工作流](https://aws.amazon.com/blogs/media/how-nfl-next-gen-stats-built-the-nfl-iq-ai-assistant-with-amazon-quick/)
+4. [National Football League官方：联盟地址](https://support.nfl.com/hc/en-us/articles/35869693160980-League-Address)
 
 ## 57. Hydro-Québec 的 Electric Circuit（Circuit électrique）：Voltère 网站咨询助手
 
@@ -2255,22 +2491,23 @@
 可切入环节：先做“会员卡、App、收费规则”的只读问答；测成功解决率和7天重复联系率，再考虑执行动作。
 
 - 效率与使用规模：上线60天后的对比：有互动的网站会话中，联系表单提交率由1.28%降至0.99%，下降0.29个百分点。供应商估计2024年12月避免557次人工联系。。口径：客户或供应商自报；详见口径限制
+
 - 成本变化：未公布部署费、运营费、每次成功解决成本或净现金节约；客户有“降低成本”的定性反馈。。口径：未披露项目总投入和净节省
 
-关键技能：
+### 关键技能
 - 知识库版本、法英双语评测、引用和拒答、人工转接、按会话/联系人去重埋点。
 
-风险：
+### 风险
 - 错误充电操作或故障建议会影响安全；不能让助手屏蔽紧急人工渠道。
 
-限制：
+### 限制
 - 同页标题30%、正文22.35%相互不一致；用展示的四舍五入率复算约22.66%相对下降。联系减少不等于问题已解决，未见重复来电/弃用率/独立审计。
 
-来源：
-- [供应商项目案例与工程师参与证据](https://www.expertise.ai/live/case-studies/circuit-electric)
-- [客户官网：Voltère与24小时人工急救服务](https://www.lecircuitelectrique.com/nous-joindre)
-- [Hydro-Québec官方：网络身份与业务](https://www.hydroquebec.com/transportation-electrification/faq.html)
-- [Hydro-Québec官方：总部位置](https://www.hydroquebec.com/renovations-head-office/)
+### 来源
+1. [供应商项目案例与工程师参与证据](https://www.expertise.ai/live/case-studies/circuit-electric)
+2. [客户官网：Voltère与24小时人工急救服务](https://www.lecircuitelectrique.com/nous-joindre)
+3. [Hydro-Québec官方：网络身份与业务](https://www.hydroquebec.com/transportation-electrification/faq.html)
+4. [Hydro-Québec官方：总部位置](https://www.hydroquebec.com/renovations-head-office/)
 
 ## 58. 乌克兰经济部 / 国家就业服务局：就业服务热线语音受理
 
@@ -2291,16 +2528,17 @@
 可切入环节：从公共流程、材料清单、办公时间问答开始；把等待时间、正确转接率和事实错误分开验收。
 
 - 效率与使用规模：平均接听等待30–40秒降到18秒，按端点算缩短40%–55%。供应商称事实错误率低于2%、约20%常规问题端到端处理；后者分母及抽样方法不清。。口径：客户或供应商自报；详见口径限制
+
 - 成本变化：未公布投入、通话运营成本、编制变化或净节省。。口径：未披露项目总投入和净节省
 
-关键技能：
+### 关键技能
 - 方言与电话音频评测、可用性探测、摘要转接、服务中断降级、隐私分级与只读知识库。
 
-风险：
+### 风险
 - 就业服务的错误信息可能影响权益；案例回避个案读取，入企服务不能擅自扩展到资格或福利决定。
 
-限制：
+### 限制
 - 前80天数据，不代表长期表现；预计8万通/月是未来负荷，不能计作已实现规模。
 
-来源：
-- [ElevenLabs官方：明确工程师合作、生产部署和80天数据](https://elevenlabs.io/blog/ukraines-employment-services)
+### 来源
+1. [ElevenLabs官方：明确工程师合作、生产部署和80天数据](https://elevenlabs.io/blog/ukraines-employment-services)

@@ -1913,11 +1913,146 @@
         "title": "Morgan Stanley官方全球总部",
         "type": "客户或供应商官方",
         "url": "https://www.morganstanley.com/about-us/global-offices/americas/united-states"
+      },
+      {
+        "url": "https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch",
+        "title": "Morgan Stanley官方：Debrief上线及Assistant历史时间线",
+        "type": "客户或供应商官方",
+        "date": "2026-10-17核验",
+        "locator": "见深度说明所述内容"
       }
     ],
     "summary": "财富顾问难以快速检索研究知识，同时需要可靠、合规的回答。",
     "title": "财富顾问知识检索助手及持续评测",
-    "workflow": "内部助手检索受控文档；顾问和提示工程师评分，双方迭代检索方法，以每日回归集监控质量。"
+    "workflow": "内部助手检索受控文档；顾问和提示工程师评分，双方迭代检索方法，以每日回归集监控质量。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "顾问需要查找和总结大量内部研究资料；项目优先解决检索耗时、重复摘要及回答可靠性。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "原先每次搜索平均耗时、失败率和人员成本未披露，不能自行编造“从几小时降为几秒”。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "OpenAI部署工程负责人Colin Jarvis访谈将此列为FDE（Forward Deployed Engineer，前线部署工程师）实践：技术链路约6—8周打通，随后约6个月试点、评测和迭代建立顾问信任。这是负责人回顾，非原团队每位成员职称证明。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "双方根据顾问及提示工程师的准确性、连贯性评分优化提示和检索；每天用样本问题做回归测试。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "已披露主链路：顾问提问→内部知识检索→GPT-4组织回答→顾问使用。语料覆盖100,000份文档。官方称零数据保留解决专有信息顾虑。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "具体向量数据库、embedding型号、分块长度、重排器、top-k、权限过滤实现和基础设施未公开。不能因为这是检索增强应用，就补写Pinecone、LangChain或某云服务。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "专家评测驱动迭代和日常回归，不意味着零错误。高采用率也是使用指标，不是准确率或投资表现。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "补充：2024-06-26推出的Debrief是另一条流程，客户同意后形成会议笔记与行动项，写入Salesforce，并由顾问编辑发送邮件。官方引述一名顾问每次会议约节省半小时，不能当全公司平均数，也不能归入Assistant的节省。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "以下为可复现建议，非该公司架构：先选一套权限清楚的知识库，给每条来源保留版本和可见范围；做检索与回答两级评价，不只问答案“像不像对的”。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "让领域专家标注可回答、应拒答和证据不足的真实问题；检索失败和生成错误分开定位。每次换模型、文档或提示都跑回归。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "商业验收同时看任务完成率、人工核验时长和活跃使用；采用率不能替代质量。涉及投资行动时保留专业人员最终判断。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "官方披露顾问团队采用超过98%，文档访问由20%升至80%；后者未给完整分母定义和观察期，不等于检索准确率提高到80%。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "访谈摘要还报研究报告使用量约3倍，与20%→80%文档访问是不同口径，不应合并。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "公司2024-06-26公告确认Assistant于2023年9月全面推出，当时顾问团队采用率98%。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "改善可以描述为知识更容易被顾问使用；客户资产增长、投顾收益、营收增量及成本净节省没有该项目可归因数据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "检索的精确率、召回率、严重幻觉率和拒答阈值：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "原项目工程师人数、驻场方式、合同费用：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "内容权限与客户可见边界的具体实现：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "更新频率、延迟SLA、部署地区及运维成本：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "Assistant单独的工时节省、净收益、投资回报率：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
   },
   {
     "addedDate": "2026-10-17",
@@ -3755,7 +3890,128 @@
     ],
     "summary": "农户设备设置、使用状态和天气情境不同，通用提醒缺少操作价值；经销商查手册与诊断耗时。",
     "title": "播种季设备推荐与经销商支持",
-    "workflow": "综合设备遥测、季节与天气、历史使用情况，在售前/设备设置/播种季使用中主动向农户及经销商推荐操作；识别停机或 See & Spray 未启用等情形，辅助诊断并生成季末价值报告。"
+    "workflow": "综合设备遥测、季节与天气、历史使用情况，在售前/设备设置/播种季使用中主动向农户及经销商推荐操作；识别停机或 See & Spray 未启用等情形，辅助诊断并生成季末价值报告。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "通用设备提醒可能与天气和农时冲突；农户买了设备未必充分使用功能，经销商排故要翻大量手册和维修记录。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "没有披露本推荐系统的原始互动量、服务成本及排故平均时长。高层谈及的支持比例愿景不作已实现基线或结果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "OpenAI Deployment Company明确将其作为部署案例：与领域专家审阅数百个真实样例，定制准确性评测，持续迭代后部署播种季推荐。职责有据，但团队人数、每个人负责的代码及驻场时长未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "已披露数据链路：设备遥测、历史使用和天气情境→识别功能未开启或设备异常→给客户及经销商操作建议；季末形成价值报告。使用OpenAI API，具体模型未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "示例是See & Spray未启用或回到传统喷洒时，辅助查找喷杆高度、车速、摄像头清洁等原因。建议链路与设备自身视觉喷药算法需分开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "已知评测使用真实样例和领域专家；准确率分数、负样本比例、按季节区域分层、拒答标准以及线上回归频率未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户成功人员和经销商在流程内，但是否每条建议必须先人工批准、能否自动改机器设置均未披露；不要画成自动控制农机。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "以下为复现建议，非John Deere实际架构：从一类设备、一类故障开始，把可验证的传感器事实与生成的操作解释分开；先用规则筛选触发事件，再让模型组织有依据的建议。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "把天气、设备型号和作业状态作为明确上下文；缺数据时不要补猜。测试集按季节、型号、异常状态分层，并保留经销商反馈。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "验收看建议被采纳后解决了多少故障、平均恢复时间及单客户支持总成本；点击或互动增长不能直接当农户增收。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "部署官网报告客户互动达到6倍，未给互动定义、基期、样本或对照。只能按供应商自报采用指标记录。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "最多70%药剂减少来自See & Spray精准喷洒能力，不能把它全归因于本次推荐系统。高层提出1000:1支持比例属于愿景。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "业务逻辑：帮助用户真正使用购买的功能，可为续费和服务价值提供依据；实际新增续费、利润、减少停机时长尚无本项目数据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "设备数据接入协议、存储和处理系统：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "模型版本、提示词、知识检索是否使用向量数据库：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "天气数据提供商、时间粒度、缺失和延迟处理：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "机器及农户权限映射、数据所有权和保留规则：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "推荐触达渠道、人工审批、误报率与故障兜底：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "API费、实施费、每农户成本和净收益：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
   },
   {
     "addedDate": "2026-10-17",
@@ -4118,7 +4374,130 @@
     ],
     "summary": "已上线的AI利用审核流程需要在质量不退步的前提下减少模型调用与成本。",
     "title": "AI医疗利用审核的成本优化",
-    "workflow": "AIP Evolve优化AI生成的utilization review（医疗利用审核）；筛选模型、改写prompt、以确定性代码替换部分GPT调用。"
+    "workflow": "AIP Evolve优化AI生成的utilization review（医疗利用审核）；筛选模型、改写prompt、以确定性代码替换部分GPT调用。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原有AI利用审核已规模使用，模型费用随部署扩大成为负担。目标是降低这项工作流费用，同时保住临床叙述与证据质量；不是从零替代全院人工。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "缺少优化前每份审核的美元成本、调用次数、耗时分布，以及人工审核时长，无法重建绝对基线。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方明确Colton Rusch为FDE（Forward Deployed Engineer，前线部署工程师）；他与医院专家David Zihr共同展示成本优化。工程师展示系统依赖、寻找高成本节点及验证替换效果，医院提供质量约束。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "患者病历与审核指南进入审核流程；Ontology承载人和AI动作及分支关系，混合确定性逻辑与agent。审核稿呈现在护士工作台，与病历对照，经护士修改、接受并发送。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "AIP Evolve分析数据流和模型调用位置。演示中的criteria-matching agent将两处Claude Sonnet替换为GPT-5 mini：该局部成本下降68%，延迟有所增加。不能说整套医院系统统一换成该模型。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "官方项目摘要还披露跨供应商模型筛选、提示修改，以及用确定性代码代替部分模型调用。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "优化比较要守住临床叙述和证据选择；护士仍复核。公开演示是示意界面，并非公开真实患者资料。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "90%偏好不是90%临床准确率；专家人数、样本量、抽样方式、盲测和失败阈值未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "以下是复现建议，不是医院已公开架构：先画审核状态机，把输入、输出、人工批准及下游副作用列清楚；记录每节点费用与延迟。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "建立去标识化测试集，覆盖缺失证据、矛盾病历及边界条件；按医生认可的错误严重度评分。先验证低风险确定性规则，再比较模型替换。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "以“单份合格审核总成本”验收，并同时监控人工修改量、严重遗漏和P95延迟；达不到质量阈值时回滚。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "该AI审核工作流成本下降近70%；GPT调用减少84%；医院专家90%的比较中偏好优化输出。三项分别是费用、调用量、专家偏好，不能互相替代。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "可支持的商业结论是：已有生产流程的模型运行费用下降，同时保留专业人员审核。不能据此推出住院时间缩短、全院利润提升或减少了多少护士。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "总订阅、实施、维护费用，优化前后绝对账单及净现金节省未公开。68%局部替换与近70%总体工作流不是可相加的两个收益。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "EHR产品及具体接口、数据表、消息队列、提示全文：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "每个节点模型版本、上下文大小、token账单和缓存策略：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "访问控制、患者数据脱敏、保留期限、部署云及地区：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "生产变更审批、灰度回滚、模型失效及应急恢复细节：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "端到端临床安全评价和独立审计：未公开，不能据通用技术推定。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
   },
   {
     "addedDate": "2026-10-17",
