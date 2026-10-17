@@ -2,6 +2,1925 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
+      "89%仅对应目标消息查询。业务约占总联系量三分之一的概述不足以复算23%，不能将两者相乘或认作语音结果。",
+      "正文既说语音由一类扩到三类，又说四类用例可迁移；阶段口径不清，不断言某日语音已覆盖四类。",
+      "社媒“本月上线”只有相对时间，不能替代明确的试点日期；聊天、试点、推广可能是不同阶段。",
+      "FDE牵头与伙伴交付可同时成立；没有证据把成果全部归于某个人或单一团队。",
+      "平台技术文档仅说明可用机制；不作为客户已启用全部功能、具体模型或合规审计的证明。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Canada Goose",
+    "country": "加拿大",
+    "countryNote": "总部国家：Canada Goose Holdings Inc. 的2026年5月监管文件列主要行政办公室在加拿大多伦多。项目未列实际上线国家；“全球扩展”不等于所有市场已部署。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "旺季大量查单和保修查询占用全年专业团队，挤压个性化服务时间。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开介入前每类查询量、等待时间分钟数、人工单次处理成本及可比较的对照组。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ],
+          "text": "Ankit的正式FDE职衔由官方简介确认；项目牵头职责由Ashwin具名说明，并有Ankit同帖回应。该链路强于仅凭供应商有FDE团队推定客户用了FDE。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4,
+            10
+          ],
+          "text": "客户Calvin Ng负责事实依据知识并参与交付领导；NeuraFlash参与者称约3个月完成数字与早期语音上线。能确认协作，不能还原个人代码贡献。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5,
+            11
+          ],
+          "text": "Dennis Liut在上线帖确认先消息、后语音的推进顺序；伙伴NeuraFlash亦公开确认合作。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            6
+          ],
+          "text": "官方指标页确认常规消息查询解决率及等待时间改善，但没有公开渠道分层、样本数或因果实验。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            9
+          ],
+          "text": "官方展示页确认购买意图继续转真人；目标是把人工用于高价值服务，而不是最大化自动化比例。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "效果解读：分流、等待时间和满意度应分别衡量。要判断是否增加收入，应比较相似客户的成交率、客单价和服务成本，而非把所有后续成交都记到AI名下。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户实际链路：Salesforce Voice with Amazon Connect接入Agentforce Voice；ElevenLabs承担语音识别与合成，转人工附会话摘要。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Data 360以零拷贝接入OMS、ERP、POS、GCP及Microsoft Fabric；数百篇知识文章经索引与检索支持回答。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "每轮确定性注入约100字符的记忆变量，限制上下文增长；这不是完整上下文或模型最大窗口的大小。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            7
+          ],
+          "text": "平台级技术背景：官方工程文介绍小模型意图分类与检索并行、WebSocket流式连接，以及识别打断后停止播报。部分内容在发布时仍属逐步推出，不能认定客户逐项采用。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：为订单、保修和知识回答分别建立工具契约；先核验顾客与订单关系，仅返回必要字段，明确数据时效和“未找到”分支。不要让生成内容充当查单成功证明。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：记忆变量保存结构化事实而非自由改写；区分顾客更正、待答问题和已完成动作。用长对话、跨话题、订单号更改和中途打断测试状态丢失。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：把语音拆成识别、检索、生成和播报计时，检查转人工时的摘要、订单标识和购买意图是否完整；设置检索超时和队列不可用的明确退路。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：文本通过回归后再接语音，还应加入噪声、口音、拼写和多问题样本；文本正确率不能替代端到端语音验收。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露底层大模型及版本、提示词、检索排序参数、记忆变量字段、更新规则和上下文截断实现。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露每个源系统连接方式、身份认证、租户与行级权限、语音录音保留、日志脱敏以及第三方推理的数据流边界。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露误答、错误转接、人工重复处理率、语音端到端延迟、回归集和具体上线验收阈值。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露实施和运行账单、单次有效解决成本、净节省、增量收入或可复算ROI。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露FDE人数、驻场时间、伙伴工作包、生产值守责任、部署国家、云区域和全面推广日程。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已上线：官方记载数字渠道2025年10月底启用、12月语音试点；具体国家与全面上线日期未列。",
+    "entryPoint": "分析：先做经过身份核验的订单状态查询，保留购买意图转真人；把正确查单、越权拒绝及转接完整性作为上线门槛，再扩到保修与语音。",
+    "evidenceLevel": "B",
+    "evidenceNote": "官方作者页确认Ankit Chaudhari为Product Forward Deployed Engineering总监，且署名Canada Goose案例；Ashwin Bijani项目帖明确实施由Ankit牵头，Ankit在评论中确认其代表本团队。项目级牵头证据来自参与者公开帖，保守列B。",
+    "humanRole": "真人Style Expert承担购买建议与个性化服务；客户团队、Salesforce和NeuraFlash共同交付。Calvin Ng自述先负责知识事实依据，后参与交付领导。逐项代码归属及持续运维分工未公开。",
+    "id": "canada-goose-agentforce-voice-service",
+    "industry": "高端服饰零售与客户服务",
+    "metrics": [
+      {
+        "context": "官方指标页明确为routine messaging inquiries，非全部联系量或语音独立解决率；样本和评判方法未知。",
+        "kind": "efficiency",
+        "label": "目标常规消息查询解决率",
+        "unknown": false,
+        "value": "89%"
+      },
+      {
+        "context": "完整案例自报；原始分子、分母与精确统计窗口未给出。",
+        "kind": "efficiency",
+        "label": "全渠道整体分流率",
+        "unknown": false,
+        "value": "23%"
+      },
+      {
+        "context": "官方指标页自报；未列原分钟数、均值或分位数，也未独立拆出语音贡献。",
+        "kind": "efficiency",
+        "label": "旺季等待时间",
+        "unknown": false,
+        "value": "下降13.9%"
+      },
+      {
+        "context": "完整案例数据；增加0.7个评分单位，非21.2个百分点。量表上限、样本与回收率未知。",
+        "kind": "quality",
+        "label": "客户满意度CSAT",
+        "unknown": false,
+        "value": "3.3→4.0（相对提升21.2%）"
+      },
+      {
+        "context": "NeuraFlash参与者T. Brett Chisholm自报，含数字与早期语音交付；未给起止日期，不等同于语音试点单独工期。",
+        "kind": "efficiency",
+        "label": "整体交付周期",
+        "unknown": false,
+        "value": "约3个月"
+      },
+      {
+        "context": "实施费、授权费、数据访问和通话费用、每次有效解决成本及增量收入未披露；不能用分流率换算现金节省。",
+        "kind": "cost",
+        "label": "投入、运行成本及净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Salesforce Product FDE；NeuraFlash（实施伙伴）",
+    "publishedAt": "2026-07-14（完整官方案例）；参与者帖子仅显示相对日期",
+    "risks": [
+      "分析：订单和保修数据若身份绑定错误，会泄露另一客户的信息；零拷贝不能代替访问控制。",
+      "分析：压缩会话可能丢失更正、否定和未完成问题；应单测跨轮一致性。",
+      "分析：追求分流率可能误拦截购买意图，损害销售和高端体验；分流不是唯一目标。",
+      "分析：不同旺季、渠道和问题难度会影响前后对比，观察性指标不足以证明净收入因果增长。"
+    ],
+    "skills": [
+      "分析：零拷贝数据访问与客户身份权限映射",
+      "分析：知识检索、状态压缩及多轮会话评测",
+      "分析：电话路由、打断处理与人工接管",
+      "分析：按意图和渠道拆分效果及成本"
+    ],
+    "sources": [
+      {
+        "date": "2026-07-14",
+        "locator": "完整案例正文及作者简介；How the system works、From cost center to revenue driver、Three things Canada Goose learned",
+        "title": "Canada Goose语音AI完整实施案例",
+        "type": "供应商官方／具名FDE作者",
+        "url": "https://www.salesforce.com/blog/canada-goose-voice-ai/"
+      },
+      {
+        "date": "未标日期；2026-10-17核验",
+        "locator": "My background：Director of Product Forward Deployed Engineering；列署名Canada Goose案例",
+        "title": "Ankit Chaudhari官方作者简介",
+        "type": "供应商官方",
+        "url": "https://www.salesforce.com/blog/author/ankit-chaudhari/"
+      },
+      {
+        "date": "仅相对日期；2026-10-17核验",
+        "locator": "首段明确项目、负责人及FDE职衔；Ankit首条评论确认代表本团队",
+        "title": "Ashwin Bijani：Canada Goose实施由Ankit牵头",
+        "type": "项目同事／活动参与者一手公开帖",
+        "url": "https://www.linkedin.com/posts/ashwinbijani_cnx26-connections26-salesforce-activity-7467753837362180096-qghp"
+      },
+      {
+        "date": "仅相对日期；2026-10-17核验",
+        "locator": "完整正文与Dennis Liut评论；Grounding SME转交付领导、Canada Goose项目",
+        "title": "Calvin Ng：知识事实依据与交付领导职责",
+        "type": "客户项目参与者一手公开帖",
+        "url": "https://www.linkedin.com/posts/calvincarlosng_agentforceworldtour-agentforce-activity-7458355356960776192-orNt"
+      },
+      {
+        "date": "仅相对日期；2026-10-17核验",
+        "locator": "完整正文及首批评论；先Messaging后Voice、NeuraFlash参与；相对日期不用于精确排期",
+        "title": "Max Comparetto上线帖与Dennis Liut回应",
+        "type": "供应商发布／客户负责人公开回应",
+        "url": "https://www.linkedin.com/posts/maxcomparetto_agentforce-voice-ai-voice-agents-for-every-activity-7423045213138583552-8BtR"
+      },
+      {
+        "date": "未标日期；2026-10-17核验",
+        "locator": "Canada Goose栏目：89%明确为routine messaging inquiries，等待时间下降13.9%",
+        "title": "Agentforce官方成效指标：Canada Goose",
+        "type": "供应商官方",
+        "url": "https://www.salesforce.com/agentforce/metrics/"
+      },
+      {
+        "date": "2025-10-13",
+        "locator": "完整正文：延迟、电话集成、WebSocket、打断；平台级能力及推出计划，不是客户配置清单",
+        "title": "Agentforce Voice技术挑战与架构机制",
+        "type": "供应商官方工程说明",
+        "url": "https://www.salesforce.com/blog/agentforce-voice-agent-technical-challenges/"
+      },
+      {
+        "date": "2026-05-14",
+        "locator": "封面principal executive office：Toronto, Ontario, Canada；仅核验总部国家",
+        "title": "Canada Goose Holdings Inc. 2026年5月Form 6-K",
+        "type": "客户监管披露",
+        "url": "https://www.sec.gov/Archives/edgar/data/1690511/000169051126000010/cg6-kq4fy2026xwrapper.htm"
+      },
+      {
+        "date": "未标日期；2026-10-17核验",
+        "locator": "Canada Goose专属栏目：消息/语音、WISMO/保修/FAQ及购买意图转Style Expert",
+        "title": "Agentic Enterprise City：Canada Goose",
+        "type": "供应商官方",
+        "url": "https://www.salesforce.com/customer-stories/agentic-enterprise-city/"
+      },
+      {
+        "date": "仅相对日期；2026-10-17核验",
+        "locator": "完整正文：团队约3个月交付数字与早期语音；不将其89%概述扩大为全部联系量",
+        "title": "T. Brett Chisholm：NeuraFlash交付Canada Goose",
+        "type": "实施伙伴参与者一手公开帖",
+        "url": "https://www.linkedin.com/posts/tbrettchisholm_during-dave-borrellis-fantastic-keynote-activity-7458563628766658560-yXXL"
+      },
+      {
+        "date": "仅相对日期；2026-10-17核验",
+        "locator": "正文确认与Salesforce及Canada Goose合作；转发上线帖",
+        "title": "NeuraFlash官方确认Canada Goose合作",
+        "type": "实施伙伴官方公司帖",
+        "url": "https://www.linkedin.com/posts/neuraflash_agentforce-voice-ai-voice-agents-for-every-activity-7424177516455600128-Uc9g"
+      }
+    ],
+    "summary": "用Agentforce处理订单、保修与常见查询，按购买意图将顾客交给真人Style Expert。",
+    "title": "旺季查询自动化与语音转人工导购",
+    "workflow": "消息或来电进入→识别意图并查询企业数据→处理常规问题→销售意图或复杂问题转给真人。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "FDE证据是官方FDE页面对具名项目的直接归类；案例正文没有逐人确认FDE职衔。",
+      "节约2–3小时属于客户估计，80%包含内部测试；未证明全量外部上线。",
+      "应收账款催收和回款改善属于下一阶段计划。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Chambers Gasket",
+    "country": "美国",
+    "countryNote": "美国为主体所在地：公司官方联系页列芝加哥地址；案例未逐国披露客户或部署区域，deploymentCountries留空，不把主体国当实际部署国。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "业务数据已有Salesforce底座，但状态查询需跨销售、生产和财务记录；一天最多约六次询问，升级时会打断高层工作。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "官方FDE项目区直接归类该案例；具体交付由Plative和客户共同完成，约四周进入生产。FDE页的通用驻团队模式与计费不能自动视为该客户合同。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开项目人数、驻场周期、各工程师职责，以及现有Salesforce底座与本次新增工作的详细分界。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            4
+          ],
+          "text": "客户估计每天节约2–3小时，80%办公室员工在内部使用和测试；没有公开计时样本、独立对照或所有外部客户的采用率。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "应收账款催收是下一阶段计划，不能将预计回款改善记为已交付收益。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "已披露输入为邮箱、采购单号与零件号；代理核验请求，返回订单状态、物流或生产进度。原文未披露认证算法和对象连接键。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "未发货订单可检查生产状态；推迟交期由代理办理，提前交期必须厂长批准。未披露实际调用的API、Flow或Apex代码。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：为订单、生产工单及交期变更建立稳定关联；禁止仅凭可猜到的单号访问其他客户资料，将授权失败与查无订单分开处理。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：写操作前后记录原交期、新交期、批准人和业务版本；针对重复请求、审批超时、并发修改设计幂等和回滚。测试只读查询与写操作分别过关。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "底层模型与版本、是否使用RAG、工具编排、缓存、数据刷新与冲突处理未公开；不得据Agentforce品牌补出具体架构。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "错误回复率、越权测试、交期变更错误率、人工升级比例及持续评测集未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "项目费用、许可证、推理费、维护和复核人力及现金净节省未公开；节省工时不能直接等同裁员或利润。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "官方案例及客户负责人证言确认约四周进入生产；同时80%办公室员工在内部使用和测试，外部推广优先小客户。不是所有客户已全面使用。",
+    "entryPoint": "分析：先接入单类订单的只读状态查询，再引入经过身份核验和审批约束的交期变更。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Plative官方FDE服务页将本项目直接列在“Proven Results, Real Impact”并链接具名全文，页面亦引用客户四周进生产证言；全文确认Plative与客户共同实施。属于官方FDE项目归类，未披露具名工程师或项目个人职衔。",
+    "humanRole": "办公室员工参与内部使用和测试，客服牵头采用；提前交付请求交厂长批准，推迟交期可由系统直接办理。其他例外处理及逐次人工复核制度未公开。",
+    "id": "plative-chambers-gasket-order-service",
+    "industry": "定制制造与工业客户服务",
+    "metrics": [
+      {
+        "context": "客户负责人及供应商自报，未公开观察期、计时方法或对照；不是每人每天。",
+        "kind": "efficiency",
+        "label": "估计节约工作时间",
+        "unknown": false,
+        "value": "每日2–3小时"
+      },
+      {
+        "context": "使用与测试混合口径；不能当所有客户生产采用率。",
+        "kind": "adoption",
+        "label": "办公室内部使用和测试覆盖",
+        "unknown": false,
+        "value": "80%"
+      },
+      {
+        "context": "客户负责人证言，未给起止日期和后续推广完成日期。",
+        "kind": "delivery",
+        "label": "从讨论到生产",
+        "unknown": false,
+        "value": "约四周"
+      },
+      {
+        "context": "工时估计未扣除软件、实施和运维成本。",
+        "kind": "cost",
+        "label": "项目投入及现金节省",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Plative（Salesforce Agentforce实施）",
+    "publishedAt": "案例及FDE项目页未标发布日期；2026-10-17核验",
+    "risks": [
+      "分析：输入字段不足以确保身份时，订单或财务资料可能越权泄露。",
+      "分析：错误或重复交期变更可能影响排产和客户承诺。"
+    ],
+    "skills": [
+      "分析：Salesforce跨对象关联与权限",
+      "分析：业务动作及人工审批设计",
+      "分析：订单状态与写操作回归测试",
+      "分析：客服采用和渐进推广"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "How FDE Works；Proven Results, Real Impact 下三个具名项目链接；Chambers Gasket生产证言",
+        "title": "Plative：Forward Deployed Engineering",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/what-we-do/forward-deployed-engineering/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "From Idea to Agent in 30 Days；Saving Hours；Change Management；Looking Ahead",
+        "title": "Plative：Chambers Gasket客户案例",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/client/chambers-gasket/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "Contact Chambers Gasket：4701 West Rice Street, Chicago, Illinois 60651",
+        "title": "Chambers Gasket官方联系地址",
+        "type": "客户或供应商官方",
+        "url": "https://chambersgasket.com/contact-us/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "客户G. Michael Kenny关于订单状态查询耗时的证言；通用实施方案不等于本项目配置",
+        "title": "Plative Agentforce实施与组件说明",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/what-we-do/salesforce/agentforce/"
+      }
+    ],
+    "summary": "订单状态答案分散在销售单、生产工单和财务记录，人工查询反复打断客服与高层。",
+    "title": "订单状态自助查询与交期变更审批",
+    "workflow": "客户提交邮箱、采购单号和零件号→请求核验→关联Salesforce订单与生产资料→返回状态/物流信息→未发货订单按规则处理交期调整，提前交付转厂长审批。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "官方FDE页具名归类构成项目证据，未公开工程师个人职衔。",
+      "80%是目标；每月数千次是互动量，不能当解决量或人工替代量。",
+      "邮件和电话AI扩展属于计划；退款能力在本例中是流程解释。",
+      "两项组件原链接失效后已核验现行官方产品正文；未观看成功的视频不用于断言技术配置。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Rectangle Health",
+    "country": "美国",
+    "countryNote": "美国为主体国：公司官方高管介绍列纽约州Valhalla总部，现网页页脚列White Plains地址，均为美国。本案例未公开实际使用国家、数据中心或部署区域，不能将客户市场或总部当部署范围。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "多次收购带来多条产品线，客服依赖个人经验、缺少统一复用办法；上线前客户已投入建设结构化知识库，这是Rex的重要前置条件。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "官方FDE项目展示区具名链接本案例；Plative与客服团队协同实现Rex，并将两种自有组件接入，客户负责人称按时交付。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "项目团队规模、实施工期、驻场方式、知识清洗分工和逐人FDE职衔未公开。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "案例标题报告每月数千次互动；正文描述全天自助回答并减少第三方支持依赖，但没有分流率、满意度或外包费前后值。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "解决至少80%重复问题是最初目标，邮件与电话AI扩展是未来计划；两者都不能当作已实现结果。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "Rex使用既有知识文章提供退款说明、硬件连接排障和报表指导；退款场景原文是解释，不代表自动执行退款。底层模型和检索实现未披露。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ],
+          "text": "项目使用Agentforce to Live Agent，在未解决或客户要求真人时，经Salesforce Digital Engagement升级；通用组件页佐证其知识型排障和人工衔接能力。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            4
+          ],
+          "text": "项目使用Live Chat Escalation检查真人客服工时和在线状态；无人在线时给邮件、电话或建单选项。组件说明亦确认该路由机制。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：将知识文章标记产品、版本、有效期与适用客户群；测试相似名称跨产品误召回，缺少支持依据时升级而非补猜。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：用真实历史问题同时评估答案支持率和转人工成功率；覆盖夜间无人、排队状态变化、用户重复请求等情形。分开统计发起互动、解决问题和再次来访。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "具体模型、知识切分、索引、权限过滤、内容更新频率、转人工判定阈值与会话上下文传递实现未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开是否接触患者健康或支付敏感信息、数据保留及脱敏规则；不能因服务医疗行业就认定系统访问临床数据。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "真实解决率、错误率、人工升级率、等待时间和满意度基线未公开；每月数千次没有精确数量和统计月份。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实施费、Agentforce消费、客服维护及第三方支持总成本未公开，不能计算净节省。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "官方具名案例报告Rex已用于客户支持，并在标题称每月数千次支持互动；上线时间、持续观察期与全量客户覆盖未披露。",
+    "entryPoint": "分析：从资料完整的一条产品线和常见问题开始，同时上线明确的人工升级与无人在线兜底。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Plative官方FDE页面在“Proven Results, Real Impact”直接列出Rectangle Health并链接本项目全文；全文披露Plative协同实施Rex及两项定制转人工组件。角色依据是官方FDE项目归类，未披露具名FDE个人。",
+    "humanRole": "客户团队在上线前建立内部知识文档，技术支持负责人参与实施；复杂问题或客户主动要求时由真人客服接手，客服非全天在线。知识维护责任和抽检比例未公开。",
+    "id": "plative-rectangle-health-rex-support",
+    "industry": "医疗支付软件与技术支持",
+    "metrics": [
+      {
+        "context": "来自案例标题；未给精确数量、月份或成功解决占比。",
+        "kind": "scale",
+        "label": "月支持互动规模",
+        "unknown": false,
+        "value": "数千次"
+      },
+      {
+        "context": "80%是计划达到的目标，不能用作已测得分流率。",
+        "kind": "efficiency",
+        "label": "重复问题自动解决率",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "仅定性称减少第三方支持依赖，未公开合同、软件消费和维护费用。",
+        "kind": "cost",
+        "label": "总体支持成本变化",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Plative（Salesforce Agentforce实施）",
+    "publishedAt": "案例及FDE项目页未标发布日期；2026-10-17核验",
+    "risks": [
+      "分析：跨产品知识混用或过期文档可能误导退款及硬件排障。",
+      "分析：客服在线状态变化造成转接失败，或敏感信息随会话传递过多。"
+    ],
+    "skills": [
+      "分析：客服知识治理与检索评测",
+      "分析：Digital Engagement转人工集成",
+      "分析：在线状态与非工作时段路由",
+      "分析：支持质量与解决率口径设计"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "How FDE Works；Proven Results, Real Impact 下三个具名项目链接；Chambers Gasket生产证言",
+        "title": "Plative：Forward Deployed Engineering",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/what-we-do/forward-deployed-engineering/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "全文；A Partnership Built on Trust；Rex in Action；Agents and Humans Working In Perfect Harmony",
+        "title": "Plative：Rectangle Health的Rex客服案例",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "正文组件能力；页面视频未能获取内容，不引用视频实现细节",
+        "title": "Plative：Agentforce to Live Agent组件",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/what-we-do/products/agentforce-to-live-agent/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "正文：实时可用性检查与无人在线时的备选支持",
+        "title": "Plative：Agentforce Live Chat Escalation Agent组件",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/what-we-do/products/agentforce-live-chat-escalation-agent/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "正文总部为Valhalla；当前页脚White Plains，均位于美国纽约州",
+        "title": "Rectangle Health官方：Scott LoPresti介绍及联系页脚",
+        "type": "客户或供应商官方",
+        "url": "https://www.rectanglehealth.com/team/scott-lopresti/"
+      }
+    ],
+    "summary": "收购后客服需覆盖多产品，经验分散且常见问题回答不一致；客户希望自助解决重复咨询。",
+    "title": "Rex知识库客服与实时转人工支持",
+    "workflow": "客户提问→Rex依据既有知识库解释退款、排查连接和指导报表→未解决或请求真人时进入Digital Engagement→检查客服在线状态→转接或提供邮件、电话、建单选项。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "本案例客户是HappyRobot自身，供应商是Plative；不是HappyRobot向其他企业交付的语音代理项目。",
+      "官方FDE页具名归类成立，个人职衔与投入未公开。",
+      "节省10–15分钟/合同是计划，不是测得收益；生产上线不等于已证明准确率和法律风险下降。",
+      "仅能确认义务追踪与查询，不推定自动发送通知、修改合同或作法律决定。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "HappyRobot",
+    "country": "美国",
+    "countryNote": "美国为总部国：HappyRobot官网链接的公司LinkedIn页明确总部为San Francisco，供应商案例也称其位于旧金山。该内部合同系统未公开实际部署国家或云区域，不以全球办公室推定多国上线。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "客户需要把合同中的分处理者通知要求等义务系统化，避免逐份人工录入；选择外部实施，以免内部工程团队偏离面向客户的产品开发。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "本项目由官方FDE结果页具名归类；Plative在客户现有Salesforce中构建两个模块，使CRM成为结构化合同信息的统一记录位置。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开工程师姓名、人数、具体工时、交付阶段及是否长期驻团队；通用FDE计费介绍不能代替本合同。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "官方明确系统已在生产，支持义务追踪和按具体条款查询；没有公开合同数、漏报率或已避免的法律索赔。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "每份合同节省10–15分钟使用计划措辞，只是目标；不能宣称已实现，亦不能把营销中的不遗漏义务视为100%准确率。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "第一模块解析PDF，抽取生效日期、合同总额、标志使用权及分处理者通知义务，写入Salesforce自定义字段供报告使用。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "第二模块是检索增强生成（RAG）对话代理，同时参考结构化元数据与PDF原文。具体OCR、分块、向量库和模型版本没有公开。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：字段抽取需保留原文位置、合同版本、单位及币种；修订协议覆盖旧条款时维护显式关系，不将找不到条款解读为不存在义务。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：按条款类型建立标注集，将日期/金额准确率与通知义务漏检率分别验收；对否定、例外和跨段条件安排人工复核。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：读合同与发送通知设不同权限；只有得到批准的义务记录才能触发通知，记录批准人和发送结果，避免生成内容直接成为法律承诺。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "PDF解析器、OCR、基础模型、提示词、检索索引、分块方式、字段验证与重试机制未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "合同版本冲突、扫描件质量、异常条款、提取置信度、人工复核门槛和引用支持率未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "是否已自动发送对外通知、通知渠道、授权审批与失败补偿未公开；已披露义务追踪不等于自动法律执行。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "项目费用、许可证、单合同处理成本、维护复核工时和实际净节省未公开；也未提供法律风险降低的可量化实绩。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "供应商官方全文明确系统已在生产使用，提供合同义务追踪和条款查询；未给上线日期、处理合同量或用户覆盖。",
+    "entryPoint": "分析：选一种合同及少数可验证字段，保留原文出处和人工校验，再扩展条款问答与通知义务追踪。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Plative官方FDE页的“Proven Results, Real Impact”直接列出HappyRobot并链接合同项目；案例全文明确Plative设计Salesforce Agentforce双模块方案及已生产使用。官方项目归类成立，未披露具名FDE或人员配置。",
+    "humanRole": "HappyRobot团队查询合同并据条款核验义务，将内部工程资源继续用于客户产品。合同字段是否逐条人工批准、法务复核标准及对外通知审批未公开。",
+    "id": "plative-happyrobot-contract-compliance",
+    "industry": "企业AI软件与内部合同运营",
+    "metrics": [
+      {
+        "context": "官方案例正文明确；没有公开日期、合同量或用户数。",
+        "kind": "delivery",
+        "label": "上线状态",
+        "unknown": false,
+        "value": "已生产使用"
+      },
+      {
+        "context": "10–15分钟/合同是计划目标，未有上线后计时数据。",
+        "kind": "efficiency",
+        "label": "每合同实际节省时间",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "没有评测集、漏检基线或索赔对照；不能把宣传措辞当100%正确。",
+        "kind": "quality",
+        "label": "义务漏检率或法律风险下降",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施、许可证、推理及人工复核成本。",
+        "kind": "cost",
+        "label": "总成本和净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Plative（Salesforce Agentforce实施）",
+    "publishedAt": "案例及FDE项目页未标发布日期；2026-10-17核验",
+    "risks": [
+      "分析：遗漏否定、例外或合同修订可能造成错误通知义务判断。",
+      "分析：敏感合同跨客户检索或未经审批对外通知会扩大法律与保密风险。"
+    ],
+    "skills": [
+      "分析：PDF与合同条款结构化",
+      "分析：Salesforce字段建模和版本管理",
+      "分析：结构化与原文双路RAG",
+      "分析：义务漏检评测及人工复核"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "How FDE Works；Proven Results, Real Impact 下三个具名项目链接；Chambers Gasket生产证言",
+        "title": "Plative：Forward Deployed Engineering",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/what-we-do/forward-deployed-engineering/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "全文；Buy vs Build；Reclaiming Velocity and Precision；Scaling Without the Friction；The Technical Breakdown",
+        "title": "Plative：HappyRobot合同合规案例",
+        "type": "客户或供应商官方",
+        "url": "https://plative.com/client/happyrobot/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17全文核验",
+        "locator": "About us：Headquarters San Francisco；官网https://www.happyrobot.ai/页脚链接此账号",
+        "title": "HappyRobot官方LinkedIn公司资料",
+        "type": "客户官方公司账号",
+        "url": "https://www.linkedin.com/company/happyrobot/"
+      }
+    ],
+    "summary": "分处理者通知义务及其他关键条款埋在合同里，人工录入既耗资源又容易漏掉；公司不愿让产品工程团队转做内部工具。",
+    "title": "合同PDF抽取与条款合规检索",
+    "workflow": "合同PDF→自动提取日期、金额与法律约定→映射Salesforce自定义字段→对话代理同时检索结构化字段与原始PDF→团队查询和核验合同义务。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "周数是重建叙事：示意图将三代理均标第4周，正文说两个第2周恢复，故不采用逐代理精确周数。",
+      "供应商自报已交付；页面明确尚无客户创始人引语，缺乏独立验证。",
+      "20多个代理、Next.js/Vercel与Trigger.dev是后续可能路线，不写为已部署。",
+      "三个代理属于同一平台救援项目，只计一例。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Arkeo AI",
+    "country": "美国",
+    "countryNote": "客户LinkedIn公司页自报San Francisco总部；不是实际生产用户或云区域证明。法律实体未另行核实。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "技术人员离职、缺少交接资料，三个销售代理停摆并影响新客户进入产品。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "团队先恢复运行再整理架构和文档，随后加固并交接；项目页将FDE列为交付服务。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "FDE服务页以Arkeo说明承担恢复结果及清晰退出责任，不仅提供人力。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "供应商称三个代理恢复生产，平台完成稳定化和文档交接；无前后可用性测量，时间线为重建。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "披露栈为Go、Python、TypeScript、Vue，AWS、Airbyte、Postgres，Sentry及GitHub Actions。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "排障覆盖幂等、密钥处理与调度故障；补充限流、恢复、日志和部署维护文档。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：为重试设置稳定任务标识，分别测试重复触发、部分成功及调度重启，并验证同一任务只产生一次业务效果。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：交接验收由客户团队独立执行部署和故障恢复，记录失败步骤再补手册；这不是对本项目验收细节的陈述。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "模型、提示、检索、实际API、数据权限及密钥管理实现未披露；不能据技术清单推导完整架构。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实际部署国家、云区域、项目日期、团队人数、测试集、故障率及运行成本未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未有客户独立确认、可复算利润效果或精确修复时间；页面提到产品转服务方向，未说明与后续路线的时间关系。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "供应商案例称三个核心代理已恢复生产并完成交接；未公开项目日历日期。",
+    "entryPoint": "分析：先恢复一条能验证完成的生产任务，梳理失败重试和状态写入，再扩大修复范围。",
+    "evidenceLevel": "A",
+    "evidenceNote": "官方具名案例的项目服务栏目明确列Forward Deployed Engineering，FDE服务页也将Arkeo作为主要交付证明。属于供应商当前分类，未获客户独立确认。",
+    "humanRole": "供应商承担排障及交接期间值守；客户CEO参加复盘。生产用户动作的审批规则未公开。",
+    "id": "arkeo-streaver-agent-platform-rescue",
+    "industry": "企业软件与销售AI",
+    "metrics": [
+      {
+        "context": "供应商自报ICP、Deal Notes、Pipeline恢复生产；非准确率。",
+        "kind": "quality",
+        "label": "恢复的核心代理",
+        "unknown": false,
+        "value": "3/3"
+      },
+      {
+        "context": "供应商明确说时间线为事后重建，非提交记录精确计时。",
+        "kind": "efficiency",
+        "label": "救援与交接周期",
+        "unknown": false,
+        "value": "约3个月"
+      },
+      {
+        "context": "缺少上线前监控基线、成本与独立对照，不能推算提升比例或ROI。",
+        "kind": "cost",
+        "label": "可用性、客户转化与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Streaver",
+    "publishedAt": "官方案例与FDE页未标日期",
+    "risks": [
+      "分析：重复执行可能重复写入销售记录。",
+      "分析：只修表面异常会保留调度或状态一致性根因。",
+      "分析：恢复后若文档与权限仍集中于外部团队，可能重现人员单点依赖。"
+    ],
+    "skills": [
+      "分析：陌生代码逆向与故障定位",
+      "分析：幂等、调度及错误恢复",
+      "分析：监控、运行手册和能力交接"
+    ],
+    "sources": [
+      {
+        "date": "未标发布日期；2026-10-17核验",
+        "locator": "完整正文：Challenge、Rescue、Honest、Team、Stack；项目服务栏目明确FDE",
+        "title": "Arkeo AI: Three AI agents restored in three months",
+        "type": "供应商官方",
+        "url": "https://streaver.com/case-studies/arkeo"
+      },
+      {
+        "date": "未标发布日期；2026-10-17核验",
+        "locator": "完整正文：Arkeo交付、Proof、hand-back",
+        "title": "Forward Deployed Engineering | Streaver",
+        "type": "供应商官方",
+        "url": "https://streaver.com/services/forward-deployed-engineering"
+      },
+      {
+        "date": "未标日期；2026-10-17核验",
+        "locator": "About us与Headquarters：San Francisco",
+        "title": "Arkeo AI公司页",
+        "type": "客户官方公司社媒",
+        "url": "https://www.linkedin.com/company/arkeo-ai"
+      }
+    ],
+    "summary": "关键技术人员离职后，销售代理停摆且缺少文档；Streaver接管排障、恢复运行并交回维护能力。",
+    "title": "销售代理平台故障恢复与交接",
+    "workflow": "定位生产故障→修复代理与调度→补充监控和运行文档→加固发布及交接。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "FDE认定采用B级：供应商FDE负责人在主办方完整逐字稿中直接讲述Hertz项目，另有供应商官方项目报道；不以客户logo或招聘职责推定参与。",
+      "6周和70%来自供应商伙伴培训材料，指Hertz较广的AI客服部署；未披露统计窗口、样本、渠道和独立核验，不能解释为主动外呼成功率。",
+      "官方客户案例页本次只解析到标题；业务细节以官方Campaign Composer文章及CEO发布的客户视频转录补齐。未独立复听完整客户视频。",
+      "演讲口语称car lease，官方项目文章明确car rental；本记录统一为租车续租/还车安排，不延伸为汽车融资租赁。",
+      "AOP、语音模型、MCP及集成产品资料仅作平台技术背景；不声称Hertz逐项使用全部能力，或后来产品版本已应用于最初上线。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Hertz（赫兹）",
+    "country": "美国",
+    "countryNote": "美国是总部国家：Hertz 2026年官方新闻明确全球总部位于佛罗里达州Estero。项目资料没有披露部署国家、服务租客国家或云区域；集团160国经营范围不能当作本AI项目覆盖范围。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Hertz最初希望把复杂的入站客服流程交给AI；在已建立后端连接之后，双方继续寻找可主动完成的客户沟通。没有可核验的原人工用时或积压量基线。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            6
+          ],
+          "text": "客户视频说明还车计划变化需要更新预订并协调后续车队安排；自动化承接高量重复沟通，让员工保留需要人工关照的互动。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Sunny Rekhi以Decagon FDE CTO身份，在介绍前线部署工作时直接用Hertz说明：先支持入站业务，再复用已有后端集成，主动联系租客办理延期。项目与FDE交付直接绑定，未披露具体工程师姓名或人数。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "这是从既有业务动作向主动触达扩展的项目；官方后续文章明确执行时点、重试、变更预订与记录结果，而非只发送租车提醒。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "官方报道确认已运行主动租车外呼，描述数千次尝试，并可区分按时归还确认与延期标记；没有公布接通率、实际延期量或还车改善幅度。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5
+          ],
+          "text": "供应商公开伙伴培训材料报告Hertz六周上线、解决率70%。该材料未分开入站与主动外呼，也未交代测量方法；仅作较广客服部署的自报结果。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            6
+          ],
+          "text": "客户视频确认可按租客新计划更新预订，并将高量事务留给代理；员工时间转向高价值互动是定性证言，未给人时或裁员数据。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Hertz专属已披露：复用已有后端集成，AI可在对话中办理续租。未说明预订系统名称、端点或事务实现。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "Hertz专属已披露：到期前一天触发电话；未接可重试；延期时延长租期或改还车时间，并将处理结果纳入平台分析。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "平台级说明，非Hertz逐项实施清单：AOP以自然语言定义外呼逻辑；Missions支持批量拨号、跟进和重拨；语音层识别人声/语音信箱及筛选器，并用turn detection与微调模型优化轮次和AOP执行。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            7,
+            8
+          ],
+          "text": "平台级说明，非Hertz采用证明：AOP可做Git版本管理和升级规则；集成产品支持API、MCP与SIP。不能据此补画Hertz的CRM、模型供应商或电话基础设施。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：把租客身份校验、可延期资格、车辆可用性及价格确认作为确定性前置条件；写接口设置幂等键、审计日志与回滚，不能只让模型决定交易参数。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：分别统计触达、身份核验、计划确认、预订写入和人工升级；以相似租单对照核算增量续租，并测试拒接、错号、语音信箱、重复重试和口语日期歧义。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露Hertz实际使用的基础模型/版本、语音识别和合成供应商、提示或AOP代码、检索系统与数据更新机制。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露预订系统接口、身份核验、操作权限、价格授权、写入一致性、故障回退及强制人工审批规则。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露客户触达同意、退订和当地呼叫时段的具体配置；平台合规宣传不能证明Hertz配置已通过专项审计。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露外呼接通率、正确解决率、延期转化、车队利用率改善、CSAT因果效果或可复现测试集。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露FDE人数/驻场时长、项目起止日期、实施与运行费用、净收益，以及实际部署国家和云区域。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已上线；2026年3月已有主动语音客户证言，9月官方报道数千次外呼尝试。项目覆盖国家、总租客数和具体上线日期未公开。",
+    "entryPoint": "分析：从到期前还车确认切入，先只读核验预订；验证身份、续租资格、价格确认与写入回滚后，再开放延期动作。",
+    "evidenceLevel": "B",
+    "evidenceNote": "主办方AI Engineer完整逐字稿中，FDE CTO Sunny Rekhi在0:28确认身份，1:47–2:42用Hertz具体说明其前线部署工作与后端集成、主动续租；Decagon官方项目文章独立确认流程已运行。",
+    "humanRole": "租客反馈预计还车时间；员工处理需要人工服务的互动。具体必须转人工的意图、逐笔审批制度和例外处理比例未公开。",
+    "id": "hertz-decagon-proactive-rental-extension",
+    "industry": "汽车租赁与旅游出行",
+    "metrics": [
+      {
+        "context": "官方伙伴培训自报Hertz较广客服部署上线速度；没有证明主动外呼单项工程也只用六周。",
+        "kind": "efficiency",
+        "label": "客服部署上线周期",
+        "unknown": false,
+        "value": "6周"
+      },
+      {
+        "context": "供应商自报；样本、窗口及渠道未知，非主动外呼接通率、续租转化率或正确性审计。",
+        "kind": "efficiency",
+        "label": "较广客服部署解决率",
+        "unknown": false,
+        "value": "70%"
+      },
+      {
+        "context": "2026-09-02官方文章的数量级描述；不是独立客户数、全部成功通话或新增租单数。",
+        "kind": "scale",
+        "label": "主动外呼尝试量",
+        "unknown": false,
+        "value": "数千次（未给精确数）"
+      },
+      {
+        "context": "未披露外呼带来的增量租金、净节省，或实施、订阅、通话和人工处理成本；平台最低交易规模不是本项目合同价。",
+        "kind": "cost",
+        "label": "项目投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Decagon（FDE / Agent Development）",
+    "publishedAt": "2026-03-09（主动语音）；2026年AI Engineer大会演讲；2026-09-02（外呼编排）",
+    "risks": [
+      "分析：误识别接听人可能泄露租车与行程信息；重试过密、未尊重退订或时区会造成骚扰。",
+      "分析：延长预订涉及车辆可用性和价格；重复写入、过期数据或模型误解日期可能影响本租客及下一位租客。",
+      "分析：主动续租可能增加收入，但没有对照数据就不能排除原本会自然续租的订单，亦不能由解决率推算ROI。"
+    ],
+    "skills": [
+      "分析：事件触发外呼与有限重试编排",
+      "分析：租车API与预订写入一致性",
+      "分析：语音意图评测、人工升级与效果归因"
+    ],
+    "sources": [
+      {
+        "date": "2026年大会；页面未标上传日期",
+        "locator": "0:28 FDE CTO身份；1:47–2:42 Hertz、已有后端集成和主动延期；3:30–5:27仅用于角色背景",
+        "title": "How Forward Deployed Engineering is done at Decagon：Sunny Rekhi完整逐字稿",
+        "type": "主办方发布的参与者一手演讲",
+        "url": "https://ai.engineer/talks/7wu2hsRfvV0-forward-deployed-engineering-is-done-at-decagon"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "案例标题；本次正文仅解析到标题，不能据此宣称已读取完整案例叙述",
+        "title": "Hertz uses outbound agents to resolve issues before they arise",
+        "type": "客户或供应商官方",
+        "url": "https://decagon.ai/case-studies/hertz-proactive-outbound"
+      },
+      {
+        "date": "2026-09-02",
+        "locator": "Complete visibility into throughput：Hertz专属两段；前文能力说明属于平台级背景",
+        "title": "Introducing Campaign Composer: Proactive, compliant outreach",
+        "type": "客户或供应商官方",
+        "url": "https://decagon.ai/blog/campaign-composer"
+      },
+      {
+        "date": "2026-03-09",
+        "locator": "AOPs、Missions、接听识别、低延迟turn detection及微调模型；Hertz客户视频链接；平台级技术背景",
+        "title": "Outbound voice: Scaling proactive customer engagement",
+        "type": "客户或供应商官方",
+        "url": "https://decagon.ai/blog/outbound-voice"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "公开可读正文最后一段：Hertz上线六周与70% resolution；本次未登录或提交表单",
+        "title": "Decagon Partner Essentials：Buyer profile",
+        "type": "客户或供应商官方",
+        "url": "https://decagon.ai/modules/buyer-profile"
+      },
+      {
+        "date": "页面相对日期；2026-10-17核验",
+        "locator": "正文及Transcript：确认还车日、更新reservation、后续车辆安排与人工分工",
+        "title": "Jesse Zhang发布Hertz主动语音客户视频及转录",
+        "type": "供应商CEO一手发布与客户视频转录",
+        "url": "https://www.linkedin.com/posts/thejessezhang_im-excited-to-share-more-on-outbound-voice-activity-7437527830722134016-GKjq"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "自然语言工作流、Git版本、升级guardrail及可观测性；仅作平台能力，非Hertz逐项采用证据",
+        "title": "Agent Operating Procedures (AOPs)",
+        "type": "客户或供应商官方",
+        "url": "https://decagon.ai/product/aop"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "API、MCP、SIP及CRM产品能力；未列Hertz具体系统",
+        "title": "Integrations: Connect seamlessly with your existing support stack",
+        "type": "客户或供应商官方",
+        "url": "https://decagon.ai/product/integrations"
+      },
+      {
+        "date": "2026-02-19",
+        "locator": "首段全球总部Estero, Florida；仅用于总部国家，不用于推断项目部署国家",
+        "title": "Hertz Showcases Employee Car Culture and New 2026 Fleet at Estero Headquarters",
+        "type": "客户或供应商官方",
+        "url": "https://newsroom.hertz.com/press-releases/press-release-details/hertz-showcases-employee-car-culture-and-new-2026-fleet-at-estero-headquarters/"
+      }
+    ],
+    "summary": "Hertz先接入复杂入站客服，再复用业务连接主动确认还车时间、更新预订和办理延期。",
+    "title": "从入站客服到主动续租与还车确认",
+    "workflow": "到期前一天触发外呼→确认还车计划→未接按规则重试→租客要求延期时变更租期或还车时间→记录结果并统计按时确认与延期情况。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "供应商自报结果，未公开独立审计或错误率。",
+      "伙伴目录的通用预算、云平台、MCP和网关能力不等于Hernan项目使用配置。",
+      "不把自动读取等级与重量解释为视觉检测食品质量、温度传感器监测或自动判断冷链安全。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Hernan Corporation Sdn Bhd",
+    "country": "马来西亚",
+    "countryNote": "马来西亚来自官方详细案例所述当地业务与运往KLIA的流程，代表已披露项目运营地。18个出口市场不是18国AI部署证明。总部具体地址尚未完成官网正文核验。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "原流程依赖纸表、Excel、转发的WhatsApp消息，收货资料还需管理员重新录入，管理层获得状态存在延迟。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "Agmo官方将本项目列入FDE案例专栏；详细交付涵盖将Claude接入Lark日常群聊，围绕订单、照片、库存记录及下游交接组织自动处理和异常通知。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "生产实证报告订单录入用时减半、照片转记录少于2分钟；49人支持18个出口市场且未新增人手。指标是业务步骤表现，不能视为模型精度或收入增长。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "项目明确采用Claude API的视觉能力和Lark群聊；员工上传文件或照片并提及助手，形成按等级和重量记录的库存数据，必要时追问。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "订单事件触发下游通知；装货、检查和配送使用表单，差异、拒收及截单时间进入异常提醒，管理层收到实时汇总。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：为订单和批次分配唯一ID；消息重试须幂等，低置信字段保留原图并转人工确认。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "验收建议：分别测字段正确率、重复入库率、漏通知率及异常处理时长；物理分级和放行仍需要明确责任人。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "Claude模型名称、版本、调用路由、云区域及运行后端未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "Lark数据表结构、API鉴权、重试机制、权限边界、审计和数据保留设置未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "训练或微调、评测集、字段错误率、负载量、FDE人数与交付工期未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "完整成本、毛利、损耗改善及其他国家实际部署未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "马来西亚"
+    ],
+    "deploymentLevel": "已生产使用；Claude合作伙伴目录将Hernan列为生产实证。",
+    "entryPoint": "分析：从收货单图像转结构化草稿开始，验证品种、重量和单位后，再开放跨团队通知及写入。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Agmo官方案例索引在FDE Case Studies栏直接列出Hernan冷链项目；详细案例和Anthropic官方托管伙伴资料确认工作流与投产成果。以项目级官方归类为FDE依据，不依赖客户logo或通用服务简介。",
+    "humanRole": "员工拍照、上传、回答补充问题并执行实体作业；异常通知人处理。未披露每条自动入库记录是否经过人工批准。",
+    "id": "hernan-agmo-cold-chain",
+    "industry": "食品制造与冷链物流",
+    "metrics": [
+      {
+        "context": "供应商及伙伴目录自报；样本、统计周期和分位数未公开。",
+        "kind": "efficiency",
+        "label": "订单录入用时",
+        "unknown": false,
+        "value": "减少50%"
+      },
+      {
+        "context": "从码头照片到可追踪库存记录；不是单次模型延迟。",
+        "kind": "efficiency",
+        "label": "收货记录处理",
+        "unknown": false,
+        "value": "少于2分钟"
+      },
+      {
+        "context": "项目时点的运营描述；未证明增加了18个市场，也未披露订单量变化。",
+        "kind": "adoption",
+        "label": "经营覆盖",
+        "unknown": false,
+        "value": "49人服务18个出口市场，未增员"
+      },
+      {
+        "context": "没有实施、模型、Lark、维护和复核成本；无增员不能换算成现金节省。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Agmo Studio AI FDE",
+    "publishedAt": "详细案例未标发布日期；2026-10-17核验时已公开",
+    "risks": [
+      "分析：模糊照片、品种或重量误读可能污染库存。",
+      "分析：重复消息触发重复写入，或跨群通知泄露订单信息。"
+    ],
+    "skills": [
+      "分析：现场流程访谈与事件建模",
+      "分析：多模态字段抽取及单位校验",
+      "分析：协作平台写入、通知和异常管理"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "FDE Case Studies栏明确链接Hernan案例",
+        "title": "Agmo官方AI案例索引",
+        "type": "客户或供应商官方",
+        "url": "https://www.agmostudio.com/ai-case-studies/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "全文：The challenge、The approach、The results",
+        "title": "Hernan冷链项目完整案例",
+        "type": "客户或供应商官方",
+        "url": "https://agmostudio.com/claude-customer-story-hernan-corporation-puts-a-claude-agent-in-every-stage-of-its-durian-cold-chain/"
+      },
+      {
+        "date": "2026-10-12资料更新",
+        "locator": "Proof in production与Hernan客户证言；通用服务能力不外推到项目",
+        "title": "Anthropic伙伴目录：Agmo Studio",
+        "type": "客户或供应商官方",
+        "url": "https://partnerhub.claude.com/directory/partner/agmo-studio-sdn-bhd"
+      }
+    ],
+    "summary": "把纸表、Excel和聊天中的冷链交接记录接回统一流程，减少重复录入与状态追问。",
+    "title": "榴莲冷链订单、库存与交接协同",
+    "workflow": "员工上传订单或现场照片→Claude抽取并结构化→Lark更新记录、通知下游→异常升级与管理层查看。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "99%是转人工所用的置信门槛，不是经审计的答题准确率。",
+      "“训练品牌语气与知识”未说明微调；不能据此认定修改了模型权重。",
+      "本条只覆盖客服；不将扩展中的销售、教育等流程当作同等成熟部署。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Clio",
+    "country": "加拿大",
+    "countryNote": "加拿大为客户总部所在地，官网隐私声明第1.1条明确总部在Burnaby。项目从北美扩展至全球客户，但未列具体国家；不把总部国当作AI托管地或全部部署地。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "旧规则机器人依赖预设答案和手工调整，重复咨询挤占复杂技术支持时间。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "六周上线期中，FDE按需技术协助；CSM统筹，实施工程师建设Salesforce集成并配置品牌语气及知识。没有把这些职责全部归给FDE。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "官方报告自助覆盖与人工处理速度改善；数字口径见指标栏，缺少独立对照。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Agent Maven接入应用内聊天；不足99%置信的提问经Salesforce Messaging转人工，并携带对话和客户信息。Agent Designer用于检查与迭代。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：转人工事件使用关联ID，将用户身份、消息历史和升级原因分开授权；明确传递失败的回退队列。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "验收建议：固定产品版本和问题分布，分别测有依据答复率、错误自信率、升级成功率及重复联系率。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "基础LLM名称、版本、路由、嵌入模型与向量数据库未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "云服务商、托管区域、推理资源和数据驻留未披露。Salesforce是交接系统，不等同模型运行基础设施。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "置信分数来源、校准方法、评测集、审计结果及微调方式未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE人数、工时、合同价格、运行单价和净收益未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已投产；先试点，再面向北美及全球客户推广。",
+    "entryPoint": "分析：优先做有明确答案的产品使用问答；复杂账户操作与法律判断应分别定权限。",
+    "evidenceLevel": "A",
+    "evidenceNote": "完整官方客户案例的Solution段直接记载Maven FDE提供技术协助，并区分CSM与实施工程师角色，属于具体项目级FDE证据。",
+    "humanRole": "Clio坐席承接升级；专职AI分析员检查对话，修补知识和角色配置。",
+    "id": "clio-maven-inapp-support",
+    "industry": "法律科技软件",
+    "metrics": [
+      {
+        "context": "正文口径；未披露样本与观察期，不能解释为全部客服渠道解决率。",
+        "kind": "efficiency",
+        "label": "聊天自主答复",
+        "unknown": false,
+        "value": "超过80%"
+      },
+      {
+        "context": "相对增长而非增加60个百分点；未给出基础数量。",
+        "kind": "efficiency",
+        "label": "相对旧机器人解决量",
+        "unknown": false,
+        "value": "增加60%"
+      },
+      {
+        "context": "归因于工单压力降低；未定义均值、分位数及计时起止。",
+        "kind": "efficiency",
+        "label": "人工技术支持速度",
+        "unknown": false,
+        "value": "4倍"
+      },
+      {
+        "context": "未公布采购、实施、模型调用、维护、复核成本和净节省。",
+        "kind": "cost",
+        "label": "完整经济性",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Maven AGI FDE",
+    "publishedAt": "2026-02-24",
+    "risks": [
+      "分析：高置信错误可能不触发转人工，应单独检查误答漏报。",
+      "分析：客户上下文流入第三方支持系统时，需要清晰的数据最小化和租户隔离。"
+    ],
+    "skills": [
+      "分析：知识治理与测试集设计",
+      "分析：CRM交接与权限映射",
+      "分析：置信分数校准及人工升级设计"
+    ],
+    "sources": [
+      {
+        "date": "2026-02-24",
+        "locator": "Solution：6-week onboarding及FDE、实施工程师分工；Results",
+        "title": "Clio客服完整案例",
+        "type": "客户或供应商官方",
+        "url": "https://www.mavenagi.com/customer-stories/clio"
+      },
+      {
+        "date": "2026-09-08版本",
+        "locator": "第1.1条：Themis Solutions Inc.加拿大实体与总部",
+        "title": "Clio官方隐私声明",
+        "type": "客户或供应商官方",
+        "url": "https://www.clio.com/uk/privacy/spain/"
+      }
+    ],
+    "summary": "让自助问答与人工接手形成连续客服流程。",
+    "title": "应用内客服与Salesforce转人工",
+    "workflow": "应用内提问→Agent Maven回答或转交→人工承接上下文→分析人员改进知识。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "案例另称解决量10倍、解决率6倍；但约15%到80%不直接等于6倍，未公开统一基准或分母，因此不自行拼成同一测量序列。",
+      "ChatGPT-style是界面描述，不能当作OpenAI或GPT模型使用证据。",
+      "税务软件客服项目不等于自动税务判断、报表审批或申报项目。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "K1x",
+    "country": "美国",
+    "countryNote": "美国依据客户官方联系页在新泽西Morristown的公司地址；该页未单独标注总部。本项目实际用户国家与AI托管地点未披露。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "已有350多篇帮助文章，但旧机器人只能处理约15%咨询；报告能力也不足，人工仍忙于兜底。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "FDE直接参与客户团队，一周内完成平台集成、帮助文章同步与产品内会话代理上线。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "官方公布自主解决比例及处理速度改善，但不同增长指标未给出可对齐的基准。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "应用内instant answers同时呈现可搜索内容与生成式回答，提供操作步骤；上线后Maven继续协助提示优化，支持团队可查看常见问题趋势。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：按产品、版本和权限给文章加元数据，保存同步时间与原文链接；过期内容暂停参与答复。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "验收建议：把一次解决、延迟重开和转人工分别计数；用同一时间窗、同类问题比较原机器人与新代理。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "基础LLM、版本、多模型路由、微调和检索实现未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "云平台、部署区域、运行资源、向量库、数据驻留和租户隔离实现未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "应用嵌入协议、知识更新频率、错误回退、人工交接集成与权限细节未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE人员规模、完整成本、可复现评测集和指标分母未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已投产；一周是接入交付时间，不是结果评估周期。",
+    "entryPoint": "分析：从产品操作指南启动；税务结论、申报提交与资金动作需另设审核边界。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Maven联合创始人署名官方FDE文章的Customer Impact: K1x段明确FDE嵌入团队、集成平台与部署应用内代理；完整客户案例补充原流程、界面和指标。",
+    "humanRole": "支持团队继续完善内容与处理需人介入的问题；具体转人工路由、门槛未披露。",
+    "id": "k1x-maven-inapp-support",
+    "industry": "税务科技软件",
+    "metrics": [
+      {
+        "context": "供应商案例自报；结果观察期、样本、重开工单规则不详。",
+        "kind": "efficiency",
+        "label": "自主解决比例",
+        "unknown": false,
+        "value": "80%"
+      },
+      {
+        "context": "原文为almost always，不能提升成100%或SLA；不是模型推理时延。",
+        "kind": "efficiency",
+        "label": "解决用时",
+        "unknown": false,
+        "value": "通常少于3分钟"
+      },
+      {
+        "context": "官方FDE文章记载平台集成、文章同步和应用内部署；不代表完整前期采购周期。",
+        "kind": "delivery",
+        "label": "接入周期",
+        "unknown": false,
+        "value": "1周"
+      },
+      {
+        "context": "预算转配到服务运营岗位不等于披露现金净节省。旧厂商报价也不能替代Maven成本。",
+        "kind": "cost",
+        "label": "完整经济性",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Maven AGI FDE",
+    "publishedAt": "2025-09-10；2026-01-16官方FDE文章补充角色",
+    "risks": [
+      "分析：旧版本帮助文章可能给当前产品提供错误步骤。",
+      "分析：用户可能把软件操作提示误当税务意见，需要明确答复边界。"
+    ],
+    "skills": [
+      "分析：知识同步与版本管理",
+      "分析：产品内嵌问答界面",
+      "分析：意图分类与客服效果归因"
+    ],
+    "sources": [
+      {
+        "date": "2026-01-16",
+        "locator": "Customer Impact: K1x，FDE嵌入与一周部署",
+        "title": "Maven官方FDE文章",
+        "type": "客户或供应商官方",
+        "url": "https://www.mavenagi.com/resources/forward-deployed-engineers"
+      },
+      {
+        "date": "2025-09-10",
+        "locator": "Challenge、Solution、Results；注意15%与6倍口径未解释",
+        "title": "K1x完整客户案例",
+        "type": "客户或供应商官方",
+        "url": "https://www.mavenagi.com/customer-stories/k1x"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "页尾公司联系地址：Morristown, NJ，美国",
+        "title": "K1x官方联系页",
+        "type": "客户或供应商官方",
+        "url": "https://k1x.io/contact/"
+      }
+    ],
+    "summary": "将已有帮助内容转成产品使用中的自助答复。",
+    "title": "税务软件应用内知识问答",
+    "workflow": "应用内提问→搜索知识内容及生成解释→支持团队查看问题趋势并优化知识。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "标题中的百万参会者属于活动规模，不等于百万AI用户或对话。",
+      "自动回复、退订和账户更改出现在后续扩展描述中，未作为本条已完成能力。",
+      "三个渠道的自动化和人工角色不同，不合并成一个总解决率。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Mastermind",
+    "country": "美国",
+    "countryNote": "美国依据客户官方隐私页的Arizona联系地址及美国运营说明；不将其视作项目云托管或用户国家清单。实际AI部署国家未披露。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "活动季咨询激增，按高峰全年配置坐席成本高，日常编制又难覆盖重复咨询。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "FDE与客户配置专属工作流并部署代理；官方后续文章确认聊天无需交接的比例。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "交付团队与客服、QA、IT及留存负责人梳理流程、整理知识并连接邮件工具，六周投入运行。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "上线后两个月内报告响应速度和支持页面自主解决改善；后续FDE文章另确认聊天交接表现。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "网站支持框和聊天控件面向用户；邮件Copilot基于知识起草答复，内部Copilot辅助坐席，仪表板展示表现及问题趋势。邮件工具品牌未公开。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：分别设置自助答复、坐席草稿与写入操作权限；每次模式切换保留审批记录。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "验收建议：以活动前后相同类型问题对照，区分首次响应、最终解决、返工和转人工等待；记录峰值并发。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "基础模型名称、版本、模型提供商、微调或多模型路由未披露。ChatGPT式界面不是模型证据。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "托管云、区域、服务器资源、向量库和数据驻留未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "邮件连接器、身份认证、提示结构、知识检索与同步实现、峰值容量未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE规模、完整经济性、质量评测集、独立审计及账户写入上线状态未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已投产；六周上线，案例报告上线后两个月内的结果。",
+    "entryPoint": "分析：优先处理活动访问、账户使用等可验证问题；退款、订阅和账户变更单独授权。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Maven联合创始人署名官方FDE文章的Customer Impact: Mastermind段，明确FDE与客户配置工作流并部署客服代理；完整项目案例提供交付和渠道细节。",
+    "humanRole": "客服处理复杂问题与聊天升级，并使用邮件草稿和内部辅助；未证明邮件在该阶段全面自动发送。",
+    "id": "mastermind-maven-surge-support",
+    "industry": "在线教育与创作者平台",
+    "metrics": [
+      {
+        "context": "2026年FDE文章口径；2025案例称live chat问题获答，不能外推到邮件渠道。",
+        "kind": "efficiency",
+        "label": "聊天无需交接",
+        "unknown": false,
+        "value": "93%"
+      },
+      {
+        "context": "独立于聊天渠道；未披露样本和重复联系率。",
+        "kind": "efficiency",
+        "label": "支持页面自主解决",
+        "unknown": false,
+        "value": "68%"
+      },
+      {
+        "context": "案例同时报告联系量增加60%；未公开计时分位数和同质对照。",
+        "kind": "efficiency",
+        "label": "响应用时",
+        "unknown": false,
+        "value": "减少75%"
+      },
+      {
+        "context": "未增员并非现金成本减少；未披露软件费、实施、调用、维护或审核支出。",
+        "kind": "cost",
+        "label": "完整成本与净节省",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Maven AGI FDE",
+    "publishedAt": "2025-07-28；2026-01-16官方FDE文章补充角色",
+    "risks": [
+      "分析：高峰期升级队列可能成为瓶颈，需测试异常流而非只测自动回答。",
+      "分析：账户和账单相关内容需防跨用户引用；草稿模式与自动发送须有独立权限。"
+    ],
+    "skills": [
+      "分析：多渠道工作流设计",
+      "分析：品牌知识与草稿质量管理",
+      "分析：季节性负载及客服排班评估"
+    ],
+    "sources": [
+      {
+        "date": "2026-01-16",
+        "locator": "Customer Impact: Mastermind，FDE参与与93%无需交接",
+        "title": "Maven官方FDE文章",
+        "type": "客户或供应商官方",
+        "url": "https://www.mavenagi.com/resources/forward-deployed-engineers"
+      },
+      {
+        "date": "2025-07-28",
+        "locator": "Challenge、Solution、Results；后续自动操作不得当成已完成部署",
+        "title": "Mastermind完整客户案例",
+        "type": "客户或供应商官方",
+        "url": "https://www.mavenagi.com/customer-stories/mastermind"
+      },
+      {
+        "date": "2024-10-01更新",
+        "locator": "Contacting Us地址及What if you Submit Information From Outside the United States运营说明",
+        "title": "Mastermind官方隐私页",
+        "type": "客户或供应商官方",
+        "url": "https://learn.mastermind.com/privacy-session"
+      }
+    ],
+    "summary": "用分渠道答复和人工辅助应对活动季客服波动。",
+    "title": "活动高峰期网站、聊天与邮件客服",
+    "workflow": "网站或聊天咨询→知识答复或转人工；邮件→AI生成草稿→客服处理。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
       "FDE项目绑定强，但技术披露较薄；不把AWS通用参考架构当作客户实装。",
       "CTO同一份新闻稿同时描述现有提速和待验证、待上线概念；因此不标为全量正式生产。",
       "公司AUM、App用户数和全球办公室数量不用于衡量本次FDE项目成效。",

@@ -1,8 +1,853 @@
 # 案例全文
 
-当前79例，其中79例已补充逐项研究。已查阅资料仍可能未披露部分信息，具体见各条缺口；不将推断当作真实实现。
+当前89例，其中89例已补充逐项研究。已查阅资料仍可能未披露部分信息，具体见各条缺口；不将推断当作真实实现。
 
-## 1. Hoxton Wealth：顾问客户报告生成与内部知识获取
+## 1. Canada Goose：旺季查询自动化与语音转人工导购
+
+国家：加拿大；项目落地：未披露
+行业：高端服饰零售与客户服务
+国家口径：总部国家：Canada Goose Holdings Inc. 的2026年5月监管文件列主要行政办公室在加拿大多伦多。项目未列实际上线国家；“全球扩展”不等于所有市场已部署。
+
+概述：用Agentforce处理订单、保修与常见查询，按购买意图将顾客交给真人Style Expert。
+
+流程：消息或来电进入→识别意图并查询企业数据→处理常规问题→销售意图或复杂问题转给真人。
+
+落地程度：已上线：官方记载数字渠道2025年10月底启用、12月语音试点；具体国家与全面上线日期未列。
+
+人工职责：真人Style Expert承担购买建议与个性化服务；客户团队、Salesforce和NeuraFlash共同交付。Calvin Ng自述先负责知识事实依据，后参与交付领导。逐项代码归属及持续运维分工未公开。
+
+证据说明：官方作者页确认Ankit Chaudhari为Product Forward Deployed Engineering总监，且署名Canada Goose案例；Ashwin Bijani项目帖明确实施由Ankit牵头，Ankit在评论中确认其代表本团队。项目级牵头证据来自参与者公开帖，保守列B。
+
+可切入环节：分析：先做经过身份核验的订单状态查询，保留购买意图转真人；把正确查单、越权拒绝及转接完整性作为上线门槛，再扩到保修与语音。
+
+- 目标常规消息查询解决率：89%。口径：官方指标页明确为routine messaging inquiries，非全部联系量或语音独立解决率；样本和评判方法未知。
+
+- 全渠道整体分流率：23%。口径：完整案例自报；原始分子、分母与精确统计窗口未给出。
+
+- 旺季等待时间：下降13.9%。口径：官方指标页自报；未列原分钟数、均值或分位数，也未独立拆出语音贡献。
+
+- 客户满意度CSAT：3.3→4.0（相对提升21.2%）。口径：完整案例数据；增加0.7个评分单位，非21.2个百分点。量表上限、样本与回收率未知。
+
+- 整体交付周期：约3个月。口径：NeuraFlash参与者T. Brett Chisholm自报，含数字与早期语音交付；未给起止日期，不等同于语音试点单独工期。
+
+- 投入、运行成本及净收益：未公开。口径：实施费、授权费、数据访问和通话费用、每次有效解决成本及增量收入未披露；不能用分流率换算现金节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】旺季大量查单和保修查询占用全年专业团队，挤压个性化服务时间。 [来源1](https://www.salesforce.com/blog/canada-goose-voice-ai/)
+
+- 【未披露】未公开介入前每类查询量、等待时间分钟数、人工单次处理成本及可比较的对照组。
+
+### 工程师具体做了什么
+
+- 【公开披露】Ankit的正式FDE职衔由官方简介确认；项目牵头职责由Ashwin具名说明，并有Ankit同帖回应。该链路强于仅凭供应商有FDE团队推定客户用了FDE。 [来源2](https://www.salesforce.com/blog/author/ankit-chaudhari/) [来源3](https://www.linkedin.com/posts/ashwinbijani_cnx26-connections26-salesforce-activity-7467753837362180096-qghp)
+
+- 【公开披露】客户Calvin Ng负责事实依据知识并参与交付领导；NeuraFlash参与者称约3个月完成数字与早期语音上线。能确认协作，不能还原个人代码贡献。 [来源4](https://www.linkedin.com/posts/calvincarlosng_agentforceworldtour-agentforce-activity-7458355356960776192-orNt) [来源10](https://www.linkedin.com/posts/tbrettchisholm_during-dave-borrellis-fantastic-keynote-activity-7458563628766658560-yXXL)
+
+- 【公开披露】Dennis Liut在上线帖确认先消息、后语音的推进顺序；伙伴NeuraFlash亦公开确认合作。 [来源5](https://www.linkedin.com/posts/maxcomparetto_agentforce-voice-ai-voice-agents-for-every-activity-7423045213138583552-8BtR) [来源11](https://www.linkedin.com/posts/neuraflash_agentforce-voice-ai-voice-agents-for-every-activity-7424177516455600128-Uc9g)
+
+### 技术方案与数据流程
+
+- 【公开披露】客户实际链路：Salesforce Voice with Amazon Connect接入Agentforce Voice；ElevenLabs承担语音识别与合成，转人工附会话摘要。 [来源1](https://www.salesforce.com/blog/canada-goose-voice-ai/)
+
+- 【公开披露】Data 360以零拷贝接入OMS、ERP、POS、GCP及Microsoft Fabric；数百篇知识文章经索引与检索支持回答。 [来源1](https://www.salesforce.com/blog/canada-goose-voice-ai/)
+
+- 【公开披露】每轮确定性注入约100字符的记忆变量，限制上下文增长；这不是完整上下文或模型最大窗口的大小。 [来源1](https://www.salesforce.com/blog/canada-goose-voice-ai/)
+
+- 【公开披露】平台级技术背景：官方工程文介绍小模型意图分类与检索并行、WebSocket流式连接，以及识别打断后停止播报。部分内容在发布时仍属逐步推出，不能认定客户逐项采用。 [来源7](https://www.salesforce.com/blog/agentforce-voice-agent-technical-challenges/)
+
+- 【分析／复现建议】复现建议：为订单、保修和知识回答分别建立工具契约；先核验顾客与订单关系，仅返回必要字段，明确数据时效和“未找到”分支。不要让生成内容充当查单成功证明。
+
+- 【分析／复现建议】复现建议：记忆变量保存结构化事实而非自由改写；区分顾客更正、待答问题和已完成动作。用长对话、跨话题、订单号更改和中途打断测试状态丢失。
+
+- 【分析／复现建议】复现建议：把语音拆成识别、检索、生成和播报计时，检查转人工时的摘要、订单标识和购买意图是否完整；设置检索超时和队列不可用的明确退路。
+
+- 【分析／复现建议】复现建议：文本通过回归后再接语音，还应加入噪声、口音、拼写和多问题样本；文本正确率不能替代端到端语音验收。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方指标页确认常规消息查询解决率及等待时间改善，但没有公开渠道分层、样本数或因果实验。 [来源6](https://www.salesforce.com/agentforce/metrics/)
+
+- 【公开披露】官方展示页确认购买意图继续转真人；目标是把人工用于高价值服务，而不是最大化自动化比例。 [来源9](https://www.salesforce.com/customer-stories/agentic-enterprise-city/)
+
+- 【分析／复现建议】效果解读：分流、等待时间和满意度应分别衡量。要判断是否增加收入，应比较相似客户的成交率、客单价和服务成本，而非把所有后续成交都记到AI名下。
+
+### 尚未公开的信息
+
+- 【未披露】未披露底层大模型及版本、提示词、检索排序参数、记忆变量字段、更新规则和上下文截断实现。
+
+- 【未披露】未披露每个源系统连接方式、身份认证、租户与行级权限、语音录音保留、日志脱敏以及第三方推理的数据流边界。
+
+- 【未披露】未披露误答、错误转接、人工重复处理率、语音端到端延迟、回归集和具体上线验收阈值。
+
+- 【未披露】未披露实施和运行账单、单次有效解决成本、净节省、增量收入或可复算ROI。
+
+- 【未披露】未披露FDE人数、驻场时间、伙伴工作包、生产值守责任、部署国家、云区域和全面推广日程。
+
+### 关键技能
+- 分析：零拷贝数据访问与客户身份权限映射
+- 分析：知识检索、状态压缩及多轮会话评测
+- 分析：电话路由、打断处理与人工接管
+- 分析：按意图和渠道拆分效果及成本
+
+### 风险
+- 分析：订单和保修数据若身份绑定错误，会泄露另一客户的信息；零拷贝不能代替访问控制。
+- 分析：压缩会话可能丢失更正、否定和未完成问题；应单测跨轮一致性。
+- 分析：追求分流率可能误拦截购买意图，损害销售和高端体验；分流不是唯一目标。
+- 分析：不同旺季、渠道和问题难度会影响前后对比，观察性指标不足以证明净收入因果增长。
+
+### 限制
+- 89%仅对应目标消息查询。业务约占总联系量三分之一的概述不足以复算23%，不能将两者相乘或认作语音结果。
+- 正文既说语音由一类扩到三类，又说四类用例可迁移；阶段口径不清，不断言某日语音已覆盖四类。
+- 社媒“本月上线”只有相对时间，不能替代明确的试点日期；聊天、试点、推广可能是不同阶段。
+- FDE牵头与伙伴交付可同时成立；没有证据把成果全部归于某个人或单一团队。
+- 平台技术文档仅说明可用机制；不作为客户已启用全部功能、具体模型或合规审计的证明。
+
+### 来源
+1. [Canada Goose语音AI完整实施案例](https://www.salesforce.com/blog/canada-goose-voice-ai/)
+2. [Ankit Chaudhari官方作者简介](https://www.salesforce.com/blog/author/ankit-chaudhari/)
+3. [Ashwin Bijani：Canada Goose实施由Ankit牵头](https://www.linkedin.com/posts/ashwinbijani_cnx26-connections26-salesforce-activity-7467753837362180096-qghp)
+4. [Calvin Ng：知识事实依据与交付领导职责](https://www.linkedin.com/posts/calvincarlosng_agentforceworldtour-agentforce-activity-7458355356960776192-orNt)
+5. [Max Comparetto上线帖与Dennis Liut回应](https://www.linkedin.com/posts/maxcomparetto_agentforce-voice-ai-voice-agents-for-every-activity-7423045213138583552-8BtR)
+6. [Agentforce官方成效指标：Canada Goose](https://www.salesforce.com/agentforce/metrics/)
+7. [Agentforce Voice技术挑战与架构机制](https://www.salesforce.com/blog/agentforce-voice-agent-technical-challenges/)
+8. [Canada Goose Holdings Inc. 2026年5月Form 6-K](https://www.sec.gov/Archives/edgar/data/1690511/000169051126000010/cg6-kq4fy2026xwrapper.htm)
+9. [Agentic Enterprise City：Canada Goose](https://www.salesforce.com/customer-stories/agentic-enterprise-city/)
+10. [T. Brett Chisholm：NeuraFlash交付Canada Goose](https://www.linkedin.com/posts/tbrettchisholm_during-dave-borrellis-fantastic-keynote-activity-7458563628766658560-yXXL)
+11. [NeuraFlash官方确认Canada Goose合作](https://www.linkedin.com/posts/neuraflash_agentforce-voice-ai-voice-agents-for-every-activity-7424177516455600128-Uc9g)
+
+## 2. Chambers Gasket：订单状态自助查询与交期变更审批
+
+国家：美国；项目落地：未披露
+行业：定制制造与工业客户服务
+国家口径：美国为主体所在地：公司官方联系页列芝加哥地址；案例未逐国披露客户或部署区域，deploymentCountries留空，不把主体国当实际部署国。
+
+概述：订单状态答案分散在销售单、生产工单和财务记录，人工查询反复打断客服与高层。
+
+流程：客户提交邮箱、采购单号和零件号→请求核验→关联Salesforce订单与生产资料→返回状态/物流信息→未发货订单按规则处理交期调整，提前交付转厂长审批。
+
+落地程度：官方案例及客户负责人证言确认约四周进入生产；同时80%办公室员工在内部使用和测试，外部推广优先小客户。不是所有客户已全面使用。
+
+人工职责：办公室员工参与内部使用和测试，客服牵头采用；提前交付请求交厂长批准，推迟交期可由系统直接办理。其他例外处理及逐次人工复核制度未公开。
+
+证据说明：Plative官方FDE服务页将本项目直接列在“Proven Results, Real Impact”并链接具名全文，页面亦引用客户四周进生产证言；全文确认Plative与客户共同实施。属于官方FDE项目归类，未披露具名工程师或项目个人职衔。
+
+可切入环节：分析：先接入单类订单的只读状态查询，再引入经过身份核验和审批约束的交期变更。
+
+- 估计节约工作时间：每日2–3小时。口径：客户负责人及供应商自报，未公开观察期、计时方法或对照；不是每人每天。
+
+- 办公室内部使用和测试覆盖：80%。口径：使用与测试混合口径；不能当所有客户生产采用率。
+
+- 从讨论到生产：约四周。口径：客户负责人证言，未给起止日期和后续推广完成日期。
+
+- 项目投入及现金节省：未公开。口径：工时估计未扣除软件、实施和运维成本。
+
+### 介入前的问题与基线
+
+- 【公开披露】业务数据已有Salesforce底座，但状态查询需跨销售、生产和财务记录；一天最多约六次询问，升级时会打断高层工作。 [来源2](https://plative.com/client/chambers-gasket/)
+
+### 工程师具体做了什么
+
+- 【公开披露】官方FDE项目区直接归类该案例；具体交付由Plative和客户共同完成，约四周进入生产。FDE页的通用驻团队模式与计费不能自动视为该客户合同。 [来源1](https://plative.com/what-we-do/forward-deployed-engineering/) [来源2](https://plative.com/client/chambers-gasket/)
+
+- 【未披露】未公开项目人数、驻场周期、各工程师职责，以及现有Salesforce底座与本次新增工作的详细分界。
+
+### 技术方案与数据流程
+
+- 【公开披露】已披露输入为邮箱、采购单号与零件号；代理核验请求，返回订单状态、物流或生产进度。原文未披露认证算法和对象连接键。 [来源2](https://plative.com/client/chambers-gasket/)
+
+- 【公开披露】未发货订单可检查生产状态；推迟交期由代理办理，提前交期必须厂长批准。未披露实际调用的API、Flow或Apex代码。 [来源2](https://plative.com/client/chambers-gasket/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：为订单、生产工单及交期变更建立稳定关联；禁止仅凭可猜到的单号访问其他客户资料，将授权失败与查无订单分开处理。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：写操作前后记录原交期、新交期、批准人和业务版本；针对重复请求、审批超时、并发修改设计幂等和回滚。测试只读查询与写操作分别过关。
+
+### 解决程度与业务提升
+
+- 【公开披露】客户估计每天节约2–3小时，80%办公室员工在内部使用和测试；没有公开计时样本、独立对照或所有外部客户的采用率。 [来源2](https://plative.com/client/chambers-gasket/) [来源4](https://plative.com/what-we-do/salesforce/agentforce/)
+
+- 【公开披露】应收账款催收是下一阶段计划，不能将预计回款改善记为已交付收益。 [来源2](https://plative.com/client/chambers-gasket/)
+
+### 尚未公开的信息
+
+- 【未披露】底层模型与版本、是否使用RAG、工具编排、缓存、数据刷新与冲突处理未公开；不得据Agentforce品牌补出具体架构。
+
+- 【未披露】错误回复率、越权测试、交期变更错误率、人工升级比例及持续评测集未公开。
+
+- 【未披露】项目费用、许可证、推理费、维护和复核人力及现金净节省未公开；节省工时不能直接等同裁员或利润。
+
+### 关键技能
+- 分析：Salesforce跨对象关联与权限
+- 分析：业务动作及人工审批设计
+- 分析：订单状态与写操作回归测试
+- 分析：客服采用和渐进推广
+
+### 风险
+- 分析：输入字段不足以确保身份时，订单或财务资料可能越权泄露。
+- 分析：错误或重复交期变更可能影响排产和客户承诺。
+
+### 限制
+- FDE证据是官方FDE页面对具名项目的直接归类；案例正文没有逐人确认FDE职衔。
+- 节约2–3小时属于客户估计，80%包含内部测试；未证明全量外部上线。
+- 应收账款催收和回款改善属于下一阶段计划。
+
+### 来源
+1. [Plative：Forward Deployed Engineering](https://plative.com/what-we-do/forward-deployed-engineering/)
+2. [Plative：Chambers Gasket客户案例](https://plative.com/client/chambers-gasket/)
+3. [Chambers Gasket官方联系地址](https://chambersgasket.com/contact-us/)
+4. [Plative Agentforce实施与组件说明](https://plative.com/what-we-do/salesforce/agentforce/)
+
+## 3. Rectangle Health：Rex知识库客服与实时转人工支持
+
+国家：美国；项目落地：未披露
+行业：医疗支付软件与技术支持
+国家口径：美国为主体国：公司官方高管介绍列纽约州Valhalla总部，现网页页脚列White Plains地址，均为美国。本案例未公开实际使用国家、数据中心或部署区域，不能将客户市场或总部当部署范围。
+
+概述：收购后客服需覆盖多产品，经验分散且常见问题回答不一致；客户希望自助解决重复咨询。
+
+流程：客户提问→Rex依据既有知识库解释退款、排查连接和指导报表→未解决或请求真人时进入Digital Engagement→检查客服在线状态→转接或提供邮件、电话、建单选项。
+
+落地程度：官方具名案例报告Rex已用于客户支持，并在标题称每月数千次支持互动；上线时间、持续观察期与全量客户覆盖未披露。
+
+人工职责：客户团队在上线前建立内部知识文档，技术支持负责人参与实施；复杂问题或客户主动要求时由真人客服接手，客服非全天在线。知识维护责任和抽检比例未公开。
+
+证据说明：Plative官方FDE页面在“Proven Results, Real Impact”直接列出Rectangle Health并链接本项目全文；全文披露Plative协同实施Rex及两项定制转人工组件。角色依据是官方FDE项目归类，未披露具名FDE个人。
+
+可切入环节：分析：从资料完整的一条产品线和常见问题开始，同时上线明确的人工升级与无人在线兜底。
+
+- 月支持互动规模：数千次。口径：来自案例标题；未给精确数量、月份或成功解决占比。
+
+- 重复问题自动解决率：未公开。口径：80%是计划达到的目标，不能用作已测得分流率。
+
+- 总体支持成本变化：未公开。口径：仅定性称减少第三方支持依赖，未公开合同、软件消费和维护费用。
+
+### 介入前的问题与基线
+
+- 【公开披露】多次收购带来多条产品线，客服依赖个人经验、缺少统一复用办法；上线前客户已投入建设结构化知识库，这是Rex的重要前置条件。 [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/)
+
+### 工程师具体做了什么
+
+- 【公开披露】官方FDE项目展示区具名链接本案例；Plative与客服团队协同实现Rex，并将两种自有组件接入，客户负责人称按时交付。 [来源1](https://plative.com/what-we-do/forward-deployed-engineering/) [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/)
+
+- 【未披露】项目团队规模、实施工期、驻场方式、知识清洗分工和逐人FDE职衔未公开。
+
+### 技术方案与数据流程
+
+- 【公开披露】Rex使用既有知识文章提供退款说明、硬件连接排障和报表指导；退款场景原文是解释，不代表自动执行退款。底层模型和检索实现未披露。 [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/)
+
+- 【公开披露】项目使用Agentforce to Live Agent，在未解决或客户要求真人时，经Salesforce Digital Engagement升级；通用组件页佐证其知识型排障和人工衔接能力。 [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/) [来源3](https://plative.com/what-we-do/products/agentforce-to-live-agent/)
+
+- 【公开披露】项目使用Live Chat Escalation检查真人客服工时和在线状态；无人在线时给邮件、电话或建单选项。组件说明亦确认该路由机制。 [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/) [来源4](https://plative.com/what-we-do/products/agentforce-live-chat-escalation-agent/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：将知识文章标记产品、版本、有效期与适用客户群；测试相似名称跨产品误召回，缺少支持依据时升级而非补猜。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：用真实历史问题同时评估答案支持率和转人工成功率；覆盖夜间无人、排队状态变化、用户重复请求等情形。分开统计发起互动、解决问题和再次来访。
+
+### 解决程度与业务提升
+
+- 【公开披露】案例标题报告每月数千次互动；正文描述全天自助回答并减少第三方支持依赖，但没有分流率、满意度或外包费前后值。 [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/)
+
+- 【公开披露】解决至少80%重复问题是最初目标，邮件与电话AI扩展是未来计划；两者都不能当作已实现结果。 [来源2](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/)
+
+### 尚未公开的信息
+
+- 【未披露】具体模型、知识切分、索引、权限过滤、内容更新频率、转人工判定阈值与会话上下文传递实现未公开。
+
+- 【未披露】未公开是否接触患者健康或支付敏感信息、数据保留及脱敏规则；不能因服务医疗行业就认定系统访问临床数据。
+
+- 【未披露】真实解决率、错误率、人工升级率、等待时间和满意度基线未公开；每月数千次没有精确数量和统计月份。
+
+- 【未披露】实施费、Agentforce消费、客服维护及第三方支持总成本未公开，不能计算净节省。
+
+### 关键技能
+- 分析：客服知识治理与检索评测
+- 分析：Digital Engagement转人工集成
+- 分析：在线状态与非工作时段路由
+- 分析：支持质量与解决率口径设计
+
+### 风险
+- 分析：跨产品知识混用或过期文档可能误导退款及硬件排障。
+- 分析：客服在线状态变化造成转接失败，或敏感信息随会话传递过多。
+
+### 限制
+- 官方FDE页具名归类构成项目证据，未公开工程师个人职衔。
+- 80%是目标；每月数千次是互动量，不能当解决量或人工替代量。
+- 邮件和电话AI扩展属于计划；退款能力在本例中是流程解释。
+- 两项组件原链接失效后已核验现行官方产品正文；未观看成功的视频不用于断言技术配置。
+
+### 来源
+1. [Plative：Forward Deployed Engineering](https://plative.com/what-we-do/forward-deployed-engineering/)
+2. [Plative：Rectangle Health的Rex客服案例](https://plative.com/client/rectangle-health-handles-1000s-of-support-interactions-with-agentforce/)
+3. [Plative：Agentforce to Live Agent组件](https://plative.com/what-we-do/products/agentforce-to-live-agent/)
+4. [Plative：Agentforce Live Chat Escalation Agent组件](https://plative.com/what-we-do/products/agentforce-live-chat-escalation-agent/)
+5. [Rectangle Health官方：Scott LoPresti介绍及联系页脚](https://www.rectanglehealth.com/team/scott-lopresti/)
+
+## 4. HappyRobot：合同PDF抽取与条款合规检索
+
+国家：美国；项目落地：未披露
+行业：企业AI软件与内部合同运营
+国家口径：美国为总部国：HappyRobot官网链接的公司LinkedIn页明确总部为San Francisco，供应商案例也称其位于旧金山。该内部合同系统未公开实际部署国家或云区域，不以全球办公室推定多国上线。
+
+概述：分处理者通知义务及其他关键条款埋在合同里，人工录入既耗资源又容易漏掉；公司不愿让产品工程团队转做内部工具。
+
+流程：合同PDF→自动提取日期、金额与法律约定→映射Salesforce自定义字段→对话代理同时检索结构化字段与原始PDF→团队查询和核验合同义务。
+
+落地程度：供应商官方全文明确系统已在生产使用，提供合同义务追踪和条款查询；未给上线日期、处理合同量或用户覆盖。
+
+人工职责：HappyRobot团队查询合同并据条款核验义务，将内部工程资源继续用于客户产品。合同字段是否逐条人工批准、法务复核标准及对外通知审批未公开。
+
+证据说明：Plative官方FDE页的“Proven Results, Real Impact”直接列出HappyRobot并链接合同项目；案例全文明确Plative设计Salesforce Agentforce双模块方案及已生产使用。官方项目归类成立，未披露具名FDE或人员配置。
+
+可切入环节：分析：选一种合同及少数可验证字段，保留原文出处和人工校验，再扩展条款问答与通知义务追踪。
+
+- 上线状态：已生产使用。口径：官方案例正文明确；没有公开日期、合同量或用户数。
+
+- 每合同实际节省时间：未公开。口径：10–15分钟/合同是计划目标，未有上线后计时数据。
+
+- 义务漏检率或法律风险下降：未公开。口径：没有评测集、漏检基线或索赔对照；不能把宣传措辞当100%正确。
+
+- 总成本和净收益：未公开。口径：未披露实施、许可证、推理及人工复核成本。
+
+### 介入前的问题与基线
+
+- 【公开披露】客户需要把合同中的分处理者通知要求等义务系统化，避免逐份人工录入；选择外部实施，以免内部工程团队偏离面向客户的产品开发。 [来源2](https://plative.com/client/happyrobot/)
+
+### 工程师具体做了什么
+
+- 【公开披露】本项目由官方FDE结果页具名归类；Plative在客户现有Salesforce中构建两个模块，使CRM成为结构化合同信息的统一记录位置。 [来源1](https://plative.com/what-we-do/forward-deployed-engineering/) [来源2](https://plative.com/client/happyrobot/)
+
+- 【未披露】未公开工程师姓名、人数、具体工时、交付阶段及是否长期驻团队；通用FDE计费介绍不能代替本合同。
+
+### 技术方案与数据流程
+
+- 【公开披露】第一模块解析PDF，抽取生效日期、合同总额、标志使用权及分处理者通知义务，写入Salesforce自定义字段供报告使用。 [来源2](https://plative.com/client/happyrobot/)
+
+- 【公开披露】第二模块是检索增强生成（RAG）对话代理，同时参考结构化元数据与PDF原文。具体OCR、分块、向量库和模型版本没有公开。 [来源2](https://plative.com/client/happyrobot/)
+
+- 【分析／复现建议】复现建议，非客户已公开实现：字段抽取需保留原文位置、合同版本、单位及币种；修订协议覆盖旧条款时维护显式关系，不将找不到条款解读为不存在义务。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：按条款类型建立标注集，将日期/金额准确率与通知义务漏检率分别验收；对否定、例外和跨段条件安排人工复核。
+
+- 【分析／复现建议】复现建议，非客户已公开实现：读合同与发送通知设不同权限；只有得到批准的义务记录才能触发通知，记录批准人和发送结果，避免生成内容直接成为法律承诺。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方明确系统已在生产，支持义务追踪和按具体条款查询；没有公开合同数、漏报率或已避免的法律索赔。 [来源2](https://plative.com/client/happyrobot/)
+
+- 【公开披露】每份合同节省10–15分钟使用计划措辞，只是目标；不能宣称已实现，亦不能把营销中的不遗漏义务视为100%准确率。 [来源2](https://plative.com/client/happyrobot/)
+
+### 尚未公开的信息
+
+- 【未披露】PDF解析器、OCR、基础模型、提示词、检索索引、分块方式、字段验证与重试机制未公开。
+
+- 【未披露】合同版本冲突、扫描件质量、异常条款、提取置信度、人工复核门槛和引用支持率未公开。
+
+- 【未披露】是否已自动发送对外通知、通知渠道、授权审批与失败补偿未公开；已披露义务追踪不等于自动法律执行。
+
+- 【未披露】项目费用、许可证、单合同处理成本、维护复核工时和实际净节省未公开；也未提供法律风险降低的可量化实绩。
+
+### 关键技能
+- 分析：PDF与合同条款结构化
+- 分析：Salesforce字段建模和版本管理
+- 分析：结构化与原文双路RAG
+- 分析：义务漏检评测及人工复核
+
+### 风险
+- 分析：遗漏否定、例外或合同修订可能造成错误通知义务判断。
+- 分析：敏感合同跨客户检索或未经审批对外通知会扩大法律与保密风险。
+
+### 限制
+- 本案例客户是HappyRobot自身，供应商是Plative；不是HappyRobot向其他企业交付的语音代理项目。
+- 官方FDE页具名归类成立，个人职衔与投入未公开。
+- 节省10–15分钟/合同是计划，不是测得收益；生产上线不等于已证明准确率和法律风险下降。
+- 仅能确认义务追踪与查询，不推定自动发送通知、修改合同或作法律决定。
+
+### 来源
+1. [Plative：Forward Deployed Engineering](https://plative.com/what-we-do/forward-deployed-engineering/)
+2. [Plative：HappyRobot合同合规案例](https://plative.com/client/happyrobot/)
+3. [HappyRobot官方LinkedIn公司资料](https://www.linkedin.com/company/happyrobot/)
+
+## 5. Arkeo AI：销售代理平台故障恢复与交接
+
+国家：美国；项目落地：未披露
+行业：企业软件与销售AI
+国家口径：客户LinkedIn公司页自报San Francisco总部；不是实际生产用户或云区域证明。法律实体未另行核实。
+
+概述：关键技术人员离职后，销售代理停摆且缺少文档；Streaver接管排障、恢复运行并交回维护能力。
+
+流程：定位生产故障→修复代理与调度→补充监控和运行文档→加固发布及交接。
+
+落地程度：供应商案例称三个核心代理已恢复生产并完成交接；未公开项目日历日期。
+
+人工职责：供应商承担排障及交接期间值守；客户CEO参加复盘。生产用户动作的审批规则未公开。
+
+证据说明：官方具名案例的项目服务栏目明确列Forward Deployed Engineering，FDE服务页也将Arkeo作为主要交付证明。属于供应商当前分类，未获客户独立确认。
+
+可切入环节：分析：先恢复一条能验证完成的生产任务，梳理失败重试和状态写入，再扩大修复范围。
+
+- 恢复的核心代理：3/3。口径：供应商自报ICP、Deal Notes、Pipeline恢复生产；非准确率。
+
+- 救援与交接周期：约3个月。口径：供应商明确说时间线为事后重建，非提交记录精确计时。
+
+- 可用性、客户转化与净收益：未公开。口径：缺少上线前监控基线、成本与独立对照，不能推算提升比例或ROI。
+
+### 介入前的问题与基线
+
+- 【公开披露】技术人员离职、缺少交接资料，三个销售代理停摆并影响新客户进入产品。 [来源1](https://streaver.com/case-studies/arkeo)
+
+### 工程师具体做了什么
+
+- 【公开披露】团队先恢复运行再整理架构和文档，随后加固并交接；项目页将FDE列为交付服务。 [来源1](https://streaver.com/case-studies/arkeo)
+
+- 【公开披露】FDE服务页以Arkeo说明承担恢复结果及清晰退出责任，不仅提供人力。 [来源2](https://streaver.com/services/forward-deployed-engineering)
+
+### 技术方案与数据流程
+
+- 【公开披露】披露栈为Go、Python、TypeScript、Vue，AWS、Airbyte、Postgres，Sentry及GitHub Actions。 [来源1](https://streaver.com/case-studies/arkeo)
+
+- 【公开披露】排障覆盖幂等、密钥处理与调度故障；补充限流、恢复、日志和部署维护文档。 [来源1](https://streaver.com/case-studies/arkeo)
+
+- 【分析／复现建议】复现建议：为重试设置稳定任务标识，分别测试重复触发、部分成功及调度重启，并验证同一任务只产生一次业务效果。
+
+- 【分析／复现建议】复现建议：交接验收由客户团队独立执行部署和故障恢复，记录失败步骤再补手册；这不是对本项目验收细节的陈述。
+
+### 解决程度与业务提升
+
+- 【公开披露】供应商称三个代理恢复生产，平台完成稳定化和文档交接；无前后可用性测量，时间线为重建。 [来源1](https://streaver.com/case-studies/arkeo)
+
+### 尚未公开的信息
+
+- 【未披露】模型、提示、检索、实际API、数据权限及密钥管理实现未披露；不能据技术清单推导完整架构。
+
+- 【未披露】实际部署国家、云区域、项目日期、团队人数、测试集、故障率及运行成本未披露。
+
+- 【未披露】未有客户独立确认、可复算利润效果或精确修复时间；页面提到产品转服务方向，未说明与后续路线的时间关系。
+
+### 关键技能
+- 分析：陌生代码逆向与故障定位
+- 分析：幂等、调度及错误恢复
+- 分析：监控、运行手册和能力交接
+
+### 风险
+- 分析：重复执行可能重复写入销售记录。
+- 分析：只修表面异常会保留调度或状态一致性根因。
+- 分析：恢复后若文档与权限仍集中于外部团队，可能重现人员单点依赖。
+
+### 限制
+- 周数是重建叙事：示意图将三代理均标第4周，正文说两个第2周恢复，故不采用逐代理精确周数。
+- 供应商自报已交付；页面明确尚无客户创始人引语，缺乏独立验证。
+- 20多个代理、Next.js/Vercel与Trigger.dev是后续可能路线，不写为已部署。
+- 三个代理属于同一平台救援项目，只计一例。
+
+### 来源
+1. [Arkeo AI: Three AI agents restored in three months](https://streaver.com/case-studies/arkeo)
+2. [Forward Deployed Engineering | Streaver](https://streaver.com/services/forward-deployed-engineering)
+3. [Arkeo AI公司页](https://www.linkedin.com/company/arkeo-ai)
+
+## 6. Hertz（赫兹）：从入站客服到主动续租与还车确认
+
+国家：美国；项目落地：未披露
+行业：汽车租赁与旅游出行
+国家口径：美国是总部国家：Hertz 2026年官方新闻明确全球总部位于佛罗里达州Estero。项目资料没有披露部署国家、服务租客国家或云区域；集团160国经营范围不能当作本AI项目覆盖范围。
+
+概述：Hertz先接入复杂入站客服，再复用业务连接主动确认还车时间、更新预订和办理延期。
+
+流程：到期前一天触发外呼→确认还车计划→未接按规则重试→租客要求延期时变更租期或还车时间→记录结果并统计按时确认与延期情况。
+
+落地程度：已上线；2026年3月已有主动语音客户证言，9月官方报道数千次外呼尝试。项目覆盖国家、总租客数和具体上线日期未公开。
+
+人工职责：租客反馈预计还车时间；员工处理需要人工服务的互动。具体必须转人工的意图、逐笔审批制度和例外处理比例未公开。
+
+证据说明：主办方AI Engineer完整逐字稿中，FDE CTO Sunny Rekhi在0:28确认身份，1:47–2:42用Hertz具体说明其前线部署工作与后端集成、主动续租；Decagon官方项目文章独立确认流程已运行。
+
+可切入环节：分析：从到期前还车确认切入，先只读核验预订；验证身份、续租资格、价格确认与写入回滚后，再开放延期动作。
+
+- 客服部署上线周期：6周。口径：官方伙伴培训自报Hertz较广客服部署上线速度；没有证明主动外呼单项工程也只用六周。
+
+- 较广客服部署解决率：70%。口径：供应商自报；样本、窗口及渠道未知，非主动外呼接通率、续租转化率或正确性审计。
+
+- 主动外呼尝试量：数千次（未给精确数）。口径：2026-09-02官方文章的数量级描述；不是独立客户数、全部成功通话或新增租单数。
+
+- 项目投入与净收益：未公开。口径：未披露外呼带来的增量租金、净节省，或实施、订阅、通话和人工处理成本；平台最低交易规模不是本项目合同价。
+
+### 介入前的问题与基线
+
+- 【公开披露】Hertz最初希望把复杂的入站客服流程交给AI；在已建立后端连接之后，双方继续寻找可主动完成的客户沟通。没有可核验的原人工用时或积压量基线。 [来源1](https://ai.engineer/talks/7wu2hsRfvV0-forward-deployed-engineering-is-done-at-decagon)
+
+- 【公开披露】客户视频说明还车计划变化需要更新预订并协调后续车队安排；自动化承接高量重复沟通，让员工保留需要人工关照的互动。 [来源6](https://www.linkedin.com/posts/thejessezhang_im-excited-to-share-more-on-outbound-voice-activity-7437527830722134016-GKjq)
+
+### 工程师具体做了什么
+
+- 【公开披露】Sunny Rekhi以Decagon FDE CTO身份，在介绍前线部署工作时直接用Hertz说明：先支持入站业务，再复用已有后端集成，主动联系租客办理延期。项目与FDE交付直接绑定，未披露具体工程师姓名或人数。 [来源1](https://ai.engineer/talks/7wu2hsRfvV0-forward-deployed-engineering-is-done-at-decagon)
+
+- 【公开披露】这是从既有业务动作向主动触达扩展的项目；官方后续文章明确执行时点、重试、变更预订与记录结果，而非只发送租车提醒。 [来源3](https://decagon.ai/blog/campaign-composer)
+
+### 技术方案与数据流程
+
+- 【公开披露】Hertz专属已披露：复用已有后端集成，AI可在对话中办理续租。未说明预订系统名称、端点或事务实现。 [来源1](https://ai.engineer/talks/7wu2hsRfvV0-forward-deployed-engineering-is-done-at-decagon)
+
+- 【公开披露】Hertz专属已披露：到期前一天触发电话；未接可重试；延期时延长租期或改还车时间，并将处理结果纳入平台分析。 [来源3](https://decagon.ai/blog/campaign-composer)
+
+- 【公开披露】平台级说明，非Hertz逐项实施清单：AOP以自然语言定义外呼逻辑；Missions支持批量拨号、跟进和重拨；语音层识别人声/语音信箱及筛选器，并用turn detection与微调模型优化轮次和AOP执行。 [来源4](https://decagon.ai/blog/outbound-voice)
+
+- 【公开披露】平台级说明，非Hertz采用证明：AOP可做Git版本管理和升级规则；集成产品支持API、MCP与SIP。不能据此补画Hertz的CRM、模型供应商或电话基础设施。 [来源7](https://decagon.ai/product/aop) [来源8](https://decagon.ai/product/integrations)
+
+- 【分析／复现建议】复现建议：把租客身份校验、可延期资格、车辆可用性及价格确认作为确定性前置条件；写接口设置幂等键、审计日志与回滚，不能只让模型决定交易参数。
+
+- 【分析／复现建议】复现建议：分别统计触达、身份核验、计划确认、预订写入和人工升级；以相似租单对照核算增量续租，并测试拒接、错号、语音信箱、重复重试和口语日期歧义。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方报道确认已运行主动租车外呼，描述数千次尝试，并可区分按时归还确认与延期标记；没有公布接通率、实际延期量或还车改善幅度。 [来源3](https://decagon.ai/blog/campaign-composer)
+
+- 【公开披露】供应商公开伙伴培训材料报告Hertz六周上线、解决率70%。该材料未分开入站与主动外呼，也未交代测量方法；仅作较广客服部署的自报结果。 [来源5](https://decagon.ai/modules/buyer-profile)
+
+- 【公开披露】客户视频确认可按租客新计划更新预订，并将高量事务留给代理；员工时间转向高价值互动是定性证言，未给人时或裁员数据。 [来源6](https://www.linkedin.com/posts/thejessezhang_im-excited-to-share-more-on-outbound-voice-activity-7437527830722134016-GKjq)
+
+### 尚未公开的信息
+
+- 【未披露】未披露Hertz实际使用的基础模型/版本、语音识别和合成供应商、提示或AOP代码、检索系统与数据更新机制。
+
+- 【未披露】未披露预订系统接口、身份核验、操作权限、价格授权、写入一致性、故障回退及强制人工审批规则。
+
+- 【未披露】未披露客户触达同意、退订和当地呼叫时段的具体配置；平台合规宣传不能证明Hertz配置已通过专项审计。
+
+- 【未披露】未披露外呼接通率、正确解决率、延期转化、车队利用率改善、CSAT因果效果或可复现测试集。
+
+- 【未披露】未披露FDE人数/驻场时长、项目起止日期、实施与运行费用、净收益，以及实际部署国家和云区域。
+
+### 关键技能
+- 分析：事件触发外呼与有限重试编排
+- 分析：租车API与预订写入一致性
+- 分析：语音意图评测、人工升级与效果归因
+
+### 风险
+- 分析：误识别接听人可能泄露租车与行程信息；重试过密、未尊重退订或时区会造成骚扰。
+- 分析：延长预订涉及车辆可用性和价格；重复写入、过期数据或模型误解日期可能影响本租客及下一位租客。
+- 分析：主动续租可能增加收入，但没有对照数据就不能排除原本会自然续租的订单，亦不能由解决率推算ROI。
+
+### 限制
+- FDE认定采用B级：供应商FDE负责人在主办方完整逐字稿中直接讲述Hertz项目，另有供应商官方项目报道；不以客户logo或招聘职责推定参与。
+- 6周和70%来自供应商伙伴培训材料，指Hertz较广的AI客服部署；未披露统计窗口、样本、渠道和独立核验，不能解释为主动外呼成功率。
+- 官方客户案例页本次只解析到标题；业务细节以官方Campaign Composer文章及CEO发布的客户视频转录补齐。未独立复听完整客户视频。
+- 演讲口语称car lease，官方项目文章明确car rental；本记录统一为租车续租/还车安排，不延伸为汽车融资租赁。
+- AOP、语音模型、MCP及集成产品资料仅作平台技术背景；不声称Hertz逐项使用全部能力，或后来产品版本已应用于最初上线。
+
+### 来源
+1. [How Forward Deployed Engineering is done at Decagon：Sunny Rekhi完整逐字稿](https://ai.engineer/talks/7wu2hsRfvV0-forward-deployed-engineering-is-done-at-decagon)
+2. [Hertz uses outbound agents to resolve issues before they arise](https://decagon.ai/case-studies/hertz-proactive-outbound)
+3. [Introducing Campaign Composer: Proactive, compliant outreach](https://decagon.ai/blog/campaign-composer)
+4. [Outbound voice: Scaling proactive customer engagement](https://decagon.ai/blog/outbound-voice)
+5. [Decagon Partner Essentials：Buyer profile](https://decagon.ai/modules/buyer-profile)
+6. [Jesse Zhang发布Hertz主动语音客户视频及转录](https://www.linkedin.com/posts/thejessezhang_im-excited-to-share-more-on-outbound-voice-activity-7437527830722134016-GKjq)
+7. [Agent Operating Procedures (AOPs)](https://decagon.ai/product/aop)
+8. [Integrations: Connect seamlessly with your existing support stack](https://decagon.ai/product/integrations)
+9. [Hertz Showcases Employee Car Culture and New 2026 Fleet at Estero Headquarters](https://newsroom.hertz.com/press-releases/press-release-details/hertz-showcases-employee-car-culture-and-new-2026-fleet-at-estero-headquarters/)
+
+## 7. Hernan Corporation Sdn Bhd：榴莲冷链订单、库存与交接协同
+
+国家：马来西亚；项目落地：马来西亚
+行业：食品制造与冷链物流
+国家口径：马来西亚来自官方详细案例所述当地业务与运往KLIA的流程，代表已披露项目运营地。18个出口市场不是18国AI部署证明。总部具体地址尚未完成官网正文核验。
+
+概述：把纸表、Excel和聊天中的冷链交接记录接回统一流程，减少重复录入与状态追问。
+
+流程：员工上传订单或现场照片→Claude抽取并结构化→Lark更新记录、通知下游→异常升级与管理层查看。
+
+落地程度：已生产使用；Claude合作伙伴目录将Hernan列为生产实证。
+
+人工职责：员工拍照、上传、回答补充问题并执行实体作业；异常通知人处理。未披露每条自动入库记录是否经过人工批准。
+
+证据说明：Agmo官方案例索引在FDE Case Studies栏直接列出Hernan冷链项目；详细案例和Anthropic官方托管伙伴资料确认工作流与投产成果。以项目级官方归类为FDE依据，不依赖客户logo或通用服务简介。
+
+可切入环节：分析：从收货单图像转结构化草稿开始，验证品种、重量和单位后，再开放跨团队通知及写入。
+
+- 订单录入用时：减少50%。口径：供应商及伙伴目录自报；样本、统计周期和分位数未公开。
+
+- 收货记录处理：少于2分钟。口径：从码头照片到可追踪库存记录；不是单次模型延迟。
+
+- 经营覆盖：49人服务18个出口市场，未增员。口径：项目时点的运营描述；未证明增加了18个市场，也未披露订单量变化。
+
+- 总投入与净收益：未公开。口径：没有实施、模型、Lark、维护和复核成本；无增员不能换算成现金节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】原流程依赖纸表、Excel、转发的WhatsApp消息，收货资料还需管理员重新录入，管理层获得状态存在延迟。 [来源2](https://agmostudio.com/claude-customer-story-hernan-corporation-puts-a-claude-agent-in-every-stage-of-its-durian-cold-chain/)
+
+### 工程师具体做了什么
+
+- 【公开披露】Agmo官方将本项目列入FDE案例专栏；详细交付涵盖将Claude接入Lark日常群聊，围绕订单、照片、库存记录及下游交接组织自动处理和异常通知。 [来源1](https://www.agmostudio.com/ai-case-studies/) [来源2](https://agmostudio.com/claude-customer-story-hernan-corporation-puts-a-claude-agent-in-every-stage-of-its-durian-cold-chain/)
+
+### 技术方案与数据流程
+
+- 【公开披露】项目明确采用Claude API的视觉能力和Lark群聊；员工上传文件或照片并提及助手，形成按等级和重量记录的库存数据，必要时追问。 [来源2](https://agmostudio.com/claude-customer-story-hernan-corporation-puts-a-claude-agent-in-every-stage-of-its-durian-cold-chain/)
+
+- 【公开披露】订单事件触发下游通知；装货、检查和配送使用表单，差异、拒收及截单时间进入异常提醒，管理层收到实时汇总。 [来源2](https://agmostudio.com/claude-customer-story-hernan-corporation-puts-a-claude-agent-in-every-stage-of-its-durian-cold-chain/)
+
+- 【分析／复现建议】复现建议：为订单和批次分配唯一ID；消息重试须幂等，低置信字段保留原图并转人工确认。
+
+- 【分析／复现建议】验收建议：分别测字段正确率、重复入库率、漏通知率及异常处理时长；物理分级和放行仍需要明确责任人。
+
+### 解决程度与业务提升
+
+- 【公开披露】生产实证报告订单录入用时减半、照片转记录少于2分钟；49人支持18个出口市场且未新增人手。指标是业务步骤表现，不能视为模型精度或收入增长。 [来源3](https://partnerhub.claude.com/directory/partner/agmo-studio-sdn-bhd)
+
+### 尚未公开的信息
+
+- 【未披露】Claude模型名称、版本、调用路由、云区域及运行后端未披露。
+
+- 【未披露】Lark数据表结构、API鉴权、重试机制、权限边界、审计和数据保留设置未披露。
+
+- 【未披露】训练或微调、评测集、字段错误率、负载量、FDE人数与交付工期未披露。
+
+- 【未披露】完整成本、毛利、损耗改善及其他国家实际部署未披露。
+
+### 关键技能
+- 分析：现场流程访谈与事件建模
+- 分析：多模态字段抽取及单位校验
+- 分析：协作平台写入、通知和异常管理
+
+### 风险
+- 分析：模糊照片、品种或重量误读可能污染库存。
+- 分析：重复消息触发重复写入，或跨群通知泄露订单信息。
+
+### 限制
+- 供应商自报结果，未公开独立审计或错误率。
+- 伙伴目录的通用预算、云平台、MCP和网关能力不等于Hernan项目使用配置。
+- 不把自动读取等级与重量解释为视觉检测食品质量、温度传感器监测或自动判断冷链安全。
+
+### 来源
+1. [Agmo官方AI案例索引](https://www.agmostudio.com/ai-case-studies/)
+2. [Hernan冷链项目完整案例](https://agmostudio.com/claude-customer-story-hernan-corporation-puts-a-claude-agent-in-every-stage-of-its-durian-cold-chain/)
+3. [Anthropic伙伴目录：Agmo Studio](https://partnerhub.claude.com/directory/partner/agmo-studio-sdn-bhd)
+
+## 8. Clio：应用内客服与Salesforce转人工
+
+国家：加拿大；项目落地：未披露
+行业：法律科技软件
+国家口径：加拿大为客户总部所在地，官网隐私声明第1.1条明确总部在Burnaby。项目从北美扩展至全球客户，但未列具体国家；不把总部国当作AI托管地或全部部署地。
+
+概述：让自助问答与人工接手形成连续客服流程。
+
+流程：应用内提问→Agent Maven回答或转交→人工承接上下文→分析人员改进知识。
+
+落地程度：已投产；先试点，再面向北美及全球客户推广。
+
+人工职责：Clio坐席承接升级；专职AI分析员检查对话，修补知识和角色配置。
+
+证据说明：完整官方客户案例的Solution段直接记载Maven FDE提供技术协助，并区分CSM与实施工程师角色，属于具体项目级FDE证据。
+
+可切入环节：分析：优先做有明确答案的产品使用问答；复杂账户操作与法律判断应分别定权限。
+
+- 聊天自主答复：超过80%。口径：正文口径；未披露样本与观察期，不能解释为全部客服渠道解决率。
+
+- 相对旧机器人解决量：增加60%。口径：相对增长而非增加60个百分点；未给出基础数量。
+
+- 人工技术支持速度：4倍。口径：归因于工单压力降低；未定义均值、分位数及计时起止。
+
+- 完整经济性：未公开。口径：未公布采购、实施、模型调用、维护、复核成本和净节省。
+
+### 介入前的问题与基线
+
+- 【公开披露】旧规则机器人依赖预设答案和手工调整，重复咨询挤占复杂技术支持时间。 [来源1](https://www.mavenagi.com/customer-stories/clio)
+
+### 工程师具体做了什么
+
+- 【公开披露】六周上线期中，FDE按需技术协助；CSM统筹，实施工程师建设Salesforce集成并配置品牌语气及知识。没有把这些职责全部归给FDE。 [来源1](https://www.mavenagi.com/customer-stories/clio)
+
+### 技术方案与数据流程
+
+- 【公开披露】Agent Maven接入应用内聊天；不足99%置信的提问经Salesforce Messaging转人工，并携带对话和客户信息。Agent Designer用于检查与迭代。 [来源1](https://www.mavenagi.com/customer-stories/clio)
+
+- 【分析／复现建议】复现建议：转人工事件使用关联ID，将用户身份、消息历史和升级原因分开授权；明确传递失败的回退队列。
+
+- 【分析／复现建议】验收建议：固定产品版本和问题分布，分别测有依据答复率、错误自信率、升级成功率及重复联系率。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方报告自助覆盖与人工处理速度改善；数字口径见指标栏，缺少独立对照。 [来源1](https://www.mavenagi.com/customer-stories/clio)
+
+### 尚未公开的信息
+
+- 【未披露】基础LLM名称、版本、路由、嵌入模型与向量数据库未披露。
+
+- 【未披露】云服务商、托管区域、推理资源和数据驻留未披露。Salesforce是交接系统，不等同模型运行基础设施。
+
+- 【未披露】置信分数来源、校准方法、评测集、审计结果及微调方式未披露。
+
+- 【未披露】FDE人数、工时、合同价格、运行单价和净收益未披露。
+
+### 关键技能
+- 分析：知识治理与测试集设计
+- 分析：CRM交接与权限映射
+- 分析：置信分数校准及人工升级设计
+
+### 风险
+- 分析：高置信错误可能不触发转人工，应单独检查误答漏报。
+- 分析：客户上下文流入第三方支持系统时，需要清晰的数据最小化和租户隔离。
+
+### 限制
+- 99%是转人工所用的置信门槛，不是经审计的答题准确率。
+- “训练品牌语气与知识”未说明微调；不能据此认定修改了模型权重。
+- 本条只覆盖客服；不将扩展中的销售、教育等流程当作同等成熟部署。
+
+### 来源
+1. [Clio客服完整案例](https://www.mavenagi.com/customer-stories/clio)
+2. [Clio官方隐私声明](https://www.clio.com/uk/privacy/spain/)
+
+## 9. K1x：税务软件应用内知识问答
+
+国家：美国；项目落地：未披露
+行业：税务科技软件
+国家口径：美国依据客户官方联系页在新泽西Morristown的公司地址；该页未单独标注总部。本项目实际用户国家与AI托管地点未披露。
+
+概述：将已有帮助内容转成产品使用中的自助答复。
+
+流程：应用内提问→搜索知识内容及生成解释→支持团队查看问题趋势并优化知识。
+
+落地程度：已投产；一周是接入交付时间，不是结果评估周期。
+
+人工职责：支持团队继续完善内容与处理需人介入的问题；具体转人工路由、门槛未披露。
+
+证据说明：Maven联合创始人署名官方FDE文章的Customer Impact: K1x段明确FDE嵌入团队、集成平台与部署应用内代理；完整客户案例补充原流程、界面和指标。
+
+可切入环节：分析：从产品操作指南启动；税务结论、申报提交与资金动作需另设审核边界。
+
+- 自主解决比例：80%。口径：供应商案例自报；结果观察期、样本、重开工单规则不详。
+
+- 解决用时：通常少于3分钟。口径：原文为almost always，不能提升成100%或SLA；不是模型推理时延。
+
+- 接入周期：1周。口径：官方FDE文章记载平台集成、文章同步和应用内部署；不代表完整前期采购周期。
+
+- 完整经济性：未公开。口径：预算转配到服务运营岗位不等于披露现金净节省。旧厂商报价也不能替代Maven成本。
+
+### 介入前的问题与基线
+
+- 【公开披露】已有350多篇帮助文章，但旧机器人只能处理约15%咨询；报告能力也不足，人工仍忙于兜底。 [来源2](https://www.mavenagi.com/customer-stories/k1x)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE直接参与客户团队，一周内完成平台集成、帮助文章同步与产品内会话代理上线。 [来源1](https://www.mavenagi.com/resources/forward-deployed-engineers)
+
+### 技术方案与数据流程
+
+- 【公开披露】应用内instant answers同时呈现可搜索内容与生成式回答，提供操作步骤；上线后Maven继续协助提示优化，支持团队可查看常见问题趋势。 [来源2](https://www.mavenagi.com/customer-stories/k1x)
+
+- 【分析／复现建议】复现建议：按产品、版本和权限给文章加元数据，保存同步时间与原文链接；过期内容暂停参与答复。
+
+- 【分析／复现建议】验收建议：把一次解决、延迟重开和转人工分别计数；用同一时间窗、同类问题比较原机器人与新代理。
+
+### 解决程度与业务提升
+
+- 【公开披露】官方公布自主解决比例及处理速度改善，但不同增长指标未给出可对齐的基准。 [来源2](https://www.mavenagi.com/customer-stories/k1x)
+
+### 尚未公开的信息
+
+- 【未披露】基础LLM、版本、多模型路由、微调和检索实现未披露。
+
+- 【未披露】云平台、部署区域、运行资源、向量库、数据驻留和租户隔离实现未披露。
+
+- 【未披露】应用嵌入协议、知识更新频率、错误回退、人工交接集成与权限细节未披露。
+
+- 【未披露】FDE人员规模、完整成本、可复现评测集和指标分母未披露。
+
+### 关键技能
+- 分析：知识同步与版本管理
+- 分析：产品内嵌问答界面
+- 分析：意图分类与客服效果归因
+
+### 风险
+- 分析：旧版本帮助文章可能给当前产品提供错误步骤。
+- 分析：用户可能把软件操作提示误当税务意见，需要明确答复边界。
+
+### 限制
+- 案例另称解决量10倍、解决率6倍；但约15%到80%不直接等于6倍，未公开统一基准或分母，因此不自行拼成同一测量序列。
+- ChatGPT-style是界面描述，不能当作OpenAI或GPT模型使用证据。
+- 税务软件客服项目不等于自动税务判断、报表审批或申报项目。
+
+### 来源
+1. [Maven官方FDE文章](https://www.mavenagi.com/resources/forward-deployed-engineers)
+2. [K1x完整客户案例](https://www.mavenagi.com/customer-stories/k1x)
+3. [K1x官方联系页](https://k1x.io/contact/)
+
+## 10. Mastermind：活动高峰期网站、聊天与邮件客服
+
+国家：美国；项目落地：未披露
+行业：在线教育与创作者平台
+国家口径：美国依据客户官方隐私页的Arizona联系地址及美国运营说明；不将其视作项目云托管或用户国家清单。实际AI部署国家未披露。
+
+概述：用分渠道答复和人工辅助应对活动季客服波动。
+
+流程：网站或聊天咨询→知识答复或转人工；邮件→AI生成草稿→客服处理。
+
+落地程度：已投产；六周上线，案例报告上线后两个月内的结果。
+
+人工职责：客服处理复杂问题与聊天升级，并使用邮件草稿和内部辅助；未证明邮件在该阶段全面自动发送。
+
+证据说明：Maven联合创始人署名官方FDE文章的Customer Impact: Mastermind段，明确FDE与客户配置工作流并部署客服代理；完整项目案例提供交付和渠道细节。
+
+可切入环节：分析：优先处理活动访问、账户使用等可验证问题；退款、订阅和账户变更单独授权。
+
+- 聊天无需交接：93%。口径：2026年FDE文章口径；2025案例称live chat问题获答，不能外推到邮件渠道。
+
+- 支持页面自主解决：68%。口径：独立于聊天渠道；未披露样本和重复联系率。
+
+- 响应用时：减少75%。口径：案例同时报告联系量增加60%；未公开计时分位数和同质对照。
+
+- 完整成本与净节省：未公开。口径：未增员并非现金成本减少；未披露软件费、实施、调用、维护或审核支出。
+
+### 介入前的问题与基线
+
+- 【公开披露】活动季咨询激增，按高峰全年配置坐席成本高，日常编制又难覆盖重复咨询。 [来源2](https://www.mavenagi.com/customer-stories/mastermind)
+
+### 工程师具体做了什么
+
+- 【公开披露】FDE与客户配置专属工作流并部署代理；官方后续文章确认聊天无需交接的比例。 [来源1](https://www.mavenagi.com/resources/forward-deployed-engineers)
+
+- 【公开披露】交付团队与客服、QA、IT及留存负责人梳理流程、整理知识并连接邮件工具，六周投入运行。 [来源2](https://www.mavenagi.com/customer-stories/mastermind)
+
+### 技术方案与数据流程
+
+- 【公开披露】网站支持框和聊天控件面向用户；邮件Copilot基于知识起草答复，内部Copilot辅助坐席，仪表板展示表现及问题趋势。邮件工具品牌未公开。 [来源2](https://www.mavenagi.com/customer-stories/mastermind)
+
+- 【分析／复现建议】复现建议：分别设置自助答复、坐席草稿与写入操作权限；每次模式切换保留审批记录。
+
+- 【分析／复现建议】验收建议：以活动前后相同类型问题对照，区分首次响应、最终解决、返工和转人工等待；记录峰值并发。
+
+### 解决程度与业务提升
+
+- 【公开披露】上线后两个月内报告响应速度和支持页面自主解决改善；后续FDE文章另确认聊天交接表现。 [来源1](https://www.mavenagi.com/resources/forward-deployed-engineers) [来源2](https://www.mavenagi.com/customer-stories/mastermind)
+
+### 尚未公开的信息
+
+- 【未披露】基础模型名称、版本、模型提供商、微调或多模型路由未披露。ChatGPT式界面不是模型证据。
+
+- 【未披露】托管云、区域、服务器资源、向量库和数据驻留未披露。
+
+- 【未披露】邮件连接器、身份认证、提示结构、知识检索与同步实现、峰值容量未披露。
+
+- 【未披露】FDE规模、完整经济性、质量评测集、独立审计及账户写入上线状态未披露。
+
+### 关键技能
+- 分析：多渠道工作流设计
+- 分析：品牌知识与草稿质量管理
+- 分析：季节性负载及客服排班评估
+
+### 风险
+- 分析：高峰期升级队列可能成为瓶颈，需测试异常流而非只测自动回答。
+- 分析：账户和账单相关内容需防跨用户引用；草稿模式与自动发送须有独立权限。
+
+### 限制
+- 标题中的百万参会者属于活动规模，不等于百万AI用户或对话。
+- 自动回复、退订和账户更改出现在后续扩展描述中，未作为本条已完成能力。
+- 三个渠道的自动化和人工角色不同，不合并成一个总解决率。
+
+### 来源
+1. [Maven官方FDE文章](https://www.mavenagi.com/resources/forward-deployed-engineers)
+2. [Mastermind完整客户案例](https://www.mavenagi.com/customer-stories/mastermind)
+3. [Mastermind官方隐私页](https://learn.mastermind.com/privacy-session)
+
+## 11. Hoxton Wealth：顾问客户报告生成与内部知识获取
 
 国家：阿联酋／英国；项目落地：未披露
 行业：财富管理与金融顾问服务
@@ -82,7 +927,7 @@
 3. [Hoxton Wealth AUM tops US$5bn (£3.75bn)](https://www.international-adviser.com/hoxton-wealth-aum-tops-us5bn-3-75bn/)
 4. [Hoxton Wealth：Contact / Our Global Presence](https://hoxtonwealth.com/ae/contact)
 
-## 2. Sonos：音箱安装与连接故障排查代理
+## 12. Sonos：音箱安装与连接故障排查代理
 
 国家：美国；项目落地：未披露
 行业：消费电子与音响
@@ -166,7 +1011,7 @@
 5. [The Agent Development Life Cycle](https://sierra.ai/blog/agent-development-life-cycle)
 6. [Contact Us | Sonos](https://www.sonos.com/en-ca/contact)
 
-## 3. SiriusXM：Harmony车载收音机恢复与订阅客服
+## 13. SiriusXM：Harmony车载收音机恢复与订阅客服
 
 国家：美国；项目落地：未披露
 行业：卫星广播与音频订阅
@@ -253,7 +1098,7 @@
 6. [The Agent Development Life Cycle](https://sierra.ai/blog/agent-development-life-cycle)
 7. [Sirius XM Holdings 2025 Form 10-K](https://investor.siriusxm.com/sec-filings/all-sec-filings/content/0000908937-26-000006/siri-20251231.htm)
 
-## 4. OluKai：鞋履选购与退换货服务代理
+## 14. OluKai：鞋履选购与退换货服务代理
 
 国家：美国；项目落地：未披露
 行业：鞋履零售与电商
@@ -338,7 +1183,7 @@
 5. [The Agent Development Life Cycle](https://sierra.ai/blog/agent-development-life-cycle)
 6. [OluKai Help：What’s your address?](https://support.olukai.com/en-US/whats-your-address-1121446)
 
-## 5. LSEG（伦敦证券交易所集团）：Workspace AI Search：有引用的金融信息检索
+## 15. LSEG（伦敦证券交易所集团）：Workspace AI Search：有引用的金融信息检索
 
 国家：英国；项目落地：未披露
 行业：金融数据与分析
@@ -419,7 +1264,7 @@
 5. [LSEG 2026 H1 Interim Results](https://www.lseg.com/en/investor-relations/financial-results/2026-h1-interim-results)
 6. [Companies House：LONDON STOCK EXCHANGE GROUP PLC](https://find-and-update.company-information.service.gov.uk/company/05369106)
 
-## 6. Core42：Sovereign Public Cloud：主权云控制与持续监测
+## 16. Core42：Sovereign Public Cloud：主权云控制与持续监测
 
 国家：阿拉伯联合酋长国；项目落地：阿拉伯联合酋长国
 行业：云基础设施与安全治理
@@ -501,7 +1346,7 @@
 4. [Aldar’s Blueprint for Secure Digital Transformation](https://www.core42.ai/resource/blogs/aldars-blueprint-for-secure-digital-transformation)
 5. [Core42 Raises USD 550 million from HSBC to Scale Global AI Infrastructure](https://www.core42.ai/resources/news/core42-raises-usd-550-million-from-hsbc-to-scale-global-ai-infrastructure)
 
-## 7. JPMorganChase（摩根大通）：CCB Risk数据与notebook迁移
+## 17. JPMorganChase（摩根大通）：CCB Risk数据与notebook迁移
 
 国家：美国；项目落地：未披露
 行业：银行与风险数据工程
@@ -583,7 +1428,7 @@
 1. [Forward Deployed Engineering: Delivering Business Outcomes with AI](https://www.databricks.com/blog/forward-deployed-engineering-delivering-business-outcomes-ai)
 2. [Our Impact in New York City](https://www.jpmorganchase.com/communities/new-york)
 
-## 8. Kantar：LINK AI广告评估与优化平台
+## 18. Kantar：LINK AI广告评估与优化平台
 
 国家：英国；项目落地：未披露
 行业：广告与市场研究
@@ -644,7 +1489,7 @@
 ### 来源
 1. [Kantar turns advertising intelligence into action with Microsoft AI](https://www.microsoft.com/en/customers/story/27379-kantar-azure)
 
-## 9. Kawasaki Heavy Industries（川崎重工）：机器人即服务平台基础
+## 19. Kawasaki Heavy Industries（川崎重工）：机器人即服务平台基础
 
 国家：日本；项目落地：未披露
 行业：机器人与工业制造
@@ -703,7 +1548,7 @@
 ### 来源
 1. [Kawasaki builds scalable robotics as a service platform with Azure Kubernetes Service](https://www.microsoft.com/en/customers/story/26946-kawasaki-heavy-industries-azure-kubernetes-service)
 
-## 10. Order.co：数据仓库与Metabase迁移
+## 20. Order.co：数据仓库与Metabase迁移
 
 国家：美国；项目落地：未披露
 行业：采购与支付软件
@@ -764,7 +1609,7 @@
 ### 来源
 1. [Order.co Takes the Pain Out of Procurement with up to 7x Faster Analytics](https://www.snowflake.com/en/customers/all-customers/case-study/order-co/)
 
-## 11. Snowflake（内部审计团队）：收入相关合同审核代理
+## 21. Snowflake（内部审计团队）：收入相关合同审核代理
 
 国家：美国；项目落地：未披露
 行业：企业软件与内部审计
@@ -825,7 +1670,7 @@
 1. [How Snowflake Reduced Contract Review Time by 70% with Agentic Intelligence](https://www.snowflake.com/en/blog/agentic-intelligence-contract-review-snowflake/)
 2. [Snowflake Privacy Notice](https://www.snowflake.com/en/legal/privacy/privacy-policy/)
 
-## 12. Hays：多语言候选人与岗位匹配
+## 22. Hays：多语言候选人与岗位匹配
 
 国家：英国；项目落地：澳大利亚、新西兰
 行业：招聘服务
@@ -886,7 +1731,7 @@
 1. [Hays and Databricks Build an AI Candidate-Job Matching Engine](https://answers.databricks.com/hays-databricks-build-ai-candidate-job-matching-engine-x_dYacZctsI)
 2. [Hays plc Contacts](https://www.haysplc.com/contacts)
 
-## 13. Virtue Foundation：医疗设施基础数据更新与去重
+## 23. Virtue Foundation：医疗设施基础数据更新与去重
 
 国家：美国；项目落地：未披露
 行业：公益与医疗资源信息
@@ -949,7 +1794,7 @@
 1. [Production-Scale Healthcare Data Extraction: 400K Records from 5M Web Pages](https://answers.databricks.com/production-scale-healthcare-data-extraction-400k-records-from-5m-web-pages-rQmmMH3EIL0)
 2. [Virtue Foundation Terms of Service](https://virtuefoundation.org/terms-of-use/)
 
-## 14. AstraZeneca（阿斯利康）：业务域联合代理与权限治理
+## 24. AstraZeneca（阿斯利康）：业务域联合代理与权限治理
 
 国家：英国；项目落地：未披露
 行业：生物制药
@@ -1010,7 +1855,7 @@
 1. [Multi-Agent Architecture at Scale: AstraZeneca’s Agent Bricks Strategy](https://answers.databricks.com/multi-agent-architecture-at-scale-astrazeneca-s-agent-bricks-strategy-68gZ-adyLSU)
 2. [AstraZeneca Contact Information](https://www.astrazeneca.com/investor-relations/annual-reports/annual-report-2016/contact-information.html)
 
-## 15. FOX Corporation / FOX One：短视频生成与冷启动推荐
+## 25. FOX Corporation / FOX One：短视频生成与冷启动推荐
 
 国家：美国；项目落地：未披露
 行业：流媒体与媒体
@@ -1073,7 +1918,7 @@
 1. [Fox One GenAI Recommendation System: Solving Cold Start at Scale](https://answers.databricks.com/fox-one-genai-recommendation-system-solving-cold-start-at-scale-vLD1XjcwZnE)
 2. [FOX Statement of Corporate Governance](https://www.foxcorporation.com/corporate-governance/statement-corporate-governance/)
 
-## 16. IFCO：包装资产追踪dbt管线优化
+## 26. IFCO：包装资产追踪dbt管线优化
 
 国家：德国；项目落地：未披露
 行业：循环包装与物流
@@ -1135,7 +1980,7 @@
 1. [Scaling and Operating a Large dbt Project on Databricks: IFCO’s Data Team on Performance, Visibility, and Debugging](https://www.databricks.com/blog/scaling-and-operating-large-dbt-project-databricks-ifcos-data-team-performance-visibility-and-debugging)
 2. [databricks-dbt-factory：文章直接链接的实现文档](https://github.com/mwojtyczka/databricks-dbt-factory)
 
-## 17. FIS／Amalgamated Bank：反洗钱调查证据装配与案件建议
+## 27. FIS／Amalgamated Bank：反洗钱调查证据装配与案件建议
 
 国家：美国；项目落地：未披露
 行业：银行基础设施与反洗钱合规
@@ -1214,7 +2059,7 @@
 1. [FIS Brings Agentic AI to Banking with Anthropic, Starting with Financial Crimes](https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-brings-agentic-ai-to-banking-with-anthropic-starting-with-financial-crimes)
 2. [FIS AML Investigations Agent Now Commercially Available](https://www.fisglobal.com/about-us/media-room/press-release/2026/fis-aml-investigations-agent-now-commercially-available)
 
-## 18. CHI Software（内部运营）：内部简历格式化与运营自动化
+## 28. CHI Software（内部运营）：内部简历格式化与运营自动化
 
 国家：未披露；项目落地：未披露
 行业：IT服务
@@ -1271,7 +2116,7 @@
 ### 来源
 1. [CHI官方完整内部FDE转型案例](https://chisw.com/case-studies/ai-transformation/)
 
-## 19. WAIQ（项目品牌；客户法律主体未披露）：多站点标准作业与培训执行平台
+## 29. WAIQ（项目品牌；客户法律主体未披露）：多站点标准作业与培训执行平台
 
 国家：未披露；项目落地：未披露
 行业：多站点企业运营
@@ -1329,7 +2174,7 @@
 1. [Hashlogics官方WAIQ项目全文](https://www.hashlogics.com/case-studies/waiq-business-operations-execution-platform)
 2. [Hashlogics官方FDE项目经历说明](https://www.hashlogics.com/hire/forward-deployed-engineers)
 
-## 20. Novo Nordisk（诺和诺德）：临床研发定量分析代理
+## 30. Novo Nordisk（诺和诺德）：临床研发定量分析代理
 
 国家：丹麦；项目落地：未披露
 行业：生物制药
@@ -1393,7 +2238,7 @@
 1. [Novo Nordisk accelerates clinical insight with custom agents on Azure](https://www.microsoft.com/en/customers/story/26569-novo-nordisk-as-azure)
 2. [Microsoft Frontier Company：客户领导人证言](https://www.microsoft.com/en-us/frontier-company)
 
-## 21. NFL：NFL Pro Fantasy AI阵容决策助手
+## 31. NFL：NFL Pro Fantasy AI阵容决策助手
 
 国家：美国；项目落地：美国
 行业：职业体育与订阅媒体
@@ -1479,7 +2324,7 @@
 5. [NFL官方：NFL+服务国家范围](https://support.nfl.com/hc/en-us/articles/35869824536724-Where-is-NFL-available)
 6. [NFL官方：联盟地址](https://support.nfl.com/hc/en-us/articles/35869693160980-League-Address)
 
-## 22. NHS England（英国国家医疗服务体系英格兰分部）：疫情数据底座与医疗物资、疫苗运营
+## 32. NHS England（英国国家医疗服务体系英格兰分部）：疫情数据底座与医疗物资、疫苗运营
 
 国家：英国；项目落地：英国
 行业：公共卫生应急与医疗物资供应
@@ -1551,7 +2396,7 @@
 ### 来源
 1. [Louis Mosley代表Palantir Technologies UK的英国新冠调查证词](https://covid19.public-inquiry.uk/wp-content/uploads/2025/03/11180002/INQ000536417.pdf)
 
-## 23. The Elmet Group：钨钼及微波器件制造的经营、成本与排程系统
+## 33. The Elmet Group：钨钼及微波器件制造的经营、成本与排程系统
 
 国家：美国；项目落地：美国
 行业：特种金属与工业微波器件制造
@@ -1625,7 +2470,7 @@
 3. [The Elmet Group官方8-K申报](https://investors.theelmetgroup.com/sec-filings/content/0001213900-26-097862/ea0304152-8k_elmet.htm)
 4. [Elmet Technologies制造基地](https://www.elmettechnologies.com/about-elmet/locations/)
 
-## 24. NVIDIA：芯片到计算交付的供应链控制塔
+## 34. NVIDIA：芯片到计算交付的供应链控制塔
 
 国家：美国；项目落地：未披露
 行业：半导体与人工智能计算系统制造
@@ -1699,7 +2544,7 @@
 5. [NVIDIA联系与总部地址](https://www.nvidia.com/en-us/contact/)
 6. [NVIDIA技术团队：供应链决策、cuOpt与Nemotron后训练](https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry)
 
-## 25. Acrisure：Auris AI保险经纪运营系统
+## 35. Acrisure：Auris AI保险经纪运营系统
 
 国家：美国；项目落地：美国
 行业：保险经纪与风险服务
@@ -1774,7 +2619,7 @@
 4. [Acrisure办公室与总部](https://www.acrisure.com/locations)
 5. [Acrisure官方发布：Auris AI保险运营平台](https://markets.financialcontent.com/stocks/article/bizwire-2026-9-10-acrisure-unveils-auris-ai-a-new-ai-operating-system-in-the-insurance-industry)
 
-## 26. Joint Commission：Reforge认证检查员排班与标准知识平台
+## 36. Joint Commission：Reforge认证检查员排班与标准知识平台
 
 国家：美国；项目落地：美国
 行业：医疗质量认证与现场评审
@@ -1848,7 +2693,7 @@
 3. [Joint Commission联系页](https://www.jointcommission.org/en-us/contact-us)
 4. [William Walders本人对Reforge建设团队及阶段的说明](https://www.linkedin.com/posts/walders_aipcon-reforge-activity-7441149075061813248-foEz)
 
-## 27. GE Aerospace：航空发动机供应约束识别与生产协同
+## 37. GE Aerospace：航空发动机供应约束识别与生产协同
 
 国家：美国；项目落地：美国
 行业：航空发动机制造与维修保障
@@ -1922,7 +2767,7 @@
 2. [AIPCon 9参与者演讲转写](https://stockanalysis.com/stocks/pltr/transcripts/598492-aipcon-9/)
 3. [GE官方美国制造投资公告](https://www.geaerospace.com/news/press-releases/ge-aerospace-invest-another-1b-us-manufacturing)
 
-## 28. AIG：投保资料整理与核保助手
+## 38. AIG：投保资料整理与核保助手
 
 国家：美国；项目落地：未披露
 行业：财产与商业保险
@@ -2001,7 +2846,7 @@
 4. [较新客户官方确认AI核心部署](https://www.aig.com/home/investor-relations/aig-2025-annual-report)
 5. [AIG提交美国证券交易委员会的2025年报：总部](https://www.sec.gov/Archives/edgar/data/5272/000000527226000023/aig-20251231.htm)
 
-## 29. Airbus A350生产：A350生产数据与质量协同
+## 39. Airbus A350生产：A350生产数据与质量协同
 
 国家：法国；项目落地：法国
 行业：航空航天制造
@@ -2079,7 +2924,7 @@
 5. [官方白皮书：区分A350交付与Skywise平台效益](https://www.palantir.com/assets/xrfr7uokpv1b/5plfYze5aVCisYHuvLhDZ2/c6713af4b4c5fff5a73b5e1683302898/Palantir_Operational_Complexity_Whitepaper_FINAL.pdf)
 6. [Airbus官方：欧洲地点图区分注册地与总部](https://mediaassets.airbus.com/pm_38_780_780729-ey5ygljerc.pdf)
 
-## 30. Composio：AI代理工具集成基础设施
+## 40. Composio：AI代理工具集成基础设施
 
 国家：美国；项目落地：未披露
 行业：AI开发工具与API集成基础设施
@@ -2144,7 +2989,7 @@
 4. [Composio product](https://composio.dev/)
 5. [Composio × Plank：以Claude压缩交付周期](https://joinplank.com/cases/composio)
 
-## 31. Kernel：代理云浏览器基础设施
+## 41. Kernel：代理云浏览器基础设施
 
 国家：美国；项目落地：未披露
 行业：AI云浏览器基础设施
@@ -2208,7 +3053,7 @@
 3. [Kernel company profile](https://www.ycombinator.com/companies/kernel)
 4. [Kernel product](https://www.kernel.sh/)
 
-## 32. SardineAI：反欺诈与合规AI风险平台
+## 42. SardineAI：反欺诈与合规AI风险平台
 
 国家：美国；项目落地：未披露
 行业：金融反欺诈与合规软件
@@ -2273,7 +3118,7 @@
 4. [Sardine Notabene partnership](https://www.sardine.ai/press/pr/crypto-travel-rule-compliance)
 5. [Sardine平台](https://www.sardine.ai/)
 
-## 33. Diagon AI：工业设备智能采购搜索
+## 43. Diagon AI：工业设备智能采购搜索
 
 国家：美国；项目落地：未披露
 行业：工业设备采购平台
@@ -2338,7 +3183,7 @@
 4. [Diagon official LinkedIn](https://www.linkedin.com/company/diagon-tech/)
 5. [Diagon／Albus设备采购产品](https://diagon.ai/)
 
-## 34. Artyc：温控运输物联网冷链系统
+## 44. Artyc：温控运输物联网冷链系统
 
 国家：美国；项目落地：未披露
 行业：医疗与生命科学冷链物流设备
@@ -2402,7 +3247,7 @@
 3. [Artyc official company profile](https://www.linkedin.com/company/artycpbc/)
 4. [Artyc products](https://www.shipartyc.com/)
 
-## 35. Retail Development Partners：零售门店扩张分析模型
+## 45. Retail Development Partners：零售门店扩张分析模型
 
 国家：美国；项目落地：未披露
 行业：零售地产选址与门店扩张分析
@@ -2462,7 +3307,7 @@
 3. [Retail Development Partners official profile](https://www.linkedin.com/company/retail-development-partners)
 4. [Retail Development Partners platform](https://www.retaildevelopmentpartners.com/)
 
-## 36. MintMCP：企业MCP工具网关
+## 46. MintMCP：企业MCP工具网关
 
 国家：美国；项目落地：未披露
 行业：企业AI工具接入与安全基础设施
@@ -2526,7 +3371,7 @@
 3. [MintMCP Terms of Service](https://www.mintmcp.com/terms)
 4. [MintMCP product](https://www.mintmcp.com/)
 
-## 37. Vendora：杂货零售数字商务平台
+## 47. Vendora：杂货零售数字商务平台
 
 国家：美国；项目落地：未披露
 行业：杂货零售POS与电商软件
@@ -2590,7 +3435,7 @@
 3. [Vendora YC company and founder launch](https://www.ycombinator.com/companies/vendora)
 4. [Vendora products](https://www.vendora.io/)
 
-## 38. SMI Aware：社交媒体电子取证引擎
+## 48. SMI Aware：社交媒体电子取证引擎
 
 国家：美国；项目落地：未披露
 行业：诉讼支持与电子证据发现服务
@@ -2654,7 +3499,7 @@
 3. [SMI Aware solutions](https://smiaware.com/solutions/)
 4. [SMI Aware产品与分析员流程](https://smiaware.com/)
 
-## 39. Cheiron：生物制药研发AI工作层
+## 49. Cheiron：生物制药研发AI工作层
 
 国家：美国；项目落地：未披露
 行业：生物制药研发情报软件
@@ -2718,7 +3563,7 @@
 3. [Cheiron official company profile](https://www.linkedin.com/company/cheiron-bio)
 4. [Cheiron product](https://www.cheiron.bio/)
 
-## 40. Jolly：一线员工激励与企业系统集成
+## 50. Jolly：一线员工激励与企业系统集成
 
 国家：美国；项目落地：未披露
 行业：一线员工绩效激励软件
@@ -2782,7 +3627,7 @@
 1. [Jolly × Plank](https://joinplank.com/customers/jolly)
 2. [Jolly official company profile](https://www.linkedin.com/company/jolly/)
 
-## 41. NEAR AI：代理基础设施与开源安全
+## 51. NEAR AI：代理基础设施与开源安全
 
 国家：美国；项目落地：未披露
 行业：隐私保护AI与代理基础设施
@@ -2846,7 +3691,7 @@
 3. [NEAR AI Privacy Policy](https://near.ai/privacy-policy)
 4. [NEAR AI私有推理产品](https://near.ai/)
 
-## 42. Rye Worldwide：代理电商统一结账API
+## 52. Rye Worldwide：代理电商统一结账API
 
 国家：美国；项目落地：未披露
 行业：电商结账与代理交易基础设施
@@ -2911,7 +3756,7 @@
 4. [Jolly official company announcement](https://www.linkedin.com/company/jolly/)
 5. [Rye通用结账API产品](https://rye.com/)
 
-## 43. OpenEvidence：OpenEvidence临床文献检索推理平台
+## 53. OpenEvidence：OpenEvidence临床文献检索推理平台
 
 国家：美国；项目落地：美国
 行业：医疗信息检索与临床知识软件
@@ -2984,7 +3829,7 @@
 2. [OpenEvidence一手法院诉状](https://assets.alm.com/bd/d8/7ef64dac44bc9651ba27df49284a/openevidence-v-doximity-et-al-d-mass-25-cv-11802-dckt-000001-000-filed-2025-06-20-1.pdf)
 3. [BEI技术深解](https://www.baseten.co/blog/how-we-built-bei-high-throughput-embedding-inference/)
 
-## 44. Rime：Rime实时语音合成API上线与扩容
+## 54. Rime：Rime实时语音合成API上线与扩容
 
 国家：美国；项目落地：未披露
 行业：语音合成模型与开发者API
@@ -3055,7 +3900,7 @@
 2. [Baseten Rime官方客户故事](https://www.baseten.co/resources/customers/rime/)
 3. [推理指标导出与Rime Grafana集成](https://www.baseten.co/blog/export-model-inference-metrics-to-observability-tools/)
 
-## 45. Notion：Notion AI Meeting Notes语音转写管道
+## 55. Notion：Notion AI Meeting Notes语音转写管道
 
 国家：美国；项目落地：未披露
 行业：协作办公与知识管理软件
@@ -3130,7 +3975,7 @@
 5. [说话人分离优化技术说明](https://www.baseten.co/blog/how-baseten-makes-pyannotes-diarization-models-96x-faster/)
 6. [Notion AI Meeting Notes产品与隐私说明](https://www.notion.com/help/ai-meeting-notes)
 
-## 46. Scaled Cognition：Scaled Cognition APT代理模型混合云上线
+## 56. Scaled Cognition：Scaled Cognition APT代理模型混合云上线
 
 国家：美国；项目落地：未披露
 行业：企业客服代理模型与智能体平台
@@ -3201,7 +4046,7 @@
 2. [美国专利商标局公开文件](https://tmng-al.uspto.gov/resting2/api/casedoc/cms/case/99284016/office-action/OfficeAction7810198.pdf)
 3. [Custom Docker containers](https://docs.baseten.co/development/model/custom-server)
 
-## 47. Gamma：演示文稿图像生成的推理加速
+## 57. Gamma：演示文稿图像生成的推理加速
 
 国家：美国；项目落地：未披露
 行业：演示文稿与视觉创作软件
@@ -3271,7 +4116,7 @@
 2. [Gamma官方：团队所在地](https://gamma.app/about)
 3. [FLUX.1 dev模型API示例](https://www.baseten.co/library/flux-dev/)
 
-## 48. Latent Health：药事临床检索的多模型生产编排
+## 58. Latent Health：药事临床检索的多模型生产编排
 
 国家：美国；项目落地：美国
 行业：医疗药事与药品可及性软件
@@ -3346,7 +4191,7 @@
 3. [Latent官方信任中心：美国医疗系统](https://security.latenthealth.com/)
 4. [Baseten Chains架构及示例](https://www.baseten.co/products/chains/)
 
-## 49. Deliveroo：骑手入驻与餐厅状态语音运营
+## 59. Deliveroo：骑手入驻与餐厅状态语音运营
 
 国家：英国；项目落地：未披露
 行业：即时餐饮配送平台
@@ -3412,7 +4257,7 @@
 1. [Deliveroo partners with ElevenLabs](https://elevenlabs.io/blog/deliveroo)
 2. [Deliveroo Legal](https://deliveroo.co.uk/legal/)
 
-## 50. Marshmallow：汽车保险自助保单服务
+## 60. Marshmallow：汽车保险自助保单服务
 
 国家：英国；项目落地：英国
 行业：汽车保险
@@ -3476,7 +4321,7 @@
 1. [How Marshmallow uses AI](https://sierra.ai/customers/marshmallow)
 2. [Marshmallow March competition terms](https://www.marshmallow.com/march-competition-terms)
 
-## 51. Sutherland Excavating Ltd.：石油储罐检查与异常监测
+## 61. Sutherland Excavating Ltd.：石油储罐检查与异常监测
 
 国家：加拿大；项目落地：加拿大
 行业：石油储罐维护与现场工程服务
@@ -3545,7 +4390,7 @@
 2. [Hire forward deployed engineers who ship inside your operations](https://www.hashlogics.com/hire/forward-deployed-engineers)
 3. [Sutherland Excavating Contact](https://www.sutherlandexcavating.com/contact-us/)
 
-## 52. ZhoopZhoop：汽修连锁语音接待与配件询价
+## 62. ZhoopZhoop：汽修连锁语音接待与配件询价
 
 国家：加拿大；项目落地：加拿大
 行业：多门店汽车维修服务
@@ -3611,7 +4456,7 @@
 2. [Hire forward deployed engineers who ship inside your operations](https://www.hashlogics.com/hire/forward-deployed-engineers)
 3. [ZhoopZhoop service locations](https://zhoopzhoopauto.com/locations/)
 
-## 53. Bilt：住房支付与奖励客服
+## 63. Bilt：住房支付与奖励客服
 
 国家：美国；项目落地：未披露
 行业：住房支付与会员奖励平台
@@ -3674,7 +4519,7 @@
 1. [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
 2. [Bilt announces New York headquarters](https://newsroom.biltrewards.com/bilt-announces-new-headquarters-in-new-york-citys-meatpacking-district)
 
-## 54. Rippling：多产品客服分流与账户查询
+## 64. Rippling：多产品客服分流与账户查询
 
 国家：美国；项目落地：未披露
 行业：人力资源、薪酬与IT管理软件
@@ -3737,7 +4582,7 @@
 1. [How Rippling supports many user types with Decagon](https://decagon.ai/case-studies/rippling)
 2. [Rippling User Privacy Notice](https://static-assets.ripplingcdn.com/legal/en-US/user_privacy_notice.html)
 
-## 55. Curology：皮肤护理订阅与物流客服
+## 65. Curology：皮肤护理订阅与物流客服
 
 国家：美国；项目落地：美国
 行业：远程皮肤护理与处方护肤品
@@ -3804,7 +4649,7 @@
 2. [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
 3. [Contact Curology](https://curology.com/contact-us/)
 
-## 56. Noom：健康管理订阅客服现代化
+## 66. Noom：健康管理订阅客服现代化
 
 国家：美国；项目落地：未披露
 行业：数字健康与体重管理服务
@@ -3869,7 +4714,7 @@
 2. [Introducing the Agent Engineer: Where AI meets real-world impact](https://decagon.ai/blog/introducing-agent-engineer)
 3. [Noom Appoints Jim Bugden Chief Financial Officer](https://www.noom.com/in-the-news/noom-appoints-jim-bugden-chief-financial-officer/)
 
-## 57. Klarna：美国第一线语音客服
+## 67. Klarna：美国第一线语音客服
 
 国家：英国；项目落地：美国
 行业：消费支付与分期付款服务
@@ -3933,7 +4778,7 @@
 2. [ElevenLabs Forward Deployed Engineers](https://elevenlabs.io/agents/forward-deployed-engineers)
 3. [Klarna Governance Oversight](https://investors.klarna.com/governance/Governance-Oversight/)
 
-## 58. T-Mobile：App内文本与语音客户支持
+## 68. T-Mobile：App内文本与语音客户支持
 
 国家：美国；项目落地：未披露
 行业：电信运营
@@ -4002,7 +4847,7 @@
 4. [原始访谈可读转写（非官方逐字稿）](https://bidclub.ai/e/inside-openai-enterprise-forward-deployed-engine)
 5. [T-Mobile US官方：总部问答](https://investor.t-mobile.com/resources/investor-faqs/default.aspx?INTNAV=tNav%3AInvestors%3AResources)
 
-## 59. Revolut：多语种第一线语音客服
+## 69. Revolut：多语种第一线语音客服
 
 国家：英国；项目落地：英国、欧洲（未逐国披露）
 行业：数字金融与银行服务
@@ -4064,7 +4909,7 @@
 2. [ElevenLabs工程师：生产部署与持续评测方法](https://elevenlabs.io/blog/building-voice-agents-that-last-some-lessons-learned-from-forward-deployed-engineering)
 3. [Revolut官方：伦敦全球总部](https://www.revolut.com/blog/post/where-is-revolut-based/)
 
-## 60. Hydro-Québec 的 Electric Circuit（Circuit électrique）：Voltère 网站咨询助手
+## 70. Hydro-Québec 的 Electric Circuit（Circuit électrique）：Voltère 网站咨询助手
 
 国家：加拿大；项目落地：加拿大
 行业：公共电动车充电
@@ -4127,7 +4972,7 @@
 3. [Hydro-Québec官方：网络身份与业务](https://www.hydroquebec.com/transportation-electrification/faq.html)
 4. [Hydro-Québec官方：总部位置](https://www.hydroquebec.com/renovations-head-office/)
 
-## 61. 乌克兰经济部 / 国家就业服务局：就业服务热线语音受理
+## 71. 乌克兰经济部 / 国家就业服务局：就业服务热线语音受理
 
 国家：乌克兰；项目落地：乌克兰
 行业：公共就业服务
@@ -4185,7 +5030,7 @@
 ### 来源
 1. [ElevenLabs官方：明确工程师合作、生产部署和80天数据](https://elevenlabs.io/blog/ukraines-employment-services)
 
-## 62. Itaú Unibanco：COBOL企业税号字段改造
+## 72. Itaú Unibanco：COBOL企业税号字段改造
 
 国家：巴西；项目落地：巴西
 行业：商业银行
@@ -4255,7 +5100,7 @@
 3. [Itaú Unibanco Investor Relations](https://www.itau.com.br/relacoes-com-investidores/en/itau-unibanco/?selectedTab=3)
 4. [Itaú customer case](https://devin.ai/customers/itau)
 
-## 63. Bilt：产品开发与运维编码代理
+## 73. Bilt：产品开发与运维编码代理
 
 国家：美国；项目落地：未披露
 行业：住房支付与会员奖励平台
@@ -4320,7 +5165,7 @@
 2. [Jia Wu：How Forward Deployed Engineering is done at Cognition](https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition)
 3. [Bilt New York headquarters](https://newsroom.biltrewards.com/bilt-announces-new-headquarters-in-new-york-citys-meatpacking-district)
 
-## 64. Cognition：Devin长程编码代理模型集成
+## 74. Cognition：Devin长程编码代理模型集成
 
 国家：美国；项目落地：未披露
 行业：软件开发自动化平台
@@ -4388,7 +5233,7 @@
 2. [Cognition负责人官方客户访谈](https://claude.com/customers/cognition)
 3. [Cognition官方总部](https://cognition.com/about)
 
-## 65. NBA：实时比赛事件检测最小可用产品
+## 75. NBA：实时比赛事件检测最小可用产品
 
 国家：美国；项目落地：未披露
 行业：职业篮球赛事与体育数据服务
@@ -4452,7 +5297,7 @@
 3. [AWS doubles investment in AWS Generative AI Innovation Center](https://aws.amazon.com/blogs/machine-learning/aws-doubles-investment-in-aws-generative-ai-innovation-center-marking-two-years-of-customer-success/)
 4. [NBA官方总部说明](https://pr.nba.com/nba-2k-league-all-star-comes-to-new-york-city/)
 
-## 66. Jabil（捷普）：Jabil制造车间故障排查知识助手
+## 76. Jabil（捷普）：Jabil制造车间故障排查知识助手
 
 国家：美国；项目落地：未披露
 行业：电子制造服务与工业供应链
@@ -4519,7 +5364,7 @@
 3. [AWS doubles investment in AWS Generative AI Innovation Center](https://aws.amazon.com/blogs/machine-learning/aws-doubles-investment-in-aws-generative-ai-innovation-center-marking-two-years-of-customer-success/)
 4. [AWS Jabil官方客户故事](https://aws.amazon.com/solutions/case-studies/jabil-manufacturing-transformation-generative-ai/)
 
-## 67. CMA CGM：货运放行、单证与客服辅助
+## 77. CMA CGM：货运放行、单证与客服辅助
 
 国家：法国；项目落地：法国
 行业：集装箱海运与综合物流
@@ -4585,7 +5430,7 @@
 2. [Mistral逐项目案例](https://mistral.ai/customers/cma-cgm/)
 3. [CMA CGM官方法定信息及总部](https://www.cmacgm-group.com/en/legal-terms)
 
-## 68. HTX（新加坡内政科技局）：公共安全本地模型与内部平台
+## 78. HTX（新加坡内政科技局）：公共安全本地模型与内部平台
 
 国家：新加坡；项目落地：新加坡
 行业：公共安全科技与政府信息基础设施
@@ -4653,7 +5498,7 @@
 3. [HTX官方：主权AI实际架构](https://www.htx.gov.sg/whats-happening/all-news---events/all-news/2026/why-sovereign-ai-is-key-to-scaling-public-safety-impact)
 4. [HTX与Mistral联合论文：Phoenix-VL 1.5 Medium Technical Report](https://arxiv.org/pdf/2605.10391)
 
-## 69. BBVA：银行员工知识与工作流共建
+## 79. BBVA：银行员工知识与工作流共建
 
 国家：西班牙；项目落地：未披露
 行业：商业银行与零售金融
@@ -4718,7 +5563,7 @@
 2. [BBVA合作扩展](https://openai.com/index/bbva-collaboration-expansion/)
 3. [BBVA法定实体和注册地址](https://shareholdersandinvestors.bbva.com/microsites/pilarIII2015/en/1/cd.html)
 
-## 70. Surf Air Mobility（Southern Airways／Mokulele自营航空运营）：SurfOS飞行、机组与燃油运营
+## 80. Surf Air Mobility（Southern Airways／Mokulele自营航空运营）：SurfOS飞行、机组与燃油运营
 
 国家：美国；项目落地：美国
 行业：航空运输
@@ -4793,7 +5638,7 @@
 3. [Surf Air Mobility Inc. via Business Wire完整发布稿](https://markets.financialcontent.com/stocks/article/bizwire-2026-10-7-surf-air-mobility-provides-airline-operations-business-update-highlighting-surfos-driven-efficiency-and-electric-aviation-priorities-in-hawaii?Language=english%2F1000)
 4. [Surf Air官方：主体所在地与SurfOS运营航线](https://www.surfair.com/brands/)
 
-## 71. NFL：NFL IQ 球迷数据问答
+## 81. NFL：NFL IQ 球迷数据问答
 
 国家：美国；项目落地：未披露
 行业：职业体育与球迷媒体
@@ -4854,7 +5699,7 @@
 3. [AWS官方：NFL IQ技术工作流](https://aws.amazon.com/blogs/media/how-nfl-next-gen-stats-built-the-nfl-iq-ai-assistant-with-amazon-quick/)
 4. [National Football League官方：联盟地址](https://support.nfl.com/hc/en-us/articles/35869693160980-League-Address)
 
-## 72. Nubank：核心ETL代码库模块化迁移
+## 82. Nubank：核心ETL代码库模块化迁移
 
 国家：巴西；项目落地：未披露
 行业：数字银行
@@ -4932,7 +5777,7 @@
 3. [Nu investor FAQs](https://nu.com/en/investors/why-invest/faqs/)
 4. [Cognition：编码代理评测方法](https://cognition.com/blog/evaluating-coding-agents)
 
-## 73. Superhuman（邮件应用）：Superhuman邮件分类与检索模型生产迁移
+## 83. Superhuman（邮件应用）：Superhuman邮件分类与检索模型生产迁移
 
 国家：美国；项目落地：未披露
 行业：电子邮件与办公生产力软件
@@ -5010,7 +5855,7 @@
 3. [Baseten Performance Client技术原理](https://www.baseten.co/blog/your-client-code-matters-10x-higher-embedding-throughput-with-python-and-rust/)
 4. [Baseten Embeddings Inference技术背景](https://www.baseten.co/blog/introducing-baseten-embeddings-inference-bei/)
 
-## 74. Zed Industries：Zed代码编辑预测模型优化与生产迁移
+## 84. Zed Industries：Zed代码编辑预测模型优化与生产迁移
 
 国家：美国；项目落地：美国、欧盟
 行业：软件开发工具与代码编辑器
@@ -5087,7 +5932,7 @@
 2. [Zed官方服务条款](https://zed.dev/terms)
 3. [NVIDIA：Lookahead decoding技术详解](https://developer.nvidia.com/blog/optimizing-qwen2-5-coder-throughput-with-nvidia-tensorrt-llm-lookahead-decoding/)
 
-## 75. Writer：Writer医疗与金融专用Palmyra模型部署
+## 85. Writer：Writer医疗与金融专用Palmyra模型部署
 
 国家：美国；项目落地：未披露
 行业：企业生成式AI软件与行业语言模型
@@ -5166,7 +6011,7 @@
 2. [Writer官方公司介绍](https://writer.com/company/about/)
 3. [Baseten：TensorRT生产部署原理](https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/)
 
-## 76. Praktika.ai：Praktika语言学习实时语音转写
+## 86. Praktika.ai：Praktika语言学习实时语音转写
 
 国家：美国；项目落地：未披露
 行业：在线语言教育与AI口语辅导
@@ -5241,7 +6086,7 @@
 2. [英国Companies House对Praktika.ai Company的主体登记](https://find-and-update.company-information.service.gov.uk/company/16332920/persons-with-significant-control)
 3. [Baseten：TensorRT生产部署原理](https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/)
 
-## 77. Tampa General Hospital：AI医疗利用审核的成本优化
+## 87. Tampa General Hospital：AI医疗利用审核的成本优化
 
 国家：美国；项目落地：美国
 行业：医疗服务
@@ -5338,7 +6183,7 @@
 5. [官方Q2 2026报告第11页用过去时回顾DevCon6，证明截至2026-10-17前已发生；正文索引可读，直接open超大小限](https://investors.palantir.com/files/Palantir%20-%20Q2%202026%20Business%20Update.pdf)
 6. [Tampa General官方：医院所在地与业务](https://www.tgh.org/about-tgh)
 
-## 78. Morgan Stanley：财富顾问知识检索助手及持续评测
+## 88. Morgan Stanley：财富顾问知识检索助手及持续评测
 
 国家：美国；项目落地：未披露
 行业：财富管理与投资咨询
@@ -5433,7 +6278,7 @@
 3. [Morgan Stanley官方全球总部](https://www.morganstanley.com/about-us/global-offices/americas/united-states)
 4. [Morgan Stanley官方：Debrief上线及Assistant历史时间线](https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch)
 
-## 79. John Deere：播种季设备推荐与经销商支持
+## 89. John Deere：播种季设备推荐与经销商支持
 
 国家：美国；项目落地：未披露
 行业：农业装备与农机售后
