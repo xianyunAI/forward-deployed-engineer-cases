@@ -2,6 +2,1490 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
+      "演讲为近似回忆，不使用其50名工程师/三分之一时间取代官方任务口径。",
+      "前线部署工程师（Forward Deployed Engineer）贡献与Devin产品整体收益不可单独分离。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Nubank",
+    "country": "巴西",
+    "countryNote": "Nu官方投资者FAQ明确运营总部在巴西圣保罗；集团法律注册地与运营总部不同。本例采用运营总部；代码有br/co/mx模块不等于已证实三个国家部署，实际国家留空。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "八年ETL单体超过600万行，依赖链可达70层，责任边界不清。原计划由千余工程师在18个月迁移约10万数据类；这是原计划范围，不是已完成量。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "银行提供人工迁移样例，一部分用于定制微调，其余留作评测。人负责项目管理、审核修改和合并PR。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "部署工程负责人在演讲中把该ETL迁移列为FDE（Forward Deployed Engineer，前线部署工程师）实践；参与身份是演讲与官方案例组合证据。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Data、Collections、Risk等部门数周完成其迁移。相同任务的人力投入效率8—12倍；委派范围运行费对比人工时薪成本差异超过20倍，不含完整总拥有成本。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "迁移需移动数据类、修正导入及处理跨文件依赖。Devin把按路径判断br/co/mx分支等重复步骤做成脚本；不能把这些国家代码直接当部署地区。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "在留出评测集上，微调后完成评分约翻倍，单子任务约40→10分钟；评测集规模及绝对完成率未给出。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "技术背景：Cognition解释其代理用多个模型调用进行规划、执行、评价和工具使用；评测优先用编译器、类型检查、单元测试等确定性检查，再辅以代理评价和人工检查。这不是Nubank已公布的逐项架构。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：按数据域建立迁移任务清单及依赖图；用同一批历史任务做训练/评测隔离，禁止把验收样例混入训练。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：每个变更保存原始输入、代码差异、自动测试、审核人及回滚点；先验证运行结果和数据语义，再批准合并，不能只看能编译。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：把代理执行时间、工程师审核时间、返工量分开计量，避免用机器运行速度代表人力节约。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "微调基础模型、参数、样本数、评测任务清单和任务完成绝对分值未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "银行代码访问控制、隔离环境、生产数据权限、审计策略、CI门禁及回滚步骤未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实际迁移总数、全项目结束日期、实施合同金额及净现金收益未披露；不能把规划18个月直接当实际节省18个月。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "部分业务部门已在数周内验证并完成迁移；未宣称整个银行的全部代码均完成。",
+    "entryPoint": "分析：先挑可自动验证的小模块，保留人工代码审核。",
+    "evidenceLevel": "B",
+    "evidenceNote": "部署工程负责人Jia Wu在前线部署工程师（Forward Deployed Engineer）演讲14:11逐项提及Nubank ETL迁移；官方案例第一人称记载定制微调与评测，组合为B。",
+    "humanRole": "人工管理项目并批准变更，检查、少量调整后合并PR。",
+    "id": "nubank-cognition-etl",
+    "industry": "数字银行",
+    "metrics": [
+      {
+        "context": "同类数据类迁移任务的人工作业时间，对比提示与审核Devin所需工时；不是全公司生产率。",
+        "kind": "efficiency",
+        "label": "工程工时效率",
+        "unknown": false,
+        "value": "8–12倍"
+      },
+      {
+        "context": "仅比较Devin运行成本与人工时薪完成同任务；未含全部实施维护投入。",
+        "kind": "cost",
+        "label": "委派范围成本差异",
+        "unknown": false,
+        "value": "超过20倍"
+      },
+      {
+        "context": "未披露实施费、订阅费、维护费及扣除全部投入后的净节省。",
+        "kind": "cost",
+        "label": "总投入与净成本",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Cognition",
+    "publishedAt": "页面未标日期；2026年演讲回顾",
+    "risks": [
+      "分析：数据语义或依赖遗漏",
+      "分析：不能把PR合并当业务正确性证明"
+    ],
+    "skills": [
+      "分析：迁移任务拆解与评测集",
+      "分析：跨文件依赖验证"
+    ],
+    "sources": [
+      {
+        "date": "页面未标日期",
+        "locator": "Custom ETL Migration Devin；Results计算口径",
+        "title": "Nubank ETL migration with Devin",
+        "type": "客户或供应商官方",
+        "url": "https://devin.ai/customers/nubank"
+      },
+      {
+        "date": "2026年大会；页面未标具体日",
+        "locator": "00:15部署工程负责人身份；14:11–14:35 Nubank ETL实例",
+        "title": "Jia Wu：How Forward Deployed Engineering is done at Cognition",
+        "type": "工程负责人第一人称会议演讲及转录",
+        "url": "https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition"
+      },
+      {
+        "date": "页面未标日期",
+        "locator": "Operational headquarters：São Paulo, Brazil",
+        "title": "Nu investor FAQs",
+        "type": "客户或供应商官方",
+        "url": "https://nu.com/en/investors/why-invest/faqs/"
+      },
+      {
+        "date": "2024-09-12",
+        "locator": "全文；仅作相关技术背景，不证明客户逐项采用",
+        "title": "Cognition：编码代理评测方法",
+        "type": "供应商官方技术文档",
+        "url": "https://cognition.com/blog/evaluating-coding-agents"
+      }
+    ],
+    "summary": "600万行ETL单体及跨模块依赖使迁移变为大量重复工程工作。",
+    "title": "核心ETL代码库模块化迁移",
+    "workflow": "收集人工迁移示例，分出训练与评测集；Devin执行数据类迁移，工程师审查微调后合并。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "4小时每周用户节省是Superhuman产品整体说法，不归因为本次模型迁移。",
+      "客户故事未标发布日期；仅记录核验前已公开。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Superhuman（邮件应用）",
+    "country": "美国",
+    "countryNote": "主体国家为美国；来源：Superhuman Labs美国商标程序文件，申请正文列Delaware LLC和San Francisco, CA, UNITED STATES。项目实际落地国家未单独披露，不以总部推断。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "原服务对最大嵌入模型未达p95<500毫秒目标；需要支持异构自定义模型、全球弹性流量，精简团队不愿自行维护分布式GPU。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师）和性能工程师与客户机器学习团队共同部署、优化、压测、扩容，一周交付，并协助生产切流。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "数十种自定义嵌入模型的p95平均下降80%；页首列100毫秒响应与20+模型。多个工程师可转向产品工作，具体人数和工时未披露。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：公司收益可表述为响应更快、减少自建基础设施负担；用户每周节省4小时是整个邮件产品的宣传，不能归因于这次迁移。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "分类、搜索、检索模型部署到TensorRT-LLM基础的BEI；通过多云容量管理、延迟感知路由和双活支持扩展，同时用Performance Client减少客户端瓶颈。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "背景机制：Performance Client用Rust、PyO3释放网络调用期间的GIL，用Tokio调度并发；完成后再组装Python结果。文档的12倍吞吐属于独立极端负载基准，不是Superhuman实测。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "BEI面向嵌入、重排、分类模型，支持自定义/微调模型及弹性扩展。通用产品页的2倍吞吐和10%延迟优化不能替代该客户指标。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：数据流按邮件输入→预处理→分类/嵌入服务→结果回应用拆开计时；检索索引和数据库选型仍须另外确认，不补写未披露组件。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：同一输入集同时测服务端和客户端耗时、p50/p95/p99、峰值并发及质量；先影子运行，再切流并保留旧端点回退。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "模型名称、输入清洗、索引结构、数据保留与邮件权限过滤未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "切流比例、回滚机制、压测样本、分类准确率变化和p95观察期未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "合同、GPU账单、实施费与净节省未披露；不能从80%延迟降幅推出80%成本下降。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "生产流量已迁移；不是仅基准或试验。",
+    "entryPoint": "分析建议：先对一个邮件分类模型影子运行，保留旧服务回退后渐进切流。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Baseten官方案例Solutions逐项目说明前线部署工程师（Forward Deployed Engineer）和性能工程师与Superhuman的机器学习工程师及工程管理层一起部署、优化、评测、扩容；Results再次明确前线部署工程师（Forward Deployed Engineer）直接支持生产迁移。",
+    "humanRole": "Superhuman工程师维护模型与产品，前线部署工程师（Forward Deployed Engineer）协助迁移；用户继续操作邮箱，未披露逐分类人工审核。",
+    "id": "baseten-superhuman-embedding",
+    "industry": "电子邮件与办公生产力软件",
+    "metrics": [
+      {
+        "context": "Solutions报告该推理优化与迁移项目周期。",
+        "kind": "delivery",
+        "label": "交付周期",
+        "unknown": false,
+        "value": "1周"
+      },
+      {
+        "context": "多种自定义嵌入模型平均值；非所有邮件功能总延迟。",
+        "kind": "performance",
+        "label": "p95延迟",
+        "unknown": false,
+        "value": "平均降低80%"
+      },
+      {
+        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
+    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
+    "risks": [
+      "分析：邮件内容隐私",
+      "分析：模型迁移质量回退",
+      "分析：尾延迟和平均值混用"
+    ],
+    "skills": [
+      "分析：异构嵌入模型部署",
+      "分析：客户端瓶颈诊断",
+      "分析：低风险生产流量切换"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验已公开",
+        "locator": "Solutions首段明确FDE与客户MLE协作；Results确认迁移生产流量及FDE动手支持",
+        "title": "Superhuman achieves 80% faster embedding model inference with Baseten",
+        "type": "客户或供应商官方",
+        "url": "https://www.baseten.co/resources/customers/superhuman/"
+      },
+      {
+        "date": "页面未标日期；2026-10-17 核验",
+        "locator": "申请正文列Delaware LLC和San Francisco, CA, UNITED STATES",
+        "title": "Superhuman Labs美国商标程序文件",
+        "type": "主体官方或官方监管文件",
+        "url": "https://ttabvue.uspto.gov/ttabvue/ttabvue-98880288-EXT-3.pdf"
+      },
+      {
+        "date": "2025-06-12",
+        "locator": "全文；仅作相关技术背景，不证明客户逐项采用",
+        "title": "Baseten Performance Client技术原理",
+        "type": "供应商官方技术文档",
+        "url": "https://www.baseten.co/blog/your-client-code-matters-10x-higher-embedding-throughput-with-python-and-rust/"
+      },
+      {
+        "date": "2025-03-27",
+        "locator": "全文；仅作相关技术背景，不证明客户逐项采用",
+        "title": "Baseten Embeddings Inference技术背景",
+        "type": "供应商官方技术文档",
+        "url": "https://www.baseten.co/blog/introducing-baseten-embeddings-inference-bei/"
+      }
+    ],
+    "summary": "邮件应用的分类与检索模型需要低延迟且无需自建GPU运维。",
+    "title": "Superhuman邮件分类与检索模型生产迁移",
+    "workflow": "前线部署工程师（Forward Deployed Engineer）与客户机器学习团队联合部署、优化、评测多种嵌入模型；用BEI与性能客户端解决瓶颈，并协助切换生产流量。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "美国/欧盟为案例Highlighted features明确部署地区；欧盟未细分国家。",
+      "100%可用性未给观察期，故未作为主要量化结果。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Zed Industries",
+    "country": "美国",
+    "countryNote": "主体国家美国来自Zed官方条款16.12的公司地址；实际部署地区美国、欧盟来自Baseten案例Highlighted features的Global deployment (USA-EU)，欧盟不拆为未披露成员国。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "临近发布一周，旧服务未达p90<500毫秒、p50<200毫秒；只有单区域、容量承诺受限，优化过程黑盒且工程支持不足。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师）与性能团队数日试验75余种优化，联合调整推测解码和扩容参数。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "p90下降45%，吞吐3.6倍；供应商称上线后继续优化，编辑预测超过原服务两倍快。100%在线率未给观察期，不视为永久保证。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：商业价值是支持按期发布、跨区域低延迟和工程透明度；没有收入、用户留存或净成本的可归因数字。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Zeta编辑预测由TensorRT-LLM运行，结合KV缓存、定制推测解码、Lookahead和地理路由；美国与欧盟部署。开发者按Tab接受建议。兼容API经测试后一日内全量切换，官方称无需改代码。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "技术背景：Lookahead并行产生候选n-gram再验证，不要求另一个草稿模型。窗口W、n-gram长度N、验证集合G需按模型、硬件、批量和序列长度调参。NVIDIA的Qwen基准并非Zed实测参数。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：工程上应先记录原服务延迟分布，固定输入上下文、模型和生成长度，逐项改变缓存/解码参数；吞吐改善必须同时满足单请求尾延迟。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：代码建议经用户确认只是产品交互，不能替代对私有代码泄露、错误建议和危险修改的测试。上线验收应包含超时降级、地域路由和回滚。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "75余项实验明细、每项增益、最终W/N/G、GPU及副本数量未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "输入上下文范围、日志与代码保留、访问控制、质量测试集及准确率未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "成本账单、合同费用、实际发布日和可用性测量窗口未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "美国",
+      "欧盟"
+    ],
+    "deploymentLevel": "全部流量已迁移；有上线后的继续优化。",
+    "entryPoint": "分析建议：对固定仓库测试集和真实影子请求评测，逐步切流并保持用户确认。",
+    "evidenceLevel": "A",
+    "evidenceNote": "客户故事Solutions直接称把Zed与前线部署及性能工程师配对，详细描述数日内测试75多种优化和上线配置；Results确认生产流量迁移。",
+    "humanRole": "开发者按Tab接受建议并审阅代码；双方工程师测试和调参。",
+    "id": "baseten-zed-edit-prediction",
+    "industry": "软件开发工具与代码编辑器",
+    "metrics": [
+      {
+        "context": "案例Results给定与原推理服务比较，测量窗口未公开。",
+        "kind": "performance",
+        "label": "p90延迟",
+        "unknown": false,
+        "value": "降低45%"
+      },
+      {
+        "context": "供应商报告；未公开标准化负载。",
+        "kind": "performance",
+        "label": "吞吐量",
+        "unknown": false,
+        "value": "提高至3.6倍"
+      },
+      {
+        "context": "充分测试后的迁移时长，不是全部研发周期。",
+        "kind": "delivery",
+        "label": "生产流量切换",
+        "unknown": false,
+        "value": "1天以内"
+      },
+      {
+        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
+    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
+    "risks": [
+      "分析：建议代码缺陷",
+      "分析：私有代码处理边界",
+      "分析：延迟改善与吞吐压力取舍"
+    ],
+    "skills": [
+      "分析：推测解码和缓存优化",
+      "分析：代码补全质量评估",
+      "分析：多区域容量与迁移回退"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验已公开",
+        "locator": "Solutions明确forward deployed团队；Results明确全量迁移及p90和吞吐量",
+        "title": "How Zed is reimagining the code editor from the ground up",
+        "type": "客户或供应商官方",
+        "url": "https://www.baseten.co/resources/customers/zed-industries-serves-2x-faster-code-completions-with-baseten/"
+      },
+      {
+        "date": "页面未标日期；2026-10-17 核验",
+        "locator": "16.12提供美国Denver公司联系地址",
+        "title": "Zed官方服务条款",
+        "type": "主体官方或官方监管文件",
+        "url": "https://zed.dev/terms"
+      },
+      {
+        "date": "2025-02-14",
+        "locator": "全文；仅作相关技术背景，不证明客户逐项采用",
+        "title": "NVIDIA：Lookahead decoding技术详解",
+        "type": "供应商官方技术文档",
+        "url": "https://developer.nvidia.com/blog/optimizing-qwen2-5-coder-throughput-with-nvidia-tensorrt-llm-lookahead-decoding/"
+      }
+    ],
+    "summary": "Zed编辑预测功能需要低尾延迟和可随用户增长扩容的模型推理。",
+    "title": "Zed代码编辑预测模型优化与生产迁移",
+    "workflow": "前线部署工程师（Forward Deployed Engineer）与性能团队测试多种优化，以TensorRT-LLM、缓存、推测解码和跨区域路由优化Zeta代码补全，并迁移生产流量。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "两款模型归同一推理平台交付，不拆成两个案例。",
+      "基准提速不能解释为医疗或金融业务准确率提升。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Writer",
+    "country": "美国",
+    "countryNote": "主体国家为美国；来源：Writer官方公司介绍，Offices明确San Francisco (HQ)。项目实际落地国家未单独披露，不以总部推断。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Writer擅长训练领域模型，但两款70B模型的多GPU推理优化会分散研发精力；需要兼顾延迟、吞吐、成本和私有安全部署。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师）和性能团队与Writer确认真实负载和性能取舍，为Palmyra-Med-70B、Palmyra-Fin-70B分别构建引擎。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "四张A100、FP16基准：吞吐提高60%、首token时间降低23%、每百万token费用下降35%。H100和推测解码是文末探索方向，不是本期已交付。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：可支持的收益是模型服务提速、单位运行费用改善、团队聚焦模型研发；不能据此声称客户诊疗或投资收益提高。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "用TensorRT-LLM把模型编译为按序列形状和批大小优化的CUDA引擎，支持in-flight batching；在模型发布前完成部署与性能基准。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "背景机制：TensorRT优化发生在训练后、推理前；引擎优化依赖GPU、精度、批大小、输入输出形状。此文为通用解释，并非Writer的完整部署配置。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：数据流可按权重→编译引擎→推理端点→应用调用验证；不要把Writer平台的知识图谱、guardrails直接当作本次部署工程师交付的范围。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：冻结验证集并对齐硬件、精度、并发和token长度，测首token/输出速率/单位费用，也检查领域答案质量是否退化。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：医疗或金融场景还需用途分级和专家复核；模型通过考试或某基准不能证明真实医疗/投资决策安全。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "原基准框架、绝对每token费用、batch、序列长度、并发及测量窗口未完整披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "私有部署云和地区、权限/密钥管理、审计、容灾及应用级人工审批未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "生产规模、准确率回归、实施费、全部运维与净ROI未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已部署安全私有推理服务；结果段基准在新模型发布前完成。",
+    "entryPoint": "分析建议：用固定领域问题和真实负载同时评测输出质量、首token延迟与每请求成本。",
+    "evidenceLevel": "A",
+    "evidenceNote": "客户故事Solution明确Writer与Baseten专门的性能团队及前线部署工程师共同工作，随后说明为两款70B行业模型建立推理引擎与部署；有逐项目岗位证据。",
+    "humanRole": "Writer负责模型与领域应用；双方工程师评测性能，不代表供应商替代医疗或金融专业判断。",
+    "id": "baseten-writer-palmyra-serving",
+    "industry": "企业生成式AI软件与行业语言模型",
+    "metrics": [
+      {
+        "context": "FP16、4张NVIDIA A100的公开基准；不是所有生产负载。",
+        "kind": "performance",
+        "label": "吞吐量",
+        "unknown": false,
+        "value": "提高60%"
+      },
+      {
+        "context": "与同组基准一致；未披露完整样本。",
+        "kind": "performance",
+        "label": "首token时间",
+        "unknown": false,
+        "value": "降低23%"
+      },
+      {
+        "context": "同组基准下的单位推理成本，非企业总成本。",
+        "kind": "cost",
+        "label": "每百万token成本",
+        "unknown": false,
+        "value": "降低35%"
+      },
+      {
+        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
+    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
+    "risks": [
+      "分析：量化或优化影响领域质量",
+      "分析：基准与真实负载差异",
+      "分析：敏感行业信息权限"
+    ],
+    "skills": [
+      "分析：TensorRT-LLM引擎调优",
+      "分析：批处理和序列形状分析",
+      "分析：合规边界与性能回归测试"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验已公开",
+        "locator": "Solution明确forward-deployed engineers；Result列4 A100 FP16基准",
+        "title": "How Writer helps businesses transform with AI",
+        "type": "客户或供应商官方",
+        "url": "https://www.baseten.co/resources/customers/writer/"
+      },
+      {
+        "date": "页面未标日期；2026-10-17 核验",
+        "locator": "Offices明确San Francisco (HQ)",
+        "title": "Writer官方公司介绍",
+        "type": "主体官方或官方监管文件",
+        "url": "https://writer.com/company/about/"
+      },
+      {
+        "date": "2024-03-12",
+        "locator": "全文；仅作相关技术背景，不证明客户逐项采用",
+        "title": "Baseten：TensorRT生产部署原理",
+        "type": "供应商官方技术文档",
+        "url": "https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/"
+      }
+    ],
+    "summary": "Writer要把自研行业模型以可控延迟和单位成本提供给企业。",
+    "title": "Writer医疗与金融专用Palmyra模型部署",
+    "workflow": "前线部署工程师（Forward Deployed Engineer）和性能团队与Writer共同确定推理取舍，使用TensorRT-LLM为Palmyra-Med-70B和Palmyra-Fin-70B构建专用引擎及动态批处理。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "九种教学语言不等于九个部署国家。",
+      "成本降幅是转写工作负载，不能等同公司利润或所有AI成本。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Praktika.ai",
+    "country": "美国",
+    "countryNote": "本例主体采用Praktika.ai Company的注册国家美国：英国Companies House控制主体登记明确为美国特拉华公司，不能因其英国子公司推断项目在英国。案例只称全球用户，实际部署国家未披露。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "旧语音转写耗时约1000—1500毫秒，达不到300毫秒目标；全球增长要求弹性算力，旧供应商缺少持续优化支持。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师）与性能工程团队理解语音负载、优化Whisper执行及扩容，并持续协作迭代。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "转写p50低于300毫秒，转写成本节省50%。旧1000—1500毫秒未注明同分位数，故不算精确降幅；没有证据证明学习成绩或续费改善。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "使用TensorRT-LLM C++ executor和in-flight batching，客户可调整自动扩容与运行时。验证Whisper性能后通过OpenAI兼容API迁移流量；更快执行减少所需副本。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "技术背景：TensorRT-LLM支持包括Whisper在内的多种模型；编译优化要匹配硬件与形状，动态批处理在吞吐与等待时间之间取舍。这不是客户完整配置。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：拆分录音上传、排队、转写、对话生成和语音播放延迟；300毫秒指标只属于转写，不能称为整轮对话端到端延迟。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：用不同语种、口音、背景噪声和语速建立固定音频集，测字词错误率与p50/p99。性能测试与真实学习效果测试分开。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非客户已公开实现：产品应明确录音同意、保存期限、撤回删除及未成年人保护；本案没有公布逐段教师审核，不可声称已有。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "Whisper具体版本、语音切片、VAD、采样率、流式协议及精度未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "GPU、batch、扩容阈值、副本数量、具体部署地区、错误率和评测样本未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "费用绝对值、数据保留、教育安全措施、灰度回滚和净收益未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已迁移生产流量，服务全球语言学习用户；国家明细未披露。",
+    "entryPoint": "分析建议：从成人已授权语音练习评测开始，分别测各口音准确率和p50/p99响应。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Baseten客户故事Solutions明确前线部署工程师与Praktika共同优化转写负载，并说明继续并肩迭代；Results验证后切换生产流量，具备项目级岗位与持续部署动作。",
+    "humanRole": "学习者与AI对话；客户团队负责教学体验与模型质量，未披露逐段教师复核。",
+    "id": "baseten-praktika-whisper",
+    "industry": "在线语言教育与AI口语辅导",
+    "metrics": [
+      {
+        "context": "Results口径；旧服务正文给1000–1500毫秒，但未明示同分位数，故不算百分比。",
+        "kind": "performance",
+        "label": "转写p50延迟",
+        "unknown": false,
+        "value": "低于300毫秒"
+      },
+      {
+        "context": "Results针对优化Whisper负载；无绝对金额及完整总成本。",
+        "kind": "cost",
+        "label": "转写成本",
+        "unknown": false,
+        "value": "节省50%"
+      },
+      {
+        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
+    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
+    "risks": [
+      "分析：口音识别偏差",
+      "分析：用户语音隐私",
+      "分析：把技术延迟误当学习效果"
+    ],
+    "skills": [
+      "分析：实时语音转写",
+      "分析：口音和语言质量评测",
+      "分析：批处理与弹性扩容"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17核验已公开",
+        "locator": "Solutions首段直接点名FDE；第3点说明持续合作；Results确认迁移流量",
+        "title": "Praktika delivers ultra-low-latency transcription for global language education with Baseten",
+        "type": "客户或供应商官方",
+        "url": "https://www.baseten.co/resources/customers/praktika/"
+      },
+      {
+        "date": "页面未标日期；2026-10-17 核验",
+        "locator": "PRAKTIKA LIMITED的控制主体Praktika.ai Company明确为Delaware Corporation，Incorporated in United States",
+        "title": "英国Companies House对Praktika.ai Company的主体登记",
+        "type": "主体官方或官方监管文件",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/16332920/persons-with-significant-control"
+      },
+      {
+        "date": "2024-03-12",
+        "locator": "全文；仅作相关技术背景，不证明客户逐项采用",
+        "title": "Baseten：TensorRT生产部署原理",
+        "type": "供应商官方技术文档",
+        "url": "https://www.baseten.co/blog/high-performance-ml-inference-with-nvidia-tensorrt/"
+      }
+    ],
+    "summary": "AI口语教师的语音转文字等待影响会话流畅度。",
+    "title": "Praktika语言学习实时语音转写",
+    "workflow": "前线部署工程师（Forward Deployed Engineer）与性能工程师针对Whisper转写优化执行器、动态批处理和自动扩容；验证后迁移流量并持续迭代模型。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "仅AI工作流成本，不是全院成本降低70%",
+      "临床结果来自另一期合作，不应全部归因于GenAI或单个FDE",
+      "没有独立审计或随机对照"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Tampa General Hospital",
+    "country": "美国",
+    "countryNote": "医院主体与本流程所在地为美国佛罗里达州坦帕。Tampa General官方医院介绍确认佛罗里达业务，官方项目视频指向该院审核流程；未据此扩展至其他医院或国家。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "原有AI利用审核已规模使用，模型费用随部署扩大成为负担。目标是降低这项工作流费用，同时保住临床叙述与证据质量；不是从零替代全院人工。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "缺少优化前每份审核的美元成本、调用次数、耗时分布，以及人工审核时长，无法重建绝对基线。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "官方明确Colton Rusch为FDE（Forward Deployed Engineer，前线部署工程师）；他与医院专家David Zihr共同展示成本优化。工程师展示系统依赖、寻找高成本节点及验证替换效果，医院提供质量约束。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "该AI审核工作流成本下降近70%；GPT调用减少84%；医院专家90%的比较中偏好优化输出。三项分别是费用、调用量、专家偏好，不能互相替代。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "可支持的商业结论是：已有生产流程的模型运行费用下降，同时保留专业人员审核。不能据此推出住院时间缩短、全院利润提升或减少了多少护士。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "总订阅、实施、维护费用，优化前后绝对账单及净现金节省未公开。68%局部替换与近70%总体工作流不是可相加的两个收益。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "患者病历与审核指南进入审核流程；Ontology承载人和AI动作及分支关系，混合确定性逻辑与agent。审核稿呈现在护士工作台，与病历对照，经护士修改、接受并发送。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "AIP Evolve分析数据流和模型调用位置。演示中的criteria-matching agent将两处Claude Sonnet替换为GPT-5 mini：该局部成本下降68%，延迟有所增加。不能说整套医院系统统一换成该模型。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "官方项目摘要还披露跨供应商模型筛选、提示修改，以及用确定性代码代替部分模型调用。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "优化比较要守住临床叙述和证据选择；护士仍复核。公开演示是示意界面，并非公开真实患者资料。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "90%偏好不是90%临床准确率；专家人数、样本量、抽样方式、盲测和失败阈值未披露。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "以下是复现建议，不是医院已公开架构：先画审核状态机，把输入、输出、人工批准及下游副作用列清楚；记录每节点费用与延迟。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "建立去标识化测试集，覆盖缺失证据、矛盾病历及边界条件；按医生认可的错误严重度评分。先验证低风险确定性规则，再比较模型替换。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "以“单份合格审核总成本”验收，并同时监控人工修改量、严重遗漏和P95延迟；达不到质量阈值时回滚。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "EHR产品及具体接口、数据表、消息队列、提示全文：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "每个节点模型版本、上下文大小、token账单和缓存策略：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "访问控制、患者数据脱敏、保留期限、部署云及地区：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "生产变更审批、灰度回滚、模型失效及应急恢复细节：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "端到端临床安全评价和独立审计：未公开，不能据通用技术推定。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "美国"
+    ],
+    "deploymentLevel": "已规模部署的医疗利用审核辅助流程；官方视频称护士每天与AI共同处理审核。演示界面经过示意处理。",
+    "entryPoint": "先对已有非诊疗文书辅助流程做离线成本优化，质量达标后灰度；不接管临床决策。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Palantir官方DevCon页面及官方LinkedIn视频明确列出前线部署工程师 Colton Rusch。医院专家讲述规模部署后的成本优化；不是尚未发生的活动预告。",
+    "humanRole": "护士查看AI提出的利用审核，保留检查、修改、接受并发送步骤；最终医疗决策不由案例中的模型独立承担。",
+    "id": "tampa-general-utilization-review",
+    "industry": "医疗服务",
+    "metrics": [
+      {
+        "context": "医院专家在官方视频称规模部署后的相关AI审核工作流成本下降近70%；绝对金额、基期和样本量未公开。演示中单个criteria-matching agent换模型下降68%，是另一个局部口径，不能当同一分母。不是全院成本下降。",
+        "kind": "cost",
+        "label": "AI工作流成本",
+        "unknown": false,
+        "value": "降低近70%"
+      },
+      {
+        "context": "同一优化流程的调用量，不等于人力减少84%。",
+        "kind": "efficiency",
+        "label": "GPT调用",
+        "unknown": false,
+        "value": "减少84%"
+      },
+      {
+        "context": "评测样本量、盲测方式未公开；不是临床准确率90%。",
+        "kind": "quality",
+        "label": "专家偏好",
+        "unknown": false,
+        "value": "90%情况下偏好优化版"
+      },
+      {
+        "context": "实施、订阅、维护和绝对美元金额未披露。",
+        "kind": "cost",
+        "label": "总投入与净节省",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Palantir",
+    "publishedAt": "2026年DevCon6；官方帖子检索时显示约2个月前",
+    "risks": [
+      "医疗审核具有高后果；专家偏好不能代替安全性或临床效果验证",
+      "降低模型费用可能增加延迟；优化需同时守住证据完整性、质量和人工审核要求。"
+    ],
+    "skills": [
+      "工作流轨迹与成本拆解",
+      "模型选择及提示优化",
+      "以确定性代码替代不必要调用",
+      "专家评测与上线回归"
+    ],
+    "sources": [
+      {
+        "date": "页面显示约2个月前；核验于2026-10-17",
+        "locator": "正文及视频转录",
+        "title": "官方视频：明确工程师身份、实际使用、护士复核及成本变化",
+        "type": "供应商官方视频及转录",
+        "url": "https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV"
+      },
+      {
+        "date": "页面未标注日期",
+        "locator": "Code in Production > AIP Evolve x Tampa General Hospital for Optimized Care",
+        "title": "FDE身份、生产阶段、成本与专家偏好",
+        "type": "客户或供应商官方",
+        "url": "https://www.palantir.com/devcon/"
+      },
+      {
+        "date": "页面未标注日期",
+        "locator": "",
+        "title": "2026-10-17直接open读取全文；官方公司帖+视频转录，FDE身份/每天生产/护士保留步骤/成本近70%及局部68%演示",
+        "type": "客户或供应商官方",
+        "url": "https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV"
+      },
+      {
+        "date": "页面未标注日期",
+        "locator": "",
+        "title": "官方公司2026-07-20成果帖；原站403，日期与正文通过2026-07-21 Palantir Bullets嵌入读取",
+        "type": "客户或供应商官方",
+        "url": "https://x.com/palantirtech/status/2079263914139758785"
+      },
+      {
+        "date": "页面未标注日期",
+        "locator": "",
+        "title": "官方Q2 2026报告第11页用过去时回顾DevCon6，证明截至2026-10-17前已发生；正文索引可读，直接open超大小限",
+        "type": "客户或供应商官方",
+        "url": "https://investors.palantir.com/files/Palantir%20-%20Q2%202026%20Business%20Update.pdf"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "About Tampa General Hospital",
+        "title": "Tampa General官方：医院所在地与业务",
+        "type": "主体或供应商官方／监管披露",
+        "url": "https://www.tgh.org/about-tgh"
+      }
+    ],
+    "summary": "已上线的AI利用审核流程需要在质量不退步的前提下减少模型调用与成本。",
+    "title": "AI医疗利用审核的成本优化",
+    "workflow": "AIP Evolve优化AI生成的utilization review（医疗利用审核）；筛选模型、改写prompt、以确定性代码替换部分GPT调用。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "前线部署工程师（Forward Deployed Engineer）证据是负责人回顾，不声称2023年原项目成员当时均持该职称。",
+      "不把Debrief另拆为一个已证实前线部署工程师（Forward Deployed Engineer）项目。",
+      "采用率为公司报告，非独立审计。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Morgan Stanley",
+    "country": "美国",
+    "countryNote": "总部国家来自Morgan Stanley官方美国办公室页，明确美国及纽约世界总部；项目来源未逐项列落地国家，不按总部推断。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "顾问需要查找和总结大量内部研究资料；项目优先解决检索耗时、重复摘要及回答可靠性。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "原先每次搜索平均耗时、失败率和人员成本未披露，不能自行编造“从几小时降为几秒”。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "OpenAI部署工程负责人Colin Jarvis访谈将此列为FDE（Forward Deployed Engineer，前线部署工程师）实践：技术链路约6—8周打通，随后约6个月试点、评测和迭代建立顾问信任。这是负责人回顾，非原团队每位成员职称证明。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "双方根据顾问及提示工程师的准确性、连贯性评分优化提示和检索；每天用样本问题做回归测试。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "官方披露顾问团队采用超过98%，文档访问由20%升至80%；后者未给完整分母定义和观察期，不等于检索准确率提高到80%。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "访谈摘要还报研究报告使用量约3倍，与20%→80%文档访问是不同口径，不应合并。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "公司2024-06-26公告确认Assistant于2023年9月全面推出，当时顾问团队采用率98%。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "改善可以描述为知识更容易被顾问使用；客户资产增长、投顾收益、营收增量及成本净节省没有该项目可归因数据。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "已披露主链路：顾问提问→内部知识检索→GPT-4组织回答→顾问使用。语料覆盖100,000份文档。官方称零数据保留解决专有信息顾虑。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "具体向量数据库、embedding型号、分块长度、重排器、top-k、权限过滤实现和基础设施未公开。不能因为这是检索增强应用，就补写Pinecone、LangChain或某云服务。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "专家评测驱动迭代和日常回归，不意味着零错误。高采用率也是使用指标，不是准确率或投资表现。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "补充：2024-06-26推出的Debrief是另一条流程，客户同意后形成会议笔记与行动项，写入Salesforce，并由顾问编辑发送邮件。官方引述一名顾问每次会议约节省半小时，不能当全公司平均数，也不能归入Assistant的节省。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "以下为可复现建议，非该公司架构：先选一套权限清楚的知识库，给每条来源保留版本和可见范围；做检索与回答两级评价，不只问答案“像不像对的”。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "让领域专家标注可回答、应拒答和证据不足的真实问题；检索失败和生成错误分开定位。每次换模型、文档或提示都跑回归。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "商业验收同时看任务完成率、人工核验时长和活跃使用；采用率不能替代质量。涉及投资行动时保留专业人员最终判断。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "检索的精确率、召回率、严重幻觉率和拒答阈值：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "原项目工程师人数、驻场方式、合同费用：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "内容权限与客户可见边界的具体实现：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "更新频率、延迟SLA、部署地区及运维成本：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "Assistant单独的工时节省、净收益、投资回报率：未公开，不能据通用技术推定。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "生产使用；OpenAI报告超过98%的财富管理顾问团队使用。访谈回顾技术搭建后仍需数月试点与信任建设，不将技术完成等同正式上线。",
+    "entryPoint": "先选受控研究库，设置专业人员评分和明确拒答条件。",
+    "evidenceLevel": "B",
+    "evidenceNote": "前线部署工程师（Forward Deployed Engineer）负责人Colin Jarvis接受Altimeter访谈，主持人原始发布将Morgan Stanley列为前线部署工程师（Forward Deployed Engineer）实战；OpenAI项目案例补足实际采用与评测工作流。属于参与者访谈与官方项目的B组合。",
+    "humanRole": "顾问判断答案是否适用于客户；专家参与准确性评分与评测门槛。",
+    "id": "morgan-stanley-advisor-assistant",
+    "industry": "财富管理与投资咨询",
+    "metrics": [
+      {
+        "context": "官方顾问团队口径，非所有员工或模型准确率。",
+        "kind": "adoption",
+        "label": "采用率",
+        "unknown": false,
+        "value": "超过98%"
+      },
+      {
+        "context": "官方称可回答该语料问题；不代表每份文档都被人工逐条验证。",
+        "kind": "scale",
+        "label": "文档覆盖",
+        "unknown": false,
+        "value": "100,000份"
+      },
+      {
+        "context": "无完整投入和净收益。",
+        "kind": "cost",
+        "label": "成本",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "OpenAI",
+    "publishedAt": "2025-11-26（FDE参与者访谈）；官方项目页未标日期",
+    "risks": [
+      "误导性金融回答",
+      "知识更新和检索权限错误"
+    ],
+    "skills": [
+      "检索增强生成",
+      "领域专家评测",
+      "回归测试",
+      "权限和数据留存设计"
+    ],
+    "sources": [
+      {
+        "date": "2025-11-26",
+        "locator": "Learning from OpenAI’s FDE Playbook；所附视频01:36起",
+        "title": "访谈主持人的原始发布：Colin Jarvis FDE实战",
+        "type": "参与者一手访谈",
+        "url": "https://tailwinds.substack.com/p/metabolize-pain-excrete-product-the"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "Building a foundation / Strengthening trust",
+        "title": "OpenAI官方Morgan Stanley案例",
+        "type": "客户或供应商官方",
+        "url": "https://openai.com/index/morgan-stanley/"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "NEW YORK (WORLD HEADQUARTERS)",
+        "title": "Morgan Stanley官方全球总部",
+        "type": "客户或供应商官方",
+        "url": "https://www.morganstanley.com/about-us/global-offices/americas/united-states"
+      },
+      {
+        "date": "2026-10-17核验",
+        "locator": "见深度说明所述内容",
+        "title": "Morgan Stanley官方：Debrief上线及Assistant历史时间线",
+        "type": "客户或供应商官方",
+        "url": "https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch"
+      }
+    ],
+    "summary": "财富顾问难以快速检索研究知识，同时需要可靠、合规的回答。",
+    "title": "财富顾问知识检索助手及持续评测",
+    "workflow": "内部助手检索受控文档；顾问和提示工程师评分，双方迭代检索方法，以每日回归集监控质量。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "化学品用量减少最多 70% 是 2025 客户访谈中 See & Spray 机器视觉精准喷药设备的结果；即使 DeployCo 摘要合并提及，也不能直接归因为 OpenAI 推荐系统。1000:1 相较 10:1 客户支持比例在原文是 vision，不是已实现值。",
+      "此客户是农业装备企业，案例应用于农业服务；不将其描述为农场运营商。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "John Deere",
+    "country": "美国",
+    "countryNote": "主体总部国家为美国：John Deere官方联系页列全球总部位于伊利诺伊州莫林。推荐系统公开案例没有列出实际上线国家，不能据总部或农机销售市场推断。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "通用设备提醒可能与天气和农时冲突；农户买了设备未必充分使用功能，经销商排故要翻大量手册和维修记录。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有披露本推荐系统的原始互动量、服务成本及排故平均时长。高层谈及的支持比例愿景不作已实现基线或结果。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "OpenAI Deployment Company明确将其作为部署案例：与领域专家审阅数百个真实样例，定制准确性评测，持续迭代后部署播种季推荐。职责有据，但团队人数、每个人负责的代码及驻场时长未公开。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "部署官网报告客户互动达到6倍，未给互动定义、基期、样本或对照。只能按供应商自报采用指标记录。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "最多70%药剂减少来自See & Spray精准喷洒能力，不能把它全归因于本次推荐系统。高层提出1000:1支持比例属于愿景。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "业务逻辑：帮助用户真正使用购买的功能，可为续费和服务价值提供依据；实际新增续费、利润、减少停机时长尚无本项目数据。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "已披露数据链路：设备遥测、历史使用和天气情境→识别功能未开启或设备异常→给客户及经销商操作建议；季末形成价值报告。使用OpenAI API，具体模型未披露。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "示例是See & Spray未启用或回到传统喷洒时，辅助查找喷杆高度、车速、摄像头清洁等原因。建议链路与设备自身视觉喷药算法需分开。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "已知评测使用真实样例和领域专家；准确率分数、负样本比例、按季节区域分层、拒答标准以及线上回归频率未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "客户成功人员和经销商在流程内，但是否每条建议必须先人工批准、能否自动改机器设置均未披露；不要画成自动控制农机。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "以下为复现建议，非John Deere实际架构：从一类设备、一类故障开始，把可验证的传感器事实与生成的操作解释分开；先用规则筛选触发事件，再让模型组织有依据的建议。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "把天气、设备型号和作业状态作为明确上下文；缺数据时不要补猜。测试集按季节、型号、异常状态分层，并保留经销商反馈。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "验收看建议被采纳后解决了多少故障、平均恢复时间及单客户支持总成本；点击或互动增长不能直接当农户增收。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "设备数据接入协议、存储和处理系统：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "模型版本、提示词、知识检索是否使用向量数据库：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "天气数据提供商、时间粒度、缺失和延迟处理：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "机器及农户权限映射、数据所有权和保留规则：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "推荐触达渠道、人工审批、误报率与故障兜底：未公开，不能据通用技术推定。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "API费、实施费、每农户成本和净收益：未公开，不能据通用技术推定。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "官网称已部署播种季 AI 推荐系统；2025-05-06 客户访谈描述已在用的客户成功与经销商辅助流程。未公开覆盖农户总数、地理范围或系统上线日期。",
+    "entryPoint": "先做一型号设备的告警摘要与有来源的排查建议，由经销商确认后发给农户。",
+    "evidenceLevel": "A",
+    "evidenceNote": "DeployCo官网的 FDE（Forward Deployed Engineer，前线部署工程师）案例区明确列John Deere，说明专家样本审查、自定义评测与已部署推荐系统。",
+    "humanRole": "领域专家参与真实样本审查与评测；客户成功团队和经销商收到洞察并支持农户。每条推荐是否必须人工批准、异常转人工比例和持续维护人力未公开。",
+    "id": "john-deere-planting-advice",
+    "industry": "农业装备与农机售后",
+    "metrics": [
+      {
+        "context": "官网自报；互动定义、原基线、样本数、观察期与对照组未公开。这不是农作物产量或人均生产率。",
+        "kind": "adoption",
+        "label": "客户互动",
+        "unknown": false,
+        "value": "达到6倍"
+      },
+      {
+        "context": "合同费、模型成本、总拥有成本及净现金节省均未知。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "OpenAI / OpenAI Deployment Company",
+    "publishedAt": "2025-05-06；DeployCo页面未标日期",
+    "risks": [
+      "错误操作建议可能造成设备或农时损失",
+      "季节性和天气使效果迁移困难；生产逐条复核制度未公开"
+    ],
+    "skills": [
+      "设备遥测与天气数据接入",
+      "农艺/售后知识建模",
+      "用真实工况建立评测集",
+      "把建议接回经销商流程"
+    ],
+    "sources": [
+      {
+        "date": "页面未标发布日期；2026-10-17 检索",
+        "locator": "",
+        "title": "The OpenAI Deployment Company",
+        "type": "客户或供应商官方",
+        "url": "https://deploy.co/"
+      },
+      {
+        "date": "2025-05-06",
+        "locator": "",
+        "title": "AI helps John Deere transform agriculture",
+        "type": "客户或供应商官方",
+        "url": "https://openai.com/index/john-deere-justin-rose/"
+      },
+      {
+        "date": "页面未标发布日期；2026-10-17核验",
+        "locator": "What is John Deere’s corporate address?",
+        "title": "John Deere官方：全球总部地址",
+        "type": "主体或供应商官方／监管披露",
+        "url": "https://www.deere.com/en-us/our-company/contact-us"
+      }
+    ],
+    "summary": "农户设备设置、使用状态和天气情境不同，通用提醒缺少操作价值；经销商查手册与诊断耗时。",
+    "title": "播种季设备推荐与经销商支持",
+    "workflow": "综合设备遥测、季节与天气、历史使用情况，在售前/设备设置/播种季使用中主动向农户及经销商推荐操作；识别停机或 See & Spray 未启用等情形，辅助诊断并生成季末价值报告。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
       "证据满足具名前线部署工程师（Forward Deployed Engineer）服务门槛，但案例披露较薄；客户产品能力不能全部归因于Plank。",
       "未将公司总融资、全平台规模或其他供应商业绩作为本项目成效。"
     ],
@@ -988,84 +2472,6 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
-      "演讲为近似回忆，不使用其50名工程师/三分之一时间取代官方任务口径。",
-      "前线部署工程师（Forward Deployed Engineer）贡献与Devin产品整体收益不可单独分离。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Nubank",
-    "country": "巴西",
-    "countryNote": "Nu官方投资者FAQ明确运营总部在巴西圣保罗；集团法律注册地与运营总部不同。本例采用运营总部；代码有br/co/mx模块不等于已证实三个国家部署，实际国家留空。",
-    "deploymentCountries": [],
-    "deploymentLevel": "部分业务部门已在数周内验证并完成迁移；未宣称整个银行的全部代码均完成。",
-    "entryPoint": "分析：先挑可自动验证的小模块，保留人工代码审核。",
-    "evidenceLevel": "B",
-    "evidenceNote": "部署工程负责人Jia Wu在前线部署工程师（Forward Deployed Engineer）演讲14:11逐项提及Nubank ETL迁移；官方案例第一人称记载定制微调与评测，组合为B。",
-    "humanRole": "人工管理项目并批准变更，检查、少量调整后合并PR。",
-    "id": "nubank-cognition-etl",
-    "industry": "数字银行",
-    "metrics": [
-      {
-        "context": "同类数据类迁移任务的人工作业时间，对比提示与审核Devin所需工时；不是全公司生产率。",
-        "kind": "efficiency",
-        "label": "工程工时效率",
-        "unknown": false,
-        "value": "8–12倍"
-      },
-      {
-        "context": "仅比较Devin运行成本与人工时薪完成同任务；未含全部实施维护投入。",
-        "kind": "cost",
-        "label": "委派范围成本差异",
-        "unknown": false,
-        "value": "超过20倍"
-      },
-      {
-        "context": "未披露实施费、订阅费、维护费及扣除全部投入后的净节省。",
-        "kind": "cost",
-        "label": "总投入与净成本",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "Cognition",
-    "publishedAt": "页面未标日期；2026年演讲回顾",
-    "risks": [
-      "分析：数据语义或依赖遗漏",
-      "分析：不能把PR合并当业务正确性证明"
-    ],
-    "skills": [
-      "分析：迁移任务拆解与评测集",
-      "分析：跨文件依赖验证"
-    ],
-    "sources": [
-      {
-        "date": "页面未标日期",
-        "locator": "Custom ETL Migration Devin；Results计算口径",
-        "title": "Nubank ETL migration with Devin",
-        "type": "客户或供应商官方",
-        "url": "https://devin.ai/customers/nubank"
-      },
-      {
-        "date": "2026年大会；页面未标具体日",
-        "locator": "00:15部署工程负责人身份；14:11–14:35 Nubank ETL实例",
-        "title": "Jia Wu：How Forward Deployed Engineering is done at Cognition",
-        "type": "工程负责人第一人称会议演讲及转录",
-        "url": "https://ai.engineer/talks/RVxym6mmIns-forward-deployed-engineering-is-done-at-cognition"
-      },
-      {
-        "date": "页面未标日期",
-        "locator": "Operational headquarters：São Paulo, Brazil",
-        "title": "Nu investor FAQs",
-        "type": "客户或供应商官方",
-        "url": "https://nu.com/en/investors/why-invest/faqs/"
-      }
-    ],
-    "summary": "600万行ETL单体及跨模块依赖使迁移变为大量重复工程工作。",
-    "title": "核心ETL代码库模块化迁移",
-    "workflow": "收集人工迁移示例，分出训练与评测集；Devin执行数据类迁移，工程师审查微调后合并。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
       "未将同一银行.NET、SQL迁移拆为多个前线部署工程师（Forward Deployed Engineer）案例。",
       "不把此项字段重构扩张为完全自主实时交易系统迁移。"
     ],
@@ -1306,86 +2712,6 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
-      "两款模型归同一推理平台交付，不拆成两个案例。",
-      "基准提速不能解释为医疗或金融业务准确率提升。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Writer",
-    "country": "美国",
-    "countryNote": "主体国家为美国；来源：Writer官方公司介绍，Offices明确San Francisco (HQ)。项目实际落地国家未单独披露，不以总部推断。",
-    "deploymentCountries": [],
-    "deploymentLevel": "已部署安全私有推理服务；结果段基准在新模型发布前完成。",
-    "entryPoint": "分析建议：用固定领域问题和真实负载同时评测输出质量、首token延迟与每请求成本。",
-    "evidenceLevel": "A",
-    "evidenceNote": "客户故事Solution明确Writer与Baseten专门的性能团队及前线部署工程师共同工作，随后说明为两款70B行业模型建立推理引擎与部署；有逐项目岗位证据。",
-    "humanRole": "Writer负责模型与领域应用；双方工程师评测性能，不代表供应商替代医疗或金融专业判断。",
-    "id": "baseten-writer-palmyra-serving",
-    "industry": "企业生成式AI软件与行业语言模型",
-    "metrics": [
-      {
-        "context": "FP16、4张NVIDIA A100的公开基准；不是所有生产负载。",
-        "kind": "performance",
-        "label": "吞吐量",
-        "unknown": false,
-        "value": "提高60%"
-      },
-      {
-        "context": "与同组基准一致；未披露完整样本。",
-        "kind": "performance",
-        "label": "首token时间",
-        "unknown": false,
-        "value": "降低23%"
-      },
-      {
-        "context": "同组基准下的单位推理成本，非企业总成本。",
-        "kind": "cost",
-        "label": "每百万token成本",
-        "unknown": false,
-        "value": "降低35%"
-      },
-      {
-        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
-        "kind": "cost",
-        "label": "成本变化",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
-    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
-    "risks": [
-      "分析：量化或优化影响领域质量",
-      "分析：基准与真实负载差异",
-      "分析：敏感行业信息权限"
-    ],
-    "skills": [
-      "分析：TensorRT-LLM引擎调优",
-      "分析：批处理和序列形状分析",
-      "分析：合规边界与性能回归测试"
-    ],
-    "sources": [
-      {
-        "date": "页面未标发布日期；2026-10-17核验已公开",
-        "locator": "Solution明确forward-deployed engineers；Result列4 A100 FP16基准",
-        "title": "How Writer helps businesses transform with AI",
-        "type": "客户或供应商官方",
-        "url": "https://www.baseten.co/resources/customers/writer/"
-      },
-      {
-        "date": "页面未标日期；2026-10-17 核验",
-        "locator": "Offices明确San Francisco (HQ)",
-        "title": "Writer官方公司介绍",
-        "type": "主体官方或官方监管文件",
-        "url": "https://writer.com/company/about/"
-      }
-    ],
-    "summary": "Writer要把自研行业模型以可控延迟和单位成本提供给企业。",
-    "title": "Writer医疗与金融专用Palmyra模型部署",
-    "workflow": "前线部署工程师（Forward Deployed Engineer）和性能团队与Writer共同确定推理取舍，使用TensorRT-LLM为Palmyra-Med-70B和Palmyra-Fin-70B构建专用引擎及动态批处理。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
       "性能与可靠性为客户自报。",
       "来源未披露具体地区或国家；多区域不能推断为指定国家部署。"
     ],
@@ -1539,235 +2865,6 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
-      "4小时每周用户节省是Superhuman产品整体说法，不归因为本次模型迁移。",
-      "客户故事未标发布日期；仅记录核验前已公开。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Superhuman（邮件应用）",
-    "country": "美国",
-    "countryNote": "主体国家为美国；来源：Superhuman Labs美国商标程序文件，申请正文列Delaware LLC和San Francisco, CA, UNITED STATES。项目实际落地国家未单独披露，不以总部推断。",
-    "deploymentCountries": [],
-    "deploymentLevel": "生产流量已迁移；不是仅基准或试验。",
-    "entryPoint": "分析建议：先对一个邮件分类模型影子运行，保留旧服务回退后渐进切流。",
-    "evidenceLevel": "A",
-    "evidenceNote": "Baseten官方案例Solutions逐项目说明前线部署工程师（Forward Deployed Engineer）和性能工程师与Superhuman的机器学习工程师及工程管理层一起部署、优化、评测、扩容；Results再次明确前线部署工程师（Forward Deployed Engineer）直接支持生产迁移。",
-    "humanRole": "Superhuman工程师维护模型与产品，前线部署工程师（Forward Deployed Engineer）协助迁移；用户继续操作邮箱，未披露逐分类人工审核。",
-    "id": "baseten-superhuman-embedding",
-    "industry": "电子邮件与办公生产力软件",
-    "metrics": [
-      {
-        "context": "Solutions报告该推理优化与迁移项目周期。",
-        "kind": "delivery",
-        "label": "交付周期",
-        "unknown": false,
-        "value": "1周"
-      },
-      {
-        "context": "多种自定义嵌入模型平均值；非所有邮件功能总延迟。",
-        "kind": "performance",
-        "label": "p95延迟",
-        "unknown": false,
-        "value": "平均降低80%"
-      },
-      {
-        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
-        "kind": "cost",
-        "label": "成本变化",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
-    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
-    "risks": [
-      "分析：邮件内容隐私",
-      "分析：模型迁移质量回退",
-      "分析：尾延迟和平均值混用"
-    ],
-    "skills": [
-      "分析：异构嵌入模型部署",
-      "分析：客户端瓶颈诊断",
-      "分析：低风险生产流量切换"
-    ],
-    "sources": [
-      {
-        "date": "页面未标发布日期；2026-10-17核验已公开",
-        "locator": "Solutions首段明确FDE与客户MLE协作；Results确认迁移生产流量及FDE动手支持",
-        "title": "Superhuman achieves 80% faster embedding model inference with Baseten",
-        "type": "客户或供应商官方",
-        "url": "https://www.baseten.co/resources/customers/superhuman/"
-      },
-      {
-        "date": "页面未标日期；2026-10-17 核验",
-        "locator": "申请正文列Delaware LLC和San Francisco, CA, UNITED STATES",
-        "title": "Superhuman Labs美国商标程序文件",
-        "type": "主体官方或官方监管文件",
-        "url": "https://ttabvue.uspto.gov/ttabvue/ttabvue-98880288-EXT-3.pdf"
-      }
-    ],
-    "summary": "邮件应用的分类与检索模型需要低延迟且无需自建GPU运维。",
-    "title": "Superhuman邮件分类与检索模型生产迁移",
-    "workflow": "前线部署工程师（Forward Deployed Engineer）与客户机器学习团队联合部署、优化、评测多种嵌入模型；用BEI与性能客户端解决瓶颈，并协助切换生产流量。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
-      "美国/欧盟为案例Highlighted features明确部署地区；欧盟未细分国家。",
-      "100%可用性未给观察期，故未作为主要量化结果。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Zed Industries",
-    "country": "美国",
-    "countryNote": "主体国家美国来自Zed官方条款16.12的公司地址；实际部署地区美国、欧盟来自Baseten案例Highlighted features的Global deployment (USA-EU)，欧盟不拆为未披露成员国。",
-    "deploymentCountries": [
-      "美国",
-      "欧盟"
-    ],
-    "deploymentLevel": "全部流量已迁移；有上线后的继续优化。",
-    "entryPoint": "分析建议：对固定仓库测试集和真实影子请求评测，逐步切流并保持用户确认。",
-    "evidenceLevel": "A",
-    "evidenceNote": "客户故事Solutions直接称把Zed与前线部署及性能工程师配对，详细描述数日内测试75多种优化和上线配置；Results确认生产流量迁移。",
-    "humanRole": "开发者按Tab接受建议并审阅代码；双方工程师测试和调参。",
-    "id": "baseten-zed-edit-prediction",
-    "industry": "软件开发工具与代码编辑器",
-    "metrics": [
-      {
-        "context": "案例Results给定与原推理服务比较，测量窗口未公开。",
-        "kind": "performance",
-        "label": "p90延迟",
-        "unknown": false,
-        "value": "降低45%"
-      },
-      {
-        "context": "供应商报告；未公开标准化负载。",
-        "kind": "performance",
-        "label": "吞吐量",
-        "unknown": false,
-        "value": "提高至3.6倍"
-      },
-      {
-        "context": "充分测试后的迁移时长，不是全部研发周期。",
-        "kind": "delivery",
-        "label": "生产流量切换",
-        "unknown": false,
-        "value": "1天以内"
-      },
-      {
-        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
-        "kind": "cost",
-        "label": "成本变化",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
-    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
-    "risks": [
-      "分析：建议代码缺陷",
-      "分析：私有代码处理边界",
-      "分析：延迟改善与吞吐压力取舍"
-    ],
-    "skills": [
-      "分析：推测解码和缓存优化",
-      "分析：代码补全质量评估",
-      "分析：多区域容量与迁移回退"
-    ],
-    "sources": [
-      {
-        "date": "页面未标发布日期；2026-10-17核验已公开",
-        "locator": "Solutions明确forward deployed团队；Results明确全量迁移及p90和吞吐量",
-        "title": "How Zed is reimagining the code editor from the ground up",
-        "type": "客户或供应商官方",
-        "url": "https://www.baseten.co/resources/customers/zed-industries-serves-2x-faster-code-completions-with-baseten/"
-      },
-      {
-        "date": "页面未标日期；2026-10-17 核验",
-        "locator": "16.12提供美国Denver公司联系地址",
-        "title": "Zed官方服务条款",
-        "type": "主体官方或官方监管文件",
-        "url": "https://zed.dev/terms"
-      }
-    ],
-    "summary": "Zed编辑预测功能需要低尾延迟和可随用户增长扩容的模型推理。",
-    "title": "Zed代码编辑预测模型优化与生产迁移",
-    "workflow": "前线部署工程师（Forward Deployed Engineer）与性能团队测试多种优化，以TensorRT-LLM、缓存、推测解码和跨区域路由优化Zeta代码补全，并迁移生产流量。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
-      "九种教学语言不等于九个部署国家。",
-      "成本降幅是转写工作负载，不能等同公司利润或所有AI成本。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Praktika.ai",
-    "country": "美国",
-    "countryNote": "本例主体采用Praktika.ai Company的注册国家美国：英国Companies House控制主体登记明确为美国特拉华公司，不能因其英国子公司推断项目在英国。案例只称全球用户，实际部署国家未披露。",
-    "deploymentCountries": [],
-    "deploymentLevel": "已迁移生产流量，服务全球语言学习用户；国家明细未披露。",
-    "entryPoint": "分析建议：从成人已授权语音练习评测开始，分别测各口音准确率和p50/p99响应。",
-    "evidenceLevel": "A",
-    "evidenceNote": "Baseten客户故事Solutions明确前线部署工程师与Praktika共同优化转写负载，并说明继续并肩迭代；Results验证后切换生产流量，具备项目级岗位与持续部署动作。",
-    "humanRole": "学习者与AI对话；客户团队负责教学体验与模型质量，未披露逐段教师复核。",
-    "id": "baseten-praktika-whisper",
-    "industry": "在线语言教育与AI口语辅导",
-    "metrics": [
-      {
-        "context": "Results口径；旧服务正文给1000–1500毫秒，但未明示同分位数，故不算百分比。",
-        "kind": "performance",
-        "label": "转写p50延迟",
-        "unknown": false,
-        "value": "低于300毫秒"
-      },
-      {
-        "context": "Results针对优化Whisper负载；无绝对金额及完整总成本。",
-        "kind": "cost",
-        "label": "转写成本",
-        "unknown": false,
-        "value": "节省50%"
-      },
-      {
-        "context": "未找到项目总拥有成本、服务合同费用及净现金节省；不能由效率百分比推算。",
-        "kind": "cost",
-        "label": "成本变化",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "Baseten Forward Deployed Engineering（前线部署工程团队）",
-    "publishedAt": "页面未标发布日期；2026-10-17核验已公开",
-    "risks": [
-      "分析：口音识别偏差",
-      "分析：用户语音隐私",
-      "分析：把技术延迟误当学习效果"
-    ],
-    "skills": [
-      "分析：实时语音转写",
-      "分析：口音和语言质量评测",
-      "分析：批处理与弹性扩容"
-    ],
-    "sources": [
-      {
-        "date": "页面未标发布日期；2026-10-17核验已公开",
-        "locator": "Solutions首段直接点名FDE；第3点说明持续合作；Results确认迁移流量",
-        "title": "Praktika delivers ultra-low-latency transcription for global language education with Baseten",
-        "type": "客户或供应商官方",
-        "url": "https://www.baseten.co/resources/customers/praktika/"
-      },
-      {
-        "date": "页面未标日期；2026-10-17 核验",
-        "locator": "PRAKTIKA LIMITED的控制主体Praktika.ai Company明确为Delaware Corporation，Incorporated in United States",
-        "title": "英国Companies House对Praktika.ai Company的主体登记",
-        "type": "主体官方或官方监管文件",
-        "url": "https://find-and-update.company-information.service.gov.uk/company/16332920/persons-with-significant-control"
-      }
-    ],
-    "summary": "AI口语教师的语音转文字等待影响会话流畅度。",
-    "title": "Praktika语言学习实时语音转写",
-    "workflow": "前线部署工程师（Forward Deployed Engineer）与性能工程师针对Whisper转写优化执行器、动态批处理和自动扩容；验证后迁移流量并持续迭代模型。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
       "Genesys覆盖8000多客户是下游平台规模，不视为本项目部署量。",
       "本文不把供应商的确定性或无幻觉宣传当作独立验证事实。"
     ],
@@ -1837,222 +2934,6 @@
     "summary": "专用代理模型发布和客户试点需要更低延迟与弹性容量。",
     "title": "Scaled Cognition APT代理模型混合云上线",
     "workflow": "前线部署工程师（Forward Deployed Engineer）配置自定义模型服务，复用客户AWS环境并以Baseten Cloud提供溢出容量，调优路由与GPU分配，支撑模型发布和持续演示。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
-      "前线部署工程师（Forward Deployed Engineer）证据是负责人回顾，不声称2023年原项目成员当时均持该职称。",
-      "不把Debrief另拆为一个已证实前线部署工程师（Forward Deployed Engineer）项目。",
-      "采用率为公司报告，非独立审计。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Morgan Stanley",
-    "country": "美国",
-    "countryNote": "总部国家来自Morgan Stanley官方美国办公室页，明确美国及纽约世界总部；项目来源未逐项列落地国家，不按总部推断。",
-    "deploymentCountries": [],
-    "deploymentLevel": "生产使用；OpenAI报告超过98%的财富管理顾问团队使用。访谈回顾技术搭建后仍需数月试点与信任建设，不将技术完成等同正式上线。",
-    "entryPoint": "先选受控研究库，设置专业人员评分和明确拒答条件。",
-    "evidenceLevel": "B",
-    "evidenceNote": "前线部署工程师（Forward Deployed Engineer）负责人Colin Jarvis接受Altimeter访谈，主持人原始发布将Morgan Stanley列为前线部署工程师（Forward Deployed Engineer）实战；OpenAI项目案例补足实际采用与评测工作流。属于参与者访谈与官方项目的B组合。",
-    "humanRole": "顾问判断答案是否适用于客户；专家参与准确性评分与评测门槛。",
-    "id": "morgan-stanley-advisor-assistant",
-    "industry": "财富管理与投资咨询",
-    "metrics": [
-      {
-        "context": "官方顾问团队口径，非所有员工或模型准确率。",
-        "kind": "adoption",
-        "label": "采用率",
-        "unknown": false,
-        "value": "超过98%"
-      },
-      {
-        "context": "官方称可回答该语料问题；不代表每份文档都被人工逐条验证。",
-        "kind": "scale",
-        "label": "文档覆盖",
-        "unknown": false,
-        "value": "100,000份"
-      },
-      {
-        "context": "无完整投入和净收益。",
-        "kind": "cost",
-        "label": "成本",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "OpenAI",
-    "publishedAt": "2025-11-26（FDE参与者访谈）；官方项目页未标日期",
-    "risks": [
-      "误导性金融回答",
-      "知识更新和检索权限错误"
-    ],
-    "skills": [
-      "检索增强生成",
-      "领域专家评测",
-      "回归测试",
-      "权限和数据留存设计"
-    ],
-    "sources": [
-      {
-        "date": "2025-11-26",
-        "locator": "Learning from OpenAI’s FDE Playbook；所附视频01:36起",
-        "title": "访谈主持人的原始发布：Colin Jarvis FDE实战",
-        "type": "参与者一手访谈",
-        "url": "https://tailwinds.substack.com/p/metabolize-pain-excrete-product-the"
-      },
-      {
-        "date": "页面未标日期；2026-10-17核验",
-        "locator": "Building a foundation / Strengthening trust",
-        "title": "OpenAI官方Morgan Stanley案例",
-        "type": "客户或供应商官方",
-        "url": "https://openai.com/index/morgan-stanley/"
-      },
-      {
-        "date": "页面未标日期；2026-10-17核验",
-        "locator": "NEW YORK (WORLD HEADQUARTERS)",
-        "title": "Morgan Stanley官方全球总部",
-        "type": "客户或供应商官方",
-        "url": "https://www.morganstanley.com/about-us/global-offices/americas/united-states"
-      },
-      {
-        "url": "https://www.morganstanley.com/press-releases/ai-at-morgan-stanley-debrief-launch",
-        "title": "Morgan Stanley官方：Debrief上线及Assistant历史时间线",
-        "type": "客户或供应商官方",
-        "date": "2026-10-17核验",
-        "locator": "见深度说明所述内容"
-      }
-    ],
-    "summary": "财富顾问难以快速检索研究知识，同时需要可靠、合规的回答。",
-    "title": "财富顾问知识检索助手及持续评测",
-    "workflow": "内部助手检索受控文档；顾问和提示工程师评分，双方迭代检索方法，以每日回归集监控质量。",
-    "deepDive": {
-      "before": [
-        {
-          "text": "顾问需要查找和总结大量内部研究资料；项目优先解决检索耗时、重复摘要及回答可靠性。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "原先每次搜索平均耗时、失败率和人员成本未披露，不能自行编造“从几小时降为几秒”。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ],
-      "intervention": [
-        {
-          "text": "OpenAI部署工程负责人Colin Jarvis访谈将此列为FDE（Forward Deployed Engineer，前线部署工程师）实践：技术链路约6—8周打通，随后约6个月试点、评测和迭代建立顾问信任。这是负责人回顾，非原团队每位成员职称证明。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "双方根据顾问及提示工程师的准确性、连贯性评分优化提示和检索；每天用样本问题做回归测试。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        }
-      ],
-      "technical": [
-        {
-          "text": "已披露主链路：顾问提问→内部知识检索→GPT-4组织回答→顾问使用。语料覆盖100,000份文档。官方称零数据保留解决专有信息顾虑。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "具体向量数据库、embedding型号、分块长度、重排器、top-k、权限过滤实现和基础设施未公开。不能因为这是检索增强应用，就补写Pinecone、LangChain或某云服务。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "专家评测驱动迭代和日常回归，不意味着零错误。高采用率也是使用指标，不是准确率或投资表现。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "补充：2024-06-26推出的Debrief是另一条流程，客户同意后形成会议笔记与行动项，写入Salesforce，并由顾问编辑发送邮件。官方引述一名顾问每次会议约节省半小时，不能当全公司平均数，也不能归入Assistant的节省。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            4
-          ]
-        },
-        {
-          "text": "以下为可复现建议，非该公司架构：先选一套权限清楚的知识库，给每条来源保留版本和可见范围；做检索与回答两级评价，不只问答案“像不像对的”。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "让领域专家标注可回答、应拒答和证据不足的真实问题；检索失败和生成错误分开定位。每次换模型、文档或提示都跑回归。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "商业验收同时看任务完成率、人工核验时长和活跃使用；采用率不能替代质量。涉及投资行动时保留专业人员最终判断。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "outcomes": [
-        {
-          "text": "官方披露顾问团队采用超过98%，文档访问由20%升至80%；后者未给完整分母定义和观察期，不等于检索准确率提高到80%。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "访谈摘要还报研究报告使用量约3倍，与20%→80%文档访问是不同口径，不应合并。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "公司2024-06-26公告确认Assistant于2023年9月全面推出，当时顾问团队采用率98%。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            4
-          ]
-        },
-        {
-          "text": "改善可以描述为知识更容易被顾问使用；客户资产增长、投顾收益、营收增量及成本净节省没有该项目可归因数据。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "unknowns": [
-        {
-          "text": "检索的精确率、召回率、严重幻觉率和拒答阈值：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "原项目工程师人数、驻场方式、合同费用：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "内容权限与客户可见边界的具体实现：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "更新频率、延迟SLA、部署地区及运维成本：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "Assistant单独的工时节省、净收益、投资回报率：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ]
-    }
   },
   {
     "addedDate": "2026-10-17",
@@ -3822,200 +4703,6 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
-      "化学品用量减少最多 70% 是 2025 客户访谈中 See & Spray 机器视觉精准喷药设备的结果；即使 DeployCo 摘要合并提及，也不能直接归因为 OpenAI 推荐系统。1000:1 相较 10:1 客户支持比例在原文是 vision，不是已实现值。",
-      "此客户是农业装备企业，案例应用于农业服务；不将其描述为农场运营商。"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "John Deere",
-    "country": "美国",
-    "countryNote": "主体总部国家为美国：John Deere官方联系页列全球总部位于伊利诺伊州莫林。推荐系统公开案例没有列出实际上线国家，不能据总部或农机销售市场推断。",
-    "deploymentCountries": [],
-    "deploymentLevel": "官网称已部署播种季 AI 推荐系统；2025-05-06 客户访谈描述已在用的客户成功与经销商辅助流程。未公开覆盖农户总数、地理范围或系统上线日期。",
-    "entryPoint": "先做一型号设备的告警摘要与有来源的排查建议，由经销商确认后发给农户。",
-    "evidenceLevel": "A",
-    "evidenceNote": "DeployCo官网的 FDE（Forward Deployed Engineer，前线部署工程师）案例区明确列John Deere，说明专家样本审查、自定义评测与已部署推荐系统。",
-    "humanRole": "领域专家参与真实样本审查与评测；客户成功团队和经销商收到洞察并支持农户。每条推荐是否必须人工批准、异常转人工比例和持续维护人力未公开。",
-    "id": "john-deere-planting-advice",
-    "industry": "农业装备与农机售后",
-    "metrics": [
-      {
-        "context": "官网自报；互动定义、原基线、样本数、观察期与对照组未公开。这不是农作物产量或人均生产率。",
-        "kind": "adoption",
-        "label": "客户互动",
-        "unknown": false,
-        "value": "达到6倍"
-      },
-      {
-        "context": "合同费、模型成本、总拥有成本及净现金节省均未知。",
-        "kind": "cost",
-        "label": "成本变化",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "OpenAI / OpenAI Deployment Company",
-    "publishedAt": "2025-05-06；DeployCo页面未标日期",
-    "risks": [
-      "错误操作建议可能造成设备或农时损失",
-      "季节性和天气使效果迁移困难；生产逐条复核制度未公开"
-    ],
-    "skills": [
-      "设备遥测与天气数据接入",
-      "农艺/售后知识建模",
-      "用真实工况建立评测集",
-      "把建议接回经销商流程"
-    ],
-    "sources": [
-      {
-        "date": "页面未标发布日期；2026-10-17 检索",
-        "locator": "",
-        "title": "The OpenAI Deployment Company",
-        "type": "客户或供应商官方",
-        "url": "https://deploy.co/"
-      },
-      {
-        "date": "2025-05-06",
-        "locator": "",
-        "title": "AI helps John Deere transform agriculture",
-        "type": "客户或供应商官方",
-        "url": "https://openai.com/index/john-deere-justin-rose/"
-      },
-      {
-        "date": "页面未标发布日期；2026-10-17核验",
-        "locator": "What is John Deere’s corporate address?",
-        "title": "John Deere官方：全球总部地址",
-        "type": "主体或供应商官方／监管披露",
-        "url": "https://www.deere.com/en-us/our-company/contact-us"
-      }
-    ],
-    "summary": "农户设备设置、使用状态和天气情境不同，通用提醒缺少操作价值；经销商查手册与诊断耗时。",
-    "title": "播种季设备推荐与经销商支持",
-    "workflow": "综合设备遥测、季节与天气、历史使用情况，在售前/设备设置/播种季使用中主动向农户及经销商推荐操作；识别停机或 See & Spray 未启用等情形，辅助诊断并生成季末价值报告。",
-    "deepDive": {
-      "before": [
-        {
-          "text": "通用设备提醒可能与天气和农时冲突；农户买了设备未必充分使用功能，经销商排故要翻大量手册和维修记录。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "没有披露本推荐系统的原始互动量、服务成本及排故平均时长。高层谈及的支持比例愿景不作已实现基线或结果。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ],
-      "intervention": [
-        {
-          "text": "OpenAI Deployment Company明确将其作为部署案例：与领域专家审阅数百个真实样例，定制准确性评测，持续迭代后部署播种季推荐。职责有据，但团队人数、每个人负责的代码及驻场时长未公开。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        }
-      ],
-      "technical": [
-        {
-          "text": "已披露数据链路：设备遥测、历史使用和天气情境→识别功能未开启或设备异常→给客户及经销商操作建议；季末形成价值报告。使用OpenAI API，具体模型未披露。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "示例是See & Spray未启用或回到传统喷洒时，辅助查找喷杆高度、车速、摄像头清洁等原因。建议链路与设备自身视觉喷药算法需分开。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "已知评测使用真实样例和领域专家；准确率分数、负样本比例、按季节区域分层、拒答标准以及线上回归频率未公开。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "客户成功人员和经销商在流程内，但是否每条建议必须先人工批准、能否自动改机器设置均未披露；不要画成自动控制农机。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "以下为复现建议，非John Deere实际架构：从一类设备、一类故障开始，把可验证的传感器事实与生成的操作解释分开；先用规则筛选触发事件，再让模型组织有依据的建议。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "把天气、设备型号和作业状态作为明确上下文；缺数据时不要补猜。测试集按季节、型号、异常状态分层，并保留经销商反馈。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "验收看建议被采纳后解决了多少故障、平均恢复时间及单客户支持总成本；点击或互动增长不能直接当农户增收。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "outcomes": [
-        {
-          "text": "部署官网报告客户互动达到6倍，未给互动定义、基期、样本或对照。只能按供应商自报采用指标记录。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "最多70%药剂减少来自See & Spray精准喷洒能力，不能把它全归因于本次推荐系统。高层提出1000:1支持比例属于愿景。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "业务逻辑：帮助用户真正使用购买的功能，可为续费和服务价值提供依据；实际新增续费、利润、减少停机时长尚无本项目数据。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "unknowns": [
-        {
-          "text": "设备数据接入协议、存储和处理系统：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "模型版本、提示词、知识检索是否使用向量数据库：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "天气数据提供商、时间粒度、缺失和延迟处理：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "机器及农户权限映射、数据所有权和保留规则：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "推荐触达渠道、人工审批、误报率与故障兜底：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "API费、实施费、每农户成本和净收益：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ]
-    }
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
       "2024 资本市场日的减少 75% inbound contacts 是多项数字化及 AI 工作共同的未来目标，不是 IntentCX/FDE（Forward Deployed Engineer，前线部署工程师） 已实现结果。",
       "B级为一手发言的组合证据；不与逐项目官方书面记录等同。"
     ],
@@ -4264,240 +4951,6 @@
     "summary": "核保师需从分散投保材料和内外部数据中整理风险摘要，资料准备占用时间。",
     "title": "投保资料整理与核保助手",
     "workflow": "Underwriter Assistance对投保材料进行提取、外部和内部数据增强、风险优先级排序与摘要，供核保师决定报价／承保。"
-  },
-  {
-    "addedDate": "2026-10-17",
-    "caveats": [
-      "仅AI工作流成本，不是全院成本降低70%",
-      "临床结果来自另一期合作，不应全部归因于GenAI或单个FDE",
-      "没有独立审计或随机对照"
-    ],
-    "checkedAt": "2026-10-17",
-    "company": "Tampa General Hospital",
-    "country": "美国",
-    "countryNote": "医院主体与本流程所在地为美国佛罗里达州坦帕。Tampa General官方医院介绍确认佛罗里达业务，官方项目视频指向该院审核流程；未据此扩展至其他医院或国家。",
-    "deploymentCountries": [
-      "美国"
-    ],
-    "deploymentLevel": "已规模部署的医疗利用审核辅助流程；官方视频称护士每天与AI共同处理审核。演示界面经过示意处理。",
-    "entryPoint": "先对已有非诊疗文书辅助流程做离线成本优化，质量达标后灰度；不接管临床决策。",
-    "evidenceLevel": "A",
-    "evidenceNote": "Palantir官方DevCon页面及官方LinkedIn视频明确列出前线部署工程师 Colton Rusch。医院专家讲述规模部署后的成本优化；不是尚未发生的活动预告。",
-    "humanRole": "护士查看AI提出的利用审核，保留检查、修改、接受并发送步骤；最终医疗决策不由案例中的模型独立承担。",
-    "id": "tampa-general-utilization-review",
-    "industry": "医疗服务",
-    "metrics": [
-      {
-        "context": "医院专家在官方视频称规模部署后的相关AI审核工作流成本下降近70%；绝对金额、基期和样本量未公开。演示中单个criteria-matching agent换模型下降68%，是另一个局部口径，不能当同一分母。不是全院成本下降。",
-        "kind": "cost",
-        "label": "AI工作流成本",
-        "unknown": false,
-        "value": "降低近70%"
-      },
-      {
-        "context": "同一优化流程的调用量，不等于人力减少84%。",
-        "kind": "efficiency",
-        "label": "GPT调用",
-        "unknown": false,
-        "value": "减少84%"
-      },
-      {
-        "context": "评测样本量、盲测方式未公开；不是临床准确率90%。",
-        "kind": "quality",
-        "label": "专家偏好",
-        "unknown": false,
-        "value": "90%情况下偏好优化版"
-      },
-      {
-        "context": "实施、订阅、维护和绝对美元金额未披露。",
-        "kind": "cost",
-        "label": "总投入与净节省",
-        "unknown": true,
-        "value": "未公开"
-      }
-    ],
-    "provider": "Palantir",
-    "publishedAt": "2026年DevCon6；官方帖子检索时显示约2个月前",
-    "risks": [
-      "医疗审核具有高后果；专家偏好不能代替安全性或临床效果验证",
-      "降低模型费用可能增加延迟；优化需同时守住证据完整性、质量和人工审核要求。"
-    ],
-    "skills": [
-      "工作流轨迹与成本拆解",
-      "模型选择及提示优化",
-      "以确定性代码替代不必要调用",
-      "专家评测与上线回归"
-    ],
-    "sources": [
-      {
-        "date": "页面显示约2个月前；核验于2026-10-17",
-        "locator": "正文及视频转录",
-        "title": "官方视频：明确工程师身份、实际使用、护士复核及成本变化",
-        "type": "供应商官方视频及转录",
-        "url": "https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV"
-      },
-      {
-        "date": "页面未标注日期",
-        "locator": "Code in Production > AIP Evolve x Tampa General Hospital for Optimized Care",
-        "title": "FDE身份、生产阶段、成本与专家偏好",
-        "type": "客户或供应商官方",
-        "url": "https://www.palantir.com/devcon/"
-      },
-      {
-        "date": "页面未标注日期",
-        "locator": "",
-        "title": "2026-10-17直接open读取全文；官方公司帖+视频转录，FDE身份/每天生产/护士保留步骤/成本近70%及局部68%演示",
-        "type": "客户或供应商官方",
-        "url": "https://www.linkedin.com/posts/palantir-technologies_at-devcon6-see-how-dr-david-zihr-medical-activity-7485030356522336256-1oOV"
-      },
-      {
-        "date": "页面未标注日期",
-        "locator": "",
-        "title": "官方公司2026-07-20成果帖；原站403，日期与正文通过2026-07-21 Palantir Bullets嵌入读取",
-        "type": "客户或供应商官方",
-        "url": "https://x.com/palantirtech/status/2079263914139758785"
-      },
-      {
-        "date": "页面未标注日期",
-        "locator": "",
-        "title": "官方Q2 2026报告第11页用过去时回顾DevCon6，证明截至2026-10-17前已发生；正文索引可读，直接open超大小限",
-        "type": "客户或供应商官方",
-        "url": "https://investors.palantir.com/files/Palantir%20-%20Q2%202026%20Business%20Update.pdf"
-      },
-      {
-        "date": "页面未标发布日期；2026-10-17核验",
-        "locator": "About Tampa General Hospital",
-        "title": "Tampa General官方：医院所在地与业务",
-        "type": "主体或供应商官方／监管披露",
-        "url": "https://www.tgh.org/about-tgh"
-      }
-    ],
-    "summary": "已上线的AI利用审核流程需要在质量不退步的前提下减少模型调用与成本。",
-    "title": "AI医疗利用审核的成本优化",
-    "workflow": "AIP Evolve优化AI生成的utilization review（医疗利用审核）；筛选模型、改写prompt、以确定性代码替换部分GPT调用。",
-    "deepDive": {
-      "before": [
-        {
-          "text": "原有AI利用审核已规模使用，模型费用随部署扩大成为负担。目标是降低这项工作流费用，同时保住临床叙述与证据质量；不是从零替代全院人工。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "缺少优化前每份审核的美元成本、调用次数、耗时分布，以及人工审核时长，无法重建绝对基线。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ],
-      "intervention": [
-        {
-          "text": "官方明确Colton Rusch为FDE（Forward Deployed Engineer，前线部署工程师）；他与医院专家David Zihr共同展示成本优化。工程师展示系统依赖、寻找高成本节点及验证替换效果，医院提供质量约束。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        }
-      ],
-      "technical": [
-        {
-          "text": "患者病历与审核指南进入审核流程；Ontology承载人和AI动作及分支关系，混合确定性逻辑与agent。审核稿呈现在护士工作台，与病历对照，经护士修改、接受并发送。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "AIP Evolve分析数据流和模型调用位置。演示中的criteria-matching agent将两处Claude Sonnet替换为GPT-5 mini：该局部成本下降68%，延迟有所增加。不能说整套医院系统统一换成该模型。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "官方项目摘要还披露跨供应商模型筛选、提示修改，以及用确定性代码代替部分模型调用。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "优化比较要守住临床叙述和证据选择；护士仍复核。公开演示是示意界面，并非公开真实患者资料。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "90%偏好不是90%临床准确率；专家人数、样本量、抽样方式、盲测和失败阈值未披露。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "以下是复现建议，不是医院已公开架构：先画审核状态机，把输入、输出、人工批准及下游副作用列清楚；记录每节点费用与延迟。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "建立去标识化测试集，覆盖缺失证据、矛盾病历及边界条件；按医生认可的错误严重度评分。先验证低风险确定性规则，再比较模型替换。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "以“单份合格审核总成本”验收，并同时监控人工修改量、严重遗漏和P95延迟；达不到质量阈值时回滚。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "outcomes": [
-        {
-          "text": "该AI审核工作流成本下降近70%；GPT调用减少84%；医院专家90%的比较中偏好优化输出。三项分别是费用、调用量、专家偏好，不能互相替代。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            2
-          ]
-        },
-        {
-          "text": "可支持的商业结论是：已有生产流程的模型运行费用下降，同时保留专业人员审核。不能据此推出住院时间缩短、全院利润提升或减少了多少护士。",
-          "evidence": "inference",
-          "sourceRefs": []
-        },
-        {
-          "text": "总订阅、实施、维护费用，优化前后绝对账单及净现金节省未公开。68%局部替换与近70%总体工作流不是可相加的两个收益。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "unknowns": [
-        {
-          "text": "EHR产品及具体接口、数据表、消息队列、提示全文：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "每个节点模型版本、上下文大小、token账单和缓存策略：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "访问控制、患者数据脱敏、保留期限、部署云及地区：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "生产变更审批、灰度回滚、模型失效及应急恢复细节：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "端到端临床安全评价和独立审计：未公开，不能据通用技术推定。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ]
-    }
   },
   {
     "addedDate": "2026-10-17",
