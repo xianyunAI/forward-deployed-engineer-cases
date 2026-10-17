@@ -2,6 +2,800 @@
   {
     "addedDate": "2026-10-17",
     "caveats": [
+      "FDE项目绑定强，但技术披露较薄；不把AWS通用参考架构当作客户实装。",
+      "CTO同一份新闻稿同时描述现有提速和待验证、待上线概念；因此不标为全量正式生产。",
+      "公司AUM、App用户数和全球办公室数量不用于衡量本次FDE项目成效。",
+      "总部所在地依据最新行业报道；项目实际部署国家没有披露。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Hoxton Wealth",
+    "country": "阿联酋／英国",
+    "countryNote": "主体所在地按2026-10-02行业报道的伦敦与迪拜双总部口径记录；客户官网另外确认CTO及产品、工程、设计、数据组织以迪拜为基地，并列有英国、阿联酋等分支。AWS项目未逐国披露实际使用团队、服务对象或云区域，因此deploymentCountries留空，不以总部或办公室清单推断部署。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "报告原需数小时，部分合规检查需数天；顾问答疑依赖少数资深同事。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "AWS及合作伙伴与Hoxton共同验证AI报告和内部知识库；自主运营是交付目标，尚无能力移交验收披露。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "CTO自报报告与个性化演示可在数分钟内准备、信息获取加快及合规检查提速；无样本量或精确降幅，不能推出质量和净收益。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "公开实现细节限于AI生成报告及建设内部知识库；没有披露模型、AWS服务名、检索架构、CRM或文档系统接口。不能据AWS身份补写为Bedrock、AgentCore、RAG或知识图谱已被此项目采用。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非已披露实现：先将报告中的客户事实、数字和引用做结构化校验；保留原始材料、模板版本及逐项出处，任何对客发布都由具备权限的顾问复核。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非已披露实现：知识库应按司法辖区、业务实体、有效日期和资料权限隔离；无法确认规则适用范围或来源发生冲突时转交合规人员。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议，非已披露实现：分别评测报告事实准确率、知识检索支持率、合规检查漏报率与人工返工；将模型生成时长与包含人工审阅的端到端用时分开。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "模型及版本、提示模板、数据源、分块和嵌入、检索索引、工具权限、CRM集成、缓存、审计日志及故障回滚未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实际生产与概念验证功能边界、上线日期、覆盖顾问数、使用频次、实际部署国家与云区域未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "对客材料是否逐次强制人工审批、合规检查是否仅提供建议、数据处理及跨境传输控制未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE投入、实施与运行费用、人工复核成本、可复现评测、错误率、客户满意度和项目净收益未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2026-09-03合作已开展且CTO报告实际流程提速；同文仍称正在验证若干概念、希望上线，不能概括为所有功能已全面生产部署。",
+    "entryPoint": "分析：从单一内部报告草稿或只读知识问答开始；先固定资料范围、审核标准和基线，再扩大到合规检查辅助。",
+    "evidenceLevel": "A",
+    "evidenceNote": "AWS专属新闻稿直接确认Hoxton使用AWS FDE；客户CTO及AWS金融服务负责人分别作证。",
+    "humanRole": "顾问仍是报告与知识工具的使用者；公开材料未说明谁批准对客输出、如何复核合规检查或是否允许自动对外发送。",
+    "id": "hoxton-wealth-aws-advisor-workflows",
+    "industry": "财富管理与金融顾问服务",
+    "metrics": [
+      {
+        "context": "2026-09-03客户CTO自报；样本、绝对时长及人工复核是否计入未公开。",
+        "kind": "efficiency",
+        "label": "客户报告生成用时",
+        "unknown": false,
+        "value": "数小时→数分钟"
+      },
+      {
+        "context": "客户自报的非精确描述；无可计算降幅，不代表正确率或监管认可。",
+        "kind": "efficiency",
+        "label": "合规检查用时",
+        "unknown": false,
+        "value": "数天→原用时的一小部分"
+      },
+      {
+        "context": "项目已有实际流程效果陈述，但文中仍有概念验证和希望上线表述，未列功能逐项状态与覆盖人数。",
+        "kind": "adoption",
+        "label": "生产部署覆盖",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施、云资源、维护及人工复核成本，不能由节时推算净收益。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Amazon Web Services（AWS）Forward Deployed Engineering",
+    "publishedAt": "2026-09-03",
+    "risks": [
+      "分析：客户资产及身份数据在报告生成、检索和跨实体调用中泄露。",
+      "分析：规则适用国家、版本或主体错配导致合规检查漏报。",
+      "分析：文字流畅但数值或来源不实的报告被直接用于对客建议。"
+    ],
+    "skills": [
+      "分析：金融报告结构化校验与引用追溯",
+      "分析：多实体权限、辖区及知识版本管理",
+      "分析：端到端时间测量、质量评测与人工复核设计"
+    ],
+    "sources": [
+      {
+        "date": "2026-09-03",
+        "locator": "全文；Mansel Oliver概念验证、报告与知识库、流程提速；Mark Jopling明确FDE共同构建",
+        "title": "Hoxton Wealth Collaborates with AWS to Bring Agentic AI to Wealth Management",
+        "type": "客户或供应商官方",
+        "url": "https://press.aboutamazon.com/aws/2026/9/hoxton-wealth-collaborates-with-aws-to-bring-agentic-ai-to-wealth-management"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "人物介绍；产品、工程、设计、数据组织Dubai base",
+        "title": "Hoxton Wealth：Mansel Oliver，Chief Technology Officer",
+        "type": "客户官方",
+        "url": "https://hoxtonwealth.com/uk/team/mansel-oliver"
+      },
+      {
+        "date": "2026-10-02",
+        "locator": "首段：London and Dubai headquartered；不采用AUM作为项目指标",
+        "title": "Hoxton Wealth AUM tops US$5bn (£3.75bn)",
+        "type": "行业媒体（仅用于总部口径）",
+        "url": "https://www.international-adviser.com/hoxton-wealth-aum-tops-us5bn-3-75bn/"
+      },
+      {
+        "date": "页面未标日期；2026-10-17核验",
+        "locator": "全球分支与主体清单；仅核验办公室分布，不推断项目部署国家",
+        "title": "Hoxton Wealth：Contact / Our Global Presence",
+        "type": "客户官方",
+        "url": "https://hoxtonwealth.com/ae/contact"
+      }
+    ],
+    "summary": "顾问报告耗时、知识依赖资深同事；Hoxton与AWS FDE共同改造相关内部工作流。",
+    "title": "顾问客户报告生成与内部知识获取",
+    "workflow": "AI辅助生成客户报告和演示、检索内部知识并支持合规检查；具体顺序与批准点未公开。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "B级角色证据为2026年参与者对2024年Agent Engineer职责的回溯性认定；不能把她在Palantir的旧FDE职称当作Sonos证据。",
+      "通用Agent OS、Agent SDK与开发生命周期资料仅作技术背景；没有公开Sonos的具体模型、代码或配置。",
+      "15 million是品牌客户数，非代理触达数；客户对效率的正面描述不等于量化因果效果。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "Sonos",
+    "country": "美国",
+    "countryNote": "Sonos官方联系页将总部列于美国加州Goleta；这只证明总部国家。项目案例未逐国披露实际部署用户或云区域，故部署国家留空。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "早期服务聚焦购买后30天，既处理音箱设置，也排查路由器迁移、网络拓扑和IP地址；人工在系统、手册和程序之间切换。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "客户希望缩短首次成功播放音乐所需的过程，并减少重复求助；Customer Effort Score综合联系频次、问题范围、产品使用和日志，而非仅看单次处理时长。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Meurer先与Sonos技术对口团队梳理产品组合和问题范围，再把连接排障步骤做成可重复执行的代理。其亲历叙述将人、客户和工作流直接绑定。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3,
+            4
+          ],
+          "text": "从较简单的旅程扩展到新产品安装、路由器变更、订单退货及新音乐服务连接；2024年实施回顾确认Sonos设置流程已在真实用户中运行。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "角色核验：2026年演讲回顾2024年Agent Engineer定义，称其是FDE的一种；这是后见性定义，非项目当年人事记录。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3,
+            4
+          ],
+          "text": "官方材料证明安装、诊断和工单接续已成为可运行流程；客户负责人肯定多轮上下文能力。没有公开Time-to-music、Customer Effort Score或解决率的前后差值。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "项目已披露的顺序是询问产品和环境、收集基础诊断、读取相关信息、指导设置，并在确认用户满意后写入Salesforce工单；人工接手收到问题摘要和相关信息。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            4
+          ],
+          "text": "技术背景，非Sonos逐项配置证明：Agent SDK以可组合技能表达流程，并约束系统记录调用的顺序；官方多客户实施文同时以Sonos排障和SiriusXM刷新说明多步骤集成复杂性。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5
+          ],
+          "text": "平台开发资料把代码、提示、模型依赖与知识库快照原子打包，支持回滚和A/B测试；这些是可用机制，未披露本项目的版本策略。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：将网络诊断读取与会改变用户设备状态的动作分开，要求用户确认危险步骤；对型号不明、已重复失败或信息矛盾的会话及时转人工。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：验收覆盖新装、换路由器、音乐服务授权及失败重试，用成功播放、再次联系率、工单正确性共同评估，不只看对话是否结束。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露底层模型、模型路由、检索分块与向量库、具体诊断API、身份鉴别或工具权限实现。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露项目FDE投入人数、驻场方式、总工期、样本量、错误率、时延、成本或独立审计。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实际用户部署国家、逐语言范围、2026年当前功能边界和版本变更未由这些历史案例确认。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2024-07官方实施回顾明确已帮助真实用户设置Sonos音箱；初期覆盖首次购买后30天的服务旅程。",
+    "entryPoint": "分析：从单一音箱型号的安装排障开始，连接只读诊断和工单系统，明确转人工条件后再增加订单与退货事务。",
+    "evidenceLevel": "B",
+    "evidenceNote": "直接参与者Natalie Meurer在Sierra官方文章中第一人称确认参与Sonos音箱连接排障代理。她在2026年会议演讲15:09–15:43回顾同一2024年角色定义，明确称Agent Engineering是FDE的一种。属于参与者回溯性角色认定并有官方项目佐证，不冒称当时职位原名为FDE。",
+    "humanRole": "客户技术团队参与需求范围与产品知识梳理；需人工支持的会话连同问题摘要升级。具体判断阈值及人工抽检比例未披露。",
+    "id": "sonos-sierra-speaker-setup",
+    "industry": "消费电子与音响",
+    "metrics": [
+      {
+        "context": "原文说明衡量目标，未给上线前后数值或对照组。",
+        "kind": "efficiency",
+        "label": "Time-to-music改善",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "15 million是当时品牌客户规模，不能算AI使用量；未披露Sonos项目量化质量结果。",
+        "kind": "quality",
+        "label": "自动解决率与CSAT",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施费、推理成本、人工复核成本或扣除成本后的节省。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Sierra",
+    "publishedAt": "2024-07-11（参与者项目披露）；2024-07-25（生产部署回顾）；2026年（角色回溯说明）",
+    "risks": [
+      "分析：错误网络操作建议可能打断家庭网络或暴露设备信息。",
+      "分析：模型或知识版本改变后，原先正确的排障路径可能失效。"
+    ],
+    "skills": [
+      "分析：设备与家庭网络排障建模",
+      "分析：诊断系统及Salesforce集成",
+      "分析：多轮对话状态、质量评测与安全转交"
+    ],
+    "sources": [
+      {
+        "date": "2024-07-11",
+        "locator": "Natalie Meurer署名；Meet the agent engineer：本人Sonos经历，以及团队SiriusXM/OluKai部署；Interacting with systems",
+        "title": "Meet the AI agent engineer",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/meet-the-ai-agent-engineer"
+      },
+      {
+        "date": "2026年AI Engineer World’s Fair；2026-10-17核验",
+        "locator": "1:49–2:31回溯部署团队与2024年文章；15:09–15:43明确称Agent Engineering为FDE的一种；完整逐字稿",
+        "title": "The Dirty Secret of Forward Deployed Engineering：Natalie Meurer完整演讲与逐字稿",
+        "type": "直接参与者公开演讲（会议主办方）",
+        "url": "https://ai.engineer/talks/Byv311hdoHE-dirty-secret-forward-deployed-engineering"
+      },
+      {
+        "date": "页面未标发布日期",
+        "locator": "Accelerating time-to-music；Customer Effort Score；Building the first Sonos AI agent",
+        "title": "How Sonos elevates the listener experience with Sierra",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/customers/sonos"
+      },
+      {
+        "date": "2024-07-25",
+        "locator": "开头具名生产工作流；The hardest problems；Every agent is a product",
+        "title": "Shipping and scaling AI agents",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/shipping-and-scaling-ai-agents"
+      },
+      {
+        "date": "2024-06-03",
+        "locator": "Development；Release；Quality assurance（平台背景，不推定项目配置）",
+        "title": "The Agent Development Life Cycle",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/agent-development-life-cycle"
+      },
+      {
+        "date": "2026-10-17核验",
+        "locator": "Offices / Headquarters：Goleta, California",
+        "title": "Contact Us | Sonos",
+        "type": "客户或供应商官方",
+        "url": "https://www.sonos.com/en-ca/contact"
+      }
+    ],
+    "summary": "新用户安装音箱和排查路由器连接问题时，客服需跨手册与多个系统查找信息；Sierra将诊断、引导和工单接续做成对话代理。",
+    "title": "音箱安装与连接故障排查代理",
+    "workflow": "询问音箱型号及网络环境→收集基础诊断信息→跨系统取数并逐步引导设置→确认用户满意后在Salesforce建案；需要人工时附问题摘要转交。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "B级使用角色负责人2026年的回溯定义；非SiriusXM项目正式FDE职位名。",
+      "34 million是案例时点公司订阅者规模，不是Harmony用户数。",
+      "2025-12 ADP公告使用将来时，不能把长期记忆、统一客户数据或增长效益当作已实现结果。",
+      "平台模型和通用安全能力不等于Harmony具体配置。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "SiriusXM",
+    "country": "美国",
+    "countryNote": "2025年10-K列公司总部在纽约。项目背景描述美国与加拿大车载业务，但未分别披露Harmony部署和用户数据驻留地区，部署国家不据业务市场推断。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "原有团队花数月整理知识、用例及跨团队政策，再把规则写入传统机器人；预设路径难以处理非标准口语，也不能灵活完成复杂服务。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "汽车收音机刷新需要业务专门知识和严格步骤，不能只用FAQ回答；客户希望保留自然语言灵活性，同时真正完成操作。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "Meurer的官方实施文章把团队为SiriusXM设计部署卫星刷新代理列为明确实例；2026年她把2024年Agent Engineer角色回溯为FDE的一种。两项证据分别绑定项目和角色。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3,
+            4
+          ],
+          "text": "双方共同理解业务需求，建立Harmony并先在生产测试高频用例；后续官方回顾确认使用Agent OS组合技能及系统集成来发出刷新信号。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5
+          ],
+          "text": "2025-12更新确认Harmony已处理订阅管理、技术排障与内容推荐，并可通过卫星信号刷新汽车收音机；文中称聊天体验在其服务渠道中评分最高、最省力，但没有披露原始量化数据。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5
+          ],
+          "text": "同一公告将ADP完全上线后的统一结构化与非结构化数据、跨旅程支持描述为预期，不计为已完成成效。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ],
+          "text": "项目技术边界：Agent OS将多步骤任务和系统访问组合起来，实际触发卫星刷新；API名称、鉴权方式、设备匹配和重试机制未公开。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            6
+          ],
+          "text": "平台背景：Agent SDK通过可组合技能表达业务流程并约束API顺序。2024年开发资料介绍用带mock API的会话模拟重放问题，形成发布前回归测试；没有公开Harmony测试集或通过门槛。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5
+          ],
+          "text": "ADP在2025-12被定位为Agent OS的记忆与上下文层；完整部署后才预期结合客户对话与业务结构化数据。不能从公告推定数据架构或生产上线日期。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：刷新请求应绑定已验证账户与唯一设备，执行后检查回执；将重试和重复用户请求做幂等处理，设备无法确认时升级人工。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：对俗称频道、含糊故障描述、多个车载设备、付款失败和订阅取消分别设计验收，记录实际完成率而非只记录对话留存。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "基础模型、路由、检索方式、刷新API、付款渠道、权限与审计实现、人工接管规则未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "FDE人数、驻场方式、项目总工期、延迟、每次成本、实际AI用户量和独立审计未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未核实ADP完整部署日期、跨会话记忆成效或2026年当前数据架构。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2024年已在生产中测试并运行；2025-12官方更新确认Harmony处理订阅、技术排障与内容推荐。ADP扩展当时仍待完整部署。",
+    "entryPoint": "分析：从低风险的频道查询和经身份核验的刷新请求开始，把付款及订阅变更置于单独授权与校验流程。",
+    "evidenceLevel": "B",
+    "evidenceNote": "Sierra工程负责人Natalie Meurer的2024官方文章明确将团队已设计并部署的SiriusXM卫星刷新工作流列为Agent Engineer实例；2026演讲15:09–15:43明确把该角色认定为FDE的一种。官方客户案例及2025更新验证Harmony实际服务。是团队负责人回溯性角色证言，未披露本项目具体工程师姓名。",
+    "humanRole": "客户Listener Care团队梳理政策及流程，并与Sierra共同定义需求。项目转人工条件、人工审批比例及对账方式未公开。",
+    "id": "siriusxm-sierra-harmony-radio",
+    "industry": "卫星广播与音频订阅",
+    "metrics": [
+      {
+        "context": "2025-12-04供应商自报，未给评分、样本、统计期间或可比性。",
+        "kind": "quality",
+        "label": "服务渠道体验排名",
+        "unknown": false,
+        "value": "Harmony聊天为最高评分、最低费力渠道"
+      },
+      {
+        "context": "旧案例与更新没有给可复算的解决率、每次成本或前后对照。",
+        "kind": "efficiency",
+        "label": "解决率及成本改善",
+        "unknown": true,
+        "value": "未公开"
+      },
+      {
+        "context": "未披露实施、推理、支持和合规成本；不能由渠道排名推导财务收益。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Sierra",
+    "publishedAt": "2024-07-11（具名工程工作）；2024-07-25（生产回顾）；2025-12-04（项目更新）；2026年（角色说明）",
+    "risks": [
+      "分析：错配账户或设备可能把刷新信号发送到错误对象。",
+      "分析：订阅、账单和付款处理若缺少授权或幂等控制可能产生财务争议。",
+      "分析：跨会话记忆扩展会增加隐私、保留期限与访问隔离要求。"
+    ],
+    "skills": [
+      "分析：多步骤API编排与设备标识匹配",
+      "分析：订阅政策和口语意图建模",
+      "分析：业务回归测试与跨系统失败恢复"
+    ],
+    "sources": [
+      {
+        "date": "2024-07-11",
+        "locator": "Natalie Meurer署名；Meet the agent engineer：本人Sonos经历，以及团队SiriusXM/OluKai部署；Interacting with systems",
+        "title": "Meet the AI agent engineer",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/meet-the-ai-agent-engineer"
+      },
+      {
+        "date": "2026年AI Engineer World’s Fair；2026-10-17核验",
+        "locator": "1:49–2:31回溯部署团队与2024年文章；15:09–15:43明确称Agent Engineering为FDE的一种；完整逐字稿",
+        "title": "The Dirty Secret of Forward Deployed Engineering：Natalie Meurer完整演讲与逐字稿",
+        "type": "直接参与者公开演讲（会议主办方）",
+        "url": "https://ai.engineer/talks/Byv311hdoHE-dirty-secret-forward-deployed-engineering"
+      },
+      {
+        "date": "页面未标发布日期",
+        "locator": "Streamlining conversations；Tailoring AI：刷新、付款、账单信息及生产测试",
+        "title": "How SiriusXM increases listener loyalty with Sierra",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/customers/siriusxm"
+      },
+      {
+        "date": "2024-07-25",
+        "locator": "开头与The hardest problems：具名刷新、Agent OS及多系统依赖",
+        "title": "Shipping and scaling AI agents",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/shipping-and-scaling-ai-agents"
+      },
+      {
+        "date": "2025-12-04",
+        "locator": "Leading the applied AI revolution为已实现；From conversations to relationships为预期",
+        "title": "SiriusXM and Sierra announce a deeper collaboration with the launch of Agent Data Platform",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/siriusxm-adp-announcement"
+      },
+      {
+        "date": "2024-06-03",
+        "locator": "Testing：conversation simulation与mock APIs；通用技术背景",
+        "title": "The Agent Development Life Cycle",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/agent-development-life-cycle"
+      },
+      {
+        "date": "2026年提交；报告期2025-12-31",
+        "locator": "Corporate Information；Item 2 Properties：New York总部",
+        "title": "Sirius XM Holdings 2025 Form 10-K",
+        "type": "客户或供应商官方",
+        "url": "https://investor.siriusxm.com/sec-filings/all-sec-filings/content/0000908937-26-000006/siri-20251231.htm"
+      }
+    ],
+    "summary": "旧机器人依赖关键词和固定路径，难理解口语意图，也难完成车载收音机刷新等多系统步骤；Harmony把理解和实际服务操作串成对话。",
+    "title": "Harmony车载收音机恢复与订阅客服",
+    "workflow": "订阅者用自然语言说明收音机或账户问题→识别具体意图并遵循业务步骤→调用系统发出卫星刷新信号或处理订阅服务→返回结果与内容指引。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
+      "角色认定为B级回溯证据；Meurer陈述的是团队项目，未公开OluKai具体工程师姓名。",
+      "工程角色原文绑定场景选鞋，退换货由同期具名实施回顾补证；70%和4.5/5仅属于整体支持代理，不能当作单独选购流程指标。",
+      "4.75满意度、客户数据平台个性化、主动提醒与收入增长是目标或探索，未计入已实现。",
+      "不把另篇匿名零售客户45天例外硬套到OluKai；其具名案例仅举迟5–6天的30天政策例外。"
+    ],
+    "checkedAt": "2026-10-17",
+    "company": "OluKai",
+    "country": "美国",
+    "countryNote": "OluKai官方帮助页明确总部在Irvine, California。夏威夷品牌风格不等于总部地点；美国和加拿大仓库也不能直接证明代理部署国家，故部署国家留空。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "业务增长增加电话、邮件和社媒咨询，约75%是常见订单或退货问题；旧机器人因速度和效果不足被撤下，人工响应通常需2–48小时。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            3,
+            4
+          ],
+          "text": "团队将品牌知识、服务政策及语气用于代理；Meurer单独确认Agent Engineers已设计部署OluKai场景选鞋，另一官方实施回顾确认正在处理退换货。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "角色证据来自同一工程负责人2026年的回溯定义，不能据其其他雇主旧职位或行业通用职责推定。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "客户案例自报整体客服约70%请求无人工介入解决，会话评分约4.5/5；人工每日150张票单的旧目标随后降低，以留出时间处理复杂问题。样本和观察窗口未公开。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "4.75评分是目标；CDP驱动个性化、延迟配送主动消息及带动购买等仍属探索方向，不是已实现增收。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "具名工作流包含解释Happy Returns并给出附近网点，以及在30天退货政策周围按情境作例外；未公开所调用的退货、订单或定位API。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4,
+            5
+          ],
+          "text": "项目技术证据还包括真实退货与换货任务；平台背景是Agent OS的组合技能，通用发布机制支持冻结提示、模型和知识版本。不能据平台材料断言OluKai具体规则配置。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3,
+            5
+          ],
+          "text": "客户已按会话收集评分并通过绩效仪表板监测；通用生命周期文介绍把人工标注问题转为mock API回归测试，未公开OluKai是否及如何采用该完整流程。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：把标准退货资格、允许例外范围及需要人工审批的条件写成独立规则；用户确认后再调用退货工具，确保重复请求不重复退款。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：分开评估导购、订单查询与退货，分别量化推荐适合度、事务成功率、重复联系和满意度，避免总解决率掩盖某旅程失败。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "底层模型、产品检索索引、工具接口、付款或退款权限、例外授权实现、人工升级规则未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "工程投入、上线工期、评分样本和时间窗口、对照组、推理成本及净利润影响未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "用户国家、数据驻留、导购转化率、CDP后续上线情况和2026年当前架构未由本次材料确认。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2024-07工程文章确认已部署鞋履选择工作流；同期实施回顾确认代理在处理OluKai退换货。客户案例披露上线后的客服解决率。",
+    "entryPoint": "分析：先覆盖订单状态与标准退货，建立可审计例外规则，再开放场景化推荐与更复杂的个性化服务。",
+    "evidenceLevel": "B",
+    "evidenceNote": "Natalie Meurer的2024官方文章把团队设计并部署的OluKai场景选鞋工作流列为Agent Engineer实例；其2026会议演讲将该角色回溯定义为FDE的一种。官方实施回顾与客户案例另证同一品牌代理的退换货使用。指标属于整体客服代理，不能归因给单独导购旅程。",
+    "humanRole": "Aloha Experience团队逐会话看评分和仪表板；代理承担常见问题后，人工Day Makers专注复杂、需情感理解的情况。明确例外审批层级未公开。",
+    "id": "olukai-sierra-shopping-returns",
+    "industry": "鞋履零售与电商",
+    "metrics": [
+      {
+        "context": "官方客户案例自报整体客服代理票单/询问解决率；不等于导购转化率，观察期和样本量未知。",
+        "kind": "quality",
+        "label": "无人工介入解决率",
+        "unknown": false,
+        "value": "约70%"
+      },
+      {
+        "context": "按会话评分监测；4.75为目标而非已实现结果，缺乏独立验证。",
+        "kind": "quality",
+        "label": "会话满意度",
+        "unknown": false,
+        "value": "约4.5/5"
+      },
+      {
+        "context": "取决于业务繁忙程度；AI被描述为即时响应，但未披露可复算延迟或完整处理时长。",
+        "kind": "efficiency",
+        "label": "人工首响基线",
+        "unknown": false,
+        "value": "2–48小时"
+      },
+      {
+        "context": "未公开完整实施及运营成本；不能将退货更方便等同于已量化的利润改善。",
+        "kind": "cost",
+        "label": "总投入与净收益",
+        "unknown": true,
+        "value": "未公开"
+      }
+    ],
+    "provider": "Sierra",
+    "publishedAt": "2024-07-11、2024-07-25（具名部署）；客户案例未标日期；2026年（角色说明）",
+    "risks": [
+      "分析：把弹性退货政策交给不受约束生成可能产生不一致待遇或损失。",
+      "分析：推荐产品或附近退货点若数据过期会误导消费者。"
+    ],
+    "skills": [
+      "分析：零售政策及例外建模",
+      "分析：退货地点与订单工具集成",
+      "分析：客服质量评估与人工升级"
+    ],
+    "sources": [
+      {
+        "date": "2024-07-11",
+        "locator": "Natalie Meurer署名；Meet the agent engineer：本人Sonos经历，以及团队SiriusXM/OluKai部署；Interacting with systems",
+        "title": "Meet the AI agent engineer",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/meet-the-ai-agent-engineer"
+      },
+      {
+        "date": "2026年AI Engineer World’s Fair；2026-10-17核验",
+        "locator": "1:49–2:31回溯部署团队与2024年文章；15:09–15:43明确称Agent Engineering为FDE的一种；完整逐字稿",
+        "title": "The Dirty Secret of Forward Deployed Engineering：Natalie Meurer完整演讲与逐字稿",
+        "type": "直接参与者公开演讲（会议主办方）",
+        "url": "https://ai.engineer/talks/Byv311hdoHE-dirty-secret-forward-deployed-engineering"
+      },
+      {
+        "date": "页面未标发布日期",
+        "locator": "How do you scale Aloha；Smarter, happier returns；Measuring the success of AI；The future",
+        "title": "How OluKai scales the Aloha experience with Sierra",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/customers/olukai"
+      },
+      {
+        "date": "2024-07-25",
+        "locator": "开头明确OluKai退换货；Every agent is a product说明专职工程师实施模式",
+        "title": "Shipping and scaling AI agents",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/shipping-and-scaling-ai-agents"
+      },
+      {
+        "date": "2024-06-03",
+        "locator": "Release与Testing；通用机制不是OluKai具体配置证明",
+        "title": "The Agent Development Life Cycle",
+        "type": "客户或供应商官方",
+        "url": "https://sierra.ai/blog/agent-development-life-cycle"
+      },
+      {
+        "date": "2026-10-17核验；页面显示8个月前更新",
+        "locator": "Headquarters：10 Faraday, Irvine, CA 92618",
+        "title": "OluKai Help：What’s your address?",
+        "type": "客户或供应商官方",
+        "url": "https://support.olukai.com/en-US/whats-your-address-1121446"
+      }
+    ],
+    "summary": "电商增长使客服难维持响应速度，约四分之三请求为订单和退货等常见问题；项目把选购引导、政策解释及退换货操作接入全天候代理。",
+    "title": "鞋履选购与退换货服务代理",
+    "workflow": "消费者描述穿鞋场景或订单问题→代理结合产品信息和服务政策回应→退货场景介绍Happy Returns并提供附近地点→处理可覆盖请求，复杂情形留给Day Makers人工客服。"
+  },
+  {
+    "addedDate": "2026-10-17",
+    "caveats": [
       "10月FAQ明确中国大陆用户不可用，实时行情不支持；7月文章中的Copilot即将推出已由10月入口说明更新。",
       "AMR初期在Copilot不可用；不能概括为所有来源、所有入口都能生成摘要。",
       "2025版Explainability Note仍列Beta旧模型，不用于推断2026生产模型。",
