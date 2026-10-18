@@ -1,10 +1,10 @@
 # FDE（Forward Deployed Engineer，前线部署工程师）案例库
 
-当前收录89个公开资料案例。包含国家、行业、具体工作流、落地阶段、人工职责、成本与效率指标、关键技能及原始来源。
+当前收录99个公开资料案例。包含国家、行业、具体工作流、落地阶段、人工职责、成本与效率指标、关键技能及原始来源。
 
-## 深度案例（2026-10-17补充）
+## 深度案例（更新至2026-10-18）
 
-当前89例中89例已增加逐项研究：原有问题、工程师介入、技术方案、业务提升和未披露信息。每条区分公开事实、分析建议和未披露。详见 [案例全文](CASES.md)。
+当前99例中99例已增加逐项研究：原有问题、工程师介入、技术方案、业务提升和未披露信息。每条区分公开事实、分析建议和未披露。详见 [案例全文](CASES.md)。
 
 ## 案例研究与验收标准
 
@@ -47,92 +47,102 @@ GitHub 的 CASES.md 必须展开研究详情，不能只有摘要或把完整内
 
 ## 案例目录
 
-1. Canada Goose · 高端服饰零售与客户服务 · 加拿大 · 证据B
-2. Chambers Gasket · 定制制造与工业客户服务 · 美国 · 证据A
-3. Rectangle Health · 医疗支付软件与技术支持 · 美国 · 证据A
-4. HappyRobot · 企业AI软件与内部合同运营 · 美国 · 证据A
-5. Arkeo AI · 企业软件与销售AI · 美国 · 证据A
-6. Hertz（赫兹） · 汽车租赁与旅游出行 · 美国 · 证据B
-7. Hernan Corporation Sdn Bhd · 食品制造与冷链物流 · 马来西亚 · 证据A
-8. Clio · 法律科技软件 · 加拿大 · 证据A
-9. K1x · 税务科技软件 · 美国 · 证据A
-10. Mastermind · 在线教育与创作者平台 · 美国 · 证据A
-11. Hoxton Wealth · 财富管理与金融顾问服务 · 阿联酋／英国 · 证据A
-12. Sonos · 消费电子与音响 · 美国 · 证据B
-13. SiriusXM · 卫星广播与音频订阅 · 美国 · 证据B
-14. OluKai · 鞋履零售与电商 · 美国 · 证据B
-15. LSEG（伦敦证券交易所集团） · 金融数据与分析 · 英国 · 证据A
-16. Core42 · 云基础设施与安全治理 · 阿拉伯联合酋长国 · 证据A
-17. JPMorganChase（摩根大通） · 银行与风险数据工程 · 美国 · 证据A
-18. Kantar · 广告与市场研究 · 英国 · 证据A
-19. Kawasaki Heavy Industries（川崎重工） · 机器人与工业制造 · 日本 · 证据A
-20. Order.co · 采购与支付软件 · 美国 · 证据A
-21. Snowflake（内部审计团队） · 企业软件与内部审计 · 美国 · 证据A
-22. Hays · 招聘服务 · 英国 · 证据A
-23. Virtue Foundation · 公益与医疗资源信息 · 美国 · 证据A
-24. AstraZeneca（阿斯利康） · 生物制药 · 英国 · 证据A
-25. FOX Corporation / FOX One · 流媒体与媒体 · 美国 · 证据A
-26. IFCO · 循环包装与物流 · 德国 · 证据A
-27. FIS／Amalgamated Bank · 银行基础设施与反洗钱合规 · 美国 · 证据A
-28. CHI Software（内部运营） · IT服务 · 未披露 · 证据A
-29. WAIQ（项目品牌；客户法律主体未披露） · 多站点企业运营 · 未披露 · 证据A
-30. Novo Nordisk（诺和诺德） · 生物制药 · 丹麦 · 证据A
-31. NFL · 职业体育与订阅媒体 · 美国 · 证据A
-32. NHS England（英国国家医疗服务体系英格兰分部） · 公共卫生应急与医疗物资供应 · 英国 · 证据A
-33. The Elmet Group · 特种金属与工业微波器件制造 · 美国 · 证据B
-34. NVIDIA · 半导体与人工智能计算系统制造 · 美国 · 证据B
-35. Acrisure · 保险经纪与风险服务 · 美国 · 证据B
-36. Joint Commission · 医疗质量认证与现场评审 · 美国 · 证据B
-37. GE Aerospace · 航空发动机制造与维修保障 · 美国 · 证据B
-38. AIG · 财产与商业保险 · 美国 · 证据B
-39. Airbus A350生产 · 航空航天制造 · 法国 · 证据B
-40. Composio · AI开发工具与API集成基础设施 · 美国 · 证据A
-41. Kernel · AI云浏览器基础设施 · 美国 · 证据B
-42. SardineAI · 金融反欺诈与合规软件 · 美国 · 证据B
-43. Diagon AI · 工业设备采购平台 · 美国 · 证据B
-44. Artyc · 医疗与生命科学冷链物流设备 · 美国 · 证据B
-45. Retail Development Partners · 零售地产选址与门店扩张分析 · 美国 · 证据B
-46. MintMCP · 企业AI工具接入与安全基础设施 · 美国 · 证据B
-47. Vendora · 杂货零售POS与电商软件 · 美国 · 证据B
-48. SMI Aware · 诉讼支持与电子证据发现服务 · 美国 · 证据B
-49. Cheiron · 生物制药研发情报软件 · 美国 · 证据B
-50. Jolly · 一线员工绩效激励软件 · 美国 · 证据A
-51. NEAR AI · 隐私保护AI与代理基础设施 · 美国 · 证据B
-52. Rye Worldwide · 电商结账与代理交易基础设施 · 美国 · 证据B
-53. OpenEvidence · 医疗信息检索与临床知识软件 · 美国 · 证据A
-54. Rime · 语音合成模型与开发者API · 美国 · 证据A
-55. Notion · 协作办公与知识管理软件 · 美国 · 证据B
-56. Scaled Cognition · 企业客服代理模型与智能体平台 · 美国 · 证据A
-57. Gamma · 演示文稿与视觉创作软件 · 美国 · 证据A
-58. Latent Health · 医疗药事与药品可及性软件 · 美国 · 证据A
-59. Deliveroo · 即时餐饮配送平台 · 英国 · 证据B
-60. Marshmallow · 汽车保险 · 英国 · 证据B
-61. Sutherland Excavating Ltd. · 石油储罐维护与现场工程服务 · 加拿大 · 证据A
-62. ZhoopZhoop · 多门店汽车维修服务 · 加拿大 · 证据A
-63. Bilt · 住房支付与会员奖励平台 · 美国 · 证据B
-64. Rippling · 人力资源、薪酬与IT管理软件 · 美国 · 证据A
-65. Curology · 远程皮肤护理与处方护肤品 · 美国 · 证据B
-66. Noom · 数字健康与体重管理服务 · 美国 · 证据B
-67. Klarna · 消费支付与分期付款服务 · 英国 · 证据B
-68. T-Mobile · 电信运营 · 美国 · 证据B
-69. Revolut · 数字金融与银行服务 · 英国 · 证据A
-70. Hydro-Québec 的 Electric Circuit（Circuit électrique） · 公共电动车充电 · 加拿大 · 证据A
-71. 乌克兰经济部 / 国家就业服务局 · 公共就业服务 · 乌克兰 · 证据A
-72. Itaú Unibanco · 商业银行 · 巴西 · 证据B
+1. Kargo · 数字广告技术与媒体服务 · 美国 · 证据A
+2. Sequoia Riverlands Trust · 土地保护与生态公益 · 美国 · 证据A
+3. Bethel University（明尼苏达州） · 高等教育 · 美国 · 证据A
+4. Naturgy · 能源与公用事业 · 西班牙 · 证据A
+5. Encompass Supply Chain Solutions · 备件供应链与售后分销 · 美国 · 证据A
+6. Expedia Group · 在线旅游与旅行服务 · 美国 · 证据A
+7. SSP Group · 交通枢纽餐饮与旅游零售 · 英国 · 证据A
+8. MultiMoney · 金融服务 · 哥斯达黎加 · 证据A
+9. Cipla · 制药 · 印度 · 证据A
+10. ACMES（Agente de Seguros y de Fianzas） · 保险 · 墨西哥 · 证据A
+11. Canada Goose · 高端服饰零售与客户服务 · 加拿大 · 证据B
+12. Chambers Gasket · 定制制造与工业客户服务 · 美国 · 证据A
+13. Rectangle Health · 医疗支付软件与技术支持 · 美国 · 证据A
+14. HappyRobot · 企业AI软件与内部合同运营 · 美国 · 证据A
+15. Arkeo AI · 企业软件与销售AI · 美国 · 证据A
+16. Hertz（赫兹） · 汽车租赁与旅游出行 · 美国 · 证据B
+17. Hernan Corporation Sdn Bhd · 食品制造与冷链物流 · 马来西亚 · 证据A
+18. Clio · 法律科技软件 · 加拿大 · 证据A
+19. K1x · 税务科技软件 · 美国 · 证据A
+20. Mastermind · 在线教育与创作者平台 · 美国 · 证据A
+21. Hoxton Wealth · 财富管理与金融顾问服务 · 阿联酋／英国 · 证据A
+22. Sonos · 消费电子与音响 · 美国 · 证据B
+23. SiriusXM · 卫星广播与音频订阅 · 美国 · 证据B
+24. OluKai · 鞋履零售与电商 · 美国 · 证据B
+25. LSEG（伦敦证券交易所集团） · 金融数据与分析 · 英国 · 证据A
+26. Core42 · 云基础设施与安全治理 · 阿拉伯联合酋长国 · 证据A
+27. JPMorganChase（摩根大通） · 银行与风险数据工程 · 美国 · 证据A
+28. Kantar · 广告与市场研究 · 英国 · 证据A
+29. Kawasaki Heavy Industries（川崎重工） · 机器人与工业制造 · 日本 · 证据A
+30. Order.co · 采购与支付软件 · 美国 · 证据A
+31. Snowflake（内部审计团队） · 企业软件与内部审计 · 美国 · 证据A
+32. Hays · 招聘服务 · 英国 · 证据A
+33. Virtue Foundation · 公益与医疗资源信息 · 美国 · 证据A
+34. AstraZeneca（阿斯利康） · 生物制药 · 英国 · 证据A
+35. FOX Corporation / FOX One · 流媒体与媒体 · 美国 · 证据A
+36. IFCO · 循环包装与物流 · 德国 · 证据A
+37. FIS／Amalgamated Bank · 银行基础设施与反洗钱合规 · 美国 · 证据A
+38. CHI Software（内部运营） · IT服务 · 未披露 · 证据A
+39. WAIQ（项目品牌；客户法律主体未披露） · 多站点企业运营 · 未披露 · 证据A
+40. Novo Nordisk（诺和诺德） · 生物制药 · 丹麦 · 证据A
+41. NFL · 职业体育与订阅媒体 · 美国 · 证据A
+42. NHS England（英国国家医疗服务体系英格兰分部） · 公共卫生应急与医疗物资供应 · 英国 · 证据A
+43. The Elmet Group · 特种金属与工业微波器件制造 · 美国 · 证据B
+44. NVIDIA · 半导体与人工智能计算系统制造 · 美国 · 证据B
+45. Acrisure · 保险经纪与风险服务 · 美国 · 证据B
+46. Joint Commission · 医疗质量认证与现场评审 · 美国 · 证据B
+47. GE Aerospace · 航空发动机制造与维修保障 · 美国 · 证据B
+48. AIG · 财产与商业保险 · 美国 · 证据B
+49. Airbus A350生产 · 航空航天制造 · 法国 · 证据B
+50. Composio · AI开发工具与API集成基础设施 · 美国 · 证据A
+51. Kernel · AI云浏览器基础设施 · 美国 · 证据B
+52. SardineAI · 金融反欺诈与合规软件 · 美国 · 证据B
+53. Diagon AI · 工业设备采购平台 · 美国 · 证据B
+54. Artyc · 医疗与生命科学冷链物流设备 · 美国 · 证据B
+55. Retail Development Partners · 零售地产选址与门店扩张分析 · 美国 · 证据B
+56. MintMCP · 企业AI工具接入与安全基础设施 · 美国 · 证据B
+57. Vendora · 杂货零售POS与电商软件 · 美国 · 证据B
+58. SMI Aware · 诉讼支持与电子证据发现服务 · 美国 · 证据B
+59. Cheiron · 生物制药研发情报软件 · 美国 · 证据B
+60. Jolly · 一线员工绩效激励软件 · 美国 · 证据A
+61. NEAR AI · 隐私保护AI与代理基础设施 · 美国 · 证据B
+62. Rye Worldwide · 电商结账与代理交易基础设施 · 美国 · 证据B
+63. OpenEvidence · 医疗信息检索与临床知识软件 · 美国 · 证据A
+64. Rime · 语音合成模型与开发者API · 美国 · 证据A
+65. Notion · 协作办公与知识管理软件 · 美国 · 证据B
+66. Scaled Cognition · 企业客服代理模型与智能体平台 · 美国 · 证据A
+67. Gamma · 演示文稿与视觉创作软件 · 美国 · 证据A
+68. Latent Health · 医疗药事与药品可及性软件 · 美国 · 证据A
+69. Deliveroo · 即时餐饮配送平台 · 英国 · 证据B
+70. Marshmallow · 汽车保险 · 英国 · 证据B
+71. Sutherland Excavating Ltd. · 石油储罐维护与现场工程服务 · 加拿大 · 证据A
+72. ZhoopZhoop · 多门店汽车维修服务 · 加拿大 · 证据A
 73. Bilt · 住房支付与会员奖励平台 · 美国 · 证据B
-74. Cognition · 软件开发自动化平台 · 美国 · 证据B
-75. NBA · 职业篮球赛事与体育数据服务 · 美国 · 证据B
-76. Jabil（捷普） · 电子制造服务与工业供应链 · 美国 · 证据B
-77. CMA CGM · 集装箱海运与综合物流 · 法国 · 证据B
-78. HTX（新加坡内政科技局） · 公共安全科技与政府信息基础设施 · 新加坡 · 证据B
-79. BBVA · 商业银行与零售金融 · 西班牙 · 证据A
-80. Surf Air Mobility（Southern Airways／Mokulele自营航空运营） · 航空运输 · 美国 · 证据A
-81. NFL · 职业体育与球迷媒体 · 美国 · 证据A
-82. Nubank · 数字银行 · 巴西 · 证据B
-83. Superhuman（邮件应用） · 电子邮件与办公生产力软件 · 美国 · 证据A
-84. Zed Industries · 软件开发工具与代码编辑器 · 美国 · 证据A
-85. Writer · 企业生成式AI软件与行业语言模型 · 美国 · 证据A
-86. Praktika.ai · 在线语言教育与AI口语辅导 · 美国 · 证据A
-87. Tampa General Hospital · 医疗服务 · 美国 · 证据A
-88. Morgan Stanley · 财富管理与投资咨询 · 美国 · 证据B
-89. John Deere · 农业装备与农机售后 · 美国 · 证据A
+74. Rippling · 人力资源、薪酬与IT管理软件 · 美国 · 证据A
+75. Curology · 远程皮肤护理与处方护肤品 · 美国 · 证据B
+76. Noom · 数字健康与体重管理服务 · 美国 · 证据B
+77. Klarna · 消费支付与分期付款服务 · 英国 · 证据B
+78. T-Mobile · 电信运营 · 美国 · 证据B
+79. Revolut · 数字金融与银行服务 · 英国 · 证据A
+80. Hydro-Québec 的 Electric Circuit（Circuit électrique） · 公共电动车充电 · 加拿大 · 证据A
+81. 乌克兰经济部 / 国家就业服务局 · 公共就业服务 · 乌克兰 · 证据A
+82. Itaú Unibanco · 商业银行 · 巴西 · 证据B
+83. Bilt · 住房支付与会员奖励平台 · 美国 · 证据B
+84. Cognition · 软件开发自动化平台 · 美国 · 证据B
+85. NBA · 职业篮球赛事与体育数据服务 · 美国 · 证据B
+86. Jabil（捷普） · 电子制造服务与工业供应链 · 美国 · 证据B
+87. CMA CGM · 集装箱海运与综合物流 · 法国 · 证据B
+88. HTX（新加坡内政科技局） · 公共安全科技与政府信息基础设施 · 新加坡 · 证据B
+89. BBVA · 商业银行与零售金融 · 西班牙 · 证据A
+90. Surf Air Mobility（Southern Airways／Mokulele自营航空运营） · 航空运输 · 美国 · 证据A
+91. NFL · 职业体育与球迷媒体 · 美国 · 证据A
+92. Nubank · 数字银行 · 巴西 · 证据B
+93. Superhuman（邮件应用） · 电子邮件与办公生产力软件 · 美国 · 证据A
+94. Zed Industries · 软件开发工具与代码编辑器 · 美国 · 证据A
+95. Writer · 企业生成式AI软件与行业语言模型 · 美国 · 证据A
+96. Praktika.ai · 在线语言教育与AI口语辅导 · 美国 · 证据A
+97. Tampa General Hospital · 医疗服务 · 美国 · 证据A
+98. Morgan Stanley · 财富管理与投资咨询 · 美国 · 证据B
+99. John Deere · 农业装备与农机售后 · 美国 · 证据A
