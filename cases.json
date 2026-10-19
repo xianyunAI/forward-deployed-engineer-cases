@@ -1,5 +1,774 @@
 [
   {
+    "addedDate": "2026-10-19",
+    "caveats": [
+      "同一客户叙述同时存在已用于审计和期待向团队实施的措辞，因此只确认建成及审计使用，不确认全面推广。",
+      "250+是待管理临床人员范围；年底400员工是当时计划，不是已实现规模。"
+    ],
+    "checkedAt": "2026-10-19",
+    "company": "Athena",
+    "country": "美国",
+    "countryNote": "主体国家美国：客户官网列纽约州诊所；未确认法律总部。实施资料未列各诊所上线范围，不由服务地区推断全面部署。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "人力资源团队靠表格、日历和人工追踪资质；自主搭建曾因复杂性搁置。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2,
+            3
+          ],
+          "text": "负责人同Rippling专家一对一构建；发布页和服务页明确将该交付归入FDE（Forward Deployed Engineer，前线部署工程师）服务。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户明确说正在审计时可从应用访问并下载所需执照信息；完整推广时间与连续运行效果尚不清楚。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "价值应按漏续期率、审计取数耗时及人工复核成本评价，不能将少发邮件直接折算为避免罚款。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "记录学历、执照类型/号码/到期日、Medicaid资质状态及合规文档；到期提醒发送给员工，仪表盘展示有效、临期及需立即处理的记录。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露模型、检索、数据库、外部执照注册表接口；这是流程自动化项目，不能补写生成式模型。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：把“已收到续期文件”“已复核有效”“更新完成”分成状态，保留原文件及审核人；这是建议，不是客户已公开设计。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "权限矩阵、谁批准资质变更、邮件失败重试及提醒提前量未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "测试样本、数据迁移校验、审计通过率与错误率、上线后的维护负责人未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "总投入、订阅及运行费用、净现金收益均未披露，无法计算投资回报。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "应用建成并已用于一次正在进行的审计取数；员工全面推广与长期运行规模未披露。",
+    "entryPoint": "先以一种资质及一个到期窗口试点，把文档、责任人和审核动作串起来。",
+    "evidenceLevel": "A",
+    "evidenceNote": "客户负责人具名描述共同构建与审计使用；Rippling服务页将Athena明确列为FDE（Forward Deployed Engineer，前线部署工程师）的已构建项目。",
+    "humanRole": "人力资源负责人Charlene Feliciano提供需求并参与共建；员工负责续期。资质真实性审核与最终合规判断不能由提醒状态替代。",
+    "id": "athena-clinician-license-audit",
+    "industry": "医疗服务与临床资质管理",
+    "metrics": [
+      {
+        "context": "客户披露需管理规模，非证明每个人已活跃使用；来源1。",
+        "kind": "adoption",
+        "label": "管理范围",
+        "unknown": false,
+        "value": "250+临床人员"
+      },
+      {
+        "context": "一次共同构建描述，无精确工时或项目全部投入；来源1、2。",
+        "kind": "efficiency",
+        "label": "构建耗时",
+        "unknown": false,
+        "value": "数小时"
+      },
+      {
+        "context": "实施总投入、运行费、净收益均无金额。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "Rippling",
+    "publishedAt": "2026-01-20",
+    "risks": [
+      "证书录入错误或邮件未读仍可能导致漏续期",
+      "持证状态不等于所有监管要求均满足"
+    ],
+    "skills": [
+      "把合规事项建成结构化记录",
+      "日期触发与异常队列",
+      "审计证据导出",
+      "与非技术负责人共建"
+    ],
+    "sources": [
+      {
+        "date": "2026-01-20",
+        "locator": "正文",
+        "title": "Athena人力资源负责人：临床资质管理应用",
+        "type": "客户或供应商官方",
+        "url": "https://www.rippling.com/blog/how-i-solved-it-charlene-feliciano-license-management"
+      },
+      {
+        "date": "2026-02-05",
+        "locator": "正文",
+        "title": "Rippling Solutions正式发布：已构建客户项目",
+        "type": "客户或供应商官方",
+        "url": "https://www.rippling.com/blog/introducing-rippling-solutions-on-demand-custom-apps"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "Rippling Solutions：工程师客户案例",
+        "type": "客户或供应商官方",
+        "url": "https://www.rippling.com/rippling-solutions"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "Athena官网：纽约诊所与服务",
+        "type": "客户或供应商官方",
+        "url": "https://athenapsych.com/en/"
+      }
+    ],
+    "summary": "临床执照、证书和到期记录分散在表格与提醒中，续期跟进依赖人力。",
+    "title": "临床执照到期提醒与审计取证",
+    "workflow": "临床资质集中建档，按到期日触发邮件，再由仪表盘定位需要跟进的记录。"
+  },
+  {
+    "addedDate": "2026-10-19",
+    "caveats": [
+      "旧客服整体案例的质检成本下降50%、转接率30%→8%、NPS增加30点，不是新监督控制中心的独立效果。",
+      "访谈称某些工作流使用GPT-4.1，并未明确本项目使用该模型，因此不填写该版本。"
+    ],
+    "checkedAt": "2026-10-19",
+    "company": "Brinks Home",
+    "country": "美国",
+    "countryNote": "客户案例说明总部在美国Dallas–Fort Worth；控制中心部署所在客服地点及覆盖国家未逐项披露。美国和波多黎各是客户服务市场，不自动作为本项目部署国家。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "既有客服环境由内部及外包团队、多平台组成，回答和质检不一致；这是前期整体改造背景。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ],
+          "text": "本次监督中心的独立问题是如何保留AI对话连续性，同时把高权限判断交给人，而非把一切都升级为整通转接。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Hanze Li以主责FDE（Forward Deployed Engineer，前线部署工程师）身份描述与客户共同发布监督中心：AI遇到折扣等复杂请求时提交上下文，真人主管给指令后由AI续接对话。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "可确认已上线的新协作机制；不能从旧客服整体效果推算该机制带来的增量。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "本次发布独立的准确率、投诉率、等待时间与商业收益未披露。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "参与者明确列出无人在线、被通知主管未回、AI误解指令等首发边界问题；公开叙述没有给出最终各分支实现。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "具体模型、检索方案、客户身份鉴别、主管权限粒度、后端系统和批准结果写回方式未披露。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：批准应绑定本次客户、操作和金额，设置超时及明确拒绝路径；将授权结果作为结构化字段，避免只把一段自由文本交回模型。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "评测建议：把无主管、指令冲突、越权折扣、重复回调列为必测案例；测人工介入后的完成率及总等待时长。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "总投入、运行费用、主管并发负载及净收益未知。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "上线样本量、生产回滚、维护责任划分及具体回归测试结果未知。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2026-05-18参与者称已与Brinks共同上线；覆盖坐席、呼叫量和生产观察期未披露。",
+    "entryPoint": "优先做单一折扣审批场景，确定人类授权上限与无人响应兜底。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Cresta具名工程师Hanze Li明确自述为该新产品上线的主责FDE（Forward Deployed Engineer，前线部署工程师）；不能将其他版本指标归因到本次上线。",
+    "humanRole": "真人主管批准或拒绝复杂请求；Hanze Li主导首次部署并研究边界；客户团队共同试用。",
+    "id": "brinks-home-human-supervision-center",
+    "industry": "住宅安防与报警服务",
+    "metrics": [
+      {
+        "context": "没有本次上线独立的处理时长、分母与观察期。",
+        "kind": "efficiency",
+        "label": "新控制中心效率",
+        "unknown": true,
+        "value": "未披露"
+      },
+      {
+        "context": "旧客服方案的50%质检降本不复用；总投入、运行费及净收益均未知。",
+        "kind": "cost",
+        "label": "本项目成本",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "Cresta",
+    "publishedAt": "2026-05-18",
+    "risks": [
+      "主管未响应时AI可能误继续",
+      "自然语言指令误解导致越权优惠",
+      "把人工监督排队时间隐藏在自动化指标之外"
+    ],
+    "skills": [
+      "人工在环状态机",
+      "超时与升级策略",
+      "授权绑定",
+      "对话回归评测"
+    ],
+    "sources": [
+      {
+        "date": "2026-05-18",
+        "locator": "Brinks Home及Agent Operations Center段落",
+        "title": "Hanze Li：Brinks Home控制中心上线亲历",
+        "type": "客户或供应商官方",
+        "url": "https://cresta.com/blog/cresta-crew-hanze-li-forward-deployed-engineer"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "Brinks Home官方客户案例：既有客服改造",
+        "type": "客户或供应商官方",
+        "url": "https://cresta.com/customers/brinks-home"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "Cresta Agent Operations Center",
+        "type": "客户或供应商官方",
+        "url": "https://cresta.com/agent-operations-center"
+      }
+    ],
+    "summary": "自动客服在折扣、异常与敏感问题上需要可控的人类授权，避免直接自行决定。",
+    "title": "AI客服遇复杂请求时向真人主管求助",
+    "workflow": "AI提交上下文给主管；主管给出处理指令，AI继续与客户对话，工程师处理无人值守、超时及误解等边界。"
+  },
+  {
+    "addedDate": "2026-10-19",
+    "caveats": [
+      "供应商单方材料，无独立验收证据；约30家是系统范围，非使用率。",
+      "自动生成洞察未披露模型，不把它解释为已采用大语言模型。"
+    ],
+    "checkedAt": "2026-10-19",
+    "company": "GAIL (India) Limited",
+    "country": "印度",
+    "countryNote": "主体为印度GAIL公司；项目覆盖其子公司与合资企业，具体部署国家/数据中心未公开，跨境业务存在不等于境外上线。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "季度数据通过分散渠道提交，人工汇总表格与幻灯片，审核一致性不足。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师）沿数字从合资企业账本到董事会的链路梳理交接，交付受审批约束的统一管道。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "主要可复用价值是“经过批准才进入比较”，而不仅是报表生成更快；需用漏审率、报告重做次数和结账后延迟验证收益。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公布验收样本、错误率改善、董事会实际使用频次及维护服务水平。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "已披露.NET/ASP.NET Core、Oracle/Dapper、Open XML报告及OCR分类；子公司角色仅见本实体，集团角色见组合，JWT鉴权并留审计记录。"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "数据经过子公司准备/审核与集团审核/批准，产生比较、趋势及可编辑PowerPoint/PDF；同时管理会议资料和董事任期。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "OCR模型、生成洞察算法、检索机制、数据采集接口和具体部署拓扑未披露。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：报告绑定已批准数据快照；后续更正生成新版本而不是静默覆盖，确保每个数字可以追溯到来源与审批记录。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "首次上线日期、实施团队规模、业务方签收证据与性能测量方法未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "权限测试、故障恢复、模型质量及运行维护方案未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实施投入、日常费用与净利润提升不可计算。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "供应商称系统已经交付并用于约30家实体组合视图；上线日期、活跃实体数和观察期未披露。",
+    "entryPoint": "以一个季度、一组子公司和一个批准链验证，不直接自动发布董事会数字。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商项目页明确描述FDE（Forward Deployed Engineer，前线部署工程师）走入会计到董事会的数据流程，交付具名Samuhika系统；尚无客户侧项目细节互证。",
+    "humanRole": "子公司填报人与复核人、集团复核人与最终批准人逐级把关；工程师把审批规则与报表整合。",
+    "id": "gail-samuhika-portfolio-governance",
+    "industry": "天然气与能源集团",
+    "metrics": [
+      {
+        "context": "供应商项目范围描述，未给活跃数；来源1。",
+        "kind": "adoption",
+        "label": "覆盖范围",
+        "unknown": false,
+        "value": "约30家子公司/合资企业"
+      },
+      {
+        "context": "供应商定性对比，无样本、秒数或统计窗口；来源1。",
+        "kind": "efficiency",
+        "label": "横向比较耗时",
+        "unknown": false,
+        "value": "数日→即时"
+      },
+      {
+        "context": "无实施总投入、运行费和净收益。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "BLG Technologies",
+    "publishedAt": "未标发布日期；2026-10-19核验",
+    "risks": [
+      "错误数据经自动报告传播",
+      "子公司越权访问",
+      "审批后源数据变动造成报告版本不一致"
+    ],
+    "skills": [
+      "财务口径统一",
+      "配置化审批",
+      "跨实体权限隔离",
+      "可编辑报告自动生成"
+    ],
+    "sources": [
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "BLG：GAIL Samuhika交付案例",
+        "type": "客户或供应商官方",
+        "url": "https://blgtechnologies.in/case-studies/gail-jv-portal"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "BLG：工作方法与GAIL已交付项目",
+        "type": "客户或供应商官方",
+        "url": "https://blgtechnologies.in/ai-engineering"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "GAIL公司官网",
+        "type": "客户或供应商官方",
+        "url": "https://www.gailonline.com/"
+      }
+    ],
+    "summary": "分散季度报表需人工拼成分析与演示，数字的复核状态难以统一。",
+    "title": "跨子公司经营数据审批与董事会报告",
+    "workflow": "由子公司填报、复核，再由集团审核与最终批准；同一资料生成组合分析及董事会报告。"
+  },
+  {
+    "addedDate": "2026-10-19",
+    "caveats": [
+      "培训不是单独入库理由；本案依据实际营销系统交付和共建。",
+      "约8人时/周是供应商口径，未给参会人数及观察周数，不能据此推算年省现金。"
+    ],
+    "checkedAt": "2026-10-19",
+    "company": "Proper Hospitality",
+    "country": "美国",
+    "countryNote": "客户公司联系地址为美国Santa Monica；营销团队具体办公地点和系统部署区域未知，不以酒店清单代替项目覆盖。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "供应商以原每日45分钟例会为协同基线；不披露活动吞吐、营销转化或原系统名称。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "项目分领导辅导、团队培训、营销嵌入三个阶段；Mike Thomas说明服务方在实际工作中共同识别和构建自动化。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "报告例会减少至每周三天，约每周回收八人时；未披露订单、营收或客户体验提升。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "应把会议减少与错过交付、重开任务及负责人满意度一起评价；团队时间回收不必然减少工资支出。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "三项成果分别是活动进度沟通代理、按活动类型自动补齐项目子任务，以及可查询的营销分析和竞品比较界面；训练涉及Claude Cowork和Claude Code。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "具体运行模型、项目管理产品、接口、知识检索及数据流持久层未披露；训练工具不能自动当生产架构。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：进度摘要附任务来源和更新时间，写入前按活动模板校验必需项，避免把“少开会”变成团队更难发现延期。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "部署区域、实际上线日、长期运行量、工时测量分母与观察期未知。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "身份权限、对外发布审核、错误回退、评测测试集及长期维护归属未知。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "一次性费用、月度运行成本及现金净收益未知。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "客户证言与供应商案例说明营销自动化已实施；上线日期、活跃用户及长期效果未给出。",
+    "entryPoint": "从一类营销活动的状态汇总与任务拆解开始，由项目负责人确认后写入。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商案例具名列出三项交付，客户Chief of Staff Mike Thomas说明团队日常嵌入共建；符合FDE（Forward Deployed Engineer，前线部署工程师）交付模式，但未公开个别工程师职位名。",
+    "humanRole": "约30人六个培训班次，之后与营销人员日常共建；Chief of Staff Mike Thomas为具名证言人。逐条发布前审核制度未公开。",
+    "id": "proper-hospitality-marketing-workflows",
+    "industry": "酒店与旅宿运营",
+    "metrics": [
+      {
+        "context": "案例原口径，周工作日及参会人数未披露；来源1。",
+        "kind": "efficiency",
+        "label": "会议频次",
+        "unknown": false,
+        "value": "每天45分钟→每周3天"
+      },
+      {
+        "context": "供应商报告，非8小时日历时间；统计样本和持续时间未知；来源1。",
+        "kind": "efficiency",
+        "label": "节省工时",
+        "unknown": false,
+        "value": "约8人时/周"
+      },
+      {
+        "context": "工具费、建设费及净收益没有金额。",
+        "kind": "cost",
+        "label": "成本变化",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "Arcforma",
+    "publishedAt": "未标发布日期；2026-10-19核验",
+    "risks": [
+      "自动任务重复或缺项",
+      "竞品数据过时导致错误决策",
+      "进度代理把未确认信息当承诺"
+    ],
+    "skills": [
+      "营销流程映射",
+      "项目系统集成",
+      "团队培训与移交",
+      "会议工时及质量联合评估"
+    ],
+    "sources": [
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "Arcforma：Proper Hospitality交付案例",
+        "type": "客户或供应商官方",
+        "url": "https://arcforma.ai/work/proper-hospitality"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "Proper Hospitality项目与Mike Thomas证言",
+        "title": "Arcforma首页：Proper客户负责人具名说明",
+        "type": "客户或供应商官方",
+        "url": "https://arcforma.ai/"
+      },
+      {
+        "date": "未标发布日期；2026-10-19核验",
+        "locator": "正文",
+        "title": "Proper Hospitality官网联系地址",
+        "type": "客户或供应商官方",
+        "url": "https://www.properhotel.com/contact-us/"
+      }
+    ],
+    "summary": "营销协同依赖频繁同步会议，状态更新和重复项目拆解占用团队时间。",
+    "title": "营销进度、项目子任务与情报查询自动化",
+    "workflow": "嵌入营销团队，共建进度沟通代理、按活动类型生成子任务的流程及营销分析查询界面。"
+  },
+  {
+    "addedDate": "2026-10-19",
+    "caveats": [
+      "预计每月少漏接7000通没有事后结果支持。",
+      "培训助手和坐席训练为后续计划，不算已完成。",
+      "城市居民约13.8万人与每天3000+电话是背景，非Jacky处理量。"
+    ],
+    "checkedAt": "2026-10-19",
+    "company": "City of Midland, Texas",
+    "country": "美国",
+    "countryNote": "主体为美国得克萨斯州Midland市；项目明确服务该市热线和官网，美国为业务落地区，服务器位置未知。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "高峰电话漏接和菜单复杂，语言覆盖与社区需要有差距；城市要求兼顾隐私和安全。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "Jacky承接溢出电话；城市官网并行配置文字/语音组件。政府交付说明将此项目列入嵌入工程合作实例。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "已经形成电话溢出及网页咨询两个入口；减少漏接的主要数字仍是预估。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "可先比较同一时段的漏接率和最终办成率，并按语言分层；在没有真实量前，不应宣称已释放多少编制或节省预算。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "项目文章明确可视化工作流与子代理按任务选择语言模型，限定知识访问；没有披露具体模型版本。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "知识库来源清单、检索方法、来电身份验证、业务系统写入、紧急升级及人工审批实现未披露。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：为知识条目设负责部门和生效日期，无法确定的政策转真人；把紧急求助从普通问答入口明确分流，不能让常见问题覆盖率掩盖高风险错误。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "实际代理来电量、解决率、可用性、上线窗口、客户满意度和测量分母未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "维护责任、知识审查频率、安全认证在该项目的具体适用范围未知。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "部署总投入、语音与模型运行费、可归因净收益未知。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "美国"
+    ],
+    "deploymentLevel": "官方称溢出来电现在进入Jacky，网页组件并行运行；仍在扩展，7000/月是预测。",
+    "entryPoint": "先承接非紧急、可核验的常见问题，确保人工与紧急服务转接明确。",
+    "evidenceLevel": "B",
+    "evidenceNote": "政府业务发布由政府部署团队成员共同撰写，说明FDE（Forward Deployed Engineer，前线部署工程师）嵌入交付并具名列Midland；另有具名市方工程官员与生产流程，未公布该城市每位工程师姓名。",
+    "humanRole": "市方Process Engineer Officer Steven Sierra Alcabes提供体验和安全要求；复杂或超范围场景的实际升级规则未公开。",
+    "id": "midland-jacky-overflow-concierge",
+    "industry": "市政公共服务",
+    "metrics": [
+      {
+        "context": "全市呼入背景，不是代理处理量；来源1。",
+        "kind": "adoption",
+        "label": "原城市来电规模",
+        "unknown": false,
+        "value": "3000+通/日"
+      },
+      {
+        "context": "供应商与城市预估，无实现观察窗；来源1、2。",
+        "kind": "efficiency",
+        "label": "预计减少漏接",
+        "unknown": false,
+        "value": "约7000通/月（预测）"
+      },
+      {
+        "context": "有降低计算支出定性说法，未给实施费、单通成本或净收益。",
+        "kind": "cost",
+        "label": "本项目成本",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "ElevenLabs",
+    "publishedAt": "2025-12-18",
+    "risks": [
+      "公共政策答案过时",
+      "紧急或高风险求助误路由",
+      "多语言表达正确但业务含义错误"
+    ],
+    "skills": [
+      "热线溢出路由",
+      "多语言测试",
+      "任务级模型编排",
+      "公共知识版本管理"
+    ],
+    "sources": [
+      {
+        "date": "2025-12-18",
+        "locator": "正文",
+        "title": "ElevenLabs与Midland城市的具名项目",
+        "type": "客户或供应商官方",
+        "url": "https://elevenlabs.io/blog/city-of-midland"
+      },
+      {
+        "date": "2026-02-11",
+        "locator": "正文",
+        "title": "ElevenLabs政府业务发布与工程师交付说明",
+        "type": "客户或供应商官方",
+        "url": "https://elevenlabs.io/blog/introducing-elevenlabs-for-government"
+      }
+    ],
+    "summary": "城市每天接到大量电话，峰值错过来电，传统菜单对复杂诉求和多语言支持不足。",
+    "title": "市民热线溢出接听与网页咨询",
+    "workflow": "溢出来电交给Jacky即时回答；网页语音/文字组件处理常见问题，按任务分配子代理。"
+  },
+  {
     "addedDate": "2026-10-18",
     "caveats": [
       "这是确定性数据集成与工作流案例，材料未披露生成式模型；不应包装为大模型自动招聘。",
