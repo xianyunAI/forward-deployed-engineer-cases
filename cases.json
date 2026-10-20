@@ -1,5 +1,336 @@
 [
   {
+    "addedDate": "2026-10-20",
+    "caveats": [
+      "本例仅计Eva销售工作流，不重复计Mistral运营项目。",
+      "未获得内部架构；详情包含明确缺口，不能称完全公开。",
+      "原文其他放货自动化比例、集团年度请求量不作为Eva效果。"
+    ],
+    "checkedAt": "2026-10-20",
+    "company": "CMA CGM",
+    "country": "法国",
+    "countryNote": "供应商项目页明确总部位于法国马赛。项目已披露英国和塞内加尔客户营销活动，不能由总部推断法国已部署。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "网站注册但未订舱、以及没有专属销售代表的客户构成未充分覆盖人群。[2]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "原有每客户跟进时长、人工覆盖率、有效商机率没有基线，不能声称替代多少销售岗位。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "ZEBOX引入业务团队后由试点扩展；HappyRobot的FDE（Forward Deployed Engineer，前线部署工程师）驻场协同，按区域语言和实际业务流程调校。[1][2]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "供应商称部分生产就绪部署最快四周，但该项目页未将此耗时单独绑定Eva所有市场；不作为本例统一上线时长。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "初始英、塞活动联系超过4,000客户，约三分之一进入航线讨论；20国目标尚是计划。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "只证实触达和销售讨论。新增订舱、获客成本、收入、利润、客诉及维护工时没有公开结果。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "输入是注册客户和运输需求；Eva语音沟通、给出相关运价并把商机提供销售团队。客户公告说明解决方案连接内部系统，但没有列Eva专属系统名称。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "模型供应商、版本、语音识别与合成、知识检索策略、报价接口、CRM写入和数据留存均未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "权限矩阵、呼叫前同意校验、报价人工审批、转接阈值、错误回滚未公开。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：报价读取与承诺分权；每次工具调用留可追溯证据；对口音、货运术语、无效报价和拒接进行分组回归。这不是已证实客户架构。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "测试集数量、失败率、上线门槛、持续漂移检测及维护服务等级未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "项目总预算、工程师人数与人天、推理电话运行费、净收益均未知。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "后续应补客户级去重和商机到订舱漏斗；以同期人工组比较，不把新增覆盖直接等同效率提升。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "英国",
+      "塞内加尔"
+    ],
+    "deploymentLevel": "Eva 已用于英国、塞内加尔初始营销活动；扩大至20国为2026年底目标。",
+    "entryPoint": "分析建议：先选一个有稳定报价来源、明确退出机制的客户群，核验商机质量后再扩大呼叫覆盖。",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商明确FDE（Forward Deployed Engineer，前线部署工程师）驻场同客户共建具体项目；客户公告确认Eva已用及营销结果。客户、工作流、来源与既有Mistral运营案例不同。",
+    "humanRole": "CMA CGM 业务团队共同定义流程，销售团队接续合格商机；供应商工程师驻场实施。具体报价审批人未披露。",
+    "id": "cma-cgm-happyrobot-eva-sales",
+    "industry": "航运与国际货运销售",
+    "metrics": [
+      {
+        "context": "英国、塞内加尔初始活动；起止日期及去重方法未披露。来源1、2。",
+        "kind": "adoption",
+        "label": "初始活动触达",
+        "unknown": false,
+        "value": "超过4,000客户"
+      },
+      {
+        "context": "分母为上述联系客户；不是付费转化率、无对照组。来源1、2。",
+        "kind": "adoption",
+        "label": "进入航线讨论",
+        "unknown": false,
+        "value": "约1/3"
+      },
+      {
+        "context": "无项目总投入、持续运行费或增量收入，不能计算投资回报。",
+        "kind": "cost",
+        "label": "投入与净收益",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "HappyRobot",
+    "publishedAt": "2026-10-14",
+    "risks": [
+      "分析：错误运价或服务承诺可能产生商业争议",
+      "分析：多语言识别、外呼许可和退订规则需要逐市场验证",
+      "分析：进入销售讨论不代表实际收入"
+    ],
+    "skills": [
+      "业务分群与机会定义",
+      "语音代理工具调用",
+      "多语言评测",
+      "销售交接与归因测量"
+    ],
+    "sources": [
+      {
+        "date": "2026-10-14",
+        "locator": "全文；AI voice agents / With ZEBOX",
+        "title": "CMA CGM：HappyRobot语音项目与Eva部署",
+        "type": "客户或供应商官方",
+        "url": "https://www.cmacgm-group.com/en/news-media/cma-cgm-happyrobot-scale-up-tailored-voice-based-ai-solution-customers-employees"
+      },
+      {
+        "date": "未标发布日期；2026-10-20核验",
+        "locator": "全文；What AI agents are accomplishing today",
+        "title": "HappyRobot：CMA CGM项目工程师驻场与销售实施",
+        "type": "客户或供应商官方",
+        "url": "https://www.happyrobot.ai/fr/customer-story/cma-cgm-and-happyrobot-deploying-ai-agents-across-sales-customer-care-and-finance"
+      }
+    ],
+    "summary": "缺少专属销售覆盖的注册客户需要被识别需求并交接商机。",
+    "title": "Eva 激活未配置专属销售的航运客户",
+    "workflow": "网站注册客户筛选 → 多语言语音沟通运输需求与报价 → 识别可跟进商机 → 销售团队继续沟通。"
+  },
+  {
+    "addedDate": "2026-10-20",
+    "caveats": [
+      "这是供应商自身产品的落地，不冒充外部客户入企部署。",
+      "收益为定性，未披露支持工单减少比例或工时节省。"
+    ],
+    "checkedAt": "2026-10-20",
+    "company": "Cresta（自有产品）",
+    "country": "未披露",
+    "countryNote": "官网同时列出美国、加拿大、德国等办公室，但本次项目材料未明确法律主体总部，故主体国家暂记未披露。工程师在澳大利亚办公不等于项目部署地；客户使用国家亦未披露。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Director按Agents、Insights、Coaching、Quality Management等能力组织，跨区完成任务和另行填写工单需用户自己收集上下文。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "导航失败率、首次解决率及平均提交工单时间未披露。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "产品设计与工程团队共同构建Compass；Di Lu参与该项目，Fran后续用真实对话定位并修正不良回答。[1][2]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "明确流程包含需求定义、评测和用户迭代；未公布团队排期或交付工时。[1]"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "参与者称回答质量改善、支持队列负担减轻；没有量化效果或因果对照。[2]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "不能据该材料推断客户收入增长或节省比例，也不能将访谈里前雇主电信经验当成Compass测试结果。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "角色、当前屏幕、导航历史和工作流为上下文；连接知识源与支持系统，既能给建议，也可携附件建工单。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "用户选择提交，系统预填对话及相关信息；无法良好作答时提供升级支持路径。[1][2]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Compass采用Cresta自己的代理平台构建。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "基础模型、检索索引、上下文截断及工单供应商未公开。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "复现建议：区分可读页面与可执行动作；创建工单前展示字段和附件，防止跨租户引用。此为分析，不是产品已披露控制。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "启用客户数、部署国家、测试集规模、准确率、延迟及工单重复率未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "角色权限执行层、日志留存、敏感附件保护、人工发布审批及回滚流程未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "一次性工程投入、持续模型与支持成本、净收益和维护责任轮值未披露。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "已嵌入Director产品供用户使用并基于真实对话迭代；不是外部具名企业入企合同。",
+    "entryPoint": "分析建议：先让助手解决跨模块导航和工单信息整理，再扩大有副作用的自动动作。",
+    "evidenceLevel": "A",
+    "evidenceNote": "7月工程文章由产品设计负责人撰写并注明Di Lu的FDE（Forward Deployed Engineer，前线部署工程师）身份；10月15日Fran Marmousez具名描述亲自改进Compass。只按自有产品交付案例纳入。",
+    "humanRole": "用户决定是否创建支持工单；支持团队处理升级；Fran回看真实对话并修正错误或不完整回答。",
+    "id": "cresta-compass-product-support",
+    "industry": "企业软件与客户支持",
+    "metrics": [
+      {
+        "context": "参与者称回答更准确、支持工单负担变轻；未提供分母、时间窗或量化对照。来源2。",
+        "kind": "efficiency",
+        "label": "效率/质量",
+        "unknown": false,
+        "value": "定性改善"
+      },
+      {
+        "context": "构建投入、模型调用费、支持人工净节省均未知。",
+        "kind": "cost",
+        "label": "成本及净收益",
+        "unknown": true,
+        "value": "未披露"
+      }
+    ],
+    "provider": "Cresta",
+    "publishedAt": "2026-07-23",
+    "risks": [
+      "分析：页面上下文不应越过用户角色权限",
+      "分析：错误导航与工单遗漏可能放大支持成本",
+      "分析：用户历史及附件可能含敏感信息"
+    ],
+    "skills": [
+      "上下文感知交互设计",
+      "知识与工单系统集成",
+      "真实对话错误分析",
+      "权限和数据最小化"
+    ],
+    "sources": [
+      {
+        "date": "2026-07-23",
+        "locator": "全文；Compass context、Di Lu署名及dogfooding",
+        "title": "Compass产品工程：跨工作流上下文与支持系统",
+        "type": "客户或供应商官方",
+        "url": "https://cresta.com/blog/crestas-compass-ai-improving-discoverability-in-enterprise-applications"
+      },
+      {
+        "date": "2026-10-15",
+        "locator": "全文；Is there a project at Cresta...及页脚地址",
+        "title": "Fran Marmousez：亲自改进Compass的项目访谈",
+        "type": "客户或供应商官方",
+        "url": "https://cresta.com/blog/faces-of-forward-deployed-team-fran-marmousez"
+      }
+    ],
+    "summary": "企业软件按功能分区，用户跨模块完成目标及提交支持工单时容易丢失上下文。",
+    "title": "Compass 跨产品导航与支持工单",
+    "workflow": "当前页面/角色/导航上下文 → 文档与工作流建议 → 用户决定提交工单 → 自动预填上下文并交接支持团队。"
+  },
+  {
     "addedDate": "2026-10-19",
     "caveats": [
       "同一客户叙述同时存在已用于审计和期待向团队实施的措辞，因此只确认建成及审计使用，不确认全面推广。",
