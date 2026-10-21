@@ -1,5 +1,616 @@
 [
   {
+    "addedDate": "2026-10-21",
+    "caveats": [
+      "公司、运输追踪工作流及核心来源均未见于此前106例。",
+      "10倍是自报任务量比较，不是公司产能、利润或人员减少10倍。",
+      "没有公开完整内部架构及成本账目。"
+    ],
+    "checkedAt": "2026-10-21",
+    "company": "WWEX Group",
+    "country": "美国",
+    "countryNote": "客户公告确认总部在美国达拉斯。项目资料提及跨办公室、离岸团队，却没有列部署国家；美国和墨西哥办公室分布不能代替本项目落地证据。[1][3]",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "并购遗留多套运输管理系统；人工逐票追状态，例外信息散落邮件、Teams与表格。首次自动化选中的客户过于特殊，方案未成功。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有人工单票平均耗时、漏报率、迟到率或每阶段追踪成功率，不能把任务量基线外推为端到端质量改善。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户Brian Andalman、Jonathan Drouin参与选型，Wilson Kang牵头；HappyRobot的FDE（Forward Deployed Engineer，前线部署工程师） Taher同团队重拆六阶段，每两周一个冲刺。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "Taher演示强调，客户专家帮助把具体追踪知识变成流程，并参与测试与推广；六个代理各有时间安排及对话逻辑。[2]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：工程交付的关键不只是提示词，而是区分事件、状态、负责人和升级条件；客户专家的例外知识决定自动化边界。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "团队已将大量重复追踪交给代理，人员转向异常处理；任务、票数和采用规模见指标栏，不能彼此当成同一分母。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "货损、准时交付、客户投诉、异常解决时长以及业务增收没有项目结果。扩展到其他部门仍不能计入已上线收益。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：应同时衡量自动覆盖率与错误代价；若只统计完成任务，重复联系也可能被误读为效率收益。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "代理经电话、文字及浏览器门户收集状态；统一界面呈现与运输管理系统对应的实时数据、问题和告警。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "六代理共享可读写的系统记录及上下文；前一阶段异常可影响下一次跟进，人员由界面检查运行是否正确。[2]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "基础模型、语音识别/合成、检索索引、运输系统产品名、接口认证、数据留存地点未披露。不能把供应商平台通用能力补写为本项目配置。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有公开写回权限矩阵、人工批准阈值、并发冲突处理或自动重试上限。客户领域测试被证实，但测试集、通过率和版本发布门槛未知。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：为每票货保留来源时间与事件版本，重复呼叫和重复写回幂等化；将不确定状态交人处理，并对漏掉关键节点设告警。这些是复用建议，非已披露实现。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "项目起止日、各市场覆盖、货流构成、上线后观察窗口与稳定性服务目标未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "供应商与客户维护责任划分、值班、回滚及故障演练未披露；估算节省是否扣除新增监控和纠错成本亦未知。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "六个代理已生产运行，覆盖运输生命周期；后续其他业务扩展仍属计划。",
+    "entryPoint": "分析建议：先选规则相对稳定的货流，验证状态准确性与异常升级，再扩到特殊客户；失败试点提示不能仅凭高频就假定可标准化。",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商项目全文直接点名FDE（Forward Deployed Engineer，前线部署工程师） Taher；官方演示由Taher Poonawala讲解其亲自共建的WWEX系统。客户管理者具名陈述，但项目成效尚无客户独立审计。[1][2]",
+    "humanRole": "Wilson Kang牵头客户实施；领域专家测试、反馈和推进上线。业务人员处理关系、判断与异常；并非每个自动状态更新都由人先批准。[1][2]",
+    "id": "wwex-happyrobot-load-lifecycle",
+    "industry": "货运经纪与整车物流运营",
+    "metrics": [
+      {
+        "context": "供应商标题指标；月份、持续时长和货物去重定义未披露。来源1。",
+        "kind": "adoption",
+        "label": "运输追踪量",
+        "unknown": false,
+        "value": "25,000票/月"
+      },
+      {
+        "context": "六代理合计对照来源所称一名人工同类工作量，人员总量未增加；不是受控实验。来源1。",
+        "kind": "efficiency",
+        "label": "首个完整月任务",
+        "unknown": false,
+        "value": "50,000项；人工比较值5,000项"
+      },
+      {
+        "context": "六代理从启动到生产六周；120用户跨承运商销售、追踪与客户成功，统计日未知。来源1。",
+        "kind": "adoption",
+        "label": "部署与采用",
+        "unknown": false,
+        "value": "6周；120用户"
+      },
+      {
+        "context": "原文以ROI表述，但未给币种、计算式、实际已实现金额或项目成本，不能称净收益。来源1。",
+        "kind": "cost",
+        "label": "节省估计",
+        "unknown": false,
+        "value": "六位数年度运营节省估计"
+      },
+      {
+        "context": "开发人天、许可、电话及模型调用费、维护工时不明。",
+        "kind": "cost",
+        "label": "总投入 / 持续费用 / 净收益",
+        "unknown": true,
+        "value": "三项均未披露"
+      }
+    ],
+    "provider": "HappyRobot",
+    "publishedAt": "",
+    "risks": [
+      "分析：错报到货、遗漏延迟或凭证可能导致业务损失",
+      "分析：多代理共享状态会放大陈旧信息或错误写回",
+      "分析：浏览器登录自动化需要最小权限和账户生命周期管理"
+    ],
+    "skills": [
+      "运输事件与状态建模",
+      "语音及浏览器工具集成",
+      "共享上下文一致性",
+      "客户领域知识转化",
+      "异常运营与可观察性"
+    ],
+    "sources": [
+      {
+        "date": "未标发布日期；2026-10-21核验",
+        "locator": "已阅读全文；Opportunity、Solution、Impact及指标栏",
+        "title": "HappyRobot：WWEX六代理共建项目",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://www.happyrobot.ai/customer-story/wwex"
+      },
+      {
+        "date": "页面仅相对日期；2026-10-21核验",
+        "locator": "已读官方帖及完整可获取演示文字；共享系统记录与客户测试",
+        "title": "Taher Poonawala：WWEX运输追踪技术演示",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://www.linkedin.com/posts/happyrobot_what-does-it-take-to-track-a-freight-load-activity-7481429531661332480-PQEa"
+      },
+      {
+        "date": "2023-10-02",
+        "locator": "已阅读全文；Dallas总部段，仅用于主体与背景",
+        "title": "WWEX Group：集团成立与总部公告",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://wwexgroup.com/press-room/introducing-wwex-group/"
+      }
+    ],
+    "summary": "并购后的运输系统和人工追踪分散，状态更新与异常信息难以汇总。",
+    "title": "六阶段整车运输追踪与异常管理",
+    "workflow": "调度确认 → 提货到达与离开 → 在途检查 → 交付里程碑 → 交付凭证收集 → 统一界面分派人工异常处理。"
+  },
+  {
+    "addedDate": "2026-10-21",
+    "caveats": [
+      "独立客服助手是另一工作流，不能把其人工转接机制当购物助手机制。",
+      "评价内容接入、统一购物与服务、自动重复购买为未来方向。",
+      "源1标题写5到50品类，正文写另扩50类；不擅自断定总计50或55。"
+    ],
+    "checkedAt": "2026-10-21",
+    "company": "OTTO",
+    "country": "德国",
+    "countryNote": "Google项目页标德国，客户原文以OTTO应用和德语语音为范围。未列本功能用户实际所在国家或云区域，不能把集团全球业务或德国主体直接视作本项目部署清单。[1][2]",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "原流程依赖关键词与筛选，情境咨询需更多来回；客户年度故事解释从列表搜索转向连续商品建议的需求。[3]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "2024年11月启动；先将语音识别和合成接到文本助手，用户测试仍出现命令式短输入和明显停顿。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "搜索无结果率、原人工咨询规模、原转化率绝对值以及测试用户招募标准未知。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Google的FDE（Forward Deployed Engineer，前线部署工程师）团队直接支持；OTTO在模型未成熟时先搭建，2025年11月转用成熟后的Gemini Live原生音频路径。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ],
+          "text": "商品专家参与咨询结构设计；客户说明文本和语音在应用中提供商品建议，服务助手另行运行。[2][3]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：原型暴露的是交互形态问题，而非仅模型回答错误；应让真实用户测试决定架构转向，同时保留可独立验收的文本决策层。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "已实现应用内对话式咨询；客户公告给出互动深度与客单价关联，未公开对照设计或净收益。[2]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "完整目录约1900万商品不等于每个品类已具备相同深度咨询；扩品类口径存在标题/正文差异，原始材料没有解释。[1]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：推荐可用、交互增加和商业因果是三个不同结论；需以满足约束、退货投诉和购买满意度补充会话长度。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "文本助手负责检索、推荐及护栏，Live音频模型处理实时对话，Chirp 3处理德语识别；候选商品再由Gemini 2.5 Flash检查适配。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "并发编排采用形式化方法，来源称即使多信号到达也保持医疗建议等限制。未取得形式化规格或证明，不能独立确认保证覆盖所有情境。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ],
+          "text": "商品与需求是主要输入；客户年度故事强调机器可读商品数据的基础作用，但没有公开索引、商品接口、账号绑定或订单写入配置。[3]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "身份权限、音频保存、训练使用、个人信息过滤、人工审核触发、错误建议申诉及回滚实现未披露。不能从另一个客服助手补写这些内容。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：检索和推荐校验应保留商品版本与理由；将语音打断、多人背景声、医疗边界和缺货变化纳入回归，单独监测“流畅但错误”。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "上线分流比例、日活、质量评测集、错误率、各类护栏实际触发率及持续维护工作量未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "一次性工程成本、持续语音与检索调用费、增量毛利、退货影响、客服成本变化及投资回收期没有披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "原生语音早期测试、6月商业公告的样本是否相同未知；不把不同发布日期数字拼成一个受控实验。"
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "2026年5月初进入公开测试并在应用中使用；6月客户公告披露早期指标，不等同全目录专家咨询已全面完成。",
+    "entryPoint": "分析建议：先选少量高咨询需求品类，分别验收适配质量、对话延迟和危险建议拦截，不以更长对话本身作为成功。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Google官方项目页明确本项目获得FDE（Forward Deployed Engineer，前线部署工程师）团队直接支持；客户公告与年度报告故事确认共同开发、应用上线和早期效果。不是由一般合作或招聘反推。[1][2][3]",
+    "humanRole": "OTTO工程师与Google产品/工程团队共建；商品专家定义初始咨询结构，产品负责人Volker Carlguth反馈用户测试。购买者仍保留决策权。[1]",
+    "id": "otto-google-native-voice-shopping",
+    "industry": "综合电商零售",
+    "metrics": [
+      {
+        "context": "供应商项目页；未提供样本、分位数、设备网络及测量日期，不写成生产p95。来源1。",
+        "kind": "efficiency",
+        "label": "端到端延迟",
+        "unknown": false,
+        "value": "早期8–9秒 → 不足2秒"
+      },
+      {
+        "context": "客户2026-06-18早期结果；未披露用户数和观测时间窗，不证明任务成功率更高。来源2。",
+        "kind": "adoption",
+        "label": "每次会话互动",
+        "unknown": false,
+        "value": "语音平均11轮；文本平均2轮"
+      },
+      {
+        "context": "客户自报，未说明随机分组、样本和品类控制；不能断言语音造成37%增收。转化率只称提高、无数值。来源2。",
+        "kind": "revenue",
+        "label": "平均订单金额",
+        "unknown": false,
+        "value": "较经典搜索高37%"
+      },
+      {
+        "context": "集团中期3.5亿欧元技术投资不是本项目预算；无模型费用或净利润归因。来源2。",
+        "kind": "cost",
+        "label": "项目投入 / 运行费 / 净收益",
+        "unknown": true,
+        "value": "均未披露"
+      }
+    ],
+    "provider": "Google Cloud",
+    "publishedAt": "2026-06-18",
+    "risks": [
+      "分析：低延迟可能挤压商品校验和安全检查预算",
+      "分析：声音暴露个人偏好，留存与使用目的需清楚",
+      "分析：客单价较高可能受用户自选择或品类组合影响"
+    ],
+    "skills": [
+      "并行语音与文本编排",
+      "商品检索和结果校验",
+      "形式化并发控制",
+      "德语语音体验评测",
+      "商业指标因果边界"
+    ],
+    "sources": [
+      {
+        "date": "未标发布日期；2026-10-21核验",
+        "locator": "已阅读全文；Why search、Building a voice、Early signals",
+        "title": "Google Cloud：OTTO原生语音购物项目",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://cloud.google.com/customers/otto-voice-shopping-ai"
+      },
+      {
+        "date": "2026-06-18",
+        "locator": "已阅读全文；OTTO AI Assistant段，排除其他品牌及集团投资",
+        "title": "Otto Group：实际应用与早期商业指标",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://www.ottogroup.com/en/medien/newsroom/meldungen/from-mindset-to-market-otto-group-s-ai-in-action-across-retail.php"
+      },
+      {
+        "date": "2026-06-29",
+        "locator": "已阅读全文；购物咨询、数据基础与客户服务区分",
+        "title": "Otto Group：OTTO的AI Commerce年度报告故事",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://www.ottogroup.com/en/stories/story/bpk26/ai-commerce-bei-otto.php"
+      }
+    ],
+    "summary": "关键词搜索能给列表，难以理解情境并连续追问；早期语音包裹文本机器人的方案停顿明显。",
+    "title": "原生语音商品咨询与推荐",
+    "workflow": "客户语音表达需求 → 实时对话与文本决策并行 → 商品候选检索 → 模型验证适配 → 推荐与追问，用户控制购买决定。"
+  },
+  {
+    "addedDate": "2026-10-21",
+    "caveats": [
+      "本例是评论元数据富化，不是自动判定评论真伪或用户封禁。",
+      "约300请求/秒是指定节点配置压测，不是全部线上流量或用户并发。",
+      "文中按F-score报告的错误减少不等于准确率提高55或57个百分点。",
+      "Google页面本次打开标2026-06-02，搜索索引显示06-01；保留差异。"
+    ],
+    "checkedAt": "2026-10-21",
+    "company": "Trustpilot",
+    "country": "丹麦",
+    "countryNote": "客户About页明确总部哥本哈根。工程文章明确模型端点须在欧盟，最终使用europe-west4；这是计算部署区域，评论用户/商户所在国及全部数据落盘地点未披露。[2][3]",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "旧Dataflow作业在T4上跑编码器，后接情感/主题；模型效果难再提升，且其他富化仍依赖旧作业。输入是PubSub评论，输出为富化句子。[2]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "固定吞吐、线上端到端延迟分布和旧模型绝对评分没有完整基线；新模型约大30倍只是规模，不是30倍成本或效果。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "2025年底双方共同项目；Google工程师与Trustpilot团队合作优化服务。客户复盘明确四周参与用于架构核验、压测及持续集成/部署改进。[1][2]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "原位改造受慢启动积压影响；合并富化又因两任务负载不同而失衡，最后分成独立作业和端点组。[2]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：工程师的作用在模型以外的生产约束，包括背压、端点互连和异步调用；不能将全部微调成果归给外部工程师。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "联合文章称模型较旧方案改善、与教师共识仅差数个百分点，成本较前沿模型低；没有公布绝对费用或可独立重现实验。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "客户给出压测与F-score口径结果，已完成迁移；保留旧作业及私网限制说明仍有架构权衡，不是无残留替换。[2]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：近实时标签帮助商户获取洞察，但未有商户留存、付费收入或消费者满意度因果数据，不据此计商业增收。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Gemma 2 9B为基础；分层评论样本经Gemini 2.0/2.5 Pro/Flash教师共识形成训练集，微调为任务专用模型。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "分类器FastAPI层负责输入/输出处理，模型由vLLM服务；Dataflow通过VertexAIModelHandlerJSON集成，各层独立伸缩，并调节数据类型、前缀缓存等。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "私有端点间不能直接互通，最终改专用公开端点；分类器同步通信被异步实现替代。欧盟A100容量紧张，采用预留资源。[2]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "联合团队建立可复用负载测试框架。端点部署可观察性仍不佳，队列等待量伸缩指标在Google文章中是可进一步改进方向。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有公开端点身份认证细则、服务账户权限、评论脱敏、训练样本访问审批、标签人工复核或数据删除链路。公开端点不能自行推断为无认证，亦不能宣称全私网隔离。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：把模型回归、分类器回退和流作业版本联动测试；验证重试不会重复输出，分别记录积压、丢弃、错误和重放率，再评估迁移收益。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "标签集与测试集是否完全独立、语言分布、长短评子群、公平性、人工误标率及线上漂移阈值未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "预留资源费用、利用率、微调成本、工程人天、维护轮值、故障恢复时长与净收益未披露。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "发布审批、灰度、回滚和消费者删除请求如何跨训练与推理数据生效，没有公开项目细节。"
+        }
+      ]
+    },
+    "deploymentCountries": [
+      "欧盟（europe-west4计算区域）"
+    ],
+    "deploymentLevel": "2025年底联合项目后已完成生产迁移；旧流处理作业仍保留部分不可替代富化，不是整体旧系统退役。",
+    "entryPoint": "分析建议：保留兼容输出，先拆开不同耗时任务的弹性伸缩；从真实句长分布压测整条调用链，而不是只测模型。",
+    "evidenceLevel": "A",
+    "evidenceNote": "Google联合工程文章作者Dario Banfi明确为FDE（Forward Deployed Engineer，前线部署工程师）；客户Assulan Nurkas文章点名感谢Dario与Michael Cohen Hjertén，并说明四周共建职责，形成双边项目级证据。[1][2]",
+    "humanRole": "Trustpilot数据科学团队微调模型，机器学习运维团队负责生产化；Google工程师协助架构、压测、持续集成和部署问题。未披露人工逐条审核评论标签。[1][2]",
+    "id": "trustpilot-google-gemma-stream-enrichment",
+    "industry": "在线评价与商户声誉服务",
+    "metrics": [
+      {
+        "context": "一个a2-highgpu-1g模型端点和一个e2-highcpu-4分类器、4个Uvicorn工作进程；相对均一的句子输入，非全部生产流量。来源2。",
+        "kind": "efficiency",
+        "label": "单节点组合压测",
+        "unknown": false,
+        "value": "约300请求/秒，p95小于1秒"
+      },
+      {
+        "context": "客户按F-score口径自报；测试集规模、原始分数和计算公式未给，不能改写为准确率百分点。来源2。",
+        "kind": "quality",
+        "label": "质量变化",
+        "unknown": false,
+        "value": "情感错误减少55%；主题57%"
+      },
+      {
+        "context": "Google联合文章自报，没有具体日期区间、成功率或重放计数定义。来源1。",
+        "kind": "adoption",
+        "label": "生产处理量",
+        "unknown": false,
+        "value": "每日数百万评论、近实时"
+      },
+      {
+        "context": "四周Google参与不等于总工期或费用；“成本更低”为定性，无可核对总账或净收益。来源1、2。",
+        "kind": "cost",
+        "label": "总投入 / 运行费 / 净收益",
+        "unknown": true,
+        "value": "没有金额"
+      }
+    ],
+    "provider": "Google Cloud",
+    "publishedAt": "2026-04-16",
+    "risks": [
+      "分析：公开端点不等于匿名开放，但更需要验证身份与网络边界",
+      "分析：教师共识可能保留偏差，不等于人工真值",
+      "分析：图形处理器预留使成本更稳定，也增加闲置与容量风险"
+    ],
+    "skills": [
+      "流式数据与背压设计",
+      "小模型微调和标签评测",
+      "异步服务与性能剖析",
+      "模型服务压测及伸缩",
+      "云网络限制诊断"
+    ],
+    "sources": [
+      {
+        "date": "页面2026-06-02；索引2026-06-01；2026-10-21核验",
+        "locator": "已阅读全文；作者身份、微调、性能、限制；项目为2025年底",
+        "title": "Google与Trustpilot：实时Gemma富化联合工程说明",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://cloud.google.com/blog/topics/customers/how-trustpilot-built-a-real-time-architecture-for-data-enrichment-using-gemma/"
+      },
+      {
+        "date": "2026-04-16",
+        "locator": "已阅读全文；三次架构尝试、私网限制、异步修复、Results和Acknowledgements",
+        "title": "Trustpilot Technology：从编码器迁移Gemma 2的完整工程复盘",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://tech.trustpilot.com/the-llm-leap-moving-a-streaming-pipeline-from-small-encoders-to-gemma-2-0198c01151e5"
+      },
+      {
+        "date": "无发布日期；公司数据标2025-03-18；2026-10-21核验",
+        "locator": "已阅读全文；Copenhagen总部，仅作主体资料",
+        "title": "Trustpilot：公司介绍与总部",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "url": "https://www.trustpilot.com/about"
+      }
+    ],
+    "summary": "原编码模型效果触顶；需引入约大30倍的新模型，同时兼容现有实时评论流、成本和延迟要求。",
+    "title": "评论情感与主题实时富化管线",
+    "workflow": "评论消息队列 → 旧作业拆句 → 两个独立富化作业 → 各自分类器与模型端点 → 结构化情感/主题 → 下游队列和存储。"
+  },
+  {
     "addedDate": "2026-10-20",
     "caveats": [
       "本例仅计Eva销售工作流，不重复计Mistral运营项目。",
