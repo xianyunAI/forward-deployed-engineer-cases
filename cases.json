@@ -1,5 +1,1129 @@
 [
   {
+    "id": "equinox-salesforce-quin-lead-conversion",
+    "company": "Equinox",
+    "title": "Equinox：从纽约驻场共建到跨俱乐部复制的 Quin 潜客转化",
+    "industry": "高端健身俱乐部与会员运营",
+    "country": "美国",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "countryNote": "官网总部岗位目录位于美国，纽约是总部职能集中地；本项目明确落地纽约并扩展南加州五家俱乐部，不把全球品牌覆盖当作项目部署范围。[3]",
+    "provider": "Salesforce",
+    "evidenceLevel": "A",
+    "addedDate": "2026-10-22",
+    "checkedAt": "2026-10-22",
+    "skills": [
+      "业务边界建模",
+      "Apex 与业务接口集成",
+      "会话与人工接管设计",
+      "端到端测试和上线治理",
+      "容量与批处理设计"
+    ],
+    "risks": [
+      "分析：自动跟进可能与人工触达冲突，需明确状态归属。",
+      "分析：报价和预约是可变业务状态，知识检索不能替代实时验证。"
+    ],
+    "caveats": [
+      "建设页与使用页叙述范围不同；不把10周归到纽约首轮。",
+      "所有金额收益未披露；正文未公开第三方独立审计。"
+    ],
+    "metrics": [
+      {
+        "label": "纽约接触线索",
+        "value": "7,300+",
+        "context": "公司/供应商陈述；截至2026-08-11文章，建设页写5个多月；不等于付费会员数。[1][2]",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "顾问会面后的入会率",
+        "value": "48%",
+        "context": "分母为已与顾问会面的潜客，不是全部7,300条线索；样本量、对照组与统计窗口未披露。[2]",
+        "kind": "business",
+        "unknown": false
+      },
+      {
+        "label": "总投入／运行费用／项目净收益",
+        "value": "分别未披露",
+        "context": "不能用线索数、会面转化率或节省时间换算项目利润。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "Equinox：建设 Quin 的工程复盘",
+        "url": "https://www.salesforce.com/customer-stories/equinox/building-agents/",
+        "date": "2026-08-11",
+        "locator": "Finding the right partners；Building blueprints；Ten weeks",
+        "type": "官方客户案例",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Equinox：潜客参与与结果",
+        "url": "https://www.salesforce.com/customer-stories/equinox/agentic-lead-engagement/",
+        "date": "2026-08-11",
+        "locator": "Around-the-clock lead engagement；Context；More time",
+        "type": "官方客户案例",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Equinox 总部岗位目录（仅支持主体地域，不作为实施证据）",
+        "url": "https://careers.equinox.com/category/headquarters-jobs/433/37115/1/content",
+        "date": "未标发布日期；核验2026-10-22",
+        "locator": "Headquarters 与国家/城市筛选",
+        "type": "企业官网地域资料",
+        "checkedAt": "2026-10-22"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "公开项目事实／公司陈述：顾问原本手工回复咨询，服务受工作时段限制。纽约首轮要赶在2025年12月旺季前上线；这是商业时限，不是证明全部功能当时已全球推出。[1][2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "分析推断：真正瓶颈不是“能否写出一封邮件”，而是答案能否使用当时有效的门店价格，以及预约能否落入有人负责的日历。把聊天体验与这些交易状态分离，会产生错误报价或无人履约。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程责任分开：纽约阶段由 FDE（Forward Deployed Engineer，前线部署工程师） 和现场技术团队从零共建四项AI工具；后续专业服务团队沿用架构与逻辑复制到南加州。客户技术负责人 Eswar Veluri 与产品负责人 Melanie Kalia 提供具名反馈，但单个工程师姓名和投入人天没有公开。[1][2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "人机交接：复杂定价等越界问题带上下文交顾问；顾问开始沟通后代理退出，失联或错过预约后再跟进。旺季另有由人审阅再发送的邮件草稿模式，不可说所有触达都无人审核。[1][2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "已披露数据闭环：Agentforce Sales 记录线索；Data 360 使用官网批准内容；Google Maps 找门店；Outlook 提供顾问空档并通过 Einstein Activity Capture 同步。具体底层模型、检索分块、权限角色与数据保留期未公布。[2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "实际难点与处理：南加州实时价格由 Apex 调用门店促销接口；旧线索按每日500条处理，而非一次塞入10万条。后者是为避免容量/令牌上限风险设计的方案，来源并未声称曾真实发生一次10万条生产崩溃。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "交付与维护：先做交互/指令地图，明确边界；端到端测试发现并修复接口与同步问题，用户验收后上线。南加州工期10周，页面称5月1日上线但未在该句明确年份；上线后按周治理和优化。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析推断：可迁移的做法是先为“报价、预约、人工接管”设独立验收条件，再复用已验证的连接层。500条/日只适用于这个项目披露的设计，不能直接作为其他公司的容量配置。建议另测重复预约、接口超时、价格过期和人工已接管后的并发触达；这些是研究建议，不是已公开的测试清单。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公司陈述：纽约产生线索并促成顾问会面，统计见指标。建设文章还报告响应从48小时到17秒，但未给测量分位数、样本及统一前后窗口，因此只能视为案例披露，不能当服务等级承诺。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "边界：公开正文说最初是非工作时段服务，正在扩展更广的全天候覆盖，短信仍属后续计划。夏季2026多代理探索也不是已经验收的完整成员旅程平台。不能把另一篇会员应用客服的自动化目标挪到本项目。[1][2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "分析推断：商业价值是更快承接有效需求并把顾问时间留给成交。没有随机对照或统一前后漏斗，不能把48%视作代理单独带来的因果提升，也不能据此计算新增收入。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露：总开发预算、许可和推理单价、每条线索成本、持续维护人力、净收益；失败率、错误报价率、退订/投诉率、完整测试集与线上回滚标准；纽约和南加州分别的样本分母。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "summary": "把夜间潜客咨询、实时会费查询和预约嵌入会员顾问原有工作流。纽约由前线工程团队共建，南加州由专业服务团队复用，不混淆两阶段的职责与效果。",
+    "deploymentLevel": "已投产：纽约；随后复制至南加州五家俱乐部",
+    "publishedAt": "2026-08-11",
+    "entryPoint": "原有会籍咨询依赖顾问逐封回复；产品与接口虽已具备，仍缺生产交付路径。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师） 与 Equinox 现场技术团队共建纽约版本；Signature Success 负责边界及测试框架；Professional Services 负责后续南加州复制。",
+    "evidenceNote": "A：官方建设复盘直接写明工程团队、纽约现场共建与后续交接；另一份客户案例提供运行流程及客户具名反馈。结果主要是供应商与客户共同陈述，非独立审计。",
+    "workflow": "网站聊天/邮件询问→批准内容检索与实时业务接口→回答/跟进/预约→顾问接管→到店成交；旧线索另走限量批处理。"
+  },
+  {
+    "id": "adecco-salesforce-candidate-prescreening",
+    "company": "The Adecco Group / Adecco",
+    "title": "Adecco：候选人预筛从文字上线到语音试点的工程复盘",
+    "industry": "招聘与人才服务",
+    "country": "瑞士",
+    "deploymentCountries": [
+      "英国",
+      "法国"
+    ],
+    "countryNote": "Adecco Group AG 总部苏黎世，瑞士；客户公告最早明确英国投产，当前官网称预筛覆盖英国和法国。语音试点的可量化范围仅英国，不等于全球上线。[2][3][4]",
+    "provider": "Salesforce",
+    "evidenceLevel": "B",
+    "addedDate": "2026-10-22",
+    "checkedAt": "2026-10-22",
+    "skills": [
+      "岗位数据质量建模",
+      "语音与电话系统集成",
+      "人机审核与候选人纠错设计",
+      "隐私和权限协作",
+      "多口径指标审计"
+    ],
+    "risks": [
+      "分析：匹配分可能被误当录用决定，需保留实质人工复核。",
+      "分析：语音转写与岗位资料缺陷可能共同放大偏差。"
+    ],
+    "caveats": [
+      "客户和供应商数字存在范围/时间差异，分别保留，未证明因果增益。",
+      "全球推广、欧盟基础设施及50题能力不按愿景计为已完成。"
+    ],
+    "metrics": [
+      {
+        "label": "英国首轮非工作时段对话占比",
+        "value": "57%",
+        "context": "客户2025-07-30公告；首轮对话分母总数未公开。同期满意度4.6/5，问卷样本数未公开。[2]",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "后续文字预筛统计",
+        "value": "65,000+对话；受邀参与约50%",
+        "context": "2026-04-30供应商案例，以2025-04上线为起点；与2月文章100,000+口径不一致，不能拼成增长曲线。[1][3]",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "语音试点规模",
+        "value": "30+次英国面试",
+        "context": "2026-04-30案例回述：2025-11启动后的两个月，不是2026-10最新累计。[3]",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "节省时间",
+        "value": "每次面试最多15分钟",
+        "context": "2026-02-23引用英国及爱尔兰负责人；上限自述，样本、时间窗、测量方法未披露，不推年节省额。[1]",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "总投入／运行费用／净收益",
+        "value": "均未披露",
+        "context": "集团其他数字化成本收益不归入这个预筛项目。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "Giuseppe Cardace：Adecco 预筛与语音实施复盘",
+        "url": "https://www.salesforce.com/blog/adecco-agentforce/",
+        "date": "2026-02-23",
+        "locator": "Screening；Three essential lessons；作者身份",
+        "type": "具名工程负责人官方文章",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Adecco 客户公告：首轮规模化实施",
+        "url": "https://www.adeccogroup.com/our-group/media/press-releases/the-adecco-group-completes-successful-first-agentic-ai-implementation-at-scale",
+        "date": "2025-07-30",
+        "locator": "英国首轮、候选人告知、结果、集团总部",
+        "type": "客户官方公告",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Adecco：Agentic prescreening",
+        "url": "https://www.salesforce.com/customer-stories/the-adecco-group/agentic-prescreening/",
+        "date": "2026-04-30",
+        "locator": "结果、A head start、Expanding across channels、Professional Services",
+        "type": "官方客户案例",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Adecco 当前平台介绍",
+        "url": "https://www.adeccogroup.com/who-we-are/innovation-and-technology/our-platform",
+        "date": "未标发布日期；核验2026-10-22",
+        "locator": "Agentic AI: the next frontier",
+        "type": "客户官网",
+        "checkedAt": "2026-10-22"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户事实与问题：招聘人员需要在高流量岗位快速接触候选人，但大量候选人只能在下班后交流。首轮英国公告确认通过文字沟通减轻前期重复收集，让招聘人员做后续软技能与深度交流；它不是自动录用系统。[2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "时间线与冲突：客户2025-07称首轮“六个月前”启动；供应商2026-04把文字上线写作2025-04。可能是试点与推广阶段不同，但来源未解释，故并列保留，不强行给出唯一首次上线日。[2][3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "项目角色：FDE（Forward Deployed Engineer，前线部署工程师） 负责人 Cardace 的文章描述岗位检查、电话连接、自定义动作和反馈迭代；客户方 Niki Turner-Harding、Richard Horth、Kizzy Price 说明业务使用。没有证据证明作者个人写了所有组件，不能替其补履历或投入天数。[1][2][3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "text": "人工责任：招聘人员控制问题，候选人事先知道自己在与AI交流；工程复盘明确每人的答案仍由招聘人员评估。2026-04材料新增匹配分作为排序起点，不代表系统获准独立拒绝或录用。[1][2][3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "已披露路径：岗位资料先生成问题，完成就绪检查后由招聘人员启用；申请者选择文字或语音。语音经 Adecco 电话系统接入 Salesforce，传递岗位ID取问题；自定义动作把回答写回申请记录并生成摘要。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体踩坑与修复：岗位资料太稀疏会令回答困难，因此用1–5级完整性检查并检查歧视性条件。缩写、长网址容易被误读，需专门语音指令；长回答先总结并让候选人纠错，减少转写错误进入下游判断。上线后回访候选人收集反馈。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "后续官方材料补充：语音通过 AnywhereNow 接既有电话系统；记录匹配分与审计轨迹；专业服务参与工作坊、定制/代码审阅与治理。具体模型版本、检索索引、权限角色矩阵、失败回滚流程和完整评测集仍未公开。[3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "分析推断：这里最值得借鉴的是“先修输入，再让当事人修转写，最后由专业人员判断”的多级纠错链。它可以减少错误沿流程传播，但不能证明已消除招聘偏见。应分别评估信息提取错误、无障碍体验、群体差异和人工推翻率；这些是验证建议，不是该公司披露的成绩。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "结果证据分层：客户首轮说帮助28家公司填补职位；后续供应商称接受代理预筛的人录用可能性为2倍，但未说明可比对照、候选人自选择影响或置信区间，不能解释为录用效率因果翻倍。[2][3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "口径审计：2026-02文章说10万+对话和“触达100%”，4月材料却说6.5万+、受邀参与约50%。触达、参与、完成面试是不同分母；对话数还存在未解释范围差异，本记录不择高数字也不累计相加。[1][3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "当前范围：核验日客户平台页称英国与法国预筛中超过60%的互动在非工作时段，满意度4.5/5；这与首轮57%和4.6/5不是同一已披露样本。集团数字平台覆盖收入、交付成本等指标不等同此项目效果。[2][4]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            4
+          ]
+        },
+        {
+          "text": "计划不是结果：50题结构化面试、全球语音铺开和全面欧盟基础设施曾作为后续计划出现。未找到本轮可验证的全部上线回执，不能因计划日期已过就写成完成。[1][3]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            3
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露：项目总投入、每次通话推理及电话费用、维护成本、净收益；最终录用质量和留存、偏见评测分组、语音完成率、拒绝/退出率、真实误转写率；10万与6.5万口径差异尚无官方解释。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "summary": "招聘人员先设岗位要求，代理收集预筛答案并回写，最终由招聘人员判断。材料同时揭示稀疏岗位记录、语音误读、候选人纠错和统计口径冲突。",
+    "deploymentLevel": "文字预筛已投产；英国语音试点已实施，全球语音推广状态未核实",
+    "publishedAt": "2026-02-23；补查2026-04-30及客户官网",
+    "entryPoint": "人工初筛与候选人非工作时段沟通需求不匹配。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师） 负责人 Giuseppe Cardace 署名介绍具体实施；招聘人员批准问题、审核回答并决定下一步，专业服务团队参与工作坊、代码与定制审阅。",
+    "evidenceNote": "B：具名前线部署工程负责人署名的项目技术复盘，加客户官方投产公告及后续官方案例形成组合证据。作者角色可核验，但正文未逐项确认本人施工职责，个人工时与代码归属没有公开。",
+    "workflow": "岗位要求→问题和数据就绪检查→候选人自愿进入文字/语音预筛→回答回写与摘要→招聘人员复核、决定后续。"
+  },
+  {
+    "id": "lennar-salesforce-lisa-afterhours-tours",
+    "company": "Lennar",
+    "title": "Lennar：夜间购房咨询与看房预约，摆脱反复改提示词的交付难题",
+    "industry": "住宅开发与新房销售",
+    "country": "美国",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "countryNote": "客户案例明确美国30州住宅业务；项目是在Lennar网站与短信承接咨询。总部迈阿密的官网页面本轮403，未完成正文回读，因此总部城市单独待核实；不将30州业务范围当作逐州上线证明。",
+    "provider": "Salesforce",
+    "evidenceLevel": "B",
+    "addedDate": "2026-10-22",
+    "checkedAt": "2026-10-22",
+    "skills": [
+      "跨系统房源数据连接",
+      "确定性工作流与生成式交互划界",
+      "预约一致性处理",
+      "销售交接设计",
+      "目标和结果指标分离"
+    ],
+    "risks": [
+      "分析：房源变化与预约竞态可能造成错误承诺。",
+      "分析：住房场景的敏感判断不能仅靠自然语言提示控制。"
+    ],
+    "caveats": [
+      "证据B，不将官方一般平台功能补写为该客户实际架构。",
+      "12,000次是预期；110万工作流和十倍生产力不是LISA独立成效。"
+    ],
+    "metrics": [
+      {
+        "label": "夜间询盘占比",
+        "value": "约30%",
+        "context": "2025-11-25案例，分母为入站询盘；绝对样本和统计窗口未披露。这是处理需求，不是转化提升。[1]",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "看房预约目标",
+        "value": "未来一年12,000次",
+        "context": "明确为公司预期，不是已经完成的年度预约。未披露后续达成回执。[1]",
+        "kind": "target",
+        "unknown": false
+      },
+      {
+        "label": "总投入／运行费用／净收益",
+        "value": "均未披露",
+        "context": "Salesforce整体平台效率、全公司代理任务量不能当作LISA的净收益。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "sources": [
+      {
+        "title": "Lennar：Agentforce 购房旅程客户案例",
+        "url": "https://www.salesforce.com/customer-stories/lennar/",
+        "date": "2025-11-25",
+        "locator": "How Salesforce Helps；The Salesforce Difference",
+        "type": "官方客户案例",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Salesforce FY2026第二季度财报电话会完整逐字稿",
+        "url": "https://s205.q4cdn.com/626266368/files/doc_financials/2026/q2/Salesforce-Inc-Q2-FY26-Earnings-Conference-Call-9-3-25.pdf",
+        "date": "2025-09-03",
+        "locator": "第12–13页；44:59–46:49，Srini Tallapragada",
+        "type": "官方财报逐字稿",
+        "checkedAt": "2026-10-22"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "公开事实／公司陈述：Lennar 的房源询问进入销售链路；跨业务系统使客户上下文分散，夜间咨询需要有人接续。原文所称约六个月从询问到购房是业务背景，不能当LISA已缩短的销售周期。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析推断：需求适合先从低风险的房源事实与预约切入，而不是让模型判断贷款能力。把“回复快”与“销售完成”分开衡量，可避免把短期活跃当长期商业回报。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程参与证据：2025-09财报中，工程与客户成功负责人 Srini Tallapragada 在介绍 FDE（Forward Deployed Engineer，前线部署工程师） 共建后点名 Lennar，称工程人员陷入持续改提示词的循环，团队因此增强确定性。此话支持项目迭代存在，但不证明Lennar采用了全部平台可观测性功能。[2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "已实施改变：LISA 接续网站及短信咨询、回答房源问题并预约看房，把线索交给销售。人工顾问仍负责有判断要求的沟通；公开资料没有提供完整接管阈值和责任人排班。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "可核验链路：官网及 GraphQL 房源数据，经 MuleSoft 与 Data 360 连接，检索后回答；看房由 Field Service 接预约，再向 Sales 建线索。模型具体版本、提示模板、索引结构和安全角色没有披露。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "边界控制：客户案例称对财务建议、犯罪率、学校评分和人口构成等问题限制回答。它说明设计了拒答边界，并不等于经过法律认证；本研究也不提供具体法律判断。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "实战教训：有直接证据的坑是反复改提示词不能稳定满足业务约束；官方说转向确定性能力，但没有公开哪段工作流用了何种脚本、迁移前后错误率。不能把未公开的实现细节补成一个漂亮架构。[2]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析推断：可迁移方案是把“能否回答、能否创建预约、是否重复”作为可验证业务规则，把自然语言只用于理解和表达。建议测试过期房源、并发预约、拒答绕法与断线重试，保存版本及回滚入口；这里是研究建议，不是客户已披露的测试清单。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "上线程度：供应商称首批代理从想法到上线六周；这不是明确隔离出的LISA全部开发工期。页面确认夜间咨询已处理，预约年度数仍是预期。项目实际成交收入、销售周期改善与净收益未公开。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "不跨项目归因：每月110万代理工作流覆盖Lennar多项用途，不是LISA用户数；十倍现场销售生产力归于整体Salesforce平台，也不能写成这次代理工程的提升。会议准备代理、售后保修等未来场景不纳入本条的已完成成果。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析推断：潜在收益来自及时回应、减少人工录入并顺畅交接。缺少统一前后测量及对照，当前只能确认流程已投入使用，不能确认减少了多少流失或增加了多少卖房利润。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露：逐州上线覆盖、完整评测集、权限矩阵、线上事故与修复时间、模型/令牌成本、项目总投入、持续维护人力、净收益、实际新增成交与年度预约目标达成率。工程师个人名单和具体废弃方案代码同样未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "summary": "把夜间住宅问询连接房源数据和实际预约系统。官方工程管理层点名共建并说明提示词循环难题；客户案例证实 LISA 已处理夜间咨询，但预约目标不能当结果。",
+    "deploymentLevel": "已投产：网站和短信夜间咨询、看房预约；州级覆盖名单未披露",
+    "publishedAt": "2025-11-25",
+    "entryPoint": "每周大量询盘，约三成在下班后到达；人工跨部门处理难以保持连续体验。",
+    "humanRole": "Salesforce FDE（Forward Deployed Engineer，前线部署工程师） 团队与客户共建的证据来自工程高管财报问答；Lennar 产品负责人 Ori Klein 说明流程，销售顾问继续负责购房沟通。",
+    "evidenceNote": "B：财报问答先明确前线工程合作方式，随后点名 Lennar 的提示词循环及确定性改进；客户案例提供同平台实施与成果。两份官方材料可交叉支持，但没有逐名工程师、LISA专属工时或每次功能变更记录。",
+    "workflow": "房源相关网站/短信问询→官网与房源系统数据检索→受约束回答→Field Service预约→Sales线索记录→人工销售接续。"
+  },
+  {
+    "addedDate": "2026-10-22",
+    "checkedAt": "2026-10-22",
+    "company": "HCA Healthcare",
+    "industry": "医院临床诊疗与医疗记录",
+    "title": "环境式临床记录与医生审核签署",
+    "provider": "Commure",
+    "id": "hca-commure-ambient-clinical-documentation",
+    "country": "美国",
+    "countryNote": "客户资料将集团描述为美国医疗服务机构；总部城市未在本次项目材料单独核实。Texas为本项目已确认地区，不把集团英国业务或全美医院版图等同本次覆盖。[1]",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "deploymentLevel": "已在真实临床环境试点；供应商2026年4月仍称testing，不写成集团全面上线。",
+    "publishedAt": "2026-07-21",
+    "evidenceLevel": "A",
+    "evidenceNote": "HCA首席转型官Michael Schlosser署名客户官方文章，明确Commure提供FDE（Forward Deployed Engineer，前线部署工程师）供医生直接反馈模板与功能。另有供应商主持、HCA项目负责人Vikesh Tahiliani参与的面板复盘；结果属内部数据，非独立审计。[1][2]",
+    "summary": "医生记录负担与不同诊疗场景的模板差异，使单纯安装语音工具不足以获得采用。",
+    "workflow": "医患会话采集 → 转录及病历草稿 → 进入电子病历 → 医生审核、修改、签署。",
+    "humanRole": "医生负责最终记录准确性，审核编辑后签署；前线医生反馈模板、功能与适配，客户转型团队及工程团队迭代。不是自动诊断或无人签署病历。[1][2]",
+    "entryPoint": "分析建议：先限一个科室和记录类型，以遗漏、错误添加及医生改写时间建立验收集，再决定扩大覆盖；不能只把草稿生成速度当节时。",
+    "caveats": [
+      "公司＋环境式记录工作流＋核心来源未见于此前109例。",
+      "2026年4月的跨医院试点规模与7月客户文章的Texas范围不是同一统计切片，不拼接成全国普及率。",
+      "人手节省、诊疗质量改善或医疗安全改善尚无足够对照数据。"
+    ],
+    "risks": [
+      "分析：漏记否定词、剂量或时间会让看似流畅的病历产生临床风险。",
+      "分析：不同科室模板与书写习惯造成迁移失真，培训不能代替准确性验证。",
+      "分析：会话采集与病历写入需要明确患者同意、最小权限及留存规则；本案具体配置未知。"
+    ],
+    "skills": [
+      "临床需求澄清",
+      "语音转录与病历集成",
+      "模板及医生反馈迭代",
+      "临床质量评价",
+      "人机交接与变更管理"
+    ],
+    "metrics": [
+      {
+        "kind": "adoption",
+        "label": "已披露测试规模",
+        "value": "1,400+医生、50+医院、3类诊疗场景",
+        "context": "2026-04-08供应商面板复盘；非全部HCA医生分母，持续使用率与各地区分布未知。来源2。",
+        "unknown": false
+      },
+      {
+        "kind": "efficiency",
+        "label": "单份记录时间节省",
+        "value": "病史与体检记录约8分钟；病程记录约2.7分钟",
+        "context": "早期内部测量；样本量、统计窗口、统计量类型及是否包含医生审改时间未给出。来源2。",
+        "unknown": false
+      },
+      {
+        "kind": "quality",
+        "label": "及时完成记录率",
+        "value": "69% → 87%",
+        "context": "早期内部结果；及时阈值、记录数、同群对照与时间窗未公开，不推断临床结局。来源2。",
+        "unknown": false
+      },
+      {
+        "kind": "cost",
+        "label": "项目总投入",
+        "value": "未披露",
+        "context": "许可、工程人天、集成维护、审改工时及音频处理费用未分解。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "持续运行费用",
+        "value": "未披露",
+        "context": "许可、工程人天、集成维护、审改工时及音频处理费用未分解。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "项目净收益",
+        "value": "未披露",
+        "context": "许可、工程人天、集成维护、审改工时及音频处理费用未分解。",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "真实难点是医生初期谨慎，以及场景和文书习惯差异；客户采用培训、同行示范及按医生反馈迭代。[1][2]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有该试点上线前的逐科室错误率、审改负担或每位医生日均记录量。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Commure的FDE（Forward Deployed Engineer，前线部署工程师）让医生直接提出模板与功能要求；不是仅由采购部门写统一规格。[1]"
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ],
+          "text": "HCA转型团队与一线人员共同调整产品，并推动适配既有电子病历环境。[2]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：可复用之处是把模板差异与审改反馈变成迭代输入，不是把特定科室偏好强行标准化。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ],
+          "text": "面板披露早期规模、节时及及时完成率，见指标栏；客户文章确认医生审核签署这一责任边界。[1][2]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "缺乏独立评估、患者结局、漏记严重事件以及长期留用率；不能以效率指标证明更安全。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：节时收益应扣除培训、核对及纠错工时，并按不同记录类型分别测量。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "已披露链路为监听会话、转录、生成草稿并进入电子病历，之后由医生审改签署。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "本项目的模型名称、提示词、检索或训练方案、语音分离、接口版本与数据存储位置未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "本文未给出项目级权限矩阵、写入失败恢复、版本回滚、患者同意流程和持续评测门槛。不能把Commure平台通用功能当成已部署配置。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：区分草稿与正式签署状态；为患者/就诊匹配、否定症状、药物和时间关系设计高风险测试，并保留医生修改的可追踪版本。这些不是已证实实现。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "工程人员数量、驻场天数、项目确切起止、各医院推广顺序与维护归属未知。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "技术评测的标注基准、具体评测任务及样本未公开，不能把宣传准确性指标等同已证明的临床安全性。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有公开具体线上故障及修复复盘；已知是采用与场景适配困难，不虚构宕机、幻觉事故或恢复结果。"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "HCA Healthcare：以临床为中心扩展人工智能的战略复盘",
+        "url": "https://hcahealthcaretoday.com/2026/07/21/hca-healthcares-strategic-approach-to-scaling-artificial-intelligence/",
+        "date": "2026-07-21",
+        "locator": "已阅读全文；Ambient clinical documentation小节、作者身份；其他项目数字未借用",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Commure：HCA与Nathan Littauer的环境式记录评估复盘",
+        "url": "https://www.commure.com/blog/how-health-systems-are-evaluating-ambient-ai-lessons-from-hca-healthcare-and-nathan-littauer",
+        "date": "2026-04-08",
+        "locator": "已阅读全文；HCA共开发、早期结果、文末内部方法及不可泛化脚注",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "checkedAt": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "addedDate": "2026-10-22",
+    "checkedAt": "2026-10-22",
+    "company": "Fluxx",
+    "industry": "公益资助管理软件",
+    "title": "离职任务分派与权限撤销审计轨迹",
+    "provider": "Rippling",
+    "id": "fluxx-rippling-offboarding-audit-trail",
+    "country": "美国",
+    "countryNote": "官网列美国San Francisco联系地址，并称创立于该市、现为分布式团队；法律总部未单独核实。本项目员工覆盖国家未披露。[2]",
+    "deploymentCountries": [],
+    "deploymentLevel": "客户已建成并描述运作中的定制流程；实际处理离职数量及全员推广比例未披露。",
+    "publishedAt": "2026-01-16",
+    "evidenceLevel": "A",
+    "evidenceNote": "具名客户Senior HR Manager Jessie Bourg在供应商承载的第一人称原始复盘中明确与Forward Deployed Engineering团队共建。工程人员未具名；不是仅凭Rippling提供此服务推定参与。[1]",
+    "summary": "三人人力团队用每位离职员工一张Excel逐项追踪撤权与时间戳，多部门协作及审计举证依赖手工。",
+    "workflow": "人工提交离职 → 按相关部门/系统分派任务 → 系统负责人执行撤权 → 记录完成时间与责任人 → 查询审计证据。",
+    "humanRole": "人事人员发起离职；各系统责任人实际完成撤权。自动化的是任务分派和证据记录，不是由模型决定解雇，也不等于一键自动撤销所有账户。[1]",
+    "entryPoint": "分析建议：先做事件、任务责任人与证据闭环，再扩到自动撤权；以遗漏账户率及撤权延时检验，而非仅统计发出任务。",
+    "caveats": [
+      "公司＋离职审计工作流＋核心来源未见于此前109例。",
+      "属资助管理软件企业的内部运营部署，不是资助申请自动审批，也不是招聘筛选。",
+      "客户尚提到要向直接流程负责人展示应用；谨慎保留推广成熟度未知，不宣称长期大规模稳定运行。"
+    ],
+    "risks": [
+      "分析：任务完成勾选与实际访问撤销可能不一致。",
+      "分析：遗漏跨部门系统会留下离职后访问风险。",
+      "分析：错误触发或提前触发可能影响仍在职员工，应有人工纠错路径。"
+    ],
+    "skills": [
+      "人力事件建模",
+      "跨系统责任分派",
+      "审计证据设计",
+      "权限生命周期",
+      "非技术用户需求共创"
+    ],
+    "metrics": [
+      {
+        "kind": "scale",
+        "label": "客户人力团队规模",
+        "value": "3人",
+        "context": "客户背景，不是被替代或节省人数。来源1。",
+        "unknown": false
+      },
+      {
+        "kind": "efficiency",
+        "label": "节时 / 撤权延时 / 遗漏率",
+        "value": "未披露",
+        "context": "客户仅定性描述负担改善，没有前后耗时、流程数量、观察窗口或对照组。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "项目总投入",
+        "value": "未披露",
+        "context": "未给工程人天、许可、管理员维护或审计工时账目。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "持续运行费用",
+        "value": "未披露",
+        "context": "未给工程人天、许可、管理员维护或审计工时账目。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "项目净收益",
+        "value": "未披露",
+        "context": "未给工程人天、许可、管理员维护或审计工时账目。",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "旧流程逐人复制表格、手工维护任务负责人和完成时间；三人人力团队协调多个系统所有者。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公布此前权限撤销遗漏、审计失败或安全事故，不能把存在风险说成已经发生。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "Jessie Bourg与FDE（Forward Deployed Engineer，前线部署工程师）团队先梳理谁参与、做什么及原因，再共建定制应用。[1]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：关键交付是责任映射和可验证事件，而非一个统一的待办列表界面。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "人工提交离职后自动分派任务；负责人完成撤权后形成含时间与责任人的记录。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露自动化覆盖人数、每月运行量、失败率或外部审计意见；不能称已经通过某次审计。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：更可取的验收是证据完整性与残留访问抽查，记录自动化本身不证明系统实际安全。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "应用构建在Rippling中，使用离职提交事件和相关部门/系统任务表；撤权仍由各责任人完成。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有项目级模型使用证据，不能描述为人工智能代理；接口、数据对象结构、认证方式与权限配置未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未披露撤权状态如何校验、超时升级、重复事件去重、记录不可篡改性、撤销误操作及回滚。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：把“已派任务”“负责人确认”“目标系统验证撤权”分成不同状态，对逾期任务告警；保留事件唯一标识及人工补救路径，均为建议而非披露实现。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "上线日期、建设周期、驻场情况、支持人员规模及生产维护责任未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "客户没有提供一次失败部署或修复的具体复盘；真实困难仅可确认为人工协同与证据分散。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "后续岗位申请和供应商审批只是客户设想，不计为已实施工作流。"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Jessie Bourg：Fluxx离职流程定制应用复盘",
+        "url": "https://www.rippling.com/blog/how-i-solved-it-jessie-bourg-offboarding-automation",
+        "date": "2026-01-16",
+        "locator": "已阅读全文；第一人称共建、三步工作流、人工撤权、未来设想",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "checkedAt": "2026-10-22"
+      },
+      {
+        "title": "Fluxx：公司与分布式团队介绍",
+        "url": "https://www.fluxx.io/fluxx-careers-2025",
+        "date": "未标日期；2026-10-22核验",
+        "locator": "已读We Are Fluxx主体介绍；只用于行业及总部背景，不用岗位信息证明实施",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "checkedAt": "2026-10-22"
+      }
+    ]
+  },
+  {
+    "addedDate": "2026-10-22",
+    "checkedAt": "2026-10-22",
+    "company": "Charlotte Hornets",
+    "industry": "职业篮球队与运动人才评估",
+    "title": "2025年选秀前比赛影像与运动表现分析",
+    "provider": "Invisible Technologies",
+    "id": "charlotte-hornets-invisible-draft-video-analysis",
+    "country": "美国",
+    "countryNote": "原始案例明确美国职业球队；比赛素材来源于大学及非顶级职业联盟，拍摄地点与运行区域未披露，不能据此列全球部署。[1]",
+    "deploymentCountries": [],
+    "deploymentLevel": "已用于2025年选秀分析的定制交付；后续持续运行范围未知，不称自动选秀系统。",
+    "publishedAt": "",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商官方报告第10页由Field CTO Alexius Wronka明确陈述FDE（Forward Deployed Engineer，前线部署工程师）定制交付；同页引述球队分析副总裁Patrick Harrel确认用于验证2025选秀分析。属供应商承载的具名双方自述，未找到客户独立发布的项目审计。[1]",
+    "summary": "球队需要在选秀前把可获取比赛录像变为更细的运动表现数据，而非只依靠传统球探材料。",
+    "workflow": "输入比赛录像 → 提取球员移动数据 → 形成表现指标 → 球队分析人员用于验证选秀判断。",
+    "humanRole": "客户明确说数据帮助验证球队分析；未披露自动决策，不能写为模型自主选定球员。逐帧标注、人工校验和最终决策审批细则未知。[1]",
+    "entryPoint": "分析建议：以可解释的运动指标和人工球探对照切入，先验证视频视角和遮挡误差，再讨论跨联赛可比性。",
+    "caveats": [
+      "公司＋选秀录像工作流＋核心来源未见于此前109例；与既有NBA赛事事件检测或NFL比赛分析不是同一项目。",
+      "仅采用当前官方PDF的保守表述，不沿用二手流传的“人工智能选中某球员”叙事。",
+      "夏季联赛冠军不是该系统的因果成效；供应商价值金额未经独立验证。"
+    ],
+    "risks": [
+      "分析：拍摄视角、遮挡和视频选择偏差可能系统性低估部分球员。",
+      "分析：跨联赛强度及比赛情境不同，运动指标不能直接替代球探判断。",
+      "分析：单次选秀成功叙事容易把事后结果归功于模型。"
+    ],
+    "skills": [
+      "计算机视觉视频处理",
+      "运动数据抽取",
+      "短周期客户共建",
+      "领域指标验证",
+      "决策支持边界"
+    ],
+    "metrics": [
+      {
+        "kind": "delivery",
+        "label": "定制交付时间",
+        "value": "9天",
+        "context": "供应商技术负责人自述；范围、人员数、验收条件及日历起止未公开。来源1。",
+        "unknown": false
+      },
+      {
+        "kind": "business",
+        "label": "声称集成价值",
+        "value": "500万美元 / 10天",
+        "context": "仅供应商估值性自述，未给成本基线、计算方式或已实现收益，不作净收益。来源1。",
+        "unknown": false
+      },
+      {
+        "kind": "quality",
+        "label": "识别准确率 / 覆盖录像量",
+        "value": "均未披露",
+        "context": "没有按球员、场次或视频时长给出的分母，也没有独立效果对照。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "项目总投入",
+        "value": "未披露",
+        "context": "500万美元价值宣称不能替代项目投入或真实回报。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "持续运行费用",
+        "value": "未披露",
+        "context": "500万美元价值宣称不能替代项目投入或真实回报。",
+        "unknown": true
+      },
+      {
+        "kind": "cost",
+        "label": "项目净收益",
+        "value": "未披露",
+        "context": "500万美元价值宣称不能替代项目投入或真实回报。",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "目标是在2025选秀前补充大学及其他联盟人才评估的数据颗粒度。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "报告没有给出Hornets旧流程工时、候选人数或判断准确率，不能套用行业背景作为本队基线。"
+        }
+      ],
+      "intervention": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "技术负责人称工程团队复用计算机视觉组件，并以单点普通摄像素材提供定制分析；交付时长见指标栏。[1]"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：可复用组件缩短工程建设并不意味着新场景无需校准；镜头运动与球员身份连续性仍需验证。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "球队Patrick Harrel确认数据用于验证2025选秀分析；未给选秀排名改变量或预测提升。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有证据证明系统决定了具体球员选择、提高胜率或造成冠军；不得把相关性写成因果。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：至少应比较独立保留样本的测量误差和分析师实际采用，而非用事后球员表现替代技术验证。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "官方仅披露比赛录像输入、移动数据抽取和高级表现指标，称尝试以较简易摄像来源复现多机位系统的数据价值。[1]"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "检测/跟踪/姿态模型、相机标定、球员身份识别、指标公式、训练数据、部署云和硬件未公开。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有人工复核采样率、置信门槛、异常重算、版本回滚、访问权限或素材留存细则。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：按镜头类型与遮挡程度分层评测，保留每项指标到原视频的追溯及不确定性；低质量素材交分析师复核。这些不是该队已经实施的控制。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "原始报告没有发布日期、精确开工日、工程人数、长期维护归属和后续使用窗口。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "没有披露具体失败尝试、线上故障或纠正动作，不能伪造踩坑复盘；可确认的约束只有选秀时点与录像测量需求。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "合同费用、推理算力、视频许可、人员审核及持续支持成本未知，无法计算单位场次费用或净回报。"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Invisible Technologies：Forward Deployed Engineering专题报告中的Hornets案例",
+        "url": "https://docs.invisibletech.ai/Reports/Forward%20Deployed%20Engineering%20-%20How%20FDEs%20speed%20up%20time%20to%20value%20for%20AI.pdf",
+        "date": "未标发布日期；2026-10-22核验",
+        "locator": "已阅读全文并下载原PDF核对；第10页Customer Success Story #1，保留当前版本验证分析的表述",
+        "type": "客户、供应商或具名项目参与者原始材料",
+        "checkedAt": "2026-10-22"
+      }
+    ]
+  },
+  {
     "addedDate": "2026-10-21",
     "caveats": [
       "公司、运输追踪工作流及核心来源均未见于此前106例。",
