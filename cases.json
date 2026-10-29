@@ -1,5 +1,691 @@
 [
   {
+    "id": "entrans-anonymous-retail-live-service-agents",
+    "title": "把零售客服从常见问答接入订单查询与退货请求",
+    "company": "匿名全球消费零售品牌（Entrans 客户）",
+    "industry": "全渠道零售客户服务",
+    "provider": "Entrans",
+    "country": "未披露",
+    "countryNote": "匿名客户，不能用交付方所在地代替客户总部或项目地点。",
+    "deploymentCountries": [],
+    "summary": "原试点只会回答固定问题，顾客真正需要的订单状态和退货操作仍落回人工。嵌入式工程团队把助手接到现有系统，让客服获得可用的生产流程，而不是替换整个电商平台。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商具体案例明确团队为 FDE（Forward Deployed Engineer，前线部署工程师），并写明上线和系统范围。客户匿名，页面通用CEO推荐语不算该项目客户证言，B级。",
+    "deploymentLevel": "供应商称先上线单一工作流，再按使用和回答质量扩展；无上线日期、覆盖国家或处理量。",
+    "humanRole": "工程小组与电商及客服团队共作；复杂问题连同完整上下文移交服务人员，未披露退货是否须人工审批。",
+    "workflow": "客户对话 → 目录/订单/客户关系系统接口 → 查询或发起退货 → 复杂情况转人工；处理完成与退款支付不等同。",
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-10-29",
+    "addedDate": "2026-10-29",
+    "entryPoint": "分析建议：先选择只读订单状态查询，验证身份与数据一致性，再考虑退货请求；不要直接开放退款权限。",
+    "skills": [
+      "真实对话与流程诊断",
+      "跨电商系统接口整合",
+      "代理工具权限设计",
+      "渐进式上线",
+      "上下文连续的人机交接"
+    ],
+    "risks": [
+      "分析判断：订单和客户资料混用会造成隐私泄露；泛称安全接口不能证明已防止越权。",
+      "分析判断：发起退货与批准退款应分开核对。"
+    ],
+    "caveats": [
+      "未披露量化效率和质量结果。",
+      "不使用About页其他项目的60%、95%、45%或6000连接器数字补填本案例。",
+      "不将模板推荐语中的Nikolay Prokopiev认定为匿名零售客户负责人。"
+    ],
+    "metrics": [
+      {
+        "label": "部署",
+        "value": "生产上线（供应商声明）",
+        "context": "覆盖在线商品、订单及客户数据；真实处理量及观察期未知。"
+      },
+      {
+        "label": "财务和效率",
+        "value": "未披露",
+        "context": "总投入、运行费用、净收益、自动解决率、响应时间及质量基线均未公开。"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.entrans.ai/case-study/ai-customer-service-agents-global-retail-brand",
+        "title": "Taking AI Customer Service Agents to Production for a Global Retail Brand",
+        "date": "未标发布日期",
+        "locator": "The Challenge、The Solution、The Outcome",
+        "type": "交付方第一手项目说明；企业声明，非独立审计"
+      },
+      {
+        "url": "https://www.entrans.ai/case-study",
+        "title": "Entrans Case Studies",
+        "date": "未标发布日期",
+        "locator": "Retail and Consumer / Forward Deployed Engineering",
+        "type": "交付方第一手项目说明；企业声明，非独立审计"
+      },
+      {
+        "url": "https://www.entrans.ai/who-we-are",
+        "title": "About Entrans Technologies",
+        "date": "未标发布日期",
+        "locator": "团队与服务说明；非该客户身份或架构证明",
+        "type": "交付方第一手项目说明；企业声明，非独立审计"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "既有试点只能处理固定常见问题，产品、订单、客户资料分别在电商、订单管理和客户关系平台。无法取用实时信息，实际问题仍由客服承担。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程小组先查看真实对话、接口与数据流，限定能端到端解决的流程，在客户自己的云和代码仓库中开发。原系统保留，不做整体替换。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "安全接口与模型上下文协议工具连接目录、订单和客户系统；提供找商品、查状态及发起退货。策略约束回答，复杂案例带上下文交人工；分阶段上线按使用及质量再扩展。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型供应商、检索实现、工具调用授权粒度、顾客身份校验、数据保留、审计日志、指标阈值、失败重试与回滚未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：生产价值在跨系统动作的一致性。验收应覆盖账户不匹配、过期状态、重复退货、工具超时与人工接管，不能只测回答是否自然；这是建议而非客户已实施测试。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商确认从封闭试点进入真实业务系统，并建立可扩展的代理基础；没有公开可对照的节时、转化或满意度实验。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：重用基础设施可能降低下一工作流交付成本，但没有项目成本和运行量，不能计算投资回报或认定裁员。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户法律主体、总部和落地地区、模型与维护责任、具体合同、缺陷事件、上线多久及未解决问题均未披露；“全球”不等于每国已上线。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名全球消费零售品牌（Entrans 客户） | 客户对话 → 目录/订单/客户关系系统接口 → 查询或发起退货 → 复杂情况转人工；处理完成与退款支付不等同。 | https://www.entrans.ai/case-study/ai-customer-service-agents-global-retail-brand"
+  },
+  {
+    "id": "tsit-anonymous-energy-cooperative-work-order-research",
+    "title": "把能源合作社工单排程前的跨系统资料查找交给自动化",
+    "company": "匿名能源合作社（TSIT Digital 客户）",
+    "industry": "能源合作社运营",
+    "provider": "TSIT Digital",
+    "country": "未披露",
+    "countryNote": "客户总部、法律主体及项目所在地均未公开；交付方网站列美国、印度、英国、阿联酋办公室，不能据此认定客户国家。",
+    "deploymentCountries": [],
+    "summary": "工程师嵌入运营团队，先理解工单如何研究与排程，再把跨系统收集资料变成自动汇集。产出是供操作人员处理工单的信息，不是自主执行维修或自动批准排程。",
+    "evidenceLevel": "B",
+    "evidenceNote": "具体案例明确已由前线部署人工智能工程师交付，并叙述嵌入、研究步骤自动化和交接；客户匿名，无客户公告或独立结果验证。",
+    "deploymentLevel": "供应商称已产生节时结果并将自动化栈留给客户；上线日、部署规模与维护安排未披露。",
+    "humanRole": "前线部署工程师与现场及后台运营人员梳理流程；自动化汇集资料交操作人员。操作人员如何审核、如何批准排程未公开。",
+    "workflow": "待研究工单 → 跨系统收集资料 → 汇集供操作人员处理的信息 → 后续工单操作/排程；最后环节的自动化范围未知。",
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-10-29",
+    "addedDate": "2026-10-29",
+    "entryPoint": "分析建议：先在只读资料汇集环节试点，以同类工单研究用时和信息正确完整率对照人工基线，再考虑任何写回权限。",
+    "skills": [
+      "现场流程观察与需求界定",
+      "跨系统信息匹配",
+      "人工交接边界设计",
+      "运营基线测量",
+      "可维护自动化交付"
+    ],
+    "risks": [
+      "分析：同名资产或过期资料可能导致错误工单判断；更快汇集不等于信息正确。",
+      "分析：长期保留系统不等于免维护，接口变更、权限过期与资料质量仍可能使自动化失效。"
+    ],
+    "caveats": [
+      "客户匿名，无法独立验证工作量和收益。",
+      "不把供应商通用五周试点、模型、连接器和数据主权承诺当成本项目实际架构。",
+      "不把节省工时当裁员、收入、利润或现金回款。"
+    ],
+    "metrics": [
+      {
+        "label": "单份工单研究时间",
+        "value": "1–2 小时 → 约 5 分钟",
+        "context": "供应商自述；仅研究阶段，不是维修或工单全生命周期；样本数、统计方法和观察期未知。"
+      },
+      {
+        "label": "年度人工工作量减少",
+        "value": "70,000+ 小时/年",
+        "context": "供应商自述下限；工单总量、覆盖团队和计算方法未披露，无法判断实际全年观察还是年化估算。"
+      },
+      {
+        "label": "年度节省",
+        "value": "$1.5M/年",
+        "context": "原文只给美元符号，币种未明确；声称同一运营范围，但成本构成、实施投入及运行费用未知，不能当净收益。"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://tsitdigital.com/case-studies/energy-cooperative-work-order-automation",
+        "title": "Work order research cut from hours to minutes",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "Challenge、How we ran it、Result；全文阅读",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      },
+      {
+        "url": "https://tsitdigital.com/project-solutions/scai",
+        "title": "SCAI with TSIT practice",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "The model、Outcomes；全文阅读，通用能力仅作边界核对",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "现场与后台人员原先需在分散系统间手工研究工单，资料就绪后才可排程；本案例针对这一前置步骤。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师直接进入运营团队的工作流，梳理真实研究及排程过程，再自动化跨系统资料汇集，并在结束合作后把自动化栈留给客户。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：核心变化是减少操作人员找资料的切换成本，而非证明机器能作最终维修决策。实际任务边界比“自动化整个工单”窄。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "已披露信息流止于跨系统资料被整理给操作人员；系统名称、字段映射、数据更新频率、模型、检索方法、工具权限、人工审核规则及写回操作均未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "供应商服务页描述本地模型、自托管编排和集成代理，但没有逐项确认能源项目使用了哪些组件；本案不据此补画内部架构。",
+          "evidence": "inference",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析建议：验收应包含错配资产、缺字段、陈旧资料、系统超时和重复工单，记录人工纠正率，并明确失败时回到原人工研究路径。这些是建议，不是已实施测试或真实事故。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "页面列出研究时间降至约五分钟及年度节省，具体口径见指标。它没有证明现场维修速度、设备可靠性或服务质量改善。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：研究步骤提速可能释放排程前的处理能力，但若维修人员、备件或审批才是真瓶颈，研究节时未必等量转化为完工量；没有数据可量化后续收益。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "项目开始与上线时间、客户身份及地区、覆盖订单数、对照设计、人员数量、真实失败案例、维护责任、质量评测、总投入、持续费用及净收益均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名能源合作社（TSIT Digital 客户） | 待研究工单 → 跨系统收集资料 → 汇集供操作人员处理的信息 → 后续工单操作/排程；最后环节的自动化范围未知。 | https://tsitdigital.com/case-studies/energy-cooperative-work-order-automation"
+  },
+  {
+    "id": "chudovo-german-video-management-desktop-embedded",
+    "title": "协同维护分布式摄像系统的桌面控制软件",
+    "company": "匿名德国视频管理及安防系统提供商（Chudovo 客户）",
+    "industry": "视频安防软件",
+    "provider": "Chudovo",
+    "country": "德国",
+    "countryNote": "供应商项目页给出客户国家和项目 Location；未给正式总部地址、终端客户名单或全部部署国家。",
+    "deploymentCountries": [
+      "德国"
+    ],
+    "summary": "客户已有复杂视频管理产品，需要把新功能、故障修复与版本发布持续交到操作人员手里。嵌入团队与内部工程师协作，维护桌面端及相关分析功能，而非只交一份咨询方案。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商原项目材料及前线部署工程服务页的项目专节构成直接实施证据；客户匿名，无独立效果核验。",
+    "deploymentLevel": "已有生产系统的持续开发与维护；开始和结束日期未披露。",
+    "humanRole": "软件开发与质量工程师和客户内部团队合作，服务页确认反复现场协作；操作人员使用界面查看及管理系统。安全事件的最终处理权限未公开。",
+    "workflow": "已配置摄像与相关系统信息 → 桌面管理界面/地图及录像查看 → 操作人员处理告警；现场工程师反馈问题 → 开发测试 → 版本发布支持。",
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-10-29",
+    "addedDate": "2026-10-29",
+    "entryPoint": "分析建议：先以一组设备与一类故障场景验证兼容性、告警呈现和升级回退，再扩到更多站点。不要从界面可用推定安防事件识别准确。",
+    "skills": [
+      "视频流与桌面系统诊断",
+      "多团队变更协调",
+      "版本与兼容性测试",
+      "现场需求理解",
+      "长期维护文档"
+    ],
+    "risks": [
+      "分析：摄像设备差异及网络波动可能造成画面中断；统一界面不能消除底层故障。",
+      "分析：录像权限、告警误报与敏感影像留存影响安全与隐私，页面安全保证不足以代替审计。"
+    ],
+    "caveats": [
+      "交付模式存在措辞差异：前线部署服务页把本项目列为嵌入式工程；招聘服务页将其称客户管理的专属团队。记录实际现场与生产职责，不声称合同上完全由供应商独立承担结果。",
+      "不把同站另一个2900人日网页新版项目合并为本案新增成果；不将通用应用场所列表当已验证的具体机场、监狱或医院客户。"
+    ],
+    "metrics": [
+      {
+        "label": "工程工作量",
+        "value": "1800 人日",
+        "context": "供应商 Project duration 原单位 Man-days；是累计劳动量，不是1800日历天，无人员分母、起止日期或成本。"
+      },
+      {
+        "label": "效率、质量及财务收益",
+        "value": "未量化披露",
+        "context": "没有故障率、发布前后对照、摄像头规模、总投入、运行费用及净收益。"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://chudovo.com/projects/video-management-software/",
+        "title": "Video Management Software",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "Project Facts、Business Challenge、Solution、Business Impact；全文阅读",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      },
+      {
+        "url": "https://chudovo.com/forward-deployed-engineering/",
+        "title": "Forward Deployed Engineering Services",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "Case Studies 对应项目专节；全文阅读，其他通用服务承诺不外推到项目",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      },
+      {
+        "url": "https://chudovo.com/hire/",
+        "title": "Hire Software Developers",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "Case Studies / Video Management Software；全文阅读，用于并列交付模式差异",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户已有内部及跨地区开发团队，希望补强桌面视频管理软件维护、扩展和可靠性；原先错误数、响应时间与发布频率未给出。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "团队先由少量桌面工程师开始，后扩入测试与人工智能分析工程师；按两周迭代工作，职责含功能开发、修复、发布支持及文档。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "服务页明确本项目包含与内部团队的反复现场协作；另一服务页却归类客户管理的专属团队。两种描述可以说明不同协作维度，但未公开合同证明，不将其强行合并成单一商业模式。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "项目列 .NET、Windows Presentation Foundation 桌面界面与 Microsoft SQL Server。客户软件有地图、录像与可配置告警、用户权限；具体模型、设备协议、部署拓扑和权限实现没有给出。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：应分开验证画面可达、录像可检索、告警可处理和操作者权限；其中任一成功不等于整个监控链路可靠。这是评测建议，不是客户已公布方案。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称持续交付稳定版本并解决问题，但无量化可靠性或业务效果，不能把营销中的客户信心换算成收益。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称、最终站点国家、真实故障复盘、模型精度、独立认证、测试覆盖、发布回退及持续监控责任、收费和成本均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名德国视频管理及安防系统提供商（Chudovo 客户） | 已配置摄像与相关系统信息 → 桌面管理界面/地图及录像查看 → 操作人员处理告警；现场工程师反馈问题 → 开发测试 → 版本发布支持。 | https://chudovo.com/projects/video-management-software/"
+  },
+  {
+    "id": "chudovo-swiss-diabetes-device-integration-embedded",
+    "title": "持续维护血糖设备连接与糖尿病管理软件",
+    "company": "匿名瑞士健康科技公司（Chudovo 客户）",
+    "industry": "糖尿病医疗设备与临床软件",
+    "provider": "Chudovo",
+    "country": "瑞士",
+    "countryNote": "供应商项目页给出客户国家和项目 Location；未给正式总部地址、终端客户名单或全部部署国家。",
+    "deploymentCountries": [
+      "瑞士"
+    ],
+    "summary": "患者和诊所已经使用这套软件。工程师进入现有团队，维护血糖设备到应用的数据连接，同时升级移动框架、桌面及网页功能；交付价值在让运行中的治疗支持工具继续可靠使用，而不是宣称人工智能自主治病。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商原项目材料及前线部署工程服务页的项目专节构成直接实施证据；客户匿名，无独立效果核验。",
+    "deploymentLevel": "已有生产系统的持续开发与维护；开始和结束日期未披露。",
+    "humanRole": "项目直接确认 Java 与 Windows Presentation Foundation 工程师部分时间驻场，作为前线部署工程师理解客户系统；移动及自动化测试人员共同维护。临床审批与患者给药确认流程未公开。",
+    "workflow": "血糖仪/胰岛素设备 → 蓝牙导入治疗资料 → 手机展示、日志及剂量建议 → 可导出给诊疗团队；桌面与网页提供治疗软件，具体给药控制授权未知。",
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-10-29",
+    "addedDate": "2026-10-29",
+    "entryPoint": "分析建议：先验证只读设备数据导入的完整性、时序和断线恢复；剂量建议或泵控制属于另外的安全边界，不能仅凭集成成功视为临床可用。",
+    "skills": [
+      "蓝牙设备集成可靠性",
+      "跨端迁移与兼容性",
+      "自动化回归测试",
+      "医疗流程理解",
+      "持续交付与旧系统维护"
+    ],
+    "risks": [
+      "分析：数据时序、单位或设备身份错误可能影响治疗判断，需把数据错误与界面错误分级处理。",
+      "分析：框架迁移与手表扩展增加设备组合，必须避免将软件维护成果当疗效或监管批准。"
+    ],
+    "caveats": [
+      "未发现本项目人工智能模型证据；前线部署工程不要求一定采用人工智能。",
+      "原文泛称符合行业标准未列证书和监管决定，故不记录已获认证。",
+      "供应商 Location 为瑞士；不能据此认定全部患者或诊所都在瑞士。"
+    ],
+    "metrics": [
+      {
+        "label": "工程工作量",
+        "value": "2700 人日",
+        "context": "供应商累计 Man-days，无起止时间和人数；不当作日历工期或节省时间。"
+      },
+      {
+        "label": "使用及临床结果",
+        "value": "称诊所及患者使用多年；未量化",
+        "context": "没有用户数量、治疗对照、准确率、严重事件、总投入、运行费用或净收益。"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://chudovo.com/projects/personalized-diabetes-management-system/",
+        "title": "Personalized Diabetes Management System",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "Project Facts、Business Challenge、Solution、Business Impact；全文阅读",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      },
+      {
+        "url": "https://chudovo.com/forward-deployed-engineering/",
+        "title": "Forward Deployed Engineering Services",
+        "date": "未标发布日期；2026-10-29 核验",
+        "locator": "Case Studies 对应项目专节；全文阅读，其他通用服务承诺不外推到项目",
+        "type": "供应商第一手项目说明；企业声明，非独立审计"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户寻求支持已有糖尿病管理系统，而非从零验证产品；原流程的人工步骤、连接故障率和临床效果基线未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师进入客户内部团队，Java 与桌面工程师部分驻场。已列职责包括蓝牙可靠性维护、Xamarin 到 .NET MAUI 的迁移、手表伴侣应用、自动化测试和构建部署流水线。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "设备血糖资料经蓝牙导入手机，用于显示、日志与建议剂量，并可导出报告给诊疗团队；网页采用微服务。模型、检索、云端数据位置及临床审核链未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：应区分测量数据、系统建议与实际给药，追踪版本及设备组合；旧数据重传和断线恢复也应纳入回归测试。这是风险分析与建议，不是已发生事故或已证实控制措施。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称系统已被诊所和患者使用多年，团队继续维护和扩展。没有证据量化工程介入带来的患者改善，不能把持续使用等同临床获益。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户身份、具体器械、适应证、监管认证、剂量算法、错误处理、人工确认、权限与隐私、安全事件、测试阈值、上线维护协议及经济回报未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名瑞士健康科技公司（Chudovo 客户） | 血糖仪/胰岛素设备 → 蓝牙导入治疗资料 → 手机展示、日志及剂量建议 → 可导出给诊疗团队；桌面与网页提供治疗软件，具体给药控制授权未知。 | https://chudovo.com/projects/personalized-diabetes-management-system/"
+  },
+  {
+    "id": "avion-actabl-hotel-finance-data-warehouse",
+    "title": "先把跨酒店数据对齐，再让财务团队用报表与人工审核的模型做预算",
+    "company": "Avion Hospitality",
+    "industry": "酒店集团财务运营",
+    "provider": "Actabl",
+    "country": "美国",
+    "countryNote": "案例明确公司位于得州 Plano，管理美国40多家酒店；支持美国经营和项目组合范围，未披露每一参与酒店名单。",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "summary": "财务团队原先靠表格、导出与自编脚本做预算；Actabl把酒店数据标准化后送入客户控制的Snowflake，再共同重建Power BI报表。工程师补的是数据与交付能力，人工财务判断并未被取消。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商案例具名财务负责人Nan Feng、嵌入工程师Marc Burton及培训工程师Mike Fatal，明确实际协作、系统与已交付用途；含客户直接引述，但没有独立审计。",
+    "deploymentLevel": "数据仓库及报表已生产使用，2027预算季前交付；下一年的统一上下文工具仍为计划。",
+    "humanRole": "Marc Burton嵌入财务团队每周共同建设，Mike Fatal负责培训；Nan Feng及会计团队提供业务判断、测试和审核。",
+    "workflow": "酒店业务来源 → ProfitSword核对与标准化 → Managed Data Feed → 客户Snowflake数据仓库 → Power BI报表/财务分析工具 → 财务专家验证 → 业主与管理层决策。",
+    "publishedAt": "2026-10-23",
+    "checkedAt": "2026-10-29",
+    "addedDate": "2026-10-29",
+    "entryPoint": "分析建议：先对齐一家酒店、一个会计期间和一种业主报表，核对财务口径后再增加自动化，不从自动记账或资金操作开始。",
+    "skills": [
+      "酒店财务口径与数据对账",
+      "Snowflake数据建模",
+      "Power BI报表工程",
+      "跨团队需求澄清",
+      "人工评测与培训"
+    ],
+    "risks": [
+      "分析：同一指标跨品牌口径不一致会令漂亮仪表盘产生错误决策。",
+      "分析：财务工具涉及记账与资金时，必须区分生成建议、审批和实际执行；来源没有公开执行权限。"
+    ],
+    "caveats": [
+      "40多家酒店是经营组合规模，不等于逐店验收数量。",
+      "5000多行代码是原先投入描述，不是节省金额或运行成本。",
+      "客户称效率改善，未给出审计后的利润或节省工时。"
+    ],
+    "metrics": [
+      {
+        "label": "经营范围",
+        "value": "美国40多家酒店",
+        "context": "案例披露的组合规模，不是全部酒店同时上线的证据。"
+      },
+      {
+        "label": "旧方案投入",
+        "value": "两年、5000多行代码",
+        "context": "财务负责人此前探索预算模型的经历；不能据此计算节省人日。"
+      },
+      {
+        "label": "管理预测频次",
+        "value": "每周，部分达到每日",
+        "context": "团队自述交付频次，具体报表数、准确率及观察期间未披露。"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://actabl.com/resources/avion-hospitality-hotel-data-ai-case-study/",
+        "title": "Actabl：Avion酒店财务数据建设案例",
+        "date": "2026-10-23",
+        "locator": "Hitting the data wall / Building a strong foundation / Unlocking what AI can really do",
+        "type": "供应商案例及具名客户引述"
+      },
+      {
+        "url": "https://actabl.com/data-services/",
+        "title": "Actabl Data Services产品说明",
+        "date": "未标日期；2026-10-29核验",
+        "locator": "三种服务与FAQ",
+        "type": "官方产品资料；只用于服务边界，不移植为客户事实"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "Nan Feng负责财务与会计。原先长期使用表格，后来自己学习Python、编写预算预测代码；当模型超过单次对话可处理范围，他将其分块验证。数据仍散在品牌和酒店系统中，难以持续供公司层分析使用。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "准确性决定高管和业主是否相信报告。Avion已有多年ProfitSword使用基础，但缺少自建仓库能力；问题不是再买一个聊天界面，而是把可信数据送到团队可查询的位置。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "Actabl工程师Marc Burton嵌入客户财务团队，与Nan Feng及同事每周共同建设；Mike Fatal提供培训。交付是实际仓库与报表，不是仅推荐方案或招聘岗位。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "团队采用Managed Data Feed和客户自己Snowflake账户中的Managed Data Warehouse，再以Power BI重建原先人工和Excel报表。官方产品页说明数据馈送、托管仓库、共同工程可分别购买，但本客户价格与合同未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "案例可确认的数据链包括品牌、酒店管理、销售、收益与财务来源经ProfitSword汇集核对，再送入仓库供按物业、业主群和收入类别查询。没有披露表结构、更新延迟、行级权限或每个连接器配置。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "团队已用该基础支持资金相关代理、银行对账、日记账辅助及余额核对。财务负责人明确每次构建都有人类专业判断和测试，不能推断代理可自主划款或无审批写账。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体模型供应商、检索机制、提示词、评测集、错误率、报警规则、回滚与事故处理均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "可迁移做法是先以会计对账建立可检查的真值，再测试分析工具；这是本报告的实践归纳，不是公开的完整验收规范。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "已交付业主报表及酒店统一会计口径分析，并支持更频繁的管理预测。资料原先需要脚本和手工导出，现在可在仓库中查询；来源没有量化报表节时或财务净收益。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "下一年建设企业专用模型上下文协议层是负责人计划，不算本轮已部署结果。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "总投入、服务费、Snowflake和模型运行费、节省工资、净利润及投资回收期均未披露；不能把自动报表或预测频次等同利润增长。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露逐酒店上线清单、项目启动日、最终验收标准和故障率。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露财务数据保留期、模型数据处理条款、细粒度访问审批及代理写权限。官方产品的安全描述不能证明该客户具体设置。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "案例是供应商发布、含具名客户经验的一手项目叙述，仍不是独立评估；其可借鉴之处在数据与工程协作顺序，而不是保证另一酒店集团获得相同效果。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "Avion Hospitality | 酒店业务来源 → ProfitSword核对与标准化 → Managed Data Feed → 客户Snowflake数据仓库 → Power BI报表/财务分析工具 → 财务专家验证 → 业主与管理层决策。 | https://actabl.com/resources/avion-hospitality-hotel-data-ai-case-study/"
+  },
+  {
     "id": "locus-anonymous-fortune50-parcel-dispatch",
     "title": "为北美货代把提货、中转、交付调度接成一条可人工接管的执行链",
     "company": "匿名 Fortune 50 包裹与物流企业（Locus 客户）",
