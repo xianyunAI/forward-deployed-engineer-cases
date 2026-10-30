@@ -25402,5 +25402,1596 @@
     "summary": "农户设备设置、使用状态和天气情境不同，通用提醒缺少操作价值；经销商查手册与诊断耗时。",
     "title": "播种季设备推荐与经销商支持",
     "workflow": "综合设备遥测、季节与天气、历史使用情况，在售前/设备设置/播种季使用中主动向农户及经销商推荐操作；识别停机或 See & Spray 未启用等情形，辅助诊断并生成季末价值报告。"
+  },
+  {
+    "id": "john-cockerill-mirage-morocco-piping-takeoff",
+    "title": "先把管道图纸变成可复核材料清单，再交给采购与制造",
+    "company": "John Cockerill（摩洛哥业务）",
+    "industry": "工业装备与管道工程估算",
+    "provider": "Mirage Metrics",
+    "checkedAt": "2026-10-30",
+    "addedDate": "2026-10-30",
+    "evidenceLevel": "B",
+    "skills": [
+      "识读工程图纸并澄清材料清单用途",
+      "图源追溯与版本控制",
+      "把领域规则转成可测试条件",
+      "组织估算与工艺共同验收"
+    ],
+    "risks": [
+      "追溯到图纸不保证数量或适用版本正确",
+      "采购表与制作表混用会把错误带到下游",
+      "推广中的模块不能套用已上线管道指标"
+    ],
+    "caveats": [
+      "原文另有制作物料表“十倍更快”和“约一月到点击”的不同表述，缺乏可比测量，不合并成统一速度倍数。",
+      "企业产品覆盖国防不意味着本项目用于武器；本文只分析公开工业图纸估算工作流。"
+    ],
+    "metrics": [
+      {
+        "label": "管道工程量提取用时",
+        "value": "减少80–90%（供应商自报）",
+        "context": "原人工每项目3–4天，新流程小时至分钟；未披露图纸样本数、工时/自然日口径、测量窗口和复核是否计入，不能推算年节约。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "总投入、运行费用、净收益",
+        "value": "未披露",
+        "context": "不得用Mirage公开起步报价替代本项目合同，不能把节省时间直接当现金利润。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deploymentCountries": [
+      "摩洛哥"
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "原流程需要人工读图、计数和整理；估算与制作之间还存在重复建模和数据对齐负担。图纸本身的遗漏也可能传进清单。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：真正值得交付的不是一个能识图的演示，而是让不同部门理解同一数量从哪来、为哪种用途产生。否则模型提速只会更快制造待核对的表格。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "平台把同一图纸分成采购用材料数量和制作物料表，保留Excel交付及逐图回查；复核责任仍在客户工程师。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "角色证据来自供应商明确把本项目列为前线部署交付实例，而非由一条招聘广告推断。具体参与者身份和现场访谈记录没有公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "没有公开逐阶段里程碑、具体失败案例和弃用方案；不能把供应商典型四至六周周期写成本项目工期。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开输入为二维工程图，输出按不同工程用途组织；未公开具体模型、训练样本、检索库、图形解析组件或生产接口。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：验收应分别检查识别漏项、单位转换、版本选择及人工改动是否可回溯，而不只统计文件生成速度；这些是建议检查点，不是已披露测试结果。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "本项目权限分级、数据驻留、日志保留、故障回滚、监控告警和维护排班均未公开。通用安全页面不证明客户实例已配置相同控制。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "已证实范围是供应商宣称的生产使用和用时改善，尚不能证明净利润、制造质量或全工程周期同步改善。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：如果复核仍耗时，经济价值应按“提取+复核+修正+下游返工”总成本衡量；没有这些分项，就不能从80–90%直接得出投资回报率。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户级样本量、精度基线、漏检率、用户数、实际付款、持续计算费用、全部推广完成日期及第三方核验均缺失。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "country": "比利时",
+    "countryNote": "集团官网Contact列总部Seraing、Belgique及John Cockerill Maroc在Casablanca的地址；Mirage项目原文明确Morocco operations。总部与项目地区分列，不据地址扩大到全球部署。",
+    "publishedAt": "2026-08-03；更新2026-10-22",
+    "evidenceNote": "供应商项目全文明确已生产的管道工作流；前线部署指南的项目示例直接链接此案，形成项目与FDE（Forward Deployed Engineer，前线部署工程师）交付方式的组合证据。未获独立效果审计或客户技术团队复盘。",
+    "summary": "估算和工艺团队不再各自从图纸重新整理数量，而是复核同一份图源可追溯的结果。",
+    "workflow": "二维图纸输入→材料数量提取→按采购与制作目的分表→工程师复核→供下游使用；不是无人审批的自动制造。",
+    "deploymentLevel": "管道模块明确已生产；锅炉/储罐及结构钢模块已构建但完整生产推广仍列下一步。",
+    "humanRole": "John Cockerill估算和工艺工程师检查结果；供应商工程师名单、驻场日数与每次批准记录未披露。",
+    "entryPoint": "借鉴建议：先选一种管道图纸，平行比较人工与系统清单，逐项核对尺寸、单位和图纸版本后再导出；此建议不是已验证的客户上线流程。",
+    "sources": [
+      {
+        "title": "John Cockerill管道工程量项目",
+        "url": "https://miragemetrics.com/case-studies/john-cockerill",
+        "type": "客户或供应商官方",
+        "date": "2026-08-03，更新2026-10-22；2026-10-30核验",
+        "locator": "Where it started / Human in the loop / What changed"
+      },
+      {
+        "title": "Mirage：前线部署工程交付指南",
+        "url": "https://miragemetrics.com/guides/forward-deployed-engineering",
+        "type": "客户或供应商官方",
+        "date": "2026-10-09；2026-10-30全文核验",
+        "locator": "FDE（Forward Deployed Engineer，前线部署工程师） by sector及Sources and scope，逐项目链接；其他通用说明不冒充客户实施事实"
+      },
+      {
+        "title": "John Cockerill官方地址目录",
+        "url": "https://johncockerill.com/en/contact/",
+        "type": "客户或供应商官方",
+        "date": "2026-10-30核验",
+        "locator": "Headquarters与John Cockerill Maroc"
+      }
+    ],
+    "dedupKey": "John Cockerill | 摩洛哥管道图纸材料清单 | https://miragemetrics.com/case-studies/john-cockerill"
+  },
+  {
+    "id": "ocbm-mirage-traceable-preconstruction-bids",
+    "title": "把建筑图纸数量和版本检查接进投标，但最终报价仍由工程师签字",
+    "company": "OCBM（Omnium de Construction et de Bâtiment du Maghreb）",
+    "industry": "建筑施工与投标估算",
+    "provider": "Mirage Metrics",
+    "checkedAt": "2026-10-30",
+    "addedDate": "2026-10-30",
+    "evidenceLevel": "B",
+    "skills": [
+      "建筑图纸与量算规则理解",
+      "来源位置及版本追溯",
+      "保持报价审批责任",
+      "验证规则而非只调提示词"
+    ],
+    "risks": [
+      "来源完整不等于测量正确",
+      "旧图纸可能有出处却不再适用",
+      "报价错误的责任不能转嫁给生成系统"
+    ],
+    "caveats": [
+      "页面图示具体体积与板厚明确是illustrative，不能当真实客户工程样本。",
+      "客户感言标注的CEO姓名仅为供应商页面署名，本次不据此确认现任管理层。",
+      "客户官网超时，不将搜索目录或相似公司ODBM混为客户。"
+    ],
+    "metrics": [
+      {
+        "label": "生产工作流",
+        "value": "3（供应商自报）",
+        "context": "量算、报价准备、图纸/文件一致性；不是3个客户或3个独立行业。统计日期、执行量未披露。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "数量图源覆盖",
+        "value": "100%（供应商自报）",
+        "context": "声称每项数量带图源，不等于100%准确率；未披露分母、抽样或独立审计。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "工时、总投入、运行费与净收益",
+        "value": "未披露",
+        "context": "没有量化前后周期、合同费或成本分项，不能宣称已实现投资回报。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deploymentCountries": [
+      "摩洛哥"
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "估算师原先人工量图和准备投标；忙碌时反复测量及版本差异容易成为瓶颈。没有披露原流程小时数。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：不同版本同一构件的数量可能都“有依据”，因此交付难点是把正确来源与有效版本同时连接到审批，而不是简单给每个数字挂链接。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "供应商从量算入口开始适配真实项目；已核对数量继续流向报价准备，另一代理比较图纸及招标文件差异。工程师保留最终输出控制。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "本案有项目级前线工程交付标签与实际适配过程，不需要从供应商通用职位推导。但驻场时间、姓名及分工表未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开的数据链是图纸→数量/位置→人员校核→报价与文件一致性。内部模型、检索方式、价格数据库接口与权限矩阵未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：可迁移的技术重点是保存图纸版本、数量位置和审批状态的关联；在审批前改变价格或版本，应触发重新核对。此为设计建议，不声称客户已采用该具体机制。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "上线测试集、失败样本、版本回退、异常告警和持续维护服务水平未公布；不能把指南里的常见上线节奏当作本项目复盘。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "项目证据支持生产使用和可追溯工作流，不支持材料节约率、投标成功率或利润提升。分析上，量算速度只有在审核负担未转移到后端时才可能转化为总周期收益。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "可以借鉴的是把自动提取变成可检查草稿；不宜借鉴成无人审核投标，尤其不应把示意计算当模型准确性测试。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "运行规模、全部审批是否逐条执行的审计、错误率、真实节省时间、支付金额、基础设施费及净收益均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "country": "摩洛哥",
+    "countryNote": "Mirage项目介绍明确为Casablanca的摩洛哥建筑企业及当地工程；客户官网本次访问超时，主体与地区依据供应商披露，未独立确认具体项目地址。",
+    "publishedAt": "页面未标发布日期",
+    "evidenceNote": "项目正文的Products直接标明Forward Deployed Engineering，并描述Mirage工程师在真实图纸、规则和项目上适配；另有供应商指南逐项目引用。证据为B级供应商披露，非独立审计。",
+    "summary": "把量算、报价准备和版本一致性检查串成可人工签字的流程，避免数量脱离图纸出处。",
+    "workflow": "图纸集合→定位与提取数量→估算师逐项核对→结构化报价准备及文件版本检查→人工批准后投标。",
+    "deploymentLevel": "供应商称三项代理工作流已生产；后续采购支持等仍属计划。",
+    "humanRole": "客户估算工程师保留判断与签字；供应商工程师按客户图纸惯例和量算规则适配，不以通用模型直接替代专业审核。",
+    "entryPoint": "借鉴建议：从一类图纸量算开始，用逐项出处与人工对照建立验收，再考虑报价，不应先自动提交投标。",
+    "sources": [
+      {
+        "title": "OCBM：可追溯的投标准备",
+        "url": "https://miragemetrics.com/case-studies/ocbm",
+        "type": "客户或供应商官方",
+        "date": "2026-10-30全文核验",
+        "locator": "Where it started / Human in the loop / What changed"
+      },
+      {
+        "title": "Mirage：前线部署工程交付指南",
+        "url": "https://miragemetrics.com/guides/forward-deployed-engineering",
+        "type": "客户或供应商官方",
+        "date": "2026-10-09；2026-10-30全文核验",
+        "locator": "FDE（Forward Deployed Engineer，前线部署工程师） by sector及Sources and scope，逐项目链接；其他通用说明不冒充客户实施事实"
+      }
+    ],
+    "dedupKey": "OCBM | 图纸量算与投标准备 | https://miragemetrics.com/case-studies/ocbm"
+  },
+  {
+    "id": "biodeal-mirage-email-sap-order-intake",
+    "title": "把乳制品客户邮件变成订单，并把含糊单位留给人员确认",
+    "company": "Biodéal SAS",
+    "industry": "有机乳制品分销",
+    "provider": "Mirage Metrics",
+    "checkedAt": "2026-10-30",
+    "addedDate": "2026-10-30",
+    "evidenceLevel": "B",
+    "skills": [
+      "客户/商品主数据匹配",
+      "订单版本与数量单位处理",
+      "既有企业系统集成",
+      "异常重处理及回归测试"
+    ],
+    "risks": [
+      "价格推单位可能受折扣或新包装干扰",
+      "重放邮件若处理不当可重复下单",
+      "错仓库或截止日判断影响履约"
+    ],
+    "caveats": [
+      "官网交互订单明确是示例，不把其中奶价、数量当真实客户订单。",
+      "“零静默丢行”是设计声明，不等于零错误的独立审计。",
+      "仅总部国家已核实，具体项目落地范围未明确。"
+    ],
+    "metrics": [
+      {
+        "label": "上线以来自动订单",
+        "value": "2,943订单 / 12,993行 / 113客户",
+        "context": "供应商截至页面快照的累计自报；启动2025-07-22，具体统计截止日未标，不能当月度销量或收入。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "邮件到订单就绪",
+        "value": "中位48秒",
+        "context": "供应商自报；不是人工原流程减少48秒，尾部耗时与异常人工等待是否包含未详。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "标记人工检查",
+        "value": "约7%订单",
+        "context": "订单级标记比例，非逐行错误率，也不代表余下93%经过独立正确性审计。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "总投入、运行费用、净收益",
+        "value": "未披露",
+        "context": "没有客户合同、人员/计算成本分项或财务回报。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deploymentCountries": [],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户订单格式与数量口径不统一，业务人员需要手动抄入SAP并解释客户和商品；系统写入只是最后一步，之前的业务判断才是主要适配对象。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：把所有邮件都当订单会产生错误交易，因此需要同时回答“是不是订单”和“是不是旧订单的新版本”。单纯提高文字识别率解决不了这个问题。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "集成沿用Outlook和SAP Business One，处理链包含文档阅读、匹配、单位/折扣/仓库规则及异常提示。客户人员保留含糊事项的确认职责。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "项目页面直接记录前线部署工程师参与上线；具体人数、姓名、驻场周期和逐周里程碑未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "已披露Graph触发与队列、文字和布局双路提取、SAP Service Layer写入；模型名称、模型托管和检索架构没有公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "规则以自动化测试固化；异常行保留提示并允许人员修正后重处理。但完整测试集、失败率和重复提交的技术实现未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：关键验收应是交易正确性与可恢复性。即使提取正确，邮件重试、客户改量或跨仓库单位变化仍可能创建错误订单；应分别核对结果与状态转换，不能只计成功请求数。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户级访问权限、密钥轮换、日志留存、隐私约定、服务监控、值班响应与恢复目标未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：48秒衡量系统处理等待，不代表整个履约完成，更不是净成本。业务收益需要把人工复核和改错纳入同一窗口，并保留上线前同类订单基线。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：可迁移经验是把不确定性暴露给原业务人员，而不是强行保证“全自动”。但例外比例随客户格式变化会变，本案数字不能直接当其他乳制品企业的预测。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "具体上线验收日期、订单样本选择、尾延迟、误建/重复订单率、长期异常变化、合同和运行成本、净收益均未知；未取得客户独立效果确认。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "country": "法国",
+    "countryNote": "客户官网法律声明列Sainte-Foy-lès-Lyon总部。供应商披露Biodéal订单系统项目，但未明确服务器、实施办公室及全部服务地域；不以法国总部自动填项目落地国家。",
+    "publishedAt": "2026-08-07；更新2026-10-21",
+    "evidenceNote": "供应商项目全文含客户CEO对前线部署工程师介入上线的评价，并有已生产日期、具体集成和异常流程；CEO未署个人姓名，暂无客户单独技术复盘，按B级处理。",
+    "summary": "让邮件里的订货信息经过商品和单位规则后进入既有订单系统；自动化并不等于省掉所有人工判断。",
+    "workflow": "Outlook新邮件→Microsoft Graph触发及排队→文档提取与客户商品匹配→规则处理→SAP Business One订单→标签和疑点提醒。",
+    "deploymentLevel": "供应商称2025-07-22首次真实订单后持续生产。",
+    "humanRole": "含糊行发给业务团队；人员可补单或修正规则后重新处理，常规订单自动流转。",
+    "entryPoint": "借鉴建议：先做一批历史订单的只读对照，检查单位、重复邮件和变更订单，再开放有边界的写入；此建议不等于客户完整上线过程已披露。",
+    "sources": [
+      {
+        "title": "Biodéal：邮件到SAP订单",
+        "url": "https://miragemetrics.com/case-studies/biodeal",
+        "type": "客户或供应商官方",
+        "date": "2026-08-07，更新2026-10-21；2026-10-30全文核验",
+        "locator": "What Mirage built / Business intelligence / FAQ"
+      },
+      {
+        "title": "Biodéal法律声明",
+        "url": "https://www.biodeal.net/mentions-legales",
+        "type": "客户或供应商官方",
+        "date": "2026-10-30全文核验",
+        "locator": "公司名称和siège social"
+      },
+      {
+        "title": "Mirage：前线部署工程交付指南",
+        "url": "https://miragemetrics.com/guides/forward-deployed-engineering",
+        "type": "客户或供应商官方",
+        "date": "2026-10-09；2026-10-30全文核验",
+        "locator": "FDE（Forward Deployed Engineer，前线部署工程师） by sector及Sources and scope，逐项目链接；其他通用说明不冒充客户实施事实"
+      }
+    ],
+    "dedupKey": "Biodéal SAS | 邮件订单写入SAP | https://miragemetrics.com/case-studies/biodeal"
+  },
+  {
+    "id": "andersen-anonymous-life-annuity-investment-close",
+    "title": "把寿险投资结账从拼表变成异常审核，而不是让模型决定账务",
+    "company": "匿名寿险及年金保险商（Andersen Consulting 客户）",
+    "industry": "寿险与年金投资会计",
+    "provider": "Andersen Consulting",
+    "country": "未披露",
+    "deploymentCountries": [],
+    "countryNote": "匿名客户总部及项目落地国家均未公开。作者 Jason Strimpel 的官方履历标注美国芝加哥，仅能证明作者所在地，不能据此填写保险商国家。[1][2]",
+    "publishedAt": "官网案例未标发布日期；2026-10-30 读取",
+    "checkedAt": "2026-10-30",
+    "addedDate": "2026-10-30",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商项目全文明确指向含专门 FDE（Forward Deployed Engineer，前线部署工程师）的五人团队、现场梳理及生产切换。客户匿名，数据为供应商自报，非独立审计；作者官方身份另有履历支持。",
+    "summary": "月末结账的价值不只是快，而是让遗漏账户在签字之前被看到。这个项目把查找与计算交给受控数据管线，把例外判断留给财务。",
+    "workflow": "托管机构估值及总账输入→完整性核对与确定性计算→异常队列→财务批准/纠正→可用于记账的输出。[1]",
+    "deploymentLevel": "官网称已生产上线，并测量上线后一个完整月结周期；并非覆盖全部投资组合或长期运行的独立证明。",
+    "humanRole": "财务人员批准或纠正异常；工程团队负责将原流程重建为可追溯管线。不能将“可用于记账”理解为无需批准自动写入总账。",
+    "metrics": [
+      {
+        "label": "投资核对及分录准备",
+        "value": "约3个合计工作日→1个工作日",
+        "context": "两大投资组合；上线后一个月结周期，输出处理少于8小时。劳动投入、处理时长、日历耗时不是同一口径；非全公司结账总周期。[1]",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "项目成本和净收益",
+        "value": "未公开",
+        "context": "供应商称客户不另付平台许可费，但仍支付实施及按量费用；未披露金额，不能写零成本或计算净收益。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "会计规则与数据血缘建模",
+      "把遗漏检查移到审批前",
+      "用历史账期验证切换",
+      "财务人员共建与异常处理设计"
+    ],
+    "risks": [
+      "一个账期的结果不代表长期无遗漏",
+      "确定性规则也可能固化错误口径",
+      "匿名客户无法完成客户侧独立交叉验证"
+    ],
+    "entryPoint": "分析建议：先选一个投资组合平行运行，逐项比对旧账与新输出；未核对差异不自动入账。",
+    "caveats": [
+      "标题所称“一天”只指文中投资会计工作范围，不是所有财务结账。",
+      "该案例强调确定性计算；模型型号、提示词、检索架构均未公开，不补写为生成式自主会计。",
+      "扩至其他组合及精算/法定报告属于下一阶段计划，不能算已交付。"
+    ],
+    "sources": [
+      {
+        "title": "Closing the Books in One Day",
+        "url": "https://global.andersen.com/consulting/closing-the-books-in-one-day",
+        "type": "供应商或具名参与者一手披露",
+        "date": "未标发布日期；2026-10-30 核验",
+        "locator": ""
+      },
+      {
+        "title": "Jason Strimpel — Andersen Consulting",
+        "url": "https://global.andersen.com/people/strimpel-jason",
+        "type": "供应商或具名参与者一手披露",
+        "date": "未标发布日期；2026-10-30 核验",
+        "locator": ""
+      }
+    ],
+    "dedupKey": "匿名寿险年金保险商 | 投资会计月结 | https://global.andersen.com/consulting/closing-the-books-in-one-day",
+    "deepDive": {
+      "before": [
+        {
+          "text": "旧流程依赖反复连接的 Excel 表；账户遗漏可能在批准后才暴露。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：问题不是“没有聊天机器人”，而是跨来源账务没有统一、可核对的完整性边界；加速错误数据只会更快形成错误分录。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "五人资深团队包含专门前线部署工程师，先在现场与财务共同梳理流程；切换前用历史结账数据验证。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "作者 Jason Strimpel 的官方履历列其为 Andersen Consulting 董事总经理，专长包括机器学习、云与软件工程；履历不能证明他个人承担了每项开发工作。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "Foundry 汇集托管及总账数据，AIP 承载核对和摊销逻辑；异常经人工处理，转换过程保留追溯链。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：保留输入—转换—输出关系，能让审核者定位差异来自源数据、映射还是计算规则。这比只给出“正确率”更能服务会计审计，但不能替代审计本身。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "结果及观察窗见指标栏。供应商还称原有反复补账减少；没有多月样本，不能推为永久消除错误或量化利润。[1]",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：释放审核者时间有潜在价值，仍须扣除实施、按量费用、维护与复核投入。没有这些分母，不把节省工时折算为已实现现金利润。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露客户名称、国家、精确上线日、源系统品牌、账户数、总记录量、模型是否实际参与判断、权限矩阵、数据驻留及保存策略。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未披露完整测试集、验收阈值、回滚演练、持续维护责任、故障频率及后续月份质量。上线后单周期测量不等于已经验证所有边界。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ilayer-anonymous-us-realestate-fund-evidence-agents",
+    "title": "让房地产基金从旧文件找出账务证据，证据不足就交回真人",
+    "company": "匿名美国房地产私募基金（Ilayer 项目）",
+    "industry": "房地产私募基金运营",
+    "provider": "Ilayer／Adam Boudjemaa",
+    "country": "美国（参与者自述）",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "countryNote": "具名工程师将客户称为美国房地产私募基金，履历标注与美国休斯敦远程合作；不代表工程师在美国驻场，不披露基金法定名称及具体办公地点。[1][2]",
+    "publishedAt": "案例2026-07-21；相关文章分别2026-03至07月发布、2026-09至10月更新",
+    "checkedAt": "2026-10-30",
+    "addedDate": "2026-10-30",
+    "evidenceLevel": "B",
+    "evidenceNote": "Adam Boudjemaa 以具名参与者记录经 Ilayer 于2026年3—8月交付的生产系统，明确其 FDE（Forward Deployed Engineer，前线部署工程师）角色。六篇一手材料相互补充但来自同一作者，不构成独立客户审计。",
+    "summary": "基金要解释银行流水与账本为什么不同，真正耗时的是找证据。工程师先把散落文件变成可检索资料，再要求答案通过引用和数字检查；薄弱证据不靠模型猜测。",
+    "workflow": "文档接入与识别→共享检索层→按任务路由模型→生成有出处的回答→语义及数字校验→通过则呈现，失败则拒答并转人工。[1][4][5]",
+    "deploymentLevel": "参与者称2026年3—8月项目期间已生产使用，首次交付11个代理，移交时25个模块；模块与代理口径不同，均非当前在线数量。[1][4]",
+    "humanRole": "工程师远程嵌入客户工作流，负责从数据到交接；证据不足时由人继续处理，人工复核仍在设计内。逐项写账/付款授权规则未公开。",
+    "metrics": [
+      {
+        "label": "银行对账工作流",
+        "value": "约8小时→约23分钟",
+        "context": "一个保密项目的参与者自述；非独立基准，未公开测量次数、样本量或各阶段耗时，也不代表全部基金工作提效。[3]",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "资料接入范围",
+        "value": "约2 TB／140万文件／13年／13来源",
+        "context": "工程师自述的项目档案范围，不是用户数或交易量。[1][4]",
+        "kind": "coverage",
+        "unknown": false
+      },
+      {
+        "label": "总投入、运行费及净收益",
+        "value": "未公开",
+        "context": "有模型路由和成本上限，不公开本项目账单；作者另文的46代理成本模型不是此基金成本。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "异构文档接入与可追溯检索",
+      "语义与数值一致性分开检验",
+      "设计拒答和人工接管",
+      "任务权限与成本预算",
+      "评测集、红队测试及交接"
+    ],
+    "risks": [
+      "有出处不等于出处正确，语义验证器仍会误判",
+      "过度拒答会把负担重新推回人工",
+      "历史文档权限和更新状态影响可回答范围"
+    ],
+    "entryPoint": "分析建议：从一种银行对账差异开始，先建立人工确认样本和拒答标准；以审核后正确完成率、转人工比例、总耗时及单次成本共同验收。",
+    "caveats": [
+      "匿名基金与已有Terminal X匿名私募尽调案例不同：参与者/服务方、工作流及核心来源均不同，不能反推客户身份。",
+      "文中演示性失败、示例放行规则不是已发生的客户事故。",
+      "作者其他区块链项目、Integra约46个内部代理及成本数据，不移植为本基金结果。",
+      "11代理是首次交付，25模块是移交口径，不将两者混加或称现在仍运行25代理。"
+    ],
+    "sources": [
+      {
+        "title": "Shipping an 11-agent GenAI platform, solo, into regulated finance",
+        "url": "https://adam-boudjemaa.com/case-studies/11-agent-platform",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-07-21；2026-10-30 核验",
+        "locator": ""
+      },
+      {
+        "title": "The Journey: Houston / Ilayer",
+        "url": "https://adam-boudjemaa.com/journey",
+        "type": "供应商或具名参与者一手披露",
+        "date": "未标发布日期；项目2026-03至08；2026-10-30 核验",
+        "locator": ""
+      },
+      {
+        "title": "Bank Reconciliation With AI: From 8 Hours to 23 Minutes",
+        "url": "https://adam-boudjemaa.com/blog/agents-in-production/1",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-07-23；2026-10-14更新；2026-10-30 核验",
+        "locator": ""
+      },
+      {
+        "title": "11 AI Agents Inside a $3B Fund: The Base and the Guardrails",
+        "url": "https://adam-boudjemaa.com/blog/agents-in-production/2",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-03-19；2026-10-14更新；2026-10-30 核验",
+        "locator": ""
+      },
+      {
+        "title": "Verified Citations and Abstention in RAG for Finance",
+        "url": "https://adam-boudjemaa.com/blog/agents-in-production/3",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-04-09；2026-09-06更新；2026-10-30 核验",
+        "locator": ""
+      },
+      {
+        "title": "The Eval Suite That Gates a Release",
+        "url": "https://adam-boudjemaa.com/blog/agents-in-production/6",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-05-21；2026-09-06更新；2026-10-30 核验",
+        "locator": ""
+      }
+    ],
+    "dedupKey": "匿名美国房地产私募基金 Ilayer | 证据检索与银行对账 | https://adam-boudjemaa.com/case-studies/11-agent-platform",
+    "deepDive": {
+      "before": [
+        {
+          "text": "差异流水出现后，员工需要跨多个系统查找支撑文件。文件命名、格式与位置不一致，时间主要花在找凭据，而不是简单配对金额。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "分析：先测瓶颈再选模型很重要。如果证据找不到，给模型更强推理能力并不自动解决对账问题。",
+          "evidence": "inference",
+          "sourceRefs": [
+            3
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "Adam 经 Ilayer 远程嵌入客户，负责生产交付；履历同时说明其工程工作并不等于在客户美国办公室驻场。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "案例给出的工程反思是应更早建设评测路径，而不是检索完成后再补验收。其拒绝仅附来源脚注的一次检索问答方案，转而加入可验证证据链。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "接入采用视觉语言模型识别并以 Textract 作备选；FastAPI 接收请求，Postgres 配合 pgvector 支持检索。模型品牌与版本未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "代理共用检索与约束层，但新增代理仍需各自测试和权限；模型路由结合预算选择能力档位。不能把共享底座理解为全部任务无需单独验收。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "引用检查连接到原文片段，另以自然语言推断检查语义支持，再核验金额、日期等数字；来源冲突或证据不足进入拒答。验证通过也不能保证源文件或验证模型绝对正确。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            5
+          ]
+        },
+        {
+          "text": "来源明确已进行评测及红队测试；但发布门禁文章中的三态规则、示例失败和阈值结构是解释性设计，不是客户测试报告。不能把文章示例记录为本项目真实事故。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            6
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "对账时间的自报改变只适用于该保密工作流，未拆分检索、模型、人工审查耗时，且未公开重复测量。不能据此推算全团队裁员人数、投资收益或净现金节省。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "分析：本案例有价值的变化是将“必须回答”改为“有证据才回答”。代价是额外校验时延、计算费和人工接管，效果应同时看有用回答覆盖率与审核后质量。",
+          "evidence": "inference",
+          "sourceRefs": [
+            5
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未公开基金法定名称、用户及交易样本数、具体云地域、资料驻留条款、各代理职责清单、写操作权限矩阵及每项批准者。不能用作者通用安全文章补写客户控制。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "text": "客户实际评测数据、放行阈值、红队攻击结果、故障率和长期维护服务级别未公开。文章给出可借鉴结构不等于可复用客户验收证据。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            6
+          ]
+        },
+        {
+          "text": "未披露实施合同金额、客户运维投入、模型账单和利润；接入规模、管理资产规模、代理数都不能替代这些成本收益数据。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1,
+            4
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "aarogyalinq-digichikitsak-voice-prescriptions-cloud",
+    "title": "把处方录入变成语音操作，并交付可监控的医疗软件运行环境",
+    "company": "AarogyalinQ／DigiChikitsak",
+    "industry": "医疗营地与临床文档软件",
+    "country": "印度",
+    "deploymentCountries": [],
+    "countryNote": "公司官网页尾明确注册新德里、研发位于IIT Jodhpur；产品官网称面向印度。具体客户医院、营地及该次部署的云区域未披露，不能把产品目标市场或注册地当作已经落地的项目国家。来源3、4，2026-10-30核验。",
+    "provider": "AarogyalinQ内部产品团队／Saikiran Kalluri",
+    "publishedAt": "工程师任职2025-08至2026-01；主管推荐标2026-06-06；各项目页面未标发布日期",
+    "checkedAt": "2026-10-30",
+    "evidenceLevel": "B",
+    "evidenceNote": "具名参与者Saikiran Kalluri任职页明确FDE（Forward Deployed Engineer，前线部署工程师）实习生身份，并逐项连接DigiChikitsak语音功能和生产部署；同页载直属主管Manik Sejwal的推荐。公司官网确有该产品。属于参与者与企业组合证据，不是客户医院独立验收；推荐原始LinkedIn条目本次未独立复核。",
+    "summary": "这里交付的不是自动诊断医生，而是让临床人员少打字的电子处方入口，以及能自动发布、发现运行异常的软件环境。参与者称原录入依赖键盘、费时；没有公布改造前每份处方耗时。",
+    "workflow": "临床人员口述输入或发出操作指令，经语音服务进入电子处方应用；系统用于新建处方、把已有记录数字化及保存。工程师另外负责容器、云运行环境、自动发布和告警。模型是否参与药物选择、处方签署审批和患者侧送达均未披露。",
+    "deploymentLevel": "工程师项目页明确叙述已进入AWS生产环境，非仅课程作业；公司官网展示同名商业产品。具体医院、上线日期、日活、患者覆盖和当下持续使用量未公开，不能声称已大规模临床应用。",
+    "humanRole": "参与者直接向客户收集需求并实现功能；使用方为临床人员。官网还面向营地组织者展示管理能力。处方签署责任、逐条人工校正制度和误识别转人工阈值没有项目证据。",
+    "metrics": [
+      {
+        "label": "已实现录入效率变化",
+        "value": "未公开",
+        "context": "未提供前后处方耗时、同口径样本量、观察期或对照组，不能由“语音输入”推算百分比。",
+        "kind": "efficiency",
+        "unknown": true
+      },
+      {
+        "label": "真实财务收益",
+        "value": "未公开",
+        "context": "官网投资回报计算器是可调参数下的估算，包含纸张节省、激励与潜在患者转化收入，不是本项目实测营收或净利润。",
+        "kind": "cost",
+        "unknown": true
+      },
+      {
+        "label": "交付时间窗",
+        "value": "2025-08至2026-01任职期内",
+        "context": "这是参与者整段任职期间，不是DigiChikitsak单项项目工期；精确起止与人日未披露。",
+        "kind": "delivery",
+        "unknown": false
+      }
+    ],
+    "skills": [
+      "把临床口述操作转成可纠错的输入流程",
+      "语音服务接口集成",
+      "容器化、自动发布与告警配置",
+      "医疗数据权限和责任边界分析"
+    ],
+    "risks": [
+      "药名、剂量或患者身份误识别可能造成严重后果；项目未公布相关错误率及强制复核规则",
+      "营销页的合规支持措辞不等于认证、监管批准或本次部署的合规审计",
+      "跨语音服务的数据处理位置、保留和训练用途未披露"
+    ],
+    "entryPoint": "分析建议：先限定为医生可核对的处方草稿录入，不自动开药；用去标识的真实口述测试药名、剂量、否定词和噪声错误，再决定是否扩大使用。此为借鉴建议，不是该团队已实施措施。",
+    "sources": [
+      {
+        "title": "Saikiran Kalluri：AarogyalinQ任职与主管推荐",
+        "url": "https://www.saikirankalluri.dev/experience/aarogyalinq",
+        "type": "具名项目参与者；主管推荐由本人页面转载",
+        "date": "任职2025-08至2026-01；推荐2026-06-06；2026-10-30全文核验",
+        "locator": "About the role / Digichikitsak / Recommendation"
+      },
+      {
+        "title": "Digichikitsak项目复盘：语音功能与云部署",
+        "url": "https://www.saikirankalluri.dev/projects/digichikitsak",
+        "type": "具名工程参与者一手复盘",
+        "date": "未标发布日期；2026-10-30正常HTTP 200全文读取",
+        "locator": "Problem and approach / How it works / How I built it"
+      },
+      {
+        "title": "AarogyalinQ官网：产品与主体所在地",
+        "url": "https://aarogyalinq.com/",
+        "type": "企业官方自述",
+        "date": "未标发布日期；2026-10-30全文核验",
+        "locator": "Digichikitsak / 页尾Registered in New Delhi"
+      },
+      {
+        "title": "DigiChikitsak产品官网：医疗营地、数据录入、安全与估算器",
+        "url": "https://digichikitsak.com/",
+        "type": "产品官方自述",
+        "date": "未标发布日期；2026-10-30全文核验",
+        "locator": "Medical Camps / Clinicians / Security / Calculate Your Annual Impact"
+      }
+    ],
+    "caveats": [
+      "这是医疗软件厂商内部产品交付，不是某具名医院项目的独立验收。",
+      "产品官网覆盖更广的营地管理、离线和系统集成能力，不全归因于该实习生或这次语音工作。",
+      "不将公司其他产品、HEART模型宣传或Elphie牙科图像能力挪入处方系统。",
+      "搜索缓存曾列四个任职产品，当前完整任职页列三个；本记录只研究两种版本都明确列出的DigiChikitsak，不据缓存推增项目数量。"
+    ],
+    "dedupKey": "AarogyalinQ | DigiChikitsak语音处方录入及AWS生产交付 | https://www.saikirankalluri.dev/projects/digichikitsak",
+    "addedDate": "2026-10-30",
+    "deepDive": {
+      "before": [
+        {
+          "text": "参与者将原痛点定位于临床文档的重复键盘输入，以及应用缺少可靠的生产发布路径；没有给出原来每份处方耗时或故障率。工程目标因而包含使用流程和运行交付两部分，不能只看一次语音演示。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "产品官网针对医疗营地的纸张和后续数据利用问题；它向组织者出售可带自有品牌的软件，而非一张研究报告。这说明客户需要留下可复用记录，但不证明每个现有客户都采用了本次语音版本。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "从业务因果看，输入便利只是第一步：如果处方仍须反复核对、无法正确对应患者，少打字未必减少总工作量。验收应同时看纠错成本和最终记录质量。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "Saikiran Kalluri自述任职期间直接收集客户需求，再实现产品功能；该页将其身份和DigiChikitsak明确绑定。主管推荐也提到语音接口及自动发布工作，但这份推荐在参与者网站上呈现，未作为独立客户审计。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "工程师同时交付语音入口和云运行基础设施：前者改变临床输入方式，后者让修改能够持续进入运行系统并产生异常告警。其贡献不是重写全部医疗业务，也没有证据证明他负责全部诊断逻辑。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "实际需求访谈次数、医护参与名单、试点顺序、培训材料及上线审批均未公开；不能把一般嵌入式交付方法写成该项目的实际步骤。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开技术链为React前端、Node.js与Express应用层、MongoDB数据存储；语音接入ElevenLabs和Bhashini接口。应用以Docker容器运行于AWS ECS，GitHub Actions负责自动部署，CloudWatch用于告警。具体语音模型版本、接口间分工与提示词未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "产品官网称支持多种输入、离线操作、加密和自有数据库部署。这些是产品级能力声明；该次运行实例是否离线、选哪个部署选项、语音音频是否离开客户环境，仍没有项目级证据。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "数据流中最应核对的是“声音—文本—患者记录”三者的一致性。建议把敏感字段变更记录、操作者身份和最终确认关联起来，而不是将识别成功等同处方正确；这不是对已有架构的断言。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有公开角色权限矩阵、同意管理、音频保存期限、模型训练数据使用、密钥管理、访问审计或跨境数据处理安排。也未给出临床评测集、药物名称/剂量错误率、回滚机制与告警处理时限。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "可确认到的成果层次是具名工程师声明完成语音集成、生产部署与监控，不是已证明诊疗质量提高。公司官网的同名产品说明可交叉确认产品身份，不能替代客户运行日志。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "text": "官网财务计算器以营地数、患者数和转化假设估算年度价值，且把节省与潜在收入相加；没有扣除软件、云、语音调用、实施或人工复核成本。本记录不采默认演示金额为项目回报。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "总投入、持续运行费用和净收益均未知；效率、准确率、覆盖人数与留存也没有可审计数据。因此不能给出回本周期、投资回报率或“节约一个医生”等结论。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "尚缺具名客户、具体部署国家和云区域、正式投产与持续运维时间、用户规模及客户侧验收。主体注册印度与产品面向印度不补足这些项目缺口。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "官网的标准支持声明没有附本项目认证或监管文件；也没有证据把公司HEART模型与本次语音处方实现连接起来。不能补写“零幻觉”或自主临床决策。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "可迁移教训在于同时解决操作摩擦和上线维护；不可迁移的是未经验证的临床安全结论。优先保留医生最终判断，把每次输入差错转成评测样本，是建议性复刻切口。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "pride-school-unisoft-daily-operations",
+    "title": "把学校收费与课堂日常放进教师手机可用的同一套系统",
+    "company": "The Pride School",
+    "industry": "基础教育学校运营",
+    "provider": "Unisoft Technologies／Saurabh Joshi（关联机构内部工程）",
+    "country": "印度",
+    "deploymentCountries": [
+      "印度"
+    ],
+    "countryNote": "学校官网列印度马哈拉施特拉邦Nagpur的Hingna校址；实施材料明确The Pride School, Nagpur。不是凭技术供应商地址推断项目地点。[1][2]",
+    "publishedAt": "未标发布日期；工程角色自2026年4月开始",
+    "checkedAt": "2026-10-30",
+    "evidenceLevel": "B",
+    "evidenceNote": "Unisoft实务页面明确具名工程师在关联学校实际运行的项目，而不是下方课程练习；其履历再次确认角色，学校领导页确认该人在校内技术职位。日常使用来自关联机构自述，未独立审计。[1][2][3]",
+    "summary": "学校需要让收费、出勤、作业及家长沟通成为可持续日常工作，而不是分别补录多套信息。交付物是教师手机可用的校务系统，不是让模型替教师授课。",
+    "workflow": "教职员工处理校务，教师逐课记录每日教学情况，再向家长分享当天摘要；系统涵盖收据、校服、证书、费用、课表及出勤。原有具体软件与迁移方式未公开。",
+    "deploymentLevel": "机构明确标为已投入每日使用；不把同页仍在测试的员工考勤薪资模块纳入本项目成果。",
+    "humanRole": "Saurabh Joshi与教师等实际操作者合作发现流程问题并开发；教师仍负责课堂记录，工作人员仍承担校务。家长摘要是否另有审批机制未公开。",
+    "metrics": [
+      {
+        "label": "使用阶段",
+        "value": "每日使用（机构自述）",
+        "context": "未提供活跃教师/家长数量、完整观察期或独立日志；不是使用率统计。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "成本、效率与净收益",
+        "value": "未公开",
+        "context": "未披露前后工时、错误率、收费合同、研发投入、运行费或净收益；不能从上线推导财务回报。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "把校务规则拆成可执行的记录与责任",
+      "手机端教师工作流设计",
+      "收费及出勤数据建模",
+      "区分实际生产功能与课程演示"
+    ],
+    "risks": [
+      "涉及未成年人及家庭信息，实际权限和分享范围未披露",
+      "关联机构自述缺少独立效果核验",
+      "不能把教学大纲技术栈当作已交付系统架构"
+    ],
+    "entryPoint": "分析推断：借鉴时先选一个年级的每日课堂记录，让教师与家长核对准确性和工作量；这是建议，不是本项目已实施的试点。",
+    "sources": [
+      {
+        "title": "Unisoft前线部署工程实践与课程页面",
+        "url": "https://www.unisoftindia.org/forward-deployed-engineer-course-in-nagpur.html",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Built from real work；School operations platform；Live in daily use"
+      },
+      {
+        "title": "The Pride School领导团队",
+        "url": "https://theprideschool.com/leadership/",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Saurabh Joshi及学校联系地址"
+      },
+      {
+        "title": "Saurabh Joshi官方履历",
+        "url": "https://www.unisoftindia.org/best-sql-faculty-in-nagpur-saurabh-joshi.html",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Beyond the classroom；A forward deployed engineer"
+      }
+    ],
+    "caveats": [
+      "这是关联组织内部交付，不冒称外部付费客户合同。",
+      "实际系统与课程项目分开；课程中列出的模型、检索、技术语言和部署教程不证明学校使用了它们。",
+      "网页可读全文；未访问学生、教师或家长后台。"
+    ],
+    "dedupKey": "The Pride School | school daily operations | https://www.unisoftindia.org/forward-deployed-engineer-course-in-nagpur.html",
+    "addedDate": "2026-10-30",
+    "deepDive": {
+      "before": [
+        {
+          "text": "学校需要将收费、出勤、作业与家长沟通统一到教师能用的流程；原材料没有给出旧系统名称、每天记录量及错误率，因此不能写成“取代某个产品”或量化原始负担。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "学校位于Nagpur的Hingna；学校领导页列Saurabh Joshi为技术与创新负责人，支持其在真实学校工作的身份链。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "关联机构把他的工作明确称为 FDE（Forward Deployed Engineer，前线部署工程师）：先与真实使用者理解工作，再开发并投入使用。不是从招聘岗位推断有此项目。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "已交付校务范围包含收费收据及课堂记录。教师按课次记日志，家长接收日摘要；可用性目标是手机端真实日常使用，而不是展示一个模型回答。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析推断：这类工作的重要性是将一个人录入的信息交给下一个责任人，避免系统成功上线却无人维护。材料没有披露设计阶段的逐次访谈记录。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开的数据路径可确定为校务及课次记录进入系统、再形成家长沟通摘要；摘要通过WhatsApp分享。是否通过商业接口自动发送、是否模型生成、如何关联学生身份，均未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体数据库、托管服务、模型或检索组件、旧资料导入、备份回滚、权限矩阵、日志留存和自动测试覆盖未公开。不得用该站课程大纲补写项目技术栈。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "教师仍是记录的实际操作者。分析推断：涉及未成年人的信息分享应按班级与监护人核对范围；这是一项风险控制建议，不能宣称项目已有这样的权限设计。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "机构自述系统已用于每日校务；这证明报告的使用阶段，不证明全部教师采用、教学质量提高或学费收入增长。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有可计算效率增幅的前后样本，也无总投入、持续运行费用和净收益。开发使用AI辅助不等于业务自动化一定省钱。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "上线确切日、使用人数、生产事故与修复过程、评测数据集、维护工时、家长投诉或满意度均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析推断：可迁移经验是把真实运营与练习明确分开，以每日工作是否持续使用验收；还须单独验证权限和数据准确性，不能用课程宣传替代。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            3
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "rappi-claid-menu-image-onboarding",
+    "title": "让餐厅菜单照片更快达到上线标准，而不是让运营逐张修图",
+    "company": "Rappi",
+    "industry": "即时配送平台商家入驻运营",
+    "provider": "Claid AI／Let’s Enhance",
+    "country": "哥伦比亚（已核实Rappi S.A.S.主体）",
+    "deploymentCountries": [],
+    "countryNote": "Rappi官方法律说明确认Rappi S.A.S.及Bogotá地址。集团跨国业务不代表该照片项目覆盖全部国家；项目具体落地国家和合同主体未公开。[2]",
+    "publishedAt": "案例页未标日期",
+    "checkedAt": "2026-10-30",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商完整案例直接把前线部署工程师与Rappi餐厅入驻流程相连，并载运营经理Alain Abud发言；是官方项目级证据，但结果仍为客户/供应商自报，非独立审计。",
+    "summary": "商家入驻要准备菜单图片，逐张编辑拖慢上线。该项目交付的是接入现有运营系统的批量图片增强流程，前线工程工作落在流程适配和持续故障处理，不是单独售卖修图演示。",
+    "workflow": "餐厅照片批量进入Claid处理，再回到Rappi现有客户管理和商家上线流程；增强分辨率、清晰度、颜色及照明。",
+    "deploymentLevel": "供应商报告已完成接口集成且持续优化；上线确切日期、覆盖餐厅数、各国分布和实际处理量未披露。",
+    "humanRole": "供应商与Rappi团队共同适配入驻流程，设专用沟通渠道并定期复核；逐张图片的人审比例、最后发布批准权未公开。",
+    "metrics": [
+      {
+        "label": "平均餐厅入驻时间",
+        "value": "9天→1.2天",
+        "context": "供应商项目案例自报；样本、观察窗口、市场范围未公开。标题87%为约数，不当每一家餐厅保证。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "照片编辑用时",
+        "value": "减少42%",
+        "context": "供应商食品行业页与案例一致，统计方法、人数、工时口径未公开。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "效率及规模指标",
+        "value": "总体生产率+25%；餐厅数+33%",
+        "context": "案例自报，生产率分母未知；食品行业页将33%表述为restaurant onboarding增长，案例称平台餐厅数，保留口径差异，不做归因估算。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "项目财务回报",
+        "value": "未公开",
+        "context": "没有工程投入、接口账单、运维费用或净收益。不能把节约编辑时间直接当现金利润。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "批量媒体处理与现有运营系统集成",
+      "食品图片质量规则和真实性约束",
+      "按运营时效排查故障",
+      "把业务指标与技术指标分开验收"
+    ],
+    "risks": [
+      "过度增强可能改变食品外观及消费者预期",
+      "效果数字缺样本和地域",
+      "商家图片授权、存储及发布权限需单独核实"
+    ],
+    "entryPoint": "分析建议：先对一类菜单图片建立人工审查样本，分别记录清晰度改善、事实失真、返工和总上线时间；不把这项建议冒称已实施流程。",
+    "sources": [
+      {
+        "title": "Rappi照片增强与餐厅上线案例",
+        "url": "https://claid.ai/customers/case-study/rappi-food-delivery",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "The solution；Partnership built around Rappi scale；Results"
+      },
+      {
+        "title": "Rappi平台官方主体信息",
+        "url": "https://legal.rappi.com.co/colombia/informacion-relevante-plataforma-rappi/",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Rappi S.A.S.主体及Bogotá地址"
+      },
+      {
+        "title": "Claid食品图片自动化",
+        "url": "https://claid.ai/food/",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Rappi结果；食品结构/份量与数据安全能力声明"
+      },
+      {
+        "title": "Claid接口开发说明",
+        "url": "https://docs.claid.ai/",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Overview；声明式图片处理接口"
+      }
+    ],
+    "caveats": [
+      "A等级代表官方项目级角色证据，不代表所有效果经过第三方验证。",
+      "不把Claid通用视频生成、换背景或存储连接器当Rappi已经启用。",
+      "购买概率3倍为相关性营销说法，不作为本项工程因果效果。"
+    ],
+    "dedupKey": "Rappi | menu image onboarding | https://claid.ai/customers/case-study/rappi-food-delivery",
+    "addedDate": "2026-10-30",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原障碍是大量菜单图片需要人工处理，延迟餐厅可销售时间；改造应服务上线流程，而非只追求图片评分。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "Rappi在官方主体说明中定位为连接商家、消费者和独立配送者的平台。分析上，图片就绪只是商家上线的一环，不能用照片处理耗时替代整个入驻耗时。",
+          "evidence": "inference",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师）与Rappi直接协作适配流程，专用Slack支持和定期优化属于持续交付的一部分；工程师姓名、驻场天数与团队规模未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "需求验收、开发测试、灰度发布的详细顺序没有公开。不能把“持续优化”自动扩写成已经建立完整实验平台。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "已证实输入为批量照片，输出为增强图片，接口连接现有客户管理系统；具体系统品牌、队列、重试与回写字段未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "文档说明平台支持声明式图片操作，行业页提出保留食品结构与份量的约束。这些帮助理解工程问题，不证明Rappi采用全部操作或已有相同保护配置。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3,
+            4
+          ]
+        },
+        {
+          "text": "实际模型版本、检索或工具调用、照片存储区域、访问权限、自动发布权、人工复核制度及回滚未公开；不以通用平台能力补写客户架构。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公开数字见指标区，缺同口径分母与观察期，无法隔离本项目相对于其他入驻改造的贡献。更多餐厅上线也不等于更高利润。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "行业页还公开“不用客户图片训练”等平台安全声明；这些不是本项目合同、审计或实际设置证明。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "总投入、持续服务费用和现金净收益未披露，不能计算回本期。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "尚缺逐阶段耗时、失败率、人工返工率、图片误改案例及处置、模型变更验证与长期维护服务级别。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析推断：最可迁移的是把图像能力嵌入商家入驻并长期响应问题；最不可照搬的是未经同口径复测的效率百分比。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "presto-bluejay-drive-through-observability",
+    "title": "把得来速语音点单的门店差异和打断问题变成可测量、可修复的信号",
+    "company": "Presto Phoenix, Inc.",
+    "industry": "餐饮语音点单技术",
+    "provider": "Bluejay",
+    "country": "美国",
+    "deploymentCountries": [
+      "美国",
+      "加拿大"
+    ],
+    "countryNote": "Presto官方2026-09-28公告确认位于硅谷；参与者公开材料描述美国与加拿大的点单来源。该地域是项目数据来源，不代表逐店部署已核实，办公室协作位于San Mateo。[1][2]",
+    "publishedAt": "官方合作公告2026-09-28；参与者帖子仅显示相对时间",
+    "checkedAt": "2026-10-30",
+    "evidenceLevel": "B",
+    "evidenceNote": "完整公开访谈文字中客户CEO Krishna K. Gupta直接确认Bluejay团队嵌入协作、与客户沟通、共同开发评测且每日使用；另客户官方公告确认Bluejay属于平台合作。供应商案例正文403未绕过，故非完整技术验收。",
+    "summary": "点单系统在不同门店会出现不同问题，总体指标容易遮住个别门店异常。交付物是共建的评测与可观测层，让Presto团队发现问题、修改语音产品并检验修改效果，而不是Bluejay替餐厅接单。",
+    "workflow": "音频、转写、工具调用与运行轨迹进入评测；按门店观察差异；Presto团队修复，再比较前后信号。管理者利用定制指标查看运营。",
+    "deploymentLevel": "客户CEO明确已每日使用；部分定制评测正在向现场铺开。具体覆盖店数、上线日及逐项版本未公开，不能等同Presto所有门店都完成部署。",
+    "humanRole": "Bluejay与Presto团队共同开发指标，Presto工程与运营负责判断问题和修改产品；餐厅现场人员参与需求理解。自动修复或无人批准发布没有证据。",
+    "metrics": [
+      {
+        "label": "运行规模",
+        "value": "每月数百万分钟对话（供应商说法）",
+        "context": "单位是分钟而非会话次数；月份、精确量、门店分母和采样覆盖未公开，不是准确率或收益。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "部分门店打断问题",
+        "value": "修复后接近零（供应商说法）",
+        "context": "只针对出现该问题的一部分门店，未给出分母、观察期、定义或原始次数；不能写成系统零故障。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "成本与净收益",
+        "value": "未公开",
+        "context": "没有本项目合同费、评测运行费、人工投入和现金回报。客户融资和官网语音产品增收均不移植为评测工程结果。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "将现场语音问题转为可测量条件",
+      "联合音频、文本和工具轨迹分析",
+      "按门店分层而非只看总体均值",
+      "修复前后验证与客户协作"
+    ],
+    "risks": [
+      "门店差异与采样偏差可能掩盖失败",
+      "录音涉及隐私，具体保留和访问控制未知",
+      "评测指标可能只测易量化现象而漏掉真实顾客体验"
+    ],
+    "entryPoint": "分析建议：先选一种可复现打断行为，联看音频与工具时间线，形成店级样本后再扩大；这不是已公开的完整客户实施计划。",
+    "sources": [
+      {
+        "title": "Bluejay参与者帖子及Presto CEO完整访谈文字",
+        "url": "https://www.linkedin.com/posts/rohanvas_goblue-activity-7506436384241672192-GOFx",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "项目介绍；Transcript，客户确认共同评测与日常使用"
+      },
+      {
+        "title": "Presto官方：新融资及Bluejay平台合作",
+        "url": "https://presto.com/presto-raises-10-million-to-accelerate-voice-ai-leadership/",
+        "type": "客户官方",
+        "date": "2026-09-28；2026-10-30全文核验",
+        "locator": "合作段及About Presto"
+      },
+      {
+        "title": "Presto官方产品与业务背景",
+        "url": "https://presto.com/",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "Voice AI与产品级指标，不作Bluejay效果"
+      },
+      {
+        "title": "Presto数据隐私说明",
+        "url": "https://presto.com/data-privacy/",
+        "type": "机构或供应商官方",
+        "date": "页面未标发布日期；2026-10-30全文核验",
+        "locator": "用户资料权利；不等于项目配置"
+      }
+    ],
+    "caveats": [
+      "供应商完整案例https://getbluejay.ai/customers/presto正常请求返回403，停止访问；本条依据可读完整参与者访谈与客户公告，不称全部材料完整。",
+      "客户CEO和供应商共同自述不是独立审计。",
+      "Presto产品官网最高非干预率、增售及收入数字不是本项Bluejay工程效果。",
+      "未确认具体连锁品牌在此评测项目中的覆盖，不把全部客户Logo算作新增案例。"
+    ],
+    "dedupKey": "Presto Phoenix | Bluejay drive-through observability | https://www.linkedin.com/posts/rohanvas_goblue-activity-7506436384241672192-GOFx",
+    "addedDate": "2026-10-30",
+    "deepDive": {
+      "before": [
+        {
+          "text": "多品牌、多地点点单系统面对不同现场条件；客户希望更主动发现局部问题。材料没有给出原来排障的人时、平均发现时延或漏检率。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析推断：相同模型的总体表现不能代替每个门店体验，分层观察能防止整体平均数遮住小范围严重故障。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "客户在完整访谈中确认Bluejay前线团队进入办公室并接触餐厅客户，双方共同建立定制评测；这构成项目级 FDE（Forward Deployed Engineer，前线部署工程师）协作证据。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "Presto官方公告单独确认Bluejay为其专有平台合作伙伴；这可交叉确认合作身份，但不独立证明访谈中的质量效果。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开链路是把多种会话材料一起分析，输出门店层面的异常与管理指标。基础语音模型、评分模型、数据仓库、轨迹格式及连接器实现未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "已提到修复前后观测；没有公开黄金测试集、评分一致性、错误放行率、发布门禁或回滚步骤。不能把通用评测产品能力写成客户实际控制。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "客户隐私页说明查询、更正、删除资料等权利，但未描述Bluejay录音处理的保存期、地域、脱敏或访问角色。本项目权限与隐私仍须单独核实。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            4
+          ]
+        },
+        {
+          "text": "分析推断：异常信号应先由负责产品的人员解释，再决定修复；监测报警不等于自动下达餐厅业务动作，也不等于自动发布新模型。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商只对部分门店的打断问题报告趋近零，口径见指标区。客户确认日常使用，可说明采用状态，但不能证明总体订单成功率、利润或人工替代比例。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "本项的总投入、持续运行费用、净收益、排障节省和长期质量趋势均未披露。融资用于公司发展，不是客户投资回报。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "供应商完整技术案例访问受限；当前可读的完整访谈不能补足实现文档、客户验收和原始对话数据。没有继续请求或绕过403。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析推断：值得借鉴的是共同定义真实现场质量问题，并保留店级差异和修复前后比较；不能直接复制未公开的门店阈值或宣布零故障。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ]
+    }
   }
 ]
