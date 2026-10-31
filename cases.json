@@ -26993,5 +26993,1288 @@
         }
       ]
     }
+  },
+  {
+    "id": "achilles-anonymous-lighting-order-bom-pilot",
+    "title": "把定制灯具订单变成待批准物料清单，而不是替工程师签字",
+    "company": "匿名定制灯具制造商（Achilles付费试点客户）",
+    "industry": "定制照明设备制造",
+    "provider": "Achilles",
+    "checkedAt": "2026-10-31",
+    "addedDate": "2026-10-31",
+    "evidenceLevel": "B",
+    "country": "未披露",
+    "countryNote": "客户匿名；总部国家与实际部署国家均未公开，不以供应商所在地替代。",
+    "deploymentCountries": [],
+    "publishedAt": "未标注",
+    "metrics": [
+      {
+        "label": "清单周转用时",
+        "value": "两至三周→数小时（供应商自报）",
+        "context": "未披露样本、观察窗、复核工时及复杂度对照。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "实施费、运行费及净收益",
+        "value": "未披露",
+        "context": "只确认付费试点，不等同已证明投资回报。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "把历史工程经验整理成规则",
+      "识别可配置产品的例外",
+      "保持图纸与清单版本一致",
+      "与采购共同定义验收边界"
+    ],
+    "risks": [
+      "重复部件规则可能在新配置上失效",
+      "只检查被标记项可能漏掉系统未识别的错误",
+      "速度改善不等于采购质量或现金收益改善"
+    ],
+    "caveats": [
+      "不把供应商其他太阳能或储能项目的技术、指标归到此灯具试点。",
+      "匿名限制了主体与部署地点的独立核验。"
+    ],
+    "sources": [
+      {
+        "title": "Achilles官方案例：定制灯具付费试点与前线部署交付",
+        "url": "https://www.getachilles.ai/case-studies",
+        "type": "客户或供应商官方",
+        "date": "2026-10-31全文核验",
+        "locator": "Forward-deployed engagements；[01/04] Architectural & Custom Lighting；Our approach / Architecture / Outcomes"
+      }
+    ],
+    "summary": "先复用历史规则，再让构造工程师处理不确定项；重点是缩短采购前的资料准备。",
+    "workflow": "订单图纸与约束→历史规则及视觉处理→异常项复核→批准清单→现有采购表格。",
+    "deploymentLevel": "三周付费试点；不能把页首“生产中”泛化为此项目全厂持续投产。",
+    "humanRole": "构造工程师保留最终批准权。",
+    "entryPoint": "借鉴建议：选一种重复部件较多的产品，以人工批准清单作为对照，验证漏项和版本错误后再交采购。",
+    "evidenceNote": "供应商同一官方案例页把所列付费项目明确归于FDE（Forward Deployed Engineer，前线部署工程师）交付，且逐案给出输入、审批与输出；没有客户实名背书或独立审计。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "订单配置与生产资料脱节，工程师逐件重建并手录物料清单；采购因此等待。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：交付瓶颈位于工程到采购的交接，不只是图纸读取。应把审核返工也计入周期。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "供应商从已批准清单提取规则，用视觉模型处理可变项，标记不确定项后交工程师批准，再导出Excel。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "参与工程师姓名、现场驻留、里程碑验收记录及试点后的维护责任未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开组件包括图纸交换格式解析、Amazon Bedrock视觉模型、Celery及Amazon Simple Storage Service对象存储，并标注租户隔离。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体模型版本、提示模板、训练方式、规则冲突处理、身份权限、日志保留、数据地区、失败回滚和监控均未披露；平台支持能力不能当作客户已启用配置。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：可分开测试规则覆盖、视觉提取及人工批准后的错误率；这不是该客户已公开的验收方法。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：公开结果只支持资料准备提速的供应商主张，不足以推断采购差错下降、交付提前或利润增加。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户身份、总部、部署地点、业务量、准确率、异常比例、持续使用率、合同金额和计算费用均未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名定制灯具制造商 | Achilles订单到物料清单付费试点 | https://www.getachilles.ai/case-studies#01"
+  },
+  {
+    "id": "coforge-anonymous-bank-legacy-module-modernization",
+    "title": "先还原旧系统业务含义，再把银行模块迁到新架构",
+    "company": "匿名大型一级银行（Coforge客户）",
+    "industry": "银行技术现代化",
+    "provider": "Coforge",
+    "country": "未披露",
+    "deploymentCountries": [],
+    "countryNote": "客户总部及项目落地国家未披露，不根据供应商所在地推定。",
+    "publishedAt": "2026-05-05",
+    "checkedAt": "2026-10-31",
+    "addedDate": "2026-10-31",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Coforge Q4 FY26 Earnings Conference Call",
+        "url": "https://investors.coforge.com/hubfs/Coforge-Limited-Earnings-Call-Transcript-Q4FY26%20_AJ.pdf?hsLang=en",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-10-31 核验",
+        "locator": "PDF第13页，印刷页12，首个生产案例"
+      }
+    ],
+    "skills": [
+      "遗留依赖梳理",
+      "代码语义验证",
+      "现代架构迁移",
+      "发布与可观测性设计"
+    ],
+    "risks": [
+      "生成代码可能遗漏隐含业务规则",
+      "上线不等于长期可靠性已验证"
+    ],
+    "caveats": [
+      "不能套用电话会其他段落的全公司生产率、收入或成本数字。",
+      "同页团体保险商是另一项目，其40%及50%指标不属于此银行。"
+    ],
+    "evidenceNote": "官方财报电话会由技术负责人介绍生产案例，明确一名资深FDE（Forward Deployed Engineer，前线部署工程师）和两名初级顾问共同交付；客户匿名，未经客户侧验证。",
+    "summary": "这是一个模块迁移项目，不是整家银行核心系统重写。工程价值在于恢复遗留依赖和业务逻辑，再形成可运行的新实现。",
+    "workflow": "旧模块及依赖→分解代理还原结构和意图→工程师与编码代理生成新实现→容器化部署；测试与发布审批细节未披露。",
+    "deploymentLevel": "官方列为生产系统案例；具体上线日及连续运行情况未披露。",
+    "humanRole": "资深前线部署工程师及顾问参与交付。不能把生成生产级代码解释为未经人工批准自动发布。",
+    "metrics": [
+      {
+        "label": "交付时长",
+        "value": "客户给定时间的一半",
+        "context": "供应商自报，与计划预算比较，不是同等项目随机对照；实际天数未公布。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "迁移范围",
+        "value": "约11,000行",
+        "context": "单个旧模块，不是全行代码量。",
+        "kind": "coverage",
+        "unknown": false
+      },
+      {
+        "label": "总投入与净节省",
+        "value": "未披露",
+        "context": "项目报价、推理费、测试及维护投入未公布。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "entryPoint": "分析建议：选择边界清晰模块，先固定旧行为测试，再比较新旧输出与异常路径；审批权留在银行既有发布流程。",
+    "dedupKey": "Coforge匿名一级银行 | 旧模块迁移 | 2026-05-05电话会",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原模块采用COBOL（Common Business-Oriented Language，面向商业的通用语言），依赖复制簿、VSAM（Virtual Storage Access Method，虚拟存储访问方法）及汇编。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "分解代理从源材料还原结构、逻辑和意图；小型工程团队与编码代理协作。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "目标为Java 21与Quarkus的六边形架构，包含非阻塞输入输出、JWT（JSON Web Token，JavaScript对象表示法网络令牌）认证、OpenTelemetry遥测、分布式追踪及容器部署。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：语法转换成功不等于业务等价；尤其应独立验证金额、日期、异常和批处理语义。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "指标栏记录的是交付范围及计划对比；不能据此推导全行收益或客户财务回报。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露具体银行、业务模块名称、基础模型、训练或提示方法、测试覆盖率、缺陷率、用户量、部署国家、权限矩阵和回滚演练。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "andrei-anonymous-legal-intake-triage",
+    "title": "让律所先筛案、估时和推荐承办人，再由部门负责人批准",
+    "company": "匿名法律服务客户（Andrei Cruceru项目）",
+    "industry": "法律服务案件接入与分派",
+    "provider": "Andrei Cruceru",
+    "country": "未披露",
+    "deploymentCountries": [],
+    "countryNote": "使用英国法律及判例不等于客户总部或部署在英国；两者均未披露。",
+    "publishedAt": "来源未标发布日期；2026-10-31读取",
+    "checkedAt": "2026-10-31",
+    "addedDate": "2026-10-31",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Legal Intake, Triage & Assignment",
+        "url": "https://www.andreicruceru.com/case-studies/legal-intake-triage-assignment",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-10-31 核验",
+        "locator": "Problem / How it works / Impact"
+      },
+      {
+        "title": "Andrei Cruceru — Forward-Deployed AI Engineer",
+        "url": "https://www.andreicruceru.com/",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-10-31 核验",
+        "locator": "What I Do / Selected Work"
+      },
+      {
+        "title": "About — Andrei Cruceru",
+        "url": "https://www.andreicruceru.com/about",
+        "type": "供应商或具名参与者一手披露",
+        "date": "2026-10-31 核验",
+        "locator": "How I Work"
+      }
+    ],
+    "skills": [
+      "多入口案件分类",
+      "回归估时与排序建模",
+      "检索上下文",
+      "人工审批与业务记录联动"
+    ],
+    "risks": [
+      "历史分案偏差可能进入排序模型",
+      "时长预测可能对罕见案件失准",
+      "检索到法规不保证适用"
+    ],
+    "caveats": [
+      "个人网站其他产品的预测量、类别数和分类分数不移植到本案。",
+      "英国资料只是检索语料范围，不用于猜测客户身份。"
+    ],
+    "evidenceNote": "具名工程师自述生产案例；个人官网明确FDE（Forward Deployed Engineer，前线部署工程师）身份及直接与客户从发现问题到部署的工作方式。三页均来自同一作者，非独立审计。",
+    "summary": "自动分流与辅助预测减少等待，但承办人分配保留负责人审核，不把法律判断完全交给开放式生成。",
+    "workflow": "邮件/表单/门户询问→筛选与分类→成本和时长预测→法律检索→承办人排序→部门负责人审核→记录、提醒和客户更新。",
+    "deploymentLevel": "作者明确称为生产接入管线；开始日期、客户名称和持续使用规模未公开。",
+    "humanRole": "部门负责人审核并批准分派；模型提供建议而非最终授权。",
+    "metrics": [
+      {
+        "label": "客户接入能力",
+        "value": "提高50%",
+        "context": "作者自报；基期、样本量及客户数量未公布。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "第一年成本降低",
+        "value": "超过30万英镑",
+        "context": "作者自报；未给成本构成及审计方法，不视为净利润。",
+        "kind": "cost",
+        "unknown": false
+      },
+      {
+        "label": "分流耗时",
+        "value": "天级→分钟级",
+        "context": "缺少均值、中位数和人工等待拆分。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "实施与运行费用",
+        "value": "未披露",
+        "context": "不能由总成本降低倒推出采购价或净收益。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "entryPoint": "分析建议：先影子运行一种案件类别，对比部门负责人决定，重点测漏案、错派及复核时间。",
+    "dedupKey": "Andrei Cruceru匿名客户 | 法律询问接入分派 | legal-intake-triage-assignment",
+    "deepDive": {
+      "before": [
+        {
+          "text": "询问散落在邮件及门户，人工分流拖延承办分配，并有漏接业务问题。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师将任务串为可执行流程；其官网说明直接与客户识别瓶颈、估算基础设施成本并负责落地。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "定制机器学习承担相关性过滤与案件分类，回归模型预测成本和时间，排序模型推荐承办人；检索英国法律及判例供分配时参考。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：分类、预测、检索与审批可以分别评测，不能只用一个对话准确率涵盖整个流程。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "上述自报指标没有原始测量表；“分钟级”不代表案件处理或法律解决本身只需几分钟。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露基础模型与版本、训练集、检索库规模、系统品牌与接口、逐角色权限、隐私与留存措施、错误率和故障处置。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "utmb-carebricks-specialty-referral-triage",
+    "title": "把专科转诊从先来先排改成按紧急度、复杂度和就诊方式分流",
+    "company": "德克萨斯大学医学分部（University of Texas Medical Branch）",
+    "industry": "医院专科转诊与就诊可及性",
+    "provider": "Bunkerhill Health",
+    "country": "美国",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "countryNote": "主体官方联系页列美国得克萨斯州加尔维斯顿总通信地址，并说明州内多个院区。项目官方复盘明确在该医疗系统内运行；具体参与院区及云数据区域未披露。总部所在地与项目医疗服务所在地均为美国，不代表模型计算一定在美国。",
+    "publishedAt": "企业部署公告2026-01-13；专题复盘未标发布日期",
+    "checkedAt": "2026-10-31",
+    "evidenceLevel": "A",
+    "skills": [
+      "将临床分流标准编码为规则",
+      "医疗系统集成与流程治理",
+      "临床抽样验证及规则迭代"
+    ],
+    "risks": [
+      "错判紧急度可能延迟关键治疗",
+      "各专科标准不能不加验证地互用",
+      "敏感病历访问及跨系统写入需明确责任"
+    ],
+    "caveats": [
+      "不能把克利夫兰诊所的六万例积压清理、44%门诊增长或半年盲评移植到本项目。",
+      "内科主任在前雇主经历的六个月心脏科等待不是本项目基线。",
+      "企业整体20余代理数量不等于转诊代理数量。"
+    ],
+    "addedDate": "2026-10-31",
+    "deepDive": {
+      "before": [
+        {
+          "text": "问题在于排队顺序不反映临床紧急度；增加诊次并不必然把有限的专科时间分给最需要的人。复盘中内科主任讨论旧方式的缺点，但其前任职机构的等待数据不能算本项目改造前测量。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "可迁移的分析框架是把“需求量大”拆成真正需要面对面专科的需求，以及可以其他方式解决的需求；分流失误的代价应与节省容量一起评估。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "专科自行写规则，指定负责人，前线部署团队把这些规则做进流程，并长期参与调优；每月随机看病历不是一次上线后放手。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "企业公告将患者转诊加速列为已上线用途，覆盖多个高需求专科，而不是只有概念原型。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "各科参与人数、需求访谈次数、工程师名单、上线培训和运维工时未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "输入是进入系统的转诊，输出同时考虑复杂度、紧急度和就诊方式。复盘描述系统共享健康信息交换接口及Epic写回能力，但没有逐项说明本转诊实例的接口映射。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型名称、版本、提示词、是否微调、检索策略、病历字段、同步频率和存储拓扑未披露。不能把平台支持的所有通道都写成本转诊已经使用。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "组织统一审查平台、逐用途批准，并要求每个用途有负责人及期限内业务指标。病例级访问权限、读写账号隔离、审计保存期及跨境处理细节仍未知。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "每月抽样复核提供质量反馈；但抽样数、漏诊率、分层公平性、转人工阈值和回滚标准未公布。另一个医院的盲评设计不构成本项目验证证据。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "可确认的价值是转诊工作方式发生改变，且有肾科接诊时效与电子会诊量的自述结果；没有病例级数据可重算或归因。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "报告称内分泌科以原团队满足需求，不等于已实际裁撤三四名医生；现金成本、质量与长期需求变化也未量化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "建议把“接诊更快”拆成高危患者等待、普通患者等待、电子会诊完成率及再次转诊率，避免平均值掩盖服务分配问题。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "尚缺完整投入、运行费用、患者结果、安全事件和对照组；不能声称降低死亡率、零漏诊或已获得净利润。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "实际临床站点、计算地域、合同计费和服务水平承诺未公开。供应商其他宣传中的按使用量计费不能当作本客户合同。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "evidenceNote": "供应商官方复盘直接引用客户数字负责人和内科主任，明确该项目长期嵌入式前线部署团队负责将临床规则落实为工作流；不是靠招聘页面推定角色。部署公告交叉确认转诊分流已上线。",
+    "summary": "旧式排队不区分患者紧急程度；新流程先读转诊，再匹配面对面、远程或电子会诊。工程价值在于把各专科自己的临床标准接入日常流程，而非让通用聊天模型替代医生。",
+    "workflow": "转诊资料 → 评估复杂度与紧急度 → 按专科规则选择就诊方式与优先级 → 医疗团队接诊；科室负责人每月抽样核验并调整规则。",
+    "deploymentLevel": "供应商明确称已在多个内科亚专科运行；2026年1月公告亦列转诊加速为已上线领域。不同专科的确切上线日期与病例数未披露。",
+    "humanRole": "各专科制定操作规则、指定负责人并每月随机复核病历。供应商长期嵌入团队实现规则与系统动作。最终诊疗由临床人员承担；是否所有转诊逐例审批未披露。",
+    "metrics": [
+      {
+        "label": "高复杂度肾科患者接诊",
+        "value": "约提前一倍",
+        "context": "客户负责人经供应商复盘报告；未给出原始天数、病例数、统计期间，不能精确换算等待时间下降百分比。",
+        "kind": "efficiency"
+      },
+      {
+        "label": "低复杂度肾科电子会诊",
+        "value": "每周10—15例，48—72小时内",
+        "context": "同一复盘报告；对比旧方式可能等数月，不代表所有患者、所有专科都达到该时效。",
+        "kind": "efficiency"
+      },
+      {
+        "label": "完整成本和净收益",
+        "value": "未公开",
+        "context": "无软件、模型、实施、复核成本，也无对照研究；不能用避免招聘需求推算已裁减岗位或现金节约。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "entryPoint": "分析建议：先在单一专科以历史转诊做回放，由医生检查高危漏分与就诊方式误配，再小范围上线并追踪实际等待时间；不把降低平均等待当作安全的唯一标准。",
+    "sources": [
+      {
+        "title": "Bunkerhill：医疗系统内的代理部署与客户访谈",
+        "url": "https://www.bunkerhillhealth.com/resources/agentic-ai-at-work-inside-health-systems-lessons-from-utmb-and-cleveland-clinic",
+        "type": "企业官方项目复盘",
+        "date": "未标发布日期；2026-10-31全文核验",
+        "locator": "Patient access / Clinicians own judgment / Governance / validation"
+      },
+      {
+        "title": "Bunkerhill：德克萨斯大学医学分部系统级上线公告",
+        "url": "https://www.bunkerhillhealth.com/resources/bunkerhill-health-and-utmb-health-advance-clinician-led-ai-innovation-at-enterprise-scale",
+        "type": "企业官方项目复盘",
+        "date": "2026-01-13；2026-10-31全文核验",
+        "locator": "Turning ideas into action / Patient access acceleration"
+      },
+      {
+        "title": "德克萨斯大学医学分部：官方联系信息",
+        "url": "https://www.utmb.edu/contact",
+        "type": "企业官方项目复盘",
+        "date": "未标发布日期；2026-10-31全文核验",
+        "locator": "主通信地址与院区说明"
+      }
+    ],
+    "dedupKey": "德克萨斯大学医学分部 | Carebricks专科转诊分流 | https://www.bunkerhillhealth.com/resources/agentic-ai-at-work-inside-health-systems-lessons-from-utmb-and-cleveland-clinic"
+  },
+  {
+    "id": "vamstar-anonymous-pharma-salesforce-tender-pricing",
+    "title": "在原有销售系统里重建药企投标数据和定价建议",
+    "company": "匿名全球前十制药企业（Vamstar客户）",
+    "industry": "制药商业投标与定价",
+    "provider": "Vamstar",
+    "country": "未披露",
+    "deploymentCountries": [],
+    "countryNote": "客户匿名，总部国家未披露。官方称业务覆盖165个市场、本项目12个月内上线25国，但未列具体国家；不把供应商总部或全球业务覆盖当作已部署国家。",
+    "publishedAt": "页面标2025年6月",
+    "checkedAt": "2026-10-31",
+    "evidenceLevel": "A",
+    "skills": [
+      "当地投标流程发现",
+      "跨市场数据去重与规范化",
+      "现有销售系统内嵌工作流",
+      "以实际投标结果迭代策略"
+    ],
+    "risks": [
+      "不完整竞价数据可能造成定价错误",
+      "跨市场监管及商业保密边界未知",
+      "匿名营销指标缺乏可复算定义"
+    ],
+    "caveats": [
+      "25个上线国家名单不公开，部署国家数组留空。",
+      "不把600万美元历史预算写成本次节省。",
+      "模型训练措辞不披露具体方法，不能推定为大型语言模型微调。"
+    ],
+    "addedDate": "2026-10-31",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原集中化项目持续四年，目标80国但仅50国名义上线；数据不一致、重复及当地表格绕行让总部看不到可靠商机。招标占该企业收入约65%。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "问题不仅是缺少预测模型：如果员工继续在系统外工作，新模型即使预测准确，也不能自动获得完整流程数据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "前线部署工程师先与当地商业团队一起梳理实际决策和数据来源，而后将数据编排与价格助手接入既有Salesforce；没有要求另开一套登录入口。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "先两周接通首市场，再用一至三个月稳定数据流并按真实投标结果调整，之后分批扩展至25国。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "各波次验收标准、参与工程师数量、上线失败次数及回滚记录未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开数据类型是招标公告、价格基准、竞争动态与历史中标信息；系统去重、规范化并给出附证据的策略建议。具体数据许可、刷新时延及主键规则未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "底层模型、训练集规模、时间切分、调参方式、置信度校准、第三方供应商和推理设施未知。所谓按公司组合调优不等于已证明某种模型架构。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "Salesforce内嵌不等于继承了所有正确权限；报价审批、职责分离、访问审计、敏感价格数据隔离与跨境限制均缺项目细节。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "用真实投标结果迭代已披露，但离线评测集、无泄漏测试、建议解释忠实度和拒绝建议后的反馈处理方式未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "报道的业务提升同时涉及流程效率、赢标率、利润率与采用；这些是供应商总结，不是独立对照实验。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "完整成本缺失，包括实施、数据订阅、Salesforce费用增量、模型调用和人工复核；历史沉没成本不能直接当作此次回报。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析上应区分价格提高带来的毛利变化、市场环境变化与系统贡献；没有口径和对照时不计算投资回报率。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户身份、总部、25国清单、准确上线日期、原始业务指标和第三方验收未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "是否有自动报价提交、模型可执行动作上限以及异常人工处理时限未公开；本记录仅确认建议与准备流程。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "evidenceNote": "官方完整案例直接描述前线部署工程师进入首个国家、与当地商业团队梳理流程并连接既有Salesforce实例；交付节奏与上线结果明确。客户匿名、没有独立验收。",
+    "summary": "此前大型集中式项目把数据接进系统，却没有赢得当地团队信任。此次从一个市场开始，把数据规范化和可解释的投标定价建议放回员工正在使用的销售系统，再分批扩展。",
+    "workflow": "招标公告、价格基准和竞争动态 → 去重与跨市场规范化 → Salesforce原生数据层 → 每个机会的定价/投标策略建议及证据 → 商业团队决策和投标准备；最终报价批准和提交权限未公开。",
+    "deploymentLevel": "官方称首市场两周出现实时建议，12个月25国上线，属于实际部署自述，不是仅产品功能展示。",
+    "humanRole": "当地商业团队提供真实流程与数据来源，工程师接通系统；国家负责人和总部使用有证据的建议。尚无证据证明模型可直接批准或提交报价。",
+    "metrics": [
+      {
+        "label": "上线范围与采用",
+        "value": "12个月25国；当地用户采用率86%",
+        "context": "供应商自述；采用率的活跃阈值、用户总数及观察窗口未公开，不是165市场全覆盖。",
+        "kind": "adoption"
+      },
+      {
+        "label": "效率、赢标率、利润率",
+        "value": "分别提升73%、17%、9%",
+        "context": "官方原始措辞；未说明相对变化还是百分点、基线或样本，不换算成净利润及绝对收益。",
+        "kind": "efficiency"
+      },
+      {
+        "label": "历史项目投入",
+        "value": "600万美元、4年",
+        "context": "此前内部项目，不是本次Vamstar合同费用或本项目节省额。",
+        "kind": "cost"
+      }
+    ],
+    "entryPoint": "分析建议：先选一个市场，以历史投标回放检查建议和证据，再保留人工定价批准；分别测量数据重录量、报价周期与风险，不把赢标率单独作为成功标准。",
+    "sources": [
+      {
+        "title": "Vamstar：全球前十药企投标改造案例",
+        "url": "https://vamstar.io/newsroom/case-studies/large-pharmaceutical-saves-millions/",
+        "type": "企业官方项目复盘",
+        "date": "页面标2025-06；2026-10-31全文核验",
+        "locator": "Starting line / What Vamstar did / delivery rhythm / payoff"
+      }
+    ],
+    "dedupKey": "匿名全球前十药企 | Vamstar Salesforce投标定价25国部署 | https://vamstar.io/newsroom/case-studies/large-pharmaceutical-saves-millions/"
+  },
+  {
+    "id": "rodan-uk-entertainment-four-app-cloud-handover",
+    "title": "把四个业务应用及云运行责任交回娱乐集团",
+    "company": "匿名英国娱乐集团（Rodan客户）",
+    "industry": "娱乐媒体内部业务系统",
+    "provider": "Rodan",
+    "country": "英国",
+    "deploymentCountries": [
+      "英国"
+    ],
+    "countryNote": "官方称客户为英国娱乐集团、项目市场为英国；总部城市、法人注册地址和云区域没有披露。此处英国指客户国家及项目市场，不表示全部数据只存英国。",
+    "publishedAt": "项目期间2026年第一季度；未标页面发布日期",
+    "checkedAt": "2026-10-31",
+    "evidenceLevel": "B",
+    "skills": [
+      "业务应用依赖盘点",
+      "云迁移和发布控制",
+      "访问权限及运维责任交接",
+      "可维护文档和知识转移"
+    ],
+    "risks": [
+      "未知依赖可能在切换后导致故障",
+      "权限迁移可能留下旧账号或错误授权",
+      "无人负责的支持边界会造成后续事故处理延迟"
+    ],
+    "caveats": [
+      "不推定使用人工智能或任何特定云厂商。",
+      "服务页通用的评测框架与短周期方法不代表本项目逐项执行。",
+      "客户名称、应用功能和实际技术栈均保密或未披露。"
+    ],
+    "addedDate": "2026-10-31",
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户需要将四个日常运营应用及其云基础交回直接控制，同时避免影响内部使用者。来源没有说先前供应商是谁，也不能据“交回”推定发生了供应商纠纷。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析上这类项目的瓶颈可能是隐含依赖和责任边界，而不只是复制数据；必须把资源所有权、技术可运行性和团队接手能力分开验收。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "已披露动作包括依赖映射、发布和访问控制加固、应用与云资源迁移，以及接收团队运行模式文档。独立项目页把前线部署工程列为交付能力。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "配套服务页把本案列为已完成客户交付，避免仅由泛化服务说明推断参与。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "实际驻场频率、人员数量、工作坊、切换顺序和客户培训记录未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "可确认有应用层和云资源层迁移，也有访问与发布控制工作；具体数据库、文件规模、接口、消息系统、身份提供商和云区域均未知。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "项目没有公开模型或人工智能功能。不能为了贴合行业趋势，补写检索增强、智能代理、模型评测或生成内容。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "访问控制“加固”不等于可推断具体角色矩阵、最小权限或审计认证已经实施；旧账号撤销、密钥轮换和紧急访问流程尚缺证据。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "数据完整性验证、性能回归、并行运行、备份恢复、回滚标准及监控移交没有细节；这些是待核验事项，不是已交付清单。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "官方确认四应用归客户所有、云访问发布和支持责任澄清，且接收团队获得文档。证据足以确认交接成果，不能证明后续运维成本下降。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有预算、许可费变化、基础设施账单、人工投入与停机数据，无法判断财务收益；也不能从“已完成”推断业务人员零投诉。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议以客户独立部署、故障定位及恢复演练检验能力移交，避免系统名义归属已改变但关键操作仍只由供应商掌握。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "四个应用的名称、业务职责、数据类型、用户规模、源与目标环境均未知，不能将媒体分发或观众推荐任务补进本案。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "尚无具名客户确认、验收日期、上线后服务水平、维护合同及完整成本；本记录只采用官方明确声明的有限范围。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "evidenceNote": "官方独立项目页明确列前线部署工程为本项目能力，并写明已完成、四个应用迁移、实际工程动作与交接结果；配套服务页解释角色。匿名且缺客户侧验收，证据粒度限于迁移与责任交接。",
+    "summary": "这不是生成式人工智能项目，而是让客户真正掌握四个内部应用：工程团队整理依赖、加固发布与访问控制，迁移云资源，并把运行方法交给接收团队。",
+    "workflow": "现有应用与云资源 → 依赖盘点 → 发布及访问控制加固 → 应用/云资源迁移 → 明确支持责任与操作文档 → 客户团队接管。",
+    "deploymentLevel": "官方标记2026年第一季度已完成，交付对象为四个关键内部应用；没有公布零停机证明或迁移后的持续运行指标。",
+    "humanRole": "交付工程师负责依赖、控制、迁移和运行模式文档；客户接收团队取得可维护系统及交接资料。客户最终验收签字和具体审批人未公开。",
+    "metrics": [
+      {
+        "label": "完成移交范围",
+        "value": "4个内部应用",
+        "context": "供应商项目页明确数量与完成状态；未列应用名称、用户数或业务处理量。",
+        "kind": "delivery"
+      },
+      {
+        "label": "项目期间",
+        "value": "2026年第一季度",
+        "context": "不是精确工期，不能推算完整三个月或工程人日。",
+        "kind": "delivery"
+      },
+      {
+        "label": "成本与服务质量变化",
+        "value": "未公开",
+        "context": "未公布预算、停机、故障率或运维成本变化；目标“不干扰用户”不等于测得零停机。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "entryPoint": "分析建议：以一个低风险应用先建立依赖、权限、备份与回滚清单，再演练由客户独立发布和处理告警；客户能接手运行比只完成资源复制更能说明交付质量。",
+    "sources": [
+      {
+        "title": "Rodan：四个娱乐业务应用与云迁移",
+        "url": "https://rodan.io/work/entertainment-application-cloud-migration",
+        "type": "企业官方项目复盘",
+        "date": "未标发布日期；2026-10-31全文核验",
+        "locator": "Challenge / What we did / Outcomes / Capabilities"
+      },
+      {
+        "title": "Rodan：前线部署工程服务及已完成项目列表",
+        "url": "https://rodan.io/forward-deployed-engineering",
+        "type": "企业官方项目复盘",
+        "date": "未标发布日期；2026-10-31全文核验",
+        "locator": "Selected case studies / Media and Entertainment"
+      }
+    ],
+    "dedupKey": "匿名英国娱乐集团 | Rodan四内部应用云迁移交接 | https://rodan.io/work/entertainment-application-cloud-migration"
+  },
+  {
+    "id": "layerx-ai-workforce-production-agent-observability",
+    "title": "让企业智能体故障可追踪：LayerX把生产执行链变成跨团队交付依据",
+    "company": "LayerX／Ai Workforce",
+    "industry": "企业软件与AI工作流运维",
+    "country": "日本",
+    "deploymentCountries": [],
+    "countryNote": "日本是企业主体所在国：官网明确东京总部。案例描述企业生产环境，但未列具体客户部署国家、Azure区域或遥测存储区域；不能以日本总部替代部署地。来源4，2026-10-31核验。",
+    "provider": "LayerX内部AI Platform及交付团队；Datadog提供观测工具",
+    "publishedAt": "Datadog案例未标发布日期；参与者文章2026-05-29及2026-06-24",
+    "checkedAt": "2026-10-31",
+    "addedDate": "2026-10-31",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商具名客户案例与客户工程师本人两篇复盘互证生产实施及协作方式。Datadog正文明确前线部署工程团队；石田文章写出FDE（Forward Deployed Engineer，前线部署工程师）参与。石田健太本人身份为SRE（站点可靠性工程师），不是前线部署工程师。量化改善为客户估计，非独立审计。",
+    "summary": "Ai Workforce的交付难点不只是让文档工作流运行，而是运行成功后仍能查明结果为什么不对。本案例聚焦生产排障与更新验证，不把平台全部企业自动化能力当作已验收成果。",
+    "workflow": "企业文档工作流执行时生成关联追踪；出现异常后围绕同一次执行定位问题，交付、可靠性和质量人员共同核验，再审查模型或提示词更新。终端客户的审批、业务决策和签署环节不在公开实施范围内。",
+    "deploymentLevel": "两篇具名参与者复盘明确本番（生产）运维，不是仅演示或招聘岗位说明；未公开客户名单、租户数量、日请求量与服务级别达标数据。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师）团队与SRE、QA（质量保障）协作调查客户工作流。具名参与者石田健太负责可靠性相关工作；没有证据将集成全部归功于他或称由Datadog派驻工程师代建。",
+    "metrics": [
+      {
+        "label": "问题调查耗时",
+        "value": "1—2天 → 数十分钟，通常1小时内",
+        "context": "来源1正文为LayerX估计；未公开样本和观察期。标题另称40倍，不能据此断言每类故障都改善40倍。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "代表性改进周期",
+        "value": "约5天 → 1天",
+        "context": "来源1限定为代表性案例，约缩短80%；不是所有客户交付工期或智能体响应时间。",
+        "kind": "delivery",
+        "unknown": false
+      },
+      {
+        "label": "外部模型提供商问题分诊",
+        "value": "估计减少95%时间",
+        "context": "来源1把共享追踪链接与分诊加速关联；非模型错误率下降95%，未公开跨供应商统计。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "投入与净收益",
+        "value": "未公开",
+        "context": "没有实施人日、软件订阅、遥测存储、模型调用或维护成本，无法计算回本周期。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "跨同步与异步执行传递追踪上下文",
+      "把客户问题转成可复核的执行证据",
+      "遥测脱敏与字段最小化",
+      "提示词和模型变更验证",
+      "跨交付、可靠性及质量团队协作"
+    ],
+    "risks": [
+      "接口成功不等于文档处理正确，运行监控不能替代业务质量验收",
+      "追踪数据可能携带敏感业务信息；脱敏声明不等于完整合规审计",
+      "过度采集增加成本，过度删减又会损失复现线索，需按用途设计证据边界"
+    ],
+    "entryPoint": "借鉴建议：从一种常见客户故障开始，为请求、异步任务和模型调用建立关联标识，先确定哪些字段能发送，再让交付和质量人员用同一证据复现问题；验收同时记录定位耗时与最终业务正确性。此为分析建议。",
+    "sources": [
+      {
+        "title": "Datadog：How LayerX scales enterprise agentic workflows with Datadog Agent Observability",
+        "url": "https://www.datadoghq.com/case-studies/layerx/",
+        "type": "供应商发布的具名客户案例，引用客户工程师",
+        "date": "未标发布日期；2026-10-31正文核验",
+        "locator": "Building AI systems / Connecting workflows / Scaling AI operations；标题指标与正文分别核对"
+      },
+      {
+        "title": "石田健太：DASH 2026に登壇した勢いでDatadogの最新AIエージェント機能を即本番導入してみた",
+        "url": "https://zenn.dev/layerx/articles/14fc5a90798faf",
+        "type": "客户方具名工程师一手复盘，LayerX技术专栏",
+        "date": "2026-06-24；2026-10-31全文核验",
+        "locator": "DASHで話すために、取り組みを言語化する；帰国後、Bits Investigation + Bits Codeを入れてみた"
+      },
+      {
+        "title": "Findy Tools：AIエージェント開発特集（LayerX段，由石田健太执笔）",
+        "url": "https://findy-tools.io/articles/ai-agent/258",
+        "type": "具名项目工程师撰写的技术复盘",
+        "date": "页面公开日2026-05-29、更新日2026-05-28；2026-10-31读取公开正文",
+        "locator": "株式会社LayerX：架构背景／生产运维／未来改善；架构图标会员限定，未读取该图"
+      },
+      {
+        "title": "LayerX官网：会社概要",
+        "url": "https://layerx.co.jp/about/company/",
+        "type": "企业官方主体信息",
+        "date": "未标发布日期；2026-10-31核验",
+        "locator": "Company Profile／東京本社"
+      }
+    ],
+    "caveats": [
+      "案例单位是Ai Workforce生产可观测性改造，不是某家银行的具名业务上线。",
+      "同一参与者在两处发文属于相互补充，不视为两份独立审计。",
+      "不把能观察执行结构写成能获得模型全部内部推理。",
+      "自动化评测扩展是公开计划，不写成已经完成；后续初步故障调查工具试用也不等于无人值守自动修复。"
+    ],
+    "dedupKey": "LayerX | Ai Workforce生产可观测性及跨团队工作流验证 | https://www.datadoghq.com/case-studies/layerx/",
+    "deepDive": {
+      "before": [
+        {
+          "text": "参与者描述同一业务入口可能走不同的工具和信息路径；此前要拼接日志重建过程。遗漏文档或多余调用未必表现为接口失败，因此只看成功码难以确认业务质量。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "从交付角度推断，客户说“结果不对”与运维说“请求成功”并不矛盾。若双方没有同一执行记录，问题容易在检索、编排和模型之间反复转交；这是一种诊断逻辑，不是已测得的转交次数。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "石田的复盘明确：追踪链接成为SRE、FDE（Forward Deployed Engineer，前线部署工程师）及QA调查时的共同参照。这提供了具体项目中的岗位协作证据，而不只是公司设有该职位。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "可迁移价值是让客户上下文和技术诊断共享证据。建议把客户预期、异常执行标识、负责人员和验证结果连在一起；来源没有披露完整工单模板，不能声称其已部署这一模板。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露现场驻点时长、团队人数、具体客户验收人及各角色工时；公开协作不证明每个项目都由前线工程师从零搭建。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "核心实现将OpenTelemetry追踪上下文从接口延续到异步处理，再把工作流、智能体、任务、工具和模型调用表示为span。正文明确敏感输入、输出和工具参数／结果不发送或先脱敏，观测重点包括耗时、错误、模型和token元数据。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "供应商案例标明主体使用Python，Azure基础设施通过Terraform管理；不能据这份技术栈清单推断具体模型、数据库、租户隔离设计或云区域。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "工程师还记录了先梳理服务指标、再对重要监控启用自动初步调查的尝试；修复建议仍需人判断。此为同团队后续运维探索，不计入本案例的既有提效数字。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "建议把“有追踪”与“可复现”分开验收：异步上下文丢失会断链，保留元数据也未必足以复现语义错误。可用受控测试文档补充重放，但没有证据表明该项目已完成此机制。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公开数字见指标栏：调查提速和一个代表性改进周期缩短，均是团队报告的运营效果。来源1还将模型、提示词发布前的追踪检查纳入验证；这不证明文档准确率或最终客户收入已改善。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析上，调查省时与业务省时是两层效果：先找到错误只缩短诊断阶段，仍可能需要重试、人工校验与客户确认。因此不应将排障提速乘到所有合同或信贷工作量上。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有公布可审计分布、故障类别权重、同口径对照、部署前后业务准确率或客户复购，不能计算普遍收益。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "自动化评测、实验及生产问题回流测试集在来源中仍属于扩展方向，不能把计划写成完成的质量闭环。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            3
+          ]
+        },
+        {
+          "text": "尚缺遥测留存期限、完整访问权限、脱敏测试、跨境数据路径、合规验收和服务持续运行记录；总部位于东京不能填补这些证据空白。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "复刻时宜分别设定三种验收：诊断是否更快、修复是否正确、敏感信息是否最小暴露。只有三者共同满足，才有理由把一项观测改造推广成企业交付方法。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "mindmap-anonymous-east-african-telco-whatsapp-selfservice",
+    "title": "让双语电信助手能办理业务，但资金与换卡必须加验身份",
+    "company": "匿名东非移动网络运营商（MindMap Digital客户）",
+    "industry": "移动通信与移动支付客户运营",
+    "provider": "MindMap Digital",
+    "checkedAt": "2026-10-31",
+    "addedDate": "2026-10-31",
+    "publishedAt": "未标注",
+    "evidenceLevel": "B",
+    "country": "未披露",
+    "countryNote": "运营商总部未知；业务覆盖东非三国但国家名单未披露。系统托管于南非约翰内斯堡的客户Azure租户，不意味着客户总部在南非，也不证明南非是业务服务国家。",
+    "deploymentCountries": [],
+    "summary": "把英语与斯瓦希里语混合对话接入真实账务和账户操作，并用身份加验、人工升级和审计约束高风险交易。",
+    "workflow": "客户消息→意图分类与低置信度回退→受约束后端接口→必要时身份加验或人工核查→执行/答复→对话审计保存。",
+    "deploymentLevel": "供应商称已完成全面推广；总项目标注18周，第一阶段单独为15周。未公开具体上线日、各国进度和客户独立验证。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师）在客户边界内安装交付；复杂和可疑请求转坐席并带完整对话；合规团队直接查询审计库。",
+    "entryPoint": "借鉴建议：先限定余额及套餐查询等只读意图，验证语言混用和越权拒绝；交易功能另设身份加验、重复提交与人工接管测试。",
+    "evidenceNote": "已完整读取供应商官方客户故事。项目专属信息栏明确前线部署工程师在客户边界内安装，正文给出系统、模型、认证及运营结果；客户匿名，只有供应商叙述与匿名高管引言，故为B级而非独立效果验证。",
+    "skills": [
+      "混合语言数据整理与意图评测",
+      "把意图映射到受约束业务操作",
+      "设计身份加验及人工升级",
+      "跨账务账户系统集成",
+      "区分审计可追溯性与正确性"
+    ],
+    "risks": [
+      "换卡及支付错误可能造成账户损害",
+      "语言分类正确并不保证交易授权正确",
+      "重复请求、超时重试可能导致重复交易",
+      "客户对营销消息的同意不自动说明全部服务数据用途均已授权"
+    ],
+    "caveats": [
+      "不把约翰内斯堡托管地址写成运营商总部。",
+      "不将18周总交付与15周第一阶段混用。",
+      "原文等待时间从峰值23分钟到平均4分钟的描述口径不对称，不计算统一均值降幅。",
+      "模型名称按公开原文记录，不借模型品牌推定全部安全能力。"
+    ],
+    "metrics": [
+      {
+        "label": "呼叫中心入话量",
+        "value": "降低44%（供应商声明）",
+        "context": "相对全面推广前；测量窗口、基线总量及渠道转移后的总服务成本未披露。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "WhatsApp月会话",
+        "value": "约230万次（供应商声明）",
+        "context": "会话量不是独立用户数，不证明所有会话自动解决。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "呼叫中心等待",
+        "value": "峰值23分钟→4分钟",
+        "context": "原文前值明确峰值、后值称平均等待；不属明确同口径前后均值，不计算百分比。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "合同、运行费和净收益",
+        "value": "未披露",
+        "context": "公开按交付意图固定费用加分流成效费用的定价结构，未给金额；不能以暂停招聘或入话减少直接计算节省。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "旧规则机器人只回答常见问题，不能购买套餐或发起换卡；客户更倾向拨电话。原有Amdocs客户关系系统、Oracle账务、自建用户卡管理及移动支付系统互不贯通。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户大量混用英语、斯瓦希里语及Sheng俚语；旧机器人未能处理这种语言模式。入话量增长和系统割裂一起造成服务压力。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：核心改变不是把文本生成得更自然，而是把身份、意图和被允许的业务操作连成可执行流程。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "项目明确由FDE（Forward Deployed Engineer，前线部署工程师）在客户边界内安装。第一阶段15周建设30个意图，后续增加移动支付意图及携带上下文的人工转接；项目总交付信息为18周。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "WhatsApp Business为主渠道，另有Facebook Messenger和Telegram；系统从问答扩展到账务、套餐与账户操作。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "工程师人数、驻场国家、每阶段签收日期、用户培训与维护排班没有公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "供应商称以三年去标识化对话训练意图能力。主分类模型为微调Mistral 7B，低置信度及复杂生成回退到Llama 3 70B；模型经vLLM推理服务运行于客户租户内的图形处理器集群。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "主环境是约翰内斯堡的客户Azure租户，客户自有数据中心作为主动—被动故障切换环境。集成层将后端封装为受约束、可审计的API（Application Programming Interface，应用程序编程接口）。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "转账或用户识别卡变更需要OTP（One-Time Password，一次性密码），经原短信网关发送并验证后才执行；可疑新设备换卡等模式进入额外人工核查。完整对话记录进入可重放审计库并保留七年，合规团队可查询。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "原文未明确每条后端接口调用日志也保留七年；交易幂等键、失败补偿、细粒度服务账号权限、模型更新审批与恢复时限未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：交易验收应独立于语言理解验收；即使意图识别正确，也要检查账户绑定、权限、重复执行和升级失败。此处是评审建议，不是已公布测试结果。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称全面推广后入话下降44%，WhatsApp月会话稳定约230万；已披露业务量但未给独立核验。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：渠道采用、自动解决、等待时间和成本是不同指标。把大量会话搬到聊天渠道不自动说明总服务成本降低，更不能直接证明支付收入的因果提升。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "运营商法定名称、总部、三国名单、部署起止日期、测量样本、投诉及错误交易率、总投入、计算与渠道费用、净收益均未知。去标识化数据的再识别评估及训练使用授权也未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "MindMap Digital：东非移动运营商WhatsApp双语自助服务案例",
+        "url": "https://www.mindmapdigital.ai/stories/african-mno-whatsapp-self-service",
+        "type": "客户或供应商官方",
+        "date": "未标注发布日期；2026-10-31全文核验",
+        "locator": "项目专属安装说明；The challenge / The approach / The architecture / The outcomes；本地正常公开抓取全文mindmap.txt"
+      }
+    ],
+    "dedupKey": "匿名东非运营商 | MindMap WhatsApp双语账户账务自助 | https://www.mindmapdigital.ai/stories/african-mno-whatsapp-self-service"
   }
 ]
