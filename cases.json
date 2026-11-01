@@ -28276,5 +28276,1065 @@
       }
     ],
     "dedupKey": "匿名东非运营商 | MindMap WhatsApp双语账户账务自助 | https://www.mindmapdigital.ai/stories/african-mno-whatsapp-self-service"
+  },
+  {
+    "id": "locus-anonymous-fnb-six-market-delivery",
+    "title": "把六国食品饮料配送的人工调度、签收和运费核对接到同一决策系统",
+    "company": "匿名全球食品饮料集团（Locus客户）",
+    "industry": "食品饮料分销",
+    "provider": "Locus",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "country": "未披露",
+    "countryNote": "客户名称和总部未披露；官网逐一列出六个实际运营市场。图片替代文字不能单独证明客户实名，故保持匿名。",
+    "deploymentCountries": [
+      "越南",
+      "泰国",
+      "埃及",
+      "黎巴嫩",
+      "阿联酋",
+      "摩洛哥"
+    ],
+    "publishedAt": "未标注",
+    "metrics": [
+      {
+        "label": "配送服务等级达成率",
+        "value": "97%以上",
+        "context": "六市场供应商自述；未给样本分母、时间窗、服务等级具体阈值。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "采购费用变化",
+        "value": "降低22%",
+        "context": "供应商主张；费用口径与对照期未披露，不是项目净收益。",
+        "kind": "cost",
+        "unknown": false
+      },
+      {
+        "label": "骑手时间效率",
+        "value": "提高15%",
+        "context": "未说明效率计算式、样本与观察期。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "签收凭证审核自动化",
+        "value": "约90%",
+        "context": "审核环节比例，不能当作凭证识别正确率。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "实施投入、运行费、净收益",
+        "value": "未披露",
+        "context": "未给合同费、云费、维护费与收益归因。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "把现场调度规则转成可执行约束",
+      "跨市场交付与交接",
+      "签收例外和账单审计",
+      "区分效率与财务收益口径"
+    ],
+    "risks": [
+      "优化目标可能牺牲某些客户服务",
+      "陈旧路况或签收数据误导决策",
+      "自动核账结果不能无审批直接付款"
+    ],
+    "caveats": [
+      "不与既有Locus匿名Fortune50包裹项目合并；客户行业、地区及核心来源均不同。",
+      "页面同栏其他项目的3倍回报与百万美元节省不属于本案例。"
+    ],
+    "sources": [
+      {
+        "title": "Locus官方六市场食品饮料配送案例",
+        "url": "https://locus.sh/case-studies/global-fmcg-logistics-automation/",
+        "type": "客户或供应商官方",
+        "date": "2026-11-01全文核验",
+        "locator": "Client Overview、Solutions Implemented、People/Resource/Cost；已读取公开完整正文，不提交下载表单"
+      }
+    ],
+    "summary": "在跨国配送中把路线、承运商和账单判断标准化，让员工转向处理例外，而非继续逐单手工协调。",
+    "workflow": "订单与车辆/运力约束、路况遥测、签收凭证及承运商账单→调度与分配→配送跟踪→签收核查和费用对账→人员监管例外。",
+    "deploymentLevel": "供应商称六市场已运行，分阶段上线后由客户团队接手；开始日期、观察窗与独立验收记录未披露。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师）团队分期搭建、调优及交接；客户确定自治范围并保留人工介入。",
+    "entryPoint": "分析建议：先在一个配送区域影子运行路线方案，量化迟到、额外里程和人工改派，再逐步扩大可自主动作。",
+    "evidenceNote": "该具体项目的官方结果段直接写明前线部署工程师负责部署与调优，非招聘或通用产品能力；匿名供应商自述，非独立测评。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原来路线、司机状态、凭证和账单分别人工处理，各市场缺少一致标准。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "仅泰国网络已超过100个配送中心、33个城市和15万家零售网点，每年订单逾1800万、每月调度车辆逾5000辆；这是该市场规模而非六国合计，也不是增长效果。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：应先统一服务等级与成本定义；跨国共用软件不等于各地业务约束相同。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程团队分阶段部署并调优，再向客户团队交接；六类助手分别覆盖调度、承运商、结算、运力、枢纽与客户通知。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体工程师、驻场时间、业务参与者名单、失败迭代与交接验收未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开说明使用250多个运营约束，结合实时路况与遥测调整路线；按成本与服务评分承运商，并以计划与实际费用核对发票。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "调度时把车型、容量、交付时段及技能要求写成业务约束；签收核验后再按计划与执行差异核账。对运营人员的价值是更早看见例外，并在付款前发现多收费或不合规项；错误拦截率未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "系统声明包含解释、追溯、评估、自治等级、执行沙箱及人工介入。具体访问角色、审批阈值、权限和日志实现未公开；不能将声明当审计通过。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体模型、检索、优化算法、接口协议、原有企业系统名称、数据驻留、评测集、漂移监控及回滚未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：上线测试宜覆盖数据中断、迟到与成本目标冲突、人工改派及重复发票；这只是可迁移方法，不是已证实客户做法。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "已公开结果见各指标；超过4500名骑手日常使用应用属于运营规模，不证明人均收益。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：成本下降与效率改善是供应商业务主张；缺对照与投入数据，不能推算利润、回本期或因果增收。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户实名、总部、部署日期、合同、总投入、误判率、人工覆盖率及长期可靠性未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名食品饮料集团 | Locus六市场配送签收结算 | https://locus.sh/case-studies/global-fmcg-logistics-automation/"
+  },
+  {
+    "id": "common-analytics-anonymous-aircargo-reconciliation",
+    "title": "把航空货单逐行对账改为自动校验加人工例外复核",
+    "company": "匿名全球物流集团（Common Analytics客户）",
+    "industry": "航空货运与货运代理",
+    "provider": "Common Analytics",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "country": "未披露",
+    "countryNote": "客户匿名，未公开总部国家；不能用供应商办公所在地代替客户主体或项目落地地点。",
+    "deploymentCountries": [],
+    "publishedAt": "2026-07-29",
+    "metrics": [
+      {
+        "label": "单次对账周期",
+        "value": "约5天→约2小时",
+        "context": "每月两次；来源为实施者自述，未给货单总量或连续观察周期。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "无需人工介入的正确匹配行",
+        "value": "97%",
+        "context": "分母为提取并对账的行项目；其余3%被标记复核，不是错误直接出账。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "人员变化",
+        "value": "1名全职人员转做其他工作",
+        "context": "不是裁员或已实现工资现金节省。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "建设周期",
+        "value": "少于2个月",
+        "context": "从范围确认到部署，具体日期及人日未知。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "总投入、持续费用与净收益",
+        "value": "未披露",
+        "context": "不得把全职当量直接换算为已节约薪酬。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "skills": [
+      "把资深对账员经验写成校验规则",
+      "将模型输出对齐业务源记录",
+      "置信阈值与人工复核设计",
+      "分清字段准确率、行匹配率和财务错误率"
+    ],
+    "risks": [
+      "两个数据源可能共享同一错误",
+      "置信分数不等于经过校准的概率",
+      "账务例外处理可能成为新瓶颈"
+    ],
+    "caveats": [
+      "80—90%的原始OCR字段准确率是文章的一般经验描述，不能当作此客户正式基线。",
+      "97%行匹配与字段准确率口径不同，不能计算17个百分点的同口径提升。",
+      "不能从供应商香港地址推断匿名客户总部或部署地区。"
+    ],
+    "sources": [
+      {
+        "title": "Common Analytics官方航空货运对账案例",
+        "url": "https://www.common-analytics.com/work/tam",
+        "type": "客户或供应商官方",
+        "date": "2026-11-01全文核验",
+        "locator": "完整案例与准确率定义"
+      },
+      {
+        "title": "John Liu工程复盘：对账97%准确率从何而来",
+        "url": "https://www.common-analytics.com/insights/what-97-percent-reconciliation-accuracy-takes",
+        "type": "客户或供应商官方",
+        "date": "2026-07-29发表；2026-11-01全文核验",
+        "locator": "全文：交叉核对、业务规则、置信度、人工例外、FAQ指标定义及嵌入式交付"
+      }
+    ],
+    "summary": "客户买到的是可核对的货单账务工作流：识别只是入口，规则与业务系统校验决定哪些行可以自动通过。",
+    "workflow": "扫描航空货单→字段提取→运营源系统逐行匹配→格式/范围/跨字段规则→置信分流→人工复核低可信项→完成对账。",
+    "deploymentLevel": "具名实施者称从定范围到部署少于两个月；客户匿名，未提供独立客户公告或长期运行日志。",
+    "humanRole": "John Liu以嵌入客户团队的前线部署伙伴身份复盘；职衔自述为前线部署AI自动化顾问。人工保留歧义货单复核，未声称全自动记账。",
+    "entryPoint": "分析建议：先取一个完整账期建立人工答案，按金额错误与漏报例外分别计数，再确定自动通过阈值。",
+    "evidenceNote": "官方案例明确前线部署交付，具名工程复盘说明与团队嵌入式协作和真实构建步骤；属于参与者与供应商同源组合证据，不是独立背书。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "会计团队每月两次收集航空货单，人工录入并逐行与运营系统核对，发现差异后追查。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "污损、不同版式和手写改动说明为何仅提取文字不能安全完成对账；文章未提供客户原始文档样本。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "复盘作者John Liu说明以嵌入式伙伴参与，从定范围到部署不足两个月；选择把不确定项交人而非追求100%自动化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "客户会计、数据及安全负责人的姓名、分工与审批记录未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "提取结果与运营源系统核对，再应用范围、合计、格式和跨字段约束；通过这些检查构成的置信度，把可确认行自动处理，把疑难行交人。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "模型品牌与版本、是否使用语言模型、连接器、数据库、身份权限、审计留存、数据地区与账务写入审批未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "评测只披露97%的行项目定义；样本大小、抽样方法、后验错账率、阈值校准、系统故障回滚和持续监控未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：应把相同来源的重复数据、源系统错误及人工复核耗时纳入验收，防止“两个数一致”被误当成真实正确。",
+          "evidence": "inference",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "实施者报告单次周期约两小时，原负责录入的人员转向需要判断的工作；未给独立审计。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "分析：保留人工不是项目失败，而是把人工投入集中到长尾歧义；无成本细项仍不能证明净利润。",
+          "evidence": "inference",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户实名、总部和部署地区、货单量、币种、金融控制、合同价、维护协议及上线后长期结果未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名全球物流集团 | Common Analytics航空货单对账 | https://www.common-analytics.com/work/tam"
+  },
+  {
+    "id": "firstsource-kairos-us-health-system-denials-triage",
+    "title": "把医疗拒付分流嵌入生产流程，效果不等于回款增加",
+    "company": "匿名美国大型医疗系统（Firstsource Kairos客户）",
+    "industry": "医疗收入周期管理",
+    "provider": "Firstsource",
+    "country": "美国",
+    "countryNote": "官方称美国医疗系统，支持美国业务主体和运营场景；客户名称、总部城市、院区及计算地区未披露。",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "publishedAt": "2026-04-16",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Firstsource发布Kairos及生产项目结果",
+        "url": "https://www.firstsource.com/newsroom/press-releases/firstsource-launches-kairos----the-operating-system-powering-intelligence-that-operates",
+        "type": "供应商官方一手披露",
+        "date": "2026-11-01全文核验",
+        "locator": "2026-04-16；生产案例与How Kairos Works"
+      }
+    ],
+    "skills": [
+      "收入周期流程建模",
+      "异常分流与人工交接",
+      "生产质量监控"
+    ],
+    "risks": [
+      "错分可能延误申诉",
+      "自动化比例不能代表准确率"
+    ],
+    "caveats": [
+      "不移植同公告英国金融客户指标。",
+      "不把供应商其他匿名医院故事当成同一主体。"
+    ],
+    "metrics": [
+      {
+        "label": "生产率提升",
+        "value": "66%",
+        "context": "供应商自报；基期、分母、观察窗及工作量归一方式未公开。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "拒付分流自动化",
+        "value": "80%",
+        "context": "供应商自报；非拒付通过率，样本范围与人工复核占比未知。",
+        "kind": "coverage",
+        "unknown": false
+      },
+      {
+        "label": "投入、运行费、净收益",
+        "value": "未披露",
+        "context": "不能由生产率或自动化比例倒算现金收益。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "介入前的系统、队列、人员配置和拒付率基线没有公开，不能写成完全手工处理。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方将此项目列为已在生产运行的Kairos实践；其交付模式先评估架构与运营方式，再由嵌入团队建设并运维。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户侧参与者姓名、工程人数、培训及各阶段日期未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "输入字段、模型版本、检索库、调用工具、电子病历或财务系统接口，以及逐角色权限、审核阈值、留存和回滚机制均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：应把分流准确性与后续申诉成功分开评测；这是建议，不是客户公布的评测方案。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：两项自报指标支持局部流程提效主张；不足以归因到医疗质量、收入增加或裁员。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "缺客户实名公告、测量底稿、实施合同、持续运维表现及失败案例。完整项目架构尚不能重建。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "summary": "工程交付对象是拒付后的分流工作，不是诊疗模型。公开材料能证明生产实施及自报效率，不能证明拒付率、回款或利润改善。",
+    "workflow": "医疗收入周期中的拒付事项→分流自动化→后续处理；具体输入字段、分流目的地和人工交接未知。",
+    "deploymentLevel": "供应商明确列为Kairos生产案例，非计划或招聘。",
+    "humanRole": "同一嵌入式多职能团队设计、建设并管理生产流程；本客户逐例审核及最终财务授权未披露。",
+    "entryPoint": "分析建议：先固定一种拒付类别，测错分、漏分、人工复核时间及后续回款；分流速度不能作为唯一验收。",
+    "evidenceNote": "公告把已实施医疗项目归入Kairos经营模式，并明确该模式由FDE（Forward Deployed Engineer，前线部署工程师）等成员嵌入交付；客户匿名，无独立结果审计。",
+    "dedupKey": "Firstsource匿名美国医疗系统 | Kairos拒付分流 | 2026-04-16公告"
+  },
+  {
+    "id": "relevant-us-childcare-brightwheel-daily-pipeline",
+    "title": "先让托育运营数据按时流动，再接家长沟通与业务工具",
+    "company": "匿名美国八中心托育运营商（Relevant Software客户）",
+    "industry": "托育与幼儿教育运营",
+    "provider": "Relevant Software",
+    "country": "美国",
+    "countryNote": "案例明确客户总部在美国、运营八家托育中心；具体中心州份及云计算地区未知。",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "publishedAt": "未标注",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "前线部署工程服务中的实际托育案例",
+        "url": "https://relevant.software/hire-forward-deployed-engineers/",
+        "type": "供应商官方一手披露",
+        "date": "2026-11-01全文核验",
+        "locator": "Case study：30+ hours / 4 modules / Phase1"
+      },
+      {
+        "title": "托育数据管线完整案例",
+        "url": "https://relevant.software/cases/childcare-data-pipeline-automation/",
+        "type": "供应商官方一手披露",
+        "date": "2026-11-01全文核验",
+        "locator": "Challenge / Solution / Delivery stages / Client request"
+      }
+    ],
+    "skills": [
+      "源数据约束排查",
+      "身份匹配与去重",
+      "数据管线测试",
+      "业务数据最小化"
+    ],
+    "risks": [
+      "错配家长或学生可能污染通知与账务",
+      "流失评分可能误导业务干预",
+      "接口权限与条款必须单独确认"
+    ],
+    "caveats": [
+      "源文同时描述无非官方接口要求与基于会话的内部接口提取，授权边界未给可核验附件；不视为复制采集方式的许可。",
+      "不要把账单数据也写成每日刷新。"
+    ],
+    "metrics": [
+      {
+        "label": "人工导出工作",
+        "value": "每月节省30小时以上",
+        "context": "供应商自报；统计人数、基期及观察月份未知。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "一期交付",
+        "value": "不足两个月",
+        "context": "一名兼职开发者，约400项测试；不是全职人月或完整质量审计。",
+        "kind": "delivery",
+        "unknown": false
+      },
+      {
+        "label": "投入、运行费、净收益",
+        "value": "未披露",
+        "context": "节省工时不等于净现金收益。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "月度人工导出阻塞业务工具；源平台没有公开接口，字段也需规范化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "实施顺序为约束与架构梳理、提取与归一化、业务工具同步及四模块接入、一期交付与续约；保留既有积分工具，而不是重建。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "官方服务页报告一名兼职开发者完成一期，期限不足两个月，约400项测试；不是400个模型评测样本。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户侧只披露营销主管职务；开发者姓名、驻场、培训、后续人数和运维值班未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "数据主线：Brightwheel学生与考勤每天、账务每月进入BigQuery，再同步联系人到GoHighLevel和既有积分工具；对地点、房间和收费类别归一化，并处理增量及姓名去重。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "四模块：规则难以确定的联系人交Claude辅助匹配；家长沟通记录用于风险评分；销售通话生成复盘及跟进事项；Slack问答读取Google Drive和Notion批准文档，无依据时不回答。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "模型输出在Slack供团队查看。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "是否所有外部写入均须逐项人工批准未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "开发借助Cursor生成代码和测试；约400项测试接入持续集成和交付流程。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "未披露模型版本、文档切分及检索策略、逐角色访问权、数据留存和计算地区；生产错误率、告警、重试、回滚和后续评测也未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "原文的会话内部接口描述与“无非官方接口”要求之间的授权边界，缺少平台批准文件和具体接口名单供独立核验；不能将供应商合规主张当作独立结论。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析：数据管线测试与模型评测应分开验收，分别检查记录完整、错配、文档依据、业务动作误触发；这些是借鉴建议，不是客户公开的验收结果。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：现有证据能支持导出劳动减少与工具接通，不能证明流失率下降、招生增加或儿童服务质量改善。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "缺具名客户核验、原始测试报告、隐私授权证明、生产错误分布与财务收益；流程描述仍不是可照抄部署的完整实施手册。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "summary": "核心瓶颈是数据更新，而不是缺少一个新聊天模型。保留既有业务工具，降低手工搬运；留存改善和利润仍未知。",
+    "workflow": "Brightwheel→BigQuery→GoHighLevel及既有积分工具；模型输出供Slack人工查看。",
+    "deploymentLevel": "官方服务页明确四模块在生产；客户续约，但运行时长与用户量未公开。",
+    "humanRole": "兼职开发者负责一期；业务团队可在Slack查看输出。可查看不等同每次写入前必须审批。",
+    "entryPoint": "分析建议：先验证一种报表的完整性和重复记录，再接业务动作；儿童与家长资料需最小权限和明确处理授权。",
+    "evidenceNote": "服务页将该已交付项目作为FDE（Forward Deployed Engineer，前线部署工程师）服务实例，并直接链接完整技术案例；有匿名客户职务引述，仍是供应商单方发布。",
+    "dedupKey": "Relevant匿名美国八中心托育商 | Brightwheel数据管线 | childcare-data-pipeline-automation"
+  },
+  {
+    "id": "dextr-anonymous-hospitality-reservation-ontology",
+    "title": "接通真实房态和酒店规则，让电话预订不再只是聊天",
+    "company": "匿名50家以上物业连锁（Dextr客户）",
+    "industry": "酒店住宿与电话预订",
+    "provider": "Dextr AI",
+    "country": "未核验",
+    "countryNote": "客户总部国家及实际部署国家均未披露或未取得明确主体资料，不以供应商或网页语言推定。",
+    "deploymentCountries": [],
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "summary": "工程重点是把房态、支付状态与当地运营规则统一，避免语音应答与实际预订脱节。",
+    "workflow": "来电和酒店政策→共享预订状态模型→读取及写回物业管理系统→预订或按规则转人工。",
+    "deploymentLevel": "供应商称连锁客户已实际部署；公开结果仅涉及两家物业上线后两个月。",
+    "humanRole": "复杂预订保留给人工；具体转接规则由物业定义。",
+    "evidenceNote": "官方项目页明确专属FDE（Forward Deployed Engineer，前线部署工程师）与策略师共同交付，并详述客户三方协作；客户匿名且无独立验证。",
+    "skills": [
+      "跨组织厘清预订状态",
+      "将口头政策转成可测试规则",
+      "交易系统集成",
+      "设计合理对照及人工升级路径"
+    ],
+    "risks": [
+      "错误写回可能影响库存、款项或取消政策",
+      "客户群与时段不同使人机转化率不可直接比较",
+      "节假日及季节趋势可能干扰前后对比"
+    ],
+    "caveats": [
+      "不把两家物业的披露推广到整个连锁。",
+      "未核实客户总部、项目国家及系统厂商品牌。"
+    ],
+    "entryPoint": "分析建议：先限定一种预订和取消流程，以真实状态回放测试异常；将交易正确性、转人工成功率与收入分开验收。",
+    "sources": [
+      {
+        "title": "Dextr：Reservation Contact Centers — Forward-Deployed AI",
+        "url": "https://www.dextr.ai/case-studies/reservation-contact-centers/",
+        "type": "供应商或具名参与者一手材料",
+        "date": "2026-11-01 全文核验；页面未标发布日期",
+        "locator": "The Situation / The Method / The Results"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "电话渠道收入对照",
+        "value": "高于延长原趋势的无人工智能预测46%—70%",
+        "context": "两家物业、上线后两个月，供应商自报；不是随机对照，也不是净收益。",
+        "kind": "revenue",
+        "unknown": false
+      },
+      {
+        "label": "总投入、运行费、净收益",
+        "value": "未披露完整口径",
+        "context": "不采用页面投资回报倍数推导利润；合同、计算、运维及人工复核成本未知。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "dedupKey": "Dextr匿名50家以上物业连锁 | 电话预订状态与运营规则集成 | https://www.dextr.ai/case-studies/reservation-contact-centers/",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原电话渠道下滑，溢出及下班后的来电漏接；费率、库存和付款状态在物业系统，例外政策分散于运营人员与客服。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "两家披露物业上线前的电话预订同比落后32%—41%；结果对照采用各自上线前趋势向后延长两个月，而非同期随机对照组。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师、策略师、物业系统提供商、客服与运营每周两次共同梳理状态及规则，持续版本化共享模型。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：这里需要业务协议协调而非仅调整提示词；若取消、支付过期等状态定义不一致，语音自然度不能挽救交易错误。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "代理直接读写记录系统，不另维护费率表；已披露范围包括预订、变更、支付和规则化转接。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "共享规则覆盖55项以上用例，分为预订支付、识别订单来源后的服务、变更、团体活动、升级转接、住客服务、通知补救、物业特定政策八族；这不是55个模型或55项独立效果指标。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型名称、检索实现、接口认证、逐角色权限、支付数据处理、数据地区、回归集及故障回滚未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议逐项测试重复提交、付款超时及库存并发；这些是风险检查建议，不是已经完成的客户验收。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：趋势外推能提供经营对照，但不能排除季节、价格与客源变化；收入增加不自动等于工程带来的净收益。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "工程人数、客户签收、全连锁覆盖比例、长期故障率、错误预订及退款损失未披露；无法据短期收入判断长期质量。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "simmons-flank-supervised-document-agents",
+    "title": "让律所规则进入文书批注，缺信息先问律师再继续",
+    "company": "Simmons & Simmons",
+    "industry": "法律服务文书起草与审查",
+    "provider": "Flank；Simmons & Simmons Applied AI团队",
+    "country": "未核验",
+    "countryNote": "当前所读项目原文未提供总部或法人国家证明；项目明确覆盖英国及中东业务团队，中东具体国家未披露，不把团队地点当作全部数据处理地。",
+    "deploymentCountries": [
+      "英国"
+    ],
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "summary": "律所把自有规则手册与模板作为审查依据；代理完成初稿和问题整理，律师保留判断和批准。",
+    "workflow": "邮件及源文书→律所规则/模板→批注文书与待确认项→律师复核；缺失或冲突输入通过邮件或表单追问。",
+    "deploymentLevel": "具名客户参与者确认代理已经服务团队与客户；2025年由供应商协助，2026年初开始自主构建。",
+    "humanRole": "Lucy Shurwood领导应用人工智能团队，Ali Chaudhry为高级法律工程师；律师保留最终法律判断，代理不签字。",
+    "evidenceNote": "官方具名客户案例及完整五页材料记录Flank前线部署团队实际协助，并引述客户合伙人与法律工程师；不是招聘信息，但仍为供应商编辑材料，非独立审计。",
+    "skills": [
+      "规则手册结构化",
+      "识别文书间依赖",
+      "嵌入既有邮件流程",
+      "缺失信息处理",
+      "人工责任及审计设计"
+    ],
+    "risks": [
+      "规则手册过时会系统性传播旧立场",
+      "模型把条款放错位置仍可能产生可信外观",
+      "效率提高不能替代律师执业责任"
+    ],
+    "caveats": [
+      "四种文书工作流属于同一合作，不拆成四个新增案例。",
+      "示意图中的页数和标记数不作为真实项目指标。",
+      "该律所其他自建产品的使用率不是本项目采用率。"
+    ],
+    "entryPoint": "分析建议：先选一种有清晰规则手册的文书，保留人工批准，分别统计遗漏条款、错误立场、追问质量和净审核时间。",
+    "sources": [
+      {
+        "title": "Flank：Simmons & Simmons客户案例",
+        "url": "https://flank.ai/customers/simmons-and-simmons",
+        "type": "供应商或具名参与者一手材料",
+        "date": "2026-11-01 全文核验；页面未标发布日期",
+        "locator": "客户合作与文书工作流"
+      },
+      {
+        "title": "Flank：How Simmons & Simmons offloads complex drafting and review to supervised agents",
+        "url": "https://flank.ai/case-studies/simmons-and-simmons.pdf",
+        "type": "供应商或具名参与者一手材料",
+        "date": "2026-11-01 全文核验；页面未标发布日期",
+        "locator": "全文五页；末页From served, to self-serve及具名客户引言"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "节省时间",
+        "value": "仅定性及“多个小时”描述",
+        "context": "未提供样本、业务量、观察期或包含复核的统计，不计算平均提速。",
+        "kind": "efficiency",
+        "unknown": true
+      },
+      {
+        "label": "投入、运行费用及净收益",
+        "value": "未披露",
+        "context": "未公开合同、集成人日、模型费用和律师复核成本；新增客户服务不等于已披露收入。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "dedupKey": "Simmons & Simmons | Flank监督式文书代理 | https://flank.ai/case-studies/simmons-and-simmons.pdf",
+    "deepDive": {
+      "before": [
+        {
+          "text": "固定问卷难承接非结构化指示和复杂条款；收集资料、追问及文件流转仍依靠人工。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "2025年供应商前线部署团队支持实际客户交付；翌年律所转向自建内部与对外服务代理，并通过测试反馈推动供应商补充功能。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析：从代建到自建的移交值得关注，但来源没有证明律所能脱离供应商独立运行，不能称为完全技术自主。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "四种已建工作流：证券化审阅输入长交易文件及既有检查清单，输出批注和律师待看表；第一类复杂起草输入非结构化信息及标准模板，输出填好文书与缺项提问；第二类输入模板、规则手册及协议，输出草稿与审阅；养老金条款输入结构不一的受托人表格及保险方规则，输出逐项解释的批注。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "每个代理接入律所自己的邮箱：律师或客户按原邮件习惯发送，收回附说明的批注文书和开放问题。立场由律师编写的规则手册、结构由模板提供；模型负责解释输入、选择适用立场和放置内容，不等于生成过程已变成确定性程序。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "已落地例子包括证券化文书核查、复杂起草及养老金条款审阅。管理员可查看请求、问题及草稿的审计轨迹。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "基础模型、检索索引、具体客户关系管理系统接口、数据存储地域、保留时间、跨客户隔离和权限矩阵未公开。一般产品安全说明不能当作该客户启用配置。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未公开准确率、漏审率、对抗测试、规则版本发布、回滚和上线后维护责任；宣称可审计不是安全或法律合规认证。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：将初稿及待确认问题结构化可能减少反复沟通，但能否节省总工时取决于复核与错误返工；公开材料不足以量化。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "各业务组部署日、使用人数、实际吞吐、精确落地国家、客户签收与商业收益均缺少项目级数据。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "augmeta-anonymous-retailer-scorecard-verification",
+    "title": "先用零售商自己的答案验数，再让代理进入经营周报",
+    "company": "匿名大型零售商（Augmeta客户）",
+    "industry": "零售经营指标与数据质量",
+    "provider": "Augmeta",
+    "country": "未核验",
+    "countryNote": "客户总部国家及实际部署国家均未披露或未取得明确主体资料，不以供应商或网页语言推定。",
+    "deploymentCountries": [],
+    "publishedAt": "未标发布日期",
+    "checkedAt": "2026-11-01",
+    "addedDate": "2026-11-01",
+    "evidenceLevel": "B",
+    "summary": "该项目不把引用链接当作准确性证明，而以既有报表和独立提取脚本为对照，记录不一致结果。",
+    "workflow": "既有经营指标及工程记录→代理计算/检索→逐值对照人工报表和脚本→登记差异→经营周报复用指标登记库。",
+    "deploymentLevel": "作者描述客户实际核验及周报流程改变，并发现生产环境缺陷；不是仅产品演示。",
+    "humanRole": "作者Ahmad Elswify自署创始FDE（Forward Deployed Engineer，前线部署工程师）；客户产品经理提供已有报表，工程对照脚本用于独立核验。",
+    "evidenceNote": "具名交付工程师的官方项目复盘明确输入、对照、差异和生产问题；零售商匿名，原始测试记录未公开，证据为一手自述而非第三方验收。",
+    "skills": [
+      "统一指标定义与口径",
+      "设计可复现对照测试",
+      "追踪缺失数据",
+      "区分事实与收益估算"
+    ],
+    "risks": [
+      "少量历史对照不保证未来或新指标正确",
+      "正确检索不保证指标业务含义正确",
+      "缺失数据可能不抛异常而污染经营判断"
+    ],
+    "caveats": [
+      "同一零售商其他案例页面未拆成新增。",
+      "年度工时为假设外推，不能称已实现净节约。"
+    ],
+    "entryPoint": "分析建议：选已有人类正确答案的周报，保留精确差异而不是四舍五入掩盖；上线后持续检验缺失值与定义变更。",
+    "sources": [
+      {
+        "title": "Ahmad Elswify：Checking an AI Operator against the retailer's own numbers",
+        "url": "https://www.augmeta.ai/case-studies/verifying-an-ai-operator-against-the-retailers-own-numbers",
+        "type": "供应商或具名参与者一手材料",
+        "date": "2026-11-01 全文核验；页面未标发布日期",
+        "locator": "The scorecard / The engineering records / What the check found / 作者身份"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "经营指标逐值对照",
+        "value": "48项中47项完全相同",
+        "context": "两周、应用与移动网页及桌面三个终端；一项差1次访问并记录，不是全产品准确率。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "工程记录对照",
+        "value": "38个相同问题标识；20/20结构化字段一致",
+        "context": "与专用提取脚本对比，供应商自报；不是整个知识库召回率。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "总投入、运行费用、净收益",
+        "value": "未披露",
+        "context": "原文年度工时用固定周工时外推，尚无实际回收或成本审计，不计作已兑现收益。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "dedupKey": "Augmeta匿名大型零售商 | 经营周报与工程记录逐项核验 | https://www.augmeta.ai/case-studies/verifying-an-ai-operator-against-the-retailers-own-numbers",
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户担心代理即使附来源也可能报错，需要在提交管理层前与自身已有答案核对。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "实际测试先拿客户产品经理已经完成的周报作对照，验证40项新增关键绩效指标定义；订单、转化、加购、结账、跳出和平均订单额在三个终端、两周内逐值核对。另用专门提取脚本独立获取相同工程变更记录，再比较标识集合及结构化字段；两种检查不能混成一个准确率。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "工程师复盘记录逐值测试，并保留唯一差异；产品经理周报已改为从指标登记库重现，不再每周重新手工编制。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：可复核差异比信心措辞更适合验收，但既有报表也应被视为对照而非永不出错的真理。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "核验发现生产库缺列间歇导致新指标图表空白，表现与局部滚动部署一致；此为来源给出的关联解释，不是已证明根因或已修复声明。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户使用的模型、数据库品牌、检索结构、权限、身份集成、私有数据流向及保留规则未披露；不套用供应商一般安全页面。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：应另设空值、时间窗、设备口径及指标定义改变的回归测试；这些是可迁移建议，不是该客户已公开维护机制。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析：这次验证证明有限测试范围的一致性，并发现隐藏缺陷；不能推断全零售业务收益、无人审核或长期零错误。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称与国家、测试日期、总使用量、差异原因的最终解释、缺列修复状态、上线准入门槛及持续维护责任未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
   }
 ]
