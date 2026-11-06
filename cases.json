@@ -34396,5 +34396,1449 @@
         "type": "客户或供应商官方"
       }
     ]
+  },
+  {
+    "id": "iino-lines-rotor-sail-performance",
+    "company": "IINO Lines（饭野海运）",
+    "title": "【合格·官方实践关联】把船上转子帆数据接到岸上，让节油效果和异常可核验",
+    "industry": "海运与船舶节能",
+    "provider": "Clarify",
+    "country": "日本",
+    "countryNote": "客户公司资料明确总部在日本东京（来源3）。项目涉及船岸数据，但未列部署国家；不把总部或船舶航线推定为部署地点。",
+    "deploymentCountries": [],
+    "summary": "资格：合格·官方实践关联。海运企业需要证明风助推进设备的实际作用，人工汇报与静态分析难以及时发现偏差。",
+    "workflow": "船舶、传感器和设备商数据进入Clarify，工程、可持续发展与经营人员共同查看转子帆实时表现，并用手机组件查看状态。",
+    "evidenceLevel": "B",
+    "evidenceNote": "符合严格收录：供应商官方FDE（Forward Deployed Engineer，前线部署工程师）实践页明确把本项目列入具名现场项目，而非仅有全站导航。该页对这一实践的原文说明为“is how every Clarify project starts, not an add-on you buy later.”；随后列出并链接本项目。属于官方实践关联，不声称已公开每位工程师的正式职位。",
+    "deploymentLevel": "供应商具名客户案例描述已使用的实时监测；未披露船队覆盖数和上线日期。",
+    "humanRole": "船舶工程与运营团队据共享数据决策；不是已证实的无人驾驶、自动调帆或自动签发减排证明。",
+    "skills": [
+      "船岸数据整合",
+      "设备性能监测",
+      "跨技术与商业团队共享指标"
+    ],
+    "risks": [
+      "风况、船速和载重可能混淆节油归因",
+      "传感器或船岸连接异常可能误导判断"
+    ],
+    "caveats": [
+      "设备本身的节油与软件提供的观测能力必须分开归因。",
+      "这是传统工业数据交付案例；未披露使用大语言模型。"
+    ],
+    "metrics": [
+      {
+        "label": "节油与减排",
+        "value": "定性报告改善，未公开数值",
+        "context": "供应商客户案例未给基线、测量窗口或对照；不能推算软件独立贡献。",
+        "kind": "outcome",
+        "unknown": true
+      },
+      {
+        "label": "实施与运行成本",
+        "value": "未公开",
+        "context": "合同、接入、通信和平台费用均未披露。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.clarify.io/customer-stories/iino-lines",
+        "title": "IINO Lines documents the fuel and CO₂ savings from its rotor sails",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": ""
+      },
+      {
+        "url": "https://www.clarify.io/forward-deployed-engineering",
+        "title": "Clarify：让工程师加入您的团队，更快获得结果（官方页标题译）",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": "Engineers by your side；On site：具名案例链接"
+      },
+      {
+        "url": "https://www.iino.co.jp/kaiun/english/company/outline.html",
+        "title": "Corporate Data - IINO KAIUN KAISHA, LTD.",
+        "type": "客户或供应商官方",
+        "date": "资料截至2026-03-31；2026-11-06核验",
+        "locator": "Head Office"
+      }
+    ],
+    "publishedAt": "页面未标发布日期",
+    "checkedAt": "2026-11-06",
+    "addedDate": "2026-11-06",
+    "entryPoint": "从一艘船的观测数据与人工复核开始，先确认能解释偏差，再扩大覆盖。",
+    "dedupKey": "IINO Lines（饭野海运） | 把船上转子帆数据接到岸上，让节油效果和异常可核验 | https://www.clarify.io/customer-stories/iino-lines",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原有人工报告与静态分析难以验证转子帆表现，也难以及时响应偏差。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方FDE（Forward Deployed Engineer，前线部署工程师）实践页将IINO Lines具名列为现场项目并链接此案例。工程师人数、驻船时间与交接清单未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "实施将分散船岸数据提供给工程、可持续发展与管理团队共同使用。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "Clarify汇集船舶、传感器与供应商实时数据，提供分析与可视化，并支持iOS状态组件。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未披露采样率、传输协议、离线补传、设备身份映射、质量校验或权限模型。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "审批和评测：未公开谁批准改变设备设置、是否设独立验收组、节油归因模型和回归测试。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "复现建议：对照需考虑风况、航速、载重与海况；数据展示成功不等于因果证明。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称实时证据改善跨团队协作与决策，并与转子帆技术共同带来燃油和排放改善；未量化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "软件可能提高异常可见性，但其独立节油贡献不能从本案例确定。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露上线国家、船数、投入人月、服务费用、通信成本及节油测量期。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露错误报警率、数据缺失率、人工复核耗时或设备安全控制边界。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "cflow-synergy-log-vessel-data",
+    "company": "Cflow",
+    "title": "【合格·官方实践关联】把活鱼运输船数据从离线设备接到船员与岸上团队",
+    "industry": "渔业装备与船载鱼类处理系统",
+    "provider": "Clarify",
+    "country": "挪威",
+    "countryNote": "Cflow官网明确总部位于挪威Langevåg（来源3）。案例提及澳大利亚塔斯马尼亚、挪威、智利的设备业务，但没有逐国确认这30艘数字化船舶名单，部署国家留空。",
+    "deploymentCountries": [],
+    "summary": "资格：合格·官方实践关联。船载控制、动力和环境数据格式不一，海上通信长期中断，船员仍承担向岸上整理报告的工作。",
+    "workflow": "船上记录器采集并缓存设备信号，连接云端供船员和岸上团队读取，形成运营、追溯与政府报告。",
+    "evidenceLevel": "B",
+    "evidenceNote": "符合严格收录：供应商官方FDE（Forward Deployed Engineer，前线部署工程师）实践页明确把本项目列入具名现场项目，而非仅有全站导航。该页对这一实践的原文说明为“is how every Clarify project starts, not an add-on you buy later.”；随后列出并链接本项目。属于官方实践关联，不声称已公开每位工程师的正式职位。",
+    "deploymentLevel": "供应商称30艘船已数字化；不把后续预测维护和数字孪生潜力写成已部署功能。",
+    "humanRole": "船员负责现场运营，岸上团队使用浏览器或手机查看报告；政府报告提交审批责任未公开。",
+    "skills": [
+      "工业协议接入",
+      "断网存储与补传设计",
+      "船岸数据产品",
+      "运营报告与可追溯性"
+    ],
+    "risks": [
+      "海上断连导致岸上数据滞后",
+      "不同传感器与船型的时间和单位口径不一致",
+      "鱼类生物安全相关判断不能仅靠报表自动执行"
+    ],
+    "caveats": [
+      "客户是鱼类处理装备企业，不是30艘船的已核验所有者。",
+      "预测维护、船队管理与数字孪生在正文是数据可支持的方向，不是已上线结果。"
+    ],
+    "metrics": [
+      {
+        "label": "数字化船舶",
+        "value": "30艘",
+        "context": "供应商自报覆盖规模；统计时点及船舶清单未披露。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "单船实时信号",
+        "value": "约3,000–4,000路",
+        "context": "信号规模不是独立传感器数，也不是准确率或节省工时。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "成本与工时改善",
+        "value": "未量化",
+        "context": "无合同金额、云账单、人工基线或净节省数据。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.clarify.io/customer-stories/cflow-brings-maritime-data-to-life-powered-by-clarify",
+        "title": "Cflow digitalized 30 ships and took the reporting burden off the crew",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": ""
+      },
+      {
+        "url": "https://www.clarify.io/forward-deployed-engineering",
+        "title": "Clarify：让工程师加入您的团队，更快获得结果（官方页标题译）",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": "Engineers by your side；On site：具名案例链接"
+      },
+      {
+        "url": "https://www.cflow.com/contact-us",
+        "title": "Contact - Cflow",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": "Head office"
+      }
+    ],
+    "publishedAt": "页面未标发布日期",
+    "checkedAt": "2026-11-06",
+    "addedDate": "2026-11-06",
+    "entryPoint": "选择一艘船的一类工艺信号，先测试断网缓存、恢复同步和报告核对，再推广。",
+    "dedupKey": "Cflow | 把活鱼运输船数据从离线设备接到船员与岸上团队 | https://www.clarify.io/customer-stories/cflow-brings-maritime-data-to-life-powered-by-clarify",
+    "deepDive": {
+      "before": [
+        {
+          "text": "数据散落在控制、发电、推进、定位与环境系统，格式不同且海上存在长时断网。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方FDE（Forward Deployed Engineer，前线部署工程师）实践页的具名现场项目区明确链接Cflow；项目页说明双方共同建设Synergy Log。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "船端Synergy Log通过OPC-UA、NMEA等协议接入设备，提供本地存储、缓冲、安全与用户界面；云端Clarify提供API、时间线及PowerBI、Grafana、R连接。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "报告面向船员、岸上人员及政府用途，但未公开法定签核、自动提交权限与验收标准。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "建议按断网时长、重放、时间错位与重复记录建测试集；不得把建议写成实际测试结果。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "30艘船数字化、每船约3–4千路信号是部署规模；供应商称岸上可自行取报告，船员汇报负担减少。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "减少报告负担不等于已证明减员；未公开前后耗时和独立验收。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露按船收费、软硬件成本、通信费用、实施人月、长期维护分工及故障率。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露数据保留周期、权限矩阵、加密机制、补传冲突策略或逐国部署名单。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "eide-fjordbruk-tubenet-sea-lice",
+    "company": "Eide Fjordbruk",
+    "title": "【合格·官方实践关联】把新型养殖网箱数据变成海虱防治试验与运营改进证据",
+    "industry": "水产养殖与鱼类健康管理",
+    "provider": "Clarify",
+    "country": "挪威",
+    "countryNote": "项目官方来源明确客户为西挪威有10个场站的家族养殖企业，全部场站运行Clarify；Tubenet具体试验场站数量未披露。",
+    "deploymentCountries": [
+      "挪威"
+    ],
+    "summary": "资格：合格·官方实践关联。新Tubenet生产方案需验证海虱防治作用，但旧控制系统、Excel与新传感器数据分散，现场与远程专家难以共同解释。",
+    "workflow": "在既有Clarify部署上接入Tubenet传感器，与生物、环境、设备和经济数据对齐；专家在时间线上比较历史与实时信息，形成安装和运营调整依据。",
+    "evidenceLevel": "B",
+    "evidenceNote": "符合严格收录：供应商官方FDE（Forward Deployed Engineer，前线部署工程师）实践页明确把本项目列入具名现场项目，而非仅有全站导航。该页对这一实践的原文说明为“is how every Clarify project starts, not an add-on you buy later.”；随后列出并链接本项目。属于官方实践关联，不声称已公开每位工程师的正式职位。",
+    "deploymentLevel": "供应商具名商业规模研发案例；10个场站使用Clarify不等于10个场站全部部署Tubenet。",
+    "humanRole": "养殖人员、兽医、生物学家、技术人员及管理者共同解释数据；现场人员提供工况背景。技术和运营变更的审批链未公开，不表述为自动实施治疗。",
+    "skills": [
+      "工业与养殖数据接入",
+      "跨系统时间对齐",
+      "现场和远程专家协作",
+      "商业规模试验的可追溯记录"
+    ],
+    "risks": [
+      "环境和鱼群差异可能混淆海虱防治效果",
+      "传感器关联不能直接确认为海虱发生原因",
+      "错误操作可能影响鱼类福利"
+    ],
+    "caveats": [
+      "15,000路信号及10个场站属于客户平台规模，不能直接归为Tubenet新增覆盖。",
+      "官方称已证实方案按预期工作，但没有公开海虱数量变化、对照组或统计检验。",
+      "新硬件的防治作用和数据平台的证据整合作用分开归因。"
+    ],
+    "metrics": [
+      {
+        "label": "Clarify客户覆盖",
+        "value": "西挪威10个场站",
+        "context": "来源称所有场站已运行平台；Tubenet试验覆盖数未披露。",
+        "kind": "adoption",
+        "unknown": false
+      },
+      {
+        "label": "实时数据规模",
+        "value": "约15,000路信号",
+        "context": "客户平台规模，非海虱防治准确率或新增传感器数量。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "海虱防治与成本改善",
+        "value": "未公开数值",
+        "context": "未公开海虱数量变化、鱼类存活率、实施成本及净收益，不能据定性评价推算。",
+        "kind": "outcome",
+        "unknown": true
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.clarify.io/customer-stories/eide-fjordbruk",
+        "title": "How Eide Fjordbruk documented that its new sea lice concept works",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": ""
+      },
+      {
+        "url": "https://www.clarify.io/forward-deployed-engineering",
+        "title": "Clarify：让工程师加入您的团队，更快获得结果（官方页标题译）",
+        "type": "客户或供应商官方",
+        "date": "页面未标日期；2026-11-06核验",
+        "locator": "Engineers by your side；On site：具名案例链接"
+      }
+    ],
+    "publishedAt": "页面未标发布日期",
+    "checkedAt": "2026-11-06",
+    "addedDate": "2026-11-06",
+    "entryPoint": "先在一个已批准试验场站汇集旧数据与新传感器，由领域专家确定比较条件和验收标准。",
+    "dedupKey": "Eide Fjordbruk | 把新型养殖网箱数据变成海虱防治试验与运营改进证据 | https://www.clarify.io/customer-stories/eide-fjordbruk",
+    "deepDive": {
+      "before": [
+        {
+          "text": "新Tubenet方案需验证有效性并改进安装与运营，但控制系统、Excel及新传感器的数据彼此分散。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "Clarify的FDE（Forward Deployed Engineer，前线部署工程师）实践页在具名现场项目区直接链接Eide Fjordbruk海虱项目；依据为官方实践关联，而非项目人员职位披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "团队利用既有平台接入新传感器，把相关记录交给现场与远程专家共同分析。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称数据帮助证明方案按预期运行，指导后续安装，并识别海虱暴发概率较高的工况。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "这些是官方定性结果；没有公开因果检验，不能推定具体减虫比例、停药率或利润改善。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露试验场站清单、样本数、研究期限、对照组、海虱计数方法或第三方验收。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露合同费、传感器费用、平台与工程师工时成本、维护分工及持续效果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "时间线汇集多类历史和实时数据，支持假设检验、远程讨论及追溯；项目没有公开协议、模型或算法栈。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "审批与评测：兽医等参与数据解释，但谁批准生产方案或运营动作，以及发布前测试门槛，均未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "复现建议：提前定义海虱计数、鱼群与环境分层，对齐安装版本和工况变化，以免把相关性误当疗效。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "almanor-anonymous-municipality-permit-triage",
+    "company": "匿名市政机关（Almanor AI客户）",
+    "industry": "市政许可与公共行政服务",
+    "title": "【合格·项目角色明确】将许可积压处理拆成受理、资料抽取和分流",
+    "provider": "Almanor AI",
+    "country": "未核验",
+    "countryNote": "客户匿名；总部与部署国家未披露，不从供应商所在地推断。",
+    "deploymentCountries": [],
+    "summary": "资格：合格·项目角色明确。项目角色直接明确；政府客户和结果均为供应商匿名陈述，自动分流不等于自动批准。",
+    "evidenceLevel": "A",
+    "evidenceNote": "符合直接项目角色门槛：正文将三周流程梳理明确归于FDE（Forward Deployed Engineer，前线部署工程师）。原文短引：“Forward-deployed engineers spent three weeks mapping the case types, decision rules, and escalation criteria”。A不等于政府独立确认。",
+    "deploymentLevel": "供应商称已投入运行；无可独立核验的机关名称、合同或上线日期。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师）梳理业务类型、规则和升级条件；工作人员转向复杂申请与公众沟通。",
+    "workflow": "许可申请队列→资料抽取→资格检查→路由；最终行政许可的签发责任未披露。",
+    "publishedAt": "未标注",
+    "checkedAt": "2026-11-06",
+    "addedDate": "2026-11-06",
+    "entryPoint": "分析建议：先用已结案样本测试分类和缺件提示，保持拒绝、许可签发与申诉决定由授权人员控制。",
+    "skills": [
+      "行政流程和例外梳理（披露）",
+      "生产队列接入（披露）",
+      "行政决定审计与回滚测试（建议）"
+    ],
+    "risks": [
+      "分析：错误资格检查可能影响申请人权益。",
+      "分析：自动路由率高并不证明路由正确或符合行政法要求。"
+    ],
+    "caveats": [
+      "来源没有交代国家，不从美国供应商地址填充。",
+      "相邻政府业务总览的95%以上自动化不能移作本项目实测。"
+    ],
+    "metrics": [
+      {
+        "label": "标准申请处理",
+        "value": "部分申请等六周以上；新标准申请48小时内",
+        "context": "原文是旧队列部分申请等六周或更久、新标准申请48小时内，并非同一批样本的均值对比；不是所有申请服务水平。"
+      },
+      {
+        "label": "自动路由",
+        "value": "98%",
+        "context": "无样本量、准确率或人工改派率。"
+      },
+      {
+        "label": "交付及清积压",
+        "value": "六周部署；部署后60天清积压",
+        "context": "积压超过1200件；无独立验收。"
+      },
+      {
+        "label": "总投入与持续成本",
+        "value": "未披露",
+        "context": "无采购费、集成工时、运行费用、人工复核成本或净收益。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Almanor AI：市政许可受理与分流案例",
+        "url": "https://almanorai.com/case-studies/permit-processing.html",
+        "type": "供应商官方",
+        "date": "2026-11-06全文核验",
+        "locator": "项目正文"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "建筑许可、规划申请和营业执照依赖人工受理，积压超过1200件。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师先用三周映射规则，再以GovAgent覆盖受理与分流；Data Engine采集实时队列。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开实现仅包括文件抽取、资格检查及路由，未交代具体模型、接口或存储架构。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：版本化规则与证据，保存每次分流的理由；用误分、漏分及人工覆盖率验收，不只看自动化比例。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称积压清空、标准申请处理加快，人员转做复杂案件；未披露增员情况或质量评分。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "机关名称、国家、审批权限、人审阈值、数据保存、模型评测、采购费用与持续运维成本均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：总收益需扣除人工复核、申诉修正与软件维护成本。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名市政机关（Almanor AI客户） | 许可申请队列→资料抽取→资格检查→路由；最终行政许可的签发责任未披露。 | https://almanorai.com/case-studies/permit-processing.html"
+  },
+  {
+    "id": "automat-top-five-health-insurer-claims-documents",
+    "company": "匿名前五大健康保险企业（Automat客户）",
+    "industry": "健康保险理赔文档运营",
+    "title": "【合格·官方实践关联】把医疗理赔影像与医生笔记转为结构化申报数据",
+    "provider": "Automat",
+    "country": "未核验",
+    "countryNote": "客户匿名；总部与部署国家未披露，不从供应商所在地推断。",
+    "deploymentCountries": [],
+    "summary": "资格：合格·官方实践关联。官方保险实践页明确链接该理赔项目，符合实践关联门槛；没有冒称2024年案例本身列出了工程师职称。",
+    "evidenceLevel": "B",
+    "evidenceNote": "符合官方项目与实践明确关联门槛：来源2解释由FDE（Forward Deployed Engineer，前线部署工程师）构建及维护自动化，并两次链接来源1的健康险项目。原文角色短引：“Automat's forward-deployed engineers build and maintain the automations.” 属官方实践关联，不是项目人员名册或逐人职称证明。",
+    "deploymentLevel": "供应商称系统已部署；原项目发表于2024年，2026年实践页再次列为成果。",
+    "humanRole": "官方实践由FDE（Forward Deployed Engineer，前线部署工程师）构建维护；项目原文强调医疗人员反馈，未披露该客户工程师人数。",
+    "workflow": "理赔PDF／图像及手写或打印病历→抽取与校验→JSON／申报字段→反馈改进。",
+    "publishedAt": "2024-04-04",
+    "checkedAt": "2026-11-06",
+    "addedDate": "2026-11-06",
+    "entryPoint": "分析建议：优先选择字段清晰、可回溯的一类理赔文档，在人工提交前比较新旧抽取结果。",
+    "skills": [
+      "文档识别与结构化抽取（披露）",
+      "医疗术语与字段校验（披露）",
+      "错误归因和人工反馈闭环（建议）"
+    ],
+    "risks": [
+      "分析：识别错误会影响报销，模型输出不能直接成为拒赔依据。",
+      "分析：医疗资料权限、保存周期与第三方传输必须单独核验。"
+    ],
+    "caveats": [
+      "前五排名口径及国家未披露，不能据美元或供应商地址推定客户国别。",
+      "2026年行业页的通用处理耗时、认证和界面自愈能力不能回填为2024年项目已验收配置。"
+    ],
+    "metrics": [
+      {
+        "label": "人工团队基线",
+        "value": "约30人",
+        "context": "原文为增强现有外包团队，不能等同裁撤30人。"
+      },
+      {
+        "label": "人工成本节省",
+        "value": "超过100万美元",
+        "context": "2024年原文未交代周期；2026年行业页称每年七位数，均未经独立审计。"
+      },
+      {
+        "label": "错误减少",
+        "value": "40%",
+        "context": "未披露分母、错误类型及前后样本。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Automat：医疗理赔文档处理案例",
+        "url": "https://runautomat.com/blog/automat-saves-a-top-5-health-insurance-company-7-figures-by-processing-medical-claims-using-ai",
+        "type": "供应商官方",
+        "date": "2026-11-06全文核验",
+        "locator": "项目正文"
+      },
+      {
+        "title": "Automat：保险行业交付实践与同一健康险项目链接",
+        "url": "https://runautomat.com/blog/automat-for-insurance",
+        "type": "供应商官方",
+        "date": "2026-05-12；2026-11-06全文核验",
+        "locator": "Why insurance operations choose Automat；Results；链接同一完整案例"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "外包团队人工查看PDF、影像和复杂医生笔记；供应商称误读、错填及报销延迟构成痛点。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "案例采用自动分析辅助团队，医疗专业人员反馈用于持续改进。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "官方保险实践明确由FDE（Forward Deployed Engineer，前线部署工程师）维护自动化，并将该客户列为成果。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开技术包括OCR、NLP和Transformer模型；抽取医疗文档、校验信息并填充申报字段，医生笔记转为JSON。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：逐字段保留原始证据和置信度，金额、日期、身份匹配用确定性校验；低置信结果进入复核队列。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公开结果为劳务成本节省和错误下降；没有可重算的准确率或完整成本模型。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "收益应减去模型、集成、异常复核和维护费用；报销加快不等于患者疗效改善。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "没有披露具体模型、数据量口径、评测集、重训方式、拒绝阈值、人工最终审批、合同价格与长期监控。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名前五大健康保险企业（Automat客户） | 理赔PDF／图像及手写或打印病历→抽取与校验→JSON／申报字段→反馈改进。 | https://runautomat.com/blog/automat-saves-a-top-5-health-insurance-company-7-figures-by-processing-medical-claims-using-ai"
+  },
+  {
+    "id": "capestart-anonymous-clinical-evidence-literature-review",
+    "company": "匿名临床证据团队（CapeStart客户）",
+    "industry": "临床证据研究与医学写作服务",
+    "title": "【合格·项目角色明确】把医学文献筛选、抽取与报告接成可溯源工作流",
+    "provider": "CapeStart",
+    "country": "未核验",
+    "countryNote": "客户匿名；总部与部署国家未披露，不从供应商所在地推断。",
+    "deploymentCountries": [],
+    "summary": "资格：合格·项目角色明确。官方项目正文明确关联专门工程交付团队，公开材料支持已形成统一工作流；完整报告需留资，未获取。",
+    "evidenceLevel": "A",
+    "evidenceNote": "符合项目级实践关联门槛：项目正文直接写出“Through an embedded Forward-Deployed Engineering pod”，即由FDE（Forward Deployed Engineer，前线部署工程师）实践团队交付，并非从一般外包推断。A仅表示项目直接关联清楚，未披露具体人员职称或客户独立验收。",
+    "deploymentLevel": "官方称已帮助团队将文献评审改成统一平台；具体试点／生产范围、日期及持续运行情况未披露。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师）实践团队围绕客户审查流程构建系统，使用方包括图书馆、医学写作及临床团队。",
+    "workflow": "文献搜索→筛选→数据抽取→摘要→报告生成；AI陈述与源文档关联。",
+    "publishedAt": "2026-09-15",
+    "checkedAt": "2026-11-06",
+    "addedDate": "2026-11-06",
+    "entryPoint": "分析建议：先选一份已完成人工审查的文献集合，比较纳排与引用结果，再上线辅助流程。",
+    "skills": [
+      "跨职能审查流程设计（披露）",
+      "证据溯源（披露）",
+      "文献筛选召回与引用一致性验证（建议）"
+    ],
+    "risks": [
+      "分析：可溯源不代表引用支持了全部结论。",
+      "分析：漏检关键研究或错误纳排会改变证据综合结果。"
+    ],
+    "caveats": [
+      "客户行业细分及国家未公开，不把医学文献使用者自动认定为制药公司。",
+      "完整下载需填写姓名、公司和邮箱；本记录只使用公开项目页和目录。",
+      "60%是供应商自报，无基线、样本及观察期。"
+    ],
+    "metrics": [
+      {
+        "label": "文献审查速度",
+        "value": "快60%",
+        "context": "供应商表述；未说明指耗时减少还是吞吐增加，不转换为倍数或人工节省。"
+      },
+      {
+        "label": "净收益与总拥有成本",
+        "value": "未披露",
+        "context": "没有模型、实施、人工复核与维护费用。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "CapeStart：临床证据团队文献审查平台",
+        "url": "https://capestart.com/resources/case-studies/ai-literature-review-platform-for-clinical-evidence-teams/",
+        "type": "供应商官方",
+        "date": "2026-09-15；2026-11-06核验完整公开简要正文，表单后完整版未取得",
+        "locator": "项目正文"
+      },
+      {
+        "title": "CapeStart官方案例目录：明确项目实践分类",
+        "url": "https://capestart.com/resources/case-studies/",
+        "type": "供应商官方",
+        "date": "2026-11-06全文核验",
+        "locator": "临床证据团队项目及对应工程实践分类"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "文献审查分散且依赖人工，跨团队协作需要统一流程。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方正文将工作流整合归于专门工程团队，并强调按组织审查方式定制。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "公开能力覆盖检索、筛选、抽取、摘要、报告及源文档追溯；未公布模型、索引或系统连接方式。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：保存检索式、纳排标准、文献版本和每条断言的证据段落；区分原文事实、作者推论与系统生成内容。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：以独立人工标注集评估召回、纳排一致性和引用支持率；最终结论应由负责的医学写作者审阅，不由模型自动批准。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公开页声称审查更快和跨职能协作改善；没有可复算数据，不能据此推导产品注册成功或临床效益。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称、国家、部署规模、模型版本、权限、人工批准、评测集和持续监控未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "完整版报告未取得；不把潜在下载内容当作已经核验的证据。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名临床证据团队（CapeStart客户） | 文献搜索→筛选→数据抽取→摘要→报告生成；AI陈述与源文档关联。 | https://capestart.com/resources/case-studies/ai-literature-review-platform-for-clinical-evidence-teams/"
+  },
+  {
+    "id": "ayana-etalas-backofhouse-sap-opera",
+    "company": "AYANA Resort Bali",
+    "industry": "酒店住宿与后台运营",
+    "title": "【合格·官方实践关联】把酒店后台日常运营接入既有核心系统",
+    "provider": "Etalas",
+    "country": "印度尼西亚",
+    "countryNote": "本条主体是巴厘岛项目酒店，官方地址为印度尼西亚金巴兰；不据此判断集团最终控股主体总部。",
+    "deploymentCountries": [
+      "印度尼西亚"
+    ],
+    "addedDate": "2026-11-06",
+    "checkedAt": "2026-11-06",
+    "publishedAt": "页面未标发布日期",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Etalas：酒店后台项目与实施方式",
+        "url": "https://etalas.com/",
+        "locator": "Proven at enterprise scale；FAQ",
+        "date": "未标发布日期；2026-11-06核验",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "AYANA Bali官方地址",
+        "url": "https://www.ayana.com/bali/access/",
+        "locator": "Address and contact information",
+        "date": "未标发布日期；2026-11-06核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "酒店核心系统集成",
+      "跨部门流程梳理",
+      "生产环境交接"
+    ],
+    "risks": [
+      "跨系统写回可能导致库存或财务状态不一致",
+      "客人信息访问边界与操作审批未披露"
+    ],
+    "caveats": [
+      "首页演示会话明确标为 illustrative，不能把演示中的6+模块当实际部署规模。",
+      "供应商通用两周试点、治理和培训承诺不作AYANA已完成事实。",
+      "未找到可独立打开的长篇案例；只依据公开首页项目段和FAQ。"
+    ],
+    "metrics": [
+      {
+        "label": "生产后台系统",
+        "value": "2个",
+        "context": "供应商项目段自报，不代表六个以上演示模块。",
+        "kind": "deployment",
+        "unknown": false
+      },
+      {
+        "label": "集成核心系统",
+        "value": "3个",
+        "context": "SAP、OPERA、SIMPHONY。",
+        "kind": "deployment",
+        "unknown": false
+      },
+      {
+        "label": "成本与节省",
+        "value": "未披露",
+        "context": "无实施费、软件费、净节省或基线。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "酒店已有SAP、OPERA与SIMPHONY系统；项目所涉部门包括采购、厨房和客房整理。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "旧流程的手工步骤、错误率、任务数量和人员成本没有披露，不能假定此前全部依赖表格。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方FAQ将FDE（Forward Deployed Engineer，前线部署工程师）实践直接连接至AYANA后台系统投产；工程师把交付放进客户既有系统，项目展示两个生产后台系统。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "工程师人数、工作周期、客户验收人及培训完成情况未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "确认集成边界为企业资源规划、物业管理和销售终端；未公布接口、数据库或模型。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "自动审批、数据写入方向、财务对账、故障重试、权限矩阵和发布评测均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：对库存、采购、客房状态分别确定权威来源；影子运行核对差异后才开放写回，不能将此视为项目实际架构。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商声称两个后台系统投入生产，供三类酒店运营部门日常使用。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有量化省时、增收、错误减少、合同金额或维护成本，不能将投产数量换算为财务回报。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "酒店与集团的数据隔离、个人信息保留期限、供应商远程访问范围未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "AI具体任务、模型、评测集、准确率和人工接管规则未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "投产持续时间、事故记录和长期维护责任未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "AYANA Resort Bali | 把酒店后台日常运营接入既有核心系统 | https://etalas.com/",
+    "summary": "资格：官方明确将本项目关联至FDE（Forward Deployed Engineer，前线部署工程师）实践，未直接披露项目工程师职称或具名团队。酒店采购、厨房与客房整理需跨核心系统运行；供应商披露两个后台系统已进入日常使用。",
+    "workflow": "SAP、OPERA物业管理与SIMPHONY销售终端连接至酒店后台系统，供采购、厨房及客房整理日常运营；逐笔交易流向未公开。",
+    "deploymentLevel": "供应商明确称两个后台系统已生产运行，日常使用；上线日期与使用人数未公开。",
+    "humanRole": "供应商工程师参与系统内交付；酒店员工使用日常运营系统。采购批准、财务复核和自动写回权限没有项目级披露。",
+    "evidenceNote": "严格资格成立：官方FAQ直接把AYANA上线过程归入FDE（Forward Deployed Engineer，前线部署工程师）实践，不是仅凭通用服务页反推。项目连接原文：“It's how AYANA Resort Bali got from first idea to a back-of-house system in production.” 角色人数与驻场时长未披露。",
+    "entryPoint": "分析建议：先选一条采购或客房任务链，核对核心系统字段和责任人，再做只读视图及受控写回。"
+  },
+  {
+    "id": "rodan-education-assessment-platform",
+    "company": "Rodan自有英国教育评估产品",
+    "industry": "教育科技与教师评估",
+    "title": "【合格·官方实践关联】把学生作业审阅与课程题目生成纳入教师流程",
+    "provider": "Rodan",
+    "country": "英国",
+    "countryNote": "原文明确为Rodan自有英国教育科技产品，市场为英国；未公开具体学校和托管数据中心。",
+    "deploymentCountries": [
+      "英国"
+    ],
+    "addedDate": "2026-11-06",
+    "checkedAt": "2026-11-06",
+    "publishedAt": "未标发布日期；项目自2023年持续",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Rodan：教育评估平台项目",
+        "url": "https://rodan.io/work/education-assessment-platform",
+        "locator": "Capabilities；What we did；Outcomes",
+        "date": "未标发布日期；2026-11-06核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "图像与文本处理",
+      "课程语义建模",
+      "学校数据集成",
+      "教师工作流设计"
+    ],
+    "risks": [
+      "学生数据隐私及访问控制细节未知",
+      "图像识别错误和课程错配可能误导教师"
+    ],
+    "caveats": [
+      "不得将自有产品写成外部具名学校采购。",
+      "“安全平台”是供应商描述，不等于通过任何未披露的认证。"
+    ],
+    "metrics": [
+      {
+        "label": "使用及商业效果",
+        "value": "未披露",
+        "context": "没有学校数、活跃教师数、节省时间或学习结果。",
+        "kind": "adoption",
+        "unknown": true
+      },
+      {
+        "label": "总成本",
+        "value": "未披露",
+        "context": "模型、托管、实施及维护费用未知。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "教师需要更方便地审阅学生作业，并生成与课程相符的问题；既有评估习惯是产品设计约束。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "原有学习管理系统、教师每份作业耗时与错误率未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "项目级能力清单包含FDE（Forward Deployed Engineer，前线部署工程师）；团队将原型推进为整合图像理解、对话和学校数据的平台。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "人员、交付周期、具体学校伙伴与工作现场未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "可证实的功能层是图像理解、对话交互、课程相关工作流及学校数据集成。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型名称、学校接口、检索结构、数据存储与租户隔离没有公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "评分准确性、教师一致性、年级学科分层评测、发布审批和成绩写回权限均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：独立测量读图错误、课程匹配和生成内容质量；将教师确认保留在成绩或反馈发布之前。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "官方称教师可在同一产品中审阅作业和准备评估支持，平台持续通过实际使用迭代。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未披露学习成绩提升、教师节时或收入，不能把功能集成等同于教育成效。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "实际学校、部署人数、使用频率和是否涉及未成年学生的生产数据未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "内容审核、申诉纠错、家长同意、删除与保留制度未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "成本基线、合同、维护人力及长期有效性未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "Rodan自有英国教育评估产品 | 把学生作业审阅与课程题目生成纳入教师流程 | https://rodan.io/work/education-assessment-platform",
+    "summary": "资格：官方明确将本项目关联至FDE（Forward Deployed Engineer，前线部署工程师）实践，未直接披露项目工程师职称或具名团队。教师需要在熟悉的评估流程内审阅作业、生成课程相关题目；该自有产品由原型演进为结合图像与对话的平台。",
+    "workflow": "学生作业与学校数据进入平台，结合图像理解、对话及课程关联流程，帮助教师审阅和准备评估材料。",
+    "deploymentLevel": "自2023年持续的自有产品，官方称已由原型转为平台并通过直接使用迭代；学校数量与生产验收日期未知。",
+    "humanRole": "教师使用评估支持功能；工程团队负责平台建设和使用反馈迭代。是否由教师逐条批准评分、能否自动写入成绩册未公开。",
+    "evidenceNote": "严格资格成立：官方独立项目页Capabilities明确列出FDE（Forward Deployed Engineer，前线部署工程师）实践，且称平台随直接使用和该交付方式演进。原文短引：“The platform has evolved through direct use” 。这是自有产品案例，不冒充具名学校客户部署。",
+    "entryPoint": "分析建议：先做教师可编辑的作业摘要及题目草稿，不自动下发成绩；用不同学科和手写质量的样本验证。"
+  },
+  {
+    "id": "capestart-anonymous-email-verification-cloud",
+    "company": "匿名企业邮件验证服务商（CapeStart客户）",
+    "industry": "邮件验证软件与云基础设施",
+    "title": "【合格·官方实践关联】迁移多账户云环境并建立受控发布和运维",
+    "provider": "CapeStart",
+    "country": "未披露",
+    "countryNote": "客户匿名，未披露总部和部署国家，不能以服务商所在地替代。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-06",
+    "checkedAt": "2026-11-06",
+    "publishedAt": "2026-10-13",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "CapeStart：企业邮件验证服务商云运营现代化",
+        "url": "https://capestart.com/resources/case-studies/modernizing-cloud-operations-for-an-enterprise-email-verification-provider/",
+        "locator": "正文三段",
+        "date": "2026-10-13",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "CapeStart官方案例目录及项目分类",
+        "url": "https://capestart.com/resources/case-studies/",
+        "locator": "对应同名项目的能力分类",
+        "date": "未标发布日期；2026-11-06核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "AWS与EKS隔离",
+      "基础设施即代码",
+      "持续交付与安全扫描",
+      "数据库迁移与值班运维"
+    ],
+    "risks": [
+      "迁移丢失和重复数据风险",
+      "账户权限与发布错误可能影响高流量服务"
+    ],
+    "caveats": [
+      "已读取完整的公开简要正文；完整案例PDF位于联系表之后，未提交表单且未取得，不能声称已取得全文案例。",
+      "目录角色分类是项目级官方桥梁；没有命名个人或团队规模。"
+    ],
+    "metrics": [
+      {
+        "label": "迁移数据丢失",
+        "value": "0",
+        "context": "供应商自报；未披露校验方法、总量与观察窗口。",
+        "kind": "value",
+        "unknown": false
+      },
+      {
+        "label": "恢复时间",
+        "value": "减少，未给数值",
+        "context": "未公开原始与迁移后恢复时间。",
+        "kind": "value",
+        "unknown": false
+      },
+      {
+        "label": "成本",
+        "value": "未披露",
+        "context": "无云费用、实施费或净节省。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "高流量多账户AWS环境横跨PR、Stage、UAT与生产，给基础设施管理、监控和发布增加复杂度。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方目录对该项目标注FDE（Forward Deployed Engineer，前线部署工程师）。工程团队与客户共同承担值班、代码库及发布规划。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "引入集中治理的基础设施代码、隔离EKS集群、多阶段流水线、批准关口、依赖扫描与IAM限制。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "迁移范围包含Kafka、MongoDB和Elasticsearch；统一告警、L1/L2分流和操作手册支持后续运维。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "代码工具、跨账户网络、备份策略、迁移批次、停机时间及回滚触发阈值未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "已披露批准关口，但审批人、自动化测试覆盖与安全例外处理未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：用消息偏移量、集合计数与搜索索引抽样分别验收；零丢失应覆盖迁移期间新增写入，而不只静态快照。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称整个AWS环境迁移实现零数据丢失，统一监控和操作手册帮助缩短恢复时间。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有给出恢复时间数值、故障率、发布频次变化或净现金节省。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户法定名称、总部、部署国家和AWS区域未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "安全认证、数据丢失审计口径、流量和数据库规模未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "工程师人数、合同费用、云成本变化、长期维护责任未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名企业邮件验证服务商（CapeStart客户） | 迁移多账户云环境并建立受控发布和运维 | https://capestart.com/resources/case-studies/modernizing-cloud-operations-for-an-enterprise-email-verification-provider/",
+    "summary": "资格：官方明确将本项目关联至FDE（Forward Deployed Engineer，前线部署工程师）实践，未直接披露项目工程师职称或具名团队。高流量多账户AWS环境同时维护PR、Stage、UAT和生产环境，发布与监测复杂。",
+    "workflow": "基础设施代码和变更进入多阶段流水线，经依赖扫描与批准关口发布到隔离EKS集群；告警进入L1/L2分流与值班处理。",
+    "deploymentLevel": "供应商称已完成整个AWS环境迁移且无数据丢失；未公开迁移日期、观察期或独立审计。",
+    "humanRole": "供应商与客户平台工程师共用代码库、发布计划和值班职责；批准关口保留在流水线中，批准人职级未知。",
+    "evidenceNote": "严格资格成立：官方案例目录将此准确同名、同URL项目列在FDE（Forward Deployed Engineer，前线部署工程师）类别，正文说明工程团队共担值班、代码库与发布。角色行为原文：“shared on-call responsibilities, repositories, and release planning”。不是仅凭嵌入一词推定。",
+    "entryPoint": "分析建议：先选非生产账户，建立可回滚基础设施代码和发布审批，演练数据核对后再迁移生产。"
+  },
+  {
+    "id": "capestart-anonymous-media-intelligence-assistant",
+    "company": "匿名媒体情报项目客户（CapeStart案例）",
+    "industry": "媒体监测与公共关系情报",
+    "title": "【合格·官方实践关联】从大型媒体档案生成可检索的公关洞察",
+    "provider": "CapeStart",
+    "country": "未披露",
+    "countryNote": "客户匿名，未披露总部和部署国家，不能以服务商所在地替代。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-06",
+    "checkedAt": "2026-11-06",
+    "publishedAt": "2026-10-21",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "CapeStart：代理式媒体情报助手",
+        "url": "https://capestart.com/resources/case-studies/agentic-media-intelligence-assistant-for-faster-pr-insights/",
+        "locator": "正文三段",
+        "date": "2026-10-21",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "CapeStart官方案例目录及项目分类",
+        "url": "https://capestart.com/resources/case-studies/",
+        "locator": "对应同名项目的能力分类",
+        "date": "未标发布日期；2026-11-06核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "媒体档案检索",
+      "代理编排",
+      "分类与摘要",
+      "Kubernetes扩缩容"
+    ],
+    "risks": [
+      "媒体来源偏差、旧信息和错误摘要影响判断",
+      "错误关联报道可能造成声誉误判"
+    ],
+    "caveats": [
+      "已读取完整的公开简要正文；完整案例PDF位于联系表之后，未提交表单且未取得，不能声称已取得全文案例。",
+      "“即时”及“数秒”缺少测试口径，不当作已验证延迟SLA。",
+      "客户名称及法定行业未知，行业按公开工作流归类，不能称为某新闻机构部署。"
+    ],
+    "metrics": [
+      {
+        "label": "检索档案",
+        "value": "数百万文档",
+        "context": "正文自报；精确数量、去重与更新频率未知。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "响应速度",
+        "value": "未量化核验",
+        "context": "目录说数秒，未给样本、百分位延迟和负载。",
+        "kind": "performance",
+        "unknown": true
+      },
+      {
+        "label": "成本变化",
+        "value": "未披露",
+        "context": "无实施费、推理费、托管费或每次查询成本。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "新闻与社交媒体档案中已有相关信息，但公关人员需人工检索才能理解品牌报道、叙事和潜在问题。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "旧检索耗时、日查询量和分析师人数没有披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "供应商正式目录把此项目列入FDE（Forward Deployed Engineer，前线部署工程师），公开正文称建成对话式媒体情报助手。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "代理框架编排意图识别、检索、分类、摘要及多步回答，使团队可取得报告和文章级发现。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "以Elasticsearch检索数百万文档，Kubernetes自动扩容支撑档案增长。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "是否混合向量检索、模型版本、原文引用格式、数据授权和访问控制未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "事实性评测、误报阈值、负载测试、人工审批和失败回退机制未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：用已知文章和问题建立检索召回与摘要事实性评测；日期、媒体来源与重复转载应单独控制，避免把重复报道当独立证据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "已公开结果是可对话获取媒体洞察、报告和文章级信息；目录描述数秒响应。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "缺少耗时对照、危机损失下降、收入与用户采用数据，不能宣称减少声誉损失。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户主体、总部、部署国家、上线日期及实际用户范围未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "内容来源许可、个人信息处理、权限隔离、日志与数据保留未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "合同及维护费用、查询成本、模型准确率和线上可用性未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名媒体情报项目客户（CapeStart案例） | 从大型媒体档案生成可检索的公关洞察 | https://capestart.com/resources/case-studies/agentic-media-intelligence-assistant-for-faster-pr-insights/",
+    "summary": "资格：官方明确将本项目关联至FDE（Forward Deployed Engineer，前线部署工程师）实践，未直接披露项目工程师职称或具名团队。公关团队需要从新闻和社交媒体档案迅速找到品牌叙事及潜在问题，人工检索难以及时支持行动。",
+    "workflow": "用户提出媒体问题，代理框架识别意图，检索并分类档案，再摘要和多步生成报告或文章级发现，交给公关团队判断。",
+    "deploymentLevel": "供应商称已构建助手，系统运行于可自动扩容的Kubernetes；未披露客户验收、上线日期、用户数与生产SLA。",
+    "humanRole": "公关团队消费情报与报告，工程团队集成检索及运行基础设施；对外发言、处置批准或自动发布没有披露。",
+    "evidenceNote": "严格资格成立：官方案例目录将此准确同名、同URL项目归入FDE（Forward Deployed Engineer，前线部署工程师）类别，正文说明实施结果。短引：“CapeStart built a conversational media intelligence assistant”。仅列当前助手，不合并另一个危机预测项目。",
+    "entryPoint": "分析建议：先选一个品牌与一种时间窗口，提供有文章出处的只读问答，由公关分析师复核后使用。"
   }
 ]
