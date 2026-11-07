@@ -35840,5 +35840,1564 @@
     "humanRole": "公关团队消费情报与报告，工程团队集成检索及运行基础设施；对外发言、处置批准或自动发布没有披露。",
     "evidenceNote": "严格资格成立：官方案例目录将此准确同名、同URL项目归入FDE（Forward Deployed Engineer，前线部署工程师）类别，正文说明实施结果。短引：“CapeStart built a conversational media intelligence assistant”。仅列当前助手，不合并另一个危机预测项目。",
     "entryPoint": "分析建议：先选一个品牌与一种时间窗口，提供有文章出处的只读问答，由公关分析师复核后使用。"
+  },
+  {
+    "id": "quant8-anonymous-rail-freight-vacancy-planning",
+    "company": "匿名全国性铁路货运运营商（Quant8客户）",
+    "industry": "铁路货运运营",
+    "title": "【合格·官方实践关联】把缺岗补班纳入受控的铁路运营流程",
+    "provider": "Quant8",
+    "country": "未披露",
+    "countryNote": "公开项目页未明确客户总部或部署国家，不能依据供应商地址推定。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "未披露",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Quant8：全国铁路货运运营商的连接式计划",
+        "url": "https://quant8.io/case-studies/connected-planning-rail-freight",
+        "locator": "What Quant8 Did / How It Was Delivered / The Result / What Came Next",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "Quant8：前线部署工程服务及交付证据",
+        "url": "https://quant8.io/services/forward-deployed-engineering",
+        "locator": "Delivery Evidence & Related Sectors明确链接此铁路项目",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "铁路班次与资格建模",
+      "Foundry数据与本体",
+      "规则验证与版本控制",
+      "分层验收和现场培训"
+    ],
+    "risks": [
+      "错误资格或过时班次可能产生不合规补班",
+      "源系统与应用状态不一致可能重复分派"
+    ],
+    "caveats": [
+      "三个工作流不是三个均已生产的独立案例。",
+      "一至两小时验证缩短至分钟属于预测机会，非已实现收益。"
+    ],
+    "metrics": [
+      {
+        "label": "生产范围",
+        "value": "缺岗管理产品",
+        "context": "供应商称已完成上线和集中支持；未给用户或车库数。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "验证耗时优化",
+        "value": "尚未实现",
+        "context": "从1–2小时降至分钟是拟议优化，不作效果指标。",
+        "kind": "performance",
+        "unknown": true
+      },
+      {
+        "label": "成本",
+        "value": "未披露",
+        "context": "无实施费、许可费和已实现计算成本节省。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "计划分散于专用系统、表格、邮件和旧Foundry应用；时刻表、运行图、班表及缺岗彼此依赖，数据不一致和慢验证阻碍协作。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师直接与运营团队共建缺岗、基础排班及列车规划三个工作流。服务页以本项目为FDE交付证据。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "缺岗界面提供覆盖、未覆盖、重复及风险班次，并按线路知识、人员可用性、车库和邻近班次提供替补建议。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "排班包含劳动规则校验、草稿安排、审阅批准与导出；列车规划本体连接服务、运输流、运行图、地点和时刻表版本，并保留变更确认与审计。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "验收从内部功能测试、专家测试、团队测试推进至签署、培训、上线及集中支持。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "源系统名称、连接方式、刷新频率、权限粒度和回写冲突处理未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：把劳动规则作为不可绕过约束，区分建议、批准和已同步状态；错过同步的补班应进入人工队列，不能靠刷新界面消除冲突。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：验证集应覆盖跨午夜班次、临时资格失效、重复人员、版本撤回及并发编辑；不仅测试页面能否保存。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "已确认缺岗产品完成生产 rollout 和支持期；其他工作流不能据此宣称全面上线。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未披露列车准点率、人工工时节省或用户采用率。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称、所在国家、上线日期、部署规模及服务责任分工未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "模型算法、是否使用大语言模型、规则覆盖率与事故影响未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "费用和已兑现收益未知；拟议管线优化不等于可用于计算投资回报的结果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名全国性铁路货运运营商（Quant8客户） | 班次与人员来源数据→查看空缺及风险→按资格、可用时间和班组背景建议替补→人员分派及备注→受控同步至乘务计划源系统。 | https://quant8.io/case-studies/connected-planning-rail-freight",
+    "summary": "资格：官方FDE服务页将本铁路项目列为交付证据，项目页也反向关联该服务。生产成立范围仅限缺岗管理产品；相关排班和列车规划仍处不同验收阶段。",
+    "workflow": "班次与人员来源数据→查看空缺及风险→按资格、可用时间和班组背景建议替补→人员分派及备注→受控同步至乘务计划源系统。",
+    "deploymentLevel": "缺岗产品完成生产上线及上线后集中支持；基础排班接近生产签署，列车规划仍在扩大展示。",
+    "humanRole": "工程师与计划、排班、控制室和技术团队共建；用户参加分层测试与签署，班表有审阅批准环节。",
+    "evidenceNote": "严格资格基于双向项目级关联：FDE服务页Delivery Evidence直接列出该项目，项目页Related Services明确指向Forward-Deployed Engineering；不是从Palantir品牌或招聘推断。",
+    "entryPoint": "分析建议：先接入单一车库的缺岗清单，保留原系统主记录和人工分派，确认幂等回写及操作审计后再扩至自动建议。"
+  },
+  {
+    "id": "rouandi-mirage-reviewed-civil-estimating",
+    "company": "Rouandi",
+    "industry": "土木工程与施工",
+    "title": "【合格·官方实践关联】在实际估算流程中逐项审核AI输出并回馈修正规则",
+    "provider": "Mirage Metrics",
+    "country": "未披露",
+    "countryNote": "公开项目页未明确客户总部或部署国家，不能依据供应商地址推定。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "未披露",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Mirage：Rouandi土木工程估算工作流",
+        "url": "https://miragemetrics.com/case-studies/rouandi",
+        "locator": "Defined scope / What the workflow reads / five steps / Human in the loop / Adoption / FAQ",
+        "date": "更新2026-11-05",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "图纸与文档结构化",
+      "来源定位",
+      "估算师反馈转规则",
+      "生产中的受控迭代"
+    ],
+    "risks": [
+      "文档版本错配会把正确数量用在错误图纸上",
+      "反馈规则可能过拟合单一项目或掩盖新错误"
+    ],
+    "caveats": [
+      "4–6周上线是供应商一般服务节奏，非该项目已测周期。",
+      "不移用其他Mirage客户的80–90%节时或10倍提速。",
+      "未公开总部与部署国家，不因服务商在摩洛哥设点而归入摩洛哥。"
+    ],
+    "metrics": [
+      {
+        "label": "已生产工作流",
+        "value": "1条",
+        "context": "供应商公开；每项输出仍须客户审核。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "接受培训人员",
+        "value": "5+人",
+        "context": "无角色分布和活跃用户口径。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "节时、准确率及费用",
+        "value": "未披露",
+        "context": "项目明确不公布这些指标。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户已采用平台，但仍需把它放入真实估算流程，证明在实际文档和项目约束下可用。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "只选一条工作流，工程师与估算团队观察原流程、记录检查与例外、在真实文档上构建和运行，再通过反馈决定扩展。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "输入图纸和工程文档，输出带原文关联的结构化估算资料；客户人员逐项接受后使用，修正交工程师调整下一轮规则。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型、OCR、文件版本控制、接口、数据库和权限实现未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有公开独立测试集或漏项率；人工逐项审核是控制措施，不等于量化准确率。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：单独衡量漏项、重复项、单位换算和版本错配。把每次纠正变成回归测试后才升级规则，以防新项目修复破坏旧项目。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：保留图纸版本、页码、定位、输出及接受人的完整链路；最终报价还需核对单价、税费与合同范围，不能从数量正确推定报价正确。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公开成果为一条生产工作流及5名以上受训人员，团队持续审核和反馈。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有可核验的节省工时、准确率、处理量或投标成功率。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "实施日期、客户地点、具体项目类型、单个批次规模及系统品牌版本未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "费用、运维责任和反馈规则更新审批人未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "扩展计划尚不能视作新增生产部署。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "Rouandi | 实际项目图纸及文档→带来源的结构化估算材料→估算师逐项接受或纠正→工程师调整规则→下一份文档继续验证。 | https://miragemetrics.com/case-studies/rouandi",
+    "summary": "资格：准确项目页明确标注FDE并解释现场共建过程。Rouandi把平台真正接入一条估算流程，每个输出先由自己的估算人员接受，纠正再反馈工程团队。",
+    "workflow": "实际项目图纸及文档→带来源的结构化估算材料→估算师逐项接受或纠正→工程师调整规则→下一份文档继续验证。",
+    "deploymentLevel": "一条估算工作流已进入真实日常流程；不是旁路试点。其他工作流和文档种类属于后续扩展。",
+    "humanRole": "Rouandi估算团队批准输出后才可用于估算；Mirage工程师与团队处理真实边界情况，并依据纠正调整系统。",
+    "evidenceNote": "项目页Products明确列Forward Deployed Engineering，FAQ How was it deployed直接称forward-deployed，并将观察、梳理、构建、运行、扩展逐步对应Rouandi项目。",
+    "entryPoint": "分析建议：选一份已人工完成的估算资料作为回放样本，先让系统生成可核查草稿，未经接受的项目不进入最终报价。"
+  },
+  {
+    "id": "quant8-anonymous-urgent-care-operational-view",
+    "company": "匿名区域医疗体系（Quant8客户）",
+    "industry": "急诊医疗运营",
+    "title": "【合格·官方实践关联】让临床领导每日查看急诊需求床位与患者流转",
+    "provider": "Quant8",
+    "country": "未披露",
+    "countryNote": "公开项目页未明确客户总部或部署国家，不能依据供应商地址推定。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "未披露",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Quant8：急诊运营决策支持",
+        "url": "https://quant8.io/case-studies/urgent-healthcare-decision-support",
+        "locator": "What Quant8 Did / The Result / Evidence / Related Sector & Services",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "Quant8：前线部署工程服务及交付证据",
+        "url": "https://quant8.io/services/forward-deployed-engineering",
+        "locator": "Delivery Evidence & Related Sectors明确链接急诊项目",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "医疗运营指标建模",
+      "Foundry应用集成",
+      "临床与运营共同迭代",
+      "内部团队能力移交"
+    ],
+    "risks": [
+      "过期占用数据可能造成错误资源判断",
+      "患者级信息访问范围或小样本指标可能泄露隐私"
+    ],
+    "caveats": [
+      "医疗案例为工业主题研究中的跨行业候补。",
+      "供应商只有简要正文和转型伙伴评价，无客户具名背书或独立效果评估。"
+    ],
+    "metrics": [
+      {
+        "label": "使用阶段",
+        "value": "每日运营使用",
+        "context": "使用者为高级临床领导；人数、院区及天数未披露。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "临床与财务效果",
+        "value": "未披露",
+        "context": "没有等候时长、住院时长、死亡率或成本变化。",
+        "kind": "value",
+        "unknown": true
+      },
+      {
+        "label": "实施及运行费用",
+        "value": "未披露",
+        "context": "不能由日用推算投资回报。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "临床及运营领导缺少共同、当前的需求与容量视图，首个产品还需为更广医疗数据平台建立信任。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师与转型合作方和客户共建界面，覆盖急诊入口需求、占用、病区及患者流转；交付时同时培训内部人员。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "官方FDE服务页把本项目列作交付证据；该关联不是从工程师泛称推定。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "专用用户界面连接共享医疗数据模型；官方伙伴评价指出Foundry能力，未披露底层临床系统。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "刷新频率、数据质量检查、访问授权、患者标识处理、测试及临床签署机制均未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：需求、等待、占用和流转需定义同一观察时点与分母，排除转科未结算等重复状态；界面应显示最后刷新时间和缺失数据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：把运营权限与病历访问分开，按角色限制患者级细节；用人工核验抽样、数据延迟和例外率评估可靠性，勿把使用次数当疗效证据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "产品进入高级临床领导每日运营使用，内部团队具备后续延伸基础。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "更广复用仍属可能性；没有量化患者或资源配置效果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户主体、地区、院区范围、上线时间和患者规模未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "实施费、许可证成本、运维预算及长期责任划分未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "是否使用预测或生成模型未知，不能称为自动分诊系统。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名区域医疗体系（Quant8客户） | 共享医疗数据模型→专用界面显示急诊入口需求、占用、病区与患者流转→高级临床及运营人员每日使用→反馈迭代与内部团队接续。 | https://quant8.io/case-studies/urgent-healthcare-decision-support",
+    "summary": "资格：官方FDE服务页将此准确项目列为交付证据，项目页反向关联该服务。产品已由高级临床领导每日使用，公开范围是运营可视化，不是自动诊疗或患者分配。",
+    "workflow": "共享医疗数据模型→专用界面显示急诊入口需求、占用、病区与患者流转→高级临床及运营人员每日使用→反馈迭代与内部团队接续。",
+    "deploymentLevel": "供应商确认已进入高级临床领导每日运营使用；更广复用属于潜力而非已部署结果。",
+    "humanRole": "Quant8与转型合作方、客户团队建设并培训；临床及运营人员提供反馈和进行决策，未披露自动执行。",
+    "evidenceNote": "严格资格来自FDE服务页Delivery Evidence对本项目的明确链接，以及项目页Related Services的反向关联。供应商说明实际日用，不只概念展示。",
+    "entryPoint": "分析建议：先做只读的需求与床位视图，以人工交班核对同一时点的占用口径，暂不自动分配患者。"
+  },
+  {
+    "id": "entrans-anonymous-finance-invoice-grn-reconciliation",
+    "company": "匿名企业财务与采购团队（Entrans客户）",
+    "industry": "企业财务与采购运营",
+    "title": "【合格·直接角色】在旧ERP上自动完成发票、采购单与收货单核对",
+    "provider": "Entrans",
+    "country": "未披露",
+    "countryNote": "客户匿名，未公开总部及部署国家；不以供应商地址推断。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "未披露",
+    "evidenceLevel": "A",
+    "sources": [
+      {
+        "title": "Entrans：AI驱动发票与收货单对账",
+        "url": "https://www.entrans.ai/case-study/ai-invoice-grn-reconciliation-enterprise-finance",
+        "locator": "Challenge、Solution、Outcome；公开正文已完整读取",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "文档字段提取",
+      "AWS Bedrock集成",
+      "三单匹配与异常队列",
+      "旧ERP接入"
+    ],
+    "risks": [
+      "错误匹配可能导致重复付款或错付",
+      "供应商、金额和数量字段的误读可漏掉异常"
+    ],
+    "caveats": [
+      "供应商自报匿名案例，无客户侧或独立验证。",
+      "按工作流归入企业财务，不能据此声称客户是银行或金融机构。",
+      "页尾通用客户证言未明确绑定本项目，不用于确认客户身份。"
+    ],
+    "metrics": [
+      {
+        "label": "人工对账工作量",
+        "value": "减少80%",
+        "context": "供应商自报；基准工时、单据量与测量期未披露。",
+        "kind": "value",
+        "unknown": false
+      },
+      {
+        "label": "支付清款速度",
+        "value": "2X",
+        "context": "原文速度表述；未给日数、平均值或百分位，不自行换算为周期减半。",
+        "kind": "value",
+        "unknown": false
+      },
+      {
+        "label": "实施与运营成本",
+        "value": "未披露",
+        "context": "缺合同费、Bedrock用量及ERP改造费用。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "单据格式不一致，人员逐份比较；已有ERP必须保留。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "FDE与财务和ERP团队协作，在客户环境构建提取、核对及异常处理层。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "AWS Bedrock负责抽取结构化数据，匹配三类单据，并将价格、数量和供应商不一致项送审。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具体模型、OCR组件、ERP名称、连接协议、重试与幂等机制未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "人工审查存在，但审批阈值、付款写回权限与职责分离未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：分开评测字段准确率和高金额错配漏检率；数据集应覆盖拆单、部分收货、折扣及重复发票。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商报告人工对账投入减少80%，清款速度为原先2X。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未披露样本量、错误率、账期变化及独立审计，不能证明错付已消除。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称、行业主体、国家、上线时间、工程师人数未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "文档留存、权限控制、模型数据处理条款及人工纠错闭环未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "总投入、持续推理费、维护责任和净节省未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名企业财务与采购团队（Entrans客户） | PDF、扫描件及结构化单据→Bedrock字段提取→发票与采购单、收货单匹配→数量、价格及供应商异常标记→财务复核队列。 | https://www.entrans.ai/case-study/ai-invoice-grn-reconciliation-enterprise-finance",
+    "summary": "资格来自项目正文明确的FDE角色。人工核对多格式单据拖慢付款，团队在保留旧ERP的条件下建设自动核对层。",
+    "workflow": "PDF、扫描件及结构化单据→Bedrock字段提取→发票与采购单、收货单匹配→数量、价格及供应商异常标记→财务复核队列。",
+    "deploymentLevel": "供应商称对账现已在原有ERP上自动运行；上线日期和交易规模未披露。",
+    "humanRole": "Entrans FDE与财务运营、ERP团队共同实施；财务人员处理异常。付款授权人及自动付款权限未披露。",
+    "evidenceNote": "正文Solution明确写明Entrans Forward Deployed Engineers与财务运营及ERP团队嵌入合作，并在客户环境中使用真实单据建设系统。不是凭招聘或公司通用服务推定。",
+    "entryPoint": "分析建议：先对一类供应商单据做影子核对，保留原付款审批；达到字段及错配漏检门槛再扩大范围。"
+  },
+  {
+    "id": "capestart-anonymous-media-crisis-command-center",
+    "company": "匿名媒体危机管理项目客户（CapeStart案例）",
+    "industry": "媒体监测与公关危机管理",
+    "title": "【合格·官方实践关联】将媒体信号归并为危机事件并辅助响应",
+    "provider": "CapeStart",
+    "country": "未披露",
+    "countryNote": "客户匿名，未公开总部及部署国家；不以供应商地址推断。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "2026-10-06",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "CapeStart：媒体危机预测、监测及响应",
+        "url": "https://capestart.com/resources/case-studies/ai-powered-media-crisis-prediction-monitoring-and-response/",
+        "locator": "公开正文三段及表单边界",
+        "date": "2026-10-06",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "CapeStart：官方案例目录",
+        "url": "https://capestart.com/resources/case-studies/",
+        "locator": "该准确项目卡片标注FORWARD-DEPLOYED AI ENGINEERING",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "媒体事件聚类",
+      "危机严重度评估",
+      "历史案例比较",
+      "告警与业务工作流集成"
+    ],
+    "risks": [
+      "把谣言或重复转载当作真实危机",
+      "建议误导对外回应造成声誉风险"
+    ],
+    "caveats": [
+      "只取得并完整读取公开简要正文；长版在表单之后，未提交表单、未取得长版。",
+      "这是危机指挥与响应项目，不是已收录的媒体情报对话助手。",
+      "客户主体未公开，不能认定为某新闻机构或品牌。"
+    ],
+    "metrics": [
+      {
+        "label": "专有模型数量",
+        "value": "超过100个",
+        "context": "供应商自报；各模型任务及验证结果未披露。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "目录宣传覆盖量",
+        "value": "1M",
+        "context": "目录写1M Coverage Analyzed，单位、时间范围、去重方式未知，不转述为一百万独立事件。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "成本及经济收益",
+        "value": "未披露",
+        "context": "无服务费、推理费及损失避免金额。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "单条传言、监管变化或产品事件可能跨渠道扩散，传播团队需要及时判断严重度。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "供应商建设危机指挥中心，目录将准确项目关联至FDE实践。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "超过100个专有机器学习模型参与检测、严重度判断、响应建议与恢复预测；平台比较新事件和历史案例。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型架构、训练数据、媒体授权、更新频率、事件去重与权限体系未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "误报漏报评测、人工审批关口、发布权限和失败回退未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：分别评测预警提前量、误报、漏报和建议事实性，区分历史回测与线上真实危机。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "告警、实时分析、建议及恢复指标被汇入传播工作流。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "缺少响应时间、危机检出率和损失对照，不能宣称已减少损失。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户主体、总部、部署地、上线日期及用户数未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "一百万覆盖量的计数单位和观测窗口未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "实施收费、长期托管、模型维护与每事件成本未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名媒体危机管理项目客户（CapeStart案例） | 媒体提及→相关内容归并成事件→对比历史案例→严重度、响应建议和恢复预测→告警与指标进入传播团队现有流程。 | https://capestart.com/resources/case-studies/ai-powered-media-crisis-prediction-monitoring-and-response/",
+    "summary": "资格来自官方目录对准确项目的FDE分类。系统把传统和社交媒体信号变成事件级判断，辅助传播团队识别及处理潜在危机。",
+    "workflow": "媒体提及→相关内容归并成事件→对比历史案例→严重度、响应建议和恢复预测→告警与指标进入传播团队现有流程。",
+    "deploymentLevel": "供应商明确称已创建危机指挥平台并接入团队工作流；生产上线日期、活跃用户和SLA未知。",
+    "humanRole": "传播团队接收预警与建议；是否需要人工批准、谁负责对外发言及是否有自动发布功能均未披露。",
+    "evidenceNote": "官方案例目录将同名同URL项目列为FORWARD-DEPLOYED AI ENGINEERING；正文说明平台已创建。未披露工程师个人职称、团队规模或驻场方式。",
+    "entryPoint": "分析建议：从只读告警开始，用历史危机及普通热点回放评测，由公关负责人复核再采取外部行动。"
+  },
+  {
+    "id": "capestart-anonymous-aws-mlops-blueprints",
+    "company": "匿名AWS模型部署团队（CapeStart客户）",
+    "industry": "云平台与机器学习运营",
+    "title": "【合格·直接角色】用可复用蓝图自动创建模型部署及监控流程",
+    "provider": "CapeStart",
+    "country": "未披露",
+    "countryNote": "客户匿名，未公开总部及部署国家；不以供应商地址推断。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "2026-11-03",
+    "evidenceLevel": "A",
+    "sources": [
+      {
+        "title": "CapeStart：可规模化模型部署的MLOps自动化",
+        "url": "https://capestart.com/resources/case-studies/mlops-automation-for-scalable-ai-model-deployment/",
+        "locator": "公开正文、结果及表单边界",
+        "date": "2026-11-03",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "部署编排",
+      "CloudFormation基础设施代码",
+      "SageMaker模型版本管理",
+      "流水线及告警自动化"
+    ],
+    "risks": [
+      "蓝图缺陷可能扩散到大量模型",
+      "监控已配置不等于漂移和业务错误已被覆盖"
+    ],
+    "caveats": [
+      "公开简要正文完整可读；长版案例需填表，未取得、未提交表单。",
+      "客户所属实体行业未知，按技术工作流归类。"
+    ],
+    "metrics": [
+      {
+        "label": "模型部署自动化",
+        "value": "85%",
+        "context": "供应商自报；总部署数、统计期及自动化定义未披露。",
+        "kind": "value",
+        "unknown": false
+      },
+      {
+        "label": "配有监控告警的流水线",
+        "value": "99%",
+        "context": "这是告警配置覆盖，不是99%准确率或可用性。",
+        "kind": "value",
+        "unknown": false
+      },
+      {
+        "label": "成本",
+        "value": "未披露",
+        "context": "无AWS费用变化、工程费用或净节省。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户需要把逐条手工配置的AWS模型部署流程变成可复用流程。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "FDE（Forward Deployed Engineer，前线部署工程师） pod以蓝图创建完整部署路径，连接AWS CodePipeline、API Gateway、Lambda、S3、CloudFormation、SNS及SageMaker。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "蓝图参数、模型注册细节、账户隔离、审批门、密钥管理、回滚和漂移检测未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：在部署成功率之外，检验重复执行幂等性、模型版本可追踪性、回滚时间和告警实际可触发性。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "公开数字为85%模型部署自动化、99%流水线具有监控告警配置。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有部署耗时、故障率、业务模型质量或人力节省的对照。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户实体、国家、模型数量、部署频次及工程师人数未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "人工审批、线上验收、评测集及维护交接机制未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "AWS资源费用、合同金额、一次性迁移费和持续运营成本未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名AWS模型部署团队（CapeStart客户） | 可复用蓝图→部署基础设施与模型版本流程→服务打包与发布编排→监控告警配置。 | https://capestart.com/resources/case-studies/mlops-automation-for-scalable-ai-model-deployment/",
+    "summary": "正文直接披露FDE pod建设编排层。客户原先需逐模型手工设置基础设施、版本注册、服务封装和告警。",
+    "workflow": "可复用蓝图→部署基础设施与模型版本流程→服务打包与发布编排→监控告警配置。",
+    "deploymentLevel": "供应商报告已自动化85%的模型部署并为99%的流水线配置告警；时间与规模未知。",
+    "humanRole": "FDE（Forward Deployed Engineer，前线部署工程师） pod建设编排层；业务负责人、模型审批者及后续值班责任未披露。",
+    "evidenceNote": "项目正文直接称CapeStart’s forward-deployed engineering pod构建编排层，并给出已完成的部署与监控覆盖指标。",
+    "entryPoint": "分析建议：先将低风险模型部署固化为带回滚的蓝图，保留人工批准，再验证可重复执行和故障恢复。"
+  },
+  {
+    "id": "rodan-uk-housing-energy-wellbeing-adviser",
+    "company": "匿名英国社会影响组织（Rodan客户）",
+    "industry": "住房、能源与社会福利服务",
+    "title": "【合格·直接实践】把住户证据和跨领域转介纳入统一顾问平台",
+    "provider": "Rodan",
+    "country": "英国",
+    "countryNote": "官方项目页明确标注英国市场及英国社会影响组织；云托管区域未披露。",
+    "deploymentCountries": [
+      "英国"
+    ],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "未披露",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Rodan：连接健康住宅、财务韧性与福祉",
+        "url": "https://rodan.io/work/housing-energy-wellbeing-platform",
+        "locator": "项目状态、Capabilities、What we did及Outcomes；完整公开正文",
+        "date": "未标发布日期；2026-11-07核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "跨领域服务建模",
+      "证据与建议关联",
+      "转介流程设计",
+      "顾问平台与知识交接"
+    ],
+    "risks": [
+      "家庭信息跨领域整合带来隐私与权限风险",
+      "错误建议或转介可能影响住户获取服务"
+    ],
+    "caveats": [
+      "项目自2024年持续，不能写成已完成的全国部署。",
+      "有已建成的平台与工作流，但用户数、服务规模和受益结果未披露。",
+      "FDE模型在正文明确；没有具名工程师或个人职称。"
+    ],
+    "metrics": [
+      {
+        "label": "项目开始",
+        "value": "2024年以来",
+        "context": "项目持续进行；不是发布日期或全量上线日期。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "服务与健康成效",
+        "value": "未披露",
+        "context": "无节能、健康、福利获取率或住户财务改善数据。",
+        "kind": "value",
+        "unknown": true
+      },
+      {
+        "label": "成本",
+        "value": "未披露",
+        "context": "无平台费、项目合同、每户服务成本或投资回报。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "组织需要把住房、能源、财务与健康的跨专业愿景转化成连贯服务。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "Rodan以FDE模式覆盖产品、数据、AI和平台工作，把住户证据连接至建议、支持及转介，并编写技术和影响文件。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "交付包括统一顾问视图、证据和转介路径。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型、数据库、云平台、数据接口、规则引擎与住户身份关联方法未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "数据同意、最小权限、敏感信息隔离、审计及人工授权步骤未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：分别验证证据完整性、推荐适用性与转介完成情况，避免将平台使用量当作住户健康或经济改善。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "官方称平台已连接原先分离的服务，并形成支持试点及进一步采用的文件。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "没有量化用户采用率、转介成功率、健康改善或能耗节约。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户法定名称、站点和住户数量、云区域及团队人数未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "具体试点阶段、验收条件、人工审批矩阵及长期运维责任未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "实施成本、资助金额、持续服务费用与经济成效未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "dedupKey": "匿名英国社会影响组织（Rodan客户） | 住户证据→实践建议与行为支持→转介路径→统一顾问视图；具体审批及系统间传输顺序未披露。 | https://rodan.io/work/housing-energy-wellbeing-platform",
+    "summary": "官方明确该项目使用FDE交付模型。组织要把住房条件、能源效率、财务韧性与健康服务连成可执行的顾问工作流。",
+    "workflow": "住户证据→实践建议与行为支持→转介路径→统一顾问视图；具体审批及系统间传输顺序未披露。",
+    "deploymentLevel": "持续客户项目，自2024年开始；官方称已存在整合顾问平台，并准备试点、合作及融资材料，未证明大规模全面推广。",
+    "humanRole": "顾问使用统一视图及转介路径；Rodan跨产品、数据、AI和平台工作线交付。哪些建议必须专家审核未披露。",
+    "evidenceNote": "正文What we did直接说明本项目使用forward-deployed engineering model，项目Capabilities也明确列Forward-Deployed Engineering。",
+    "entryPoint": "分析建议：先围绕一种住户需求建立证据、建议、人工复核和转介闭环，再逐步加入其他服务领域。"
+  },
+  {
+    "id": "palantir-internal-stackoverflow-aws-migration",
+    "company": "Palantir（内部知识管理）",
+    "industry": "企业软件与内部知识基础设施",
+    "title": "【合格·官方实践关联】把内部技术问答平台迁至可重复部署的云基础设施",
+    "provider": "Palantir Mission Operations Engineering",
+    "country": "美国",
+    "countryNote": "企业总部国家；旧主机位于美国东海岸，不等同于新部署地区。AWS具体区域未披露。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "2018-02-14；FDE实践关联文为2022-07-07",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Palantir：Terraforming Stack Overflow Enterprise in AWS",
+        "url": "https://blog.palantir.com/terraforming-stack-overflow-enterprise-in-aws-47ee431e6be7",
+        "locator": "完整正文 Motivation、Terraform Deployment Infrastructure、Architecture、Security、Conclusion",
+        "date": "2018-02-14",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "Palantir：Mission Operations Engineering 团队经理访谈",
+        "url": "https://blog.palantir.com/mission-operations-engineering-at-palantir-a-software-engineers-perspective-f3f528b27564",
+        "locator": "So, what’s Mission Operations Engineering?；How did you become a Mission Operations Engineer? 中 variety 链接直接指向本项目",
+        "date": "2022-07-07",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "内部用户需求诊断",
+      "基础设施即代码",
+      "遗留应用云迁移",
+      "发布验证与权限边界",
+      "可靠性与维护成本取舍"
+    ],
+    "risks": [
+      "分析判断：知识平台故障会放大全球团队的等待成本；可用区冗余不能替代恢复演练。",
+      "分析判断：文档、附件和备份应采用一致权限，避免基础设施迁移扩大内部资料可见范围。"
+    ],
+    "caveats": [
+      "这是已实施的历史项目，不是2026年新发布或持续运行状态的证明。",
+      "这是Palantir为自身内部用户交付的FDE实践，不是Stack Overflow作为FDE客户，也不是生成式AI应用。",
+      "技术正文与角色关联正文均已完整阅读；没有用招聘信息或一般供应商身份补资格。"
+    ],
+    "metrics": [
+      {
+        "label": "升级维护流程",
+        "value": "约60分钟→20分钟",
+        "context": "官方自报：旧流程为人工测试，新流程含镜像构建及滚动重部署；不是查询延迟对比。",
+        "kind": "efficiency",
+        "unknown": false
+      },
+      {
+        "label": "初版构建投入",
+        "value": "超过1个月",
+        "context": "官方披露初始构建工期；团队人数和人月成本未知。",
+        "kind": "delivery",
+        "unknown": false
+      },
+      {
+        "label": "成本变化",
+        "value": "未量化",
+        "context": "云费用、许可费、维护人力及迁移回本周期未披露。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "summary": "资格：官方将此准确云迁移项目链接为内部FDE团队的工程成果。跨时区员工依赖内部技术问答，交付目标是让知识服务更易维护和恢复，而非增加聊天机器人。",
+    "workflow": "内部技术问答及图片→SOE应用与搜索、数据库→员工查询；基础设施变更→代码评审/测试→预发布验证→镜像构建和滚动更新。",
+    "deploymentLevel": "2018年官方正文确认迁移已完成；不据此推断2026年仍使用同一架构。",
+    "humanRole": "内部工程团队构建维护；员工贡献和使用知识，管理员控制证书与运维访问。未公开正式变更审批责任矩阵。",
+    "evidenceNote": "官方2022年访谈称Mission Operations是Palantir自己的Forward Deployed Software Engineers，并将2018年本文直接链接为该经理参与的团队项目。正文列出贡献者Adil B.等；属于明确的项目关联，而不是泛称所有Palantir工程均为FDE。",
+    "entryPoint": "分析建议：先选择一个对全球协作有影响的内部服务，记录维护耗时和故障窗口，再用相同应用在预发布环境验证可重复部署，不宜一开始同时更换应用和知识组织方式。",
+    "dedupKey": "Palantir（内部知识管理） | 内部技术问答及图片→SOE应用与搜索、数据库→员工查询；基础设施变更→代码评审/测试→预发布验证→镜像构建和滚动更新。 | https://blog.palantir.com/terraforming-stack-overflow-enterprise-in-aws-47ee431e6be7",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原服务部署在两台本地虚拟机，海外访问与补丁维护存在问题，人工冒烟测试容易遗漏组件。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：此处真正的瓶颈是知识服务的交付与运维，不是缺少员工知识；迁移价值应从跨时区可用性及维护负担衡量。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "团队用Packer、Terraform及Vault建立可重复的AWS部署流程，以GitHub评审和预发布测试约束变更。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "官方将本项目关联至内部前线部署团队；该团队承担端到端实施，并强调可维护和交接。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析判断：这一例说明FDE可以服务公司内部业务团队。可复用资产是构建和部署流程，但其有效性仍依赖应用依赖项、权限和实际使用环境。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "采用EC2/IIS、Redis、Elasticsearch及RDS SQL Server，应用跨可用区部署；网络分层、堡垒机和最小IAM权限限制访问。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "附件经本地磁盘与S3同步，作者承认同步窗口风险；证书须人工批准。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：建立数据库、搜索索引与附件的一致性恢复测试，尤其覆盖节点替换时刚上传文件的情况；不能只把首页健康检查通过当作业务完整性达标。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：迁移验收应分开衡量问答读写、搜索、通知和附件功能，并用故障演练核对恢复时间；这些是建议，不是本文已披露的验收清单。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "作者报告自动维护流程缩至20分钟，初版构建超过一个月；认为可靠性、可预测发布及安全得到改善。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：维护时长改善不能直接折算为公司生产力提升，也不能忽略初次工程投入；商业判断需结合升级频率和故障影响。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露用户数、跨地区延迟、运行可用性、恢复目标、事故率和统一的前后测量窗口。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露预算、许可费、云资源成本及节省的人力；无法计算净收益或回本周期。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露正式上线批准、知识内容审核、数据保留及全部权限细则；无AI模型或模型评测信息，因为不是生成式AI项目。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "后续是否更换附件存储、搜索托管方式或架构，以及2026年状态均未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "phdata-anonymous-meal-subscription-agent",
+    "company": "匿名餐食订阅配送商（phData客户）",
+    "industry": "餐食订阅与食品科技",
+    "title": "【合格·直接FDE证据】把偏好对话接到餐食推荐与过敏原约束",
+    "provider": "phData",
+    "country": "未披露",
+    "countryNote": "未取得客户总部及实际部署国家的直接证据，不用服务商所在地替代。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "未标发布日期",
+    "evidenceLevel": "A",
+    "sources": [
+      {
+        "title": "phData：餐食订阅AI代理平台",
+        "url": "https://www.phdata.io/case-studies/enterprise-ai-agent-platform/",
+        "locator": "完整案例正文及FAQ；How phData built、Why phData明确FDE",
+        "date": "未标发布日期",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "推荐系统整合",
+      "代理身份与工具权限",
+      "食品约束评测",
+      "可观测性",
+      "工程交接"
+    ],
+    "risks": [
+      "分析判断：不完整食材、配方变化及交叉接触信息可能导致高后果推荐错误。",
+      "分析判断：偏好或健康相关信息不应跨用户泄露。"
+    ],
+    "caveats": [
+      "正文保持客户匿名，FAQ出现CookUnity名称；没有独立交叉核实，不排除编辑或模板残留，故条目暂匿名。",
+      "推荐接受率明确包含预计值，不作为实测三倍改善；其他业务数字也缺对照与样本。",
+      "“99%+”不是对个人食物过敏安全的保证。"
+    ],
+    "metrics": [
+      {
+        "label": "交付",
+        "value": "7周",
+        "context": "供应商披露。",
+        "kind": "delivery",
+        "unknown": false
+      },
+      {
+        "label": "初期范围",
+        "value": "目标10万订阅者",
+        "context": "并非已确认实际使用规模。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "推荐接受率",
+        "value": "预计35–45%",
+        "context": "原基线为估计12%，不能计作已实现收益。",
+        "kind": "forecast",
+        "unknown": false
+      },
+      {
+        "label": "成本",
+        "value": "未披露",
+        "context": "没有实施费、每次推荐费用或回本数据。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "summary": "资格：项目正文直接说明FDE嵌入并完成生产交付。系统把原有推荐能力接入对话入口；对食物过敏的错误不能只当作普通推荐不准。",
+    "workflow": "订阅者对话与偏好→身份范围内调用已有排序工具→受饮食约束的推荐；下单、付款与退款不在已披露范围。",
+    "deploymentLevel": "供应商称七周进入生产；十万订阅者为初期覆盖目标，不是已核验活跃用户数。",
+    "humanRole": "客户保留日常实施责任，phData承担架构和复杂基础设施决策；没有披露推荐逐条人工批准。",
+    "evidenceNote": "完整项目正文两次明确嵌入FDE，属于项目级直接证据。FAQ提到CookUnity工程师，但未取得客户侧或另一独立官方来源确认此名称，暂不把匿名正文客户确定命名；业务结果仍只有供应商自报。",
+    "entryPoint": "分析建议：先做有明确食材依据的推荐，不直接替用户下单；把过敏原事实校验与语言生成分开验证，再扩大人群。",
+    "dedupKey": "匿名餐食订阅配送商（phData客户） | 订阅者对话与偏好→身份范围内调用已有排序工具→受饮食约束的推荐；下单、付款与退款不在已披露范围。 | https://www.phdata.io/case-studies/enterprise-ai-agent-platform/",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原问卷和分散代码难以连续反映用户需求，已有推荐与对话组件尚缺共同基础。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：用户需求会变化，单次登记不等于持续授权或永远有效的饮食约束。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "FDE嵌入七周，保留既有排序能力，并形成可复用交付手册。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：此处价值不在重新训练所有模型，而在把既有能力接入同一权限和运行环境；是否降低长期维护负担还需后续验证。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "Claude配合AgentCore Runtime/Gateway/Identity；Terraform适配既有服务目录，并使用追踪及评测工具。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "披露模型层护栏和应用层安全检查；两者具体职责和独立测试集未公开。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：用否定表达、多种过敏、商品换配方及不完整资料建立测试，无法确定时停止推荐并解释需要核实的资料。不能把流畅回答作为合格标准。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：把身份错配、工具失败、资料更新延迟、超时与成本异常分别记录，人工升级应包含输入约束和证据，而不是只传聊天摘要。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "页面给出已生产运行与交付成果，同时混用预测和自报经营指标。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：留存或客服量变化可能受到用户选择偏差及同期产品变化影响，应先确认比较窗口和样本，再作因果归因。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露上线日期、模型版本、活跃人数、独立客户核验或指标计算方法。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露人工接管、食材更新、交叉接触处理、审计保留及事故应对细节。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露合同费用、推理支出与维护成本。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "infosys-foodservice-invoice-modernization-kiro",
+    "company": "匿名大型餐饮服务商（Infosys客户）",
+    "industry": "餐饮服务与财务运营",
+    "title": "【合格·官方实践关联】用规格驱动开发迁移高交易量发票平台",
+    "provider": "Infosys",
+    "country": "未披露",
+    "countryNote": "未取得客户总部及实际部署国家的直接证据，不用服务商所在地替代。",
+    "deploymentCountries": [],
+    "addedDate": "2026-11-07",
+    "checkedAt": "2026-11-07",
+    "publishedAt": "FDE关联文2026-11-06；项目页未标日期",
+    "evidenceLevel": "B",
+    "sources": [
+      {
+        "title": "Infosys：AI-powered Invoicing Platform Modernization",
+        "url": "https://www.infosys.com/services/application-modernization/case-studies/platform-modernization.html",
+        "locator": "完整案例正文，Approach、Solution与Business Outcomes",
+        "date": "未标发布日期",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "Infosys：How Infosys is advancing Forward Deployed Engineering on AWS",
+        "url": "https://blogs.infosys.com/topaz/aws/how-infosys-is-advancing-forward-deployed-engineering-on-aws.html",
+        "locator": "AI-Driven Development Lifecycle段及References[2]精确链接本项目",
+        "date": "2026-11-06",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "skills": [
+      "规格驱动开发",
+      "遗留系统共存",
+      "事件同步",
+      "业务规则验证",
+      "发布追溯"
+    ],
+    "risks": [
+      "分析判断：重复事件、乱序更新和失败重试可能制造重复账单或余额差异。",
+      "分析判断：共享会话若隔离不当会让新系统继承过宽权限。"
+    ],
+    "caveats": [
+      "客户匿名，不能与已有Infosys物流案例合并或推断为同一客户。",
+      "这是AI辅助软件交付；未证明运行中的AI会自主决定发票或付款。",
+      "通用FDE目标45–90天不是本项目交付工期。"
+    ],
+    "metrics": [
+      {
+        "label": "业务规模",
+        "value": "每日超过1万张发票",
+        "context": "案例页自报实际处理量；统计窗口未知。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "并发能力",
+        "value": "超过500人",
+        "context": "案例页自报，负载测试协议未公开。",
+        "kind": "scale",
+        "unknown": false
+      },
+      {
+        "label": "交付改进",
+        "value": "40%更快上市；缺陷少30%；返工少80%",
+        "context": "客户/供应商报告，无对照定义。",
+        "kind": "performance",
+        "unknown": false
+      },
+      {
+        "label": "单元测试覆盖",
+        "value": "80%",
+        "context": "覆盖率不代表财务规则全部正确。",
+        "kind": "quality",
+        "unknown": false
+      },
+      {
+        "label": "成本",
+        "value": "未披露",
+        "context": "无开发合同、云费用或节省金额。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "summary": "资格：11月6日官方FDE文章明确以此已实施发票平台说明交付实践，并引用精确案例页。核心是新旧系统共存和可追溯开发，不是让AI自主审批付款。",
+    "workflow": "规格入Git→AI辅助生成与验证代码→部署新发票平台→事件驱动同步旧系统；业务发票审批和实际付款权限未披露。",
+    "deploymentLevel": "官方称已交付并披露交易及并发规模；无上线日期和生产测量窗口。",
+    "humanRole": "工程团队定义规格、验证和迭代，客户运营方提供结果评价；不能把一般FDE方法中的审批机制直接视为本项目已实施控制。",
+    "evidenceNote": "准确项目在官方FDE文章中以相同业务、技术和结果作为实践实例，References[2]直达案例。未披露个人FDE职称，归官方实践关联B级。",
+    "entryPoint": "分析建议：先选择一个可对账的发票类型，明确旧系统权威数据、重试与冲突规则；AI生成代码须通过业务验收，不能以单元测试覆盖率替代财务正确性。",
+    "dedupKey": "匿名大型餐饮服务商（Infosys客户） | 规格入Git→AI辅助生成与验证代码→部署新发票平台→事件驱动同步旧系统；业务发票审批和实际付款权限未披露。 | https://www.infosys.com/services/application-modernization/case-studies/platform-modernization.html",
+    "deepDive": {
+      "before": [
+        {
+          "text": "碎片化旧发票流程需要集中化，同时保留批处理、用户会话及业务连续性。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：迁移期间同时存在两个状态来源，业务规则和数据权威关系比界面现代化更关键。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "团队以Kiro读取结构化规格生成代码，Git保留规格版本，持续验证后迭代。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "官方FDE文章把此准确项目列为AI驱动开发生命周期的实例。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析建议：把每条需求连接到实现、测试和发布记录，避免只保存提示词而无法解释某项财务规则为何改变。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "采用Angular、.NET、AWS CDK及Aurora PostgreSQL；EventBridge、Lambda和Step Functions承担不依赖DMS的事件同步。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "披露单元测试、验收条件、业务规则检查、CI/CD与质量治理。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：设计幂等键、版本冲突与补偿处理，核对跨系统总额及状态；先演练断网、重复投递和批次中断，再逐步迁移。此为建议，非已公开实现。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：评估AI生成的权限检查和日志脱敏，尤其防止测试覆盖率掩盖未经授权的发票读取或更改。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商给出交付、质量和处理规模指标，且客户运营副总裁评价了构建验证成果。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析判断：代码返工减少与缺陷减少不是同一指标，也不应直接换算成财务人员减少或付款速度提高。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露客户主体、国家、上线日、工程人数、投入工期和详细数据字典。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露发票审批、付款授权、同步冲突、故障回滚及恢复演练结果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "缺陷、返工和上市周期的基线与样本未知，未披露总体拥有成本。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
   }
 ]
