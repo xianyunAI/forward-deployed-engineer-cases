@@ -38359,5 +38359,617 @@
         }
       ]
     }
+  },
+  {
+    "id": "mediacorp-softwareone-ai-observability",
+    "company": "Mediacorp",
+    "industry": "广播媒体与内容运营",
+    "provider": "SoftwareOne / AWS",
+    "title": "把AI元数据管线的质量、成本和故障接入同一监控闭环",
+    "country": "新加坡",
+    "countryNote": "客户项目官方来源明确国家；不从供应商所在地推定项目范围。",
+    "deploymentCountries": [
+      "新加坡"
+    ],
+    "sources": [
+      {
+        "title": "How Mediacorp brought observability to AI at national-media scale",
+        "url": "https://www.softwareone.com/en/case-studies/global/media-and-communications/mediacorp-ai-observability-aws",
+        "locator": "项目导语、四大支柱、Delivering measurable gains",
+        "date": "未标日期；2026-11-09核验",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "AWS Forward Deployed Engineering",
+        "url": "https://www.softwareone.com/en/cloud-services/aws-fde",
+        "locator": "Mediacorp具名项目卡片",
+        "date": "未标日期；2026-11-09核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "addedDate": "2026-11-09",
+    "checkedAt": "2026-11-09",
+    "publishedAt": "未披露",
+    "evidenceLevel": "B",
+    "summary": "供应商具名案例把客户内容处理项目与前线部署小组直接关联，呈现从监控到配置及模型选择的闭环；数字尚非独立审计。",
+    "workflow": "内容元数据生成→采集每条管线的质量与资源信号→对比模型和配置→调整并监控→跟踪故障与恢复。",
+    "evidenceNote": "项目页明确FDE（Forward Deployed Engineer，前线部署工程师）小组并记载与客户共同实施；另有官方同项目服务案例卡片。记B级供应商项目证据，不把角色证据强度等同效果审计。",
+    "deploymentLevel": "已用于生产AI管线并扩展监控范围；确切上线日、持续运行期间及全部内容覆盖率未披露。",
+    "humanRole": "供应商机器学习工程师与客户团队共同分析与调整；自动修改模型、预算、数据或标签的授权边界未公开。",
+    "entryPoint": "分析建议：先对一条既有元数据流水线只读监控，建立质量与成本同口径基线，未经内容负责人确认不自动回写档案。",
+    "skills": [
+      "AI可观测性",
+      "业务评测集与实验设计",
+      "云资源成本分析",
+      "事件响应与持续交付"
+    ],
+    "risks": [
+      "F1与成本取自不同工作流，不能当统一全局指标",
+      "内容样本与标签变化会混淆精度提升",
+      "日志可能包含未发布内容及版权信息"
+    ],
+    "caveats": [
+      "无公开独立审计、原始评测数据或客户逐项验收。",
+      "来源F1基线有0.80与80.2%两种写法，不能隐去差异。",
+      "单函数最大节省不等于全部管线或企业总成本降幅。"
+    ],
+    "metrics": [
+      {
+        "label": "知识图谱管线基础设施费用",
+        "value": "减少64.5%",
+        "context": "供应商自报整体管线口径；单函数最高87.5%另列于原文，不应取代整体数字。",
+        "kind": "cost",
+        "unknown": false
+      },
+      {
+        "label": "实体链接token费用",
+        "value": "减少55%",
+        "context": "仅此工作流；并非所有模型支出或总拥有成本。",
+        "kind": "cost",
+        "unknown": false
+      },
+      {
+        "label": "实体识别F1",
+        "value": "约0.80/0.802→0.886",
+        "context": "正文两处基线略异；由0.802算相对提升约10.5%，绝对差为8.4个百分点。",
+        "kind": "performance",
+        "unknown": false
+      },
+      {
+        "label": "系统可用率",
+        "value": "95%→99%",
+        "context": "测量窗口和故障定义未公开。",
+        "kind": "performance",
+        "unknown": false
+      },
+      {
+        "label": "总投入与净回报",
+        "value": "未公开",
+        "context": "实施、评测人工、监控存储和持续运营费用未知。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "内容元数据质量与运行成本缺少统一视图，既有管线需要同时回答模型输出是否可靠及计算投入是否合理。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：这类工作不宜从更换模型开始。先将“内容可检索率”“实体标记正确率”“每千资产费用”分开，才能避免低成本但不可用的标签被当成进步。不同内容形态还应有各自的抽样与责任人。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "团队把CloudWatch扩展为AI监控层，在客户现有管线中观察并调整；范围由4条工作流扩到9条。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：前线部署实践的核心不是增加看板，而是使看板能推动受控的配置和模型变更，并让内容运营团队接得住结果。应保留每次调整前后的参数、数据版本、责任人和可回滚点，而非只展示最终曲线。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：可复用交付件应包含指标字典、失败样本集、报警去重、变更记录和交接演练。它们可跨客户复用，但素材、编辑规范及误标成本必须在每个客户重新定义。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "CloudWatch观察Lambda/ECS资源、延迟、token费用及F1；Bedrock模型对比与动态路由配合A/B测试，X-Ray用于故障定位。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未披露项目IAM角色、日志脱敏规则、保留期、客户内容出域限制、标签写回权限和发布审批链。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：评测集应固定资产快照并覆盖多语言、年代、人物同名、字幕缺失与低画质。训练、提示调优和验收样本应隔离，实体识别与实体链接分开记分，避免把同一条素材反复调优后的分数当泛化表现。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：资源缩配应同时观察峰值并发、超时、重试、长尾延迟和成本；平均内存利用率低不足以保证生产缩配安全。应以每项成功完成且质量达标的资产计费，而不是只比较单次调用报价。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：动态路由需要保留质量底线及低置信度回退。低价模型在常见文本上相当，不能推定在罕见人物、方言和重大新闻上也相当。合适的上线方式是分层小流量与编辑抽查，而不是一次切换全部内容。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商报告分工作流成本、实体识别质量和可用率改善，具体口径见指标栏。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：三个成本与质量数字不应相乘计算综合ROI：基础设施缩配、token路由和F1来自不同分母。应取得相同期间的内容数量、错误返工工时、监控费用与合同投入，再评价单位合格资产成本是否下降。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：F1基线不同可能是四舍五入，也可能是不同样本，公开材料无法判定。报告应保留两种写法而非人为挑更好看的起点；根因分析速度亦不等于完整故障修复时间。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未公开标签集、测试样本数、置信区间、分语言表现、实验随机化及误标业务后果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "小组人数、驻场时长、合同费、云账单总额与客户维护投入未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有证据证明该项目已实现自动出版、内容版权判定或全部元数据零人工审核。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "locus-vietnam-beverage-distributor-routing",
+    "company": "匿名越南大型饮料企业及分销网络（Locus客户）",
+    "industry": "饮料分销与末端物流",
+    "provider": "Locus",
+    "title": "把分销商规则接入派车、途中改线和日终对账",
+    "country": "越南",
+    "countryNote": "客户项目官方来源明确国家；不从供应商所在地推定项目范围。",
+    "deploymentCountries": [
+      "越南"
+    ],
+    "sources": [
+      {
+        "title": "A Leading Vietnamese Beverage Company Moves 22% More Orders Per Trip, Slashes Fuel Consumption by 37%",
+        "url": "https://locus.sh/case-studies/beverage-distributor-route-planning-dispatch/",
+        "locator": "Implementation Approach、Impact、Results",
+        "date": "未标日期；2026-11-09核验",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "Route Optimization Savings Claims: What Numbers Measure",
+        "url": "https://locus.sh/blogs/route-optimization-savings-claims-audit-2026/",
+        "locator": "越南饮料分销案例及测量口径",
+        "date": "2026-11-05更新；2026-11-09核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "addedDate": "2026-11-09",
+    "checkedAt": "2026-11-09",
+    "publishedAt": "未披露",
+    "evidenceLevel": "B",
+    "summary": "项目直接披露工程师驻分销现场数周，将真实约束配置后陪同上线；不是仅有路线优化产品说明。",
+    "workflow": "订单与地址→按分销规则编排车辆及停靠→司机手机接收路线→现场签收/收款→途中调整→日终货、款、交付核对。",
+    "evidenceNote": "官方项目Implementation Approach明确前线部署工程师参与现场、配置验证、上线培训及hypercare，满足项目级角色证据。供应商自报效果记B级。",
+    "deploymentLevel": "来源说明已上线，并由规划员和配送员自行运行；上线日期和分销商总数未披露。",
+    "humanRole": "规划员上线前验证真实场景，工程团队陪同培训、修正配置和处理问题；司机执行送货与现场记录。路线可否自动改写及人工覆盖规则未公开。",
+    "entryPoint": "分析建议：单仓使用相同订单回放与平行排线，先验容量、路权及营业时间硬约束，再逐批开放司机端；收款只记录已确认事实。",
+    "skills": [
+      "物流现场流程发现",
+      "约束优化与地址治理",
+      "移动端异常处理",
+      "订单/货款核对与上线陪护"
+    ],
+    "risks": [
+      "错误地址和不可达路段会产生不可执行路线",
+      "途中版本冲突或断网会引起重复停靠",
+      "收款记录不等于支付已结算"
+    ],
+    "caveats": [
+      "客户匿名，原始路线、油耗记录和测量期间未公开。",
+      "不同分销商、车型和货量可能改变结果，不宜泛化为固定节省率。",
+      "未披露具体模型；不能将agentic TMS名称直接解释为LLM自主调度。"
+    ],
+    "metrics": [
+      {
+        "label": "油耗",
+        "value": "减少37%",
+        "context": "供应商结果；绝对升数、载重与距离归一化未知。",
+        "kind": "cost",
+        "unknown": false
+      },
+      {
+        "label": "每趟订单数",
+        "value": "增加22%",
+        "context": "每趟口径，不等同总订单增长。",
+        "kind": "performance",
+        "unknown": false
+      },
+      {
+        "label": "规划用时",
+        "value": "减少35%",
+        "context": "原人工规划约60–90分钟；未公开同批次测量。",
+        "kind": "performance",
+        "unknown": false
+      },
+      {
+        "label": "日终对账用时",
+        "value": "减少60%",
+        "context": "不是差错率减少60%。",
+        "kind": "performance",
+        "unknown": false
+      },
+      {
+        "label": "净成本收益",
+        "value": "未公开",
+        "context": "许可、集成、设备、培训和后续支持费用均未公开。",
+        "kind": "cost",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "混合车型向小商店配送，原Excel排线与日终对账依赖人工；地址缺少验证，车队状态不统一。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：分销业务应把承诺送达、实际签收、退货及收款分成不同状态。先定义订单、停靠和趟次的身份关系，才能避免一张订单拆成多次送货后指标分母漂移。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "工程师在现场梳理流程，把部分交付、促销、车型限制及多点配送写成配置；规划员验场景，随后一起上线并持续陪护。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：可借鉴的交付顺序是先观察调度员如何应对例外，再固化可执行约束，最后才比较算法路线。若业务规则只能藏在工程师脑中，交接后系统容易退回人工绕路；应把每条规则的拥有者和变更流程一起交付。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "系统支持地址验证、途中重新排序、手机签收和收款记录、车队看板及趟次结束对账。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未公开优化算法、地图供应商、ERP接口、网络重试、定位频率、数据驻留与权限矩阵。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：测试应包括无坐标小店、促销赠品、临时加单、部分拒收、货到付款和车辆故障。优化器首先必须满足车辆容积、载重、道路和营业时间等硬约束；不可执行但距离更短的路线不算成功。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：途中重排应带路线版本和司机确认点，避免司机已到店而后台又改顺序。断网后补传要有幂等订单行和签收标识，收款不得因重试生成两笔；日终应能解释每一处货款差异。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：安全设计应分开司机、规划员、财务和系统服务权限。地理位置、客户地址和支付信息只应按任务可见；地图位置追踪和财务记账不应共享无限写权限。以上是分析建议，不是已证实项目配置。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "官方报告四项改善，见指标栏；另有供应商文章列路线距离下降12%，不把它与油耗等同。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "分析：节油可能来自少走路、提高装载、车型配置或怠速变化。要辨明原因，需在相同需求结构下比较每单升数、每吨公里升数和总公里；把各百分比相加会重复计算同一效应。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：效率指标还应与未完成配送、损坏、司机超时和账差并列。若订单密度更高但退货增加，单看每趟订单数可能高估收益；节省的对账时间也应扣除异常复核。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "分销商名称、上线窗口、样本趟次、季节、基线车队结构与指标统计方法未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露误地址率、约束违规、改线人工驳回、移动端故障和退款/支付逆转处理表现。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有独立账单、油耗审计、净ROI或现场团队人数/人天成本。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "gyde-anonymous-india-nbfc-underwriting-soft-signal",
+    "company": "匿名印度中型住房贷款NBFC（Gyde客户）",
+    "industry": "金融服务与住房信贷",
+    "provider": "Gyde",
+    "title": "把住房贷款初筛带入销售会面，保留人工核贷",
+    "workflow": "借款人信息→贷款政策初筛与压力测试→带理由的建议报告→人工核贷。",
+    "sources": [
+      {
+        "title": "Home Loan NBFC Answers Eligibility Queries in <2 Min",
+        "url": "https://gyde.ai/resources/customer-stories/mid-size-nbfc-home-loans-lender",
+        "locator": "About the client / At a glance / How Gyde solved it / The outcome / Behind the scenes",
+        "date": "未标发布日期；2026-11-09核验",
+        "type": "客户或供应商官方"
+      },
+      {
+        "title": "Forward Deployed Engineers (FDEs) for AI in Financial Services",
+        "url": "https://blog.gyde.ai/forward-deployed-engineers-for-ai-financial-services/",
+        "locator": "How Gyde Approaches Financial Services AI Deployment；NBFC链接与后续复用描述",
+        "date": "2026-07-24发布；2026-07-27更新；2026-11-09核验",
+        "type": "客户或供应商官方"
+      }
+    ],
+    "addedDate": "2026-11-09",
+    "checkedAt": "2026-11-09",
+    "publishedAt": "项目页未披露；角色关联文章2026-07-24",
+    "country": "印度",
+    "countryNote": "客户项目页明确在印度开展住房贷款业务；试点具体地区未披露。",
+    "deploymentCountries": [
+      "印度"
+    ],
+    "evidenceLevel": "B",
+    "summary": "官方FDE（Forward Deployed Engineer，前线部署工程师）文章把同一住房贷款项目作为嵌入式跨职能POD的实例；案例披露区域试点及首答改善。属于同项目实践关联，不证明某个参与者的正式FDE（Forward Deployed Engineer，前线部署工程师）职称。",
+    "evidenceNote": "FDE（Forward Deployed Engineer，前线部署工程师）关联由官方角色文章直接链接同项目建立，不是招聘或通用服务页拼接；供应商自报，客户匿名，结果缺乏独立核验。",
+    "deploymentLevel": "已开展区域试点并披露结果；扩大生产部署的范围与日期未知。",
+    "humanRole": "人工核贷员保留最终审批权。",
+    "entryPoint": "分析建议：先以历史案件和影子运行验证初筛，禁止把聊天建议直接变成拒贷或承诺放款。",
+    "skills": [
+      "贷款政策规则建模",
+      "财务计算与压力测试",
+      "现场销售流程设计",
+      "可审计决策报告",
+      "人机协同评测"
+    ],
+    "risks": [
+      "初筛误拦截可能令合格借款人失去进入正式核贷的机会",
+      "政策版本或输入错误可能被流畅解释掩盖",
+      "敏感财务信息在代理聊天环境泄露",
+      "销售把初步建议说成审批承诺"
+    ],
+    "caveats": [
+      "不能把通用POD组织图中的人数、治理岗位及交付制度套到本项目。",
+      "首答不是最终授信审批；+18%未说明相对增幅还是百分点。",
+      "9/10一致率未披露分母、抽样和类别分布，不是独立准确率或公平性证明。"
+    ],
+    "metrics": [
+      {
+        "label": "试点规模与周期",
+        "value": "单一区域、约40名代理、约10周",
+        "kind": "scale",
+        "context": "供应商披露；代理不是40个软件智能体。",
+        "unknown": false
+      },
+      {
+        "label": "资格首答",
+        "value": "1–2日→约2分钟",
+        "kind": "performance",
+        "context": "初步反馈，不是完整审批周转。",
+        "unknown": false
+      },
+      {
+        "label": "进入核贷的不符合政策文件",
+        "value": "减少70%",
+        "kind": "performance",
+        "context": "不是全部申请减少70%，也不是坏账下降。",
+        "unknown": false
+      },
+      {
+        "label": "进入下一阶段",
+        "value": "+18%",
+        "kind": "performance",
+        "context": "口径与统计显著性未知。",
+        "unknown": false
+      },
+      {
+        "label": "代理节时",
+        "value": "每人每周4–6小时",
+        "kind": "performance",
+        "context": "未披露时间测量方式。",
+        "unknown": false
+      },
+      {
+        "label": "初筛与最终结果一致",
+        "value": "9/10",
+        "kind": "performance",
+        "context": "结果标签与样本量未知。",
+        "unknown": false
+      },
+      {
+        "label": "项目净收益",
+        "value": "未披露",
+        "kind": "cost",
+        "context": "没有完整实施与运营成本。",
+        "unknown": true
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "销售会面与核贷反馈脱节；不符政策的案件仍占用核贷资源。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：先跟踪一份真实申请从初次接触到最终决定的完整链条。把等待信用团队、补材料、政策解释和实际计算分开计时，才能确定首答改善来自自动计算、流程重排还是信息提前收集。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "官方FDE（Forward Deployed Engineer，前线部署工程师）文章以此项目说明嵌入式POD交付，并称其政策与治理基础继续供相邻流程复用。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "系统在聊天中返回资格提示、计算与材料要求，并形成供人复核的报告。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：真正可复用的交付单元是政策版本、计算测试和异常处置，而不是聊天界面。业务负责人应先定义哪些提示只可解释、哪些必须转交核贷，以及销售向借款人转述时可以承诺什么。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：建议将产品、风险、销售与工程人员共同评审的失败案例沉淀为验收集；这是一种可借鉴的组织方法，不代表公开资料已证明项目采取了这一机制。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "初始输入为信用分、收入、贷款额和房产价值；系统计算FOIR与LTV，并测试利率、期限及收入变化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "依据机构自身可配置政策给出结果，并留存理由。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析建议：FOIR与LTV等数值应由确定性函数产生，语言模型只解释经过验证的数值。边界测试应包含缺失收入、收入单位不一致、共同借款人重复计入、既有债务遗漏、四舍五入及恰好等于政策阈值的情况。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：评测须拆分政策符合度、算术正确性、材料清单完整性及解释忠实度。比较最终审批时，须控制后续新增证据和政策版本变化，否则初筛与终审不一致未必是模型错误。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：应统计合格案件被错误阻断的比例，并抽样复核被筛除案件。仅看通过核贷的样本，会漏掉从未进入最终审核的假阴性；最终核贷员也可能受初筛提示影响，不能把其决定自动视为独立金标准。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：权限宜按区域、代理、案件和字段拆分；只显示完成当前会面所需的信息。对报告导出、借款人信息留存及第三方模型传输另设控制，政策发布权不应授予一线销售。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：上线前可用影子模式保存原流程与新建议的对照；业务放量应以严重规则违规为硬门槛，并验证超时、政策加载失败和输入不全时均能转人工，而不是默认给出乐观结论。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "公开材料未说明模型、提示词、检索方式、规则引擎、核心信贷接口、部署位置、访问控制或日志保留期限；不能从网站通用技术栈推断。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "分析建议：指标栏的改善宜理解为试点观察。缺少随机对照和稳定分母，不能排除代理培训、案件结构或季节变化影响，也不能推导坏账率、收入或审批公平性改善。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：周节时应分别记录系统使用、人工复核、错误返工和被转移到风险团队的工作量。只报告代理省时可能把劳动转移误当成总成本下降。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：复用效益应通过第二个流程的真实交付周期、维护开销及政策变更传播验证；复用一套规则不等于不同产品都适用同一风险判断。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称、具体地区、上线时间、试点后活跃人数和扩展覆盖未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "合同金额、模型推理、集成、测试、治理与持续人工复核费用未披露，无法计算净ROI。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有公布混淆矩阵、被筛除案件复核结果、不同借款群体差异、故障率、终审人工推翻率及申诉机制。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "项目团队实际人数、驻场时长、交接责任和客户后续运维能力未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    }
   }
 ]
