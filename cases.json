@@ -41570,5 +41570,718 @@
         }
       ]
     }
+  },
+  {
+    "id": "freedom-data-centers-aravolta-network-takeover",
+    "addedDate": "2026-11-12",
+    "checkedAt": "2026-11-12",
+    "company": "Freedom Data Centers",
+    "country": "美国",
+    "countryNote": "佛罗里达州官方登记的 THE FREEDOM DATA CENTERS LLC 主营业地址为Sunrise；名称、地区和Noriega姓名与案例相互吻合，但未取得合同以独立确认签约法律主体。不能把登记地址自动称全球总部。",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "deploymentRegion": "佛罗里达州 Sunrise，原HBO/Warner Bros. Discovery园区",
+    "title": "接管旧数据中心网络，让遗留设施可以被监控与管理",
+    "industry": "数据中心改造与托管基础设施",
+    "provider": "Aravolta",
+    "workflow": "现场发现网络→恢复管理权限→核验原连接→持续监控",
+    "summary": "这是旧设施接管的工程交付，不是已证明使用大模型的项目。供应商项目级证据充分，但未获得独立验收材料，商业收入也尚不能确认。",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商项目正文明确前线部署工程师参与，并刊出客户管理合伙人Carl Noriega的具名评价；登记来源用于主体交叉核验，不独立证明技术绩效。",
+    "deploymentLevel": "供应商报告现场交付完成，监控节点留场运行；托管业务开业与客户营收未证明。",
+    "humanRole": "工程师实施网络发现和权限恢复；最终管理权归客户。日后值班、升级审批和职责矩阵未披露。",
+    "entryPoint": "分析建议：先做单栋设施的只读设备清点和权限移交清单，以连接连续性、资产覆盖率和恢复能力为验收项，再考虑更自动化的运营。",
+    "publishedAt": "未披露",
+    "risks": [
+      "权限接管必须基于资产所有者授权，案例不是任意重置网络设备的许可。",
+      "发现设备不等于排除全部安全漏洞。",
+      "链路未中断不等于所有业务应用都已完成验收。",
+      "旧资产可管理不等于机房已取得出租收入。"
+    ],
+    "skills": [
+      "现场网络排障",
+      "资产发现与拓扑重建",
+      "凭据恢复和权限交接",
+      "既有配置保护",
+      "客户侧验收与持续监控"
+    ],
+    "caveats": [
+      "未公开模型使用证据，不包装为生成式人工智能项目。",
+      "供应商自述与客户署名感言不是第三方审计；未独立获取工单和日志。",
+      "主体归属以登记交叉信息为参考，精确签约实体待核。"
+    ],
+    "metrics": [
+      {
+        "label": "现场实施时间",
+        "value": "5天",
+        "kind": "performance",
+        "unknown": false,
+        "context": "供应商报告；未给出人数与工时。"
+      },
+      {
+        "label": "接管设备",
+        "value": "138台",
+        "kind": "performance",
+        "unknown": false,
+        "context": "同一园区两栋楼；不是全部潜在设备或跨客户累计。"
+      },
+      {
+        "label": "连接中断",
+        "value": "0条",
+        "kind": "performance",
+        "unknown": false,
+        "context": "供应商在接管期间的宣称，不等于长期零故障。"
+      },
+      {
+        "label": "总投入、运行费用、净收益",
+        "value": "未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "缺合同、许可、工时、电信费用与经营收益数据；不能自行计算回收期。"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.aravolta.com/case-studies/freedom-data-centers",
+        "title": "From Dark Facility to Full Network Control at Freedom Data Centers",
+        "type": "供应商官方项目案例及客户具名评价",
+        "date": "未标发布日期；2026-11-12核验",
+        "locator": "Situation / What Aravolta Did / Result"
+      },
+      {
+        "url": "https://search.sunbiz.org/Inquiry/CorporationSearch/GetDocument?aggregateId=flal-l25000191992-8a62475a-a12c-48c5-be29-5a779a07bfe6&formatType=PDF&transactionId=l25000191992-6ba7c12a-47b1-4842-a236-2202f65645fc",
+        "title": "THE FREEDOM DATA CENTERS LLC — 2026 Florida LLC Annual Report",
+        "type": "政府主体登记",
+        "date": "2026-03-24提交；2026-11-12阅读全文核验",
+        "locator": "第1页 Current Principal Place of Business / Authorized Person(s) Detail"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "遗留园区缺凭据、地址图和拓扑文档，也没有互联网服务。新运营方不能直接掌握网络，业务目标是准备多租户托管。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "原团队花费多少时间排查、此前停机率、资产清单误差和收入基线均未披露。不能拿“黑暗设施”推导此前完全停产或客户损失。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：此处首要痛点是可验证的资产与控制权，而不是模型回答能力；没有这层基础，自动化运维也无可靠对象。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "Aravolta将FDE（Forward Deployed Engineer，前线部署工程师）派至现场，逐室推进；自带网关建立临时管理网络并安装发现节点。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户侧具名证言来自管理合伙人Carl Noriega；工程师人数、个人身份、逐日工单和确切项目日期未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "授权文件、密码恢复审批及旧凭据撤销过程未公开。应将现场接管与安全审计区分，不能声称完成全部安全合规工作。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "节点通过SNMP与LLDP发现设备和连接，形成拓扑；人员恢复设备管理凭据，保留原配置。节点继续提供远程监控。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "模型、检索增强生成、向量库、训练集均未披露，本案例没有充分证据证明使用生成式模型。不要将供应商其他产品能力填进此项目。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "遥测具体字段、采样周期、出站数据去向、加密、保存期限及租户隔离未公开。远程可用不自动意味着云端保存全部设备配置。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "人工操作后的评测测试集、故障注入、回滚演练及持续维护服务级别未披露。分析建议：逐设备校验可达性、权限和拓扑差异，并留存客户认可的验收清单。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "已披露交付对象是管理控制与网络可见性；量化指标见指标栏，均属供应商陈述，缺独立测量。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：避免重建现有网络可能减少停工和配置丢失风险，但没有对照费用，因此不能给出节省金额、百分比或净收益。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "尚未证明开始接入承租人或取得租金；具备运营条件与商业成功应分开评估。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "实际服务费、节点/平台订阅、后续人工值班、联网成本和净收益全部未知。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "缺客户独立项目公告、验收签字、完整设备清单和监控连续性数据。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "未说明对未知固件、失联设备和未经许可资产如何处理；也不能假定全部旧漏洞已经消除。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "可迁移教训属于分析：前线交付应把“可见、可控、不中断”拆成验收指标，先解决真实环境约束，避免为显得先进而强行加入模型。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "pet4me-unicrew-founder-engineer-continuous-delivery",
+    "company": "Pet4Me",
+    "title": "让一名熟悉产品的工程师接住创始人的持续迭代",
+    "industry": "宠物领养与社区平台持续交付",
+    "provider": "unicrew（原Artelogic）",
+    "publishedAt": "未披露",
+    "checkedAt": "2026-11-12",
+    "addedDate": "2026-11-12",
+    "evidenceLevel": "B",
+    "deploymentCountries": [],
+    "metrics": [
+      {
+        "label": "月计费工时变化",
+        "value": "约减少80%",
+        "kind": "performance",
+        "unknown": false,
+        "context": "供应商平均月账单工时，比较建设期五人配置与后续迭代配置；非同任务对照，观察窗口未完整给出；详见来源1。"
+      },
+      {
+        "label": "实施费用／运行费用／净收益",
+        "value": "分别未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "不可由工时比率推算货币收益。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Pet4Me持续交付项目",
+        "url": "https://unicrew.com/case-study/pet4me-continuous-delivery-with-claude/",
+        "type": "供应商官方项目案例",
+        "date": "2026-11-12核验；页面未标发布日期",
+        "locator": "The challenge、Approach、Results、Quick answers"
+      },
+      {
+        "title": "Pet4Me官网",
+        "url": "https://pet4me.org/",
+        "type": "客户官方产品与主体背景",
+        "date": "2026-11-12核验；页面未标发布日期",
+        "locator": "服务介绍、免费声明、页脚公司地址和开发方"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "供应商称原建设团队五人，转为原团队资深工程师直接对接创始人；不是裁掉团队后由无人代理接管。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "判断基线应固定需求难度、上线次数和质量标准。初建阶段设计工作减少后，维护团队自然可能缩小，因此不能把人员变化全部归因于模型。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "项目明确由FDE（Forward Deployed Engineer，前线部署工程师）负责；Claude Code辅助代码、检查与测试，Claude Design辅助设计，Claude.ai/Cowork处理文档。创始人在预发布环境验收。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "这类交付的关键技能是把创始人的口头要求变为可复现验收，而不是大量生成代码。单人交付仍需要可接手文档和备用维护者，这是风险控制建议而非披露实施情况。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "技术栈为Laravel、Vue/Nuxt、AWS、MySQL、Redis。供应商称不把真实用户数据送入Claude；已做站内消息、诈骗提示、内容校验和搜索优化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "官网面向领养、送养、寻宠及当地服务，声明免费并提供私信、内容过滤和举报；页脚确认由unicrew开发。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "必须区分开发数据流与线上业务数据流。已知模型辅助开发，不能据此认定线上诈骗检测也调用同一模型，或自行补写检索增强、向量库和代理工具链。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "模型版本、上下文留存、部署权限、自动化测试覆盖、反诈模型和阈值、人工复核队列、回滚指标未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商按平均月计费工时报告相对五人建设阶段约降低80%，且称至2026年9月已持续超过六个月。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "这不是价格降低80%、净利润提升或相同工作量效率提升的证明。应把创始人验收时间、订阅费、事故处置和待办堆积纳入分母，再判断客户是否真正少花钱。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "平台免费不代表经营没有成本；无法用用户免付费推导利润模式。官网没有提供本次工程改变带来的营收或用户转化因果证据。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "总投入、模型运行费用、净收益、具体观察月数和每月账单未公开；也未找到客户独立发布的项目效果审计。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有诈骗识别准确率、误伤申诉、失败发布或线上缺陷前后对照，不能称质量问题已完全解决。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "country": "美国",
+    "countryNote": "客户官网列Pet4me Inc及纽约联系地址；实际总部与注册地未独立核实，联系地址不等于工程所在地。",
+    "deploymentRegion": "面向美国的线上宠物平台；云资源所在区域未披露",
+    "deploymentLevel": "供应商称已持续生产运行；非仅原型或招聘计划。",
+    "summary": "本例关注开发与运维组织如何缩小，不把代码助手等同面向宠物用户的自主代理。客户官网可确认平台及开发商关系，效率归因仍来自供应商。",
+    "workflow": "创始人提出改动→工程师开发与检查→创始人验收→上线维护",
+    "humanRole": "创始人保留产品验收权，工程师保留生产交付责任；没有证据表明模型可以自行决定发布。",
+    "entryPoint": "分析建议：优先选一条已有验收标准的小变更，比较完整交付成本，不直接照搬单人团队配置。",
+    "risks": [
+      "单人责任集中与关键人员依赖",
+      "从建站期转入迭代期的工作量变化干扰效率归因",
+      "反诈骗功能上线不代表误报与漏报已经解决"
+    ],
+    "skills": [
+      "既有代码理解",
+      "产品需求澄清",
+      "测试与发布管理",
+      "创始人协作",
+      "AI辅助开发边界管理"
+    ],
+    "evidenceNote": "供应商具名项目直接写明前线部署工程师的责任；客户官网佐证开发商和实际产品。效果只有供应商归因，不是独立评测。",
+    "caveats": [
+      "开发辅助模型与业务运行模型不能混同",
+      "美国联系地址不作为云资源或工程团队所在地证据",
+      "公开材料有缺口，不称完整内部架构"
+    ]
+  },
+  {
+    "id": "waiverking-unicrew-mindbody-api-migration",
+    "company": "WaiverKing",
+    "title": "用双版本证据比对迁移签署文件与客户档案接口",
+    "industry": "健身场馆电子免责文件与客户系统集成",
+    "provider": "unicrew（原Artelogic）",
+    "publishedAt": "未披露",
+    "checkedAt": "2026-11-12",
+    "addedDate": "2026-11-12",
+    "evidenceLevel": "B",
+    "deploymentCountries": [],
+    "metrics": [
+      {
+        "label": "迁移工时",
+        "value": "预计260小时；实耗约80小时",
+        "kind": "performance",
+        "unknown": false,
+        "context": "供应商对该项目估时与交付工时，不是随机或同任务人工对照。"
+      },
+      {
+        "label": "总投入／运行费用／净收益",
+        "value": "分别未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "工时差无法代替财务数据。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "WaiverKing接口迁移项目",
+        "url": "https://unicrew.com/case-study/claude-assisted-crm-api-migration-for-waiverking/",
+        "type": "供应商官方项目案例",
+        "date": "2026-11-12核验；页面未标发布日期",
+        "locator": "Challenge、Approach、Results、Quick answers"
+      },
+      {
+        "title": "WaiverKing官网",
+        "url": "https://www.waiverking.com/",
+        "type": "客户官方产品说明",
+        "date": "2026-11-12核验；页面未标发布日期",
+        "locator": "Mindbody集成和数字表单介绍"
+      },
+      {
+        "title": "WaiverKing About",
+        "url": "https://www.waiverking.com/about",
+        "type": "客户官方背景",
+        "date": "2026-11-12核验；页面未标发布日期",
+        "locator": "创立背景与办公室信息"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "旧Mindbody接口迁移遇到结构及验证变化；请求显示成功也可能存储不同数据。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户官网说明签署文件进入Mindbody客户档案；官网介绍其2012年起步于加州场馆需求并设美国办公室。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "业务验收不应只判断状态码，还要检查档案身份、附件归属和关键字段一致性。错误关联可能比明确失败更难被用户发现。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "unicrew原平台团队的FDE（Forward Deployed Engineer，前线部署工程师）负责估时、交付和上线，其他工程师参与。Claude Code分析脱敏日志，工程师写代码并批准修复。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "嵌入式交付的价值是熟悉已有业务含义；陌生团队即使拥有同一模型，也不能自动获得字段含义、历史兼容约定或发布责任。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "开发时双版本并行记录响应；投产后新版失败自动回退旧版，记录再次脱敏后供Claude Code分析。技术栈PHP、Yii2、JavaScript、MySQL。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "这是工程分析工具流，不是模型直接处理客户签署或自动批准法律文件。不能从日志分析推导出线上模型调用。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "风险分析：回退前需分辨“确定未执行”和“执行结果不明”；后者若盲目重试可能重复写入。公开材料没有证明具体采用何种幂等键或补偿机制。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "脱敏算法、字段映射表、日志留存与权限、模型版本、验收样本量、回归测试覆盖、灰度比例及故障处置时限未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "原估计260小时，实际约80小时；供应商称新版已生产运行、回退闲置，原工程师继续负责。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "260小时是估算，不是实施同一迁移的实测人工对照。不能按工时差直接计算净收益，也不能把更广泛合作的客户增长归因本次迁移。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "效果核验建议应增加静默差异率、档案错配率、回退触发数和重复写入数，并覆盖旧接口完全停用后的观察期。建议不代表客户已经这样衡量。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "迁移日期、流量分母、观察期、上线事故数、模型账单、合同费用、运行支出和净收益分别未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "客户官网确认相关产品与接口用途，但未独立公布此次迁移的260/80小时或验收结果。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "country": "未披露",
+    "countryNote": "客户官网称在美国东西海岸设办公室，起源业务在加州；供应商评价区标UK。总部/法律主体国家未核实，不以市场或评价者位置替代。",
+    "deploymentRegion": "面向美国健身与健康企业的平台；项目数据中心与具体上线国家未披露",
+    "deploymentLevel": "供应商称新版接口已投产，兼容回退现处闲置状态。",
+    "summary": "重点是保持已签文件与正确客户档案对应，不是让模型代替工程师执行未经批准的生产修改。对照响应和实际数据，比只看接口成功状态更能发现静默错误。",
+    "workflow": "双版本请求比对→脱敏日志分析→工程师修复→上线回退保护→消除残余不兼容",
+    "humanRole": "模型分析证据，工程师写代码并审核修复；原交付负责人持续维护。",
+    "entryPoint": "分析建议：先挑一组可重复、无重复写入副作用的接口做差分验证，然后决定灰度切换和兼容期。",
+    "risks": [
+      "双写或失败重试可能导致重复副作用，需另验幂等",
+      "日志脱敏可能破坏关联，也可能残留识别信息",
+      "旧接口退役后回退能力消失",
+      "估时与实耗差异不能视为严格因果实验"
+    ],
+    "skills": [
+      "遗留系统分析",
+      "接口差分测试",
+      "日志脱敏与关联",
+      "生产迁移和回退",
+      "人工代码审核"
+    ],
+    "evidenceNote": "具名供应商项目直接说明前线部署工程师身份来源、具体职责与生产迁移。客户官网佐证产品集成；项目效果无独立复核。",
+    "caveats": [
+      "不把估计加速倍数当实测基准",
+      "不把广泛合作增长算迁移收益",
+      "不把美国服务市场或UK评价标签当总部国家"
+    ]
+  },
+  {
+    "id": "meinunterricht-unicrew-search-discovery-embedded",
+    "company": "meinUnterricht GmbH",
+    "title": "让教师更容易找到合适教材：嵌入搜索团队交付并验证效果",
+    "industry": "教师备课资源搜索与教育内容发现",
+    "provider": "unicrew（原Artelogic）",
+    "publishedAt": "2026-07-23（客户评价）",
+    "checkedAt": "2026-11-12",
+    "addedDate": "2026-11-12",
+    "evidenceLevel": "B",
+    "deploymentCountries": [],
+    "metrics": [
+      {
+        "label": "搜索成功率变化",
+        "value": "约提升9%",
+        "kind": "performance",
+        "unknown": false,
+        "context": "具名客户对照实验自述；基线、定义、分母、实验时间窗、地域及相对/绝对口径未公开，不能当9个百分点。"
+      },
+      {
+        "label": "投入／运行费／净收益",
+        "value": "分别未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "不使用供应商通用小时费率估算本项目。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "unicrew前线部署交付：meinUnterricht具名条目",
+        "url": "https://unicrew.com/services/forward-deployed-engineering/",
+        "type": "供应商官方项目案例",
+        "date": "2026-11-12核验；页面未标发布日期",
+        "locator": "Proof / meinUnterricht"
+      },
+      {
+        "title": "Daniel Siebenson对meinUnterricht项目的完整评价",
+        "url": "https://clutch.co/go-to-review/de8eff6b-a038-47cf-8690-22a1d306fd04/474511",
+        "type": "具名客户负责人自述，经评价平台标为Verified",
+        "date": "2026-07-23发布；2026-11-12核验",
+        "locator": "Staff Augmentation for EdTech Company；2026-07-23；Background至Results及Ratings"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户产品与工程总监Daniel Siebenson称，需要改善教材搜索的相关性、筛选、自动提示，以及支持向量搜索的标签和嵌入。合作始于2025年5月。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "原有成功率绝对值、教师耗时及既有搜索引擎未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "要区分资源不存在和资源找不到：前者需要内容供给，后者才可能靠搜索改进。该材料不能证明所有教学需求已被覆盖。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "客户说明投入一名嵌入其搜索团队的工程师，直接与产品、工程负责人协作，负责范围界定、构建、发布及效果测量。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "供应商把该具名项目放在FDE（Forward Deployed Engineer，前线部署工程师）服务的实绩区，强调生产搜索端到端责任。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "证据支持具体工作模式，而非正式劳动职位或所有权完全转交。客户评价的平台服务分类是人员增援，应保留这一证据差异。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "已知工作贯穿用户搜索功能、AI标签及嵌入数据基础；具体模型、向量数据库和检索排序方法未披露。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析性数据流：教学资源经过索引与查询后呈现候选结果，是理解此类系统的抽象，不代表项目实际实现；材料不足以确认分块、重排或检索增强生成。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "账号权限、内容授权边界、提示或搜索日志留存、人工标签审核、离线评测、灰度和回滚策略没有公开项目细节。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "工程验收建议加入学科、年级、少见词及无结果查询分组。总体平均值变好仍可能掩盖小群体搜索恶化，这不是已经发现的客户事故。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "客户2026年7月评价称功能已上线，对照实验搜索成功率约提高9%；标签与嵌入工作为向量搜索迁移提供基础。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "成功率定义、样本量、实验时长和显著性未披露，9%不能擅自换算为百分点。更不能推导教师教学成绩、付费转化或营收也增长9%。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "后续建议监测长尾查询、空结果率与教师真正使用资源的行为，并在索引或模型更新后复测。只有对照结果持续成立才可判断维护价值。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "实施合同金额保密，运行成本、净收益、模型费用及后续维护责任边界未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "没有取得客户官网可读取的主体声明和工程文章；未发现独立实验审计，保留客户自述证据级别。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
+    "country": "德国",
+    "countryNote": "具名客户产品与工程负责人自述为德国教育平台，评价地点为柏林；注册文件正文未取得，法律总部未独立核实。",
+    "deploymentRegion": "德国教育平台生产搜索；实际基础设施地区及实验用户地域未披露",
+    "deploymentLevel": "具名客户称功能已生产上线；标签与嵌入工作支持转向向量搜索，不等于已完成全站向量迁移。",
+    "summary": "此例有客户负责人对单名嵌入工程师、端到端交付和上线实验的直接说明。供应商将其列为前线部署交付证据，但评价平台分类仍是人员增援，保留称谓差异。",
+    "workflow": "澄清搜索目标→实现搜索界面和数据能力→生产发布→对照实验衡量",
+    "humanRole": "客户产品及工程负责人协作确定需求，工程师负责功能交付；教师继续选择教学资源。精确发布审批权限未披露。",
+    "entryPoint": "分析建议：先定义一次成功搜索的事件，再以可回滚实验改一类搜索体验，避免只建设向量库却无法证明教师找到资源。",
+    "evidenceNote": "供应商项目级条目与具名客户负责人完整评价相互印证嵌入、端到端和已上线；客户称embedded engineer，未直接给出前线部署工程师职位名，Clutch分类为Staff Augmentation。不是独立审计。",
+    "risks": [
+      "角色称谓与平台分类不一致，不能夸大正式职位",
+      "搜索成功率定义不明",
+      "内容许可、教师隐私与检索偏差需分别检查"
+    ],
+    "skills": [
+      "搜索体验设计",
+      "端到端产品开发",
+      "标签与嵌入数据处理",
+      "实验指标设计",
+      "跨产品和工程协作"
+    ],
+    "caveats": [
+      "不把9%写成9个百分点",
+      "不把准备向量化写成全量迁移完成",
+      "不把供应商通用技术栈当本项目架构"
+    ]
   }
 ]
