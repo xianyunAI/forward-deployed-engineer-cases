@@ -42283,5 +42283,453 @@
       "不把准备向量化写成全量迁移完成",
       "不把供应商通用技术栈当本项目架构"
     ]
+  },
+  {
+    "id": "vinesco-mithandir-whatsapp-order-confirmation",
+    "addedDate": "2026-11-13",
+    "checkedAt": "2026-11-13",
+    "company": "Vinesco（Vines & Co.）",
+    "provider": "Mithandir",
+    "industry": "饮料批发分销",
+    "country": "未核实",
+    "countryNote": "供应商将项目客户定位于阿根廷Rosario；法定主体注册国与总部未经独立核实，项目落地区域另列。",
+    "deploymentCountries": [
+      "阿根廷"
+    ],
+    "deploymentRegion": "Rosario，Santa Fe",
+    "deploymentLevel": "自动录单已于2026年8月生产运行；更广管理系统自10月与行政人员测试，不能称全量迁移已完成。",
+    "publishedAt": "方法文章2026-10-07，更新2026-10-21；具名案例未标发布日期",
+    "title": "把业务员聊天订单变成待确认单据，再核对是否真正入账",
+    "workflow": "WhatsApp消息→目录与包装换算→行政确认→业务系统写入→失败核对",
+    "evidenceLevel": "B",
+    "evidenceNote": "供应商创始人Alfonso Ponzellini署名文章明确以本项目解释FDE（Forward Deployed Engineer，前线部署工程师）实施；具名案例有阶段和错误复盘。非客户独立审计。",
+    "summary": "重点不是让模型直接下单，而是把混乱消息转成可审查对象，保留行政确认和入账检查。自动录单已落地，更大系统仍有测试与迁移边界。",
+    "humanRole": "业务员发送消息，行政人员确认单据；技术团队与实际使用者迭代。个人工程师名单、权限矩阵未披露。",
+    "entryPoint": "分析建议：先选订单录入而不是整套财务替换，以人工复核后的单据正确率与入账完整性验收，暂不扩大到自动付款。",
+    "metrics": [
+      {
+        "label": "消息至出单中位耗时",
+        "value": "7.5分钟",
+        "kind": "performance",
+        "unknown": false,
+        "context": "供应商称Vinesco面板记录；2026-08-07至08-26。非纯模型推理耗时；未给样本数。[1]"
+      },
+      {
+        "label": "确认后写入完整性",
+        "value": "908 / 908",
+        "kind": "performance",
+        "unknown": false,
+        "context": "2026-08-07至09-01，分母是人工确认单据，不是全部来信；不等于解析100%正确。[1]"
+      },
+      {
+        "label": "总体投入、运行费用、净收益",
+        "value": "未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "无合同价、模型费、运维工时和净收益数据；不能据节约时间直接计算利润。"
+      }
+    ],
+    "skills": [
+      "业务访谈与订单语义建模",
+      "包装单位和商品别名治理",
+      "人工确认与权限设计",
+      "可靠写入和故障监控",
+      "真实业务回归测试"
+    ],
+    "risks": [
+      "名称相似与包装换算错误可能变成真实发货错误。",
+      "已确认单据成功写入，不代表原始订单全部正确。",
+      "财务与银行材料需要严格最小权限和保留策略，现有公开资料不足以证明其合规实现。",
+      "新管理平台测试中的能力不能混同自动录单生产实绩。"
+    ],
+    "caveats": [
+      "未获得客户日志、验收单和独立绩效证明。",
+      "Core产品页跨客户指标不移植为Vinesco单项目实绩。",
+      "不复制案例中的生成图片、客户消息示例和第三方正文。"
+    ],
+    "sources": [
+      {
+        "title": "Forward Deployed Engineering: what it is and how an FDE (Forward Deployed Engineer) works",
+        "url": "https://mithandir.com/en/blog/forward-deployed-engineering",
+        "type": "供应商创始人署名项目复盘",
+        "date": "2026-10-07发布，10-21更新；2026-11-13核验",
+        "locator": "A measured case / Primary sources"
+      },
+      {
+        "title": "Software para distribuidora de bebidas: el sistema entero de Vinesco",
+        "url": "https://mithandir.com/projects/vinesco",
+        "type": "供应商具名项目案例",
+        "date": "未标发布日期；2026-11-13核验",
+        "locator": "Duración / Cómo se fue relevando / Lo que el uso nos hizo cambiar"
+      },
+      {
+        "title": "Mithandir Core: software for wholesale distributors",
+        "url": "https://mithandir.com/en/projects/distribuidoras-core",
+        "type": "供应商产品流程说明，非单客户绩效证据",
+        "date": "未标发布日期；2026-11-13核验",
+        "locator": "A WhatsApp order, end to end / Orders / Control"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "行政人员从业务员WhatsApp信息重新录入管理系统，工作负担来自非结构化信息与人工转抄。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "具名案例说明同一聊天里混有订单、付款和跨仓调拨，包装缩写需要换算。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "未公开旧流程完整工时原始样本、全部订单量和漏录率；不能以宣传中的单次耗时反推公司规模。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "署名参与者将本项目明确作为FDE（Forward Deployed Engineer，前线部署工程师）案例：保留WhatsApp入口，先生成候选单据，再由人确认；团队把现场反馈变为产品。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "详细案例记载2025年10月现场调研、2026年2月测试业务员表达、6月审查原型、10月每周与行政和业主评审。文章以11月为启动口径，应区分首次调研与正式启动，不能强行选一个日期。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "技术个人分工、驻场天数、工程师人数与客户签字验收标准未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "Core流程说明为消息匹配客户和商品，换算箱件，处理歧义，经行政确认写入业务系统并核对状态。这是产品工作流说明，不证明客户已启用所有六个模块。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "具名复盘：2026-04-27水包装单位被算少，随后改用系统维护的包装规格；8月一次写入故障发现过晚，改成15分钟汇总检查告警。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "订单解析使用的模型版本、提示词、检索与向量库、接口协议和部署拓扑未披露，不能用通用人工智能架构补写。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "密钥保管、角色级授权、数据库隔离、加密、保存期限、删除流程和数据出境安排未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析建议：以包装换算、同名不同规格、重复消息、确认后网络超时作为回归测试；将人工修改率和系统写入成功率分开监控。建议不是已实现能力。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "指标栏为有明确时间窗的供应商面板记录。较新具名页另称订单到发票约7分钟，和早期7.5分钟出单并非同一统计窗口/终点，不能当连续改善曲线。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "自动录单在生产运行，不代表更广管理平台迁移已完成；具名页把后续分阶段迁移列为下一步。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "Core页的跨客户节省人力和错误率没有可分配到该客户的样本说明，因此不作为本项目收益。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "分析：让业务人员转为审查可能减少转抄，但也可能把成本移到异常处理和资料维护。只有同时记录人工复核、修正与运营成本，才能判断真实净收益。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户官方域名本次读取超时，另一个关联店铺页只返回图片；没有取得独立客户公告，主体与项目结果仍主要由供应商自述支持。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "原始评测集、精确错误率分母、长期停机、漏告警、恢复演练、商业收费及净利润未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "分析：可迁移价值是把高风险歧义交回给懂业务的人，并检验写入事实，而非只展示模型回答。落到其他公司前需重新核对单位、商品别名、审批规则和账务系统。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "addedDate": "2026-11-13",
+    "caveats": [
+      "本案例指标由客户与供应商披露，未独立取得生产样本或测试数据。",
+      "未将全公司Copilot员工培训、代理数量及资产规模视为本项目成果。",
+      "未把采访中所谓剩余3.5%解读为人工介入比例，因为F1的补数不支持该推导。"
+    ],
+    "checkedAt": "2026-11-13",
+    "company": "Northern Trust",
+    "country": "美国",
+    "countryNote": "联合公告列明总部为美国芝加哥；全球业务布局不是本项目落地区域证明。",
+    "deepDive": {
+      "before": [
+        {
+          "text": "原流程要把不同格式、术语的多年交易数据整理进Front Office Solutions，尤其涉及另类资产历史表现；人工准备是瓶颈。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "原始错误率、各类交易占比、单客户数据量及人员投入未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：这是语义不一致与账务责任问题，不只是把文件上传给模型。若源表本身缺失，格式转换不能补出真实交易。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "intervention": [
+        {
+          "text": "微软前线部署工程师与客户金融专家共同建立业务规则库，利用匿名历史入驻材料和持续反馈改进映射。项目团队由微软Vik Singh带领，客户高管Pete Cherecwich解释业务目标。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "确切工程师人数、交付周期、客户侧验收签字和失败重试工单未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：业务人员负责定义含义，工程师把含义变为可测试规则；应区分规则修正和模型版本变化，避免将二者改进混为一谈。",
+          "evidence": "inference",
+          "sourceRefs": [
+            2
+          ]
+        }
+      ],
+      "technical": [
+        {
+          "text": "数据经代理转为标准格式；运行基础是Azure与Microsoft Foundry，结合Excel、SharePoint供分析员修改批准。已认可知识由受治理层保存。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "微软使用匿名数据优化评测；客户保有数据控制，采访称不用于训练外部模型。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "确切模型、提示词、向量检索、数据库结构、工具权限粒度与数据驻留区域未披露，不能从Azure产品通用能力补写。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "评测设计采用隐藏人工参考答案；完成数据转换后，人员仍对照前管理员账簿做既有核对，再允许客户上线。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "持续维护告警、版本回滚、灾备与服务级别未披露。分析建议对新格式、交易类型和规则变化设置回归集，异常留人工而非静默补值。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "生产准备时间及离线质量见指标栏，二者不能拼成一个全自动化成功率。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "客户高管认为能更快开始产生收入且客户体验更好，但没有披露增收金额或独立满意度量表。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "模型费、工程投入、运营复核成本和净收益均未知；省时并不自动等于减少相同比例人力成本。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未提供逐客户样本、测试集覆盖分布、长期错误率、异常类型、权限审计或独立效果验证。",
+          "evidence": "undisclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "采访把F1剩余部分与人工复核叙述相连，但缺能支持该比例的记录计数；本档不采用该推算。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        },
+        {
+          "text": "分析：可迁移的不是特定模型，而是把资料转换、规则沉淀、盲测和人工对账分成明确交付步骤；应在用户已有工作环境内落地，而非另建一个不能审核的聊天框。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    "deploymentCountries": [],
+    "deploymentLevel": "联合公告报告已部署，并以生产客户准备流程计时；客户数及运行起止时间未披露。",
+    "deploymentRegion": "未披露具体客户及生产部署地区",
+    "entryPoint": "分析建议：先选一个历史工作簿做只读映射，保留来源单元格与人工参考答案，分开验收转换质量、复核耗时和最终对账；通过后再扩展，不一开始开放自动账务写入。",
+    "evidenceLevel": "A",
+    "evidenceNote": "客户与微软联合公告直接确认项目部署及前线部署工程师参与；微软署名采访提供客户高管和项目团队负责人证言。结果仍属双方自报，非独立审计。",
+    "humanRole": "内部金融专家提供业务规则；分析员审阅、更正异常并在上线前完成既有对账。",
+    "id": "northern-trust-microsoft-client-onboarding-data",
+    "industry": "机构资产服务与投资数据入驻",
+    "metrics": [
+      {
+        "label": "数据准备流程",
+        "value": "约2.5周→平均3天；公告称降低83%",
+        "kind": "performance",
+        "unknown": false,
+        "context": "2026-11-09联合公告：真实生产客户场景，包含转换、分析员审核、异常及最终验证；客户数、计时区间及周/工作日换算未披露，不自行重算。"
+      },
+      {
+        "label": "首次输出F1",
+        "value": "96.5%",
+        "kind": "performance",
+        "unknown": false,
+        "context": "7个代表性测试案例，真实匿名历史交易工作簿；与执行时隐藏的人工参考结果比较，发生在人工修正前。不是生产全部客户准确率。"
+      },
+      {
+        "label": "总投入、运行费用、净收益",
+        "value": "未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "无项目人天、模型费用、许可证与新增营收数据，不能据此计算投资回报。"
+      }
+    ],
+    "provider": "Microsoft Frontier Company",
+    "publishedAt": "2026-11-09",
+    "risks": [
+      "F1分数不是准确率，也不是无需人工处理的记录比例。",
+      "处理更快不等于所有客户全流程入驻时间缩短相同比例。",
+      "业务术语或规则变化可能使旧映射失效，需由金融专家审核。",
+      "公司治理声明不能代替对权限、地域、日志与合同控制的独立核验。"
+    ],
+    "skills": [
+      "金融交易语义建模",
+      "工作簿数据转换",
+      "参考答案与评测设计",
+      "人机异常分流",
+      "数据脱敏与权限治理",
+      "业务专家协同"
+    ],
+    "sources": [
+      {
+        "title": "Northern Trust and Microsoft Frontier Company collaborate to transform client onboarding through AI",
+        "url": "https://news.microsoft.com/source/2026/11/09/northern-trust-and-microsoft-frontier-company-collaborate-to-transform-client-onboarding-through-ai",
+        "date": "2026-11-09发布；2026-11-13全文核验",
+        "type": "客户与供应商联合公告",
+        "locator": "正文及两项指标脚注"
+      },
+      {
+        "title": "At Northern Trust, finance experts and Microsoft engineers partner to move faster on AI",
+        "url": "https://news.microsoft.com/source/features/digital-transformation/northern-trust-finance-microsoft-partner-ai",
+        "date": "2026-11-09发布；2026-11-13全文核验",
+        "type": "供应商署名采访，含客户与工程负责人证言",
+        "locator": "Building a rule library / Speed of change / Footnote"
+      }
+    ],
+    "summary": "卖点不是让模型代替金融账务判断，而是缩短资料映射和复核准备，让客户更快进入原有服务。已证明项目级工程师参与；没有证明端到端自主入驻或自动付款。",
+    "title": "把机构客户历史交易工作簿转换为入驻系统可核对的数据",
+    "workflow": "历史交易工作簿→业务规则映射→标准化数据→分析员复核与对账→客户上线"
   }
 ]
