@@ -2278,140 +2278,152 @@
     "entryPoint": "分析建议：从一种续期请求开始，先验证案件创建、查册、生成与归档链路；法律意见与最终交付权限仍由客户明确。"
   },
   {
-    "id": "pag-anonymous-hedgefund-data-product",
+    "addedDate": "2026-10-27",
+    "caveats": [
+      "匿名供应商单方案例；不能将80%标题外推成已审计生产力或投资回报",
+      "未披露具体模型，不自动归为生成式AI架构",
+      "2026-11-14证据口径勘误：嵌入式工程交付仍有正文依据，但当前原文不再直接证明前线部署工程师称谓；严格角色资格待核。"
+    ],
+    "checkedAt": "2026-11-14",
     "company": "匿名私募对冲基金（PAG.AI 客户）",
-    "title": "把市场数据清洗接成投研可复用的数据产品",
-    "industry": "对冲基金与量化投资研究",
-    "provider": "Predictive Analytics Group（PAG.AI）",
     "country": "未披露",
     "countryNote": "客户匿名，不能用交付方所在地推断客户总部或项目落地国家。",
+    "deepDive": {
+      "before": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "客户数据量大、格式和时间粒度不一致，分析师耗时清洗对齐；原基础设施难以应付数千金融工具更新。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公布人工准备总工时、失效比例、原始许可支出及投资策略收益基线。"
+        }
+      ],
+      "intervention": [
+        {
+          "text": "本轮核验当前项目页用Embedded Delivery描述交付，仍写工程师与数据科学家嵌入组合经理团队。不能把这种工作方式自动等同正式前线部署工程师岗位。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "工程师与数据科学家直接和组合经理共同设计，交付Python采集层、版本化数据／特征库、定时校验任务及协作开发环境。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：此处部署的核心是让同一数据口径被重复利用；把文件接通只是第一步，时间戳、修订版本与使用权限才决定回测能否复现。"
+        }
+      ],
+      "outcomes": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "供应商称高价值工作增加超过80%、研究迭代更快，并削减非必要数据源支出；缺测量方法，不能推导实际收益率、净现金节约或员额变化。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析：可迁移价值是降低同类数据准备的重复成本，而非证明某个投资策略有效；行情变化、过拟合和交易执行风险不会因数据平台自动消失。"
+        }
+      ],
+      "technical": [
+        {
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ],
+          "text": "官方明确提到Bloomberg等数据源、Python规范化校验、版本控制、云备份及审计轨迹；未披露具体云厂商、存储、调度产品或策略算法。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "未公开机器学习模型或检索方案，不能补写大型语言模型、向量库或自动交易代理；数据产品可以在没有这些组件时成立。"
+        },
+        {
+          "evidence": "inference",
+          "sourceRefs": [],
+          "text": "分析建议：验证重复记录、时区、公司行动、延迟与修订；回测需防止使用当时不可获得的数据。上线应分离数据告警与交易决策，明确谁可以批准修复。这不是该基金已公开实现细节。"
+        }
+      ],
+      "unknowns": [
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "匿名基金主体、总部和项目地区未知；交付方页脚位于澳大利亚墨尔本不证明基金位于澳大利亚。"
+        },
+        {
+          "evidence": "undisclosed",
+          "sourceRefs": [],
+          "text": "上线时间、活跃分析师数、SLA、事故率、权限矩阵、数据许可、模型评测、人工交易审批、维护频率、总投入和净收益未公开。"
+        },
+        {
+          "text": "未取得客户具名材料、项目参与者独立身份或当前明确前线部署工程师称谓。网站措辞改变的原因及发生日期未披露；不能推断项目虚构或角色已撤销。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ]
+    },
     "deploymentCountries": [],
-    "addedDate": "2026-10-27",
-    "checkedAt": "2026-10-27",
+    "deploymentLevel": "供应商称已交付模块化数据平台并产生工作分配变化；上线日期、生产规模和运行时长未公开。",
+    "entryPoint": "分析建议：先接一组有许可的市场数据，验证时间对齐及回测可重复性，而非以短期投资回报承诺系统价值。",
     "evidenceLevel": "B",
-    "dedupKey": "匿名私募对冲基金（PAG.AI 客户） | 把市场数据清洗接成投研可复用的数据产品 | https://www.pa-group.com.au/casestudies/hedge-fund-data-product",
+    "evidenceNote": "2026-11-14完整重读原项目页：当前正文和标签使用Embedded Delivery（嵌入式交付），未再明确称FDE（Forward Deployed Engineer，前线部署工程师）。历史2026-10-27记录曾如此归类，但本轮不能以搜索索引旧措辞替代当前原文。保留供应商项目资料B级及历史，不把本条计入本轮严格合格新增；具体岗位身份待核。",
+    "humanRole": "交付方工程师和数据科学家与投资组合经理共同设计；高级分析师使用清洗后的数据开展策略研究。投资决策与下单权限没有公开。",
+    "id": "pag-anonymous-hedgefund-data-product",
+    "industry": "对冲基金与量化投资研究",
+    "metrics": [
+      {
+        "context": "供应商描述数据规模，未给每秒吞吐、完整样本及测量期。",
+        "label": "输入复杂度",
+        "value": "数千金融工具，每次更新最多4000数据点"
+      },
+      {
+        "context": "原文正文为Increase in High-Value Work，标题简写生产力；分母、基期及观察期未披露。不能称人均产出提高80%或投资回报提高80%。",
+        "label": "高价值工作",
+        "value": "增加超过80%（供应商表述）"
+      },
+      {
+        "context": "来源仅称减少非必要市场数据开支，无金额和计算方法。",
+        "label": "总投入／运行费／净收益",
+        "value": "均未披露"
+      }
+    ],
+    "provider": "Predictive Analytics Group（PAG.AI）",
+    "publishedAt": "页面未标发布日期；2026-10-27核验",
+    "risks": [
+      "分析判断：数据许可与重复分发边界需单独确认",
+      "分析判断：前视偏差可能让回测看似准确但不可实盘复现"
+    ],
     "skills": [
       "金融数据时序对齐",
       "Python数据工程",
       "版本化与可重复回测",
       "与组合经理共定验收"
     ],
-    "risks": [
-      "分析判断：数据许可与重复分发边界需单独确认",
-      "分析判断：前视偏差可能让回测看似准确但不可实盘复现"
-    ],
-    "caveats": [
-      "匿名供应商单方案例；不能将80%标题外推成已审计生产力或投资回报",
-      "未披露具体模型，不自动归为生成式AI架构"
-    ],
-    "metrics": [
-      {
-        "label": "输入复杂度",
-        "value": "数千金融工具，每次更新最多4000数据点",
-        "context": "供应商描述数据规模，未给每秒吞吐、完整样本及测量期。"
-      },
-      {
-        "label": "高价值工作",
-        "value": "增加超过80%（供应商表述）",
-        "context": "原文正文为Increase in High-Value Work，标题简写生产力；分母、基期及观察期未披露。不能称人均产出提高80%或投资回报提高80%。"
-      },
-      {
-        "label": "总投入／运行费／净收益",
-        "value": "均未披露",
-        "context": "来源仅称减少非必要市场数据开支，无金额和计算方法。"
-      }
-    ],
     "sources": [
       {
+        "date": "页面未标日期；2026-11-14完整重核",
+        "locator": "The Challenge；Our Approach；The Outcome",
         "title": "How Our Data Product Drove an 80% Productivity Gain",
-        "url": "https://www.pa-group.com.au/casestudies/hedge-fund-data-product",
-        "date": "页面未标日期；2026-10-27核验",
         "type": "交付方第一手复盘；企业声明，非独立审计",
-        "locator": "The Challenge；Our Approach；The Outcome"
+        "url": "https://www.pa-group.com.au/casestudies/hedge-fund-data-product"
       }
     ],
-    "deepDive": {
-      "before": [
-        {
-          "text": "客户数据量大、格式和时间粒度不一致，分析师耗时清洗对齐；原基础设施难以应付数千金融工具更新。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "未公布人工准备总工时、失效比例、原始许可支出及投资策略收益基线。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ],
-      "intervention": [
-        {
-          "text": "工程师与数据科学家直接和组合经理共同设计，交付Python采集层、版本化数据／特征库、定时校验任务及协作开发环境。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "分析：此处部署的核心是让同一数据口径被重复利用；把文件接通只是第一步，时间戳、修订版本与使用权限才决定回测能否复现。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "technical": [
-        {
-          "text": "官方明确提到Bloomberg等数据源、Python规范化校验、版本控制、云备份及审计轨迹；未披露具体云厂商、存储、调度产品或策略算法。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "未公开机器学习模型或检索方案，不能补写大型语言模型、向量库或自动交易代理；数据产品可以在没有这些组件时成立。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "分析建议：验证重复记录、时区、公司行动、延迟与修订；回测需防止使用当时不可获得的数据。上线应分离数据告警与交易决策，明确谁可以批准修复。这不是该基金已公开实现细节。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "outcomes": [
-        {
-          "text": "供应商称高价值工作增加超过80%、研究迭代更快，并削减非必要数据源支出；缺测量方法，不能推导实际收益率、净现金节约或员额变化。",
-          "evidence": "disclosed",
-          "sourceRefs": [
-            1
-          ]
-        },
-        {
-          "text": "分析：可迁移价值是降低同类数据准备的重复成本，而非证明某个投资策略有效；行情变化、过拟合和交易执行风险不会因数据平台自动消失。",
-          "evidence": "inference",
-          "sourceRefs": []
-        }
-      ],
-      "unknowns": [
-        {
-          "text": "匿名基金主体、总部和项目地区未知；交付方页脚位于澳大利亚墨尔本不证明基金位于澳大利亚。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        },
-        {
-          "text": "上线时间、活跃分析师数、SLA、事故率、权限矩阵、数据许可、模型评测、人工交易审批、维护频率、总投入和净收益未公开。",
-          "evidence": "undisclosed",
-          "sourceRefs": []
-        }
-      ]
-    },
     "summary": "投资分析师需要能用于建模和回测的数据。交付方不是只提供投资问答，而是让市场数据自动拉取、校验、版本化，再交给分析师；收益应先看准备工作是否减少，不能直接等同交易赚钱。",
-    "workflow": "市场数据源 → Python 拉取、规范化与校验 → 版本化数据库／特征库 → 分析建模与回测；定时任务更新并检查完整性。",
-    "humanRole": "交付方工程师和数据科学家与投资组合经理共同设计；高级分析师使用清洗后的数据开展策略研究。投资决策与下单权限没有公开。",
-    "evidenceNote": "PAG.AI 项目案例明确称使用FDE（Forward Deployed Engineer，前线部署工程师）方式，将工程师和数据科学家嵌入客户团队并交付模块。客户匿名、无客户公告或审计，保留B级。",
-    "deploymentLevel": "供应商称已交付模块化数据平台并产生工作分配变化；上线日期、生产规模和运行时长未公开。",
-    "publishedAt": "页面未标发布日期；2026-10-27核验",
-    "entryPoint": "分析建议：先接一组有许可的市场数据，验证时间对齐及回测可重复性，而非以短期投资回报承诺系统价值。"
+    "title": "把市场数据清洗接成投研可复用的数据产品",
+    "workflow": "市场数据源 → Python 拉取、规范化与校验 → 版本化数据库／特征库 → 分析建模与回测；定时任务更新并检查完整性。"
   },
   {
     "id": "deepgram-aws-nova3-trainium-batch-inference",
@@ -42731,5 +42743,193 @@
     "summary": "卖点不是让模型代替金融账务判断，而是缩短资料映射和复核准备，让客户更快进入原有服务。已证明项目级工程师参与；没有证明端到端自主入驻或自动付款。",
     "title": "把机构客户历史交易工作簿转换为入驻系统可核对的数据",
     "workflow": "历史交易工作簿→业务规则映射→标准化数据→分析员复核与对账→客户上线"
+  },
+  {
+    "id": "kinto-anonymous-colombia-logistics-waybill-finance",
+    "addedDate": "2026-11-14",
+    "checkedAt": "2026-11-14",
+    "company": "匿名哥伦比亚物流运营商（KINTO客户）",
+    "provider": "KINTO",
+    "industry": "物流运输与末端配送",
+    "country": "未披露",
+    "countryNote": "来源1明确项目国家哥伦比亚，但匿名客户总部与注册主体未披露；不能以供应商美国地址代替客户国家。",
+    "deploymentCountries": [
+      "哥伦比亚"
+    ],
+    "deploymentRegion": "哥伦比亚；具体城市未公开",
+    "deploymentLevel": "供应商称已生产运行、旧系统冻结；未经客户或第三方独立审计。",
+    "publishedAt": "2026-10-12；2026-11-14全文核验",
+    "title": "按运单核对账款后替换旧系统，让物流业务不再反复录数",
+    "workflow": "旧平台数据→受验证导入→运单与客户台账→结算及异常人工处理",
+    "evidenceLevel": "B",
+    "evidenceNote": "来源2在解释FDE（Forward Deployed Engineer，前线部署工程师）实际工作时逐项目链接本物流案例；来源1披露实施及生产状态。属于供应商项目实践组合证据，不是独立客户佐证或具名工程师访谈。",
+    "summary": "这门工程工作的核心是迁移账务含义而非替换界面。先证明同一运单的新旧金额一致，再把重复录入与结算搬入新工作流。",
+    "humanRole": "供应商工程团队负责调查、构建、验证和运营；客户人员处理例外。具体人员姓名、签核负责人及权限矩阵未披露。",
+    "entryPoint": "分析建议：从一个结算周期的只读逐单差异报告开始，不先让模型自动调整账款。先证明口径一致，再决定扩大迁移。",
+    "metrics": [
+      {
+        "label": "新旧运单对账",
+        "value": "100%共同运单，6个月账期",
+        "kind": "performance",
+        "unknown": false,
+        "context": "供应商自报；只限两系统共同运单，确切分母和起止日期未公开。不能解读为全部数据无遗漏或零缺陷。[1]"
+      },
+      {
+        "label": "总投入、持续运行费用及净收益",
+        "value": "均未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "未披露合同价、实施工时、托管/模型费、维护成本；不计算投资回报。"
+      }
+    ],
+    "skills": [
+      "遗留系统审计",
+      "逐单账务核对",
+      "数据迁移与兼容接口",
+      "业务规则确认",
+      "例外处理与回归测试"
+    ],
+    "risks": [
+      "分析：总额相等也可能掩盖单据间抵消，逐单核对仍须另查缺失和重复。",
+      "分析：第三方平台变动可能导致导入失效，需要监控新鲜度及失败队列；来源未证明这些机制已落地。",
+      "分析：客户账户与财务数据敏感，自动处理不应被理解为允许任意付款。"
+    ],
+    "caveats": [
+      "匿名项目无法核实客户法律身份，也无独立财务审计。",
+      "来源中的0—4级前后比较是编辑评分，不是业务实测指标。",
+      "来源提及半散装装载规则运费变化，但未公开原始计算表及足够分母，不据此推算全公司降本。",
+      "已读完整案例、实践说明与术语页；未获得客户公告、工程代码或运行日志，研究仍有缺口。"
+    ],
+    "sources": [
+      {
+        "title": "Agentic ERP for a Logistics Operator",
+        "url": "https://kinto.co/case-studies/logistics-operator-agentic-erp/",
+        "type": "供应商匿名项目完整案例，自述",
+        "date": "2026-10-12发布；2026-11-14核验",
+        "locator": "Problem / How we understood it / What we built and why / Transformation / What we don’t know yet / At a glance"
+      },
+      {
+        "title": "Forward Deployed Engineering at KINTO",
+        "url": "https://kinto.co/forward-deployed-engineering/",
+        "type": "供应商实践说明，逐项目关联证据",
+        "date": "页面未标发布日期；2026-11-14核验",
+        "locator": "Engineers inside your operation / What it looks like in published cases / What KINTO does not claim"
+      },
+      {
+        "title": "KINTO Glossary",
+        "url": "https://kinto.co/glossary/",
+        "type": "供应商术语定义；不作项目配置证据",
+        "date": "页面未标发布日期；2026-11-14核验",
+        "locator": "Agentic ERP / Forward Deployed Engineer / human in the loop"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "旧应用已使用二十余年，结算还依赖带宏表格；员工重复录入第三方平台已有的数据。客户活动难及时查看，业务与财务口径分散。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：真正的交付对象是可解释的运单账目及可靠的日常操作，而不是一个能回答问题的聊天框。核对范围必须包括记录完整性和金额一致性两个维度。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "团队审计旧表和数据规模，把会议内容变成带时间点、经代码核对的需求，再按运单号而非总额验证迁移。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "前线部署角色证据来自供应商实践页对本项目的明确引用：工程师从实际系统出发，既构建也运营；不能据此补写某位工程师驻场天数或客户组织关系。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2
+          ]
+        },
+        {
+          "text": "分析：可借鉴的职责划分是业务人员确认结算规则，工程师把规则变成可复现检查，财务人员审核差异；这是实施建议，不是公开材料已披露的客户岗位表。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "先稳定旧系统、修复批量加载并加入测试，再建设自动导入、客户主档、历史数据和财务处理；保留兼容层，避免大客户集成中断。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "供应商称日常操作由系统处理、异常交给人；未公布逐项审批规则，因此不能断言每笔资金动作均由人工批准。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "术语页把代理描述为调用受限工具的软件，但这只是概念说明，不能据此确定本项目使用哪种模型、检索库或编排框架。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            3
+          ]
+        },
+        {
+          "text": "未披露模型名称、提示词、检索方式、数据库产品、导入接口、密钥管理、用户权限、日志保留及备份恢复策略。标签打印在浏览器内完成的局部描述，也不能证明整个财务系统的数据不离开本地。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：上线验收应另外验证重复导入、漏单、税率变化、接口超时和旧订单修正；建议保留逐笔差异证据及可恢复切换。现有来源只证明存在测试，不证明这些具体用例已经执行。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商报告六个月账期中共同运单金额逐笔匹配，新系统生产使用且旧系统冻结；发现休眠客户线索不等于客户已经回流。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "金额一致性是迁移正确性证据，不等于模型准确率、所有历史数据完整性或经营利润提升。录入节约工时仍待测，不能填成零或自行折算薪酬。",
+          "evidence": "inference",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "总投入、持续运行费及净收益均未公开。现有证据不足以判断回本周期，也无法证明自动化比持续维护旧系统更便宜。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户名称、总部及法律主体、具名工程师、确切上线日、共同运单数量、第三方审计均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "例外处理时限、故障率、长期监控、模型评测和交接后的维护责任未披露。不能将供应商通用服务承诺写成本项目已经验收的配置。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：国内物流或外贸工作台可借鉴“同一单据逐字段核对、保留旧接口、异常人工处理”的迁移思路；这不授权复制代码，也不能替代本地结算、税务和个人信息要求的核实。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    }
   }
 ]
