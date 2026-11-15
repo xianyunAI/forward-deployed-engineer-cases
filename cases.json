@@ -42931,5 +42931,165 @@
         }
       ]
     }
+  },
+  {
+    "id": "corlence-anonymous-healthtech-aws-production-remediation",
+    "addedDate": "2026-11-15",
+    "checkedAt": "2026-11-15",
+    "company": "匿名健康科技移动应用企业（Corlence客户）",
+    "provider": "Corlence Pty Ltd",
+    "industry": "健康科技软件运营",
+    "country": "未披露",
+    "countryNote": "客户匿名，主体与总部国家未披露；供应商澳大利亚所在地不能当作客户或部署国家。",
+    "deploymentCountries": [],
+    "deploymentLevel": "供应商称修复已部署至生产，另有剩余工作计划；缺客户独立确认。",
+    "publishedAt": "2026-07-14",
+    "title": "沿真实调用链修复推送、同步和连接，让健康应用不再表面正常实际失效",
+    "workflow": "外部事件与移动请求→云函数→数据库与通知→用户；逐层排查并改写生产路径",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商项目原文直接称FDE（Forward Deployed Engineer，前线部署工程师）介入并描述已部署修复；A级表示角色直接证据，不表示独立审计。",
+    "summary": "这是一项生产软件修复，不是生成式AI落地。交付判断应落在用户能否收到通知、数据能否完成同步，而不是接口是否返回成功。",
+    "humanRole": "实施团队与客户工程团队，具体成员姓名和审批链未披露；不推定工程师拥有无限生产权限。",
+    "entryPoint": "分析建议：从一条失效通知或同步记录开始，建立端到端重现与验收，再扩大修改范围。",
+    "metrics": [
+      {
+        "label": "整体月度云费用变化",
+        "value": "预计下降27%—41%",
+        "kind": "cost",
+        "unknown": false,
+        "context": "供应商预测，非已实现总节省；无账单金额、最终月份或净收益。[1]"
+      },
+      {
+        "label": "总投入／持续运行费／净收益",
+        "value": "均未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "不能用费用下降预测代替实施费、维护费和投资回报。"
+      }
+    ],
+    "skills": [
+      "生产故障重现",
+      "调用链与源代码诊断",
+      "云身份和凭证管理",
+      "数据库连接及批处理",
+      "业务结果验收"
+    ],
+    "risks": [
+      "分析：异步化可缩短入口等待，但必须单独证明后台处理完成；来源没有公布完整重试及幂等策略。",
+      "分析：降低日志量必须保留故障诊断能力，不能只追求少记录。",
+      "分析：改凭证和数据库连接可能影响旧客户端，应有回滚和兼容验证；本文未公开具体程序。"
+    ],
+    "caveats": [
+      "单一供应商匿名复盘，不能验证客户身份、样本和完整财务效果。",
+      "未公开模型或检索系统，不将云修复补写成AI系统。",
+      "发布日期并非项目实施起止日期。",
+      "已读全文并追查供应商案例目录；未取得客户公告、源代码、原始账单及监控记录。"
+    ],
+    "sources": [
+      {
+        "title": "Corlence：真实健康科技AWS云审计与部署修复复盘",
+        "url": "https://corlence.com/blogs/forward-deployed-engineering-aws-cloud-audit-health-tech",
+        "type": "供应商项目原文，自述",
+        "date": "2026-07-14发布；2026-11-15全文核验",
+        "locator": "六项问题、实施动作、What changed after the engagement"
+      },
+      {
+        "title": "Corlence案例目录与匿名披露说明",
+        "url": "https://corlence.com/case-studies",
+        "type": "供应商目录；仅支持匿名披露政策，不独立证实本项目效果",
+        "date": "未标发布日期；2026-11-15核验",
+        "locator": "匿名披露说明、企业页脚"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "客户已有移动应用与AWS无服务器后端；痛点是响应慢、费用增长和功能失效。团队进入账户、代码与发布链排查。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "基线缺口：没有按功能、设备、版本划分的成功率或延迟分布，不能据此计算用户体验提升百分比。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "复盘把原因定位到重复日志、过时通知API、泄露配置、绕过代理的数据库连接和同步逐条写入。修复涉及通知认证、凭证管理、代理连接、批处理与异步化。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：跨层定位是本案的可迁移重点。监控“函数执行成功”与用户“收到通知”是不同验收对象；排查必须跨越供应商API与终端。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "工程师具体姓名、驻场天数、客户授权范围、审批角色和发布责任划分未公开。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "来源称测试了双移动平台通知类型与并发负载，收紧访问、加密和身份控制，并保留后续八周工作计划。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析复盘：原架构里存在代理不代表代码实际使用；检查运行连接路径比只看架构图更重要。此教训不等于已证明所有连接风险消失。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：异步入口需配套任务状态、重复事件标识和失败补偿；这些属于建议，不能当成此客户已实现功能。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "未披露消息队列产品、数据库型号、云区域、生产权限矩阵、告警阈值、自动回滚方案或持续维护合同；无模型、检索或AI工具使用证据。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商称推送恢复，修复进入线上；整体费用下降仍为预测。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：费用和可靠性应分别验收；先确认通知真正送达与批任务最终落库，再比较相同用量和周期账单。将预测费用直接算成净收益，会遗漏实施及维护投入。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "未公开最终账单、收入变化、用户留存、质量抽样分母；也未说明八周剩余计划最终完成。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "客户法律主体、总部和实际运营区域、项目起止、原始基线、残留问题清单及最终验收结果均未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：若借鉴到本地业务台账，最小切口是验证“请求已受理”和“业务记录已保存”是否一致，而不是先增加更多AI功能。该建议不是本案实施事实。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    }
   }
 ]
