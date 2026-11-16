@@ -43091,5 +43091,353 @@
         }
       ]
     }
+  },
+  {
+    "id": "strawfish-majorlinkx-edi-pallet-invoice",
+    "company": "StrawFish",
+    "title": "把分销订单接入库存、托盘规划和发票",
+    "industry": "餐饮耗材供应链与物流",
+    "provider": "MajorLinkx",
+    "country": "美国",
+    "countryNote": "供应商案例与具名工程师均将客户总部及驻场地点列为佛罗里达州Boca Raton；客户官网确认一次性塑料替代品业务。独立工商主体核验未完成。",
+    "deploymentCountries": [
+      "美国"
+    ],
+    "deploymentLevel": "具名项目已上线；实施期2025年12月至2026年7月。实际处理量和地理覆盖未披露。",
+    "publishedAt": "2026-07-30；2026-08-02",
+    "addedDate": "2026-11-16",
+    "checkedAt": "2026-11-16",
+    "evidenceLevel": "A",
+    "evidenceNote": "供应商项目案例明确具名FDE（Forward Deployed Engineer，前线部署工程师）身份和交付，工程师本人另有实施复盘。两者有关联，不能视为独立效果审计；客户官网只佐证业务。",
+    "summary": "餐饮耗材供应商需要把经销商采购单可靠转为实际发货和应收单据。此案的核心是深入仓库规则并负责上线运维，不是给现成系统加一个聊天入口。",
+    "workflow": "电子采购单→去重及货号映射→库存分配→托盘安排→确认、运输标签、发货通知→会计发票；库存不足交人工。",
+    "humanRole": "Jarue Johnson负责驻场交付；业务人员参与验收并处理例外。见实施与技术详情。",
+    "entryPoint": "分析建议，非项目已实施事实：先选一个经销商、一类订单，校验订单唯一标识、库存一致性和异常人工交接，再扩大自动化。",
+    "risks": [
+      "共享库存并发不是简单增加任务数即可解决；实施需证明一致性与恢复能力。",
+      "少数供应商自述不能证明客户实际利润增长；商业论证仍需成本与业务基线。"
+    ],
+    "skills": [
+      "把仓库操作转为可执行规则",
+      "外部单据协议和异常集成",
+      "并发一致性与恢复审计",
+      "业务验收和持续运维"
+    ],
+    "caveats": [
+      "这是FDE（Forward Deployed Engineer，前线部署工程师）交付业务系统的案例；AI用于开发，不等于生产订单由大模型决策。",
+      "工程师个人原文2026-08-02；Medium镜像2026-09-27不是项目起止日期。",
+      "未访问客户私有系统或代码；源码、客户数据和第三方图片均未复制。"
+    ],
+    "metrics": [
+      {
+        "kind": "delivery",
+        "label": "交付周期",
+        "value": "8个月",
+        "unknown": false,
+        "context": "供应商自报，约6个月开发、2个月合规/接入；不是与同条件对照组比较的缩短比例。"
+      },
+      {
+        "kind": "efficiency",
+        "label": "平台内部发票生成",
+        "value": "约70毫秒",
+        "unknown": false,
+        "context": "供应商自报，起点为发货通知成功后；不含整个物流、财务审批或收款周期。"
+      },
+      {
+        "kind": "cost",
+        "label": "总投入、运行费用和净收益",
+        "value": "未披露",
+        "unknown": true,
+        "context": "分别未知；不能将免逐席收费解释为零维护成本。"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "全国分销伙伴要求快速电子回单；库存、托盘、运输及开票必须协调。原流程耗时、差错率与订单规模未公布。",
+          "sourceRefs": [
+            1
+          ],
+          "evidence": "disclosed"
+        }
+      ],
+      "intervention": [
+        {
+          "text": "MajorLinkx派Jarue Johnson直接对接高管并观察仓库操作，承担需求、架构、开发、外部接入与事故处理。先建立订单和库存统一记录，再接外部系统。",
+          "sourceRefs": [
+            1
+          ],
+          "evidence": "disclosed"
+        },
+        {
+          "text": "工程师每周至少驻场三天，亲手装箱、码托盘；需求先讨论确认后实现。",
+          "sourceRefs": [
+            2
+          ],
+          "evidence": "disclosed"
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "官方称系统已自主执行常规订单，团队转向例外处理；代码和基础设施由客户持有。定量成本收益及独立客户验收报告缺失。",
+          "sourceRefs": [
+            1
+          ],
+          "evidence": "disclosed"
+        },
+        {
+          "text": "分析：可控性来自掌握规则、数据和修改权，而非单纯模型能力。是否值得自建，需把后续维护与关键人员依赖也算入。",
+          "sourceRefs": [],
+          "evidence": "inference"
+        }
+      ],
+      "technical": [
+        {
+          "text": "供应商披露运行于客户云账户；容器、PostgreSQL、Redis、Nuxt/TypeScript、NestJS；对接电子单据、承运商和会计软件，记录原始交换及校验结果，保留运行告警。",
+          "sourceRefs": [
+            1
+          ],
+          "evidence": "disclosed"
+        },
+        {
+          "text": "操作者可调整托盘方案；采购单按角色展示。流水线发布前检查迁移。具体模型、检索和生产模型评测没有公开证据。",
+          "sourceRefs": [
+            2
+          ],
+          "evidence": "disclosed"
+        },
+        {
+          "text": "真实事故：扩至两个worker后，对共享库存的锁形成死锁，重试重复触发。杀连接无效；暂停轮询并收敛worker拓扑，两小时恢复，当天对异常订单定点修复和留恢复备注。并行锁顺序是未来方案，不是已完成。",
+          "sourceRefs": [
+            2
+          ],
+          "evidence": "disclosed"
+        },
+        {
+          "text": "另有接口文档与实际报文不一致、缺地址字段；工程师直接协调对接并验证异常场景。开发使用本地模型和多编码代理，由本人架构及审查；不能据此推断运行系统使用生成模型。",
+          "sourceRefs": [
+            2
+          ],
+          "evidence": "disclosed"
+        },
+        {
+          "text": "分析建议：验收需覆盖重复单、缺货、接口超时、消息重试及部分写入；同时测恢复后余额一致性，而不只测正常单据成功率。",
+          "sourceRefs": [],
+          "evidence": "inference"
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "未披露：真实订单样本、总处理量、错误率、压力测试、正式验收阈值、当前维护人数和服务级别。",
+          "sourceRefs": [],
+          "evidence": "undisclosed"
+        },
+        {
+          "text": "未披露：项目金额、云和模型费用、节省人时、收入增量、净收益、权限审计和数据保留细则。",
+          "sourceRefs": [],
+          "evidence": "undisclosed"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "They Own the Platform Their Business Runs On",
+        "url": "https://majorlinkx.io/case-studies/13/",
+        "date": "2026-07-30；2026-11-16完整读取",
+        "type": "客户或供应商官方",
+        "locator": "Challenge / Strategy / Integrations / Outcome"
+      },
+      {
+        "title": "What Is a Forward-Deployed Engineer?",
+        "url": "https://jaruejohnson.com/blog/what-is-a-forward-deployed-engineer/",
+        "date": "2026-08-02；2026-11-16完整读取",
+        "type": "具名参与者一手复盘",
+        "locator": "The Arrangement / The Day It Deadlocked / The Factory"
+      },
+      {
+        "title": "StrawFish官方网站",
+        "url": "https://www.strawfish.co/",
+        "date": "未标发布日期；2026-11-16完整读取",
+        "type": "客户或供应商官方",
+        "locator": "Sourcing Single-Use Plastic Alternatives / Nationwide distribution"
+      }
+    ]
+  },
+  {
+    "id": "wissda-us-regional-bank-control-assessment",
+    "addedDate": "2026-11-16",
+    "checkedAt": "2026-11-16",
+    "company": "匿名美国区域银行（Wissda客户）",
+    "provider": "Wissda Inc.",
+    "industry": "银行风险与合规",
+    "country": "美国",
+    "countryNote": "项目原文称美国区域银行，具体法律主体与总部城市未披露；Wissda总部纽约不代表客户总部。",
+    "deploymentCountries": [],
+    "deploymentLevel": "供应商称已有运营结果；客户匿名，未获客户或审查员独立确认，具体落地区域未披露。",
+    "publishedAt": "未披露",
+    "title": "把分散系统的控制证据带入季度合规审查，保留人工签字",
+    "workflow": "季度控制评估：分散系统取证→ServiceNow IRM内的评估代理→合规人员重大事项签字",
+    "evidenceLevel": "A",
+    "evidenceNote": "项目原文明确驻场Forward Deployed Engineering（前线部署工程）小组及接入动作；A级仅指角色直接证据，不表示独立审计。",
+    "summary": "交付是缩短控制审查的证据准备，不是把银行合规判断交给模型。取证速度与最终判断质量必须分别验收。",
+    "humanRole": "驻场工程小组负责接入，合规人员保留重大签字；成员姓名、人数与审批权限未公开。",
+    "entryPoint": "分析建议：先挑一个控制项，把证据来源、取数时间、人工核对与审批记录串起来，再扩至更多控制。",
+    "metrics": [
+      {
+        "label": "单次季度控制审查取证周期",
+        "value": "18小时→3.5分钟",
+        "kind": "efficiency",
+        "unknown": false,
+        "context": "供应商自述；测量日期、样本、同范围对比与人工审核计入方式未披露，不等于完整审查耗时。[1]"
+      },
+      {
+        "label": "总投入／持续运行费／净收益",
+        "value": "未披露",
+        "kind": "cost",
+        "unknown": true,
+        "context": "无费用或收益账目，不从工时差额推算净利润。"
+      }
+    ],
+    "skills": [
+      "控制证据映射",
+      "企业身份与权限集成",
+      "ServiceNow IRM工作流接入",
+      "审计记录设计",
+      "人工验收边界设计"
+    ],
+    "risks": [
+      "分析：取证更快不等于证据完整，缺失数据必须与通过检查区别展示。",
+      "分析：人工最终签字不自动排除模型遗漏，应保留可复查原始证据和拒答路径。",
+      "分析：安全产品页承诺不能替代本项目权限、日志和评测实证。"
+    ],
+    "caveats": [
+      "匿名供应商案例，未取得客户公告或审查报告。",
+      "同页资产管理案例明确为illustrative示例，未混入本记录。",
+      "未公开实施日期、模型、上线与维护记录，不能称完整复盘。",
+      "已全文阅读案例页并追查产品、安全和公司介绍；这些辅助资料不能补写客户具体架构。"
+    ],
+    "sources": [
+      {
+        "title": "Wissda：季度控制评估项目原文",
+        "url": "https://www.wissda.com/case-studies/",
+        "type": "供应商项目声明",
+        "date": "未标发布日期；2026-11-16全文核验",
+        "locator": "Case Study 01：US Regional Bank"
+      },
+      {
+        "title": "Wissda：金融服务产品工作流",
+        "url": "https://www.wissda.com/financial-services/",
+        "type": "通用产品声明，非客户项目佐证",
+        "date": "2026-11-16全文核验",
+        "locator": "How every agent works / GRC trust layer"
+      },
+      {
+        "title": "Wissda：安全架构承诺",
+        "url": "https://www.wissda.com/security/",
+        "type": "通用安全声明，非独立认证或本案验收",
+        "date": "2026-11-16全文核验",
+        "locator": "Human Governance / Drift Prevention"
+      },
+      {
+        "title": "Wissda：公司地点介绍",
+        "url": "https://www.wissda.com/about/",
+        "type": "公司自述，仅支持供应商主体",
+        "date": "2026-11-16全文核验",
+        "locator": "Our locations"
+      }
+    ],
+    "deepDive": {
+      "before": [
+        {
+          "text": "供应商称该行有380余项控制与14个分散系统；分析员原本手工收集材料、撰写判断理由。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "控制项目类型、抽样方法、审查周期起止及基线测量分母未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "intervention": [
+        {
+          "text": "原文明确驻场工程小组在银行ServiceNow IRM中接入Control Assessment Agent，并通过单租户连接器连接内部IAM端点。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：这类交付的难点是让证据与控制目标对应，而不只是让模型读文档。错误映射会形成看似完整却答非所问的材料。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "成员姓名、驻场时长、需求访谈、分阶段上线过程和角色权限矩阵未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "technical": [
+        {
+          "text": "原文列出分散来源包括Active Directory、AWS CloudTrail、JIRA与工单；重大签字仍由合规人员承担。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "产品页称代理先取证、起草、二次检查，再记录及读回；安全页描述人工审批与回归测试。这些是通用产品声明，不能认定在本客户全部实施。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            2,
+            3
+          ]
+        },
+        {
+          "text": "模型供应商、检索方法、规则版本、原始数据保留、生产测试集、回滚和维护故障处理未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析建议：上线验收应同时测漏证、误判及人工修改率；写回成功不能作为内容正确的证明。建议不是本项目已采用的做法。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ],
+      "outcomes": [
+        {
+          "text": "供应商声称周期缩短，并称审查员验证证据日志；未提供可公开复核的报告。后者不能标成独立核验。",
+          "evidence": "disclosed",
+          "sourceRefs": [
+            1
+          ]
+        },
+        {
+          "text": "分析：避免将取证节省乘全年控制次数就声称净收益；重复审查、人工复核和系统维护都可能改变实际节省。",
+          "evidence": "inference",
+          "sourceRefs": []
+        },
+        {
+          "text": "总投入、运行费用、准确率、长期维护成本、净收益和未解决问题列表未披露。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        }
+      ],
+      "unknowns": [
+        {
+          "text": "匿名客户、具体落地区域、事件时间窗、工程设计与原始测量都存在缺口；这是一条直接角色证据案例，不是已取得全套实施底稿。",
+          "evidence": "undisclosed",
+          "sourceRefs": []
+        },
+        {
+          "text": "分析：可迁移经验是把自动化停在可审查的证据整理与草稿阶段，并让每个结论可以返回来源；不能据此宣称适用于所有银行监管场景。",
+          "evidence": "inference",
+          "sourceRefs": []
+        }
+      ]
+    }
   }
 ]
